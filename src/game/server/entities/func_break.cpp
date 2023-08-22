@@ -982,3 +982,11 @@ bool CPushable::TakeDamage(CBaseEntity* inflictor, CBaseEntity* attacker, float 
 
 	return true;
 }
+
+int CPushable::DamageDecal(int bitsDamageType)
+{
+	if (FBitSet(pev->spawnflags, SF_PUSH_BREAKABLE))
+		return CBreakable::DamageDecal(bitsDamageType);
+
+	return CBaseEntity::DamageDecal(bitsDamageType);
+}
