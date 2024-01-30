@@ -796,6 +796,8 @@ public:
 	 */
 	bool TakeDamage(CBaseEntity* inflictor, CBaseEntity* attacker, float flDamage, int bitsDamageType) override;
 
+	bool IsMonster() override { return true; }
+
 	/**
 	 *	@brief takedamage function called when a monster's corpse is damaged.
 	 */
