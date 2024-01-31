@@ -46,6 +46,10 @@ enum class PlayerAllyRelationship : int
 #define ROUTE_SIZE 8	  //!< how many waypoints a monster can store at one time
 #define MAX_OLD_ENEMIES 4 //!< how many old enemies to remember
 
+#define FREEROAM_MAPDEFAULT 0
+#define FREEROAM_NEVER 1
+#define FREEROAM_ALWAYS 2
+
 struct ScheduleList
 {
 	const ScheduleList* BaseList{};
@@ -221,6 +225,8 @@ public:
 	CCineMonster* m_pCine;
 
 	float m_flLastYawTime;
+
+	int m_freeRoam = 0;
 
 	bool m_AllowItemDropping = true;
 
@@ -436,6 +442,7 @@ public:
 	 *	Then calls monster's member function to get a pointer to a schedule of the proper type.
 	 */
 	virtual const Schedule_t* GetSchedule();
+	const Schedule_t* GetFreeroamSchedule();
 	virtual void ScheduleChange() {}
 
 	/*

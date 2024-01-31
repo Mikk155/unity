@@ -55,6 +55,8 @@ cvar_t sv_entityinfo_eager{"sv_entityinfo_eager", "1", FCVAR_SERVER};
 
 cvar_t sv_schedule_debug{"sv_schedule_debug", "0", FCVAR_SERVER};
 
+cvar_t mp_monster_roaming{"mp_monster_roaming", "0", FCVAR_SERVER};
+
 static bool SV_InitServer()
 {
 	if (!FileSystem_LoadFileSystem())
@@ -128,6 +130,8 @@ void GameDLLInit()
 
 	CVAR_REGISTER(&sv_entityinfo_enabled);
 	CVAR_REGISTER(&sv_entityinfo_eager);
+
+	CVAR_REGISTER(&mp_monster_roaming);
 
 	// END REGISTER CVARS FOR OPPOSING FORCE
 
