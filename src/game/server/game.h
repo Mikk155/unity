@@ -46,6 +46,8 @@ extern cvar_t spamdelay;
 extern cvar_t sv_entityinfo_enabled;
 extern cvar_t sv_entityinfo_eager;
 
+extern cvar_t mp_monster_roaming;
+
 extern cvar_t sv_schedule_debug;
 
 // Engine Cvars
