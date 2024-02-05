@@ -108,13 +108,16 @@ target_sources(server PRIVATE
 	entities/effects.h
 	entities/EntityTemplateSystem.cpp
 	entities/EntityTemplateSystem.h
+	entities/env_render.cpp
+	entities/env_render.h
 	entities/explode.cpp
 	entities/explode.h
 	entities/func_break.cpp
 	entities/func_break.h
+	entities/func_friction.cpp
+	entities/func_friction.h
 	entities/func_tank.cpp
 	entities/h_cycler.cpp
-	entities/info_precache.cpp
 	entities/lights.cpp
 	entities/logic_entities.cpp
 	entities/maprules.cpp
@@ -185,15 +188,6 @@ target_sources(server PRIVATE
 	entities/items/weapons/CSpore.cpp
 	entities/items/weapons/CSpore.h
 	entities/items/weapons/weapons.cpp
-
-	entities/rope/CElectrifiedWire.cpp
-	entities/rope/CElectrifiedWire.h
-	entities/rope/CRope.cpp
-	entities/rope/CRope.h
-	entities/rope/CRopeSample.cpp
-	entities/rope/CRopeSample.h
-	entities/rope/CRopeSegment.cpp
-	entities/rope/CRopeSegment.h
 
 	entities/NPCs/basemonster.h
 	entities/NPCs/combat.cpp
@@ -288,6 +282,15 @@ target_sources(server PRIVATE
 	entities/NPCs/zombies/zombie.h
 	entities/NPCs/zombies/zombie_barney.cpp
 	entities/NPCs/zombies/zombie_soldier.cpp
+
+	entities/rope/CElectrifiedWire.cpp
+	entities/rope/CElectrifiedWire.h
+	entities/rope/CRope.cpp
+	entities/rope/CRope.h
+	entities/rope/CRopeSample.cpp
+	entities/rope/CRopeSample.h
+	entities/rope/CRopeSegment.cpp
+	entities/rope/CRopeSegment.h
 
 	gamerules/CGameRules.cpp
 	gamerules/CGameRules.h

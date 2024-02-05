@@ -78,6 +78,18 @@ enum USE_TYPE : int
 	USE_UNKNOWN = 10
 };
 
+enum APPEARFLAG
+{
+	SINGLEPLAYER	= 1,
+	MULTIPLAYER		= 2,
+	COOPERATIVE		= 4,
+	CLASSICMODE		= 8,
+	SURVIVALMODE	= 16,
+	SKLEVELEASY		= 32,
+	SKLEVELMEDIUM	= 64,
+	SKLEVELHARD		= 128
+};
+
 // people gib if their health is <= this at the time of death
 #define GIB_HEALTH_VALUE -30
 
@@ -171,6 +183,8 @@ public:
 	int PrecacheSound(const char* s);
 
 	void SetSize(const Vector& min, const Vector& max);
+
+	void SetBBox();
 
 	CBaseEntity* GetOwner()
 	{
@@ -342,7 +356,7 @@ public:
 	virtual int DamageDecal(int bitsDamageType);
 	virtual bool OnControls(CBaseEntity* controller) { return false; }
 	virtual bool IsAlive() { return (pev->deadflag == DEAD_NO) && pev->health > 0; }
-	virtual bool IsBSPModel() { return pev->solid == SOLID_BSP || pev->movetype == MOVETYPE_PUSHSTEP; }
+	virtual bool IsBSPModel() { return std::string(STRING(pev->model)).find("*") == 0 || pev->solid == SOLID_BSP || pev->movetype == MOVETYPE_PUSHSTEP; }
 	virtual bool ReflectGauss() { return (IsBSPModel() && !pev->takedamage); }
 	virtual bool HasTarget(string_t targetname) { return FStrEq(STRING(targetname), GetTarget()); }
 	virtual bool IsInWorld();
@@ -639,6 +653,9 @@ public:
 	USE_TYPE m_UseTypeLast = USE_TOGGLE; // Not for a direct usage, FireTargets function will modify this at any time
 	float m_UseValue; // If using USE_SET, this will be the float value to send, reserved for future usage on logic entities
 	int m_UseLocked; // Bit for USE_VALUE fields for USE_LOCK / USE_UNLOCK
+
+	int m_appearflag_notin;		// "Not In" Appearance flag bits, see APPEARFLAG enum.
+	int m_appearflag_onlyin;	// "Only In" Appearance flag bits, see APPEARFLAG enum.
 };
 
 inline bool FNullEnt(CBaseEntity* ent) { return (ent == nullptr) || FNullEnt(ent->edict()); }

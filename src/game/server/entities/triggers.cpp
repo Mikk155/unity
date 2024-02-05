@@ -32,59 +32,6 @@
 #define SF_TRIGGER_HURT_CLIENTONLYFIRE 16  // trigger hurt will only fire its target if it is hurting a client
 #define SF_TRIGGER_HURT_CLIENTONLYTOUCH 32 // only clients may touch this trigger.
 
-/**
- *	@brief Modifies an entity's friction
- */
-class CFrictionModifier : public CBaseEntity
-{
-	DECLARE_CLASS(CFrictionModifier, CBaseEntity);
-	DECLARE_DATAMAP();
-
-public:
-	void Spawn() override;
-	bool KeyValue(KeyValueData* pkvd) override;
-
-	/**
-	 *	@brief Sets toucher's friction to m_frictionFraction (1.0 = normal friction)
-	 */
-	void ChangeFriction(CBaseEntity* pOther);
-
-	int ObjectCaps() override { return CBaseEntity::ObjectCaps() & ~FCAP_ACROSS_TRANSITION; }
-
-	float m_frictionFraction; // Sorry, couldn't resist this name :)
-};
-
-LINK_ENTITY_TO_CLASS(func_friction, CFrictionModifier);
-
-BEGIN_DATAMAP(CFrictionModifier)
-DEFINE_FIELD(m_frictionFraction, FIELD_FLOAT),
-	DEFINE_FUNCTION(ChangeFriction),
-	END_DATAMAP();
-
-void CFrictionModifier::Spawn()
-{
-	pev->solid = SOLID_TRIGGER;
-	SetModel(STRING(pev->model)); // set size and link into world
-	pev->movetype = MOVETYPE_NONE;
-	SetTouch(&CFrictionModifier::ChangeFriction);
-}
-
-void CFrictionModifier::ChangeFriction(CBaseEntity* pOther)
-{
-	if (pOther->pev->movetype != MOVETYPE_BOUNCEMISSILE && pOther->pev->movetype != MOVETYPE_BOUNCE)
-		pOther->pev->friction = m_frictionFraction;
-}
-
-bool CFrictionModifier::KeyValue(KeyValueData* pkvd)
-{
-	if (FStrEq(pkvd->szKeyName, "modifier"))
-	{
-		m_frictionFraction = atof(pkvd->szValue) / 100.0;
-		return true;
-	}
-
-	return CBaseEntity::KeyValue(pkvd);
-}
 
 #define SF_AUTO_FIREONCE 0x0001
 
@@ -444,47 +391,6 @@ void CMultiManager::ManagerReport()
 }
 #endif
 
-// Flags to indicate masking off various render parameters that are normally copied to the targets
-#define SF_RENDER_MASKFX (1 << 0)
-#define SF_RENDER_MASKAMT (1 << 1)
-#define SF_RENDER_MASKMODE (1 << 2)
-#define SF_RENDER_MASKCOLOR (1 << 3)
-
-/**
- *	@brief This entity will copy its render parameters (renderfx, rendermode, rendercolor, renderamt)
- *	to its targets when triggered.
- */
-class CRenderFxManager : public CBaseEntity
-{
-public:
-	void Spawn() override;
-	void Use(CBaseEntity* pActivator, CBaseEntity* pCaller, USE_TYPE useType, float value) override;
-};
-
-LINK_ENTITY_TO_CLASS(env_render, CRenderFxManager);
-
-void CRenderFxManager::Spawn()
-{
-	pev->solid = SOLID_NOT;
-}
-
-void CRenderFxManager::Use(CBaseEntity* pActivator, CBaseEntity* pCaller, USE_TYPE useType, float value)
-{
-	if (!FStringNull(pev->target))
-	{
-		for (auto target : UTIL_FindEntitiesByTargetname(STRING(pev->target)))
-		{
-			if (!FBitSet(pev->spawnflags, SF_RENDER_MASKFX))
-				target->pev->renderfx = pev->renderfx;
-			if (!FBitSet(pev->spawnflags, SF_RENDER_MASKAMT))
-				target->pev->renderamt = pev->renderamt;
-			if (!FBitSet(pev->spawnflags, SF_RENDER_MASKMODE))
-				target->pev->rendermode = pev->rendermode;
-			if (!FBitSet(pev->spawnflags, SF_RENDER_MASKCOLOR))
-				target->pev->rendercolor = pev->rendercolor;
-		}
-	}
-}
 
 /**
  *	@brief hurts anything that touches it. if the trigger has a targetname, firing it will toggle state

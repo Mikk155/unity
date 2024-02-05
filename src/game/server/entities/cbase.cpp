@@ -24,12 +24,46 @@
 
 static void SetObjectCollisionBox(entvars_t* pev);
 
+bool AppearFlagsCheck( CBaseEntity* pEntity )
+{
+	if( pEntity->m_appearflag_notin > 0 ) {
+		if (
+			FBitSet( pEntity->m_appearflag_notin, APPEARFLAG::SINGLEPLAYER )	&&	!g_pGameRules->IsMultiplayer() ||
+			FBitSet( pEntity->m_appearflag_notin, APPEARFLAG::MULTIPLAYER )		&&	g_pGameRules->IsMultiplayer() ||
+			FBitSet( pEntity->m_appearflag_notin, APPEARFLAG::COOPERATIVE )		&&	g_pGameRules->IsCoOp() ||
+			FBitSet( pEntity->m_appearflag_notin, APPEARFLAG::CLASSICMODE )		&&	1 == 2 ||
+			FBitSet( pEntity->m_appearflag_notin, APPEARFLAG::SURVIVALMODE )	&&	1 == 2 ||
+			FBitSet( pEntity->m_appearflag_notin, APPEARFLAG::SKLEVELEASY )		&&	g_Skill.GetSkillLevel() == SkillLevel::Easy ||
+			FBitSet( pEntity->m_appearflag_notin, APPEARFLAG::SKLEVELMEDIUM )	&&	g_Skill.GetSkillLevel() == SkillLevel::Medium ||
+			FBitSet( pEntity->m_appearflag_notin, APPEARFLAG::SKLEVELHARD )		&&	g_Skill.GetSkillLevel() == SkillLevel::Hard
+		){ return true; }
+	}
+
+	if( pEntity->m_appearflag_onlyin > 0 ) {
+		if (
+			FBitSet( pEntity->m_appearflag_onlyin, APPEARFLAG::SINGLEPLAYER )	&&	g_pGameRules->IsMultiplayer() ||
+			FBitSet( pEntity->m_appearflag_onlyin, APPEARFLAG::MULTIPLAYER )	&&	!g_pGameRules->IsMultiplayer() ||
+			FBitSet( pEntity->m_appearflag_onlyin, APPEARFLAG::COOPERATIVE )	&&	!g_pGameRules->IsCoOp() ||
+			FBitSet( pEntity->m_appearflag_onlyin, APPEARFLAG::CLASSICMODE )	&&	1 == 2 ||
+			FBitSet( pEntity->m_appearflag_onlyin, APPEARFLAG::SURVIVALMODE )	&&	1 == 2 ||
+			FBitSet( pEntity->m_appearflag_onlyin, APPEARFLAG::SKLEVELEASY )	&&	g_Skill.GetSkillLevel() != SkillLevel::Easy ||
+			FBitSet( pEntity->m_appearflag_onlyin, APPEARFLAG::SKLEVELMEDIUM )	&&	g_Skill.GetSkillLevel() != SkillLevel::Medium ||
+			FBitSet( pEntity->m_appearflag_onlyin, APPEARFLAG::SKLEVELHARD )	&&	g_Skill.GetSkillLevel() != SkillLevel::Hard
+		){ return true; }
+	}
+
+	return false;
+}
+
 int DispatchSpawn(edict_t* pent)
 {
 	CBaseEntity* pEntity = (CBaseEntity*)GET_PRIVATE(pent);
 
 	if (pEntity)
 	{
+		if( AppearFlagsCheck( pEntity ) )
+			return -1;
+
 		// Initialize these or entities who don't link to the world won't have anything in here
 		pEntity->pev->absmin = pEntity->pev->origin - Vector(1, 1, 1);
 		pEntity->pev->absmax = pEntity->pev->origin + Vector(1, 1, 1);
@@ -601,6 +635,43 @@ bool CBaseEntity::RequiredKeyValue(KeyValueData* pkvd)
 		m_UseValue = atof( pkvd->szValue );
 		return true;
 	}
+	else if( std::string( pkvd->szKeyName ).find( "appearflag_" ) == 0 )
+	{
+		CBaseEntity::Logger->warn("APPEARFLAGS key {} {}", pkvd->szKeyName, pkvd->szValue );
+
+		if( atoi( pkvd->szValue ) != 0 )
+		{
+			int iBits;
+
+			if( FStrEq( pkvd->szKeyName, "appearflag_singleplayer" ) )
+				iBits = APPEARFLAG::SINGLEPLAYER;
+			else if( FStrEq( pkvd->szKeyName, "appearflag_multiplayer" ) )
+				iBits = APPEARFLAG::MULTIPLAYER;
+			else if( FStrEq( pkvd->szKeyName, "appearflag_cooperative" ) )
+				iBits = APPEARFLAG::COOPERATIVE;
+			else if( FStrEq( pkvd->szKeyName, "appearflag_classicmode" ) )
+				iBits = APPEARFLAG::CLASSICMODE;
+			else if( FStrEq( pkvd->szKeyName, "appearflag_survivalmode" ) )
+				iBits = APPEARFLAG::SURVIVALMODE;
+			else if( FStrEq( pkvd->szKeyName, "appearflag_skilleasy" ) )
+				iBits = APPEARFLAG::SKLEVELEASY;
+			else if( FStrEq( pkvd->szKeyName, "appearflag_skillmedium" ) )
+				iBits = APPEARFLAG::SKLEVELMEDIUM;
+			else if( FStrEq( pkvd->szKeyName, "appearflag_skillhard" ) )
+				iBits = APPEARFLAG::SKLEVELHARD;
+
+			CBaseEntity::Logger->warn("APPEARFLAGS iBits {}", iBits );
+
+			if( iBits != 0 )
+			{
+				if( atoi( pkvd->szValue ) == -1 )
+					SetBits( m_appearflag_notin, iBits );
+				else if( atoi( pkvd->szValue ) == 1 )
+					SetBits( m_appearflag_onlyin, iBits );
+				return true;
+			}
+		}
+	}
 
 	return false;
 }
@@ -662,6 +733,18 @@ int CBaseEntity::PrecacheSound(const char* s)
 void CBaseEntity::SetSize(const Vector& min, const Vector& max)
 {
 	g_engfuncs.pfnSetSize(edict(), m_HasCustomHullMin ? m_CustomHullMin : min, m_HasCustomHullMax ? m_CustomHullMax : max);
+}
+
+void CBaseEntity::SetBBox()
+{
+	if( IsBSPModel() )
+	{
+		g_engfuncs.pfnSetModel( edict(), STRING( pev->model ) );
+	}
+	else if( m_HasCustomHullMin && m_HasCustomHullMax )
+	{
+		g_engfuncs.pfnSetSize( edict(), m_CustomHullMin, m_CustomHullMax );
+	}
 }
 
 bool CBaseEntity::GiveHealth(float flHealth, int bitsDamageType)
