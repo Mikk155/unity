@@ -644,8 +644,6 @@ bool CBaseEntity::RequiredKeyValue(KeyValueData* pkvd)
 	}
 	else if( std::string( pkvd->szKeyName ).find( "appearflag_" ) == 0 )
 	{
-		CBaseEntity::Logger->warn("APPEARFLAGS key {} {}", pkvd->szKeyName, pkvd->szValue );
-
 		if( atoi( pkvd->szValue ) != 0 )
 		{
 			int iBits;
@@ -666,8 +664,6 @@ bool CBaseEntity::RequiredKeyValue(KeyValueData* pkvd)
 				iBits = APPEARFLAG::SKLEVELMEDIUM;
 			else if( FStrEq( pkvd->szKeyName, "appearflag_skillhard" ) )
 				iBits = APPEARFLAG::SKLEVELHARD;
-
-			CBaseEntity::Logger->warn("APPEARFLAGS iBits {}", iBits );
 
 			if( iBits != 0 )
 			{
