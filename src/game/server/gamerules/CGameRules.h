@@ -321,6 +321,9 @@ public:
 	 */
 	bool FAllowMonsters();
 
+	// return whatever Survival-Mode is enabled
+	bool SurvivalMode() { return ( CVAR_GET_FLOAT( "mp_survival_mode" ) != 0 ); }
+
 	/**
 	 *	@brief Immediately end a multiplayer game
 	 */

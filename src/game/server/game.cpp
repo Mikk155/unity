@@ -53,6 +53,8 @@ cvar_t multipower = {"mp_multipower", "0", FCVAR_SERVER};
 cvar_t sv_entityinfo_enabled{"sv_entityinfo_enabled", "0", FCVAR_SERVER};
 cvar_t sv_entityinfo_eager{"sv_entityinfo_eager", "1", FCVAR_SERVER};
 
+cvar_t mp_survival_mode{ "mp_survival_mode", "1", FCVAR_SERVER };
+
 cvar_t sv_schedule_debug{"sv_schedule_debug", "0", FCVAR_SERVER};
 
 static bool SV_InitServer()
@@ -130,6 +132,8 @@ void GameDLLInit()
 	CVAR_REGISTER(&sv_entityinfo_eager);
 
 	// END REGISTER CVARS FOR OPPOSING FORCE
+
+	CVAR_REGISTER(&mp_survival_mode);
 
 	// Default to on in debug builds to match original behavior.
 #ifdef DEBUG
