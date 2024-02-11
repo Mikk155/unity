@@ -54,6 +54,7 @@ cvar_t sv_entityinfo_enabled{"sv_entityinfo_enabled", "0", FCVAR_SERVER};
 cvar_t sv_entityinfo_eager{"sv_entityinfo_eager", "1", FCVAR_SERVER};
 
 cvar_t mp_survival_mode{ "mp_survival_mode", "1", FCVAR_SERVER };
+cvar_t mp_survival_delay{ "mp_survival_delay", "25", FCVAR_SERVER };
 
 cvar_t sv_schedule_debug{"sv_schedule_debug", "0", FCVAR_SERVER};
 
@@ -134,6 +135,7 @@ void GameDLLInit()
 	// END REGISTER CVARS FOR OPPOSING FORCE
 
 	CVAR_REGISTER(&mp_survival_mode);
+	CVAR_REGISTER(&mp_survival_delay);
 
 	// Default to on in debug builds to match original behavior.
 #ifdef DEBUG
