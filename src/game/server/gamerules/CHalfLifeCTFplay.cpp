@@ -625,6 +625,8 @@ void CHalfLifeCTFplay::Think()
 	{
 		GoToIntermission();
 	}
+
+	g_SurvivalMode.Think();
 }
 
 bool CHalfLifeCTFplay::ClientConnected(edict_t* pEntity, const char* pszName, const char* pszAddress, char* szRejectReason)

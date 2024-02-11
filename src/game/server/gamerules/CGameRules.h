@@ -22,6 +22,8 @@
 
 #include "ClientCommandRegistry.h"
 
+#include "SurvivalMode.h"
+
 class CBaseItem;
 class CBaseMonster;
 class CBasePlayer;
