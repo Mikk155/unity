@@ -311,6 +311,8 @@ target_sources(server PRIVATE
 	gamerules/PlayerInventory.cpp
 	gamerules/PlayerInventory.h
 	gamerules/SpawnInventorySystem.h
+	gamerules/SurvivalMode.cpp
+	gamerules/SurvivalMode.h
 
 	sound/SentencesSystem.cpp
 	sound/SentencesSystem.h

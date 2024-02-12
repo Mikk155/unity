@@ -156,6 +156,8 @@ void CHalfLifeMultiplay::Think()
 
 	last_frags = frags_remaining;
 	last_time = time_remaining;
+
+	g_SurvivalMode.Think();
 }
 
 bool CHalfLifeMultiplay::FShouldSwitchWeapon(CBasePlayer* pPlayer, CBasePlayerWeapon* pWeapon)
@@ -595,7 +597,7 @@ void CHalfLifeMultiplay::DeathNotice(CBasePlayer* pVictim, CBaseEntity* pKiller,
 	return; // just remove for now
 			/*
 	char	szText[ 128 ];
-		
+
 	if ( pKiller->flags & FL_MONSTER )
 	{
 		// killed by a monster
@@ -603,7 +605,7 @@ void CHalfLifeMultiplay::DeathNotice(CBasePlayer* pVictim, CBaseEntity* pKiller,
 		strcat ( szText, " was killed by a monster.\n" );
 		return;
 	}
-		
+
 	if ( pKiller == pVictim->pev )
 	{
 		strcpy ( szText, STRING( pVictim->pev->netname ) );
@@ -612,11 +614,11 @@ void CHalfLifeMultiplay::DeathNotice(CBasePlayer* pVictim, CBaseEntity* pKiller,
 	else if ( pKiller->flags & FL_CLIENT )
 	{
 		strcpy ( szText, STRING( pKiller->netname ) );
-		
+
 		strcat( szText, " : " );
 		strcat( szText, killer_weapon_name );
 		strcat( szText, " : " );
-		
+
 		strcat ( szText, STRING( pVictim->pev->netname ) );
 		strcat ( szText, "\n" );
 	}
@@ -635,7 +637,7 @@ void CHalfLifeMultiplay::DeathNotice(CBasePlayer* pVictim, CBaseEntity* pKiller,
 		strcpy ( szText, STRING( pVictim->pev->netname ) );
 		strcat ( szText, " died mysteriously.\n" );
 	}
-		
+
 	UTIL_ClientPrintAll( szText );
 */
 }

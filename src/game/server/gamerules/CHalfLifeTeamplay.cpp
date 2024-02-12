@@ -137,6 +137,8 @@ void CHalfLifeTeamplay::Think()
 
 	last_frags = frags_remaining;
 	last_time = time_remaining;
+
+	g_SurvivalMode.Think();
 }
 
 void CHalfLifeTeamplay::UpdateGameMode(CBasePlayer* pPlayer)

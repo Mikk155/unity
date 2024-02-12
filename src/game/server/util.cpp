@@ -1509,3 +1509,18 @@ bool UTIL_IsMultiplayer()
 	// Can be null during weapon registration.
 	return g_pGameRules != nullptr && g_pGameRules->IsMultiplayer();
 }
+
+CBasePlayer* UTIL_GetPlayers( int &index )
+{
+	CBasePlayer* pPlayer = nullptr;
+
+	while( index <= gpGlobals->maxClients && !pPlayer )
+	{
+		index++;
+		pPlayer = UTIL_PlayerByIndex( index );
+
+		if( pPlayer )
+			return pPlayer;
+	}
+	return pPlayer;
+}

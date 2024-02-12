@@ -55,6 +55,10 @@ cvar_t sv_entityinfo_eager{"sv_entityinfo_eager", "1", FCVAR_SERVER};
 
 cvar_t mp_monster_roaming{"mp_monster_roaming", "0", FCVAR_SERVER};
 
+cvar_t mp_survival_mode_active{ "mp_survival_mode_active", "1", FCVAR_SERVER };
+cvar_t mp_survival_mode_startdelay{ "mp_survival_mode_startdelay", "25", FCVAR_SERVER };
+cvar_t mp_survival_mode_restartdelay{ "mp_survival_mode_restartdelay", "10", FCVAR_SERVER };
+
 cvar_t sv_schedule_debug{"sv_schedule_debug", "0", FCVAR_SERVER};
 
 static bool SV_InitServer()
@@ -134,6 +138,10 @@ void GameDLLInit()
 	CVAR_REGISTER(&sv_entityinfo_eager);
 
 	CVAR_REGISTER(&mp_monster_roaming);
+
+	CVAR_REGISTER(&mp_survival_mode_active);
+	CVAR_REGISTER(&mp_survival_mode_startdelay);
+	CVAR_REGISTER(&mp_survival_mode_restartdelay);
 
 	// Default to on in debug builds to match original behavior.
 #ifdef DEBUG

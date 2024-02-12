@@ -22,6 +22,8 @@
 
 #include "ClientCommandRegistry.h"
 
+#include "SurvivalMode.h"
+
 class CBaseItem;
 class CBaseMonster;
 class CBasePlayer;
@@ -320,6 +322,9 @@ public:
 	 *	@brief are monsters allowed
 	 */
 	bool FAllowMonsters();
+
+	// return whatever Survival-Mode is enabled
+	bool SurvivalMode() { return ( CVAR_GET_FLOAT( "mp_survival_mode" ) != 0 ); }
 
 	/**
 	 *	@brief Immediately end a multiplayer game

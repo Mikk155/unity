@@ -108,6 +108,8 @@ void CHalfLifeCoopplay::Think()
 {
 	if (g_fGameOver)
 		CHalfLifeMultiplay::Think();
+
+	g_SurvivalMode.Think();
 }
 
 bool CHalfLifeCoopplay::FPlayerCanTakeDamage(CBasePlayer* pPlayer, CBaseEntity* pAttacker)
