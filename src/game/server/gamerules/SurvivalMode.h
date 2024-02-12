@@ -13,37 +13,29 @@
  *
  ****/
 
-/*
-Copy in titles.txt:
-
-SurvivalStartDelay
-{
-Survival mode will start in %s seconds.
-}
-SurvivalStarted
-{
-Survival mode started, No more re-spawning allowed.
-}
-SurvivalDisabled
-{
-Survival mode disabled, re-spawning allowed
-}
-*/
-
 #pragma once
 
 #include "cbase.h"
+#include "UserMessages.h"
 
 class SurvivalMode final
 {
 public:
 	void Think();
-    bool IsActive();
-    int StartDelay();
-    int m_LastActive;
+    bool IsActive();        // Survival mode is active
+    bool IsEnabled();       // Survival mode is enabled
+    int Enabled();
+    int StartDelay();       // Delay before start
+    int RestartDelay();     // Delay before restart
+    bool ShouldRestart();
+    void ObserverMode( CBasePlayer* pPlayer );
 
 private:
     float m_flNextThink;
+    int m_LastActive;
+    bool m_Restarting;
+    int m_iAlivePlayers;
+    int m_iRestartDelay;
 };
 
 inline SurvivalMode g_SurvivalMode;
