@@ -120,8 +120,17 @@ void respawn(CBasePlayer* player, bool fCopyCorpse)
 			CopyToBodyQue(player);
 		}
 
-		// respawn player
-		player->Spawn();
+		if( g_SurvivalMode.IsActive() )
+		{
+			// -Mikk delete dead corpses, while survivel each player must have only one!
+			player->m_bObserverSurvival = true;
+			player->StartObserver( player->pev->origin, player->pev->angles );
+		}
+		else
+		{
+			// respawn player
+			player->Spawn();
+		}
 	}
 	else
 	{ // restart the entire server
