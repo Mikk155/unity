@@ -763,3 +763,5 @@ struct CallOnDestroy
 		Function();
 	}
 };
+
+CBasePlayer* UTIL_GetPlayers( int &index );
