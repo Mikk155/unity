@@ -82,6 +82,8 @@ public:
 
 	void RemoveBalls();
 
+	bool ShouldInheritKeyValue( const char* szKey ) override;
+
 	CSprite* m_pBall[2];   // hand balls
 	int m_iBall[2];		   // how bright it should be
 	float m_iBallTime[2];  // when it should be that color
@@ -221,6 +223,13 @@ void CController::RemoveBalls()
 		UTIL_Remove(m_pBall[1]);
 		m_pBall[1] = nullptr;
 	}
+}
+
+bool CController :: ShouldInheritKeyValue( const char* szKey )
+{
+	return ( FStrEq( szKey, "model_replacement_filename" )
+		  || FStrEq( szKey, "sound_replacement_filename" )
+	);
 }
 
 void CController::PainSound()
