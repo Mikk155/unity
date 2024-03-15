@@ -209,11 +209,11 @@ public:
 	 */
 	bool RequiredKeyValue(KeyValueData* pkvd);
 
-	string_t m_SharedKey[SHARED_KEYVALUE_MAX];
-	string_t m_SharedValue[SHARED_KEYVALUE_MAX];
-	int m_SharedKeyValues;
+	string_t m_InheritKey[SHARED_KEYVALUE_MAX];
+	string_t m_InheritValue[SHARED_KEYVALUE_MAX];
+	int m_InheritKeyValues;
 	// Return true to store the key-value
-	virtual bool SharedKeyValue( const char* szKey ){ return false; };
+	virtual bool ShouldInheritKeyValue( const char* szKey ){ return false; };
 
 	void LoadReplacementFiles();
 

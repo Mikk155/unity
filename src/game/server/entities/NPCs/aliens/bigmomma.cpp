@@ -156,7 +156,7 @@ public:
 	void Spawn() override;
 	void Precache() override;
 	bool KeyValue(KeyValueData* pkvd) override;
-	bool SharedKeyValue( const char* szKey ) override;
+	bool ShouldInheritKeyValue( const char* szKey ) override;
 	void Activate() override;
 	bool TakeDamage(CBaseEntity* inflictor, CBaseEntity* attacker, float flDamage, int bitsDamageType) override;
 
@@ -378,7 +378,7 @@ bool CBigMomma::KeyValue(KeyValueData* pkvd)
 	return CBaseMonster::KeyValue(pkvd);
 }
 
-bool CBigMomma :: SharedKeyValue( const char* szKey )
+bool CBigMomma :: ShouldInheritKeyValue( const char* szKey )
 {
 	return ( FStrEq( szKey, "model_replacement_filename" )
 		  || FStrEq( szKey, "sound_replacement_filename" )
@@ -570,7 +570,7 @@ void CBigMomma::LayHeadcrab()
 
 	MaybeSetChildClassification(pChild);
 
-	UTIL_InitializeKeyValues( pChild, m_SharedKey, m_SharedValue, m_SharedKeyValues );
+	UTIL_InitializeKeyValues( pChild, m_InheritKey, m_InheritValue, m_InheritKeyValues );
 
 	DispatchSpawn(pChild->edict());
 
@@ -651,7 +651,7 @@ void CBigMomma::Precache()
 	PRECACHE_SOUND_ARRAY(pPainSounds);
 	PRECACHE_SOUND_ARRAY(pFootSounds);
 
-	UTIL_PrecacheOther( BIG_CHILDCLASS, m_SharedKey, m_SharedValue, m_SharedKeyValues );
+	UTIL_PrecacheOther( BIG_CHILDCLASS, m_InheritKey, m_InheritValue, m_InheritKeyValues );
 
 	// TEMP: Squid
 	PrecacheModel("sprites/mommaspit.spr");				   // spit projectile.
@@ -1103,7 +1103,7 @@ CBMortar* CBMortar::Shoot(CBaseEntity* owner, Vector vecStart, Vector vecVelocit
 {
 	CBMortar* pSpit = g_EntityDictionary->Create<CBMortar>("bmortar");
 
-	UTIL_InitializeKeyValues( static_cast<CBaseEntity*>( pSpit ), owner->m_SharedKey, owner->m_SharedValue, owner->m_SharedKeyValues );
+	UTIL_InitializeKeyValues( static_cast<CBaseEntity*>( pSpit ), owner->m_InheritKey, owner->m_InheritValue, owner->m_InheritKeyValues );
 
 	pSpit->Spawn();
 
