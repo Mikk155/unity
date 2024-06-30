@@ -1,0 +1,84 @@
+{
+"english": true,
+"spanish": true,
+
+"Language":
+{
+"english": "Language",
+"spanish": "Idioma"
+},
+
+"LanguageSelection":
+{
+"english": "Change language.",
+"spanish": "Cambiar idioma."
+},
+
+"DiscordServer":
+{
+"english": "Join our Discord server.",
+"spanish": "Entra a nuestro servidor de Discord."
+},
+
+"Contribute":
+{
+"english": "Contribute",
+"spanish": "Contribuir"
+},
+
+"ContributeDescription":
+{
+"english": "Contribute in any way you can.",
+"spanish": "Contribuye en cualquier forma en la que puedas."
+},
+
+"translations":
+{
+"english": "Translations",
+"spanish": "Traducciones"
+},
+
+"ModsDescription":
+{
+"english": "Mods, Maps and custom campaigns supported in Unity.",
+"spanish": "Modificaciones, Mapas y campañas personalizadas soportadas en Unity."
+},
+
+"Mods":
+{
+"english": "Mods",
+"spanish": "Modificaciones"
+},
+
+"Tutorials":
+{
+"english": "Tutorials",
+"spanish": "Tutoriales"
+},
+
+"TutorialsDescription":
+{
+"english": "All sort of tutorials introducing you on how to make a mod in Unity.",
+"spanish": "Todo tipo de tutoriales explicandote como hacer un mod en Unity."
+},
+
+"EntityGuide":
+{
+"english": "Entity Guide",
+"spanish": "Guia de Entidades"
+},
+
+"EntityGuideDescription":
+{
+"english": "Entity guide for Unity.",
+"spanish": "Guia en el uso de las entidades de Unity."
+},
+
+"donations":
+{
+"english": "Donations",
+"spanish": "Donaciones"
+},
+
+"EOF":true
+}

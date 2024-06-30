@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en-US">
+<head>
+	<!-- META TAGS -->
+	<title>Half-Life: Unity</title>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+	<!-- CSS -->
+	<!-- external stylesheet -->
+	<link rel="stylesheet" type="text/css" href="stylesheet.css">
+	
+	<!-- JAVASCRIPT -->
+	<script src="scripts.js"></script>
+</head>
+
+<body>
+	<!-- click sound -->
+	<audio id="click" src="media/sounds/click.mp3" preload="auto"></audio>
+
+	<!-- website container -->
+	<div class="container">
+
+		<!-- title with animation -->
+		<h1 id="title1">HλLF-LIFE UNITY<span id="blink">HλLF-LIFE UNITY</span></h1>
+
+		<!-- Language popup -->
+		<div id="LanguageList" class="emergent-window" onclick="clickSound();closeElement('LanguageList')">
+			<table class="emergent-window-content">
+				<td><button onclick="changeLanguage('english');">English</button></td>
+				<tr>
+				<td><button onclick="changeLanguage('spanish');">Español</button></td>
+			</table>
+		</div>
+
+		<!-- Contribute popup -->
+		<div id="Contribute" class="emergent-window" onclick="clickSound();closeElement('Contribute')">
+			<table class="emergent-window-content">
+				<td>
+					<!--<img src="media/images/icons/contributor.png" style="width: 28px;">-->
+					<a href="https://github.com/Mikk155/unity/tree/master/docs/sentences.json" target="_blank" pkvd="translations"></a>
+				<tr>
+				<td>
+					<!--<img src="media/images/icons/dollar.png" style="width: 28px;">-->
+					<a href="https://paypal.me/mikk1555" target="_blank" pkvd="donations"></a>
+				<tr>
+			</table>
+		</div>
+
+		<!-- menu contents -->
+		<table id="menu">
+			<tr>
+				<th><button class="menu-firstsub" pkvd="Language" onclick="openElement('LanguageList')"></a></th>
+				<td pkvd="LanguageSelection"></td>
+			</tr>
+
+			<tr>
+				<th><a class="inactive" pkvd="Mods"></a></th>
+				<td pkvd="ModsDescription"></td>
+			</tr>
+
+			<tr>
+				<th><a class="inactive" pkvd="EntityGuide"></a></th>
+				<td pkvd="EntityGuideDescription"></td>
+			</tr>
+
+			<tr>
+				<th><a class="inactive" pkvd="Tutorials"></a></th>
+				<td pkvd="TutorialsDescription"></td>
+			</tr>
+
+			<tr>
+				<!--<img src="media/images/icons/discord.ico" style="width: 28px;">-->
+				<th class="menu-firstsub">#Discord</th>
+				<td pkvd="DiscordServer"></td>
+			</tr>
+
+			<tr>
+				<th><button class="menu-firstsub" pkvd="Contribute" onclick="openElement('Contribute')"></a></th>
+				<td pkvd="ContributeDescription"></td>
+			</tr>
+
+		</table>
+	</div>
+</body>

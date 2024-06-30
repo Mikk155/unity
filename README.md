@@ -221,6 +221,7 @@ If you believe your name should be on this list make sure to let us know!
 * LambdaLuke87
 * almix
 * sabian
+* m1rz11
 
 ## Special Thanks
 
