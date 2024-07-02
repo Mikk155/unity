@@ -1,31 +1,31 @@
 <!DOCTYPE html>
 <html lang="en-US">
 <head>
-	<!-- META TAGS -->
 	<title>Half-Life: Unity</title>
 	<meta charset="UTF-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
 
 	<!-- CSS -->
-	<!-- external stylesheet -->
-	<link rel="stylesheet" type="text/css" href="stylesheet.css">
+	<link rel="stylesheet" type="text/css" href="src/stylesheet.css">
 	
 	<!-- JAVASCRIPT -->
-	<script src="scripts.js"></script>
+	<script src="src/index.js"></script>
 </head>
 
 <body>
-	<!-- click sound -->
-	<audio id="click" src="media/sounds/click.mp3" preload="auto"></audio>
+	<!-- sounds -->
+	<audio id="sfx_view" src="media/sounds/common/launch_glow1.wav" preload="auto"></audio>
+	<audio id="sfx_open" src="media/sounds/common/launch_select2.wav" preload="auto"></audio>
+	<audio id="sfx_close" src="media/sounds/common/launch_dnmenu1.wav" preload="auto"></audio>
 
 	<!-- website container -->
 	<div class="container">
 
 		<!-- title with animation -->
-		<h1 id="title1">HλLF-LIFE UNITY<span id="blink">HλLF-LIFE UNITY</span></h1>
+		<a href="../index.html"><h1 id="title1">HλLF-LIFE UNITY<span id="blink">HλLF-LIFE UNITY</span></h1></a>
 
 		<!-- Language popup -->
-		<div id="LanguageList" class="emergent-window" onclick="clickSound();closeElement('LanguageList')">
+		<div id="LanguageList" class="emergent-window" onclick="SFX('sfx_close');closeElement('LanguageList')">
 			<table class="emergent-window-content">
 				<td><button onclick="changeLanguage('english');">English</button></td>
 				<tr>
@@ -34,11 +34,11 @@
 		</div>
 
 		<!-- Contribute popup -->
-		<div id="Contribute" class="emergent-window" onclick="clickSound();closeElement('Contribute')">
+		<div id="Contribute" class="emergent-window" onclick="SFX('sfx_close');closeElement('Contribute');">
 			<table class="emergent-window-content">
 				<td>
 					<!--<img src="media/images/icons/contributor.png" style="width: 28px;">-->
-					<a href="https://github.com/Mikk155/unity/tree/master/docs/sentences.json" target="_blank" pkvd="translations"></a>
+					<a href="https://github.com/Mikk155/unity/tree/master/docs/src/sentences.json" target="_blank" pkvd="translations"></a>
 				<tr>
 				<td>
 					<!--<img src="media/images/icons/dollar.png" style="width: 28px;">-->
@@ -47,37 +47,81 @@
 			</table>
 		</div>
 
+		<!-- Mods popup -->
+		<div id="Mods" class="emergent-window" onclick="SFX('sfx_close');closeElement('Mods');">
+			<div class="chapters-float">
+				<div class="chapter">
+					<a href="">
+						<img src="media/images/banner/background.png">
+						<h3>Half-Life: Episode One</h3>
+					</a>
+				</div>
+			</div>
+		</div>
+
+		<!-- Changelog popup -->
+		<div id="Changelog" class="emergent-window" onclick="SFX('sfx_close');">
+			<div class="emergent-textbox" id="changelog-container">
+			</div>
+		</div>
+
+		<!-- credits popup -->
+		<div id="credits" class="emergent-window" onclick="SFX('sfx_close');">
+			<div class="emergent-textbox" id="credits-container">
+			</div>
+		</div>
+
 		<!-- menu contents -->
 		<table id="menu">
-			<tr>
-				<th><button class="menu-firstsub" pkvd="Language" onclick="openElement('LanguageList')"></a></th>
-				<td pkvd="LanguageSelection"></td>
-			</tr>
 
 			<tr>
-				<th><a class="inactive" pkvd="Mods"></a></th>
+				<th><a class="inactive" pkvd="Mods"></th>
+				<!--
+				<th><button class="menu-firstsub" pkvd="Mods" onclick="SFX('sfx_open');openElement('Mods')" onmouseenter="SFX('sfx_view')"></th>
+				-->
 				<td pkvd="ModsDescription"></td>
 			</tr>
 
 			<tr>
-				<th><a class="inactive" pkvd="EntityGuide"></a></th>
+				<th><a class="inactive" pkvd="EntityGuide"></th>
+				<!--
+				<th><a href="entityguide/index.html" class="menu-firstsub" onclick="SFX('sfx_open');" onmouseenter="SFX('sfx_view')" pkvd="EntityGuide"></a></th>
+				-->
 				<td pkvd="EntityGuideDescription"></td>
 			</tr>
 
 			<tr>
-				<th><a class="inactive" pkvd="Tutorials"></a></th>
+				<th><a class="inactive" pkvd="Tutorials"></th>
+				<!--
+				<th><a href="tutorials/index.html" class="menu-firstsub" onclick="SFX('sfx_open');" onmouseenter="SFX('sfx_view')" pkvd="Tutorials"></a></th>
+				-->
 				<td pkvd="TutorialsDescription"></td>
 			</tr>
 
 			<tr>
+				<th><button class="menu-firstsub" onclick="SFX('sfx_open');openElement('Changelog')" onmouseenter="SFX('sfx_view')">Changelog</th>
+				<td pkvd="Changelog"></td>
+			</tr>
+
+			<tr>
+				<th><button class="menu-firstsub" onclick="SFX('sfx_open');openElement('credits')" pkvd="credits" onmouseenter="SFX('sfx_view')"></th>
+				<td pkvd="creditsDescription"></td>
+			</tr>
+			
+			<tr>
 				<!--<img src="media/images/icons/discord.ico" style="width: 28px;">-->
-				<th class="menu-firstsub">#Discord</th>
+				<th class="menu-firstsub" onmouseenter="SFX('sfx_view')">#Discord</th>
 				<td pkvd="DiscordServer"></td>
 			</tr>
 
 			<tr>
-				<th><button class="menu-firstsub" pkvd="Contribute" onclick="openElement('Contribute')"></a></th>
+				<th><button class="menu-firstsub" pkvd="Contribute" onclick="SFX('sfx_open');openElement('Contribute')" onmouseenter="SFX('sfx_view')"></th>
 				<td pkvd="ContributeDescription"></td>
+			</tr>
+
+			<tr>
+				<th><button class="menu-firstsub" pkvd="Language" onclick="SFX('sfx_open');openElement('LanguageList')" onmouseenter="SFX('sfx_view')"></th>
+				<td pkvd="LanguageSelection"></td>
 			</tr>
 
 		</table>

@@ -38,10 +38,28 @@
 "spanish": "Traducciones"
 },
 
+"credits":
+{
+"english": "Credits",
+"spanish": "Creditos"
+},
+
+"creditsDescription":
+{
+"english": "List of people that have help out by any way.",
+"spanish": "Lista de personas que han ayudado de cualquier forma."
+},
+
 "ModsDescription":
 {
 "english": "Mods, Maps and custom campaigns supported in Unity.",
 "spanish": "Modificaciones, Mapas y campañas personalizadas soportadas en Unity."
+},
+
+"Changelog":
+{
+"english": "List of changes made to the repository. (English only)",
+"spanish": "List de cambios hechos a el repositorio. (Solo en ingles)"
 },
 
 "Mods":

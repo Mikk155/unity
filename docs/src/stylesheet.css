@@ -20,7 +20,7 @@ html{
 
 body{
 	background-color: black;
-	background: url("media/images/banner/background.png");
+	background: url("../media/images/banner/background.png");
 	background-size:cover;
 	font-family: Arial;
 }
@@ -57,10 +57,21 @@ body{
 	color: var( --color-yellow );
 	padding-bottom:22px;
 	text-align: left;
-	width: 200px; 
+	width: 200px;
 }
 
-/* menu button description */
+#menu
+{
+    position: absolute;
+	bottom: 10%;
+	left: 5%;
+}
+
+.menu-firstsub::first-letter
+{
+    text-decoration: underline;
+}
+
 #menu td{
 	font-size: 15px;
 	color: var( --color-background-white );
@@ -290,11 +301,6 @@ button:focus{
 	50%{box-shadow: 0px 0px 20px var( --color-yellow );}
 }
 
-.menu-firstsub::first-letter
-{
-    text-decoration: underline;
-}
-
 .emergent-window
 {
     display: none;
@@ -331,4 +337,72 @@ button:focus{
 #mute-button img {
     width: 100%;
     height: 100%;
+}
+
+.chapters-float
+{
+display: flex;
+flex-direction: column;
+align-items: flex-end;
+flex-wrap: wrap;
+max-width: 100%;
+}
+
+.chapter {
+	margin: 20px;
+	padding: 10px;
+	width: 200px;
+	background-color: #444;
+	border: 2px solid #666;
+	border-radius: 10px;
+	cursor: pointer;
+	transition: background-color 0.3s, border-color 0.3s;
+	vertical-align: top;
+	float: right;
+}
+.chapter img {
+	width: 100%;
+	height: auto;
+	object-fit: cover;
+	border-bottom: 2px solid #666;
+	border-radius: 10px 10px 0 0;
+}
+.chapter h3 {
+	margin: 10px 0;
+}
+.chapter.locked {
+	opacity: 0.5;
+	cursor: not-allowed;
+}
+.chapter:hover:not(.locked) {
+	background-color: #555;
+	border-color: #888;
+}
+
+.emergent-textbox
+{
+	color: var( --color-yellow );
+	padding-bottom:22px;
+	text-align: left;
+    background-color: rgba( 10, 10, 10, 0.8 );
+    margin: 15% auto;
+    padding: 20px;
+    border: 1px solid var( --color-yellow );
+    width: 100%;
+    max-width: 70%;
+    border-radius: 10px;
+}
+
+.big-textbox
+{
+	color: var( --color-yellow );
+	padding-bottom:22px;
+	text-align: left;
+    background-color: rgba( 10, 10, 10, 0.9 );
+    margin: auto;
+    padding: 20px;
+    border: 2px solid var( --color-yellow );
+    width: 100%;
+    max-width: 90%;
+    border-radius: 10px;
 }

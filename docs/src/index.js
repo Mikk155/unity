@@ -1,8 +1,22 @@
+
+
 document.addEventListener( 'DOMContentLoaded', (event) =>
 {
+    fetch('changelog.html').then( response => response.text() ).then( content =>
+    {
+        document.getElementById( 'changelog-container' ).innerHTML = content;
+
+    } ).catch( error => console.error( 'Couldn\'t load changelog from changelog.html', error ) );
+
+    fetch('credits.html').then( response => response.text() ).then( content =>
+    {
+        document.getElementById( 'credits-container' ).innerHTML = content;
+
+    } ).catch( error => console.error( 'Couldn\'t load credits from credits.html', error ) );
+
     // Link references for automatically adding href to these words
     let references = {};
-    fetch( 'references.json' ).then( response => response.json() ).then( data =>
+    fetch( 'src/references.json' ).then( response => response.json() ).then( data =>
     {
         references = data;
 
@@ -10,7 +24,7 @@ document.addEventListener( 'DOMContentLoaded', (event) =>
 
     // Translations goes in sentences.json
     let translations = {};
-    fetch( 'sentences.json' ).then( response => response.json() ).then( data =>
+    fetch( 'src/sentences.json' ).then( response => response.json() ).then( data =>
     {
         translations = data;
 
@@ -72,60 +86,7 @@ document.addEventListener( 'DOMContentLoaded', (event) =>
     };
 });
 
-
-
-
-//i know it looks like yandev made this but it works
-function showAlert() {
-	hideAlert();
-	document.getElementById("messagebox").style.display = "table";
-	document.getElementById("line1").style.display = "inline";
-	document.getElementById("line1").innerHTML = "<br>Alert box example";
-	document.getElementById("githublink").style.display = "inline";
-	document.getElementById("okbutton").display = "inline";
-}
-
-function showServerBrowser(){
-	document.getElementById("serverbrowser").style.display = "table";
-}
-
-function hideServerBrowser(){
-	document.getElementById("serverbrowser").style.display = "none";
-}
-
-//hide all - runs on page load
-function hideAlert() {
-	document.getElementById("messagebox").style.display = "none";
-	document.getElementById("line1").style.display = "none";
-	document.getElementById("line2").style.display = "none";
-	document.getElementById("githublink").style.display = "none";
-	document.getElementById("copybutton").style.display = "none";
-	document.getElementById("okbutton").display = "none";
-}
-
-//copy string "IP" to clipboard
-function copyIP(x){
-	navigator.clipboard.writeText(x);
-}
-
-// shortcut key script
-addEventListener( 'keyup', function(e)
+function SFX( sound )
 {
-	clickSound();
-	//A - Active link
-	if (e.keyCode == 65) location='https://www.half-life.com/';
-	//B - show alert box
-	if (e.keyCode == 66) showAlert();
-	//M - Multiplayer - show server browser
-	if (e.keyCode == 77) showServerBrowser();
-	//ESC - Close server browser
-	if (e.keyCode == 27) hideServerBrowser();
-	//ESC - Close the Alert box
-	if (e.keyCode == 27) hideAlert();
-});
-
-//click sound
-function clickSound()
-{
-	document.getElementById('click').play();
+	document.getElementById( sound ).play();
 }
