@@ -7,21 +7,24 @@ assignees: ''
 ---
 
 <!--A clear and concise description of what your idea is.-->
-# Featyre Suggestion
+# Feature Suggestion
 
 
 
----<!--A clear and concise description of what you expected to happen.-->
+---
+<!--A clear and concise description of what you expected to happen.-->
 # Expected behavior
 
 
 
----<!--If applicable, add screenshots to help explain your idea.-->
+---
+<!--If applicable, add screenshots to help explain your idea.-->
 # Screenshots
 
 
 
----<!--Add any other context about the suggestion here.-->
+---
+<!--Add any other context about the suggestion here.-->
 # Additional context
 
 
