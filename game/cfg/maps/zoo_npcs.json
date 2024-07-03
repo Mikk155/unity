@@ -1,0 +1,20 @@
+{
+	"Includes": [
+		"cfg/HalfLifeConfig.json"
+	],
+	"SectionGroups": [
+	{
+		"Sections": {
+			"SpawnInventory": {
+				"Reset": true,
+				"HasSuit": true
+			},
+			"Skill": {
+				"FileNames": [
+					"cfg/maps/zoo_npcs_skill.json"
+				]
+			}
+		}
+	}
+	]
+}
