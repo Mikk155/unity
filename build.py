@@ -41,7 +41,7 @@ try:
 
     repo = g.get_repo( f'{user}/{repository}' )
 
-    release = repo.create_git_release( version, f"# {gamename}: {modname} ({version})", '', False, True )
+    release = repo.create_git_release( version, f"# {gamename}: {modname} ({version})", '', False, False )
 
     print( f'Generating release version {version}' )
 
