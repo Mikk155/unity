@@ -98,5 +98,196 @@
 "spanish": "Donaciones"
 },
 
+"worldspawn::classname":
+{
+"english": "World Entity",
+"spanish": ""
+},
+
+"worldspawn::classname::description":
+{
+"english": "The world entity is a thing",
+"spanish": ""
+},
+
+"worldspawn::message":
+{
+"english": "Map Description / Title",
+"spanish": ""
+},
+
+"worldspawn::message::description":
+{
+"english": "Message to display",
+"spanish": ""
+},
+
+"worldspawn::skyname":
+{
+"english": "environment map (cl_skyname)",
+"spanish": ""
+},
+
+"worldspawn::skyname::description":
+{
+"english": "",
+"spanish": ""
+},
+
+"worldspawn::light":
+{
+"english": "Default light level",
+"spanish": ""
+},
+
+"worldspawn::light::description":
+{
+"english": "",
+"spanish": ""
+},
+
+"worldspawn::WaveHeight":
+{
+"english": "Default Wave Height",
+"spanish": ""
+},
+
+"worldspawn::WaveHeight::description":
+{
+"english": "",
+"spanish": ""
+},
+
+"worldspawn::MaxRange":
+{
+"english": "Max viewable distance",
+"spanish": ""
+},
+"worldspawn::MaxRange::description":
+{
+"english": "",
+"spanish": ""
+},
+
+"worldspawn::chaptertitle":
+{
+"english": "Chapter Title Message",
+"spanish": ""
+},
+"worldspawn::chaptertitle::description":
+{
+"english": "",
+"spanish": ""
+},
+
+"worldspawn::startdark":
+{
+"english": "Level Fade In",
+"spanish": ""
+},
+"worldspawn::startdark::description":
+{
+"english": "Fade out screen on spawning",
+"spanish": ""
+},
+"worldspawn::startdark::0":
+{
+"english": "Yes",
+"spanish": ""
+},
+"worldspawn::startdark::0::description":
+{
+"english": "Fade in screen",
+"spanish": ""
+},
+"worldspawn::startdark::1":
+{
+"english": "No",
+"spanish": ""
+},
+"worldspawn::startdark::1::description":
+{
+"english": "Don't fade in screen",
+"spanish": ""
+},
+
+"worldspawn::gametitle":
+{
+"english": "Game whose title to display",
+"spanish": ""
+},
+"worldspawn::gametitle::description":
+{
+"english": "",
+"spanish": ""
+},
+
+"worldspawn::newunit":
+{
+"english": "New Level Unit",
+"spanish": ""
+},
+"worldspawn::newunit::description":
+{
+"english": "",
+"spanish": ""
+},
+"worldspawn::newunit::0":
+{
+"english": "No, keep current",
+"spanish": ""
+},
+"worldspawn::newunit::0::description":
+{
+"english": "",
+"spanish": ""
+},
+"worldspawn::newunit::1":
+{
+"english": "Yes, clear previous levels",
+"spanish": ""
+},
+"worldspawn::newunit::1::description":
+{
+"english": "",
+"spanish": ""
+},
+"worldspawn::defaultteam":
+{
+"english": "Default Team",
+"spanish": ""
+},
+"worldspawn::defaultteam::0":
+{
+"english": "Fewest Players",
+"spanish": ""
+},
+"worldspawn::defaultteam::1":
+{
+"english": "First Team",
+"spanish": ""
+},
+
+"worldspawn::mapteams":
+{
+"english": "Map Team List",
+"spanish": ""
+},
+
+"Sequence::sequence":
+{
+"english": "Animation Sequence (editor)",
+"spanish": ""
+},
+
+"Sequence::sequence::description":
+{
+"english": "Sequence to display in Jackhammer. This does not affect gameplay.",
+"spanish": ""
+},
+
+
+
+
 "EOF":true
 }

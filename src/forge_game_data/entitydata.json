@@ -1,0 +1,28 @@
+{
+    "worldspawn":
+    {
+        "Class": "Solid",
+        "data":
+        {
+            "message": { "variable": "string" },
+            "skyname": { "variable": "string" },
+            "light": { "variable": "integer" },
+            "WaveHeight": { "variable": "string" },
+            "MaxRange": { "variable": "string", "value": "4096" },
+            "chaptertitle": { "variable": "string" },
+            "startdark": { "variable": "choices", "value": "0", "choices": [ "0", "1" ] },
+            "gametitle": { "variable": "string" },
+            "newunit": { "variable": "choices", "value": "0", "choices": [ "0", "1" ] },
+            "defaultteam": { "variable": "choices", "value": "0", "choices": [ "0", "1" ] },
+            "mapteams": { "variable": "string", "value": "grunt;scientist" }
+        }
+    },
+    "Sequence":
+    {
+        "Class": "Base",
+        "data":
+        {
+            "sequence": { "variable": "integer" }
+        }
+    }
+}
