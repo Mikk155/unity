@@ -45,7 +45,7 @@ def write_keyvalues( entitydata, classname ):
 
 
 
-def write_class( entdata={}, FGD=None, name='' ):
+def write_class( entdata={}, FGD=None, name='', html=None ):
 
     Class = entdata.get( "Class", '' )
 
@@ -54,6 +54,7 @@ def write_class( entdata={}, FGD=None, name='' ):
     if Class == 'Base':
         FGD.write( '\n[\n' )
     else:
+        html.write( f'<th><button class="menu-firstsub" onclick="SFX(\'sfx_open\');fetchent(\'{name}\')" onmouseenter="SFX(\'sfx_view\')">{name}</th>' )
         FGD.write( f' : "{description( f"{name}::classname" )}" : "{description(f"{name}::classname::description")}"\n[\n' )
 
     if "data" in entdata:
@@ -61,19 +62,18 @@ def write_class( entdata={}, FGD=None, name='' ):
 
     FGD.write( ']\n\n' )
 
-with open( f'{abs}/../../game/half-life-unity.fgd', 'w' ) as FGD, open( f'{abs}/entitydata.json', 'r' ) as Json, open( f'{abs}/../../docs/src/sentences.json', 'r' ) as sentence:
 
+with open( f'{abs}/../../docs/entities.html', 'w' ) as html, open( f'{abs}/../../game/half-life-unity.fgd', 'w' ) as FGD, open( f'{abs}/entitydata.json', 'r' ) as Json, open( f'{abs}/../../docs/src/sentences.json', 'r' ) as sentence:
     JsonData = json.load( Json )
-    JsonData: dict
-
     sentences = json.load( sentence )
-    sentences: dict
 
     for key, value in JsonData.items():
 
-        write_class( FGD=FGD, entdata=JsonData.get( key, {} ), name=key )
+        write_class( FGD=FGD, entdata=JsonData.get( key, {} ), name=key, html=html )
 
-    Json.close()
     FGD.close()
+    Json.close()
+    html.close()
+    sentence.close()
 
-    exit(0)
+exit(0)

@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en-US">
+<html lang="en">
 <head>
 	<title>Half-Life: Unity</title>
 	<meta charset="UTF-8">
@@ -33,6 +33,16 @@
 			</table>
 		</div>
 
+		<!-- This is filled up with a JavaScript function -->
+		<div id="EntityGuideList" class="emergent-window" onclick="SFX('sfx_close');closeElement('EntityGuideList')">
+			<div class="big-textbox" id="entityguide-index-list" style="margin-top: 10%;"></div>
+		</div>
+
+		<!-- This is filled up with a JavaScript function -->
+		<div id="EntityGuideEntity" class="emergent-window" onclick="SFX('sfx_close');closeElement('EntityGuideEntity')">
+			<div class="big-textbox" id="entityguide-entity-list" style="margin-top: 10%;"></div>
+		</div>
+		
 		<!-- Contribute popup -->
 		<div id="Contribute" class="emergent-window" onclick="SFX('sfx_close');closeElement('Contribute');">
 			<table class="emergent-window-content">
@@ -85,7 +95,7 @@
 			<tr>
 				<th><a class="inactive" pkvd="EntityGuide"></th>
 				<!--
-				<th><a href="entityguide/index.html" class="menu-firstsub" onclick="SFX('sfx_open');" onmouseenter="SFX('sfx_view')" pkvd="EntityGuide"></a></th>
+				<th><button class="menu-firstsub" pkvd="EntityGuide" onclick="SFX('sfx_open');openElement('EntityGuideList')" onmouseenter="SFX('sfx_view')"></th>
 				-->
 				<td pkvd="EntityGuideDescription"></td>
 			</tr>
