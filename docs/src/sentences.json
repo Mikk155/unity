@@ -98,6 +98,34 @@
 "spanish": "Donaciones"
 },
 
+"SourceOpen":
+{
+"english": "Open source code",
+"spanish": "Codigo fuente abierto"
+},
+
+"Download":
+{
+"english": "Download",
+"spanish": "Descargar"
+},
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 "worldspawn::classname":
 {
 "english": "World Entity",

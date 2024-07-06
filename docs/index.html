@@ -22,7 +22,7 @@
 	<div class="container">
 
 		<!-- title with animation -->
-		<a href="../index.html"><h1 id="title1">HλLF-LIFE UNITY<span id="blink">HλLF-LIFE UNITY</span></h1></a>
+		<a href="index.html"><h1 id="title1">HλLF-LIFE UNITY<span id="blink">HλLF-LIFE UNITY</span></h1></a>
 
 		<!-- Language popup -->
 		<div id="LanguageList" class="emergent-window" onclick="SFX('sfx_close');closeElement('LanguageList')">
@@ -85,36 +85,33 @@
 		<table id="menu">
 
 			<tr>
-				<th><a class="inactive" pkvd="Mods"></th>
+				<th><a class="inactive" pkvd="Mods"></a></th>
 				<!--
-				<th><button class="menu-firstsub" pkvd="Mods" onclick="SFX('sfx_open');openElement('Mods')" onmouseenter="SFX('sfx_view')"></th>
+				<th><button class="menu-firstsub" pkvd="Mods" onclick="SFX('sfx_open');openElement('Mods')" onmouseenter="SFX('sfx_view')"></button></th>
 				-->
 				<td pkvd="ModsDescription"></td>
 			</tr>
 
 			<tr>
-				<th><a class="inactive" pkvd="EntityGuide"></th>
+				<th><a class="inactive" pkvd="EntityGuide"></a></th>
 				<!--
-				<th><button class="menu-firstsub" pkvd="EntityGuide" onclick="SFX('sfx_open');openElement('EntityGuideList')" onmouseenter="SFX('sfx_view')"></th>
+				<th><button class="menu-firstsub" pkvd="EntityGuide" onclick="SFX('sfx_open');openElement('EntityGuideList')" onmouseenter="SFX('sfx_view')"></button></th>
 				-->
 				<td pkvd="EntityGuideDescription"></td>
 			</tr>
 
 			<tr>
 				<th><a class="inactive" pkvd="Tutorials"></th>
-				<!--
-				<th><a href="tutorials/index.html" class="menu-firstsub" onclick="SFX('sfx_open');" onmouseenter="SFX('sfx_view')" pkvd="Tutorials"></a></th>
-				-->
 				<td pkvd="TutorialsDescription"></td>
 			</tr>
 
 			<tr>
-				<th><button class="menu-firstsub" onclick="SFX('sfx_open');openElement('Changelog')" onmouseenter="SFX('sfx_view')">Changelog</th>
+				<th><button class="menu-firstsub" onclick="SFX('sfx_open');openElement('Changelog')" onmouseenter="SFX('sfx_view')">Changelog</button></th>
 				<td pkvd="Changelog"></td>
 			</tr>
 
 			<tr>
-				<th><button class="menu-firstsub" onclick="SFX('sfx_open');openElement('credits')" pkvd="credits" onmouseenter="SFX('sfx_view')"></th>
+				<th><button class="menu-firstsub" onclick="SFX('sfx_open');openElement('credits')" pkvd="credits" onmouseenter="SFX('sfx_view')"></button></th>
 				<td pkvd="creditsDescription"></td>
 			</tr>
 			
@@ -125,15 +122,25 @@
 			</tr>
 
 			<tr>
-				<th><button class="menu-firstsub" pkvd="Contribute" onclick="SFX('sfx_open');openElement('Contribute')" onmouseenter="SFX('sfx_view')"></th>
+				<th><button class="menu-firstsub" pkvd="Contribute" onclick="SFX('sfx_open');openElement('Contribute')" onmouseenter="SFX('sfx_view')"></button></th>
 				<td pkvd="ContributeDescription"></td>
 			</tr>
 
 			<tr>
-				<th><button class="menu-firstsub" pkvd="Language" onclick="SFX('sfx_open');openElement('LanguageList')" onmouseenter="SFX('sfx_view')"></th>
+				<th><button class="menu-firstsub" pkvd="Language" onclick="SFX('sfx_open');openElement('LanguageList')" onmouseenter="SFX('sfx_view')"></button></th>
 				<td pkvd="LanguageSelection"></td>
 			</tr>
+			
+			<tr>
+				<th><a target="_blank" href="https://github.com/Mikk155/unity/releases"><button pkvd="Download" class="menu-firstsub" onclick="SFX('sfx_open');" onmouseenter="SFX('sfx_view')">Source</button></a></th>
+				<td></td>
+			</tr>
 
+			<tr>
+				<th><a target="_blank" href="https://github.com/Mikk155/unity"><button class="menu-firstsub" onclick="SFX('sfx_open');" onmouseenter="SFX('sfx_view')">Source</button></a></th>
+				<td pkvd="SourceOpen"></td>
+			</tr>
+			
 		</table>
 	</div>
 </body>
