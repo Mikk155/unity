@@ -66,6 +66,22 @@
 "english": "Donations",
 "spanish": "Donaciones"
 },
+"Misc": {
+"english": "Misc",
+"spanish": "Varios"
+},
+"Programing": {
+"english": "Programing",
+"spanish": "Programando"
+},
+"SpecialThanks": {
+"english": "Special Thanks",
+"spanish": "Especialmente gracias a"
+},
+"CreditsWrong": {
+"english": "If any of these links fails or you consider your name should be there let us know.",
+"spanish": "Si alguno de estos enlaces falla o consideras que tu nombre deberia estar ahi dejanos saber."
+},
 "SourceOpen": {
 "english": "Open source code",
 "spanish": "Codigo fuente abierto"
