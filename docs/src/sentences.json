@@ -114,6 +114,42 @@
 "english": "Team Play",
 "spanish": ""
 },
+"content_installer_1": {
+"english": "The Content Installer tool is used to copy, convert and upgrade Half-Life game assets for a mod installation.",
+"spanish": ""
+},
+"content_installer_2": {
+"english": "This will copy campaign, training and multiplayer maps and apply any necessary upgrades and bug fixes.",
+"spanish": ""
+},
+"content_installer_3": {
+"english": "It will also install a default `config.cfg` with correct key bindings if there is none in the mod directory.",
+"spanish": ""
+},
+"content_installer_4": {
+"english": "Path to the mod directory",
+"spanish": ""
+},
+"content_installer_5": {
+"english": "If provided no file changes will be written to disk",
+"spanish": ""
+},
+"content_installer_6": {
+"english": "The diagnostics level to set",
+"spanish": ""
+},
+"content_installer_7": {
+"english": "Show version information",
+"spanish": ""
+},
+"content_installer_8": {
+"english": "Show help and usage information",
+"spanish": ""
+},
+"content_installer_9": {
+"english": "You can optionally provide `--dry-run` to see which files would be copied without actually making any changes.",
+"spanish": ""
+},
 "worldspawn::classname": {
 "english": "World entity",
 "spanish": ""

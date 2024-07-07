@@ -51,8 +51,10 @@
 					<a href="https://github.com/Mikk155/unity/tree/master/docs/src/sentences.json" target="_blank" pkvd="translations"></a>
 				<tr>
 				<td>
-					<!--<img src="media/images/icons/dollar.png" style="width: 28px;">-->
 					<a href="https://paypal.me/mikk1555" target="_blank" pkvd="donations"></a>
+				<tr>
+				<td>
+					<a href="https://github.com/Mikk155/unity/fork" target="_blank" pkvd="SourceOpen"></a>
 				<tr>
 			</table>
 		</div>
@@ -112,9 +114,10 @@
 		</div>
 
 		<!-- Official Expansions -->
-		<div id="VGCampaigns" class="emergent-window" onclick="SFX('sfx_close');">
+		<div id="VGCampaigns" class="emergent-window" onclick="SFX('sfx_close');closeElement('VGCampaigns');">
 			<div class="emergent-textbox">
 				<span style="background-color:rgb(255, 0, 0);font-size: xx-large;" pkvd="valve_expansions"></span>
+				<br>
 				<br>
 				<li pkvd="valve_expansions_1"></li>
 				<br>
@@ -122,8 +125,60 @@
 				<br>
 				<li pkvd="valve_expansions_3"></li>
 				<br>
-				<a target="_blank" href="tools/content-installer.md"><li pkvd="valve_expansions_4"></li></a>
-				<div class="emergent-textbox" style="max-width: none;margin: 10px auto;">cd "path/to/Half-Life/directory"<br>dotnet "hlu/tools/ContentInstaller.dll" --mod-directory hlu</div>
+				<button onclick="openElement('content-installer')"><li pkvd="valve_expansions_4"></li></button>
+				<div class="emergent-textbox" style="max-width: none;margin: 10px auto;">cd "path/to/Half-Life/directory"<br>dotnet "unity/tools/ContentInstaller.dll" --mod-directory unity</div>
+			</div>
+		</div>
+
+		<!-- content-installer.md -->
+		<div id="content-installer" class="emergent-window" onclick="SFX('sfx_close');">
+			<div class="emergent-textbox">
+				<span style="background-color:rgb(255, 0, 0);font-size: xx-large;" pkvd="valve_expansions"></span>
+				<br>
+				<br>
+				<li pkvd="content_installer_1"></li>
+				<br>
+				<li pkvd="content_installer_2"></li>
+				<br>
+				<li pkvd="content_installer_3"></li>
+				<br>
+				ContentInstaller.exe
+				<br>
+				<div class="emergent-textbox" style="max-width: none;margin: 10px auto;">
+					<b class="inactive" pkvd="content_installer_4"></b>
+					<br>
+					--mod-directory unity
+					<br>
+					<br>
+					<b class="inactive" pkvd="content_installer_5"></b>
+					<br>
+					--dry-run
+					<br>
+					<br>
+					<b class="inactive" pkvd="content_installer_6"></b> <b class="inactive" pkvd="content_installer_6">[default: Disabled]</b>
+					<br>
+					--diagnostics-level ( All | Common | Disabled )
+					<br>
+					<br>
+					<b class="inactive" pkvd="content_installer_7"></b>
+					<br>
+					--version
+					<br>
+					<br>
+					<b class="inactive" pkvd="content_installer_8"></b>
+					<br>
+					-?, -h, --help
+				</div>
+				<br>
+				<li pkvd="content_installer_9"></li>
+				<br>
+			</div>
+		</div>
+
+		<!-- tutorials popup -->
+		<div id="tutorials" class="emergent-window" onclick="SFX('sfx_close');closeElement('tutorials')">
+			<div class="emergent-textbox">
+				<li><button pkvd="valve_expansions" class="menu-firstsub" onclick="SFX('sfx_open');openElement('VGCampaigns')" onmouseenter="SFX('sfx_view')"></li>
 			</div>
 		</div>
 
@@ -153,10 +208,10 @@
 			</tr>
 
 			<tr>
-				<th><a class="inactive" pkvd="Tutorials"></th>
+				<th><button class="menu-firstsub" onclick="SFX('sfx_open');openElement('tutorials')" pkvd="Tutorials" onmouseenter="SFX('sfx_view')"></button></th>
 				<td pkvd="TutorialsDescription"></td>
 			</tr>
-
+			
 			<tr>
 				<th><button class="menu-firstsub" onclick="SFX('sfx_open');openElement('Changelog')" onmouseenter="SFX('sfx_view')">Changelog</button></th>
 				<td pkvd="Changelog"></td>
