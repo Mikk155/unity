@@ -62,14 +62,14 @@ body{
 
 #menu
 {
-    position: absolute;
+	position: absolute;
 	bottom: 10%;
 	left: 5%;
 }
 
 .menu-firstsub::first-letter
 {
-    text-decoration: underline;
+	text-decoration: underline;
 }
 
 #menu td{
@@ -80,9 +80,9 @@ body{
 }
 
 button {
-  background: none;
-  border: none;
-  padding: 0;
+	background: none;
+	border: none;
+	padding: 0;
 }
 
 /* links and buttons */
@@ -238,33 +238,33 @@ button:focus{
 
 /* responsive web stuff */
 @media (min-width:768px) {
-    .container {
-        width: 750px;
-    }
+	.container {
+		width: 750px;
+	}
 }
 
 @media (min-width:992px) {
-    .container {
-        width: 970px
-    }
+	.container {
+		width: 970px
+	}
 }
 
 @media (min-width:1200px) {
-    .container {
-        width: 1170px
-    }
+	.container {
+		width: 1170px
+	}
 }
 .container {
-    padding-right: 15px;
-    padding-left: 15px;
-    margin-right: auto;
-    margin-left: auto;
+	padding-right: 15px;
+	padding-left: 15px;
+	margin-right: auto;
+	margin-left: auto;
 }
 
 * {
-    -webkit-box-sizing: border-box;
-    -moz-box-sizing: border-box;
-    box-sizing: border-box;
+	-webkit-box-sizing: border-box;
+	-moz-box-sizing: border-box;
+	box-sizing: border-box;
 }
 
 /* animations */
@@ -303,55 +303,56 @@ button:focus{
 
 .emergent-window
 {
-    display: none;
-    position: fixed;
-    text-align: center;
-    z-index: 1;
-    left: 0;
-    top: 0;
-    width: 100%;
-    height: 100%;
-    overflow: auto;
+	display: none;
+	position: fixed;
+	text-align: center;
+	z-index: 1;
+	left: 0;
+	top: 0;
+	width: 100%;
+	height: 100%;
+	overflow: auto;
 }
 
 .emergent-window-content
 {
-    background-color: rgba( 200, 200, 200, 0.3 );
-    margin: 15% auto;
-    padding: 20px;
-    border: 1px solid var( --color-background-white );
-    width: 80%;
-    max-width: 500px;
-    border-radius: 10px;
+	background-color: rgba( 200, 200, 200, 0.3 );
+	margin: 15% auto;
+	padding: 20px;
+	border: 1px solid var( --color-background-white );
+	width: 80%;
+	max-width: 500px;
+	border-radius: 10px;
 }
 
 #mute-button {
-    position: fixed;
-    bottom: 20px;
-    right: 20px;
-    width: 50px;
-    height: 50px;
-    cursor: pointer;
+	position: fixed;
+	bottom: 20px;
+	right: 20px;
+	width: 50px;
+	height: 50px;
+	cursor: pointer;
 }
 
 #mute-button img {
-    width: 100%;
-    height: 100%;
+	width: 100%;
+	height: 100%;
 }
 
-.chapters-float
+.chapters
 {
-display: flex;
-flex-direction: column;
-align-items: flex-end;
-flex-wrap: wrap;
-max-width: 100%;
+	display: flex;
+	flex-direction: column;
+	padding: 200px;
+	text-align: center;
+	width: 50%;
+	float:inline-end;
 }
 
 .chapter {
 	margin: 20px;
 	padding: 10px;
-	width: 200px;
+	width: 400px;
 	background-color: #444;
 	border: 2px solid #666;
 	border-radius: 10px;
@@ -360,23 +361,18 @@ max-width: 100%;
 	vertical-align: top;
 	float: right;
 }
-.chapter img {
+
+.chapter:hover {
+	border: 2px solid var(--color-yellow);
+	background-color: var(--color-background-white);
+}
+
+.chapters img {
 	width: 100%;
-	height: auto;
+	height: 100%;
 	object-fit: cover;
 	border-bottom: 2px solid #666;
 	border-radius: 10px 10px 0 0;
-}
-.chapter h3 {
-	margin: 10px 0;
-}
-.chapter.locked {
-	opacity: 0.5;
-	cursor: not-allowed;
-}
-.chapter:hover:not(.locked) {
-	background-color: #555;
-	border-color: #888;
 }
 
 .emergent-textbox
@@ -384,13 +380,13 @@ max-width: 100%;
 	color: var( --color-yellow );
 	padding-bottom:22px;
 	text-align: left;
-    background-color: rgba( 10, 10, 10, 0.8 );
-    margin: 15% auto;
-    padding: 20px;
-    border: 1px solid var( --color-yellow );
-    width: 100%;
-    max-width: 70%;
-    border-radius: 10px;
+	background-color: rgba( 10, 10, 10, 0.8 );
+	margin: 15% auto;
+	padding: 20px;
+	border: 1px solid var( --color-yellow );
+	width: 100%;
+	max-width: 70%;
+	border-radius: 10px;
 }
 
 .big-textbox
@@ -398,11 +394,11 @@ max-width: 100%;
 	color: var( --color-yellow );
 	padding-bottom:22px;
 	text-align: left;
-    background-color: rgba( 10, 10, 10, 0.9 );
-    margin: auto;
-    padding: 20px;
-    border: 2px solid var( --color-yellow );
-    width: 100%;
-    max-width: 90%;
-    border-radius: 10px;
+	background-color: rgba( 10, 10, 10, 0.9 );
+	margin: auto;
+	padding: 20px;
+	border: 2px solid var( --color-yellow );
+	width: 100%;
+	max-width: 90%;
+	border-radius: 10px;
 }
