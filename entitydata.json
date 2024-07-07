@@ -565,7 +565,7 @@
 			"is_player_ally":
 			{
 				"variable": "choices",
-				"value": "Is Player Ally",
+				"value": "0",
 				"choices":
 				[
 					"0",
