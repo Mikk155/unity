@@ -52,8 +52,11 @@ document.addEventListener( 'DOMContentLoaded', (event) =>
         document.querySelectorAll( "[pkvd]" ).forEach( element =>
         {
             const key = element.getAttribute( "pkvd" );
+            const value = translations[ key ][ language ];
 
-            element.innerText = translations[ key ][ language ];
+            // innerHTML seems to add elements. not sure the difference.
+            // element.innerText = value && value != '' ? value : 'Trans#' + key;
+            element.innerHTML = value && value != '' ? value : 'Trans#' + key;
         } );
 
         // Fill up with links if referenced
