@@ -2,3 +2,6 @@
 !utils/procinfo/lib/win32_vc6/procinfo.lib
 
 .vscode/
+
+# Generate a fresh one on releases
+game/half-life-unity.fgd
