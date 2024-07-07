@@ -53,7 +53,8 @@ body{
 }
 
 /* menu button */
-#menu th{
+#menu th
+{
 	color: var( --color-yellow );
 	padding-bottom:22px;
 	text-align: left;
@@ -87,7 +88,7 @@ button {
 
 /* links and buttons */
 a, button{
-	cursor: default;
+	cursor:pointer;
 	color: var( --color-yellow );
 	text-decoration: none;
 	transition-duration: 1s;
@@ -350,13 +351,21 @@ button:focus{
 }
 
 .chapter {
-	margin: 20px;
-	padding: 10px;
 	width: 400px;
 	background-color: #444;
 	border: 2px solid #666;
 	border-radius: 10px;
-	cursor: pointer;
+	transition: background-color 0.3s, border-color 0.3s;
+}
+
+.chapter-gamemodes {
+	color: var( --color-yellow );
+	font-size: 30px;
+	width: 500px;
+	padding: 50px;
+	background-color: rgba( 10, 10, 10, 0.8 );
+	border: 2px solid var( --color-yellow );
+	border-radius: 10px;
 	transition: background-color 0.3s, border-color 0.3s;
 	vertical-align: top;
 	float: right;

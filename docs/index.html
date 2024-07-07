@@ -60,12 +60,70 @@
 		<!-- Mods popup -->
 		<div id="Mods" class="emergent-window" onclick="SFX('sfx_close');closeElement('Mods');">
 			<div class="chapters">
-				<a href="https://mikk155.github.io/episodic/" target="_blank">
+				<div class="chapter-gamemodes">
+					<h3 pkvd="Cooperative"></h3>
+					<br>
+					<h3 pkvd="SinglePlayer"></h3>
+					<br>
 					<div class="chapter">
-						<img src="https://github.com/Mikk155/episodic/blob/main/docs/media/header.jpg?raw=true" alt="Chapter 1">
-						<h3>Half-Life: Episode One</h3>
+						<button onclick="openElement('VGCampaigns')">
+							<img src="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/70/header.jpg?t=1700269108">
+							<h3>Half-Life</h3>
+						</a>
 					</div>
-				</a>
+					<br>
+					<div class="chapter">
+						<a href="https://mikk155.github.io/episodic/" target="_blank">
+							<img src="https://github.com/Mikk155/episodic/blob/main/docs/media/header.jpg?raw=true">
+							<h3>Half-Life: Episode One</h3>
+						</a>
+					</div>
+					<br>
+					<div class="chapter">
+						<button onclick="openElement('VGCampaigns')">
+							<img src="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/50/header.jpg?t=1579628243">
+							<h3>Half-Life: Opposing Force</h3>
+						</a>
+					</div>
+					<br>
+					<div class="chapter">
+						<button onclick="openElement('VGCampaigns')">
+							<img src="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/130/header.jpg?t=1579629868">
+							<h3>Half-Life: Blue Shift</h3>
+						</a>
+					</div>
+					<br>
+					<div class="chapter">
+						<button onclick="openElement('VGCampaigns')">
+							<img src="https://m.media-amazon.com/images/M/MV5BOGJkNDVhYzYtZjA4ZC00MzZmLWFlYmEtYjk5YThlNWVkNjUyXkEyXkFqcGdeQXVyMTEwNTU2MTkx._V1_.jpg">
+							<h3>Half-Life: Uplink</h3>
+						</a>
+					</div>
+					<br>
+					<h3 pkvd="Cooperative"></h3>
+					<br>
+					<h3 pkvd="DeathMatch"></h3>
+					<br>
+					<h3 pkvd="CaptureTheFlag"></h3>
+					<br>
+					<h3 pkvd="TeamPlay"></h3>
+				</div>
+			</div>
+		</div>
+
+		<!-- Official Expansions -->
+		<div id="VGCampaigns" class="emergent-window" onclick="SFX('sfx_close');">
+			<div class="emergent-textbox">
+				<span style="background-color:rgb(255, 0, 0);font-size: xx-large;" pkvd="valve_expansions"></span>
+				<br>
+				<li pkvd="valve_expansions_1"></li>
+				<br>
+				<a target="_blank" href="dotnet-tools.md#installing-the-net-sdk"><li pkvd="valve_expansions_2"></li></a>
+				<br>
+				<li pkvd="valve_expansions_3"></li>
+				<br>
+				<a target="_blank" href="tools/content-installer.md"><li pkvd="valve_expansions_4"></li></a>
+				<div class="emergent-textbox" style="max-width: none;margin: 10px auto;">cd "path/to/Half-Life/directory"<br>dotnet "hlu/tools/ContentInstaller.dll" --mod-directory hlu</div>
 			</div>
 		</div>
 

@@ -74,6 +74,46 @@
 "english": "Download",
 "spanish": "Descargar"
 },
+"valve_expansions": {
+"english": "Installing expansions from steam",
+"spanish": ""
+},
+"valve_expansions_1": {
+"english": "Install the Visual Studio 2022 re-distributable. You can find it in the `unity/redist` directory.",
+"spanish": ""
+},
+"valve_expansions_2": {
+"english": "Install the .NET 6 SDK which includes the runtime. Make sure to install the latest version as the runtime is updated regularly.",
+"spanish": ""
+},
+"valve_expansions_3": {
+"english": "Switch Half-Life to the `steam_legacy` branch. The Unified SDK has not been updated to the anniversary version and requires the old version. This is only required during installation; after installation you can switch back to the anniversary version.",
+"spanish": ""
+},
+"valve_expansions_4": {
+"english": "Run the tool in a command line window:",
+"spanish": ""
+},
+"SinglePlayer": {
+"english": "Single Player",
+"spanish": ""
+},
+"Cooperative": {
+"english": "Cooperative",
+"spanish": ""
+},
+"DeathMatch": {
+"english": "DeathMatch",
+"spanish": ""
+},
+"CaptureTheFlag": {
+"english": "Capture The Flag",
+"spanish": ""
+},
+"TeamPlay": {
+"english": "Team Play",
+"spanish": ""
+},
 "worldspawn::classname": {
 "english": "World entity",
 "spanish": ""
