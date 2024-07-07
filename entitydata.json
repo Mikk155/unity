@@ -1,0 +1,7977 @@
+{
+	"worldspawn":
+	{
+		"Class": "Solid",
+		"base": [],
+		"data":
+		{
+			"message":
+			{
+				"variable": "string",
+				"value": ""
+			},
+			"skyname":
+			{
+				"variable": "string",
+				"value": ""
+			},
+			"light":
+			{
+				"variable": "integer",
+				"value": ""
+			},
+			"WaveHeight":
+			{
+				"variable": "string",
+				"value": ""
+			},
+			"MaxRange":
+			{
+				"variable": "string",
+				"value": "4096"
+			},
+			"chaptertitle":
+			{
+				"variable": "string",
+				"value": ""
+			},
+			"startdark":
+			{
+				"variable": "choices",
+				"value": "0",
+				"choices":
+				[
+					"0",
+					"1"
+				]
+			},
+			"gametitle":
+			{
+				"variable": "string",
+				"value": ""
+			},
+			"newunit":
+			{
+				"variable": "choices",
+				"value": "0",
+				"choices":
+				[
+					"0",
+					"1"
+				]
+			},
+			"mapteams":
+			{
+				"variable": "string",
+				"value": "grunt;scientist"
+			},
+			"defaultteam":
+			{
+				"variable": "choices",
+				"value": "0",
+				"choices":
+				[
+					"0",
+					"1"
+				]
+			}
+		}
+	},
+	"Sequence":
+	{
+		"Class": "Base",
+		"base": [],
+		"data":
+		{
+			"sequence":
+			{
+				"variable": "integer",
+				"value": ""
+			}
+		}
+	},
+	"ZHLT":
+	{
+		"Class": "Base",
+		"base": [],
+		"data":
+		{
+			"zhlt_lightflags":
+			{
+				"variable": "choices",
+				"value": "0",
+				"choices":
+				[
+					"0",
+					"1",
+					"2",
+					"3",
+					"6"
+				]
+			},
+			"light_origin":
+			{
+				"variable": "string",
+				"value": ""
+			}
+		}
+	},
+	"ZHLT_point":
+	{
+		"Class": "Base",
+		"base": [],
+		"data":
+		{
+			"_fade":
+			{
+				"variable": "string",
+				"value": "1.0"
+			},
+			"_falloff":
+			{
+				"variable": "choices",
+				"value": "0",
+				"choices":
+				[
+					"0",
+					"1",
+					"2"
+				]
+			}
+		}
+	},
+	"Appearflags":
+	{
+		"Class": "Base",
+		"base": [],
+		"data":
+		{
+			"spawnflags":
+			{
+				"variable": "flags",
+				"value": "",
+				"choices":
+				[
+					"2048"
+				]
+			}
+		}
+	},
+	"Angles":
+	{
+		"Class": "Base",
+		"base": [],
+		"data":
+		{
+			"angles":
+			{
+				"variable": "string",
+				"value": "0 0 0"
+			}
+		}
+	},
+	"ReplacementFiles":
+	{
+		"Class": "Base",
+		"base": [],
+		"data":
+		{
+			"model_replacement_filename":
+			{
+				"variable": "string",
+				"value": ""
+			},
+			"sound_replacement_filename":
+			{
+				"variable": "string",
+				"value": ""
+			},
+			"sentence_replacement_filename":
+			{
+				"variable": "string",
+				"value": ""
+			}
+		}
+	},
+	"CustomModel":
+	{
+		"Class": "Base",
+		"base": ["ReplacementFiles"],
+		"data":
+		{
+			"model":
+			{
+				"variable": "studio",
+				"value": ""
+			},
+			"custom_hull_min":
+			{
+				"variable": "string",
+				"value": ""
+			},
+			"custom_hull_max":
+			{
+				"variable": "string",
+				"value": ""
+			}
+		}
+	},
+	"Targetname":
+	{
+		"Class": "Base",
+		"base": [],
+		"data":
+		{
+			"targetname":
+			{
+				"variable": "target_source",
+				"value": ""
+			}
+		}
+	},
+	"Target":
+	{
+		"Class": "Base",
+		"base": [],
+		"data":
+		{
+			"target":
+			{
+				"variable": "target_destination",
+				"value": ""
+			}
+		}
+	},
+	"Global":
+	{
+		"Class": "Base",
+		"base": [],
+		"data":
+		{
+			"globalname":
+			{
+				"variable": "string",
+				"value": ""
+			}
+		}
+	},
+	"Targetx":
+	{
+		"Class": "Base",
+		"base": ["Target"],
+		"data":
+		{
+			"killtarget":
+			{
+				"variable": "target_destination",
+				"value": ""
+			},
+			"delay":
+			{
+				"variable": "string",
+				"value": "0"
+			}
+		}
+	},
+	"Master":
+	{
+		"Class": "Base",
+		"base": [],
+		"data":
+		{
+			"master":
+			{
+				"variable": "target_destination",
+				"value": ""
+			}
+		}
+	},
+	"RenderFxChoices":
+	{
+		"Class": "Base",
+		"base": [],
+		"data":
+		{
+			"renderfx":
+			{
+				"variable": "choices",
+				"value": "0",
+				"choices":
+				[
+					"0",
+					"1",
+					"2",
+					"3",
+					"4",
+					"9",
+					"10",
+					"11",
+					"12",
+					"13",
+					"5",
+					"6",
+					"7",
+					"8",
+					"14",
+					"15",
+					"16"
+				]
+			}
+		}
+	},
+	"RenderFields":
+	{
+		"Class": "Base",
+		"base": ["RenderFxChoices"],
+		"data":
+		{
+			"rendermode":
+			{
+				"variable": "choices",
+				"value": "0",
+				"choices":
+				[
+					"0",
+					"1",
+					"2",
+					"3",
+					"4",
+					"5"
+				]
+			},
+			"renderamt":
+			{
+				"variable": "integer",
+				"value": ""
+			},
+			"rendercolor":
+			{
+				"variable": "color255",
+				"value": "0 0 0"
+			}
+		}
+	},
+	"OtherItem":
+	{
+		"Class": "Base",
+		"base": ["Targetname", "Appearflags", "Angles", "CustomModel"],
+		"size": [ [ -16, -16, 0 ], [ 16, 16, 32 ] ],
+		"color": [0, 0, 200],
+		"data":
+		{
+
+		}
+	},
+	"BaseItem":
+	{
+		"Class": "Base",
+		"base": ["Targetname", "Appearflags", "Angles", "CustomModel"],
+		"size": [ [ -16, -16, 0 ], [ 16, 16, 32 ] ],
+		"color": [0, 0, 200],
+		"data":
+		{
+			"respawn_delay":
+			{
+				"variable": "string",
+				"value": ""
+			},
+			"stay_visible_during_respawn":
+			{
+				"variable": "choices",
+				"value": "0",
+				"choices":
+				[
+					"0",
+					"1"
+				]
+			},
+			"flash_on_respawn":
+			{
+				"variable": "choices",
+				"value": "1",
+				"choices":
+				[
+					"0",
+					"1"
+				]
+			},
+			"play_pickup_sound":
+			{
+				"variable": "choices",
+				"value": "1",
+				"choices":
+				[
+					"0",
+					"1"
+				]
+			},
+			"fall_mode":
+			{
+				"variable": "choices",
+				"value": "0",
+				"choices":
+				[
+					"0",
+					"1"
+				]
+			},
+			"trigger_on_spawn":
+			{
+				"variable": "target_destination",
+				"value": ""
+			},
+			"trigger_on_despawn":
+			{
+				"variable": "target_destination",
+				"value": ""
+			}
+		}
+	},
+	"Ammo":
+	{
+		"Class": "Base",
+		"base": ["BaseItem"],
+		"color": [80, 0, 200],
+		"data":
+		{
+			"ammo_amount":
+			{
+				"variable": "integer",
+				"value": ""
+			}
+		}
+	},
+	"Weapon":
+	{
+		"Class": "Base",
+		"base": ["BaseItem"],
+		"color": [0, 0, 200],
+		"data":
+		{
+			"default_ammo":
+			{
+				"variable": "integer",
+				"value": ""
+			}
+		}
+	},
+	"Item":
+	{
+		"Class": "Base",
+		"base": ["BaseItem"],
+		"color": [0, 0, 200],
+		"data":
+		{
+
+		}
+	},
+	"BaseCharger":
+	{
+		"Class": "Base",
+		"base": ["Master", "Global", "RenderFields", "ZHLT", "ReplacementFiles"],
+		"data":
+		{
+			"fire_on_recharge":
+			{
+				"variable": "target_destination",
+				"value": ""
+			},
+			"fire_on_empty":
+			{
+				"variable": "target_destination",
+				"value": ""
+			},
+			"fire_on_spawn":
+			{
+				"variable": "choices",
+				"value": "1",
+				"choices":
+				[
+					"0",
+					"1"
+				]
+			},
+			"total_juice":
+			{
+				"variable": "integer",
+				"value": ""
+			},
+			"recharge_delay":
+			{
+				"variable": "integer",
+				"value": ""
+			},
+			"charge_per_use":
+			{
+				"variable": "integer",
+				"value": ""
+			},
+			"_minlight":
+			{
+				"variable": "string",
+				"value": ""
+			}
+		}
+	},
+	"PlayerClass":
+	{
+		"Class": "Base",
+		"base": ["Appearflags", "Angles"],
+		"size": [ [ -16, -16, -36 ], [ 16, 16, 36 ] ],
+		"color": [0, 255, 0],
+		"flags": "Angle",
+		"offset": [0, 0, 36],
+		"data":
+		{
+
+		}
+	},
+	"Unkillable":
+	{
+		"Class": "Base",
+		"base": [],
+		"data":
+		{
+			"unkillable":
+			{
+				"variable": "choices",
+				"value": "0",
+				"choices":
+				[
+					"0",
+					"1"
+				]
+			}
+		}
+	},
+	"Monster":
+	{
+		"Class": "Base",
+		"base": ["Target", "Targetname", "RenderFields", "Angles", "CustomModel", "Unkillable"],
+		"color": [0, 200, 200],
+		"flags": "Angle",
+		"data":
+		{
+			"health":
+			{
+				"variable": "integer",
+				"value": ""
+			},
+			"classification":
+			{
+				"variable": "string",
+				"value": ""
+			},
+			"is_player_ally":
+			{
+				"variable": "choices",
+				"value": "Is Player Ally",
+				"choices":
+				[
+					"0",
+					"1",
+					"2"
+				]
+			},
+			"TriggerTarget":
+			{
+				"variable": "string",
+				"value": ""
+			},
+			"TriggerCondition":
+			{
+				"variable": "choices",
+				"value": "0",
+				"choices":
+				[
+					"0",
+					"1",
+					"2",
+					"3",
+					"4",
+					"7",
+					"8",
+					"9",
+					"10",
+					"11"
+				]
+			},
+			"spawnflags":
+			{
+				"variable": "flags",
+				"value": "",
+				"choices":
+				[
+					"1",
+					"2",
+					"4",
+					"16",
+					"128",
+					"256",
+					"512"
+				]
+			},
+			"allow_item_dropping":
+			{
+				"variable": "choices",
+				"value": "1",
+				"choices":
+				[
+					"0",
+					"1"
+				]
+			},
+			"allow_follow":
+			{
+				"variable": "choices",
+				"value": "1",
+				"choices":
+				[
+					"0",
+					"1"
+				]
+			},
+			"UseSentence":
+			{
+				"variable": "string",
+				"value": ""
+			},
+			"UnUseSentence":
+			{
+				"variable": "string",
+				"value": ""
+			}
+		}
+	},
+	"MonsterWithChildren":
+	{
+		"Class": "Base",
+		"base": [],
+		"data":
+		{
+			"child_classification":
+			{
+				"variable": "string",
+				"value": ""
+			}
+		}
+	},
+	"TalkMonster":
+	{
+		"Class": "Base",
+		"base": [],
+		"data":
+		{
+			"suspicious":
+			{
+				"variable": "choices",
+				"value": "0",
+				"choices":
+				[
+					"0",
+					"1"
+				]
+			}
+		}
+	},
+	"gibshooterbase":
+	{
+		"Class": "Base",
+		"base": ["Targetname", "Angles"],
+		"size": [ [ -16, -16, -16 ], [ 16, 16, 16 ] ],
+		"data":
+		{
+			"m_iGibs":
+			{
+				"variable": "integer",
+				"value": "3"
+			},
+			"delay":
+			{
+				"variable": "string",
+				"value": "0"
+			},
+			"m_flVelocity":
+			{
+				"variable": "integer",
+				"value": "200"
+			},
+			"m_flVariance":
+			{
+				"variable": "string",
+				"value": "0.15"
+			},
+			"m_flGibLife":
+			{
+				"variable": "string",
+				"value": "4"
+			},
+			"spawnflags":
+			{
+				"variable": "flags",
+				"value": "",
+				"choices":
+				[
+					"1"
+				]
+			}
+		}
+	},
+	"Light":
+	{
+		"Class": "Base",
+		"base": [],
+		"data":
+		{
+			"_light":
+			{
+				"variable": "color255",
+				"value": "255 255 128 200"
+			},
+			"style":
+			{
+				"variable": "choices",
+				"value": "0",
+				"choices":
+				[
+					"0",
+					"10",
+					"2",
+					"11",
+					"5",
+					"1",
+					"6",
+					"3",
+					"7",
+					"8",
+					"4",
+					"9"
+				]
+			},
+			"pattern":
+			{
+				"variable": "string",
+				"value": ""
+			}
+		}
+	},
+	"Breakable":
+	{
+		"Class": "Base",
+		"base": ["Targetname", "Global", "ReplacementFiles"],
+		"data":
+		{
+			"target":
+			{
+				"variable": "target_destination",
+				"value": ""
+			},
+			"health":
+			{
+				"variable": "integer",
+				"value": "1"
+			},
+			"material":
+			{
+				"variable": "choices",
+				"value": "0",
+				"choices":
+				[
+					"0",
+					"1",
+					"2",
+					"3",
+					"4",
+					"5",
+					"6",
+					"7",
+					"8"
+				]
+			},
+			"explosion":
+			{
+				"variable": "choices",
+				"value": "0",
+				"choices":
+				[
+					"0",
+					"1"
+				]
+			},
+			"delay":
+			{
+				"variable": "string",
+				"value": "0"
+			},
+			"gibmodel":
+			{
+				"variable": "studio",
+				"value": ""
+			},
+			"spawnobject":
+			{
+				"variable": "string",
+				"value": ""
+			},
+			"explodemagnitude":
+			{
+				"variable": "integer",
+				"value": "0"
+			}
+		}
+	},
+	"Door":
+	{
+		"Class": "Base",
+		"base": ["Appearflags", "Targetname", "Targetx", "RenderFields", "Global", "Angles", "Master", "ReplacementFiles"],
+		"data":
+		{
+			"speed":
+			{
+				"variable": "integer",
+				"value": "100"
+			},
+			"movesnd":
+			{
+				"variable": "sound",
+				"value": ""
+			},
+			"stopsnd":
+			{
+				"variable": "sound",
+				"value": ""
+			},
+			"wait":
+			{
+				"variable": "choices",
+				"value": "4",
+				"choices":
+				[
+					"-1"
+				]
+			},
+			"lip":
+			{
+				"variable": "integer",
+				"value": ""
+			},
+			"dmg":
+			{
+				"variable": "integer",
+				"value": "0"
+			},
+			"message":
+			{
+				"variable": "string",
+				"value": ""
+			},
+			"netname":
+			{
+				"variable": "string",
+				"value": ""
+			},
+			"health":
+			{
+				"variable": "integer",
+				"value": "0"
+			},
+			"spawnflags":
+			{
+				"variable": "flags",
+				"value": "",
+				"choices":
+				[
+					"1",
+					"4",
+					"8",
+					"32",
+					"256",
+					"512"
+				]
+			},
+			"locked_sound":
+			{
+				"variable": "sound",
+				"value": ""
+			},
+			"unlocked_sound":
+			{
+				"variable": "sound",
+				"value": ""
+			},
+			"locked_sentence":
+			{
+				"variable": "string",
+				"value": ""
+			},
+			"unlocked_sentence":
+			{
+				"variable": "string",
+				"value": ""
+			},
+			"_minlight":
+			{
+				"variable": "string",
+				"value": ""
+			}
+		}
+	},
+	"BaseTank":
+	{
+		"Class": "Base",
+		"base": ["Targetname", "Target", "RenderFields", "Global", "Angles", "Master", "ReplacementFiles"],
+		"data":
+		{
+			"spawnflags":
+			{
+				"variable": "flags",
+				"value": "",
+				"choices":
+				[
+					"1",
+					"16",
+					"32"
+				]
+			},
+			"yawrate":
+			{
+				"variable": "string",
+				"value": "30"
+			},
+			"yawrange":
+			{
+				"variable": "string",
+				"value": "180"
+			},
+			"yawtolerance":
+			{
+				"variable": "string",
+				"value": "15"
+			},
+			"pitchrate":
+			{
+				"variable": "string",
+				"value": "0"
+			},
+			"pitchrange":
+			{
+				"variable": "string",
+				"value": "0"
+			},
+			"pitchtolerance":
+			{
+				"variable": "string",
+				"value": "5"
+			},
+			"barrel":
+			{
+				"variable": "string",
+				"value": "0"
+			},
+			"barrely":
+			{
+				"variable": "string",
+				"value": "0"
+			},
+			"barrelz":
+			{
+				"variable": "string",
+				"value": "0"
+			},
+			"spritesmoke":
+			{
+				"variable": "string",
+				"value": ""
+			},
+			"spriteflash":
+			{
+				"variable": "string",
+				"value": ""
+			},
+			"spritescale":
+			{
+				"variable": "string",
+				"value": "1"
+			},
+			"rotatesound":
+			{
+				"variable": "sound",
+				"value": ""
+			},
+			"firerate":
+			{
+				"variable": "string",
+				"value": "1"
+			},
+			"bullet_damage":
+			{
+				"variable": "string",
+				"value": "0"
+			},
+			"persistence":
+			{
+				"variable": "string",
+				"value": "1"
+			},
+			"firespread":
+			{
+				"variable": "choices",
+				"value": "0",
+				"choices":
+				[
+					"0",
+					"1",
+					"2",
+					"3",
+					"4"
+				]
+			},
+			"minRange":
+			{
+				"variable": "string",
+				"value": "0"
+			},
+			"maxRange":
+			{
+				"variable": "string",
+				"value": "0"
+			},
+			"_minlight":
+			{
+				"variable": "string",
+				"value": ""
+			},
+			"enemytype":
+			{
+				"variable": "choices",
+				"value": "1",
+				"choices":
+				[
+					"0",
+					"1",
+					"2"
+				]
+			},
+			"enable_target_laser":
+			{
+				"variable": "choices",
+				"value": "0",
+				"choices":
+				[
+					"0",
+					"1"
+				]
+			},
+			"target_laser_sprite":
+			{
+				"variable": "sprite",
+				"value": "sprites/laserbeam.spr"
+			},
+			"target_laser_width":
+			{
+				"variable": "integer",
+				"value": "1"
+			},
+			"target_laser_color":
+			{
+				"variable": "color255",
+				"value": "255 0 0"
+			}
+		}
+	},
+	"PlatSounds":
+	{
+		"Class": "Base",
+		"base": ["ReplacementFiles"],
+		"data":
+		{
+			"movesnd":
+			{
+				"variable": "sound",
+				"value": ""
+			},
+			"stopsnd":
+			{
+				"variable": "sound",
+				"value": ""
+			},
+			"volume":
+			{
+				"variable": "string",
+				"value": "0.85"
+			}
+		}
+	},
+	"Trackchange":
+	{
+		"Class": "Base",
+		"base": ["Targetname", "RenderFields", "Global", "PlatSounds"],
+		"data":
+		{
+			"height":
+			{
+				"variable": "integer",
+				"value": "0"
+			},
+			"spawnflags":
+			{
+				"variable": "flags",
+				"value": "",
+				"choices":
+				[
+					"1",
+					"2",
+					"8",
+					"16",
+					"64",
+					"128"
+				]
+			},
+			"rotation":
+			{
+				"variable": "integer",
+				"value": "0"
+			},
+			"train":
+			{
+				"variable": "target_destination",
+				"value": ""
+			},
+			"toptrack":
+			{
+				"variable": "target_destination",
+				"value": ""
+			},
+			"bottomtrack":
+			{
+				"variable": "target_destination",
+				"value": ""
+			},
+			"speed":
+			{
+				"variable": "integer",
+				"value": "0"
+			}
+		}
+	},
+	"Trigger":
+	{
+		"Class": "Base",
+		"base": ["Targetname", "Targetx", "Master"],
+		"data":
+		{
+			"netname":
+			{
+				"variable": "target_destination",
+				"value": ""
+			},
+			"message":
+			{
+				"variable": "string",
+				"value": ""
+			},
+			"spawnflags":
+			{
+				"variable": "flags",
+				"value": "",
+				"choices":
+				[
+					"1",
+					"2",
+					"4"
+				]
+			}
+		}
+	},
+	"BaseScriptedSequence":
+	{
+		"Class": "Base",
+		"base": [],
+		"data":
+		{
+			"m_iszEntity":
+			{
+				"variable": "string",
+				"value": ""
+			},
+			"m_iszPlay":
+			{
+				"variable": "string",
+				"value": ""
+			},
+			"m_flRadius":
+			{
+				"variable": "integer",
+				"value": "512"
+			},
+			"m_flRepeat":
+			{
+				"variable": "integer",
+				"value": "0"
+			},
+			"m_fMoveTo":
+			{
+				"variable": "choices",
+				"value": "0",
+				"choices":
+				[
+					"0",
+					"1",
+					"2",
+					"4",
+					"5"
+				]
+			},
+			"m_iFinishSchedule":
+			{
+				"variable": "choices",
+				"value": "0",
+				"choices":
+				[
+					"0",
+					"1"
+				]
+			},
+			"spawnflags":
+			{
+				"variable": "flags",
+				"value": "",
+				"choices":
+				[
+					"4",
+					"8"
+				]
+			}
+		}
+	},
+	"aiscripted_sequence":
+	{
+		"Class": "Point",
+		"base": ["Targetname", "Targetx", "Angles", "BaseScriptedSequence"],
+		"size": [ [ -16, -16, 0 ], [ 16, 16, 72 ] ],
+		"color": [255, 0, 255],
+		"flags": "Angle",
+		"data":
+		{
+			"m_iFinishSchedule":
+			{
+				"variable": "choices",
+				"value": "0",
+				"choices":
+				[
+					"0",
+					"1"
+				]
+			}
+		}
+	},
+	"ambient_generic":
+	{
+		"Class": "Point",
+		"base": ["Targetname"],
+		"sprite": "sprites/speaker.spr",
+		"iconsprite": "sprites/speaker.spr",
+		"data":
+		{
+			"message":
+			{
+				"variable": "sound",
+				"value": ""
+			},
+			"health":
+			{
+				"variable": "integer",
+				"value": "10"
+			},
+			"preset":
+			{
+				"variable": "choices",
+				"value": "0",
+				"choices":
+				[
+					"0",
+					"1",
+					"2",
+					"3",
+					"4",
+					"5",
+					"6",
+					"7",
+					"8",
+					"9",
+					"10",
+					"11",
+					"12",
+					"13",
+					"14",
+					"15",
+					"16",
+					"17",
+					"18",
+					"19",
+					"20",
+					"21",
+					"22",
+					"23",
+					"24",
+					"25",
+					"26",
+					"27"
+				]
+			},
+			"volstart":
+			{
+				"variable": "integer",
+				"value": "0"
+			},
+			"fadein":
+			{
+				"variable": "integer",
+				"value": "0"
+			},
+			"fadeout":
+			{
+				"variable": "integer",
+				"value": "0"
+			},
+			"pitch":
+			{
+				"variable": "integer",
+				"value": "100"
+			},
+			"pitchstart":
+			{
+				"variable": "integer",
+				"value": "100"
+			},
+			"spinup":
+			{
+				"variable": "integer",
+				"value": "0"
+			},
+			"spindown":
+			{
+				"variable": "integer",
+				"value": "0"
+			},
+			"lfotype":
+			{
+				"variable": "integer",
+				"value": "0"
+			},
+			"lforate":
+			{
+				"variable": "integer",
+				"value": "0"
+			},
+			"lfomodpitch":
+			{
+				"variable": "integer",
+				"value": "0"
+			},
+			"lfomodvol":
+			{
+				"variable": "integer",
+				"value": "0"
+			},
+			"cspinup":
+			{
+				"variable": "integer",
+				"value": "0"
+			},
+			"spawnflags":
+			{
+				"variable": "flags",
+				"value": "",
+				"choices":
+				[
+					"1",
+					"2",
+					"4",
+					"8",
+					"16",
+					"32"
+				]
+			}
+		}
+	},
+	"ambient_music":
+	{
+		"Class": "Point",
+		"base": ["Targetname"],
+		"sprite": "sprites/speaker.spr",
+		"iconsprite": "sprites/speaker.spr",
+		"data":
+		{
+			"filename":
+			{
+				"variable": "string",
+				"value": ""
+			},
+			"command":
+			{
+				"variable": "choices",
+				"value": "0",
+				"choices":
+				[
+					"0",
+					"1",
+					"2",
+					"3"
+				]
+			},
+			"target_selector":
+			{
+				"variable": "choices",
+				"value": "0",
+				"choices":
+				[
+					"0",
+					"1",
+					"2"
+				]
+			},
+			"radius":
+			{
+				"variable": "string",
+				"value": ""
+			},
+			"remove_on_fire":
+			{
+				"variable": "choices",
+				"value": "0",
+				"choices":
+				[
+					"0",
+					"1"
+				]
+			}
+		}
+	},
+	"ammo_generic":
+	{
+		"Class": "Point",
+		"base": ["Targetx", "RenderFields", "Ammo"],
+		"studio": true,
+		"data":
+		{
+			"ammo_name":
+			{
+				"variable": "string",
+				"value": ""
+			}
+		}
+	},
+	"ammo_all":
+	{
+		"Class": "Point",
+		"base": ["Targetx", "RenderFields", "Ammo"],
+		"studio": true,
+		"data":
+		{
+
+		}
+	},
+	"ammo_9mmclip":
+	{
+		"Class": "Point",
+		"base": ["Targetx", "RenderFields", "Ammo"],
+		"studio": "models/w_9mmclip.mdl",
+		"data":
+		{
+
+		}
+	},
+	"ammo_9mmar":
+	{
+		"Class": "Point",
+		"base": ["Targetx", "RenderFields", "Ammo"],
+		"studio": "models/w_9mmarclip.mdl",
+		"data":
+		{
+
+		}
+	},
+	"ammo_9mmbox":
+	{
+		"Class": "Point",
+		"base": ["Targetx", "RenderFields", "Ammo"],
+		"studio": "models/w_chainammo.mdl",
+		"data":
+		{
+
+		}
+	},
+	"ammo_argrenades":
+	{
+		"Class": "Point",
+		"base": ["Targetx", "RenderFields", "Ammo"],
+		"studio": "models/w_argrenade.mdl",
+		"data":
+		{
+
+		}
+	},
+	"ammo_buckshot":
+	{
+		"Class": "Point",
+		"base": ["Targetx", "RenderFields", "Ammo"],
+		"studio": "models/w_shotbox.mdl",
+		"data":
+		{
+
+		}
+	},
+	"ammo_357":
+	{
+		"Class": "Point",
+		"base": ["Targetx", "RenderFields", "Ammo"],
+		"studio": "models/w_357ammobox.mdl",
+		"data":
+		{
+
+		}
+	},
+	"ammo_rpgclip":
+	{
+		"Class": "Point",
+		"base": ["Targetx", "RenderFields", "Ammo"],
+		"studio": "models/w_rpgammo.mdl",
+		"data":
+		{
+			"sequence":
+			{
+				"variable": "choices",
+				"value": "0",
+				"choices":
+				[
+					"0",
+					"1"
+				]
+			}
+		}
+	},
+	"ammo_gaussclip":
+	{
+		"Class": "Point",
+		"base": ["Targetx", "RenderFields", "Ammo"],
+		"studio": "models/w_gaussammo.mdl",
+		"data":
+		{
+
+		}
+	},
+	"ammo_crossbow":
+	{
+		"Class": "Point",
+		"base": ["Targetx", "RenderFields", "Ammo"],
+		"studio": "models/w_crossbow_clip.mdl",
+		"data":
+		{
+
+		}
+	},
+	"button_target":
+	{
+		"Class": "Solid",
+		"base": ["Target", "Targetname", "Angles", "ZHLT", "Master", "RenderFields"],
+		"data":
+		{
+			"spawnflags":
+			{
+				"variable": "flags",
+				"value": "",
+				"choices":
+				[
+					"1",
+					"2"
+				]
+			}
+		}
+	},
+	"cycler":
+	{
+		"Class": "Point",
+		"base": ["Targetname", "Angles", "RenderFields"],
+		"size": [ [ -16, -16, 0 ], [ 16, 16, 72 ] ],
+		"flags": "Angle",
+		"data":
+		{
+			"model":
+			{
+				"variable": "studio",
+				"value": ""
+			},
+			"bodygroup":
+			{
+				"variable": "integer",
+				"value": "0"
+			}
+		}
+	},
+	"cycler_sprite":
+	{
+		"Class": "Point",
+		"base": ["Targetname", "Angles", "RenderFields"],
+		"sprite": true,
+		"data":
+		{
+			"model":
+			{
+				"variable": "sprite",
+				"value": ""
+			},
+			"framerate":
+			{
+				"variable": "integer",
+				"value": "10"
+			}
+		}
+	},
+	"BeamStartEnd":
+	{
+		"Class": "Base",
+		"base": [],
+		"data":
+		{
+			"LightningStart":
+			{
+				"variable": "target_destination",
+				"value": ""
+			},
+			"LightningEnd":
+			{
+				"variable": "target_destination",
+				"value": ""
+			}
+		}
+	},
+	"env_beam":
+	{
+		"Class": "Point",
+		"base": ["Targetname", "BeamStartEnd", "RenderFxChoices"],
+		"size": [ [ -16, -16, -16 ], [ 16, 16, 16 ] ],
+		"data":
+		{
+			"renderamt":
+			{
+				"variable": "integer",
+				"value": "100"
+			},
+			"rendercolor":
+			{
+				"variable": "color255",
+				"value": "0 0 0"
+			},
+			"Radius":
+			{
+				"variable": "integer",
+				"value": "256"
+			},
+			"life":
+			{
+				"variable": "string",
+				"value": "1"
+			},
+			"BoltWidth":
+			{
+				"variable": "integer",
+				"value": "20"
+			},
+			"NoiseAmplitude":
+			{
+				"variable": "integer",
+				"value": "0"
+			},
+			"texture":
+			{
+				"variable": "sprite",
+				"value": "sprites/laserbeam.spr"
+			},
+			"TextureScroll":
+			{
+				"variable": "integer",
+				"value": "35"
+			},
+			"framerate":
+			{
+				"variable": "integer",
+				"value": "0"
+			},
+			"framestart":
+			{
+				"variable": "integer",
+				"value": "0"
+			},
+			"StrikeTime":
+			{
+				"variable": "string",
+				"value": "1"
+			},
+			"damage":
+			{
+				"variable": "string",
+				"value": "0"
+			},
+			"spawnflags":
+			{
+				"variable": "flags",
+				"value": "",
+				"choices":
+				[
+					"1",
+					"2",
+					"4",
+					"8",
+					"16",
+					"32",
+					"64",
+					"128",
+					"256"
+				]
+			}
+		}
+	},
+	"env_beverage":
+	{
+		"Class": "Point",
+		"base": ["Targetname", "Angles"],
+		"size": [ [ -4, -4, -4 ], [ 4, 4, 4 ] ],
+		"data":
+		{
+			"health":
+			{
+				"variable": "integer",
+				"value": "10"
+			},
+			"skin":
+			{
+				"variable": "choices",
+				"value": "0",
+				"choices":
+				[
+					"0",
+					"1",
+					"2",
+					"3",
+					"4",
+					"5",
+					"6"
+				]
+			}
+		}
+	},
+	"env_blood":
+	{
+		"Class": "Point",
+		"base": ["Targetname", "Angles"],
+		"size": [ [ -16, -16, -16 ], [ 16, 16, 16 ] ],
+		"color": [255, 0, 0],
+		"data":
+		{
+			"color":
+			{
+				"variable": "choices",
+				"value": "0",
+				"choices":
+				[
+					"0",
+					"1"
+				]
+			},
+			"amount":
+			{
+				"variable": "string",
+				"value": "100"
+			},
+			"spawnflags":
+			{
+				"variable": "flags",
+				"value": "",
+				"choices":
+				[
+					"1",
+					"2",
+					"4",
+					"8"
+				]
+			}
+		}
+	},
+	"env_bubbles":
+	{
+		"Class": "Solid",
+		"base": ["Targetname"],
+		"data":
+		{
+			"density":
+			{
+				"variable": "integer",
+				"value": "2"
+			},
+			"frequency":
+			{
+				"variable": "integer",
+				"value": "2"
+			},
+			"current":
+			{
+				"variable": "integer",
+				"value": "0"
+			},
+			"spawnflags":
+			{
+				"variable": "flags",
+				"value": "",
+				"choices":
+				[
+					"1"
+				]
+			}
+		}
+	},
+	"env_explosion":
+	{
+		"Class": "Point",
+		"base": ["Targetname"],
+		"size": [ [ -16, -16, -16 ], [ 16, 16, 16 ] ],
+		"data":
+		{
+			"iMagnitude":
+			{
+				"variable": "integer",
+				"value": "100"
+			},
+			"spawnflags":
+			{
+				"variable": "flags",
+				"value": "",
+				"choices":
+				[
+					"1",
+					"2",
+					"4",
+					"8",
+					"16",
+					"32"
+				]
+			}
+		}
+	},
+	"env_global":
+	{
+		"Class": "Point",
+		"base": ["Targetname"],
+		"color": [255, 255, 128],
+		"data":
+		{
+			"globalstate":
+			{
+				"variable": "string",
+				"value": ""
+			},
+			"triggermode":
+			{
+				"variable": "choices",
+				"value": "0",
+				"choices":
+				[
+					"0",
+					"1",
+					"2",
+					"3"
+				]
+			},
+			"initialstate":
+			{
+				"variable": "choices",
+				"value": "0",
+				"choices":
+				[
+					"0",
+					"1",
+					"2"
+				]
+			},
+			"spawnflags":
+			{
+				"variable": "flags",
+				"value": "",
+				"choices":
+				[
+					"1"
+				]
+			}
+		}
+	},
+	"env_glow":
+	{
+		"Class": "Point",
+		"base": ["Targetname", "RenderFields"],
+		"size": [ [ -4, -4, -4 ], [ 4, 4, 4 ] ],
+		"color": [30, 100, 0],
+		"sprite": true,
+		"data":
+		{
+			"model":
+			{
+				"variable": "sprite",
+				"value": "sprites/glow01.spr"
+			},
+			"scale":
+			{
+				"variable": "integer",
+				"value": "1"
+			}
+		}
+	},
+	"env_fade":
+	{
+		"Class": "Point",
+		"base": ["Targetname"],
+		"data":
+		{
+			"spawnflags":
+			{
+				"variable": "flags",
+				"value": "",
+				"choices":
+				[
+					"1",
+					"2",
+					"4"
+				]
+			},
+			"duration":
+			{
+				"variable": "string",
+				"value": "2"
+			},
+			"holdtime":
+			{
+				"variable": "string",
+				"value": "0"
+			},
+			"renderamt":
+			{
+				"variable": "integer",
+				"value": "255"
+			},
+			"rendercolor":
+			{
+				"variable": "color255",
+				"value": "0 0 0"
+			}
+		}
+	},
+	"env_fog":
+	{
+		"Class": "Point",
+		"base": [],
+		"data":
+		{
+			"spawnflags":
+			{
+				"variable": "flags",
+				"value": "",
+				"choices":
+				[
+					"1"
+				]
+			},
+			"density":
+			{
+				"variable": "string",
+				"value": "0.5"
+			},
+			"fogStartDistance":
+			{
+				"variable": "integer",
+				"value": "1500"
+			},
+			"fogStopDistance":
+			{
+				"variable": "integer",
+				"value": "2000"
+			},
+			"rendercolor":
+			{
+				"variable": "color255",
+				"value": "255 255 255"
+			}
+		}
+	},
+	"env_funnel":
+	{
+		"Class": "Point",
+		"base": ["Targetname"],
+		"size": [ [ -16, -16, -16 ], [ 16, 16, 16 ] ],
+		"data":
+		{
+			"spawnflags":
+			{
+				"variable": "flags",
+				"value": "",
+				"choices":
+				[
+					"1"
+				]
+			}
+		}
+	},
+	"env_laser":
+	{
+		"Class": "Point",
+		"base": ["Targetname", "RenderFxChoices", "Angles"],
+		"size": [ [ -16, -16, -16 ], [ 16, 16, 16 ] ],
+		"data":
+		{
+			"LaserTarget":
+			{
+				"variable": "target_destination",
+				"value": ""
+			},
+			"renderamt":
+			{
+				"variable": "integer",
+				"value": "100"
+			},
+			"rendercolor":
+			{
+				"variable": "color255",
+				"value": "0 0 0"
+			},
+			"width":
+			{
+				"variable": "integer",
+				"value": "20"
+			},
+			"NoiseAmplitude":
+			{
+				"variable": "integer",
+				"value": "0"
+			},
+			"texture":
+			{
+				"variable": "sprite",
+				"value": "sprites/laserbeam.spr"
+			},
+			"EndSprite":
+			{
+				"variable": "sprite",
+				"value": ""
+			},
+			"TextureScroll":
+			{
+				"variable": "integer",
+				"value": "35"
+			},
+			"framestart":
+			{
+				"variable": "integer",
+				"value": "0"
+			},
+			"damage":
+			{
+				"variable": "string",
+				"value": "100"
+			},
+			"spawnflags":
+			{
+				"variable": "flags",
+				"value": "",
+				"choices":
+				[
+					"1",
+					"16",
+					"32",
+					"64"
+				]
+			}
+		}
+	},
+	"env_message":
+	{
+		"Class": "Point",
+		"base": ["Targetname", "Target"],
+		"data":
+		{
+			"message":
+			{
+				"variable": "string",
+				"value": ""
+			},
+			"spawnflags":
+			{
+				"variable": "flags",
+				"value": "",
+				"choices":
+				[
+					"1",
+					"2"
+				]
+			},
+			"messagesound":
+			{
+				"variable": "sound",
+				"value": ""
+			},
+			"messagevolume":
+			{
+				"variable": "string",
+				"value": "10"
+			},
+			"messageattenuation":
+			{
+				"variable": "choices",
+				"value": "0",
+				"choices":
+				[
+					"0",
+					"1",
+					"2",
+					"3"
+				]
+			}
+		}
+	},
+	"env_render":
+	{
+		"Class": "Point",
+		"base": ["Targetname", "Target", "RenderFields"],
+		"size": [ [ -16, -16, -16 ], [ 16, 16, 16 ] ],
+		"color": [100, 100, 0],
+		"data":
+		{
+			"spawnflags":
+			{
+				"variable": "flags",
+				"value": "",
+				"choices":
+				[
+					"1",
+					"2",
+					"4",
+					"8"
+				]
+			}
+		}
+	},
+	"env_shake":
+	{
+		"Class": "Point",
+		"base": ["Targetname"],
+		"data":
+		{
+			"spawnflags":
+			{
+				"variable": "flags",
+				"value": "",
+				"choices":
+				[
+					"1"
+				]
+			},
+			"amplitude":
+			{
+				"variable": "string",
+				"value": "4"
+			},
+			"radius":
+			{
+				"variable": "string",
+				"value": "500"
+			},
+			"duration":
+			{
+				"variable": "string",
+				"value": "1"
+			},
+			"frequency":
+			{
+				"variable": "string",
+				"value": "2.5"
+			}
+		}
+	},
+	"env_shooter":
+	{
+		"Class": "Point",
+		"base": ["gibshooterbase", "RenderFields"],
+		"size": [ [ -16, -16, -16 ], [ 16, 16, 16 ] ],
+		"data":
+		{
+			"shootmodel":
+			{
+				"variable": "studio",
+				"value": ""
+			},
+			"shootsounds":
+			{
+				"variable": "choices",
+				"value": "-1",
+				"choices":
+				[
+					"-1",
+					"0",
+					"1",
+					"2",
+					"3",
+					"4"
+				]
+			},
+			"scale":
+			{
+				"variable": "string",
+				"value": ""
+			},
+			"skin":
+			{
+				"variable": "integer",
+				"value": "0"
+			}
+		}
+	},
+	"env_sound":
+	{
+		"Class": "Point",
+		"base": [],
+		"sprite": "sprites/speaker.spr",
+		"iconsprite": "sprites/speaker.spr",
+		"data":
+		{
+			"radius":
+			{
+				"variable": "integer",
+				"value": "128"
+			},
+			"roomtype":
+			{
+				"variable": "choices",
+				"value": "0",
+				"choices":
+				[
+					"0",
+					"1",
+					"2",
+					"3",
+					"4",
+					"5",
+					"6",
+					"7",
+					"8",
+					"9",
+					"10",
+					"11",
+					"12",
+					"13",
+					"14",
+					"15",
+					"16",
+					"17",
+					"18",
+					"19",
+					"20",
+					"21",
+					"22",
+					"23",
+					"24",
+					"25",
+					"26",
+					"27",
+					"28"
+				]
+			}
+		}
+	},
+	"env_spark":
+	{
+		"Class": "Point",
+		"base": ["Targetname", "Angles"],
+		"size": [ [ -16, -16, -16 ], [ 16, 16, 16 ] ],
+		"data":
+		{
+			"MaxDelay":
+			{
+				"variable": "string",
+				"value": "0"
+			},
+			"spawnflags":
+			{
+				"variable": "flags",
+				"value": "",
+				"choices":
+				[
+					"32",
+					"64"
+				]
+			}
+		}
+	},
+	"env_sprite":
+	{
+		"Class": "Point",
+		"base": ["Targetname", "RenderFields", "Angles"],
+		"size": [ [ -4, -4, -4 ], [ 4, 4, 4 ] ],
+		"sprite": true,
+		"data":
+		{
+			"framerate":
+			{
+				"variable": "string",
+				"value": "10.0"
+			},
+			"model":
+			{
+				"variable": "sprite",
+				"value": "sprites/glow01.spr"
+			},
+			"scale":
+			{
+				"variable": "string",
+				"value": ""
+			},
+			"spawnflags":
+			{
+				"variable": "flags",
+				"value": "",
+				"choices":
+				[
+					"1",
+					"2"
+				]
+			}
+		}
+	},
+	"func_breakable":
+	{
+		"Class": "Solid",
+		"base": ["Breakable", "RenderFields", "Angles", "ZHLT"],
+		"data":
+		{
+			"spawnflags":
+			{
+				"variable": "flags",
+				"value": "",
+				"choices":
+				[
+					"1",
+					"2",
+					"4",
+					"256"
+				]
+			},
+			"_minlight":
+			{
+				"variable": "string",
+				"value": ""
+			}
+		}
+	},
+	"func_button":
+	{
+		"Class": "Solid",
+		"base": ["Targetname", "Targetx", "Global", "RenderFields", "Angles", "ZHLT", "Master", "ReplacementFiles"],
+		"data":
+		{
+			"speed":
+			{
+				"variable": "integer",
+				"value": "5"
+			},
+			"health":
+			{
+				"variable": "integer",
+				"value": ""
+			},
+			"lip":
+			{
+				"variable": "integer",
+				"value": ""
+			},
+			"sounds":
+			{
+				"variable": "sound",
+				"value": ""
+			},
+			"wait":
+			{
+				"variable": "choices",
+				"value": "3",
+				"choices":
+				[
+					"-1"
+				]
+			},
+			"spawnflags":
+			{
+				"variable": "flags",
+				"value": "",
+				"choices":
+				[
+					"1",
+					"32",
+					"64",
+					"256"
+				]
+			},
+			"locked_sound":
+			{
+				"variable": "sound",
+				"value": ""
+			},
+			"unlocked_sound":
+			{
+				"variable": "sound",
+				"value": ""
+			},
+			"locked_sentence":
+			{
+				"variable": "string",
+				"value": ""
+			},
+			"unlocked_sentence":
+			{
+				"variable": "string",
+				"value": ""
+			},
+			"_minlight":
+			{
+				"variable": "string",
+				"value": ""
+			}
+		}
+	},
+	"func_conveyor":
+	{
+		"Class": "Solid",
+		"base": ["Targetname", "Global", "RenderFields", "Angles", "ZHLT"],
+		"data":
+		{
+			"spawnflags":
+			{
+				"variable": "flags",
+				"value": "",
+				"choices":
+				[
+					"1",
+					"2"
+				]
+			},
+			"speed":
+			{
+				"variable": "string",
+				"value": "100"
+			},
+			"_minlight":
+			{
+				"variable": "string",
+				"value": ""
+			}
+		}
+	},
+	"func_door":
+	{
+		"Class": "Solid",
+		"base": ["Door", "ZHLT"],
+		"data":
+		{
+
+		}
+	},
+	"func_door_rotating":
+	{
+		"Class": "Solid",
+		"base": ["Door", "ZHLT"],
+		"data":
+		{
+			"spawnflags":
+			{
+				"variable": "flags",
+				"value": "",
+				"choices":
+				[
+					"2",
+					"16",
+					"64",
+					"128"
+				]
+			},
+			"distance":
+			{
+				"variable": "integer",
+				"value": "90"
+			}
+		}
+	},
+	"func_friction":
+	{
+		"Class": "Solid",
+		"base": ["Appearflags", "RenderFields", "ZHLT"],
+		"data":
+		{
+			"modifier":
+			{
+				"variable": "integer",
+				"value": "15"
+			}
+		}
+	},
+	"func_guntarget":
+	{
+		"Class": "Solid",
+		"base": ["Targetname", "Global", "RenderFields", "Angles", "ZHLT"],
+		"data":
+		{
+			"speed":
+			{
+				"variable": "integer",
+				"value": "100"
+			},
+			"target":
+			{
+				"variable": "target_destination",
+				"value": ""
+			},
+			"message":
+			{
+				"variable": "target_destination",
+				"value": ""
+			},
+			"health":
+			{
+				"variable": "integer",
+				"value": "0"
+			},
+			"_minlight":
+			{
+				"variable": "string",
+				"value": ""
+			},
+			"spawnflags":
+			{
+				"variable": "flags",
+				"value": "",
+				"choices":
+				[
+					"1"
+				]
+			}
+		}
+	},
+	"func_healthcharger":
+	{
+		"Class": "Solid",
+		"base": ["BaseCharger"],
+		"data":
+		{
+
+		}
+	},
+	"func_illusionary":
+	{
+		"Class": "Solid",
+		"base": ["Targetname", "RenderFields", "ZHLT"],
+		"data":
+		{
+			"skin":
+			{
+				"variable": "choices",
+				"value": "-1",
+				"choices":
+				[
+					"-1",
+					"-7"
+				]
+			},
+			"_minlight":
+			{
+				"variable": "string",
+				"value": ""
+			}
+		}
+	},
+	"func_ladder":
+	{
+		"Class": "Solid",
+		"base": ["Targetname"],
+		"data":
+		{
+
+		}
+	},
+	"func_monsterclip":
+	{
+		"Class": "Solid",
+		"base": ["Targetname"],
+		"data":
+		{
+
+		}
+	},
+	"func_mortar_field":
+	{
+		"Class": "Solid",
+		"base": ["Targetname"],
+		"data":
+		{
+			"m_flSpread":
+			{
+				"variable": "integer",
+				"value": "64"
+			},
+			"m_iCount":
+			{
+				"variable": "integer",
+				"value": "1"
+			},
+			"m_fControl":
+			{
+				"variable": "choices",
+				"value": "0",
+				"choices":
+				[
+					"0",
+					"1",
+					"2"
+				]
+			},
+			"m_iszXController":
+			{
+				"variable": "target_destination",
+				"value": ""
+			},
+			"m_iszYController":
+			{
+				"variable": "target_destination",
+				"value": ""
+			}
+		}
+	},
+	"func_pendulum":
+	{
+		"Class": "Solid",
+		"base": ["Appearflags", "Targetname", "Global", "RenderFields", "Angles", "ZHLT"],
+		"data":
+		{
+			"speed":
+			{
+				"variable": "integer",
+				"value": "100"
+			},
+			"distance":
+			{
+				"variable": "integer",
+				"value": "90"
+			},
+			"damp":
+			{
+				"variable": "integer",
+				"value": "0"
+			},
+			"dmg":
+			{
+				"variable": "integer",
+				"value": "0"
+			},
+			"spawnflags":
+			{
+				"variable": "flags",
+				"value": "",
+				"choices":
+				[
+					"1",
+					"8",
+					"16",
+					"64",
+					"128"
+				]
+			},
+			"_minlight":
+			{
+				"variable": "integer",
+				"value": ""
+			}
+		}
+	},
+	"func_plat":
+	{
+		"Class": "Solid",
+		"base": ["Targetname", "Global", "RenderFields", "PlatSounds", "ZHLT"],
+		"data":
+		{
+			"spawnflags":
+			{
+				"variable": "flags",
+				"value": "",
+				"choices":
+				[
+					"1"
+				]
+			},
+			"height":
+			{
+				"variable": "integer",
+				"value": "0"
+			},
+			"speed":
+			{
+				"variable": "integer",
+				"value": "50"
+			},
+			"_minlight":
+			{
+				"variable": "string",
+				"value": ""
+			}
+		}
+	},
+	"func_platrot":
+	{
+		"Class": "Solid",
+		"base": ["Targetname", "Global", "RenderFields", "PlatSounds", "Angles", "ZHLT"],
+		"data":
+		{
+			"spawnflags":
+			{
+				"variable": "flags",
+				"value": "",
+				"choices":
+				[
+					"1",
+					"64",
+					"128"
+				]
+			},
+			"speed":
+			{
+				"variable": "integer",
+				"value": "50"
+			},
+			"height":
+			{
+				"variable": "integer",
+				"value": "0"
+			},
+			"rotation":
+			{
+				"variable": "integer",
+				"value": "0"
+			},
+			"_minlight":
+			{
+				"variable": "string",
+				"value": ""
+			}
+		}
+	},
+	"func_pushable":
+	{
+		"Class": "Solid",
+		"base": ["Breakable", "RenderFields", "ZHLT"],
+		"data":
+		{
+			"size":
+			{
+				"variable": "choices",
+				"value": "0",
+				"choices":
+				[
+					"0",
+					"1",
+					"2",
+					"3"
+				]
+			},
+			"spawnflags":
+			{
+				"variable": "flags",
+				"value": "",
+				"choices":
+				[
+					"128"
+				]
+			},
+			"friction":
+			{
+				"variable": "integer",
+				"value": "50"
+			},
+			"buoyancy":
+			{
+				"variable": "integer",
+				"value": "20"
+			},
+			"_minlight":
+			{
+				"variable": "string",
+				"value": ""
+			}
+		}
+	},
+	"func_recharge":
+	{
+		"Class": "Solid",
+		"base": ["BaseCharger"],
+		"data":
+		{
+
+		}
+	},
+	"func_rot_button":
+	{
+		"Class": "Solid",
+		"base": ["Targetname", "Target", "Global", "RenderFields", "Angles", "ZHLT", "Master", "ReplacementFiles"],
+		"data":
+		{
+			"changetarget":
+			{
+				"variable": "target_destination",
+				"value": ""
+			},
+			"speed":
+			{
+				"variable": "integer",
+				"value": "50"
+			},
+			"health":
+			{
+				"variable": "integer",
+				"value": ""
+			},
+			"sounds":
+			{
+				"variable": "sound",
+				"value": "buttons/level1.wav"
+			},
+			"wait":
+			{
+				"variable": "choices",
+				"value": "3",
+				"choices":
+				[
+					"-1"
+				]
+			},
+			"delay":
+			{
+				"variable": "string",
+				"value": "0"
+			},
+			"distance":
+			{
+				"variable": "integer",
+				"value": "90"
+			},
+			"spawnflags":
+			{
+				"variable": "flags",
+				"value": "",
+				"choices":
+				[
+					"1",
+					"2",
+					"32",
+					"64",
+					"128",
+					"256"
+				]
+			},
+			"_minlight":
+			{
+				"variable": "integer",
+				"value": ""
+			}
+		}
+	},
+	"func_rotating":
+	{
+		"Class": "Solid",
+		"base": ["Targetname", "Global", "RenderFields", "Angles", "ZHLT", "ReplacementFiles"],
+		"data":
+		{
+			"speed":
+			{
+				"variable": "integer",
+				"value": "0"
+			},
+			"volume":
+			{
+				"variable": "integer",
+				"value": "10"
+			},
+			"fanfriction":
+			{
+				"variable": "integer",
+				"value": "20"
+			},
+			"sounds":
+			{
+				"variable": "sound",
+				"value": ""
+			},
+			"spawnflags":
+			{
+				"variable": "flags",
+				"value": "",
+				"choices":
+				[
+					"1",
+					"2",
+					"4",
+					"8",
+					"16",
+					"32",
+					"64",
+					"128",
+					"256",
+					"512"
+				]
+			},
+			"_minlight":
+			{
+				"variable": "integer",
+				"value": ""
+			},
+			"spawnorigin":
+			{
+				"variable": "string",
+				"value": "0 0 0"
+			},
+			"dmg":
+			{
+				"variable": "integer",
+				"value": "0"
+			}
+		}
+	},
+	"func_tank":
+	{
+		"Class": "Solid",
+		"base": ["BaseTank", "ZHLT"],
+		"data":
+		{
+			"bullet":
+			{
+				"variable": "choices",
+				"value": "0",
+				"choices":
+				[
+					"0",
+					"1",
+					"2",
+					"3"
+				]
+			}
+		}
+	},
+	"func_tankcontrols":
+	{
+		"Class": "Solid",
+		"base": [],
+		"data":
+		{
+			"target":
+			{
+				"variable": "target_destination",
+				"value": ""
+			}
+		}
+	},
+	"func_tanklaser":
+	{
+		"Class": "Solid",
+		"base": ["BaseTank", "ZHLT"],
+		"data":
+		{
+			"laserentity":
+			{
+				"variable": "target_destination",
+				"value": ""
+			}
+		}
+	},
+	"func_tankrocket":
+	{
+		"Class": "Solid",
+		"base": ["BaseTank", "ZHLT"],
+		"data":
+		{
+
+		}
+	},
+	"func_tankmortar":
+	{
+		"Class": "Solid",
+		"base": ["BaseTank", "ZHLT"],
+		"data":
+		{
+			"iMagnitude":
+			{
+				"variable": "integer",
+				"value": "100"
+			}
+		}
+	},
+	"func_trackautochange":
+	{
+		"Class": "Solid",
+		"base": ["Trackchange", "ZHLT"],
+		"data":
+		{
+			"_minlight":
+			{
+				"variable": "string",
+				"value": ""
+			}
+		}
+	},
+	"func_trackchange":
+	{
+		"Class": "Solid",
+		"base": ["Trackchange", "ZHLT"],
+		"data":
+		{
+			"_minlight":
+			{
+				"variable": "string",
+				"value": ""
+			}
+		}
+	},
+	"func_tracktrain":
+	{
+		"Class": "Solid",
+		"base": ["Targetname", "Global", "RenderFields", "Angles", "ZHLT", "ReplacementFiles"],
+		"data":
+		{
+			"spawnflags":
+			{
+				"variable": "flags",
+				"value": "",
+				"choices":
+				[
+					"1",
+					"2",
+					"8"
+				]
+			},
+			"target":
+			{
+				"variable": "target_destination",
+				"value": ""
+			},
+			"sounds":
+			{
+				"variable": "sound",
+				"value": ""
+			},
+			"wheels":
+			{
+				"variable": "integer",
+				"value": "50"
+			},
+			"height":
+			{
+				"variable": "integer",
+				"value": "4"
+			},
+			"startspeed":
+			{
+				"variable": "integer",
+				"value": "0"
+			},
+			"speed":
+			{
+				"variable": "integer",
+				"value": "64"
+			},
+			"dmg":
+			{
+				"variable": "integer",
+				"value": "0"
+			},
+			"volume":
+			{
+				"variable": "integer",
+				"value": "10"
+			},
+			"bank":
+			{
+				"variable": "string",
+				"value": "0"
+			},
+			"_minlight":
+			{
+				"variable": "string",
+				"value": ""
+			}
+		}
+	},
+	"func_traincontrols":
+	{
+		"Class": "Solid",
+		"base": [],
+		"data":
+		{
+			"target":
+			{
+				"variable": "target_destination",
+				"value": ""
+			}
+		}
+	},
+	"func_train":
+	{
+		"Class": "Solid",
+		"base": ["Targetname", "Global", "RenderFields", "ZHLT", "PlatSounds"],
+		"data":
+		{
+			"target":
+			{
+				"variable": "target_destination",
+				"value": ""
+			},
+			"speed":
+			{
+				"variable": "integer",
+				"value": "64"
+			},
+			"dmg":
+			{
+				"variable": "integer",
+				"value": "0"
+			},
+			"skin":
+			{
+				"variable": "choices",
+				"value": "0",
+				"choices":
+				[
+					"0",
+					"-1",
+					"-3",
+					"-4",
+					"-5"
+				]
+			},
+			"spawnflags":
+			{
+				"variable": "flags",
+				"value": "",
+				"choices":
+				[
+					"8"
+				]
+			},
+			"_minlight":
+			{
+				"variable": "string",
+				"value": ""
+			}
+		}
+	},
+	"func_wall":
+	{
+		"Class": "Solid",
+		"base": ["Targetname", "Global", "Appearflags", "RenderFields", "ZHLT"],
+		"data":
+		{
+			"_minlight":
+			{
+				"variable": "string",
+				"value": ""
+			}
+		}
+	},
+	"func_wall_toggle":
+	{
+		"Class": "Solid",
+		"base": ["func_wall"],
+		"data":
+		{
+			"spawnflags":
+			{
+				"variable": "flags",
+				"value": "",
+				"choices":
+				[
+					"1"
+				]
+			}
+		}
+	},
+	"func_water":
+	{
+		"Class": "Solid",
+		"base": ["Door", "ZHLT"],
+		"data":
+		{
+			"spawnflags":
+			{
+				"variable": "flags",
+				"value": "",
+				"choices":
+				[
+					"1",
+					"256"
+				]
+			},
+			"skin":
+			{
+				"variable": "choices",
+				"value": "-3",
+				"choices":
+				[
+					"-3",
+					"-4",
+					"-5"
+				]
+			},
+			"WaveHeight":
+			{
+				"variable": "string",
+				"value": "3.2"
+			}
+		}
+	},
+	"game_counter":
+	{
+		"Class": "Point",
+		"base": ["Targetname", "Targetx", "Master"],
+		"data":
+		{
+			"spawnflags":
+			{
+				"variable": "flags",
+				"value": "",
+				"choices":
+				[
+					"1",
+					"2"
+				]
+			},
+			"frags":
+			{
+				"variable": "integer",
+				"value": "0"
+			},
+			"health":
+			{
+				"variable": "integer",
+				"value": "10"
+			}
+		}
+	},
+	"game_counter_set":
+	{
+		"Class": "Point",
+		"base": ["Targetname", "Target", "Master"],
+		"data":
+		{
+			"spawnflags":
+			{
+				"variable": "flags",
+				"value": "",
+				"choices":
+				[
+					"1"
+				]
+			},
+			"frags":
+			{
+				"variable": "integer",
+				"value": "10"
+			}
+		}
+	},
+	"game_end":
+	{
+		"Class": "Point",
+		"base": ["Targetname", "Master"],
+		"data":
+		{
+
+		}
+	},
+	"game_player_equip":
+	{
+		"Class": "Point",
+		"base": ["Targetname", "Master"],
+		"data":
+		{
+			"spawnflags":
+			{
+				"variable": "flags",
+				"value": "",
+				"choices":
+				[
+					"1"
+				]
+			}
+		}
+	},
+	"game_player_hurt":
+	{
+		"Class": "Point",
+		"base": ["Targetname", "Master"],
+		"data":
+		{
+			"dmg":
+			{
+				"variable": "string",
+				"value": "999"
+			},
+			"spawnflags":
+			{
+				"variable": "flags",
+				"value": "",
+				"choices":
+				[
+					"1"
+				]
+			}
+		}
+	},
+	"game_player_team":
+	{
+		"Class": "Point",
+		"base": ["Targetname", "Master"],
+		"data":
+		{
+			"spawnflags":
+			{
+				"variable": "flags",
+				"value": "",
+				"choices":
+				[
+					"1",
+					"2",
+					"4"
+				]
+			},
+			"target":
+			{
+				"variable": "string",
+				"value": ""
+			}
+		}
+	},
+	"game_score":
+	{
+		"Class": "Point",
+		"base": ["Targetname", "Master"],
+		"data":
+		{
+			"spawnflags":
+			{
+				"variable": "flags",
+				"value": "",
+				"choices":
+				[
+					"1",
+					"2"
+				]
+			},
+			"points":
+			{
+				"variable": "integer",
+				"value": "1"
+			}
+		}
+	},
+	"game_team_master":
+	{
+		"Class": "Point",
+		"base": ["Targetname", "Targetx", "Master"],
+		"data":
+		{
+			"spawnflags":
+			{
+				"variable": "flags",
+				"value": "",
+				"choices":
+				[
+					"1"
+				]
+			},
+			"triggerstate":
+			{
+				"variable": "choices",
+				"value": "0",
+				"choices":
+				[
+					"0",
+					"1",
+					"2"
+				]
+			},
+			"teamindex":
+			{
+				"variable": "integer",
+				"value": "-1"
+			}
+		}
+	},
+	"game_team_set":
+	{
+		"Class": "Point",
+		"base": ["Targetname", "Targetx", "Master"],
+		"data":
+		{
+			"spawnflags":
+			{
+				"variable": "flags",
+				"value": "",
+				"choices":
+				[
+					"1"
+				]
+			}
+		}
+	},
+	"game_text":
+	{
+		"Class": "Point",
+		"base": ["Targetname", "Target", "Master"],
+		"data":
+		{
+			"spawnflags":
+			{
+				"variable": "flags",
+				"value": "",
+				"choices":
+				[
+					"1"
+				]
+			},
+			"message":
+			{
+				"variable": "string",
+				"value": ""
+			},
+			"x":
+			{
+				"variable": "string",
+				"value": "-1"
+			},
+			"y":
+			{
+				"variable": "string",
+				"value": "-1"
+			},
+			"effect":
+			{
+				"variable": "choices",
+				"value": "0",
+				"choices":
+				[
+					"0",
+					"1",
+					"2"
+				]
+			},
+			"color":
+			{
+				"variable": "color255",
+				"value": "100 100 100"
+			},
+			"color2":
+			{
+				"variable": "color255",
+				"value": "240 110 0"
+			},
+			"fadein":
+			{
+				"variable": "string",
+				"value": "1.5"
+			},
+			"fadeout":
+			{
+				"variable": "string",
+				"value": "0.5"
+			},
+			"holdtime":
+			{
+				"variable": "string",
+				"value": "1.2"
+			},
+			"fxtime":
+			{
+				"variable": "string",
+				"value": "0.25"
+			},
+			"channel":
+			{
+				"variable": "choices",
+				"value": "1",
+				"choices":
+				[
+					"1",
+					"2",
+					"3",
+					"4"
+				]
+			}
+		}
+	},
+	"game_zone_player":
+	{
+		"Class": "Solid",
+		"base": ["Targetname", "Master"],
+		"data":
+		{
+			"intarget":
+			{
+				"variable": "target_destination",
+				"value": ""
+			},
+			"outtarget":
+			{
+				"variable": "target_destination",
+				"value": ""
+			},
+			"incount":
+			{
+				"variable": "target_destination",
+				"value": ""
+			},
+			"outcount":
+			{
+				"variable": "target_destination",
+				"value": ""
+			}
+		}
+	},
+	"gibshooter":
+	{
+		"Class": "Point",
+		"base": ["gibshooterbase"],
+		"data":
+		{
+
+		}
+	},
+	"infodecal":
+	{
+		"Class": "Point",
+		"base": ["Targetname", "Appearflags"],
+		"data":
+		{
+			"texture":
+			{
+				"variable": "decal",
+				"value": "texture(decal)"
+			}
+		}
+	},
+	"info_bigmomma":
+	{
+		"Class": "Point",
+		"base": ["Targetname"],
+		"size": [ [ -24, -24, 0 ], [ 24, 24, 16 ] ],
+		"color": [20, 190, 60],
+		"data":
+		{
+			"spawnflags":
+			{
+				"variable": "flags",
+				"value": "",
+				"choices":
+				[
+					"1",
+					"2"
+				]
+			},
+			"target":
+			{
+				"variable": "target_destination",
+				"value": ""
+			},
+			"radius":
+			{
+				"variable": "string",
+				"value": "0"
+			},
+			"reachdelay":
+			{
+				"variable": "string",
+				"value": "0"
+			},
+			"reachtarget":
+			{
+				"variable": "target_destination",
+				"value": ""
+			},
+			"reachsequence":
+			{
+				"variable": "string",
+				"value": ""
+			},
+			"health":
+			{
+				"variable": "string",
+				"value": ""
+			},
+			"presequence":
+			{
+				"variable": "string",
+				"value": ""
+			}
+		}
+	},
+	"info_intermission":
+	{
+		"Class": "Point",
+		"base": ["Target", "Angles"],
+		"size": [ [ -4, -4, -4 ], [ 4, 4, 4 ] ],
+		"color": [0, 255, 0],
+		"data":
+		{
+
+		}
+	},
+	"info_landmark":
+	{
+		"Class": "Point",
+		"base": ["Targetname"],
+		"data":
+		{
+
+		}
+	},
+	"info_node":
+	{
+		"Class": "Point",
+		"base": [],
+		"size": [ [ -24, -24, -4 ], [ 24, 24, 4 ] ],
+		"color": [255, 255, 0],
+		"data":
+		{
+
+		}
+	},
+	"info_node_air":
+	{
+		"Class": "Point",
+		"base": [],
+		"size": [ [ -32, -32, 0 ], [ 32, 32, 64 ] ],
+		"color": [255, 255, 0],
+		"data":
+		{
+
+		}
+	},
+	"info_null":
+	{
+		"Class": "Point",
+		"base": ["Targetname"],
+		"data":
+		{
+
+		}
+	},
+	"info_player_coop":
+	{
+		"Class": "Point",
+		"base": ["PlayerClass"],
+		"studio": "models/player.mdl",
+		"data":
+		{
+
+		}
+	},
+	"info_player_deathmatch":
+	{
+		"Class": "Point",
+		"base": ["PlayerClass", "Master"],
+		"studio": "models/player.mdl",
+		"data":
+		{
+			"target":
+			{
+				"variable": "target_destination",
+				"value": ""
+			}
+		}
+	},
+	"info_player_start":
+	{
+		"Class": "Point",
+		"base": ["PlayerClass"],
+		"studio": "models/player.mdl",
+		"data":
+		{
+
+		}
+	},
+	"info_target":
+	{
+		"Class": "Point",
+		"base": ["Targetname"],
+		"size": [ [ -4, -4, -4 ], [ 4, 4, 4 ] ],
+		"color": [200, 100, 50],
+		"data":
+		{
+
+		}
+	},
+	"info_teleport_destination":
+	{
+		"Class": "Point",
+		"base": ["PlayerClass", "Targetname"],
+		"size": [ [ -8, -8, 0 ], [ 8, 8, 16 ] ],
+		"data":
+		{
+
+		}
+	},
+	"item_airtank":
+	{
+		"Class": "Point",
+		"base": ["Targetx", "Item"],
+		"size": [ [ -16, -16, 0 ], [ 16, 16, 36 ] ],
+		"studio": "models/w_oxygen.mdl",
+		"data":
+		{
+
+		}
+	},
+	"item_antidote":
+	{
+		"Class": "Point",
+		"base": ["Targetx", "Item"],
+		"size": [ [ -16, -16, 0 ], [ 16, 16, 36 ] ],
+		"studio": "models/w_antidote.mdl",
+		"data":
+		{
+
+		}
+	},
+	"item_battery":
+	{
+		"Class": "Point",
+		"base": ["Targetx", "Item"],
+		"size": [ [ -16, -16, 0 ], [ 16, 16, 36 ] ],
+		"studio": "models/w_battery.mdl",
+		"data":
+		{
+			"armor_amount":
+			{
+				"variable": "string",
+				"value": ""
+			}
+		}
+	},
+	"item_healthkit":
+	{
+		"Class": "Point",
+		"base": ["Targetx", "Item"],
+		"size": [ [ -16, -16, 0 ], [ 16, 16, 36 ] ],
+		"studio": "models/w_medkit.mdl",
+		"data":
+		{
+			"health_amount":
+			{
+				"variable": "string",
+				"value": ""
+			}
+		}
+	},
+	"item_longjump":
+	{
+		"Class": "Point",
+		"base": ["Targetx", "Item"],
+		"size": [ [ -16, -16, 0 ], [ 16, 16, 36 ] ],
+		"studio": "models/w_longjump.mdl",
+		"data":
+		{
+
+		}
+	},
+	"item_security":
+	{
+		"Class": "Point",
+		"base": ["Targetx", "Item"],
+		"size": [ [ -16, -16, 0 ], [ 16, 16, 36 ] ],
+		"studio": "models/w_security.mdl",
+		"data":
+		{
+
+		}
+	},
+	"item_suit":
+	{
+		"Class": "Point",
+		"base": ["Targetx", "Item"],
+		"size": [ [ -16, -16, 0 ], [ 16, 16, 36 ] ],
+		"studio": "models/w_suit.mdl",
+		"data":
+		{
+			"body":
+			{
+				"variable": "choices",
+				"value": "0",
+				"choices":
+				[
+					"0",
+					"1"
+				]
+			},
+			"spawnflags":
+			{
+				"variable": "flags",
+				"value": "",
+				"choices":
+				[
+					"1"
+				]
+			}
+		}
+	},
+	"light":
+	{
+		"Class": "Point",
+		"base": ["Target", "Targetname", "Light", "ZHLT_point"],
+		"sprite": "sprites/lightbulb.spr",
+		"iconsprite": "sprites/lightbulb.spr",
+		"flags": "Light",
+		"data":
+		{
+			"spawnflags":
+			{
+				"variable": "flags",
+				"value": "",
+				"choices":
+				[
+					"1"
+				]
+			}
+		}
+	},
+	"light_spot":
+	{
+		"Class": "Point",
+		"base": ["Targetname", "Target", "Angles", "Light", "ZHLT_point"],
+		"sprite": "sprites/lightbulb.spr",
+		"iconsprite": "sprites/lightbulb.spr",
+		"flags": "Light",
+		"data":
+		{
+			"_cone":
+			{
+				"variable": "integer",
+				"value": "30"
+			},
+			"_cone2":
+			{
+				"variable": "integer",
+				"value": "45"
+			},
+			"pitch":
+			{
+				"variable": "integer",
+				"value": "-90"
+			},
+			"_sky":
+			{
+				"variable": "choices",
+				"value": "0",
+				"choices":
+				[
+					"0",
+					"1"
+				]
+			},
+			"spawnflags":
+			{
+				"variable": "flags",
+				"value": "",
+				"choices":
+				[
+					"1"
+				]
+			}
+		}
+	},
+	"light_environment":
+	{
+		"Class": "Point",
+		"base": ["Targetname", "Angles", "ZHLT_point"],
+		"sprite": "sprites/lightbulb.spr",
+		"iconsprite": "sprites/lightbulb.spr",
+		"flags": "Light",
+		"data":
+		{
+			"pitch":
+			{
+				"variable": "integer",
+				"value": "0"
+			},
+			"_light":
+			{
+				"variable": "color255",
+				"value": "255 255 128 200"
+			}
+		}
+	},
+	"logic_campaignselect":
+	{
+		"Class": "Point",
+		"base": ["Targetname"],
+		"size": [ [ -8, -8, -8 ], [ 8, 8, 8 ] ],
+		"color": [255, 255, 0],
+		"data":
+		{
+
+		}
+	},
+	"logic_random":
+	{
+		"Class": "Point",
+		"base": ["Targetname"],
+		"data":
+		{
+			"target1":
+			{
+				"variable": "target_destination",
+				"value": ""
+			},
+			"target2":
+			{
+				"variable": "target_destination",
+				"value": ""
+			},
+			"target3":
+			{
+				"variable": "target_destination",
+				"value": ""
+			},
+			"target4":
+			{
+				"variable": "target_destination",
+				"value": ""
+			},
+			"target5":
+			{
+				"variable": "target_destination",
+				"value": ""
+			},
+			"target6":
+			{
+				"variable": "target_destination",
+				"value": ""
+			},
+			"target7":
+			{
+				"variable": "target_destination",
+				"value": ""
+			},
+			"target8":
+			{
+				"variable": "target_destination",
+				"value": ""
+			},
+			"target9":
+			{
+				"variable": "target_destination",
+				"value": ""
+			},
+			"target10":
+			{
+				"variable": "target_destination",
+				"value": ""
+			},
+			"target11":
+			{
+				"variable": "target_destination",
+				"value": ""
+			},
+			"target12":
+			{
+				"variable": "target_destination",
+				"value": ""
+			},
+			"target13":
+			{
+				"variable": "target_destination",
+				"value": ""
+			},
+			"target14":
+			{
+				"variable": "target_destination",
+				"value": ""
+			},
+			"target15":
+			{
+				"variable": "target_destination",
+				"value": ""
+			},
+			"target16":
+			{
+				"variable": "target_destination",
+				"value": ""
+			}
+		}
+	},
+	"logic_setcvar":
+	{
+		"Class": "Point",
+		"base": ["Targetname", "Master"],
+		"size": [ [ -8, -8, -8 ], [ 8, 8, 8 ] ],
+		"color": [200, 100, 50],
+		"data":
+		{
+			"cvar_name":
+			{
+				"variable": "string",
+				"value": ""
+			},
+			"cvar_value":
+			{
+				"variable": "string",
+				"value": ""
+			}
+		}
+	},
+	"logic_isskill":
+	{
+		"Class": "Point",
+		"base": ["Targetname", "Master"],
+		"size": [ [ -8, -8, -8 ], [ 8, 8, 8 ] ],
+		"color": [200, 100, 50],
+		"data":
+		{
+			"skill1":
+			{
+				"variable": "target_destination",
+				"value": ""
+			},
+			"skill2":
+			{
+				"variable": "target_destination",
+				"value": ""
+			},
+			"skill3":
+			{
+				"variable": "target_destination",
+				"value": ""
+			}
+		}
+	},
+	"logic_setskill":
+	{
+		"Class": "Point",
+		"base": ["Targetname", "Target", "Master"],
+		"size": [ [ -8, -8, -8 ], [ 8, 8, 8 ] ],
+		"color": [200, 100, 50],
+		"data":
+		{
+			"skill_level":
+			{
+				"variable": "choices",
+				"value": "1",
+				"choices":
+				[
+					"1",
+					"2",
+					"3"
+				]
+			}
+		}
+	},
+	"logic_setskillvar":
+	{
+		"Class": "Point",
+		"base": ["Targetname", "Target", "Master"],
+		"size": [ [ -8, -8, -8 ], [ 8, 8, 8 ] ],
+		"color": [200, 100, 50],
+		"data":
+		{
+			"var_name":
+			{
+				"variable": "string",
+				"value": ""
+			},
+			"var_value":
+			{
+				"variable": "string",
+				"value": ""
+			}
+		}
+	},
+	"momentary_door":
+	{
+		"Class": "Solid",
+		"base": ["Door", "ZHLT"],
+		"data":
+		{
+			"spawnflags":
+			{
+				"variable": "flags",
+				"value": "",
+				"choices":
+				[
+					"1"
+				]
+			}
+		}
+	},
+	"momentary_rot_button":
+	{
+		"Class": "Solid",
+		"base": ["RenderFields", "Targetname", "Target", "Angles", "ZHLT", "Master", "ReplacementFiles"],
+		"data":
+		{
+			"speed":
+			{
+				"variable": "integer",
+				"value": "50"
+			},
+			"sounds":
+			{
+				"variable": "sound",
+				"value": ""
+			},
+			"distance":
+			{
+				"variable": "integer",
+				"value": "90"
+			},
+			"returnspeed":
+			{
+				"variable": "integer",
+				"value": "0"
+			},
+			"spawnflags":
+			{
+				"variable": "flags",
+				"value": "",
+				"choices":
+				[
+					"1",
+					"2",
+					"16",
+					"64",
+					"128"
+				]
+			},
+			"_minlight":
+			{
+				"variable": "integer",
+				"value": ""
+			}
+		}
+	},
+	"monster_alien_controller":
+	{
+		"Class": "Point",
+		"base": ["Monster", "Sequence"],
+		"size": [ [ -16, -16, 0 ], [ 16, 16, 72 ] ],
+		"studio": "models/controller.mdl",
+		"data":
+		{
+
+		}
+	},
+	"monster_alien_grunt":
+	{
+		"Class": "Point",
+		"base": ["Monster", "Sequence"],
+		"size": [ [ -32, -32, 0 ], [ 32, 32, 64 ] ],
+		"studio": "models/agrunt.mdl",
+		"data":
+		{
+			"netname":
+			{
+				"variable": "string",
+				"value": ""
+			},
+			"spawnflags":
+			{
+				"variable": "flags",
+				"value": "",
+				"choices":
+				[
+					"32"
+				]
+			}
+		}
+	},
+	"monster_alien_slave":
+	{
+		"Class": "Point",
+		"base": ["Monster", "Sequence"],
+		"size": [ [ -16, -16, 0 ], [ 16, 16, 72 ] ],
+		"studio": "models/islave.mdl",
+		"data":
+		{
+			"netname":
+			{
+				"variable": "string",
+				"value": ""
+			},
+			"spawnflags":
+			{
+				"variable": "flags",
+				"value": "",
+				"choices":
+				[
+					"32",
+					"64"
+				]
+			}
+		}
+	},
+	"monster_apache":
+	{
+		"Class": "Point",
+		"base": ["Monster", "Sequence"],
+		"size": [ [ -360, -360, -172 ], [ 360, 360, 8 ] ],
+		"studio": "models/apache.mdl",
+		"data":
+		{
+			"spawnflags":
+			{
+				"variable": "flags",
+				"value": "",
+				"choices":
+				[
+					"8",
+					"64"
+				]
+			}
+		}
+	},
+	"monster_babycrab":
+	{
+		"Class": "Point",
+		"base": ["Monster", "Sequence"],
+		"size": [ [ -16, -16, 0 ], [ 16, 16, 36 ] ],
+		"studio": "models/baby_headcrab.mdl",
+		"data":
+		{
+
+		}
+	},
+	"monster_barnacle":
+	{
+		"Class": "Point",
+		"base": ["RenderFields", "Sequence"],
+		"size": [ [ -16, -16, -36 ], [ 16, 16, 0 ] ],
+		"studio": "models/barnacle.mdl",
+		"data":
+		{
+
+		}
+	},
+	"monster_barney":
+	{
+		"Class": "Point",
+		"base": ["Monster", "TalkMonster", "Sequence"],
+		"size": [ [ -16, -16, 0 ], [ 16, 16, 72 ] ],
+		"studio": "models/barney.mdl",
+		"data":
+		{
+			"bodystate":
+			{
+				"variable": "choices",
+				"value": "1",
+				"choices":
+				[
+					"0",
+					"1",
+					"2"
+				]
+			}
+		}
+	},
+	"monster_barney_dead":
+	{
+		"Class": "Point",
+		"base": ["Targetname", "RenderFields", "Appearflags", "Angles", "Sequence"],
+		"size": [ [ -16, -16, 0 ], [ 16, 16, 72 ] ],
+		"studio": "models/barney.mdl",
+		"data":
+		{
+			"bodystate":
+			{
+				"variable": "choices",
+				"value": "1",
+				"choices":
+				[
+					"0",
+					"1",
+					"2"
+				]
+			},
+			"pose":
+			{
+				"variable": "choices",
+				"value": "0",
+				"choices":
+				[
+					"0",
+					"1",
+					"2"
+				]
+			}
+		}
+	},
+	"monster_bigmomma":
+	{
+		"Class": "Point",
+		"base": ["Monster", "Sequence", "MonsterWithChildren"],
+		"size": [ [ -95, -95, 0 ], [ 95, 95, 190 ] ],
+		"studio": "models/big_mom.mdl",
+		"data":
+		{
+			"netname":
+			{
+				"variable": "string",
+				"value": ""
+			}
+		}
+	},
+	"monster_bloater":
+	{
+		"Class": "Point",
+		"base": ["Monster", "Sequence"],
+		"size": [ [ -16, -16, 0 ], [ 16, 16, 72 ] ],
+		"studio": "models/floater.mdl",
+		"data":
+		{
+
+		}
+	},
+	"monster_bullchicken":
+	{
+		"Class": "Point",
+		"base": ["Monster", "Sequence"],
+		"size": [ [ -32, -32, 0 ], [ 32, 32, 64 ] ],
+		"studio": "models/bullsquid.mdl",
+		"data":
+		{
+
+		}
+	},
+	"monster_cockroach":
+	{
+		"Class": "Point",
+		"base": ["Monster", "Sequence"],
+		"size": [ [ -3, -3, 0 ], [ 3, 3, 3 ] ],
+		"studio": "models/roach.mdl",
+		"data":
+		{
+
+		}
+	},
+	"monster_flyer_flock":
+	{
+		"Class": "Point",
+		"base": ["Monster", "Sequence"],
+		"size": [ [ -16, -16, 0 ], [ 16, 16, 16 ] ],
+		"studio": "models/aflock.mdl",
+		"data":
+		{
+			"iFlockSize":
+			{
+				"variable": "integer",
+				"value": "8"
+			},
+			"flFlockRadius":
+			{
+				"variable": "integer",
+				"value": "128"
+			}
+		}
+	},
+	"monster_furniture":
+	{
+		"Class": "Point",
+		"base": ["Monster", "Sequence"],
+		"size": [ [ -16, -16, 0 ], [ 16, 16, 72 ] ],
+		"data":
+		{
+
+		}
+	},
+	"monster_gargantua":
+	{
+		"Class": "Point",
+		"base": ["Monster", "Sequence"],
+		"size": [ [ -32, -32, 0 ], [ 32, 32, 128 ] ],
+		"studio": "models/garg.mdl",
+		"data":
+		{
+
+		}
+	},
+	"monster_generic":
+	{
+		"Class": "Point",
+		"base": ["Monster", "RenderFields", "Sequence"],
+		"size": [ [ -16, -16, -36 ], [ 16, 16, 36 ] ],
+		"data":
+		{
+			"spawnflags":
+			{
+				"variable": "flags",
+				"value": "",
+				"choices":
+				[
+					"4",
+					"8"
+				]
+			},
+			"body":
+			{
+				"variable": "integer",
+				"value": "0"
+			}
+		}
+	},
+	"monster_gman":
+	{
+		"Class": "Point",
+		"base": ["Monster", "Sequence"],
+		"size": [ [ -16, -16, 0 ], [ 16, 16, 72 ] ],
+		"studio": "models/gman.mdl",
+		"data":
+		{
+
+		}
+	},
+	"monster_grunt_repel":
+	{
+		"Class": "Point",
+		"base": ["Monster", "Sequence"],
+		"size": [ [ -16, -16, 0 ], [ 16, 16, 72 ] ],
+		"studio": "models/hgrunt.mdl",
+		"data":
+		{
+
+		}
+	},
+	"monster_handgrenade":
+	{
+		"Class": "Point",
+		"base": ["Weapon", "Targetx", "RenderFields", "Sequence"],
+		"studio": "models/w_grenade.mdl",
+		"data":
+		{
+
+		}
+	},
+	"monster_headcrab":
+	{
+		"Class": "Point",
+		"base": ["Monster", "Sequence"],
+		"size": [ [ -16, -16, 0 ], [ 16, 16, 36 ] ],
+		"studio": "models/headcrab.mdl",
+		"data":
+		{
+
+		}
+	},
+	"monster_hevsuit_dead":
+	{
+		"Class": "Point",
+		"base": ["Targetname", "Appearflags", "RenderFields", "Angles", "Sequence"],
+		"size": [ [ -16, -16, 0 ], [ 16, 16, 72 ] ],
+		"studio": "models/deadhaz.mdl",
+		"data":
+		{
+			"pose":
+			{
+				"variable": "choices",
+				"value": "0",
+				"choices":
+				[
+					"0",
+					"1",
+					"2",
+					"3"
+				]
+			}
+		}
+	},
+	"monster_hgrunt_dead":
+	{
+		"Class": "Point",
+		"base": ["Targetname", "Appearflags", "RenderFields", "Angles", "Sequence"],
+		"size": [ [ -16, -16, 0 ], [ 16, 16, 72 ] ],
+		"studio": "models/hgrunt.mdl",
+		"data":
+		{
+			"pose":
+			{
+				"variable": "choices",
+				"value": "0",
+				"choices":
+				[
+					"0",
+					"1",
+					"2"
+				]
+			},
+			"body":
+			{
+				"variable": "choices",
+				"value": "0",
+				"choices":
+				[
+					"0",
+					"1",
+					"2",
+					"3"
+				]
+			}
+		}
+	},
+	"monster_houndeye":
+	{
+		"Class": "Point",
+		"base": ["Monster", "Sequence"],
+		"size": [ [ -16, -16, 0 ], [ 16, 16, 36 ] ],
+		"studio": "models/houndeye.mdl",
+		"data":
+		{
+			"netname":
+			{
+				"variable": "string",
+				"value": ""
+			},
+			"spawnflags":
+			{
+				"variable": "flags",
+				"value": "",
+				"choices":
+				[
+					"32"
+				]
+			}
+		}
+	},
+	"monster_human_assassin":
+	{
+		"Class": "Point",
+		"base": ["Monster", "Sequence"],
+		"size": [ [ -16, -16, 0 ], [ 16, 16, 72 ] ],
+		"studio": "models/hassassin.mdl",
+		"data":
+		{
+
+		}
+	},
+	"monster_human_grunt":
+	{
+		"Class": "Point",
+		"base": ["Monster", "Sequence"],
+		"size": [ [ -16, -16, 0 ], [ 16, 16, 72 ] ],
+		"studio": "models/hgrunt.mdl",
+		"data":
+		{
+			"spawnflags":
+			{
+				"variable": "flags",
+				"value": "",
+				"choices":
+				[
+					"32"
+				]
+			},
+			"netname":
+			{
+				"variable": "string",
+				"value": ""
+			},
+			"weapons":
+			{
+				"variable": "choices",
+				"value": "3",
+				"choices":
+				[
+					"1",
+					"3",
+					"5",
+					"8",
+					"10"
+				]
+			}
+		}
+	},
+	"monster_ichthyosaur":
+	{
+		"Class": "Point",
+		"base": ["Monster", "Sequence"],
+		"size": [ [ -32, -32, 0 ], [ 32, 32, 64 ] ],
+		"studio": "models/icky.mdl",
+		"data":
+		{
+
+		}
+	},
+	"monster_leech":
+	{
+		"Class": "Point",
+		"base": ["Monster", "Sequence"],
+		"size": [ [ -6, -6, 0 ], [ 6, 6, 6 ] ],
+		"studio": "models/leech.mdl",
+		"data":
+		{
+
+		}
+	},
+	"monster_miniturret":
+	{
+		"Class": "Point",
+		"base": ["Monster", "Sequence"],
+		"size": [ [ -16, -16, -32 ], [ 16, 16, 32 ] ],
+		"studio": "models/miniturret.mdl",
+		"data":
+		{
+			"orientation":
+			{
+				"variable": "choices",
+				"value": "0",
+				"choices":
+				[
+					"0",
+					"1"
+				]
+			},
+			"spawnflags":
+			{
+				"variable": "flags",
+				"value": "",
+				"choices":
+				[
+					"32",
+					"64"
+				]
+			}
+		}
+	},
+	"monster_nihilanth":
+	{
+		"Class": "Point",
+		"base": ["Monster", "Sequence"],
+		"size": [ [ -192, -192, 0 ], [ 192, 192, 384 ] ],
+		"studio": "models/nihilanth.mdl",
+		"data":
+		{
+
+		}
+	},
+	"BaseOsprey":
+	{
+		"Class": "Base",
+		"base": ["MonsterWithChildren"],
+		"data":
+		{
+			"spawnflags":
+			{
+				"variable": "flags",
+				"value": "",
+				"choices":
+				[
+					"64"
+				]
+			},
+			"initial_capacity":
+			{
+				"variable": "integer",
+				"value": "0"
+			}
+		}
+	},
+	"monster_osprey":
+	{
+		"Class": "Point",
+		"base": ["Monster", "Sequence", "BaseOsprey"],
+		"size": [ [ -480, -480, -112 ], [ 480, 480, 24 ] ],
+		"studio": "models/osprey.mdl",
+		"data":
+		{
+
+		}
+	},
+	"monster_rat":
+	{
+		"Class": "Point",
+		"base": ["Monster", "Sequence"],
+		"size": [ [ -6, -6, 0 ], [ 6, 6, 6 ] ],
+		"studio": "models/bigrat.mdl",
+		"data":
+		{
+
+		}
+	},
+	"monster_satchel":
+	{
+		"Class": "Point",
+		"base": ["Weapon", "Targetx", "RenderFields", "Sequence"],
+		"studio": "models/w_satchel.mdl",
+		"data":
+		{
+
+		}
+	},
+	"monster_scientist":
+	{
+		"Class": "Point",
+		"base": ["Monster", "TalkMonster", "Sequence"],
+		"size": [ [ -16, -16, 0 ], [ 16, 16, 72 ] ],
+		"studio": "models/scientist.mdl",
+		"data":
+		{
+			"body":
+			{
+				"variable": "choices",
+				"value": "-1",
+				"choices":
+				[
+					"-1",
+					"0",
+					"1",
+					"2",
+					"3"
+				]
+			},
+			"item":
+			{
+				"variable": "choices",
+				"value": "0",
+				"choices":
+				[
+					"0",
+					"1",
+					"2"
+				]
+			}
+		}
+	},
+	"monster_scientist_dead":
+	{
+		"Class": "Point",
+		"base": ["Targetname", "Appearflags", "RenderFields", "Angles", "Sequence"],
+		"size": [ [ -16, -16, 0 ], [ 16, 16, 72 ] ],
+		"studio": "models/scientist.mdl",
+		"data":
+		{
+			"body":
+			{
+				"variable": "choices",
+				"value": "-1",
+				"choices":
+				[
+					"-1",
+					"0",
+					"1",
+					"2",
+					"3"
+				]
+			},
+			"pose":
+			{
+				"variable": "choices",
+				"value": "0",
+				"choices":
+				[
+					"0",
+					"1",
+					"2",
+					"3",
+					"4",
+					"5",
+					"6"
+				]
+			}
+		}
+	},
+	"monster_sitting_scientist":
+	{
+		"Class": "Point",
+		"base": ["Monster", "Sequence"],
+		"size": [ [ -14, -14, 22 ], [ 14, 14, 72 ] ],
+		"studio": "models/scientist.mdl",
+		"data":
+		{
+			"body":
+			{
+				"variable": "choices",
+				"value": "-1",
+				"choices":
+				[
+					"-1",
+					"0",
+					"1",
+					"2",
+					"3"
+				]
+			},
+			"suspicious":
+			{
+				"variable": "choices",
+				"value": "0",
+				"choices":
+				[
+					"0",
+					"1"
+				]
+			}
+		}
+	},
+	"monster_sentry":
+	{
+		"Class": "Point",
+		"base": ["Monster", "Sequence"],
+		"size": [ [ -16, -16, 0 ], [ 16, 16, 72 ] ],
+		"studio": "models/sentry.mdl",
+		"data":
+		{
+			"spawnflags":
+			{
+				"variable": "flags",
+				"value": "",
+				"choices":
+				[
+					"32",
+					"64"
+				]
+			}
+		}
+	},
+	"monster_snark":
+	{
+		"Class": "Point",
+		"base": ["Monster", "Sequence"],
+		"size": [ [ -16, -16, 0 ], [ 16, 16, 36 ] ],
+		"studio": "models/w_squeak.mdl",
+		"data":
+		{
+
+		}
+	},
+	"monster_tentacle":
+	{
+		"Class": "Point",
+		"base": ["Monster", "Sequence"],
+		"size": [ [ -32, -32, 0 ], [ 32, 32, 64 ] ],
+		"studio": "models/tentacle2.mdl",
+		"data":
+		{
+			"spawnflags":
+			{
+				"variable": "flags",
+				"value": "",
+				"choices":
+				[
+					"64"
+				]
+			},
+			"sweeparc":
+			{
+				"variable": "integer",
+				"value": "130"
+			},
+			"sound":
+			{
+				"variable": "choices",
+				"value": "-1",
+				"choices":
+				[
+					"-1",
+					"0",
+					"1",
+					"2"
+				]
+			},
+			"height0":
+			{
+				"variable": "integer",
+				"value": "0"
+			},
+			"height1":
+			{
+				"variable": "integer",
+				"value": "256"
+			},
+			"height2":
+			{
+				"variable": "integer",
+				"value": "448"
+			},
+			"height3":
+			{
+				"variable": "integer",
+				"value": "640"
+			}
+		}
+	},
+	"monster_tripmine":
+	{
+		"Class": "Point",
+		"base": ["Monster", "Sequence"],
+		"studio": "models/w_tripmine.mdl",
+		"data":
+		{
+			"spawnflags":
+			{
+				"variable": "flags",
+				"value": "",
+				"choices":
+				[
+					"1"
+				]
+			}
+		}
+	},
+	"monster_turret":
+	{
+		"Class": "Point",
+		"base": ["Monster", "Sequence"],
+		"size": [ [ -32, -32, -32 ], [ 32, 32, 32 ] ],
+		"studio": "models/turret.mdl",
+		"data":
+		{
+			"orientation":
+			{
+				"variable": "choices",
+				"value": "0",
+				"choices":
+				[
+					"0",
+					"1"
+				]
+			},
+			"spawnflags":
+			{
+				"variable": "flags",
+				"value": "",
+				"choices":
+				[
+					"32",
+					"64"
+				]
+			}
+		}
+	},
+	"monster_zombie":
+	{
+		"Class": "Point",
+		"base": ["Monster", "Sequence"],
+		"size": [ [ -16, -16, 0 ], [ 16, 16, 72 ] ],
+		"studio": "models/zombie.mdl",
+		"data":
+		{
+
+		}
+	},
+	"monstermaker":
+	{
+		"Class": "Point",
+		"base": ["Targetname", "Angles"],
+		"size": [ [ -16, -16, -16 ], [ 16, 16, 16 ] ],
+		"data":
+		{
+			"target":
+			{
+				"variable": "target_destination",
+				"value": ""
+			},
+			"monstertype":
+			{
+				"variable": "string",
+				"value": ""
+			},
+			"netname":
+			{
+				"variable": "string",
+				"value": ""
+			},
+			"spawnflags":
+			{
+				"variable": "flags",
+				"value": "",
+				"choices":
+				[
+					"1",
+					"4",
+					"8"
+				]
+			},
+			"monstercount":
+			{
+				"variable": "integer",
+				"value": "-1"
+			},
+			"delay":
+			{
+				"variable": "string",
+				"value": "5"
+			},
+			"m_imaxlivechildren":
+			{
+				"variable": "integer",
+				"value": "5"
+			}
+		}
+	},
+	"multi_manager":
+	{
+		"Class": "Point",
+		"base": ["Targetname"],
+		"color": [255, 128, 0],
+		"data":
+		{
+			"spawnflags":
+			{
+				"variable": "flags",
+				"value": "",
+				"choices":
+				[
+					"1"
+				]
+			}
+		}
+	},
+	"multisource":
+	{
+		"Class": "Point",
+		"base": ["Targetname", "Target"],
+		"color": [128, 255, 128],
+		"sprite": "sprites/multisource.spr",
+		"iconsprite": "sprites/multisource.spr",
+		"data":
+		{
+			"globalstate":
+			{
+				"variable": "string",
+				"value": ""
+			}
+		}
+	},
+	"path_corner":
+	{
+		"Class": "Point",
+		"base": ["Targetname", "Angles"],
+		"size": [ [ 16, 16, 16 ] ],
+		"color": [247, 181, 82],
+		"flags": "Path",
+		"data":
+		{
+			"spawnflags":
+			{
+				"variable": "flags",
+				"value": "",
+				"choices":
+				[
+					"1",
+					"2",
+					"4"
+				]
+			},
+			"target":
+			{
+				"variable": "target_destination",
+				"value": ""
+			},
+			"message":
+			{
+				"variable": "target_destination",
+				"value": ""
+			},
+			"wait":
+			{
+				"variable": "integer",
+				"value": "0"
+			},
+			"speed":
+			{
+				"variable": "integer",
+				"value": "0"
+			},
+			"yaw_speed":
+			{
+				"variable": "integer",
+				"value": "0"
+			}
+		}
+	},
+	"path_track":
+	{
+		"Class": "Point",
+		"base": ["Targetname"],
+		"size": [ [ 16, 16, 16 ] ],
+		"flags": "Path",
+		"data":
+		{
+			"spawnflags":
+			{
+				"variable": "flags",
+				"value": "",
+				"choices":
+				[
+					"1",
+					"2",
+					"4",
+					"8"
+				]
+			},
+			"target":
+			{
+				"variable": "target_destination",
+				"value": ""
+			},
+			"message":
+			{
+				"variable": "target_destination",
+				"value": ""
+			},
+			"altpath":
+			{
+				"variable": "target_destination",
+				"value": ""
+			},
+			"netname":
+			{
+				"variable": "target_destination",
+				"value": ""
+			},
+			"speed":
+			{
+				"variable": "integer",
+				"value": "0"
+			}
+		}
+	},
+	"player_hassuit":
+	{
+		"Class": "Point",
+		"base": ["Targetname"],
+		"size": [ [ -16, -16, -16 ], [ 16, 16, 16 ] ],
+		"data":
+		{
+			"pass_target":
+			{
+				"variable": "target_destination",
+				"value": ""
+			},
+			"fail_target":
+			{
+				"variable": "target_destination",
+				"value": ""
+			}
+		}
+	},
+	"player_hasweapon":
+	{
+		"Class": "Point",
+		"base": ["Targetname"],
+		"size": [ [ -16, -16, -16 ], [ 16, 16, 16 ] ],
+		"data":
+		{
+			"pass_target":
+			{
+				"variable": "target_destination",
+				"value": ""
+			},
+			"fail_target":
+			{
+				"variable": "target_destination",
+				"value": ""
+			},
+			"weapon_name":
+			{
+				"variable": "string",
+				"value": ""
+			}
+		}
+	},
+	"player_loadsaved":
+	{
+		"Class": "Point",
+		"base": ["Targetname"],
+		"size": [ [ -16, -16, -16 ], [ 16, 16, 16 ] ],
+		"data":
+		{
+			"duration":
+			{
+				"variable": "string",
+				"value": "2"
+			},
+			"holdtime":
+			{
+				"variable": "string",
+				"value": "0"
+			},
+			"renderamt":
+			{
+				"variable": "integer",
+				"value": "255"
+			},
+			"rendercolor":
+			{
+				"variable": "color255",
+				"value": "0 0 0"
+			},
+			"messagetime":
+			{
+				"variable": "string",
+				"value": "0"
+			},
+			"message":
+			{
+				"variable": "string",
+				"value": ""
+			},
+			"loadtime":
+			{
+				"variable": "string",
+				"value": "0"
+			}
+		}
+	},
+	"player_sethealth":
+	{
+		"Class": "Point",
+		"base": ["Targetname"],
+		"size": [ [ -8, -8, -8 ], [ 8, 8, 8 ] ],
+		"data":
+		{
+			"all_players":
+			{
+				"variable": "choices",
+				"value": "0",
+				"choices":
+				[
+					"0",
+					"1"
+				]
+			},
+			"set_health":
+			{
+				"variable": "choices",
+				"value": "1",
+				"choices":
+				[
+					"0",
+					"1"
+				]
+			},
+			"set_armor":
+			{
+				"variable": "choices",
+				"value": "0",
+				"choices":
+				[
+					"0",
+					"1"
+				]
+			},
+			"health_to_set":
+			{
+				"variable": "integer",
+				"value": ""
+			},
+			"armor_to_set":
+			{
+				"variable": "integer",
+				"value": ""
+			}
+		}
+	},
+	"player_sethudcolor":
+	{
+		"Class": "Point",
+		"base": ["Targetname"],
+		"size": [ [ -16, -16, -16 ], [ 16, 16, 16 ] ],
+		"data":
+		{
+			"hud_color":
+			{
+				"variable": "color255",
+				"value": "0 0 0"
+			},
+			"action":
+			{
+				"variable": "choices",
+				"value": "0",
+				"choices":
+				[
+					"0",
+					"1"
+				]
+			}
+		}
+	},
+	"player_setcrosshaircolor":
+	{
+		"Class": "Point",
+		"base": ["Targetname"],
+		"size": [ [ -16, -16, -16 ], [ 16, 16, 16 ] ],
+		"data":
+		{
+			"crosshair_color":
+			{
+				"variable": "color255",
+				"value": "0 0 0"
+			},
+			"action":
+			{
+				"variable": "choices",
+				"value": "0",
+				"choices":
+				[
+					"0",
+					"1"
+				]
+			}
+		}
+	},
+	"player_setsuitlighttype":
+	{
+		"Class": "Point",
+		"base": ["Targetname"],
+		"size": [ [ -8, -8, -8 ], [ 8, 8, 8 ] ],
+		"data":
+		{
+			"all_players":
+			{
+				"variable": "choices",
+				"value": "0",
+				"choices":
+				[
+					"0",
+					"1"
+				]
+			},
+			"light_type":
+			{
+				"variable": "choices",
+				"value": "0",
+				"choices":
+				[
+					"0",
+					"1"
+				]
+			}
+		}
+	},
+	"player_weaponstrip":
+	{
+		"Class": "Point",
+		"base": ["Targetname"],
+		"size": [ [ -16, -16, -16 ], [ 16, 16, 16 ] ],
+		"data":
+		{
+			"all_players":
+			{
+				"variable": "choices",
+				"value": "0",
+				"choices":
+				[
+					"0",
+					"1"
+				]
+			},
+			"strip_weapons":
+			{
+				"variable": "choices",
+				"value": "1",
+				"choices":
+				[
+					"0",
+					"1"
+				]
+			},
+			"strip_suit":
+			{
+				"variable": "choices",
+				"value": "0",
+				"choices":
+				[
+					"0",
+					"1"
+				]
+			},
+			"strip_longjump":
+			{
+				"variable": "choices",
+				"value": "0",
+				"choices":
+				[
+					"0",
+					"1"
+				]
+			}
+		}
+	},
+	"scripted_sentence":
+	{
+		"Class": "Point",
+		"base": ["Targetname", "Targetx"],
+		"size": [ [ -16, -16, 0 ], [ 16, 16, 72 ] ],
+		"color": [255, 0, 255],
+		"data":
+		{
+			"spawnflags":
+			{
+				"variable": "flags",
+				"value": "",
+				"choices":
+				[
+					"1",
+					"2",
+					"4",
+					"8"
+				]
+			},
+			"sentence":
+			{
+				"variable": "string",
+				"value": ""
+			},
+			"entity":
+			{
+				"variable": "string",
+				"value": ""
+			},
+			"duration":
+			{
+				"variable": "string",
+				"value": "3"
+			},
+			"radius":
+			{
+				"variable": "integer",
+				"value": "512"
+			},
+			"refire":
+			{
+				"variable": "string",
+				"value": "3"
+			},
+			"listener":
+			{
+				"variable": "string",
+				"value": ""
+			},
+			"volume":
+			{
+				"variable": "string",
+				"value": "10"
+			},
+			"attenuation":
+			{
+				"variable": "choices",
+				"value": "0",
+				"choices":
+				[
+					"0",
+					"1",
+					"2",
+					"3"
+				]
+			}
+		}
+	},
+	"scripted_sequence":
+	{
+		"Class": "Point",
+		"base": ["Targetname", "Targetx", "Angles", "BaseScriptedSequence"],
+		"size": [ [ -16, -16, 0 ], [ 16, 16, 72 ] ],
+		"color": [255, 0, 255],
+		"flags": "Angle",
+		"data":
+		{
+			"m_iszIdle":
+			{
+				"variable": "string",
+				"value": ""
+			},
+			"spawnflags":
+			{
+				"variable": "flags",
+				"value": "",
+				"choices":
+				[
+					"32",
+					"64",
+					"128",
+					"256"
+				]
+			}
+		}
+	},
+	"speaker":
+	{
+		"Class": "Point",
+		"base": ["Targetname"],
+		"sprite": "sprites/speaker.spr",
+		"iconsprite": "sprites/speaker.spr",
+		"data":
+		{
+			"preset":
+			{
+				"variable": "choices",
+				"value": "0",
+				"choices":
+				[
+					"0",
+					"1",
+					"2",
+					"3",
+					"4",
+					"5",
+					"6",
+					"7",
+					"9",
+					"11",
+					"12"
+				]
+			},
+			"message":
+			{
+				"variable": "string",
+				"value": ""
+			},
+			"health":
+			{
+				"variable": "integer",
+				"value": "5"
+			},
+			"spawnflags":
+			{
+				"variable": "flags",
+				"value": "",
+				"choices":
+				[
+					"1"
+				]
+			}
+		}
+	},
+	"trigger_auto":
+	{
+		"Class": "Point",
+		"base": ["Targetx"],
+		"sprite": "sprites/trigger_auto.spr",
+		"iconsprite": "sprites/trigger_auto.spr",
+		"data":
+		{
+			"spawnflags":
+			{
+				"variable": "flags",
+				"value": "",
+				"choices":
+				[
+					"1"
+				]
+			},
+			"globalstate":
+			{
+				"variable": "string",
+				"value": ""
+			},
+			"triggerstate":
+			{
+				"variable": "choices",
+				"value": "0",
+				"choices":
+				[
+					"0",
+					"1",
+					"2"
+				]
+			}
+		}
+	},
+	"trigger_autosave":
+	{
+		"Class": "Solid",
+		"base": ["Targetname", "Master"],
+		"data":
+		{
+
+		}
+	},
+	"trigger_camera":
+	{
+		"Class": "Point",
+		"base": ["Targetx", "Targetname"],
+		"sprite": "sprites/trigger_camera.spr",
+		"iconsprite": "sprites/trigger_camera.spr",
+		"data":
+		{
+			"wait":
+			{
+				"variable": "integer",
+				"value": "10"
+			},
+			"moveto":
+			{
+				"variable": "string",
+				"value": ""
+			},
+			"spawnflags":
+			{
+				"variable": "flags",
+				"value": "",
+				"choices":
+				[
+					"1",
+					"2",
+					"4"
+				]
+			},
+			"speed":
+			{
+				"variable": "string",
+				"value": "0"
+			},
+			"acceleration":
+			{
+				"variable": "string",
+				"value": "500"
+			},
+			"deceleration":
+			{
+				"variable": "string",
+				"value": "500"
+			}
+		}
+	},
+	"trigger_changekeyvalue":
+	{
+		"Class": "Point",
+		"base": ["Targetname", "Target"],
+		"size": [ [ -8, -8, -8 ], [ 8, 8, 8 ] ],
+		"color": [255, 0, 255],
+		"data":
+		{
+			"changetarget":
+			{
+				"variable": "target_destination",
+				"value": ""
+			}
+		}
+	},
+	"trigger_changelevel":
+	{
+		"Class": "Solid",
+		"base": ["Targetname"],
+		"data":
+		{
+			"map":
+			{
+				"variable": "string",
+				"value": ""
+			},
+			"landmark":
+			{
+				"variable": "string",
+				"value": ""
+			},
+			"changetarget":
+			{
+				"variable": "target_destination",
+				"value": ""
+			},
+			"changedelay":
+			{
+				"variable": "string",
+				"value": "0"
+			},
+			"use_persistent_level_change":
+			{
+				"variable": "choices",
+				"value": "1",
+				"choices":
+				[
+					"0",
+					"1"
+				]
+			},
+			"use_persistent_inventory":
+			{
+				"variable": "choices",
+				"value": "1",
+				"choices":
+				[
+					"0",
+					"1"
+				]
+			},
+			"spawnflags":
+			{
+				"variable": "flags",
+				"value": "",
+				"choices":
+				[
+					"1",
+					"2"
+				]
+			}
+		}
+	},
+	"trigger_changetarget":
+	{
+		"Class": "Point",
+		"base": ["Targetx", "Targetname"],
+		"sprite": "sprites/trigger_changetarget.spr",
+		"iconsprite": "sprites/trigger_changetarget.spr",
+		"data":
+		{
+			"m_iszNewTarget":
+			{
+				"variable": "string",
+				"value": ""
+			}
+		}
+	},
+	"trigger_counter":
+	{
+		"Class": "Solid",
+		"base": ["Trigger", "Targetname", "Master"],
+		"data":
+		{
+			"spawnflags":
+			{
+				"variable": "flags",
+				"value": "",
+				"choices":
+				[
+					"1"
+				]
+			},
+			"count":
+			{
+				"variable": "integer",
+				"value": "2"
+			}
+		}
+	},
+	"trigger_endsection":
+	{
+		"Class": "Solid",
+		"base": ["Targetname"],
+		"data":
+		{
+			"section":
+			{
+				"variable": "string",
+				"value": ""
+			},
+			"spawnflags":
+			{
+				"variable": "flags",
+				"value": "",
+				"choices":
+				[
+					"1"
+				]
+			}
+		}
+	},
+	"trigger_gravity":
+	{
+		"Class": "Solid",
+		"base": ["Trigger"],
+		"data":
+		{
+			"gravity":
+			{
+				"variable": "integer",
+				"value": "1"
+			}
+		}
+	},
+	"trigger_hurt":
+	{
+		"Class": "Solid",
+		"base": ["Targetname", "Target", "Master"],
+		"data":
+		{
+			"spawnflags":
+			{
+				"variable": "flags",
+				"value": "",
+				"choices":
+				[
+					"1",
+					"2",
+					"8",
+					"16",
+					"32"
+				]
+			},
+			"dmg":
+			{
+				"variable": "integer",
+				"value": "10"
+			},
+			"delay":
+			{
+				"variable": "string",
+				"value": "0"
+			},
+			"damagetype":
+			{
+				"variable": "choices",
+				"value": "0",
+				"choices":
+				[
+					"0",
+					"1",
+					"2",
+					"4",
+					"8",
+					"16",
+					"32",
+					"64",
+					"128",
+					"256",
+					"512",
+					"1024",
+					"16384",
+					"32768",
+					"65536",
+					"131072",
+					"262144",
+					"524288",
+					"1048576",
+					"2097152",
+					"4194304"
+				]
+			}
+		}
+	},
+	"trigger_monsterjump":
+	{
+		"Class": "Solid",
+		"base": ["Angles", "Master"],
+		"data":
+		{
+			"speed":
+			{
+				"variable": "integer",
+				"value": "40"
+			},
+			"height":
+			{
+				"variable": "integer",
+				"value": "128"
+			}
+		}
+	},
+	"trigger_multiple":
+	{
+		"Class": "Solid",
+		"base": ["Trigger"],
+		"data":
+		{
+			"wait":
+			{
+				"variable": "integer",
+				"value": "10"
+			}
+		}
+	},
+	"trigger_once":
+	{
+		"Class": "Solid",
+		"base": ["Trigger"],
+		"data":
+		{
+
+		}
+	},
+	"trigger_push":
+	{
+		"Class": "Solid",
+		"base": ["Trigger", "Angles"],
+		"data":
+		{
+			"spawnflags":
+			{
+				"variable": "flags",
+				"value": "",
+				"choices":
+				[
+					"1",
+					"2"
+				]
+			},
+			"speed":
+			{
+				"variable": "integer",
+				"value": "40"
+			}
+		}
+	},
+	"trigger_relay":
+	{
+		"Class": "Point",
+		"base": ["Targetname", "Targetx", "Master"],
+		"sprite": "sprites/trigger_relay.spr",
+		"iconsprite": "sprites/trigger_relay.spr",
+		"data":
+		{
+			"spawnflags":
+			{
+				"variable": "flags",
+				"value": "",
+				"choices":
+				[
+					"1"
+				]
+			},
+			"triggerstate":
+			{
+				"variable": "choices",
+				"value": "0",
+				"choices":
+				[
+					"0",
+					"1",
+					"2"
+				]
+			}
+		}
+	},
+	"TeleportBase":
+	{
+		"Class": "Base",
+		"base": [],
+		"data":
+		{
+			"fire_on_teleport":
+			{
+				"variable": "target_destination",
+				"value": ""
+			}
+		}
+	},
+	"trigger_teleport":
+	{
+		"Class": "Solid",
+		"base": ["Trigger", "TeleportBase"],
+		"data":
+		{
+
+		}
+	},
+	"point_teleport":
+	{
+		"Class": "Point",
+		"base": ["Targetname", "Master", "Angles", "TeleportBase"],
+		"color": [0, 255, 0],
+		"flags": "Angle",
+		"data":
+		{
+			"target":
+			{
+				"variable": "target_destination",
+				"value": ""
+			}
+		}
+	},
+	"trigger_transition":
+	{
+		"Class": "Solid",
+		"base": ["Targetname"],
+		"data":
+		{
+
+		}
+	},
+	"weapon_crowbar":
+	{
+		"Class": "Point",
+		"base": ["Targetx", "RenderFields", "Weapon"],
+		"studio": "models/w_crowbar.mdl",
+		"data":
+		{
+
+		}
+	},
+	"weapon_9mmhandgun":
+	{
+		"Class": "Point",
+		"base": ["Targetx", "RenderFields", "Weapon"],
+		"studio": "models/w_9mmhandgun.mdl",
+		"data":
+		{
+
+		}
+	},
+	"weapon_357":
+	{
+		"Class": "Point",
+		"base": ["Targetx", "RenderFields", "Weapon"],
+		"studio": "models/w_357.mdl",
+		"data":
+		{
+
+		}
+	},
+	"weapon_9mmar":
+	{
+		"Class": "Point",
+		"base": ["Targetx", "RenderFields", "Weapon"],
+		"studio": "models/w_9mmar.mdl",
+		"data":
+		{
+
+		}
+	},
+	"weapon_shotgun":
+	{
+		"Class": "Point",
+		"base": ["Targetx", "RenderFields", "Weapon"],
+		"studio": "models/w_shotgun.mdl",
+		"data":
+		{
+
+		}
+	},
+	"weapon_rpg":
+	{
+		"Class": "Point",
+		"base": ["Targetx", "RenderFields", "Weapon"],
+		"studio": "models/w_rpg.mdl",
+		"data":
+		{
+			"sequence":
+			{
+				"variable": "choices",
+				"value": "0",
+				"choices":
+				[
+					"0",
+					"1"
+				]
+			}
+		}
+	},
+	"weapon_gauss":
+	{
+		"Class": "Point",
+		"base": ["Targetx", "RenderFields", "Weapon"],
+		"studio": "models/w_gauss.mdl",
+		"data":
+		{
+			"sequence":
+			{
+				"variable": "choices",
+				"value": "0",
+				"choices":
+				[
+					"0",
+					"1"
+				]
+			}
+		}
+	},
+	"weapon_crossbow":
+	{
+		"Class": "Point",
+		"base": ["Targetx", "RenderFields", "Weapon"],
+		"studio": "models/w_crossbow.mdl",
+		"data":
+		{
+			"sequence":
+			{
+				"variable": "choices",
+				"value": "0",
+				"choices":
+				[
+					"0",
+					"1"
+				]
+			}
+		}
+	},
+	"weapon_egon":
+	{
+		"Class": "Point",
+		"base": ["Targetx", "RenderFields", "Weapon"],
+		"studio": "models/w_egon.mdl",
+		"data":
+		{
+
+		}
+	},
+	"weapon_tripmine":
+	{
+		"Class": "Point",
+		"base": ["Targetx", "RenderFields", "Weapon"],
+		"size": [ [ -16, -16, -5 ], [ 16, 16, 27 ] ],
+		"studio": "models/w_tripmine.mdl",
+		"data":
+		{
+
+		}
+	},
+	"weapon_satchel":
+	{
+		"Class": "Point",
+		"base": ["Targetx", "RenderFields", "Weapon"],
+		"studio": "models/w_satchel.mdl",
+		"data":
+		{
+			"sequence":
+			{
+				"variable": "choices",
+				"value": "0",
+				"choices":
+				[
+					"0",
+					"1"
+				]
+			}
+		}
+	},
+	"weapon_handgrenade":
+	{
+		"Class": "Point",
+		"base": ["Targetx", "RenderFields", "Weapon"],
+		"studio": "models/w_grenade.mdl",
+		"data":
+		{
+
+		}
+	},
+	"weapon_snark":
+	{
+		"Class": "Point",
+		"base": ["Targetx", "RenderFields", "Weapon"],
+		"studio": "models/w_squeak.mdl",
+		"data":
+		{
+
+		}
+	},
+	"weapon_hornetgun":
+	{
+		"Class": "Point",
+		"base": ["Targetx", "RenderFields", "Weapon"],
+		"studio": "models/w_hgun.mdl",
+		"data":
+		{
+
+		}
+	},
+	"weaponbox":
+	{
+		"Class": "Point",
+		"base": [],
+		"size": [ [ -16, -16, 0 ], [ 16, 16, 64 ] ],
+		"color": [0, 128, 0],
+		"studio": "models/w_chainammo.mdl",
+		"data":
+		{
+
+		}
+	},
+	"xen_plantlight":
+	{
+		"Class": "Point",
+		"base": ["Target", "Targetname", "RenderFields", "Angles"],
+		"studio": "models/light.mdl",
+		"flags": "Angle",
+		"data":
+		{
+
+		}
+	},
+	"xen_hair":
+	{
+		"Class": "Point",
+		"base": ["Targetname", "RenderFields", "Angles"],
+		"studio": "models/hair.mdl",
+		"flags": "Angle",
+		"data":
+		{
+			"spawnflags":
+			{
+				"variable": "flags",
+				"value": "",
+				"choices":
+				[
+					"1"
+				]
+			}
+		}
+	},
+	"xen_tree":
+	{
+		"Class": "Point",
+		"base": ["Targetname", "RenderFields", "Angles"],
+		"studio": "models/tree.mdl",
+		"flags": "Angle",
+		"data":
+		{
+
+		}
+	},
+	"xen_spore_small":
+	{
+		"Class": "Point",
+		"base": ["Targetname", "RenderFields", "Angles"],
+		"studio": "models/fungus(small).mdl",
+		"flags": "Angle",
+		"data":
+		{
+
+		}
+	},
+	"xen_spore_medium":
+	{
+		"Class": "Point",
+		"base": ["Targetname", "RenderFields", "Angles"],
+		"studio": "models/fungus.mdl",
+		"flags": "Angle",
+		"data":
+		{
+
+		}
+	},
+	"xen_spore_large":
+	{
+		"Class": "Point",
+		"base": ["Targetname", "RenderFields", "Angles"],
+		"studio": "models/fungus(large).mdl",
+		"flags": "Angle",
+		"data":
+		{
+
+		}
+	},
+	"ammo_556":
+	{
+		"Class": "Point",
+		"base": ["Targetx", "RenderFields", "Ammo"],
+		"studio": "models/W_saw_clip.mdl",
+		"data":
+		{
+
+		}
+	},
+	"ammo_762":
+	{
+		"Class": "Point",
+		"base": ["Targetx", "RenderFields", "Ammo"],
+		"studio": "models/w_m40a1clip.mdl",
+		"data":
+		{
+
+		}
+	},
+	"ammo_spore":
+	{
+		"Class": "Point",
+		"base": ["Targetx", "RenderFields", "Ammo"],
+		"studio": "models/spore_ammo.mdl",
+		"data":
+		{
+
+		}
+	},
+	"env_blowercannon":
+	{
+		"Class": "Point",
+		"base": ["Targetname", "Target"],
+		"size": [ [ -16, -16, -16 ], [ 16, 16, 16 ] ],
+		"data":
+		{
+			"delay":
+			{
+				"variable": "string",
+				"value": "0"
+			},
+			"zoffset":
+			{
+				"variable": "integer",
+				"value": "0"
+			},
+			"weaptype":
+			{
+				"variable": "choices",
+				"value": "1",
+				"choices":
+				[
+					"1",
+					"2",
+					"3",
+					"4"
+				]
+			},
+			"firetype":
+			{
+				"variable": "choices",
+				"value": "1",
+				"choices":
+				[
+					"1",
+					"2"
+				]
+			}
+		}
+	},
+	"env_electrified_wire":
+	{
+		"Class": "Point",
+		"base": ["Targetname"],
+		"size": [ [ -16, -16, -16 ], [ 16, 16, 16 ] ],
+		"data":
+		{
+			"segments":
+			{
+				"variable": "integer",
+				"value": "16"
+			},
+			"sparkfrequency":
+			{
+				"variable": "integer",
+				"value": "3"
+			},
+			"bodysparkfrequency":
+			{
+				"variable": "integer",
+				"value": "3"
+			},
+			"lightningfrequency":
+			{
+				"variable": "integer",
+				"value": "3"
+			},
+			"xforce":
+			{
+				"variable": "integer",
+				"value": "80000"
+			},
+			"yforce":
+			{
+				"variable": "integer",
+				"value": "80000"
+			},
+			"zforce":
+			{
+				"variable": "integer",
+				"value": "80000"
+			},
+			"disable":
+			{
+				"variable": "choices",
+				"value": "0",
+				"choices":
+				[
+					"0",
+					"1"
+				]
+			},
+			"endingmodel":
+			{
+				"variable": "studio",
+				"value": "models/wire_copper16.mdl"
+			},
+			"bodymodel":
+			{
+				"variable": "studio",
+				"value": "models/wire_black16.mdl"
+			}
+		}
+	},
+	"env_rope":
+	{
+		"Class": "Point",
+		"base": ["Targetname"],
+		"size": [ [ -16, -16, -16 ], [ 16, 16, 16 ] ],
+		"data":
+		{
+			"segments":
+			{
+				"variable": "integer",
+				"value": "16"
+			},
+			"disable":
+			{
+				"variable": "choices",
+				"value": "0",
+				"choices":
+				[
+					"0",
+					"1"
+				]
+			},
+			"endingmodel":
+			{
+				"variable": "studio",
+				"value": "models/rope16.mdl"
+			},
+			"bodymodel":
+			{
+				"variable": "studio",
+				"value": "models/rope16.mdl"
+			}
+		}
+	},
+	"env_spritetrain":
+	{
+		"Class": "Point",
+		"base": ["Targetname", "PlatSounds"],
+		"size": [ [ -16, -16, -16 ], [ 16, 16, 16 ] ],
+		"color": [0, 128, 255],
+		"data":
+		{
+			"target":
+			{
+				"variable": "target_destination",
+				"value": ""
+			},
+			"model":
+			{
+				"variable": "sprite",
+				"value": "sprites/glow01.spr"
+			},
+			"speed":
+			{
+				"variable": "integer",
+				"value": "64"
+			},
+			"scale":
+			{
+				"variable": "string",
+				"value": ""
+			}
+		}
+	},
+	"func_op4mortarcontroller":
+	{
+		"Class": "Solid",
+		"base": ["Target"],
+		"data":
+		{
+			"mortar_axis":
+			{
+				"variable": "choices",
+				"value": "0",
+				"choices":
+				[
+					"0",
+					"1"
+				]
+			}
+		}
+	},
+	"info_displacer_xen_target":
+	{
+		"Class": "Point",
+		"base": ["Targetname"],
+		"size": [ [ -4, -4, -4 ], [ 4, 4, 4 ] ],
+		"color": [200, 100, 50],
+		"data":
+		{
+
+		}
+	},
+	"info_displacer_earth_target":
+	{
+		"Class": "Point",
+		"base": ["Targetname"],
+		"size": [ [ -4, -4, -4 ], [ 4, 4, 4 ] ],
+		"color": [200, 100, 50],
+		"data":
+		{
+
+		}
+	},
+	"info_pitworm_steam_lock":
+	{
+		"Class": "Point",
+		"base": ["Targetname", "Target"],
+		"data":
+		{
+
+		}
+	},
+	"item_generic":
+	{
+		"Class": "Point",
+		"base": ["Targetx", "OtherItem"],
+		"studio": true,
+		"data":
+		{
+			"model":
+			{
+				"variable": "studio",
+				"value": "models/egg.mdl"
+			},
+			"sequencename":
+			{
+				"variable": "string",
+				"value": "idle"
+			},
+			"skin":
+			{
+				"variable": "integer",
+				"value": "0"
+			},
+			"body":
+			{
+				"variable": "integer",
+				"value": "0"
+			},
+			"spawnflags":
+			{
+				"variable": "flags",
+				"value": "",
+				"choices":
+				[
+					"1",
+					"2"
+				]
+			}
+		}
+	},
+	"item_nuclearbomb":
+	{
+		"Class": "Point",
+		"base": ["Targetx", "OtherItem"],
+		"size": [ [ -16, -16, 0 ], [ 16, 16, 36 ] ],
+		"data":
+		{
+			"initialstate":
+			{
+				"variable": "integer",
+				"value": "0"
+			},
+			"wait":
+			{
+				"variable": "integer",
+				"value": "1"
+			}
+		}
+	},
+	"monster_alien_babyvoltigore":
+	{
+		"Class": "Point",
+		"base": ["Monster", "Sequence"],
+		"studio": "models/baby_voltigore.mdl",
+		"data":
+		{
+			"netname":
+			{
+				"variable": "string",
+				"value": ""
+			},
+			"spawnflags":
+			{
+				"variable": "flags",
+				"value": "",
+				"choices":
+				[
+					"32"
+				]
+			}
+		}
+	},
+	"monster_alien_voltigore":
+	{
+		"Class": "Point",
+		"base": ["Monster", "Sequence"],
+		"studio": "models/voltigore.mdl",
+		"data":
+		{
+			"netname":
+			{
+				"variable": "string",
+				"value": ""
+			},
+			"spawnflags":
+			{
+				"variable": "flags",
+				"value": "",
+				"choices":
+				[
+					"32"
+				]
+			}
+		}
+	},
+	"monster_alien_slave_dead":
+	{
+		"Class": "Point",
+		"base": ["Monster", "Sequence"],
+		"studio": "models/islave.mdl",
+		"data":
+		{
+			"pose":
+			{
+				"variable": "choices",
+				"value": "0",
+				"choices":
+				[
+					"0"
+				]
+			}
+		}
+	},
+	"monster_assassin_repel":
+	{
+		"Class": "Point",
+		"base": ["Monster", "Sequence"],
+		"studio": "models/massn.mdl",
+		"data":
+		{
+
+		}
+	},
+	"monster_blkop_apache":
+	{
+		"Class": "Point",
+		"base": ["Monster", "Sequence"],
+		"studio": "models/blkop_apache.mdl",
+		"data":
+		{
+			"spawnflags":
+			{
+				"variable": "flags",
+				"value": "",
+				"choices":
+				[
+					"8",
+					"64"
+				]
+			}
+		}
+	},
+	"monster_blkop_osprey":
+	{
+		"Class": "Point",
+		"base": ["Monster", "Sequence", "BaseOsprey"],
+		"studio": "models/blkop_osprey.mdl",
+		"data":
+		{
+
+		}
+	},
+	"monster_cleansuit_scientist":
+	{
+		"Class": "Point",
+		"base": ["Monster", "TalkMonster", "Sequence"],
+		"studio": "models/cleansuit_scientist.mdl",
+		"data":
+		{
+			"body":
+			{
+				"variable": "choices",
+				"value": "-1",
+				"choices":
+				[
+					"-1",
+					"0",
+					"1",
+					"2",
+					"3"
+				]
+			}
+		}
+	},
+	"monster_cleansuit_scientist_dead":
+	{
+		"Class": "Point",
+		"base": ["Targetname", "Appearflags", "RenderFields", "Sequence"],
+		"studio": "models/cleansuit_scientist.mdl",
+		"data":
+		{
+			"body":
+			{
+				"variable": "choices",
+				"value": "-1",
+				"choices":
+				[
+					"-1",
+					"0",
+					"1",
+					"2",
+					"3"
+				]
+			},
+			"pose":
+			{
+				"variable": "choices",
+				"value": "0",
+				"choices":
+				[
+					"0",
+					"1",
+					"2",
+					"3",
+					"4",
+					"5",
+					"6",
+					"7",
+					"8"
+				]
+			}
+		}
+	},
+	"monster_sitting_cleansuit_scientist":
+	{
+		"Class": "Point",
+		"base": ["Monster", "Sequence"],
+		"studio": "models/cleansuit_scientist.mdl",
+		"data":
+		{
+			"body":
+			{
+				"variable": "choices",
+				"value": "-1",
+				"choices":
+				[
+					"-1",
+					"0",
+					"1",
+					"2",
+					"3"
+				]
+			}
+		}
+	},
+	"monster_drillsergeant":
+	{
+		"Class": "Point",
+		"base": ["Monster", "TalkMonster", "Sequence"],
+		"studio": "models/drill.mdl",
+		"data":
+		{
+
+		}
+	},
+	"monster_geneworm":
+	{
+		"Class": "Point",
+		"base": ["Monster", "Sequence"],
+		"studio": "models/geneworm.mdl",
+		"data":
+		{
+
+		}
+	},
+	"monster_gonome":
+	{
+		"Class": "Point",
+		"base": ["Monster", "Sequence"],
+		"studio": "models/gonome.mdl",
+		"data":
+		{
+
+		}
+	},
+	"monster_gonome_dead":
+	{
+		"Class": "Point",
+		"base": ["Targetname", "Appearflags", "RenderFields", "Sequence"],
+		"studio": "models/gonome.mdl",
+		"data":
+		{
+			"pose":
+			{
+				"variable": "choices",
+				"value": "0",
+				"choices":
+				[
+					"0",
+					"1",
+					"2"
+				]
+			}
+		}
+	},
+	"monster_houndeye_dead":
+	{
+		"Class": "Point",
+		"base": ["Monster", "Sequence"],
+		"studio": "models/houndeye_dead.mdl",
+		"data":
+		{
+			"pose":
+			{
+				"variable": "choices",
+				"value": "0",
+				"choices":
+				[
+					"0"
+				]
+			}
+		}
+	},
+	"monster_grunt_ally_repel":
+	{
+		"Class": "Point",
+		"base": ["Monster", "Sequence", "TalkMonster"],
+		"studio": "models/hgrunt_opfor.mdl",
+		"data":
+		{
+			"spawnflags":
+			{
+				"variable": "flags",
+				"value": "",
+				"choices":
+				[
+					"32"
+				]
+			},
+			"netname":
+			{
+				"variable": "string",
+				"value": ""
+			},
+			"weapons":
+			{
+				"variable": "choices",
+				"value": "3",
+				"choices":
+				[
+					"1",
+					"3",
+					"5",
+					"8",
+					"10",
+					"16"
+				]
+			},
+			"head":
+			{
+				"variable": "choices",
+				"value": "-1",
+				"choices":
+				[
+					"-1",
+					"0",
+					"1",
+					"2",
+					"3",
+					"4",
+					"5",
+					"6",
+					"7"
+				]
+			}
+		}
+	},
+	"monster_human_grunt_ally":
+	{
+		"Class": "Point",
+		"base": ["Monster", "Sequence", "TalkMonster"],
+		"studio": "models/hgrunt_opfor.mdl",
+		"data":
+		{
+			"netname":
+			{
+				"variable": "string",
+				"value": ""
+			},
+			"spawnflags":
+			{
+				"variable": "flags",
+				"value": "",
+				"choices":
+				[
+					"32"
+				]
+			},
+			"weapons":
+			{
+				"variable": "choices",
+				"value": "3",
+				"choices":
+				[
+					"0",
+					"1",
+					"3",
+					"5",
+					"8",
+					"10",
+					"16"
+				]
+			},
+			"head":
+			{
+				"variable": "choices",
+				"value": "-1",
+				"choices":
+				[
+					"-1",
+					"0",
+					"1",
+					"2",
+					"3",
+					"4",
+					"5",
+					"6",
+					"7"
+				]
+			}
+		}
+	},
+	"monster_human_grunt_ally_dead":
+	{
+		"Class": "Point",
+		"base": ["Targetname", "Appearflags", "RenderFields", "Sequence"],
+		"studio": "models/hgrunt_opfor.mdl",
+		"data":
+		{
+			"pose":
+			{
+				"variable": "choices",
+				"value": "0",
+				"choices":
+				[
+					"0",
+					"1",
+					"2",
+					"3",
+					"4",
+					"5",
+					"6"
+				]
+			},
+			"weapons":
+			{
+				"variable": "choices",
+				"value": "1",
+				"choices":
+				[
+					"0",
+					"1",
+					"8",
+					"16"
+				]
+			},
+			"head":
+			{
+				"variable": "choices",
+				"value": "0",
+				"choices":
+				[
+					"0",
+					"1",
+					"2",
+					"3",
+					"4",
+					"5",
+					"6",
+					"7"
+				]
+			}
+		}
+	},
+	"monster_human_medic_ally":
+	{
+		"Class": "Point",
+		"base": ["Monster", "Sequence"],
+		"studio": "models/hgrunt_medic.mdl",
+		"data":
+		{
+			"netname":
+			{
+				"variable": "string",
+				"value": ""
+			},
+			"spawnflags":
+			{
+				"variable": "flags",
+				"value": "",
+				"choices":
+				[
+					"32"
+				]
+			},
+			"head":
+			{
+				"variable": "choices",
+				"value": "-1",
+				"choices":
+				[
+					"-1",
+					"0",
+					"1"
+				]
+			},
+			"weapons":
+			{
+				"variable": "choices",
+				"value": "2",
+				"choices":
+				[
+					"0",
+					"1",
+					"2",
+					"4"
+				]
+			}
+		}
+	},
+	"monster_human_torch_ally":
+	{
+		"Class": "Point",
+		"base": ["Monster", "Sequence"],
+		"studio": "models/hgrunt_torch.mdl",
+		"data":
+		{
+			"netname":
+			{
+				"variable": "string",
+				"value": ""
+			},
+			"spawnflags":
+			{
+				"variable": "flags",
+				"value": "",
+				"choices":
+				[
+					"32"
+				]
+			},
+			"weapons":
+			{
+				"variable": "choices",
+				"value": "1",
+				"choices":
+				[
+					"1",
+					"2",
+					"5",
+					"6"
+				]
+			}
+		}
+	},
+	"monster_male_assassin":
+	{
+		"Class": "Point",
+		"base": ["Monster", "Sequence"],
+		"studio": "models/massn.mdl",
+		"data":
+		{
+			"netname":
+			{
+				"variable": "string",
+				"value": ""
+			},
+			"spawnflags":
+			{
+				"variable": "flags",
+				"value": "",
+				"choices":
+				[
+					"32"
+				]
+			},
+			"head":
+			{
+				"variable": "choices",
+				"value": "0",
+				"choices":
+				[
+					"-1",
+					"0",
+					"1",
+					"2"
+				]
+			},
+			"weapons":
+			{
+				"variable": "choices",
+				"value": "3",
+				"choices":
+				[
+					"0",
+					"1",
+					"3",
+					"5",
+					"8"
+				]
+			},
+			"standgroundrange":
+			{
+				"variable": "string",
+				"value": "0.0"
+			}
+		}
+	},
+	"monster_op4loader":
+	{
+		"Class": "Point",
+		"base": ["Monster", "RenderFields", "Sequence"],
+		"studio": "models/loader.mdl",
+		"data":
+		{
+			"spawnflags":
+			{
+				"variable": "flags",
+				"value": "",
+				"choices":
+				[
+					"4"
+				]
+			}
+		}
+	},
+	"monster_otis":
+	{
+		"Class": "Point",
+		"base": ["Monster", "TalkMonster", "Sequence"],
+		"studio": "models/otis.mdl",
+		"data":
+		{
+			"bodystate":
+			{
+				"variable": "choices",
+				"value": "1",
+				"choices":
+				[
+					"0",
+					"1",
+					"2"
+				]
+			},
+			"skin":
+			{
+				"variable": "choices",
+				"value": "-1",
+				"choices":
+				[
+					"-1",
+					"0",
+					"1",
+					"2"
+				]
+			},
+			"sleeves":
+			{
+				"variable": "choices",
+				"value": "-1",
+				"choices":
+				[
+					"-1",
+					"0",
+					"1"
+				]
+			},
+			"item":
+			{
+				"variable": "choices",
+				"value": "0",
+				"choices":
+				[
+					"0",
+					"1",
+					"2"
+				]
+			}
+		}
+	},
+	"monster_otis_dead":
+	{
+		"Class": "Point",
+		"base": ["Targetname", "Appearflags", "Sequence"],
+		"studio": "models/otis.mdl",
+		"data":
+		{
+			"pose":
+			{
+				"variable": "choices",
+				"value": "0",
+				"choices":
+				[
+					"0",
+					"1",
+					"2",
+					"3",
+					"4"
+				]
+			},
+			"bodystate":
+			{
+				"variable": "choices",
+				"value": "1",
+				"choices":
+				[
+					"0",
+					"1",
+					"2"
+				]
+			},
+			"sleeves":
+			{
+				"variable": "choices",
+				"value": "-1",
+				"choices":
+				[
+					"-1",
+					"0",
+					"1"
+				]
+			},
+			"item":
+			{
+				"variable": "choices",
+				"value": "0",
+				"choices":
+				[
+					"0",
+					"1",
+					"2"
+				]
+			}
+		}
+	},
+	"monster_pitdrone":
+	{
+		"Class": "Point",
+		"base": ["Monster", "Sequence"],
+		"studio": "models/pit_drone.mdl",
+		"data":
+		{
+			"initammo":
+			{
+				"variable": "string",
+				"value": "6"
+			}
+		}
+	},
+	"monster_pitworm":
+	{
+		"Class": "Point",
+		"base": ["Monster", "Sequence"],
+		"studio": "models/pit_worm_up.mdl",
+		"data":
+		{
+
+		}
+	},
+	"monster_pitworm_up":
+	{
+		"Class": "Point",
+		"base": ["Monster", "Sequence"],
+		"studio": "models/pit_worm_up.mdl",
+		"data":
+		{
+
+		}
+	},
+	"monster_shockroach":
+	{
+		"Class": "Point",
+		"base": ["Monster", "Sequence"],
+		"studio": "models/w_shock_rifle.mdl",
+		"data":
+		{
+
+		}
+	},
+	"monster_zombie_barney":
+	{
+		"Class": "Point",
+		"base": ["Monster", "Sequence"],
+		"studio": "models/zombie_barney.mdl",
+		"data":
+		{
+
+		}
+	},
+	"monster_zombie_soldier":
+	{
+		"Class": "Point",
+		"base": ["Monster", "Sequence"],
+		"studio": "models/zombie_soldier.mdl",
+		"data":
+		{
+
+		}
+	},
+	"monster_zombie_soldier_dead":
+	{
+		"Class": "Point",
+		"base": ["Monster", "Sequence"],
+		"studio": "models/zombie_soldier.mdl",
+		"data":
+		{
+			"pose":
+			{
+				"variable": "choices",
+				"value": "0",
+				"choices":
+				[
+					"0",
+					"1"
+				]
+			}
+		}
+	},
+	"monster_recruit":
+	{
+		"Class": "Point",
+		"base": ["Monster", "TalkMonster", "Sequence"],
+		"studio": "models/recruit.mdl",
+		"data":
+		{
+
+		}
+	},
+	"monster_skeleton_dead":
+	{
+		"Class": "Point",
+		"base": ["Targetname", "Appearflags", "RenderFields", "Sequence"],
+		"size": [ [ -16, -16, 0 ], [ 16, 16, 72 ] ],
+		"studio": "models/skeleton.mdl",
+		"data":
+		{
+			"pose":
+			{
+				"variable": "choices",
+				"value": "0",
+				"choices":
+				[
+					"0",
+					"1",
+					"2",
+					"3"
+				]
+			}
+		}
+	},
+	"monster_shocktrooper":
+	{
+		"Class": "Point",
+		"base": ["Monster", "Sequence"],
+		"studio": "models/strooper.mdl",
+		"data":
+		{
+			"netname":
+			{
+				"variable": "string",
+				"value": ""
+			},
+			"spawnflags":
+			{
+				"variable": "flags",
+				"value": "",
+				"choices":
+				[
+					"32"
+				]
+			},
+			"weapons":
+			{
+				"variable": "choices",
+				"value": "3",
+				"choices":
+				[
+					"1",
+					"3",
+					"5",
+					"8",
+					"10"
+				]
+			}
+		}
+	},
+	"op4mortar":
+	{
+		"Class": "Point",
+		"base": ["Targetname"],
+		"data":
+		{
+			"spawnflags":
+			{
+				"variable": "flags",
+				"value": "",
+				"choices":
+				[
+					"1",
+					"16",
+					"32"
+				]
+			},
+			"mortar_velocity":
+			{
+				"variable": "integer",
+				"value": "800"
+			},
+			"h_min":
+			{
+				"variable": "integer",
+				"value": "-90"
+			},
+			"h_max":
+			{
+				"variable": "integer",
+				"value": "90"
+			},
+			"mindist":
+			{
+				"variable": "integer",
+				"value": "256"
+			},
+			"maxdist":
+			{
+				"variable": "integer",
+				"value": "2048"
+			},
+			"enemytype":
+			{
+				"variable": "choices",
+				"value": "0",
+				"choices":
+				[
+					"0",
+					"1",
+					"2"
+				]
+			},
+			"firedelay":
+			{
+				"variable": "integer",
+				"value": "5"
+			}
+		}
+	},
+	"pitworm_gibshooter":
+	{
+		"Class": "Point",
+		"base": ["gibshooterbase"],
+		"data":
+		{
+
+		}
+	},
+	"trigger_geneworm_hit":
+	{
+		"Class": "Solid",
+		"base": ["Targetname", "Target", "Master"],
+		"data":
+		{
+			"spawnflags":
+			{
+				"variable": "flags",
+				"value": "",
+				"choices":
+				[
+					"1",
+					"2",
+					"8",
+					"16",
+					"32"
+				]
+			},
+			"delay":
+			{
+				"variable": "string",
+				"value": "0"
+			}
+		}
+	},
+	"trigger_playerfreeze":
+	{
+		"Class": "Point",
+		"base": ["Targetx", "Targetname"],
+		"data":
+		{
+
+		}
+	},
+	"trigger_xen_return":
+	{
+		"Class": "Solid",
+		"base": ["Trigger"],
+		"data":
+		{
+
+		}
+	},
+	"weapon_displacer":
+	{
+		"Class": "Point",
+		"base": ["Targetx", "RenderFields", "Weapon"],
+		"studio": "models/w_displacer.mdl",
+		"data":
+		{
+
+		}
+	},
+	"weapon_eagle":
+	{
+		"Class": "Point",
+		"base": ["Targetx", "RenderFields", "Weapon"],
+		"studio": "models/w_desert_eagle.mdl",
+		"data":
+		{
+
+		}
+	},
+	"weapon_grapple":
+	{
+		"Class": "Point",
+		"base": ["Targetx", "RenderFields", "Weapon"],
+		"studio": "models/w_bgrap.mdl",
+		"data":
+		{
+
+		}
+	},
+	"weapon_knife":
+	{
+		"Class": "Point",
+		"base": ["Targetx", "RenderFields", "Weapon"],
+		"studio": "models/w_knife.mdl",
+		"data":
+		{
+
+		}
+	},
+	"weapon_m249":
+	{
+		"Class": "Point",
+		"base": ["Targetx", "RenderFields", "Weapon"],
+		"studio": "models/w_saw.mdl",
+		"data":
+		{
+
+		}
+	},
+	"weapon_penguin":
+	{
+		"Class": "Point",
+		"base": ["Targetx", "RenderFields", "Weapon"],
+		"studio": "models/w_penguinnest.mdl",
+		"data":
+		{
+
+		}
+	},
+	"weapon_pipewrench":
+	{
+		"Class": "Point",
+		"base": ["Targetx", "RenderFields", "Weapon"],
+		"studio": "models/w_pipe_wrench.mdl",
+		"data":
+		{
+
+		}
+	},
+	"weapon_shockrifle":
+	{
+		"Class": "Point",
+		"base": ["Targetx", "RenderFields", "Weapon"],
+		"studio": "models/w_shock.mdl",
+		"data":
+		{
+
+		}
+	},
+	"weapon_sniperrifle":
+	{
+		"Class": "Point",
+		"base": ["Targetx", "RenderFields", "Weapon"],
+		"studio": "models/w_m40a1.mdl",
+		"data":
+		{
+
+		}
+	},
+	"weapon_sporelauncher":
+	{
+		"Class": "Point",
+		"base": ["Targetx", "RenderFields", "Weapon"],
+		"studio": "models/w_spore_launcher.mdl",
+		"data":
+		{
+
+		}
+	},
+	"CTFAttributes":
+	{
+		"Class": "Base",
+		"base": [],
+		"data":
+		{
+			"goal_no":
+			{
+				"variable": "choices",
+				"value": "1",
+				"choices":
+				[
+					"1",
+					"2"
+				]
+			},
+			"goal_min":
+			{
+				"variable": "string",
+				"value": "-16 -16 0"
+			},
+			"goal_max":
+			{
+				"variable": "string",
+				"value": "16 16 72"
+			}
+		}
+	},
+	"CTFItem":
+	{
+		"Class": "Base",
+		"base": [],
+		"data":
+		{
+			"spawnflags":
+			{
+				"variable": "flags",
+				"value": "",
+				"choices":
+				[
+					"4",
+					"8"
+				]
+			},
+			"team_no":
+			{
+				"variable": "choices",
+				"value": "0",
+				"choices":
+				[
+					"0",
+					"1",
+					"2"
+				]
+			}
+		}
+	},
+	"item_ctfflag":
+	{
+		"Class": "Point",
+		"base": ["CTFAttributes"],
+		"size": [ [ -16, -16, 0 ], [ 16, 16, 72 ] ],
+		"data":
+		{
+			"skin":
+			{
+				"variable": "choices",
+				"value": "1",
+				"choices":
+				[
+					"1",
+					"2"
+				]
+			},
+			"model":
+			{
+				"variable": "studio",
+				"value": "models/flag.mdl"
+			}
+		}
+	},
+	"item_ctfbase":
+	{
+		"Class": "Point",
+		"base": ["CTFAttributes"],
+		"size": [ [ -16, -16, 0 ], [ 16, 16, 72 ] ],
+		"data":
+		{
+			"skin":
+			{
+				"variable": "choices",
+				"value": "0",
+				"choices":
+				[
+					"0"
+				]
+			},
+			"model":
+			{
+				"variable": "studio",
+				"value": "models/civ_stand.mdl"
+			}
+		}
+	},
+	"info_ctfspawn":
+	{
+		"Class": "Point",
+		"base": ["PlayerClass"],
+		"data":
+		{
+			"team_no":
+			{
+				"variable": "choices",
+				"value": "0",
+				"choices":
+				[
+					"0",
+					"1",
+					"2"
+				]
+			}
+		}
+	},
+	"info_ctfdetect":
+	{
+		"Class": "Point",
+		"base": [],
+		"data":
+		{
+			"flagreturntime":
+			{
+				"variable": "string",
+				"value": "30.0"
+			},
+			"basedefenddist":
+			{
+				"variable": "string",
+				"value": "192.0"
+			},
+			"defendcarriertime":
+			{
+				"variable": "string",
+				"value": "10.0"
+			},
+			"captureassisttime":
+			{
+				"variable": "string",
+				"value": "10.0"
+			},
+			"poweruprespawntime":
+			{
+				"variable": "string",
+				"value": "30.0"
+			},
+			"score_icon_namebm":
+			{
+				"variable": "string",
+				"value": "item_ctfscorebm"
+			},
+			"score_icon_nameof":
+			{
+				"variable": "string",
+				"value": "item_ctfscoreof"
+			},
+			"map_score_max":
+			{
+				"variable": "string",
+				"value": "0"
+			}
+		}
+	},
+	"item_ctflongjump":
+	{
+		"Class": "Point",
+		"base": ["CTFItem"],
+		"studio": "models/w_jumppack.mdl",
+		"data":
+		{
+
+		}
+	},
+	"item_ctfportablehev":
+	{
+		"Class": "Point",
+		"base": ["CTFItem"],
+		"studio": "models/w_porthev.mdl",
+		"data":
+		{
+
+		}
+	},
+	"item_ctfregeneration":
+	{
+		"Class": "Point",
+		"base": ["CTFItem"],
+		"studio": "models/w_health.mdl",
+		"data":
+		{
+
+		}
+	},
+	"item_ctfaccelerator":
+	{
+		"Class": "Point",
+		"base": ["CTFItem"],
+		"studio": "models/w_accelerator.mdl",
+		"data":
+		{
+
+		}
+	},
+	"item_ctfbackpack":
+	{
+		"Class": "Point",
+		"base": ["CTFItem"],
+		"studio": "models/w_backpack.mdl",
+		"data":
+		{
+
+		}
+	},
+	"info_ctfspawn_powerup":
+	{
+		"Class": "Point",
+		"base": [],
+		"size": [ [ -16, -16, 0 ], [ 16, 16, 36 ] ],
+		"data":
+		{
+			"team_no":
+			{
+				"variable": "choices",
+				"value": "0",
+				"choices":
+				[
+					"0",
+					"1",
+					"2"
+				]
+			}
+		}
+	},
+	"trigger_ctfgeneric":
+	{
+		"Class": "Solid",
+		"base": ["Target", "Targetname"],
+		"data":
+		{
+			"team_no":
+			{
+				"variable": "choices",
+				"value": "0",
+				"choices":
+				[
+					"0",
+					"1",
+					"2"
+				]
+			},
+			"trigger_delay":
+			{
+				"variable": "string",
+				"value": "5"
+			},
+			"score":
+			{
+				"variable": "string",
+				"value": "0"
+			},
+			"team_score":
+			{
+				"variable": "string",
+				"value": "0"
+			},
+			"triggerstate":
+			{
+				"variable": "choices",
+				"value": "0",
+				"choices":
+				[
+					"0",
+					"1",
+					"2"
+				]
+			}
+		}
+	},
+	"env_warpball":
+	{
+		"Class": "Point",
+		"base": ["Targetname", "Target"],
+		"size": [ [ -32, -32, -32 ], [ 32, 32, 32 ] ],
+		"color": [0, 255, 0],
+		"sprite": "sprites/env_warpball.spr",
+		"iconsprite": "sprites/env_warpball.spr",
+		"data":
+		{
+			"spawnflags":
+			{
+				"variable": "flags",
+				"value": "",
+				"choices":
+				[
+					"1",
+					"2"
+				]
+			},
+			"radius":
+			{
+				"variable": "string",
+				"value": "256"
+			},
+			"warp_target":
+			{
+				"variable": "string",
+				"value": ""
+			},
+			"damage_delay":
+			{
+				"variable": "string",
+				"value": "0"
+			}
+		}
+	},
+	"item_helmet":
+	{
+		"Class": "Point",
+		"base": ["item_battery"],
+		"size": [ [ -16, -16, 0 ], [ 16, 16, 36 ] ],
+		"studio": "models/barney_helmet.mdl",
+		"data":
+		{
+			"sequence":
+			{
+				"variable": "choices",
+				"value": "0",
+				"choices":
+				[
+					"0",
+					"1",
+					"2"
+				]
+			}
+		}
+	},
+	"item_armorvest":
+	{
+		"Class": "Point",
+		"base": ["item_battery"],
+		"size": [ [ -16, -16, 0 ], [ 16, 16, 36 ] ],
+		"studio": "models/barney_vest.mdl",
+		"data":
+		{
+			"sequence":
+			{
+				"variable": "choices",
+				"value": "0",
+				"choices":
+				[
+					"0",
+					"1",
+					"2",
+					"3"
+				]
+			}
+		}
+	},
+	"monster_rosenberg":
+	{
+		"Class": "Point",
+		"base": ["Monster", "TalkMonster"],
+		"size": [ [ -16, -16, 0 ], [ 16, 16, 72 ] ],
+		"studio": "models/rosenberg.mdl",
+		"data":
+		{
+
+		}
+	}
+}

@@ -100,10 +100,21 @@ document.addEventListener( 'DOMContentLoaded', (event) =>
             event.target.style.display = "none";
         }
     };
+
+    window.CopyElement = function( element )
+    {
+        fetch( element).then( response => response.text() ).then( content => {
+            const tempTextArea = document.createElement('textarea');
+            tempTextArea.value = content;
+            document.body.appendChild(tempTextArea);
+            tempTextArea.select();
+            document.execCommand('copy');
+            document.body.removeChild(tempTextArea);
+        } ).catch( error => console.error( 'Couldn\'t copy text from ' + element, error ) );
+    };
 });
 
 function SFX( sound )
 {
 	document.getElementById( sound ).play();
 }
-
