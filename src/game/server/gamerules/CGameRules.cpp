@@ -372,6 +372,11 @@ CBaseEntity* CGameRules::GetPlayerSpawnSpot(CBasePlayer* pPlayer)
 	pPlayer->pev->punchangle = g_vecZero;
 	pPlayer->pev->fixangle = FIXANGLE_ABSOLUTE;
 
+	if( !FStringNull( pSpawnSpot->pev->target ) )
+	{
+		FireTargets( STRING( pSpawnSpot->pev->target ), pPlayer, pPlayer, USE_TOGGLE, 0 );
+	}
+
 	return pSpawnSpot;
 }
 
