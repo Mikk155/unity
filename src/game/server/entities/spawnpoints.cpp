@@ -158,18 +158,7 @@ static CBaseEntity* EntTrySelectSpawnPoint(CBasePlayer* pPlayer)
 			pSpot = UTIL_FindEntityByClassname(pSpot, "info_player_deathmatch");
 		} while (pSpot != pFirstSpot); // loop if we're not back to the start
 
-		// we haven't found a place to spawn yet,  so kill any guy at the first spawn point and spawn there
-		if (!FNullEnt(pSpot))
-		{
-			CBaseEntity* ent = nullptr;
-			while ((ent = UTIL_FindEntityInSphere(ent, pSpot->pev->origin, 128)) != nullptr)
-			{
-				// if ent is a client, kill em (unless they are ourselves)
-				if (ent->IsPlayer() && ent != pPlayer)
-					ent->TakeDamage(CBaseEntity::World, CBaseEntity::World, 300, DMG_GENERIC);
-			}
-			return pSpot;
-		}
+		return pSpot;
 	}
 
 	// If startspot is set, (re)spawn there.

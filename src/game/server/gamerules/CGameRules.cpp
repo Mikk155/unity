@@ -377,6 +377,21 @@ CBaseEntity* CGameRules::GetPlayerSpawnSpot(CBasePlayer* pPlayer)
 		FireTargets( STRING( pSpawnSpot->pev->target ), pPlayer, pPlayer, USE_TOGGLE, 0 );
 	}
 
+	CBaseEntity* pBlocker = nullptr;
+	while( ( pBlocker = UTIL_FindEntityInSphere( pBlocker, pSpawnSpot->pev->origin, 128 ) ) != nullptr )
+	{
+		if( pBlocker->IsPlayer() && pBlocker != pPlayer )
+		{
+			Vector VecPos = UTIL_GetNearestHull( pSpawnSpot->pev->origin, human_hull, 256 );
+
+			if( VecPos != pSpawnSpot->pev->origin )
+				pPlayer->pev->origin = VecPos;
+			else // If can't find a spot then simply kill the old player as it was done before in EntTrySelectSpawnPoint
+				pBlocker->TakeDamage( CBaseEntity::World, CBaseEntity::World, 300, DMG_GENERIC );
+			break;
+		}
+	}
+
 	return pSpawnSpot;
 }
 
