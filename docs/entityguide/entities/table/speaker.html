@@ -1,4 +1,6 @@
 <h1>speaker</h1>
+<h2 pkvd="speaker::classname"></h2>
+<h3 pkvd="speaker::classname::description"></h3>
 <table border class="EntityKeyValueTable">
 	<th pkvd="Title"></th>
 	<th pkvd="key"></th>
@@ -6,39 +8,39 @@
 	<th pkvd="value"></th>
 	<th pkvd="Description"></th>
 	</tr>
-		<td>Name</td>
+		<td pkvd="Targetname::targetname"></td>
 		<td>targetname</td>
 		<td>target_source</td>
 		<td></td>
-		<td style="text-align: left;"></td>
+		<td style="text-align: left;" pkvd="Targetname::targetname::description"></td>
 	</tr>
 	</tr>
-		<td>Announcement Presets </td>
+		<td pkvd="speaker::preset"></td>
 		<td>preset</td>
 		<td>choices</td>
 		<td>0</td>
-		<td style="text-align: left;"></td>
+		<td style="text-align: left;" pkvd="speaker::preset::description"></td>
 	</tr>
 	</tr>
-		<td>Sentence Group Name</td>
+		<td pkvd="speaker::message"></td>
 		<td>message</td>
 		<td>string</td>
 		<td></td>
-		<td style="text-align: left;"></td>
+		<td style="text-align: left;" pkvd="speaker::message::description"></td>
 	</tr>
 	</tr>
-		<td>Volume (10 = loudest) </td>
+		<td pkvd="speaker::health"></td>
 		<td>health</td>
 		<td>integer</td>
 		<td>5</td>
-		<td style="text-align: left;"></td>
+		<td style="text-align: left;" pkvd="speaker::health::description"></td>
 	</tr>
 	</tr>
-		<td>spawnflags(flags) </td>
+		<td pkvd="speaker::spawnflags"></td>
 		<td>spawnflags</td>
 		<td>flags</td>
 		<td></td>
-		<td style="text-align: left;"></td>
+		<td style="text-align: left;" pkvd="speaker::spawnflags::description"></td>
 	</tr>
 </table>
 <br><br>

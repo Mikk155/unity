@@ -1,4 +1,6 @@
 <h1>env_beam</h1>
+<h2 pkvd="env_beam::classname"></h2>
+<h3 pkvd="env_beam::classname::description"></h3>
 <table border class="EntityKeyValueTable">
 	<th pkvd="Title"></th>
 	<th pkvd="key"></th>
@@ -6,123 +8,123 @@
 	<th pkvd="value"></th>
 	<th pkvd="Description"></th>
 	</tr>
-		<td>Name</td>
+		<td pkvd="Targetname::targetname"></td>
 		<td>targetname</td>
 		<td>target_source</td>
 		<td></td>
-		<td style="text-align: left;"></td>
+		<td style="text-align: left;" pkvd="Targetname::targetname::description"></td>
 	</tr>
 	</tr>
-		<td>Start Entity</td>
+		<td pkvd="BeamStartEnd::LightningStart"></td>
 		<td>LightningStart</td>
 		<td>target_destination</td>
 		<td></td>
-		<td style="text-align: left;"></td>
+		<td style="text-align: left;" pkvd="BeamStartEnd::LightningStart::description"></td>
 	</tr>
 	</tr>
-		<td>Ending Entity</td>
+		<td pkvd="BeamStartEnd::LightningEnd"></td>
 		<td>LightningEnd</td>
 		<td>target_destination</td>
 		<td></td>
-		<td style="text-align: left;"></td>
+		<td style="text-align: left;" pkvd="BeamStartEnd::LightningEnd::description"></td>
 	</tr>
 	</tr>
-		<td>Render FX </td>
+		<td pkvd="RenderFxChoices::renderfx"></td>
 		<td>renderfx</td>
 		<td>choices</td>
 		<td>0</td>
-		<td style="text-align: left;"></td>
+		<td style="text-align: left;" pkvd="RenderFxChoices::renderfx::description"></td>
 	</tr>
 	</tr>
-		<td>Brightness (1 - 255) </td>
+		<td pkvd="env_beam::renderamt"></td>
 		<td>renderamt</td>
 		<td>integer</td>
 		<td>100</td>
-		<td style="text-align: left;"></td>
+		<td style="text-align: left;" pkvd="env_beam::renderamt::description"></td>
 	</tr>
 	</tr>
-		<td>Beam Color (R G B) </td>
+		<td pkvd="env_beam::rendercolor"></td>
 		<td>rendercolor</td>
 		<td>color255</td>
 		<td>0 0 0</td>
-		<td style="text-align: left;"></td>
+		<td style="text-align: left;" pkvd="env_beam::rendercolor::description"></td>
 	</tr>
 	</tr>
-		<td>Radius </td>
+		<td pkvd="env_beam::Radius"></td>
 		<td>Radius</td>
 		<td>integer</td>
 		<td>256</td>
-		<td style="text-align: left;"></td>
+		<td style="text-align: left;" pkvd="env_beam::Radius::description"></td>
 	</tr>
 	</tr>
-		<td>Life (seconds 0 = infinite) </td>
+		<td pkvd="env_beam::life"></td>
 		<td>life</td>
 		<td>string</td>
 		<td>1</td>
-		<td style="text-align: left;"></td>
+		<td style="text-align: left;" pkvd="env_beam::life::description"></td>
 	</tr>
 	</tr>
-		<td>Width of beam (pixels*0.1 0-255) </td>
+		<td pkvd="env_beam::BoltWidth"></td>
 		<td>BoltWidth</td>
 		<td>integer</td>
 		<td>20</td>
-		<td style="text-align: left;"></td>
+		<td style="text-align: left;" pkvd="env_beam::BoltWidth::description"></td>
 	</tr>
 	</tr>
-		<td>Amount of noise (0-255) </td>
+		<td pkvd="env_beam::NoiseAmplitude"></td>
 		<td>NoiseAmplitude</td>
 		<td>integer</td>
 		<td>0</td>
-		<td style="text-align: left;"></td>
+		<td style="text-align: left;" pkvd="env_beam::NoiseAmplitude::description"></td>
 	</tr>
 	</tr>
-		<td>Sprite Name </td>
+		<td pkvd="env_beam::texture"></td>
 		<td>texture</td>
 		<td>sprite</td>
 		<td>sprites/laserbeam.spr</td>
-		<td style="text-align: left;"></td>
+		<td style="text-align: left;" pkvd="env_beam::texture::description"></td>
 	</tr>
 	</tr>
-		<td>Texture Scroll Rate (0-100) </td>
+		<td pkvd="env_beam::TextureScroll"></td>
 		<td>TextureScroll</td>
 		<td>integer</td>
 		<td>35</td>
-		<td style="text-align: left;"></td>
+		<td style="text-align: left;" pkvd="env_beam::TextureScroll::description"></td>
 	</tr>
 	</tr>
-		<td>Frames per 10 seconds </td>
+		<td pkvd="env_beam::framerate"></td>
 		<td>framerate</td>
 		<td>integer</td>
 		<td>0</td>
-		<td style="text-align: left;"></td>
+		<td style="text-align: left;" pkvd="env_beam::framerate::description"></td>
 	</tr>
 	</tr>
-		<td>Starting Frame </td>
+		<td pkvd="env_beam::framestart"></td>
 		<td>framestart</td>
 		<td>integer</td>
 		<td>0</td>
-		<td style="text-align: left;"></td>
+		<td style="text-align: left;" pkvd="env_beam::framestart::description"></td>
 	</tr>
 	</tr>
-		<td>Strike again time (secs) </td>
+		<td pkvd="env_beam::StrikeTime"></td>
 		<td>StrikeTime</td>
 		<td>string</td>
 		<td>1</td>
-		<td style="text-align: left;"></td>
+		<td style="text-align: left;" pkvd="env_beam::StrikeTime::description"></td>
 	</tr>
 	</tr>
-		<td>Damage / second </td>
+		<td pkvd="env_beam::damage"></td>
 		<td>damage</td>
 		<td>string</td>
 		<td>0</td>
-		<td style="text-align: left;"></td>
+		<td style="text-align: left;" pkvd="env_beam::damage::description"></td>
 	</tr>
 	</tr>
-		<td>spawnflags(flags) </td>
+		<td pkvd="env_beam::spawnflags"></td>
 		<td>spawnflags</td>
 		<td>flags</td>
 		<td></td>
-		<td style="text-align: left;"></td>
+		<td style="text-align: left;" pkvd="env_beam::spawnflags::description"></td>
 	</tr>
 </table>
 <br><br>
