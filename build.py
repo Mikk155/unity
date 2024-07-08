@@ -19,6 +19,8 @@ modname = os.getenv( "MOD_NAME" )
 
 sentences={}
 
+EntListing=[]
+
 def description( name ):
     return sentences.get( name, {} ).get( 'english', '' )
 
@@ -109,7 +111,7 @@ def write_keyvalues( entitydata, classname ):
 
 
 
-def write_class( entdata={}, FGD=None, name='', html=None, JsonData={} ):
+def write_class( entdata={}, FGD=None, name='', JsonData={} ):
 
     Class = entdata.get( "Class", '' )
 
@@ -156,7 +158,7 @@ def write_class( entdata={}, FGD=None, name='', html=None, JsonData={} ):
     else:
         if not version:
             write_entity( classname=name, entd=entdata, JsonData=JsonData)
-            html.write( f'<li><button class="menu-firstsub" onclick="SFX(\'sfx_open\');fetchent(\'{name}\')" onmouseenter="SFX(\'sfx_view\')">{name}</li>\n' )
+            EntListing.append( name )
         FGD.write( f' : "{description( f"{name}::classname" )}" : "{description(f"{name}::classname::description")}"\n[\n' )
 
     if "data" in entdata:
@@ -170,7 +172,11 @@ with open( f'{abs}/docs/entities.html', 'w' ) as html, open( f'{abs}/game/half-l
 
     for key, value in JsonData.items():
 
-        write_class( FGD=FGD, entdata=JsonData.get( key, {} ), name=key, html=html, JsonData=JsonData )
+        write_class( FGD=FGD, entdata=JsonData.get( key, {} ), name=key, JsonData=JsonData )
+
+    EntListing.sort()
+    for entname in EntListing:
+        html.write( f'<li><button class="menu-firstsub" onclick="SFX(\'sfx_open\');fetchent(\'{entname}\')" onmouseenter="SFX(\'sfx_view\')">{entname}</li>\n' )
 
     FGD.close()
     Json.close()
