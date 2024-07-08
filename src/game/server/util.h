@@ -763,3 +763,10 @@ struct CallOnDestroy
 		Function();
 	}
 };
+
+/**
+ *	@brief Gets the nearest hull from VecStart around radius
+ *	If none found, returns VecStart
+ *	This function is bad. do not use this consecutively, This should be re-worked at some point
+ */
+Vector UTIL_GetNearestHull( Vector VecStart, int hull_number, float radius );
