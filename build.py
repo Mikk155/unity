@@ -22,6 +22,44 @@ sentences={}
 def description( name ):
     return sentences.get( name, {} ).get( 'english', '' )
 
+def write_table( classname='', key='', values={}, file=None ):
+
+        file.write( f'\t</tr>\n')
+        file.write( f'\t\t<td>{description( f"{classname}::{key}")}</td>\n')
+        file.write( f'\t\t<td>{key}</td>\n')
+        file.write( f'\t\t<td>{values.get( "variable", "" )}</td>\n')
+        file.write( f'\t\t<td>{values.get( "value", "" )}</td>\n')
+        file.write( f'\t\t<td style="text-align: left;">{description( f"{classname}::{key}::description")}</td>\n')
+        file.write( f'\t</tr>\n')
+
+def write_entity( entd={}, classname='', JsonData={} ):
+    with open( f'{abs}/docs/entityguide/entities/table/{classname}.html', 'w' ) as file:
+        file.write( f'<h1>{classname}</h1>\n')
+        file.write( f'<table border class="EntityKeyValueTable">\n')
+        file.write( f'\t<th pkvd="Title"></th>\n')
+        file.write( f'\t<th pkvd="key"></th>\n')
+        file.write( f'\t<th pkvd="type"></th>\n')
+        file.write( f'\t<th pkvd="value"></th>\n')
+        file.write( f'\t<th pkvd="Description"></th>\n')
+
+        if "base" in entd:
+            for base in entd.get( "base", [] ):
+                baseclasses = JsonData.get( base, {} )
+                if 'data' in baseclasses:
+                    dataclass = baseclasses.get( 'data', {} )
+                    for bk, bv in dataclass.items():
+                        write_table( classname=base, key=bk, values=bv, file=file )
+
+        if 'data' in entd:
+            dataclass = entd.get( 'data', {} )
+            for bk, bv in dataclass.items():
+                write_table( classname=classname, key=bk, values=bv, file=file )
+
+        file.write( f'</table>\n')
+        file.write( f'<br><br>\n')
+        if os.path.exists( f'{abs}/docs/entityguide/entities/{classname}.html' ):
+            file.write( f'<div id="entityguide-extra"></div>\n')
+
 def write_keyvalues( entitydata, classname ):
     for key, data in entitydata.items():
 
@@ -69,7 +107,7 @@ def write_keyvalues( entitydata, classname ):
 
 
 
-def write_class( entdata={}, FGD=None, name='', html=None ):
+def write_class( entdata={}, FGD=None, name='', html=None, JsonData={} ):
 
     Class = entdata.get( "Class", '' )
 
@@ -114,7 +152,9 @@ def write_class( entdata={}, FGD=None, name='', html=None ):
     if Class == 'Base':
         FGD.write( '\n[\n' )
     else:
-        html.write( f'<li><button class="menu-firstsub" onclick="SFX(\'sfx_open\');fetchent(\'{name}\')" onmouseenter="SFX(\'sfx_view\')">{name}</li>\n' )
+        if not version:
+            write_entity( classname=name, entd=entdata, JsonData=JsonData)
+            html.write( f'<li><button class="menu-firstsub" onclick="SFX(\'sfx_open\');fetchent(\'{name}\')" onmouseenter="SFX(\'sfx_view\')">{name}</li>\n' )
         FGD.write( f' : "{description( f"{name}::classname" )}" : "{description(f"{name}::classname::description")}"\n[\n' )
 
     if "data" in entdata:
@@ -128,7 +168,7 @@ with open( f'{abs}/docs/entities.html', 'w' ) as html, open( f'{abs}/game/half-l
 
     for key, value in JsonData.items():
 
-        write_class( FGD=FGD, entdata=JsonData.get( key, {} ), name=key, html=html )
+        write_class( FGD=FGD, entdata=JsonData.get( key, {} ), name=key, html=html, JsonData=JsonData )
 
     FGD.close()
     Json.close()
