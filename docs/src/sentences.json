@@ -70,6 +70,26 @@
 "english": "Misc",
 "spanish": "Varios"
 },
+"Title": {
+"english": "Title",
+"spanish": "Titulo"
+},
+"key": {
+"english": "Key",
+"spanish": "Llave"
+},
+"value": {
+"english": "Value",
+"spanish": "Valor"
+},
+"type": {
+"english": "Type",
+"spanish": "Tipo"
+},
+"Description": {
+"english": "Description",
+"spanish": "Descripcion"
+},
 "Programing": {
 "english": "Programing",
 "spanish": "Programando"

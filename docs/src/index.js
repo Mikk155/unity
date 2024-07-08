@@ -37,7 +37,7 @@ document.addEventListener( 'DOMContentLoaded', (event) =>
 
     function applyTranslations( language )
     {
-        if( language == '' )
+        if( !language || language == '' )
         {
             // Get local language
             const userLang = navigator.language || navigator.userLanguage;
@@ -72,12 +72,15 @@ document.addEventListener( 'DOMContentLoaded', (event) =>
     {
         openElement( 'EntityGuideEntity' );
     
-        fetch( 'entities/' + entity + '.html' ).then( response => response.text() ).then( content => {
+        fetch( 'entityguide/entities/table/' + entity + '.html' ).then( response => response.text() ).then( content => {
             document.getElementById( 'entityguide-entity-list' ).innerHTML = content;
+            applyTranslations('');
+        } ).catch( error => console.error( 'Couldn\'t load entity from entityguide/entities/table/' + entity + '.html', error ) );
     
-        } ).catch( error => console.error( 'Couldn\'t load entity from entities/' + entity + '.html', error ) );
-    
-        applyTranslations('');
+        fetch( 'entityguide/entities/' + entity + '.html' ).then( response => response.text() ).then( content => {
+            document.getElementById( 'entityguide-extra' ).innerHTML = content;
+            applyTranslations('');
+        } ).catch( error => console.error( 'Couldn\'t load entity from entityguide/entities/' + entity + '.html', error ) );
     }
 
     // Update language by the language button
