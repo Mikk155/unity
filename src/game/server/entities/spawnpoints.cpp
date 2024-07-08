@@ -117,7 +117,7 @@ static CBaseEntity* EntTrySelectSpawnPoint(CBasePlayer* pPlayer)
 	}
 
 	// choose a info_player_deathmatch point
-	if (g_pGameRules->IsCoOp())
+	/*if (g_pGameRules->IsCoOp())
 	{
 		pSpot = UTIL_FindEntityByClassname(g_pLastSpawn, "info_player_coop");
 		if (!FNullEnt(pSpot))
@@ -126,7 +126,7 @@ static CBaseEntity* EntTrySelectSpawnPoint(CBasePlayer* pPlayer)
 		if (!FNullEnt(pSpot))
 			return pSpot;
 	}
-	else if (g_pGameRules->IsMultiplayer())
+	else*/ if (g_pGameRules->IsMultiplayer())
 	{
 		pSpot = g_pLastSpawn;
 		// Randomize the start spot
