@@ -25,16 +25,18 @@ def description( name ):
 def write_table( classname='', key='', values={}, file=None ):
 
         file.write( f'\t</tr>\n')
-        file.write( f'\t\t<td>{description( f"{classname}::{key}")}</td>\n')
+        file.write( f'\t\t<td pkvd="{classname}::{key}"></td>\n')
         file.write( f'\t\t<td>{key}</td>\n')
         file.write( f'\t\t<td>{values.get( "variable", "" )}</td>\n')
         file.write( f'\t\t<td>{values.get( "value", "" )}</td>\n')
-        file.write( f'\t\t<td style="text-align: left;">{description( f"{classname}::{key}::description")}</td>\n')
+        file.write( f'\t\t<td style="text-align: left;" pkvd="{classname}::{key}::description"></td>\n')
         file.write( f'\t</tr>\n')
 
 def write_entity( entd={}, classname='', JsonData={} ):
     with open( f'{abs}/docs/entityguide/entities/table/{classname}.html', 'w' ) as file:
         file.write( f'<h1>{classname}</h1>\n')
+        file.write( f'<h2 pkvd="{classname}::classname"></h2>\n')
+        file.write( f'<h3 pkvd="{classname}::classname::description"></h3>\n')
         file.write( f'<table border class="EntityKeyValueTable">\n')
         file.write( f'\t<th pkvd="Title"></th>\n')
         file.write( f'\t<th pkvd="key"></th>\n')
