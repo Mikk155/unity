@@ -1,107 +1,84 @@
 {
-	"worldspawn":
-	{
+	"worldspawn": {
 		"Class": "Solid",
 		"base": [],
-		"data":
-		{
-			"message":
-			{
+		"data": {
+			"message": {
 				"variable": "string",
 				"value": ""
 			},
-			"skyname":
-			{
+			"skyname": {
 				"variable": "string",
 				"value": ""
 			},
-			"light":
-			{
+			"light": {
 				"variable": "integer",
 				"value": ""
 			},
-			"WaveHeight":
-			{
+			"WaveHeight": {
 				"variable": "string",
 				"value": ""
 			},
-			"MaxRange":
-			{
+			"MaxRange": {
 				"variable": "string",
 				"value": "4096"
 			},
-			"chaptertitle":
-			{
+			"chaptertitle": {
 				"variable": "string",
 				"value": ""
 			},
-			"startdark":
-			{
+			"startdark": {
 				"variable": "choices",
 				"value": "0",
-				"choices":
-				[
+				"choices": [
 					"0",
 					"1"
 				]
 			},
-			"gametitle":
-			{
+			"gametitle": {
 				"variable": "string",
 				"value": ""
 			},
-			"newunit":
-			{
+			"newunit": {
 				"variable": "choices",
 				"value": "0",
-				"choices":
-				[
+				"choices": [
 					"0",
 					"1"
 				]
 			},
-			"mapteams":
-			{
+			"mapteams": {
 				"variable": "string",
 				"value": "grunt;scientist"
 			},
-			"defaultteam":
-			{
+			"defaultteam": {
 				"variable": "choices",
 				"value": "0",
-				"choices":
-				[
+				"choices": [
 					"0",
 					"1"
 				]
 			}
 		}
 	},
-	"Sequence":
-	{
+	"Sequence": {
 		"Class": "Base",
 		"base": [],
-		"data":
-		{
-			"sequence":
-			{
+		"data": {
+			"sequence": {
 				"variable": "integer",
 				"value": ""
 			}
 		}
 	},
-	"ZHLT":
-	{
+	"ZHLT": {
 		"Class": "Base",
 		"base": [],
-		"data":
-		{
-			"zhlt_lightflags":
-			{
+		"data": {
+			"zhlt_lightflags": {
 				"variable": "choices",
 				"value": "0",
-				"choices":
-				[
+				"choices": [
 					"0",
 					"1",
 					"2",
@@ -109,30 +86,24 @@
 					"6"
 				]
 			},
-			"light_origin":
-			{
+			"light_origin": {
 				"variable": "string",
 				"value": ""
 			}
 		}
 	},
-	"ZHLT_point":
-	{
+	"ZHLT_point": {
 		"Class": "Base",
 		"base": [],
-		"data":
-		{
-			"_fade":
-			{
+		"data": {
+			"_fade": {
 				"variable": "string",
 				"value": "1.0"
 			},
-			"_falloff":
-			{
+			"_falloff": {
 				"variable": "choices",
 				"value": "0",
-				"choices":
-				[
+				"choices": [
 					"0",
 					"1",
 					"2"
@@ -140,164 +111,127 @@
 			}
 		}
 	},
-	"Appearflags":
-	{
+	"Appearflags": {
 		"Class": "Base",
 		"base": [],
-		"data":
-		{
-			"spawnflags":
-			{
+		"data": {
+			"spawnflags": {
 				"variable": "flags",
 				"value": "",
-				"choices":
-				[
+				"choices": [
 					"2048"
 				]
 			}
 		}
 	},
-	"Angles":
-	{
+	"Angles": {
 		"Class": "Base",
 		"base": [],
-		"data":
-		{
-			"angles":
-			{
+		"data": {
+			"angles": {
 				"variable": "string",
 				"value": "0 0 0"
 			}
 		}
 	},
-	"ReplacementFiles":
-	{
+	"ReplacementFiles": {
 		"Class": "Base",
 		"base": [],
-		"data":
-		{
-			"model_replacement_filename":
-			{
+		"data": {
+			"model_replacement_filename": {
 				"variable": "string",
 				"value": ""
 			},
-			"sound_replacement_filename":
-			{
+			"sound_replacement_filename": {
 				"variable": "string",
 				"value": ""
 			},
-			"sentence_replacement_filename":
-			{
+			"sentence_replacement_filename": {
 				"variable": "string",
 				"value": ""
 			}
 		}
 	},
-	"CustomModel":
-	{
+	"CustomModel": {
 		"Class": "Base",
 		"base": ["ReplacementFiles"],
-		"data":
-		{
-			"model":
-			{
+		"data": {
+			"model": {
 				"variable": "studio",
 				"value": ""
 			},
-			"custom_hull_min":
-			{
+			"custom_hull_min": {
 				"variable": "string",
 				"value": ""
 			},
-			"custom_hull_max":
-			{
+			"custom_hull_max": {
 				"variable": "string",
 				"value": ""
 			}
 		}
 	},
-	"Targetname":
-	{
+	"Targetname": {
 		"Class": "Base",
 		"base": [],
-		"data":
-		{
-			"targetname":
-			{
+		"data": {
+			"targetname": {
 				"variable": "target_source",
 				"value": ""
 			}
 		}
 	},
-	"Target":
-	{
+	"Target": {
 		"Class": "Base",
 		"base": [],
-		"data":
-		{
-			"target":
-			{
+		"data": {
+			"target": {
 				"variable": "target_destination",
 				"value": ""
 			}
 		}
 	},
-	"Global":
-	{
+	"Global": {
 		"Class": "Base",
 		"base": [],
-		"data":
-		{
-			"globalname":
-			{
+		"data": {
+			"globalname": {
 				"variable": "string",
 				"value": ""
 			}
 		}
 	},
-	"Targetx":
-	{
+	"Targetx": {
 		"Class": "Base",
 		"base": ["Target"],
-		"data":
-		{
-			"killtarget":
-			{
+		"data": {
+			"killtarget": {
 				"variable": "target_destination",
 				"value": ""
 			},
-			"delay":
-			{
+			"delay": {
 				"variable": "string",
 				"value": "0"
 			}
 		}
 	},
-	"Master":
-	{
+	"Master": {
 		"Class": "Base",
 		"base": [],
-		"data":
-		{
-			"master":
-			{
+		"data": {
+			"master": {
 				"variable": "target_destination",
 				"value": ""
 			}
 		}
 	},
-	"RenderFxChoices":
-	{
+	"RenderFxChoices": {
 		"Class": "Base",
 		"base": [],
-		"data":
-		{
-			"renderfx":
-			{
+		"data": {
+			"renderfx": {
 				"variable": "choices",
 				"value": "0",
-				"choices":
-				[
+				"choices": [
 					"0",
 					"1",
 					"2",
@@ -319,18 +253,14 @@
 			}
 		}
 	},
-	"RenderFields":
-	{
+	"RenderFields": {
 		"Class": "Base",
 		"base": ["RenderFxChoices"],
-		"data":
-		{
-			"rendermode":
-			{
+		"data": {
+			"rendermode": {
 				"variable": "choices",
 				"value": "0",
-				"choices":
-				[
+				"choices": [
 					"0",
 					"1",
 					"2",
@@ -339,251 +269,201 @@
 					"5"
 				]
 			},
-			"renderamt":
-			{
+			"renderamt": {
 				"variable": "integer",
 				"value": ""
 			},
-			"rendercolor":
-			{
+			"rendercolor": {
 				"variable": "color255",
 				"value": "0 0 0"
 			}
 		}
 	},
-	"OtherItem":
-	{
+	"OtherItem": {
 		"Class": "Base",
 		"base": ["Targetname", "Appearflags", "Angles", "CustomModel"],
 		"size": [ [ -16, -16, 0 ], [ 16, 16, 32 ] ],
 		"color": [0, 0, 200],
-		"data":
-		{
+		"data": {
 
 		}
 	},
-	"BaseItem":
-	{
+	"BaseItem": {
 		"Class": "Base",
 		"base": ["Targetname", "Appearflags", "Angles", "CustomModel"],
 		"size": [ [ -16, -16, 0 ], [ 16, 16, 32 ] ],
 		"color": [0, 0, 200],
-		"data":
-		{
-			"respawn_delay":
-			{
+		"data": {
+			"respawn_delay": {
 				"variable": "string",
 				"value": ""
 			},
-			"stay_visible_during_respawn":
-			{
+			"stay_visible_during_respawn": {
 				"variable": "choices",
 				"value": "0",
-				"choices":
-				[
+				"choices": [
 					"0",
 					"1"
 				]
 			},
-			"flash_on_respawn":
-			{
+			"flash_on_respawn": {
 				"variable": "choices",
 				"value": "1",
-				"choices":
-				[
+				"choices": [
 					"0",
 					"1"
 				]
 			},
-			"play_pickup_sound":
-			{
+			"play_pickup_sound": {
 				"variable": "choices",
 				"value": "1",
-				"choices":
-				[
+				"choices": [
 					"0",
 					"1"
 				]
 			},
-			"fall_mode":
-			{
+			"fall_mode": {
 				"variable": "choices",
 				"value": "0",
-				"choices":
-				[
+				"choices": [
 					"0",
 					"1"
 				]
 			},
-			"trigger_on_spawn":
-			{
+			"trigger_on_spawn": {
 				"variable": "target_destination",
 				"value": ""
 			},
-			"trigger_on_despawn":
-			{
+			"trigger_on_despawn": {
 				"variable": "target_destination",
 				"value": ""
 			}
 		}
 	},
-	"Ammo":
-	{
+	"Ammo": {
 		"Class": "Base",
 		"base": ["BaseItem"],
 		"color": [80, 0, 200],
-		"data":
-		{
-			"ammo_amount":
-			{
+		"data": {
+			"ammo_amount": {
 				"variable": "integer",
 				"value": ""
 			}
 		}
 	},
-	"Weapon":
-	{
+	"Weapon": {
 		"Class": "Base",
 		"base": ["BaseItem"],
 		"color": [0, 0, 200],
-		"data":
-		{
-			"default_ammo":
-			{
+		"data": {
+			"default_ammo": {
 				"variable": "integer",
 				"value": ""
 			}
 		}
 	},
-	"Item":
-	{
+	"Item": {
 		"Class": "Base",
 		"base": ["BaseItem"],
 		"color": [0, 0, 200],
-		"data":
-		{
+		"data": {
 
 		}
 	},
-	"BaseCharger":
-	{
+	"BaseCharger": {
 		"Class": "Base",
 		"base": ["Master", "Global", "RenderFields", "ZHLT", "ReplacementFiles"],
-		"data":
-		{
-			"fire_on_recharge":
-			{
+		"data": {
+			"fire_on_recharge": {
 				"variable": "target_destination",
 				"value": ""
 			},
-			"fire_on_empty":
-			{
+			"fire_on_empty": {
 				"variable": "target_destination",
 				"value": ""
 			},
-			"fire_on_spawn":
-			{
+			"fire_on_spawn": {
 				"variable": "choices",
 				"value": "1",
-				"choices":
-				[
+				"choices": [
 					"0",
 					"1"
 				]
 			},
-			"total_juice":
-			{
+			"total_juice": {
 				"variable": "integer",
 				"value": ""
 			},
-			"recharge_delay":
-			{
+			"recharge_delay": {
 				"variable": "integer",
 				"value": ""
 			},
-			"charge_per_use":
-			{
+			"charge_per_use": {
 				"variable": "integer",
 				"value": ""
 			},
-			"_minlight":
-			{
+			"_minlight": {
 				"variable": "string",
 				"value": ""
 			}
 		}
 	},
-	"PlayerClass":
-	{
+	"PlayerClass": {
 		"Class": "Base",
 		"base": ["Appearflags", "Angles"],
 		"size": [ [ -16, -16, -36 ], [ 16, 16, 36 ] ],
 		"color": [0, 255, 0],
 		"flags": "Angle",
 		"offset": [0, 0, 36],
-		"data":
-		{
+		"data": {
 
 		}
 	},
-	"Unkillable":
-	{
+	"Unkillable": {
 		"Class": "Base",
 		"base": [],
-		"data":
-		{
-			"unkillable":
-			{
+		"data": {
+			"unkillable": {
 				"variable": "choices",
 				"value": "0",
-				"choices":
-				[
+				"choices": [
 					"0",
 					"1"
 				]
 			}
 		}
 	},
-	"Monster":
-	{
+	"Monster": {
 		"Class": "Base",
 		"base": ["Target", "Targetname", "RenderFields", "Angles", "CustomModel", "Unkillable"],
 		"color": [0, 200, 200],
 		"flags": "Angle",
-		"data":
-		{
-			"health":
-			{
+		"data": {
+			"health": {
 				"variable": "integer",
 				"value": ""
 			},
-			"classification":
-			{
+			"classification": {
 				"variable": "string",
 				"value": ""
 			},
-			"is_player_ally":
-			{
+			"is_player_ally": {
 				"variable": "choices",
 				"value": "0",
-				"choices":
-				[
+				"choices": [
 					"0",
 					"1",
 					"2"
 				]
 			},
-			"TriggerTarget":
-			{
+			"TriggerTarget": {
 				"variable": "string",
 				"value": ""
 			},
-			"TriggerCondition":
-			{
+			"TriggerCondition": {
 				"variable": "choices",
 				"value": "0",
-				"choices":
-				[
+				"choices": [
 					"0",
 					"1",
 					"2",
@@ -596,12 +476,10 @@
 					"11"
 				]
 			},
-			"spawnflags":
-			{
+			"spawnflags": {
 				"variable": "flags",
 				"value": "",
-				"choices":
-				[
+				"choices": [
 					"1",
 					"2",
 					"4",
@@ -611,129 +489,102 @@
 					"512"
 				]
 			},
-			"allow_item_dropping":
-			{
+			"allow_item_dropping": {
 				"variable": "choices",
 				"value": "1",
-				"choices":
-				[
+				"choices": [
 					"0",
 					"1"
 				]
 			},
-			"allow_follow":
-			{
+			"allow_follow": {
 				"variable": "choices",
 				"value": "1",
-				"choices":
-				[
+				"choices": [
 					"0",
 					"1"
 				]
 			},
-			"UseSentence":
-			{
+			"UseSentence": {
 				"variable": "string",
 				"value": ""
 			},
-			"UnUseSentence":
-			{
+			"UnUseSentence": {
 				"variable": "string",
 				"value": ""
 			}
 		}
 	},
-	"MonsterWithChildren":
-	{
+	"MonsterWithChildren": {
 		"Class": "Base",
 		"base": [],
-		"data":
-		{
-			"child_classification":
-			{
+		"data": {
+			"child_classification": {
 				"variable": "string",
 				"value": ""
 			}
 		}
 	},
-	"TalkMonster":
-	{
+	"TalkMonster": {
 		"Class": "Base",
 		"base": [],
-		"data":
-		{
-			"suspicious":
-			{
+		"data": {
+			"suspicious": {
 				"variable": "choices",
 				"value": "0",
-				"choices":
-				[
+				"choices": [
 					"0",
 					"1"
 				]
 			}
 		}
 	},
-	"gibshooterbase":
-	{
+	"gibshooterbase": {
 		"Class": "Base",
 		"base": ["Targetname", "Angles"],
 		"size": [ [ -16, -16, -16 ], [ 16, 16, 16 ] ],
-		"data":
-		{
-			"m_iGibs":
-			{
+		"data": {
+			"m_iGibs": {
 				"variable": "integer",
 				"value": "3"
 			},
-			"delay":
-			{
+			"delay": {
 				"variable": "string",
 				"value": "0"
 			},
-			"m_flVelocity":
-			{
+			"m_flVelocity": {
 				"variable": "integer",
 				"value": "200"
 			},
-			"m_flVariance":
-			{
+			"m_flVariance": {
 				"variable": "string",
 				"value": "0.15"
 			},
-			"m_flGibLife":
-			{
+			"m_flGibLife": {
 				"variable": "string",
 				"value": "4"
 			},
-			"spawnflags":
-			{
+			"spawnflags": {
 				"variable": "flags",
 				"value": "",
-				"choices":
-				[
+				"choices": [
 					"1"
 				]
 			}
 		}
 	},
-	"Light":
-	{
+	"Light": {
 		"Class": "Base",
 		"base": [],
-		"data":
-		{
-			"_light":
-			{
+		"data": {
+			"_light": {
 				"variable": "color255",
 				"value": "255 255 128 200"
 			},
-			"style":
-			{
+			"style": {
 				"variable": "choices",
 				"value": "0",
-				"choices":
-				[
+				"choices": [
 					"0",
 					"10",
 					"2",
@@ -748,35 +599,28 @@
 					"9"
 				]
 			},
-			"pattern":
-			{
+			"pattern": {
 				"variable": "string",
 				"value": ""
 			}
 		}
 	},
-	"Breakable":
-	{
+	"Breakable": {
 		"Class": "Base",
 		"base": ["Targetname", "Global", "ReplacementFiles"],
-		"data":
-		{
-			"target":
-			{
+		"data": {
+			"target": {
 				"variable": "target_destination",
 				"value": ""
 			},
-			"health":
-			{
+			"health": {
 				"variable": "integer",
 				"value": "1"
 			},
-			"material":
-			{
+			"material": {
 				"variable": "choices",
 				"value": "0",
-				"choices":
-				[
+				"choices": [
 					"0",
 					"1",
 					"2",
@@ -788,99 +632,79 @@
 					"8"
 				]
 			},
-			"explosion":
-			{
+			"explosion": {
 				"variable": "choices",
 				"value": "0",
-				"choices":
-				[
+				"choices": [
 					"0",
 					"1"
 				]
 			},
-			"delay":
-			{
+			"delay": {
 				"variable": "string",
 				"value": "0"
 			},
-			"gibmodel":
-			{
+			"gibmodel": {
 				"variable": "studio",
 				"value": ""
 			},
-			"spawnobject":
-			{
+			"spawnobject": {
 				"variable": "string",
 				"value": ""
 			},
-			"explodemagnitude":
-			{
+			"explodemagnitude": {
 				"variable": "integer",
 				"value": "0"
 			}
 		}
 	},
-	"Door":
-	{
+	"Door": {
 		"Class": "Base",
 		"base": ["Appearflags", "Targetname", "Targetx", "RenderFields", "Global", "Angles", "Master", "ReplacementFiles"],
-		"data":
-		{
-			"speed":
-			{
+		"data": {
+			"speed": {
 				"variable": "integer",
 				"value": "100"
 			},
-			"movesnd":
-			{
+			"movesnd": {
 				"variable": "sound",
 				"value": ""
 			},
-			"stopsnd":
-			{
+			"stopsnd": {
 				"variable": "sound",
 				"value": ""
 			},
-			"wait":
-			{
+			"wait": {
 				"variable": "choices",
 				"value": "4",
-				"choices":
-				[
+				"choices": [
 					"-1"
 				]
 			},
-			"lip":
-			{
+			"lip": {
 				"variable": "integer",
 				"value": ""
 			},
-			"dmg":
-			{
+			"dmg": {
 				"variable": "integer",
 				"value": "0"
 			},
-			"message":
-			{
+			"message": {
 				"variable": "string",
 				"value": ""
 			},
-			"netname":
-			{
+			"netname": {
 				"variable": "string",
 				"value": ""
 			},
-			"health":
-			{
+			"health": {
 				"variable": "integer",
 				"value": "0"
 			},
-			"spawnflags":
-			{
+			"spawnflags": {
 				"variable": "flags",
 				"value": "",
-				"choices":
-				[
+				"choices": [
 					"1",
 					"4",
 					"8",
@@ -889,136 +713,109 @@
 					"512"
 				]
 			},
-			"locked_sound":
-			{
+			"locked_sound": {
 				"variable": "sound",
 				"value": ""
 			},
-			"unlocked_sound":
-			{
+			"unlocked_sound": {
 				"variable": "sound",
 				"value": ""
 			},
-			"locked_sentence":
-			{
+			"locked_sentence": {
 				"variable": "string",
 				"value": ""
 			},
-			"unlocked_sentence":
-			{
+			"unlocked_sentence": {
 				"variable": "string",
 				"value": ""
 			},
-			"_minlight":
-			{
+			"_minlight": {
 				"variable": "string",
 				"value": ""
 			}
 		}
 	},
-	"BaseTank":
-	{
+	"BaseTank": {
 		"Class": "Base",
 		"base": ["Targetname", "Target", "RenderFields", "Global", "Angles", "Master", "ReplacementFiles"],
-		"data":
-		{
-			"spawnflags":
-			{
+		"data": {
+			"spawnflags": {
 				"variable": "flags",
 				"value": "",
-				"choices":
-				[
+				"choices": [
 					"1",
 					"16",
 					"32"
 				]
 			},
-			"yawrate":
-			{
+			"yawrate": {
 				"variable": "string",
 				"value": "30"
 			},
-			"yawrange":
-			{
+			"yawrange": {
 				"variable": "string",
 				"value": "180"
 			},
-			"yawtolerance":
-			{
+			"yawtolerance": {
 				"variable": "string",
 				"value": "15"
 			},
-			"pitchrate":
-			{
+			"pitchrate": {
 				"variable": "string",
 				"value": "0"
 			},
-			"pitchrange":
-			{
+			"pitchrange": {
 				"variable": "string",
 				"value": "0"
 			},
-			"pitchtolerance":
-			{
+			"pitchtolerance": {
 				"variable": "string",
 				"value": "5"
 			},
-			"barrel":
-			{
+			"barrel": {
 				"variable": "string",
 				"value": "0"
 			},
-			"barrely":
-			{
+			"barrely": {
 				"variable": "string",
 				"value": "0"
 			},
-			"barrelz":
-			{
+			"barrelz": {
 				"variable": "string",
 				"value": "0"
 			},
-			"spritesmoke":
-			{
+			"spritesmoke": {
 				"variable": "string",
 				"value": ""
 			},
-			"spriteflash":
-			{
+			"spriteflash": {
 				"variable": "string",
 				"value": ""
 			},
-			"spritescale":
-			{
+			"spritescale": {
 				"variable": "string",
 				"value": "1"
 			},
-			"rotatesound":
-			{
+			"rotatesound": {
 				"variable": "sound",
 				"value": ""
 			},
-			"firerate":
-			{
+			"firerate": {
 				"variable": "string",
 				"value": "1"
 			},
-			"bullet_damage":
-			{
+			"bullet_damage": {
 				"variable": "string",
 				"value": "0"
 			},
-			"persistence":
-			{
+			"persistence": {
 				"variable": "string",
 				"value": "1"
 			},
-			"firespread":
-			{
+			"firespread": {
 				"variable": "choices",
 				"value": "0",
-				"choices":
-				[
+				"choices": [
 					"0",
 					"1",
 					"2",
@@ -1026,99 +823,79 @@
 					"4"
 				]
 			},
-			"minRange":
-			{
+			"minRange": {
 				"variable": "string",
 				"value": "0"
 			},
-			"maxRange":
-			{
+			"maxRange": {
 				"variable": "string",
 				"value": "0"
 			},
-			"_minlight":
-			{
+			"_minlight": {
 				"variable": "string",
 				"value": ""
 			},
-			"enemytype":
-			{
+			"enemytype": {
 				"variable": "choices",
 				"value": "1",
-				"choices":
-				[
+				"choices": [
 					"0",
 					"1",
 					"2"
 				]
 			},
-			"enable_target_laser":
-			{
+			"enable_target_laser": {
 				"variable": "choices",
 				"value": "0",
-				"choices":
-				[
+				"choices": [
 					"0",
 					"1"
 				]
 			},
-			"target_laser_sprite":
-			{
+			"target_laser_sprite": {
 				"variable": "sprite",
 				"value": "sprites/laserbeam.spr"
 			},
-			"target_laser_width":
-			{
+			"target_laser_width": {
 				"variable": "integer",
 				"value": "1"
 			},
-			"target_laser_color":
-			{
+			"target_laser_color": {
 				"variable": "color255",
 				"value": "255 0 0"
 			}
 		}
 	},
-	"PlatSounds":
-	{
+	"PlatSounds": {
 		"Class": "Base",
 		"base": ["ReplacementFiles"],
-		"data":
-		{
-			"movesnd":
-			{
+		"data": {
+			"movesnd": {
 				"variable": "sound",
 				"value": ""
 			},
-			"stopsnd":
-			{
+			"stopsnd": {
 				"variable": "sound",
 				"value": ""
 			},
-			"volume":
-			{
+			"volume": {
 				"variable": "string",
 				"value": "0.85"
 			}
 		}
 	},
-	"Trackchange":
-	{
+	"Trackchange": {
 		"Class": "Base",
 		"base": ["Targetname", "RenderFields", "Global", "PlatSounds"],
-		"data":
-		{
-			"height":
-			{
+		"data": {
+			"height": {
 				"variable": "integer",
 				"value": "0"
 			},
-			"spawnflags":
-			{
+			"spawnflags": {
 				"variable": "flags",
 				"value": "",
-				"choices":
-				[
+				"choices": [
 					"1",
 					"2",
 					"8",
@@ -1127,55 +904,44 @@
 					"128"
 				]
 			},
-			"rotation":
-			{
+			"rotation": {
 				"variable": "integer",
 				"value": "0"
 			},
-			"train":
-			{
+			"train": {
 				"variable": "target_destination",
 				"value": ""
 			},
-			"toptrack":
-			{
+			"toptrack": {
 				"variable": "target_destination",
 				"value": ""
 			},
-			"bottomtrack":
-			{
+			"bottomtrack": {
 				"variable": "target_destination",
 				"value": ""
 			},
-			"speed":
-			{
+			"speed": {
 				"variable": "integer",
 				"value": "0"
 			}
 		}
 	},
-	"Trigger":
-	{
+	"Trigger": {
 		"Class": "Base",
 		"base": ["Targetname", "Targetx", "Master"],
-		"data":
-		{
-			"netname":
-			{
+		"data": {
+			"netname": {
 				"variable": "target_destination",
 				"value": ""
 			},
-			"message":
-			{
+			"message": {
 				"variable": "string",
 				"value": ""
 			},
-			"spawnflags":
-			{
+			"spawnflags": {
 				"variable": "flags",
 				"value": "",
-				"choices":
-				[
+				"choices": [
 					"1",
 					"2",
 					"4"
@@ -1183,38 +949,30 @@
 			}
 		}
 	},
-	"BaseScriptedSequence":
-	{
+	"BaseScriptedSequence": {
 		"Class": "Base",
 		"base": [],
-		"data":
-		{
-			"m_iszEntity":
-			{
+		"data": {
+			"m_iszEntity": {
 				"variable": "string",
 				"value": ""
 			},
-			"m_iszPlay":
-			{
+			"m_iszPlay": {
 				"variable": "string",
 				"value": ""
 			},
-			"m_flRadius":
-			{
+			"m_flRadius": {
 				"variable": "integer",
 				"value": "512"
 			},
-			"m_flRepeat":
-			{
+			"m_flRepeat": {
 				"variable": "integer",
 				"value": "0"
 			},
-			"m_fMoveTo":
-			{
+			"m_fMoveTo": {
 				"variable": "choices",
 				"value": "0",
-				"choices":
-				[
+				"choices": [
 					"0",
 					"1",
 					"2",
@@ -1222,73 +980,59 @@
 					"5"
 				]
 			},
-			"m_iFinishSchedule":
-			{
+			"m_iFinishSchedule": {
 				"variable": "choices",
 				"value": "0",
-				"choices":
-				[
+				"choices": [
 					"0",
 					"1"
 				]
 			},
-			"spawnflags":
-			{
+			"spawnflags": {
 				"variable": "flags",
 				"value": "",
-				"choices":
-				[
+				"choices": [
 					"4",
 					"8"
 				]
 			}
 		}
 	},
-	"aiscripted_sequence":
-	{
+	"aiscripted_sequence": {
 		"Class": "Point",
 		"base": ["Targetname", "Targetx", "Angles", "BaseScriptedSequence"],
 		"size": [ [ -16, -16, 0 ], [ 16, 16, 72 ] ],
 		"color": [255, 0, 255],
 		"flags": "Angle",
-		"data":
-		{
-			"m_iFinishSchedule":
-			{
+		"data": {
+			"m_iFinishSchedule": {
 				"variable": "choices",
 				"value": "0",
-				"choices":
-				[
+				"choices": [
 					"0",
 					"1"
 				]
 			}
 		}
 	},
-	"ambient_generic":
-	{
+	"ambient_generic": {
 		"Class": "Point",
 		"base": ["Targetname"],
 		"sprite": "sprites/speaker.spr",
 		"iconsprite": "sprites/speaker.spr",
-		"data":
-		{
-			"message":
-			{
+		"data": {
+			"message": {
 				"variable": "sound",
 				"value": ""
 			},
-			"health":
-			{
+			"health": {
 				"variable": "integer",
 				"value": "10"
 			},
-			"preset":
-			{
+			"preset": {
 				"variable": "choices",
 				"value": "0",
-				"choices":
-				[
+				"choices": [
 					"0",
 					"1",
 					"2",
@@ -1319,72 +1063,58 @@
 					"27"
 				]
 			},
-			"volstart":
-			{
+			"volstart": {
 				"variable": "integer",
 				"value": "0"
 			},
-			"fadein":
-			{
+			"fadein": {
 				"variable": "integer",
 				"value": "0"
 			},
-			"fadeout":
-			{
+			"fadeout": {
 				"variable": "integer",
 				"value": "0"
 			},
-			"pitch":
-			{
+			"pitch": {
 				"variable": "integer",
 				"value": "100"
 			},
-			"pitchstart":
-			{
+			"pitchstart": {
 				"variable": "integer",
 				"value": "100"
 			},
-			"spinup":
-			{
+			"spinup": {
 				"variable": "integer",
 				"value": "0"
 			},
-			"spindown":
-			{
+			"spindown": {
 				"variable": "integer",
 				"value": "0"
 			},
-			"lfotype":
-			{
+			"lfotype": {
 				"variable": "integer",
 				"value": "0"
 			},
-			"lforate":
-			{
+			"lforate": {
 				"variable": "integer",
 				"value": "0"
 			},
-			"lfomodpitch":
-			{
+			"lfomodpitch": {
 				"variable": "integer",
 				"value": "0"
 			},
-			"lfomodvol":
-			{
+			"lfomodvol": {
 				"variable": "integer",
 				"value": "0"
 			},
-			"cspinup":
-			{
+			"cspinup": {
 				"variable": "integer",
 				"value": "0"
 			},
-			"spawnflags":
-			{
+			"spawnflags": {
 				"variable": "flags",
 				"value": "",
-				"choices":
-				[
+				"choices": [
 					"1",
 					"2",
 					"4",
@@ -1395,330 +1125,263 @@
 			}
 		}
 	},
-	"ambient_music":
-	{
+	"ambient_music": {
 		"Class": "Point",
 		"base": ["Targetname"],
 		"sprite": "sprites/speaker.spr",
 		"iconsprite": "sprites/speaker.spr",
-		"data":
-		{
-			"filename":
-			{
+		"data": {
+			"filename": {
 				"variable": "string",
 				"value": ""
 			},
-			"command":
-			{
+			"command": {
 				"variable": "choices",
 				"value": "0",
-				"choices":
-				[
+				"choices": [
 					"0",
 					"1",
 					"2",
 					"3"
 				]
 			},
-			"target_selector":
-			{
+			"target_selector": {
 				"variable": "choices",
 				"value": "0",
-				"choices":
-				[
+				"choices": [
 					"0",
 					"1",
 					"2"
 				]
 			},
-			"radius":
-			{
+			"radius": {
 				"variable": "string",
 				"value": ""
 			},
-			"remove_on_fire":
-			{
+			"remove_on_fire": {
 				"variable": "choices",
 				"value": "0",
-				"choices":
-				[
+				"choices": [
 					"0",
 					"1"
 				]
 			}
 		}
 	},
-	"ammo_generic":
-	{
+	"ammo_generic": {
 		"Class": "Point",
 		"base": ["Targetx", "RenderFields", "Ammo"],
 		"studio": true,
-		"data":
-		{
-			"ammo_name":
-			{
+		"data": {
+			"ammo_name": {
 				"variable": "string",
 				"value": ""
 			}
 		}
 	},
-	"ammo_all":
-	{
+	"ammo_all": {
 		"Class": "Point",
 		"base": ["Targetx", "RenderFields", "Ammo"],
 		"studio": true,
-		"data":
-		{
+		"data": {
 
 		}
 	},
-	"ammo_9mmclip":
-	{
+	"ammo_9mmclip": {
 		"Class": "Point",
 		"base": ["Targetx", "RenderFields", "Ammo"],
 		"studio": "models/w_9mmclip.mdl",
-		"data":
-		{
+		"data": {
 
 		}
 	},
-	"ammo_9mmar":
-	{
+	"ammo_9mmar": {
 		"Class": "Point",
 		"base": ["Targetx", "RenderFields", "Ammo"],
 		"studio": "models/w_9mmarclip.mdl",
-		"data":
-		{
+		"data": {
 
 		}
 	},
-	"ammo_9mmbox":
-	{
+	"ammo_9mmbox": {
 		"Class": "Point",
 		"base": ["Targetx", "RenderFields", "Ammo"],
 		"studio": "models/w_chainammo.mdl",
-		"data":
-		{
+		"data": {
 
 		}
 	},
-	"ammo_argrenades":
-	{
+	"ammo_argrenades": {
 		"Class": "Point",
 		"base": ["Targetx", "RenderFields", "Ammo"],
 		"studio": "models/w_argrenade.mdl",
-		"data":
-		{
+		"data": {
 
 		}
 	},
-	"ammo_buckshot":
-	{
+	"ammo_buckshot": {
 		"Class": "Point",
 		"base": ["Targetx", "RenderFields", "Ammo"],
 		"studio": "models/w_shotbox.mdl",
-		"data":
-		{
+		"data": {
 
 		}
 	},
-	"ammo_357":
-	{
+	"ammo_357": {
 		"Class": "Point",
 		"base": ["Targetx", "RenderFields", "Ammo"],
 		"studio": "models/w_357ammobox.mdl",
-		"data":
-		{
+		"data": {
 
 		}
 	},
-	"ammo_rpgclip":
-	{
+	"ammo_rpgclip": {
 		"Class": "Point",
 		"base": ["Targetx", "RenderFields", "Ammo"],
 		"studio": "models/w_rpgammo.mdl",
-		"data":
-		{
-			"sequence":
-			{
+		"data": {
+			"sequence": {
 				"variable": "choices",
 				"value": "0",
-				"choices":
-				[
+				"choices": [
 					"0",
 					"1"
 				]
 			}
 		}
 	},
-	"ammo_gaussclip":
-	{
+	"ammo_gaussclip": {
 		"Class": "Point",
 		"base": ["Targetx", "RenderFields", "Ammo"],
 		"studio": "models/w_gaussammo.mdl",
-		"data":
-		{
+		"data": {
 
 		}
 	},
-	"ammo_crossbow":
-	{
+	"ammo_crossbow": {
 		"Class": "Point",
 		"base": ["Targetx", "RenderFields", "Ammo"],
 		"studio": "models/w_crossbow_clip.mdl",
-		"data":
-		{
+		"data": {
 
 		}
 	},
-	"button_target":
-	{
+	"button_target": {
 		"Class": "Solid",
 		"base": ["Target", "Targetname", "Angles", "ZHLT", "Master", "RenderFields"],
-		"data":
-		{
-			"spawnflags":
-			{
+		"data": {
+			"spawnflags": {
 				"variable": "flags",
 				"value": "",
-				"choices":
-				[
+				"choices": [
 					"1",
 					"2"
 				]
 			}
 		}
 	},
-	"cycler":
-	{
+	"cycler": {
 		"Class": "Point",
 		"base": ["Targetname", "Angles", "RenderFields"],
 		"size": [ [ -16, -16, 0 ], [ 16, 16, 72 ] ],
 		"flags": "Angle",
-		"data":
-		{
-			"model":
-			{
+		"data": {
+			"model": {
 				"variable": "studio",
 				"value": ""
 			},
-			"bodygroup":
-			{
+			"bodygroup": {
 				"variable": "integer",
 				"value": "0"
 			}
 		}
 	},
-	"cycler_sprite":
-	{
+	"cycler_sprite": {
 		"Class": "Point",
 		"base": ["Targetname", "Angles", "RenderFields"],
 		"sprite": true,
-		"data":
-		{
-			"model":
-			{
+		"data": {
+			"model": {
 				"variable": "sprite",
 				"value": ""
 			},
-			"framerate":
-			{
+			"framerate": {
 				"variable": "integer",
 				"value": "10"
 			}
 		}
 	},
-	"BeamStartEnd":
-	{
+	"BeamStartEnd": {
 		"Class": "Base",
 		"base": [],
-		"data":
-		{
-			"LightningStart":
-			{
+		"data": {
+			"LightningStart": {
 				"variable": "target_destination",
 				"value": ""
 			},
-			"LightningEnd":
-			{
+			"LightningEnd": {
 				"variable": "target_destination",
 				"value": ""
 			}
 		}
 	},
-	"env_beam":
-	{
+	"env_beam": {
 		"Class": "Point",
 		"base": ["Targetname", "BeamStartEnd", "RenderFxChoices"],
 		"size": [ [ -16, -16, -16 ], [ 16, 16, 16 ] ],
-		"data":
-		{
-			"renderamt":
-			{
+		"data": {
+			"renderamt": {
 				"variable": "integer",
 				"value": "100"
 			},
-			"rendercolor":
-			{
+			"rendercolor": {
 				"variable": "color255",
 				"value": "0 0 0"
 			},
-			"Radius":
-			{
+			"Radius": {
 				"variable": "integer",
 				"value": "256"
 			},
-			"life":
-			{
+			"life": {
 				"variable": "string",
 				"value": "1"
 			},
-			"BoltWidth":
-			{
+			"BoltWidth": {
 				"variable": "integer",
 				"value": "20"
 			},
-			"NoiseAmplitude":
-			{
+			"NoiseAmplitude": {
 				"variable": "integer",
 				"value": "0"
 			},
-			"texture":
-			{
+			"texture": {
 				"variable": "sprite",
 				"value": "sprites/laserbeam.spr"
 			},
-			"TextureScroll":
-			{
+			"TextureScroll": {
 				"variable": "integer",
 				"value": "35"
 			},
-			"framerate":
-			{
+			"framerate": {
 				"variable": "integer",
 				"value": "0"
 			},
-			"framestart":
-			{
+			"framestart": {
 				"variable": "integer",
 				"value": "0"
 			},
-			"StrikeTime":
-			{
+			"StrikeTime": {
 				"variable": "string",
 				"value": "1"
 			},
-			"damage":
-			{
+			"damage": {
 				"variable": "string",
 				"value": "0"
 			},
-			"spawnflags":
-			{
+			"spawnflags": {
 				"variable": "flags",
 				"value": "",
-				"choices":
-				[
+				"choices": [
 					"1",
 					"2",
 					"4",
@@ -1732,24 +1395,19 @@
 			}
 		}
 	},
-	"env_beverage":
-	{
+	"env_beverage": {
 		"Class": "Point",
 		"base": ["Targetname", "Angles"],
 		"size": [ [ -4, -4, -4 ], [ 4, 4, 4 ] ],
-		"data":
-		{
-			"health":
-			{
+		"data": {
+			"health": {
 				"variable": "integer",
 				"value": "10"
 			},
-			"skin":
-			{
+			"skin": {
 				"variable": "choices",
 				"value": "0",
-				"choices":
-				[
+				"choices": [
 					"0",
 					"1",
 					"2",
@@ -1761,35 +1419,28 @@
 			}
 		}
 	},
-	"env_blood":
-	{
+	"env_blood": {
 		"Class": "Point",
 		"base": ["Targetname", "Angles"],
 		"size": [ [ -16, -16, -16 ], [ 16, 16, 16 ] ],
 		"color": [255, 0, 0],
-		"data":
-		{
-			"color":
-			{
+		"data": {
+			"color": {
 				"variable": "choices",
 				"value": "0",
-				"choices":
-				[
+				"choices": [
 					"0",
 					"1"
 				]
 			},
-			"amount":
-			{
+			"amount": {
 				"variable": "string",
 				"value": "100"
 			},
-			"spawnflags":
-			{
+			"spawnflags": {
 				"variable": "flags",
 				"value": "",
-				"choices":
-				[
+				"choices": [
 					"1",
 					"2",
 					"4",
@@ -1798,56 +1449,44 @@
 			}
 		}
 	},
-	"env_bubbles":
-	{
+	"env_bubbles": {
 		"Class": "Solid",
 		"base": ["Targetname"],
-		"data":
-		{
-			"density":
-			{
+		"data": {
+			"density": {
 				"variable": "integer",
 				"value": "2"
 			},
-			"frequency":
-			{
+			"frequency": {
 				"variable": "integer",
 				"value": "2"
 			},
-			"current":
-			{
+			"current": {
 				"variable": "integer",
 				"value": "0"
 			},
-			"spawnflags":
-			{
+			"spawnflags": {
 				"variable": "flags",
 				"value": "",
-				"choices":
-				[
+				"choices": [
 					"1"
 				]
 			}
 		}
 	},
-	"env_explosion":
-	{
+	"env_explosion": {
 		"Class": "Point",
 		"base": ["Targetname"],
 		"size": [ [ -16, -16, -16 ], [ 16, 16, 16 ] ],
-		"data":
-		{
-			"iMagnitude":
-			{
+		"data": {
+			"iMagnitude": {
 				"variable": "integer",
 				"value": "100"
 			},
-			"spawnflags":
-			{
+			"spawnflags": {
 				"variable": "flags",
 				"value": "",
-				"choices":
-				[
+				"choices": [
 					"1",
 					"2",
 					"4",
@@ -1858,230 +1497,183 @@
 			}
 		}
 	},
-	"env_global":
-	{
+	"env_global": {
 		"Class": "Point",
 		"base": ["Targetname"],
 		"color": [255, 255, 128],
-		"data":
-		{
-			"globalstate":
-			{
+		"data": {
+			"globalstate": {
 				"variable": "string",
 				"value": ""
 			},
-			"triggermode":
-			{
+			"triggermode": {
 				"variable": "choices",
 				"value": "0",
-				"choices":
-				[
+				"choices": [
 					"0",
 					"1",
 					"2",
 					"3"
 				]
 			},
-			"initialstate":
-			{
+			"initialstate": {
 				"variable": "choices",
 				"value": "0",
-				"choices":
-				[
+				"choices": [
 					"0",
 					"1",
 					"2"
 				]
 			},
-			"spawnflags":
-			{
+			"spawnflags": {
 				"variable": "flags",
 				"value": "",
-				"choices":
-				[
+				"choices": [
 					"1"
 				]
 			}
 		}
 	},
-	"env_glow":
-	{
+	"env_glow": {
 		"Class": "Point",
 		"base": ["Targetname", "RenderFields"],
 		"size": [ [ -4, -4, -4 ], [ 4, 4, 4 ] ],
 		"color": [30, 100, 0],
 		"sprite": true,
-		"data":
-		{
-			"model":
-			{
+		"data": {
+			"model": {
 				"variable": "sprite",
 				"value": "sprites/glow01.spr"
 			},
-			"scale":
-			{
+			"scale": {
 				"variable": "integer",
 				"value": "1"
 			}
 		}
 	},
-	"env_fade":
-	{
+	"env_fade": {
 		"Class": "Point",
 		"base": ["Targetname"],
-		"data":
-		{
-			"spawnflags":
-			{
+		"data": {
+			"spawnflags": {
 				"variable": "flags",
 				"value": "",
-				"choices":
-				[
+				"choices": [
 					"1",
 					"2",
 					"4"
 				]
 			},
-			"duration":
-			{
+			"duration": {
 				"variable": "string",
 				"value": "2"
 			},
-			"holdtime":
-			{
+			"holdtime": {
 				"variable": "string",
 				"value": "0"
 			},
-			"renderamt":
-			{
+			"renderamt": {
 				"variable": "integer",
 				"value": "255"
 			},
-			"rendercolor":
-			{
+			"rendercolor": {
 				"variable": "color255",
 				"value": "0 0 0"
 			}
 		}
 	},
-	"env_fog":
-	{
+	"env_fog": {
 		"Class": "Point",
 		"base": [],
-		"data":
-		{
-			"spawnflags":
-			{
+		"data": {
+			"spawnflags": {
 				"variable": "flags",
 				"value": "",
-				"choices":
-				[
+				"choices": [
 					"1"
 				]
 			},
-			"density":
-			{
+			"density": {
 				"variable": "string",
 				"value": "0.5"
 			},
-			"fogStartDistance":
-			{
+			"fogStartDistance": {
 				"variable": "integer",
 				"value": "1500"
 			},
-			"fogStopDistance":
-			{
+			"fogStopDistance": {
 				"variable": "integer",
 				"value": "2000"
 			},
-			"rendercolor":
-			{
+			"rendercolor": {
 				"variable": "color255",
 				"value": "255 255 255"
 			}
 		}
 	},
-	"env_funnel":
-	{
+	"env_funnel": {
 		"Class": "Point",
 		"base": ["Targetname"],
 		"size": [ [ -16, -16, -16 ], [ 16, 16, 16 ] ],
-		"data":
-		{
-			"spawnflags":
-			{
+		"data": {
+			"spawnflags": {
 				"variable": "flags",
 				"value": "",
-				"choices":
-				[
+				"choices": [
 					"1"
 				]
 			}
 		}
 	},
-	"env_laser":
-	{
+	"env_laser": {
 		"Class": "Point",
 		"base": ["Targetname", "RenderFxChoices", "Angles"],
 		"size": [ [ -16, -16, -16 ], [ 16, 16, 16 ] ],
-		"data":
-		{
-			"LaserTarget":
-			{
+		"data": {
+			"LaserTarget": {
 				"variable": "target_destination",
 				"value": ""
 			},
-			"renderamt":
-			{
+			"renderamt": {
 				"variable": "integer",
 				"value": "100"
 			},
-			"rendercolor":
-			{
+			"rendercolor": {
 				"variable": "color255",
 				"value": "0 0 0"
 			},
-			"width":
-			{
+			"width": {
 				"variable": "integer",
 				"value": "20"
 			},
-			"NoiseAmplitude":
-			{
+			"NoiseAmplitude": {
 				"variable": "integer",
 				"value": "0"
 			},
-			"texture":
-			{
+			"texture": {
 				"variable": "sprite",
 				"value": "sprites/laserbeam.spr"
 			},
-			"EndSprite":
-			{
+			"EndSprite": {
 				"variable": "sprite",
 				"value": ""
 			},
-			"TextureScroll":
-			{
+			"TextureScroll": {
 				"variable": "integer",
 				"value": "35"
 			},
-			"framestart":
-			{
+			"framestart": {
 				"variable": "integer",
 				"value": "0"
 			},
-			"damage":
-			{
+			"damage": {
 				"variable": "string",
 				"value": "100"
 			},
-			"spawnflags":
-			{
+			"spawnflags": {
 				"variable": "flags",
 				"value": "",
-				"choices":
-				[
+				"choices": [
 					"1",
 					"16",
 					"32",
@@ -2090,43 +1682,34 @@
 			}
 		}
 	},
-	"env_message":
-	{
+	"env_message": {
 		"Class": "Point",
 		"base": ["Targetname", "Target"],
-		"data":
-		{
-			"message":
-			{
+		"data": {
+			"message": {
 				"variable": "string",
 				"value": ""
 			},
-			"spawnflags":
-			{
+			"spawnflags": {
 				"variable": "flags",
 				"value": "",
-				"choices":
-				[
+				"choices": [
 					"1",
 					"2"
 				]
 			},
-			"messagesound":
-			{
+			"messagesound": {
 				"variable": "sound",
 				"value": ""
 			},
-			"messagevolume":
-			{
+			"messagevolume": {
 				"variable": "string",
 				"value": "10"
 			},
-			"messageattenuation":
-			{
+			"messageattenuation": {
 				"variable": "choices",
 				"value": "0",
-				"choices":
-				[
+				"choices": [
 					"0",
 					"1",
 					"2",
@@ -2135,20 +1718,16 @@
 			}
 		}
 	},
-	"env_render":
-	{
+	"env_render": {
 		"Class": "Point",
 		"base": ["Targetname", "Target", "RenderFields"],
 		"size": [ [ -16, -16, -16 ], [ 16, 16, 16 ] ],
 		"color": [100, 100, 0],
-		"data":
-		{
-			"spawnflags":
-			{
+		"data": {
+			"spawnflags": {
 				"variable": "flags",
 				"value": "",
-				"choices":
-				[
+				"choices": [
 					"1",
 					"2",
 					"4",
@@ -2157,61 +1736,48 @@
 			}
 		}
 	},
-	"env_shake":
-	{
+	"env_shake": {
 		"Class": "Point",
 		"base": ["Targetname"],
-		"data":
-		{
-			"spawnflags":
-			{
+		"data": {
+			"spawnflags": {
 				"variable": "flags",
 				"value": "",
-				"choices":
-				[
+				"choices": [
 					"1"
 				]
 			},
-			"amplitude":
-			{
+			"amplitude": {
 				"variable": "string",
 				"value": "4"
 			},
-			"radius":
-			{
+			"radius": {
 				"variable": "string",
 				"value": "500"
 			},
-			"duration":
-			{
+			"duration": {
 				"variable": "string",
 				"value": "1"
 			},
-			"frequency":
-			{
+			"frequency": {
 				"variable": "string",
 				"value": "2.5"
 			}
 		}
 	},
-	"env_shooter":
-	{
+	"env_shooter": {
 		"Class": "Point",
 		"base": ["gibshooterbase", "RenderFields"],
 		"size": [ [ -16, -16, -16 ], [ 16, 16, 16 ] ],
-		"data":
-		{
-			"shootmodel":
-			{
+		"data": {
+			"shootmodel": {
 				"variable": "studio",
 				"value": ""
 			},
-			"shootsounds":
-			{
+			"shootsounds": {
 				"variable": "choices",
 				"value": "-1",
-				"choices":
-				[
+				"choices": [
 					"-1",
 					"0",
 					"1",
@@ -2220,37 +1786,30 @@
 					"4"
 				]
 			},
-			"scale":
-			{
+			"scale": {
 				"variable": "string",
 				"value": ""
 			},
-			"skin":
-			{
+			"skin": {
 				"variable": "integer",
 				"value": "0"
 			}
 		}
 	},
-	"env_sound":
-	{
+	"env_sound": {
 		"Class": "Point",
 		"base": [],
 		"sprite": "sprites/speaker.spr",
 		"iconsprite": "sprites/speaker.spr",
-		"data":
-		{
-			"radius":
-			{
+		"data": {
+			"radius": {
 				"variable": "integer",
 				"value": "128"
 			},
-			"roomtype":
-			{
+			"roomtype": {
 				"variable": "choices",
 				"value": "0",
-				"choices":
-				[
+				"choices": [
 					"0",
 					"1",
 					"2",
@@ -2284,402 +1843,318 @@
 			}
 		}
 	},
-	"env_spark":
-	{
+	"env_spark": {
 		"Class": "Point",
 		"base": ["Targetname", "Angles"],
 		"size": [ [ -16, -16, -16 ], [ 16, 16, 16 ] ],
-		"data":
-		{
-			"MaxDelay":
-			{
+		"data": {
+			"MaxDelay": {
 				"variable": "string",
 				"value": "0"
 			},
-			"spawnflags":
-			{
+			"spawnflags": {
 				"variable": "flags",
 				"value": "",
-				"choices":
-				[
+				"choices": [
 					"32",
 					"64"
 				]
 			}
 		}
 	},
-	"env_sprite":
-	{
+	"env_sprite": {
 		"Class": "Point",
 		"base": ["Targetname", "RenderFields", "Angles"],
 		"size": [ [ -4, -4, -4 ], [ 4, 4, 4 ] ],
 		"sprite": true,
-		"data":
-		{
-			"framerate":
-			{
+		"data": {
+			"framerate": {
 				"variable": "string",
 				"value": "10.0"
 			},
-			"model":
-			{
+			"model": {
 				"variable": "sprite",
 				"value": "sprites/glow01.spr"
 			},
-			"scale":
-			{
+			"scale": {
 				"variable": "string",
 				"value": ""
 			},
-			"spawnflags":
-			{
+			"spawnflags": {
 				"variable": "flags",
 				"value": "",
-				"choices":
-				[
+				"choices": [
 					"1",
 					"2"
 				]
 			}
 		}
 	},
-	"func_breakable":
-	{
+	"func_breakable": {
 		"Class": "Solid",
 		"base": ["Breakable", "RenderFields", "Angles", "ZHLT"],
-		"data":
-		{
-			"spawnflags":
-			{
+		"data": {
+			"spawnflags": {
 				"variable": "flags",
 				"value": "",
-				"choices":
-				[
+				"choices": [
 					"1",
 					"2",
 					"4",
 					"256"
 				]
 			},
-			"_minlight":
-			{
+			"_minlight": {
 				"variable": "string",
 				"value": ""
 			}
 		}
 	},
-	"func_button":
-	{
+	"func_button": {
 		"Class": "Solid",
 		"base": ["Targetname", "Targetx", "Global", "RenderFields", "Angles", "ZHLT", "Master", "ReplacementFiles"],
-		"data":
-		{
-			"speed":
-			{
+		"data": {
+			"speed": {
 				"variable": "integer",
 				"value": "5"
 			},
-			"health":
-			{
+			"health": {
 				"variable": "integer",
 				"value": ""
 			},
-			"lip":
-			{
+			"lip": {
 				"variable": "integer",
 				"value": ""
 			},
-			"sounds":
-			{
+			"sounds": {
 				"variable": "sound",
 				"value": ""
 			},
-			"wait":
-			{
+			"wait": {
 				"variable": "choices",
 				"value": "3",
-				"choices":
-				[
+				"choices": [
 					"-1"
 				]
 			},
-			"spawnflags":
-			{
+			"spawnflags": {
 				"variable": "flags",
 				"value": "",
-				"choices":
-				[
+				"choices": [
 					"1",
 					"32",
 					"64",
 					"256"
 				]
 			},
-			"locked_sound":
-			{
+			"locked_sound": {
 				"variable": "sound",
 				"value": ""
 			},
-			"unlocked_sound":
-			{
+			"unlocked_sound": {
 				"variable": "sound",
 				"value": ""
 			},
-			"locked_sentence":
-			{
+			"locked_sentence": {
 				"variable": "string",
 				"value": ""
 			},
-			"unlocked_sentence":
-			{
+			"unlocked_sentence": {
 				"variable": "string",
 				"value": ""
 			},
-			"_minlight":
-			{
+			"_minlight": {
 				"variable": "string",
 				"value": ""
 			}
 		}
 	},
-	"func_conveyor":
-	{
+	"func_conveyor": {
 		"Class": "Solid",
 		"base": ["Targetname", "Global", "RenderFields", "Angles", "ZHLT"],
-		"data":
-		{
-			"spawnflags":
-			{
+		"data": {
+			"spawnflags": {
 				"variable": "flags",
 				"value": "",
-				"choices":
-				[
+				"choices": [
 					"1",
 					"2"
 				]
 			},
-			"speed":
-			{
+			"speed": {
 				"variable": "string",
 				"value": "100"
 			},
-			"_minlight":
-			{
+			"_minlight": {
 				"variable": "string",
 				"value": ""
 			}
 		}
 	},
-	"func_door":
-	{
+	"func_door": {
 		"Class": "Solid",
 		"base": ["Door", "ZHLT"],
-		"data":
-		{
+		"data": {
 
 		}
 	},
-	"func_door_rotating":
-	{
+	"func_door_rotating": {
 		"Class": "Solid",
 		"base": ["Door", "ZHLT"],
-		"data":
-		{
-			"spawnflags":
-			{
+		"data": {
+			"spawnflags": {
 				"variable": "flags",
 				"value": "",
-				"choices":
-				[
+				"choices": [
 					"2",
 					"16",
 					"64",
 					"128"
 				]
 			},
-			"distance":
-			{
+			"distance": {
 				"variable": "integer",
 				"value": "90"
 			}
 		}
 	},
-	"func_friction":
-	{
+	"func_friction": {
 		"Class": "Solid",
 		"base": ["Appearflags", "RenderFields", "ZHLT"],
-		"data":
-		{
-			"modifier":
-			{
+		"data": {
+			"modifier": {
 				"variable": "integer",
 				"value": "15"
 			}
 		}
 	},
-	"func_guntarget":
-	{
+	"func_guntarget": {
 		"Class": "Solid",
 		"base": ["Targetname", "Global", "RenderFields", "Angles", "ZHLT"],
-		"data":
-		{
-			"speed":
-			{
+		"data": {
+			"speed": {
 				"variable": "integer",
 				"value": "100"
 			},
-			"target":
-			{
+			"target": {
 				"variable": "target_destination",
 				"value": ""
 			},
-			"message":
-			{
+			"message": {
 				"variable": "target_destination",
 				"value": ""
 			},
-			"health":
-			{
+			"health": {
 				"variable": "integer",
 				"value": "0"
 			},
-			"_minlight":
-			{
+			"_minlight": {
 				"variable": "string",
 				"value": ""
 			},
-			"spawnflags":
-			{
+			"spawnflags": {
 				"variable": "flags",
 				"value": "",
-				"choices":
-				[
+				"choices": [
 					"1"
 				]
 			}
 		}
 	},
-	"func_healthcharger":
-	{
+	"func_healthcharger": {
 		"Class": "Solid",
 		"base": ["BaseCharger"],
-		"data":
-		{
+		"data": {
 
 		}
 	},
-	"func_illusionary":
-	{
+	"func_illusionary": {
 		"Class": "Solid",
 		"base": ["Targetname", "RenderFields", "ZHLT"],
-		"data":
-		{
-			"skin":
-			{
+		"data": {
+			"skin": {
 				"variable": "choices",
 				"value": "-1",
-				"choices":
-				[
+				"choices": [
 					"-1",
 					"-7"
 				]
 			},
-			"_minlight":
-			{
+			"_minlight": {
 				"variable": "string",
 				"value": ""
 			}
 		}
 	},
-	"func_ladder":
-	{
+	"func_ladder": {
 		"Class": "Solid",
 		"base": ["Targetname"],
-		"data":
-		{
+		"data": {
 
 		}
 	},
-	"func_monsterclip":
-	{
+	"func_monsterclip": {
 		"Class": "Solid",
 		"base": ["Targetname"],
-		"data":
-		{
+		"data": {
 
 		}
 	},
-	"func_mortar_field":
-	{
+	"func_mortar_field": {
 		"Class": "Solid",
 		"base": ["Targetname"],
-		"data":
-		{
-			"m_flSpread":
-			{
+		"data": {
+			"m_flSpread": {
 				"variable": "integer",
 				"value": "64"
 			},
-			"m_iCount":
-			{
+			"m_iCount": {
 				"variable": "integer",
 				"value": "1"
 			},
-			"m_fControl":
-			{
+			"m_fControl": {
 				"variable": "choices",
 				"value": "0",
-				"choices":
-				[
+				"choices": [
 					"0",
 					"1",
 					"2"
 				]
 			},
-			"m_iszXController":
-			{
+			"m_iszXController": {
 				"variable": "target_destination",
 				"value": ""
 			},
-			"m_iszYController":
-			{
+			"m_iszYController": {
 				"variable": "target_destination",
 				"value": ""
 			}
 		}
 	},
-	"func_pendulum":
-	{
+	"func_pendulum": {
 		"Class": "Solid",
 		"base": ["Appearflags", "Targetname", "Global", "RenderFields", "Angles", "ZHLT"],
-		"data":
-		{
-			"speed":
-			{
+		"data": {
+			"speed": {
 				"variable": "integer",
 				"value": "100"
 			},
-			"distance":
-			{
+			"distance": {
 				"variable": "integer",
 				"value": "90"
 			},
-			"damp":
-			{
+			"damp": {
 				"variable": "integer",
 				"value": "0"
 			},
-			"dmg":
-			{
+			"dmg": {
 				"variable": "integer",
 				"value": "0"
 			},
-			"spawnflags":
-			{
+			"spawnflags": {
 				"variable": "flags",
 				"value": "",
-				"choices":
-				[
+				"choices": [
 					"1",
 					"8",
 					"16",
@@ -2687,188 +2162,149 @@
 					"128"
 				]
 			},
-			"_minlight":
-			{
+			"_minlight": {
 				"variable": "integer",
 				"value": ""
 			}
 		}
 	},
-	"func_plat":
-	{
+	"func_plat": {
 		"Class": "Solid",
 		"base": ["Targetname", "Global", "RenderFields", "PlatSounds", "ZHLT"],
-		"data":
-		{
-			"spawnflags":
-			{
+		"data": {
+			"spawnflags": {
 				"variable": "flags",
 				"value": "",
-				"choices":
-				[
+				"choices": [
 					"1"
 				]
 			},
-			"height":
-			{
+			"height": {
 				"variable": "integer",
 				"value": "0"
 			},
-			"speed":
-			{
+			"speed": {
 				"variable": "integer",
 				"value": "50"
 			},
-			"_minlight":
-			{
+			"_minlight": {
 				"variable": "string",
 				"value": ""
 			}
 		}
 	},
-	"func_platrot":
-	{
+	"func_platrot": {
 		"Class": "Solid",
 		"base": ["Targetname", "Global", "RenderFields", "PlatSounds", "Angles", "ZHLT"],
-		"data":
-		{
-			"spawnflags":
-			{
+		"data": {
+			"spawnflags": {
 				"variable": "flags",
 				"value": "",
-				"choices":
-				[
+				"choices": [
 					"1",
 					"64",
 					"128"
 				]
 			},
-			"speed":
-			{
+			"speed": {
 				"variable": "integer",
 				"value": "50"
 			},
-			"height":
-			{
+			"height": {
 				"variable": "integer",
 				"value": "0"
 			},
-			"rotation":
-			{
+			"rotation": {
 				"variable": "integer",
 				"value": "0"
 			},
-			"_minlight":
-			{
+			"_minlight": {
 				"variable": "string",
 				"value": ""
 			}
 		}
 	},
-	"func_pushable":
-	{
+	"func_pushable": {
 		"Class": "Solid",
 		"base": ["Breakable", "RenderFields", "ZHLT"],
-		"data":
-		{
-			"size":
-			{
+		"data": {
+			"size": {
 				"variable": "choices",
 				"value": "0",
-				"choices":
-				[
+				"choices": [
 					"0",
 					"1",
 					"2",
 					"3"
 				]
 			},
-			"spawnflags":
-			{
+			"spawnflags": {
 				"variable": "flags",
 				"value": "",
-				"choices":
-				[
+				"choices": [
 					"128"
 				]
 			},
-			"friction":
-			{
+			"friction": {
 				"variable": "integer",
 				"value": "50"
 			},
-			"buoyancy":
-			{
+			"buoyancy": {
 				"variable": "integer",
 				"value": "20"
 			},
-			"_minlight":
-			{
+			"_minlight": {
 				"variable": "string",
 				"value": ""
 			}
 		}
 	},
-	"func_recharge":
-	{
+	"func_recharge": {
 		"Class": "Solid",
 		"base": ["BaseCharger"],
-		"data":
-		{
+		"data": {
 
 		}
 	},
-	"func_rot_button":
-	{
+	"func_rot_button": {
 		"Class": "Solid",
 		"base": ["Targetname", "Target", "Global", "RenderFields", "Angles", "ZHLT", "Master", "ReplacementFiles"],
-		"data":
-		{
-			"changetarget":
-			{
+		"data": {
+			"changetarget": {
 				"variable": "target_destination",
 				"value": ""
 			},
-			"speed":
-			{
+			"speed": {
 				"variable": "integer",
 				"value": "50"
 			},
-			"health":
-			{
+			"health": {
 				"variable": "integer",
 				"value": ""
 			},
-			"sounds":
-			{
+			"sounds": {
 				"variable": "sound",
 				"value": "buttons/level1.wav"
 			},
-			"wait":
-			{
+			"wait": {
 				"variable": "choices",
 				"value": "3",
-				"choices":
-				[
+				"choices": [
 					"-1"
 				]
 			},
-			"delay":
-			{
+			"delay": {
 				"variable": "string",
 				"value": "0"
 			},
-			"distance":
-			{
+			"distance": {
 				"variable": "integer",
 				"value": "90"
 			},
-			"spawnflags":
-			{
+			"spawnflags": {
 				"variable": "flags",
 				"value": "",
-				"choices":
-				[
+				"choices": [
 					"1",
 					"2",
 					"32",
@@ -2877,45 +2313,36 @@
 					"256"
 				]
 			},
-			"_minlight":
-			{
+			"_minlight": {
 				"variable": "integer",
 				"value": ""
 			}
 		}
 	},
-	"func_rotating":
-	{
+	"func_rotating": {
 		"Class": "Solid",
 		"base": ["Targetname", "Global", "RenderFields", "Angles", "ZHLT", "ReplacementFiles"],
-		"data":
-		{
-			"speed":
-			{
+		"data": {
+			"speed": {
 				"variable": "integer",
 				"value": "0"
 			},
-			"volume":
-			{
+			"volume": {
 				"variable": "integer",
 				"value": "10"
 			},
-			"fanfriction":
-			{
+			"fanfriction": {
 				"variable": "integer",
 				"value": "20"
 			},
-			"sounds":
-			{
+			"sounds": {
 				"variable": "sound",
 				"value": ""
 			},
-			"spawnflags":
-			{
+			"spawnflags": {
 				"variable": "flags",
 				"value": "",
-				"choices":
-				[
+				"choices": [
 					"1",
 					"2",
 					"4",
@@ -2928,35 +2355,28 @@
 					"512"
 				]
 			},
-			"_minlight":
-			{
+			"_minlight": {
 				"variable": "integer",
 				"value": ""
 			},
-			"spawnorigin":
-			{
+			"spawnorigin": {
 				"variable": "string",
 				"value": "0 0 0"
 			},
-			"dmg":
-			{
+			"dmg": {
 				"variable": "integer",
 				"value": "0"
 			}
 		}
 	},
-	"func_tank":
-	{
+	"func_tank": {
 		"Class": "Solid",
 		"base": ["BaseTank", "ZHLT"],
-		"data":
-		{
-			"bullet":
-			{
+		"data": {
+			"bullet": {
 				"variable": "choices",
 				"value": "0",
-				"choices":
-				[
+				"choices": [
 					"0",
 					"1",
 					"2",
@@ -2965,189 +2385,148 @@
 			}
 		}
 	},
-	"func_tankcontrols":
-	{
+	"func_tankcontrols": {
 		"Class": "Solid",
 		"base": [],
-		"data":
-		{
-			"target":
-			{
+		"data": {
+			"target": {
 				"variable": "target_destination",
 				"value": ""
 			}
 		}
 	},
-	"func_tanklaser":
-	{
+	"func_tanklaser": {
 		"Class": "Solid",
 		"base": ["BaseTank", "ZHLT"],
-		"data":
-		{
-			"laserentity":
-			{
+		"data": {
+			"laserentity": {
 				"variable": "target_destination",
 				"value": ""
 			}
 		}
 	},
-	"func_tankrocket":
-	{
+	"func_tankrocket": {
 		"Class": "Solid",
 		"base": ["BaseTank", "ZHLT"],
-		"data":
-		{
+		"data": {
 
 		}
 	},
-	"func_tankmortar":
-	{
+	"func_tankmortar": {
 		"Class": "Solid",
 		"base": ["BaseTank", "ZHLT"],
-		"data":
-		{
-			"iMagnitude":
-			{
+		"data": {
+			"iMagnitude": {
 				"variable": "integer",
 				"value": "100"
 			}
 		}
 	},
-	"func_trackautochange":
-	{
+	"func_trackautochange": {
 		"Class": "Solid",
 		"base": ["Trackchange", "ZHLT"],
-		"data":
-		{
-			"_minlight":
-			{
+		"data": {
+			"_minlight": {
 				"variable": "string",
 				"value": ""
 			}
 		}
 	},
-	"func_trackchange":
-	{
+	"func_trackchange": {
 		"Class": "Solid",
 		"base": ["Trackchange", "ZHLT"],
-		"data":
-		{
-			"_minlight":
-			{
+		"data": {
+			"_minlight": {
 				"variable": "string",
 				"value": ""
 			}
 		}
 	},
-	"func_tracktrain":
-	{
+	"func_tracktrain": {
 		"Class": "Solid",
 		"base": ["Targetname", "Global", "RenderFields", "Angles", "ZHLT", "ReplacementFiles"],
-		"data":
-		{
-			"spawnflags":
-			{
+		"data": {
+			"spawnflags": {
 				"variable": "flags",
 				"value": "",
-				"choices":
-				[
+				"choices": [
 					"1",
 					"2",
 					"8"
 				]
 			},
-			"target":
-			{
+			"target": {
 				"variable": "target_destination",
 				"value": ""
 			},
-			"sounds":
-			{
+			"sounds": {
 				"variable": "sound",
 				"value": ""
 			},
-			"wheels":
-			{
+			"wheels": {
 				"variable": "integer",
 				"value": "50"
 			},
-			"height":
-			{
+			"height": {
 				"variable": "integer",
 				"value": "4"
 			},
-			"startspeed":
-			{
+			"startspeed": {
 				"variable": "integer",
 				"value": "0"
 			},
-			"speed":
-			{
+			"speed": {
 				"variable": "integer",
 				"value": "64"
 			},
-			"dmg":
-			{
+			"dmg": {
 				"variable": "integer",
 				"value": "0"
 			},
-			"volume":
-			{
+			"volume": {
 				"variable": "integer",
 				"value": "10"
 			},
-			"bank":
-			{
+			"bank": {
 				"variable": "string",
 				"value": "0"
 			},
-			"_minlight":
-			{
+			"_minlight": {
 				"variable": "string",
 				"value": ""
 			}
 		}
 	},
-	"func_traincontrols":
-	{
+	"func_traincontrols": {
 		"Class": "Solid",
 		"base": [],
-		"data":
-		{
-			"target":
-			{
+		"data": {
+			"target": {
 				"variable": "target_destination",
 				"value": ""
 			}
 		}
 	},
-	"func_train":
-	{
+	"func_train": {
 		"Class": "Solid",
 		"base": ["Targetname", "Global", "RenderFields", "ZHLT", "PlatSounds"],
-		"data":
-		{
-			"target":
-			{
+		"data": {
+			"target": {
 				"variable": "target_destination",
 				"value": ""
 			},
-			"speed":
-			{
+			"speed": {
 				"variable": "integer",
 				"value": "64"
 			},
-			"dmg":
-			{
+			"dmg": {
 				"variable": "integer",
 				"value": "0"
 			},
-			"skin":
-			{
+			"skin": {
 				"variable": "choices",
 				"value": "0",
-				"choices":
-				[
+				"choices": [
 					"0",
 					"-1",
 					"-3",
@@ -3155,358 +2534,281 @@
 					"-5"
 				]
 			},
-			"spawnflags":
-			{
+			"spawnflags": {
 				"variable": "flags",
 				"value": "",
-				"choices":
-				[
+				"choices": [
 					"8"
 				]
 			},
-			"_minlight":
-			{
+			"_minlight": {
 				"variable": "string",
 				"value": ""
 			}
 		}
 	},
-	"func_wall":
-	{
+	"func_wall": {
 		"Class": "Solid",
 		"base": ["Targetname", "Global", "Appearflags", "RenderFields", "ZHLT"],
-		"data":
-		{
-			"_minlight":
-			{
+		"data": {
+			"_minlight": {
 				"variable": "string",
 				"value": ""
 			}
 		}
 	},
-	"func_wall_toggle":
-	{
+	"func_wall_toggle": {
 		"Class": "Solid",
 		"base": ["func_wall"],
-		"data":
-		{
-			"spawnflags":
-			{
+		"data": {
+			"spawnflags": {
 				"variable": "flags",
 				"value": "",
-				"choices":
-				[
+				"choices": [
 					"1"
 				]
 			}
 		}
 	},
-	"func_water":
-	{
+	"func_water": {
 		"Class": "Solid",
 		"base": ["Door", "ZHLT"],
-		"data":
-		{
-			"spawnflags":
-			{
+		"data": {
+			"spawnflags": {
 				"variable": "flags",
 				"value": "",
-				"choices":
-				[
+				"choices": [
 					"1",
 					"256"
 				]
 			},
-			"skin":
-			{
+			"skin": {
 				"variable": "choices",
 				"value": "-3",
-				"choices":
-				[
+				"choices": [
 					"-3",
 					"-4",
 					"-5"
 				]
 			},
-			"WaveHeight":
-			{
+			"WaveHeight": {
 				"variable": "string",
 				"value": "3.2"
 			}
 		}
 	},
-	"game_counter":
-	{
+	"game_counter": {
 		"Class": "Point",
 		"base": ["Targetname", "Targetx", "Master"],
-		"data":
-		{
-			"spawnflags":
-			{
+		"data": {
+			"spawnflags": {
 				"variable": "flags",
 				"value": "",
-				"choices":
-				[
+				"choices": [
 					"1",
 					"2"
 				]
 			},
-			"frags":
-			{
+			"frags": {
 				"variable": "integer",
 				"value": "0"
 			},
-			"health":
-			{
+			"health": {
 				"variable": "integer",
 				"value": "10"
 			}
 		}
 	},
-	"game_counter_set":
-	{
+	"game_counter_set": {
 		"Class": "Point",
 		"base": ["Targetname", "Target", "Master"],
-		"data":
-		{
-			"spawnflags":
-			{
+		"data": {
+			"spawnflags": {
 				"variable": "flags",
 				"value": "",
-				"choices":
-				[
+				"choices": [
 					"1"
 				]
 			},
-			"frags":
-			{
+			"frags": {
 				"variable": "integer",
 				"value": "10"
 			}
 		}
 	},
-	"game_end":
-	{
+	"game_end": {
 		"Class": "Point",
 		"base": ["Targetname", "Master"],
-		"data":
-		{
+		"data": {
 
 		}
 	},
-	"game_player_equip":
-	{
+	"game_player_equip": {
 		"Class": "Point",
 		"base": ["Targetname", "Master"],
-		"data":
-		{
-			"spawnflags":
-			{
+		"data": {
+			"spawnflags": {
 				"variable": "flags",
 				"value": "",
-				"choices":
-				[
+				"choices": [
 					"1"
 				]
 			}
 		}
 	},
-	"game_player_hurt":
-	{
+	"game_player_hurt": {
 		"Class": "Point",
 		"base": ["Targetname", "Master"],
-		"data":
-		{
-			"dmg":
-			{
+		"data": {
+			"dmg": {
 				"variable": "string",
 				"value": "999"
 			},
-			"spawnflags":
-			{
+			"spawnflags": {
 				"variable": "flags",
 				"value": "",
-				"choices":
-				[
+				"choices": [
 					"1"
 				]
 			}
 		}
 	},
-	"game_player_team":
-	{
+	"game_player_team": {
 		"Class": "Point",
 		"base": ["Targetname", "Master"],
-		"data":
-		{
-			"spawnflags":
-			{
+		"data": {
+			"spawnflags": {
 				"variable": "flags",
 				"value": "",
-				"choices":
-				[
+				"choices": [
 					"1",
 					"2",
 					"4"
 				]
 			},
-			"target":
-			{
+			"target": {
 				"variable": "string",
 				"value": ""
 			}
 		}
 	},
-	"game_score":
-	{
+	"game_score": {
 		"Class": "Point",
 		"base": ["Targetname", "Master"],
-		"data":
-		{
-			"spawnflags":
-			{
+		"data": {
+			"spawnflags": {
 				"variable": "flags",
 				"value": "",
-				"choices":
-				[
+				"choices": [
 					"1",
 					"2"
 				]
 			},
-			"points":
-			{
+			"points": {
 				"variable": "integer",
 				"value": "1"
 			}
 		}
 	},
-	"game_team_master":
-	{
+	"game_team_master": {
 		"Class": "Point",
 		"base": ["Targetname", "Targetx", "Master"],
-		"data":
-		{
-			"spawnflags":
-			{
+		"data": {
+			"spawnflags": {
 				"variable": "flags",
 				"value": "",
-				"choices":
-				[
+				"choices": [
 					"1"
 				]
 			},
-			"triggerstate":
-			{
+			"triggerstate": {
 				"variable": "choices",
 				"value": "0",
-				"choices":
-				[
+				"choices": [
 					"0",
 					"1",
 					"2"
 				]
 			},
-			"teamindex":
-			{
+			"teamindex": {
 				"variable": "integer",
 				"value": "-1"
 			}
 		}
 	},
-	"game_team_set":
-	{
+	"game_team_set": {
 		"Class": "Point",
 		"base": ["Targetname", "Targetx", "Master"],
-		"data":
-		{
-			"spawnflags":
-			{
+		"data": {
+			"spawnflags": {
 				"variable": "flags",
 				"value": "",
-				"choices":
-				[
+				"choices": [
 					"1"
 				]
 			}
 		}
 	},
-	"game_text":
-	{
+	"game_text": {
 		"Class": "Point",
 		"base": ["Targetname", "Target", "Master"],
-		"data":
-		{
-			"spawnflags":
-			{
+		"data": {
+			"spawnflags": {
 				"variable": "flags",
 				"value": "",
-				"choices":
-				[
+				"choices": [
 					"1"
 				]
 			},
-			"message":
-			{
+			"message": {
 				"variable": "string",
 				"value": ""
 			},
-			"x":
-			{
+			"x": {
 				"variable": "string",
 				"value": "-1"
 			},
-			"y":
-			{
+			"y": {
 				"variable": "string",
 				"value": "-1"
 			},
-			"effect":
-			{
+			"effect": {
 				"variable": "choices",
 				"value": "0",
-				"choices":
-				[
+				"choices": [
 					"0",
 					"1",
 					"2"
 				]
 			},
-			"color":
-			{
+			"color": {
 				"variable": "color255",
 				"value": "100 100 100"
 			},
-			"color2":
-			{
+			"color2": {
 				"variable": "color255",
 				"value": "240 110 0"
 			},
-			"fadein":
-			{
+			"fadein": {
 				"variable": "string",
 				"value": "1.5"
 			},
-			"fadeout":
-			{
+			"fadeout": {
 				"variable": "string",
 				"value": "0.5"
 			},
-			"holdtime":
-			{
+			"holdtime": {
 				"variable": "string",
 				"value": "1.2"
 			},
-			"fxtime":
-			{
+			"fxtime": {
 				"variable": "string",
 				"value": "0.25"
 			},
-			"channel":
-			{
+			"channel": {
 				"variable": "choices",
 				"value": "1",
-				"choices":
-				[
+				"choices": [
 					"1",
 					"2",
 					"3",
@@ -3515,564 +2817,451 @@
 			}
 		}
 	},
-	"game_zone_player":
-	{
+	"game_zone_player": {
 		"Class": "Solid",
 		"base": ["Targetname", "Master"],
-		"data":
-		{
-			"intarget":
-			{
+		"data": {
+			"intarget": {
 				"variable": "target_destination",
 				"value": ""
 			},
-			"outtarget":
-			{
+			"outtarget": {
 				"variable": "target_destination",
 				"value": ""
 			},
-			"incount":
-			{
+			"incount": {
 				"variable": "target_destination",
 				"value": ""
 			},
-			"outcount":
-			{
+			"outcount": {
 				"variable": "target_destination",
 				"value": ""
 			}
 		}
 	},
-	"gibshooter":
-	{
+	"gibshooter": {
 		"Class": "Point",
 		"base": ["gibshooterbase"],
-		"data":
-		{
+		"data": {
 
 		}
 	},
-	"infodecal":
-	{
+	"infodecal": {
 		"Class": "Point",
 		"base": ["Targetname", "Appearflags"],
-		"data":
-		{
-			"texture":
-			{
+		"data": {
+			"texture": {
 				"variable": "decal",
 				"value": "texture(decal)"
 			}
 		}
 	},
-	"info_bigmomma":
-	{
+	"info_bigmomma": {
 		"Class": "Point",
 		"base": ["Targetname"],
 		"size": [ [ -24, -24, 0 ], [ 24, 24, 16 ] ],
 		"color": [20, 190, 60],
-		"data":
-		{
-			"spawnflags":
-			{
+		"data": {
+			"spawnflags": {
 				"variable": "flags",
 				"value": "",
-				"choices":
-				[
+				"choices": [
 					"1",
 					"2"
 				]
 			},
-			"target":
-			{
+			"target": {
 				"variable": "target_destination",
 				"value": ""
 			},
-			"radius":
-			{
+			"radius": {
 				"variable": "string",
 				"value": "0"
 			},
-			"reachdelay":
-			{
+			"reachdelay": {
 				"variable": "string",
 				"value": "0"
 			},
-			"reachtarget":
-			{
+			"reachtarget": {
 				"variable": "target_destination",
 				"value": ""
 			},
-			"reachsequence":
-			{
+			"reachsequence": {
 				"variable": "string",
 				"value": ""
 			},
-			"health":
-			{
+			"health": {
 				"variable": "string",
 				"value": ""
 			},
-			"presequence":
-			{
+			"presequence": {
 				"variable": "string",
 				"value": ""
 			}
 		}
 	},
-	"info_intermission":
-	{
+	"info_intermission": {
 		"Class": "Point",
 		"base": ["Target", "Angles"],
 		"size": [ [ -4, -4, -4 ], [ 4, 4, 4 ] ],
 		"color": [0, 255, 0],
-		"data":
-		{
+		"data": {
 
 		}
 	},
-	"info_landmark":
-	{
+	"info_landmark": {
 		"Class": "Point",
 		"base": ["Targetname"],
-		"data":
-		{
+		"data": {
 
 		}
 	},
-	"info_node":
-	{
+	"info_node": {
 		"Class": "Point",
 		"base": [],
 		"size": [ [ -24, -24, -4 ], [ 24, 24, 4 ] ],
 		"color": [255, 255, 0],
-		"data":
-		{
+		"data": {
 
 		}
 	},
-	"info_node_air":
-	{
+	"info_node_air": {
 		"Class": "Point",
 		"base": [],
 		"size": [ [ -32, -32, 0 ], [ 32, 32, 64 ] ],
 		"color": [255, 255, 0],
-		"data":
-		{
+		"data": {
 
 		}
 	},
-	"info_null":
-	{
+	"info_null": {
 		"Class": "Point",
 		"base": ["Targetname"],
-		"data":
-		{
+		"data": {
 
 		}
 	},
-	"info_player_coop":
-	{
+	"info_player_coop": {
 		"Class": "Point",
 		"base": ["PlayerClass"],
 		"studio": "models/player.mdl",
-		"data":
-		{
+		"data": {
 
 		}
 	},
-	"info_player_deathmatch":
-	{
+	"info_player_deathmatch": {
 		"Class": "Point",
 		"base": ["PlayerClass", "Master"],
 		"studio": "models/player.mdl",
-		"data":
-		{
-			"target":
-			{
+		"data": {
+			"target": {
 				"variable": "target_destination",
 				"value": ""
 			}
 		}
 	},
-	"info_player_start":
-	{
+	"info_player_start": {
 		"Class": "Point",
 		"base": ["PlayerClass"],
 		"studio": "models/player.mdl",
-		"data":
-		{
+		"data": {
 
 		}
 	},
-	"info_target":
-	{
+	"info_target": {
 		"Class": "Point",
 		"base": ["Targetname"],
 		"size": [ [ -4, -4, -4 ], [ 4, 4, 4 ] ],
 		"color": [200, 100, 50],
-		"data":
-		{
+		"data": {
 
 		}
 	},
-	"info_teleport_destination":
-	{
+	"info_teleport_destination": {
 		"Class": "Point",
 		"base": ["PlayerClass", "Targetname"],
 		"size": [ [ -8, -8, 0 ], [ 8, 8, 16 ] ],
-		"data":
-		{
+		"data": {
 
 		}
 	},
-	"item_airtank":
-	{
+	"item_airtank": {
 		"Class": "Point",
 		"base": ["Targetx", "Item"],
 		"size": [ [ -16, -16, 0 ], [ 16, 16, 36 ] ],
 		"studio": "models/w_oxygen.mdl",
-		"data":
-		{
+		"data": {
 
 		}
 	},
-	"item_antidote":
-	{
+	"item_antidote": {
 		"Class": "Point",
 		"base": ["Targetx", "Item"],
 		"size": [ [ -16, -16, 0 ], [ 16, 16, 36 ] ],
 		"studio": "models/w_antidote.mdl",
-		"data":
-		{
+		"data": {
 
 		}
 	},
-	"item_battery":
-	{
+	"item_battery": {
 		"Class": "Point",
 		"base": ["Targetx", "Item"],
 		"size": [ [ -16, -16, 0 ], [ 16, 16, 36 ] ],
 		"studio": "models/w_battery.mdl",
-		"data":
-		{
-			"armor_amount":
-			{
+		"data": {
+			"armor_amount": {
 				"variable": "string",
 				"value": ""
 			}
 		}
 	},
-	"item_healthkit":
-	{
+	"item_healthkit": {
 		"Class": "Point",
 		"base": ["Targetx", "Item"],
 		"size": [ [ -16, -16, 0 ], [ 16, 16, 36 ] ],
 		"studio": "models/w_medkit.mdl",
-		"data":
-		{
-			"health_amount":
-			{
+		"data": {
+			"health_amount": {
 				"variable": "string",
 				"value": ""
 			}
 		}
 	},
-	"item_longjump":
-	{
+	"item_longjump": {
 		"Class": "Point",
 		"base": ["Targetx", "Item"],
 		"size": [ [ -16, -16, 0 ], [ 16, 16, 36 ] ],
 		"studio": "models/w_longjump.mdl",
-		"data":
-		{
+		"data": {
 
 		}
 	},
-	"item_security":
-	{
+	"item_security": {
 		"Class": "Point",
 		"base": ["Targetx", "Item"],
 		"size": [ [ -16, -16, 0 ], [ 16, 16, 36 ] ],
 		"studio": "models/w_security.mdl",
-		"data":
-		{
+		"data": {
 
 		}
 	},
-	"item_suit":
-	{
+	"item_suit": {
 		"Class": "Point",
 		"base": ["Targetx", "Item"],
 		"size": [ [ -16, -16, 0 ], [ 16, 16, 36 ] ],
 		"studio": "models/w_suit.mdl",
-		"data":
-		{
-			"body":
-			{
+		"data": {
+			"body": {
 				"variable": "choices",
 				"value": "0",
-				"choices":
-				[
+				"choices": [
 					"0",
 					"1"
 				]
 			},
-			"spawnflags":
-			{
+			"spawnflags": {
 				"variable": "flags",
 				"value": "",
-				"choices":
-				[
+				"choices": [
 					"1"
 				]
 			}
 		}
 	},
-	"light":
-	{
+	"light": {
 		"Class": "Point",
 		"base": ["Target", "Targetname", "Light", "ZHLT_point"],
 		"sprite": "sprites/lightbulb.spr",
 		"iconsprite": "sprites/lightbulb.spr",
 		"flags": "Light",
-		"data":
-		{
-			"spawnflags":
-			{
+		"data": {
+			"spawnflags": {
 				"variable": "flags",
 				"value": "",
-				"choices":
-				[
+				"choices": [
 					"1"
 				]
 			}
 		}
 	},
-	"light_spot":
-	{
+	"light_spot": {
 		"Class": "Point",
 		"base": ["Targetname", "Target", "Angles", "Light", "ZHLT_point"],
 		"sprite": "sprites/lightbulb.spr",
 		"iconsprite": "sprites/lightbulb.spr",
 		"flags": "Light",
-		"data":
-		{
-			"_cone":
-			{
+		"data": {
+			"_cone": {
 				"variable": "integer",
 				"value": "30"
 			},
-			"_cone2":
-			{
+			"_cone2": {
 				"variable": "integer",
 				"value": "45"
 			},
-			"pitch":
-			{
+			"pitch": {
 				"variable": "integer",
 				"value": "-90"
 			},
-			"_sky":
-			{
+			"_sky": {
 				"variable": "choices",
 				"value": "0",
-				"choices":
-				[
+				"choices": [
 					"0",
 					"1"
 				]
 			},
-			"spawnflags":
-			{
+			"spawnflags": {
 				"variable": "flags",
 				"value": "",
-				"choices":
-				[
+				"choices": [
 					"1"
 				]
 			}
 		}
 	},
-	"light_environment":
-	{
+	"light_environment": {
 		"Class": "Point",
 		"base": ["Targetname", "Angles", "ZHLT_point"],
 		"sprite": "sprites/lightbulb.spr",
 		"iconsprite": "sprites/lightbulb.spr",
 		"flags": "Light",
-		"data":
-		{
-			"pitch":
-			{
+		"data": {
+			"pitch": {
 				"variable": "integer",
 				"value": "0"
 			},
-			"_light":
-			{
+			"_light": {
 				"variable": "color255",
 				"value": "255 255 128 200"
 			}
 		}
 	},
-	"logic_campaignselect":
-	{
+	"logic_campaignselect": {
 		"Class": "Point",
 		"base": ["Targetname"],
 		"size": [ [ -8, -8, -8 ], [ 8, 8, 8 ] ],
 		"color": [255, 255, 0],
-		"data":
-		{
+		"data": {
 
 		}
 	},
-	"logic_random":
-	{
+	"logic_random": {
 		"Class": "Point",
 		"base": ["Targetname"],
-		"data":
-		{
-			"target1":
-			{
+		"data": {
+			"target1": {
 				"variable": "target_destination",
 				"value": ""
 			},
-			"target2":
-			{
+			"target2": {
 				"variable": "target_destination",
 				"value": ""
 			},
-			"target3":
-			{
+			"target3": {
 				"variable": "target_destination",
 				"value": ""
 			},
-			"target4":
-			{
+			"target4": {
 				"variable": "target_destination",
 				"value": ""
 			},
-			"target5":
-			{
+			"target5": {
 				"variable": "target_destination",
 				"value": ""
 			},
-			"target6":
-			{
+			"target6": {
 				"variable": "target_destination",
 				"value": ""
 			},
-			"target7":
-			{
+			"target7": {
 				"variable": "target_destination",
 				"value": ""
 			},
-			"target8":
-			{
+			"target8": {
 				"variable": "target_destination",
 				"value": ""
 			},
-			"target9":
-			{
+			"target9": {
 				"variable": "target_destination",
 				"value": ""
 			},
-			"target10":
-			{
+			"target10": {
 				"variable": "target_destination",
 				"value": ""
 			},
-			"target11":
-			{
+			"target11": {
 				"variable": "target_destination",
 				"value": ""
 			},
-			"target12":
-			{
+			"target12": {
 				"variable": "target_destination",
 				"value": ""
 			},
-			"target13":
-			{
+			"target13": {
 				"variable": "target_destination",
 				"value": ""
 			},
-			"target14":
-			{
+			"target14": {
 				"variable": "target_destination",
 				"value": ""
 			},
-			"target15":
-			{
+			"target15": {
 				"variable": "target_destination",
 				"value": ""
 			},
-			"target16":
-			{
+			"target16": {
 				"variable": "target_destination",
 				"value": ""
 			}
 		}
 	},
-	"logic_setcvar":
-	{
+	"logic_setcvar": {
 		"Class": "Point",
 		"base": ["Targetname", "Master"],
 		"size": [ [ -8, -8, -8 ], [ 8, 8, 8 ] ],
 		"color": [200, 100, 50],
-		"data":
-		{
-			"cvar_name":
-			{
+		"data": {
+			"cvar_name": {
 				"variable": "string",
 				"value": ""
 			},
-			"cvar_value":
-			{
+			"cvar_value": {
 				"variable": "string",
 				"value": ""
 			}
 		}
 	},
-	"logic_isskill":
-	{
+	"logic_isskill": {
 		"Class": "Point",
 		"base": ["Targetname", "Master"],
 		"size": [ [ -8, -8, -8 ], [ 8, 8, 8 ] ],
 		"color": [200, 100, 50],
-		"data":
-		{
-			"skill1":
-			{
+		"data": {
+			"skill1": {
 				"variable": "target_destination",
 				"value": ""
 			},
-			"skill2":
-			{
+			"skill2": {
 				"variable": "target_destination",
 				"value": ""
 			},
-			"skill3":
-			{
+			"skill3": {
 				"variable": "target_destination",
 				"value": ""
 			}
 		}
 	},
-	"logic_setskill":
-	{
+	"logic_setskill": {
 		"Class": "Point",
 		"base": ["Targetname", "Target", "Master"],
 		"size": [ [ -8, -8, -8 ], [ 8, 8, 8 ] ],
 		"color": [200, 100, 50],
-		"data":
-		{
-			"skill_level":
-			{
+		"data": {
+			"skill_level": {
 				"variable": "choices",
 				"value": "1",
-				"choices":
-				[
+				"choices": [
 					"1",
 					"2",
 					"3"
@@ -4080,75 +3269,59 @@
 			}
 		}
 	},
-	"logic_setskillvar":
-	{
+	"logic_setskillvar": {
 		"Class": "Point",
 		"base": ["Targetname", "Target", "Master"],
 		"size": [ [ -8, -8, -8 ], [ 8, 8, 8 ] ],
 		"color": [200, 100, 50],
-		"data":
-		{
-			"var_name":
-			{
+		"data": {
+			"var_name": {
 				"variable": "string",
 				"value": ""
 			},
-			"var_value":
-			{
+			"var_value": {
 				"variable": "string",
 				"value": ""
 			}
 		}
 	},
-	"momentary_door":
-	{
+	"momentary_door": {
 		"Class": "Solid",
 		"base": ["Door", "ZHLT"],
-		"data":
-		{
-			"spawnflags":
-			{
+		"data": {
+			"spawnflags": {
 				"variable": "flags",
 				"value": "",
-				"choices":
-				[
+				"choices": [
 					"1"
 				]
 			}
 		}
 	},
-	"momentary_rot_button":
-	{
+	"momentary_rot_button": {
 		"Class": "Solid",
 		"base": ["RenderFields", "Targetname", "Target", "Angles", "ZHLT", "Master", "ReplacementFiles"],
-		"data":
-		{
-			"speed":
-			{
+		"data": {
+			"speed": {
 				"variable": "integer",
 				"value": "50"
 			},
-			"sounds":
-			{
+			"sounds": {
 				"variable": "sound",
 				"value": ""
 			},
-			"distance":
-			{
+			"distance": {
 				"variable": "integer",
 				"value": "90"
 			},
-			"returnspeed":
-			{
+			"returnspeed": {
 				"variable": "integer",
 				"value": "0"
 			},
-			"spawnflags":
-			{
+			"spawnflags": {
 				"variable": "flags",
 				"value": "",
-				"choices":
-				[
+				"choices": [
 					"1",
 					"2",
 					"16",
@@ -4156,129 +3329,104 @@
 					"128"
 				]
 			},
-			"_minlight":
-			{
+			"_minlight": {
 				"variable": "integer",
 				"value": ""
 			}
 		}
 	},
-	"monster_alien_controller":
-	{
+	"monster_alien_controller": {
 		"Class": "Point",
 		"base": ["Monster", "Sequence"],
 		"size": [ [ -16, -16, 0 ], [ 16, 16, 72 ] ],
 		"studio": "models/controller.mdl",
-		"data":
-		{
+		"data": {
 
 		}
 	},
-	"monster_alien_grunt":
-	{
+	"monster_alien_grunt": {
 		"Class": "Point",
 		"base": ["Monster", "Sequence"],
 		"size": [ [ -32, -32, 0 ], [ 32, 32, 64 ] ],
 		"studio": "models/agrunt.mdl",
-		"data":
-		{
-			"netname":
-			{
+		"data": {
+			"netname": {
 				"variable": "string",
 				"value": ""
 			},
-			"spawnflags":
-			{
+			"spawnflags": {
 				"variable": "flags",
 				"value": "",
-				"choices":
-				[
+				"choices": [
 					"32"
 				]
 			}
 		}
 	},
-	"monster_alien_slave":
-	{
+	"monster_alien_slave": {
 		"Class": "Point",
 		"base": ["Monster", "Sequence"],
 		"size": [ [ -16, -16, 0 ], [ 16, 16, 72 ] ],
 		"studio": "models/islave.mdl",
-		"data":
-		{
-			"netname":
-			{
+		"data": {
+			"netname": {
 				"variable": "string",
 				"value": ""
 			},
-			"spawnflags":
-			{
+			"spawnflags": {
 				"variable": "flags",
 				"value": "",
-				"choices":
-				[
+				"choices": [
 					"32",
 					"64"
 				]
 			}
 		}
 	},
-	"monster_apache":
-	{
+	"monster_apache": {
 		"Class": "Point",
 		"base": ["Monster", "Sequence"],
 		"size": [ [ -360, -360, -172 ], [ 360, 360, 8 ] ],
 		"studio": "models/apache.mdl",
-		"data":
-		{
-			"spawnflags":
-			{
+		"data": {
+			"spawnflags": {
 				"variable": "flags",
 				"value": "",
-				"choices":
-				[
+				"choices": [
 					"8",
 					"64"
 				]
 			}
 		}
 	},
-	"monster_babycrab":
-	{
+	"monster_babycrab": {
 		"Class": "Point",
 		"base": ["Monster", "Sequence"],
 		"size": [ [ -16, -16, 0 ], [ 16, 16, 36 ] ],
 		"studio": "models/baby_headcrab.mdl",
-		"data":
-		{
+		"data": {
 
 		}
 	},
-	"monster_barnacle":
-	{
+	"monster_barnacle": {
 		"Class": "Point",
 		"base": ["RenderFields", "Sequence"],
 		"size": [ [ -16, -16, -36 ], [ 16, 16, 0 ] ],
 		"studio": "models/barnacle.mdl",
-		"data":
-		{
+		"data": {
 
 		}
 	},
-	"monster_barney":
-	{
+	"monster_barney": {
 		"Class": "Point",
 		"base": ["Monster", "TalkMonster", "Sequence"],
 		"size": [ [ -16, -16, 0 ], [ 16, 16, 72 ] ],
 		"studio": "models/barney.mdl",
-		"data":
-		{
-			"bodystate":
-			{
+		"data": {
+			"bodystate": {
 				"variable": "choices",
 				"value": "1",
-				"choices":
-				[
+				"choices": [
 					"0",
 					"1",
 					"2"
@@ -4286,31 +3434,25 @@
 			}
 		}
 	},
-	"monster_barney_dead":
-	{
+	"monster_barney_dead": {
 		"Class": "Point",
 		"base": ["Targetname", "RenderFields", "Appearflags", "Angles", "Sequence"],
 		"size": [ [ -16, -16, 0 ], [ 16, 16, 72 ] ],
 		"studio": "models/barney.mdl",
-		"data":
-		{
-			"bodystate":
-			{
+		"data": {
+			"bodystate": {
 				"variable": "choices",
 				"value": "1",
-				"choices":
-				[
+				"choices": [
 					"0",
 					"1",
 					"2"
 				]
 			},
-			"pose":
-			{
+			"pose": {
 				"variable": "choices",
 				"value": "0",
-				"choices":
-				[
+				"choices": [
 					"0",
 					"1",
 					"2"
@@ -4318,176 +3460,142 @@
 			}
 		}
 	},
-	"monster_bigmomma":
-	{
+	"monster_bigmomma": {
 		"Class": "Point",
 		"base": ["Monster", "Sequence", "MonsterWithChildren"],
 		"size": [ [ -95, -95, 0 ], [ 95, 95, 190 ] ],
 		"studio": "models/big_mom.mdl",
-		"data":
-		{
-			"netname":
-			{
+		"data": {
+			"netname": {
 				"variable": "string",
 				"value": ""
 			}
 		}
 	},
-	"monster_bloater":
-	{
+	"monster_bloater": {
 		"Class": "Point",
 		"base": ["Monster", "Sequence"],
 		"size": [ [ -16, -16, 0 ], [ 16, 16, 72 ] ],
 		"studio": "models/floater.mdl",
-		"data":
-		{
+		"data": {
 
 		}
 	},
-	"monster_bullchicken":
-	{
+	"monster_bullchicken": {
 		"Class": "Point",
 		"base": ["Monster", "Sequence"],
 		"size": [ [ -32, -32, 0 ], [ 32, 32, 64 ] ],
 		"studio": "models/bullsquid.mdl",
-		"data":
-		{
+		"data": {
 
 		}
 	},
-	"monster_cockroach":
-	{
+	"monster_cockroach": {
 		"Class": "Point",
 		"base": ["Monster", "Sequence"],
 		"size": [ [ -3, -3, 0 ], [ 3, 3, 3 ] ],
 		"studio": "models/roach.mdl",
-		"data":
-		{
+		"data": {
 
 		}
 	},
-	"monster_flyer_flock":
-	{
+	"monster_flyer_flock": {
 		"Class": "Point",
 		"base": ["Monster", "Sequence"],
 		"size": [ [ -16, -16, 0 ], [ 16, 16, 16 ] ],
 		"studio": "models/aflock.mdl",
-		"data":
-		{
-			"iFlockSize":
-			{
+		"data": {
+			"iFlockSize": {
 				"variable": "integer",
 				"value": "8"
 			},
-			"flFlockRadius":
-			{
+			"flFlockRadius": {
 				"variable": "integer",
 				"value": "128"
 			}
 		}
 	},
-	"monster_furniture":
-	{
+	"monster_furniture": {
 		"Class": "Point",
 		"base": ["Monster", "Sequence"],
 		"size": [ [ -16, -16, 0 ], [ 16, 16, 72 ] ],
-		"data":
-		{
+		"data": {
 
 		}
 	},
-	"monster_gargantua":
-	{
+	"monster_gargantua": {
 		"Class": "Point",
 		"base": ["Monster", "Sequence"],
 		"size": [ [ -32, -32, 0 ], [ 32, 32, 128 ] ],
 		"studio": "models/garg.mdl",
-		"data":
-		{
+		"data": {
 
 		}
 	},
-	"monster_generic":
-	{
+	"monster_generic": {
 		"Class": "Point",
 		"base": ["Monster", "RenderFields", "Sequence"],
 		"size": [ [ -16, -16, -36 ], [ 16, 16, 36 ] ],
-		"data":
-		{
-			"spawnflags":
-			{
+		"data": {
+			"spawnflags": {
 				"variable": "flags",
 				"value": "",
-				"choices":
-				[
+				"choices": [
 					"4",
 					"8"
 				]
 			},
-			"body":
-			{
+			"body": {
 				"variable": "integer",
 				"value": "0"
 			}
 		}
 	},
-	"monster_gman":
-	{
+	"monster_gman": {
 		"Class": "Point",
 		"base": ["Monster", "Sequence"],
 		"size": [ [ -16, -16, 0 ], [ 16, 16, 72 ] ],
 		"studio": "models/gman.mdl",
-		"data":
-		{
+		"data": {
 
 		}
 	},
-	"monster_grunt_repel":
-	{
+	"monster_grunt_repel": {
 		"Class": "Point",
 		"base": ["Monster", "Sequence"],
 		"size": [ [ -16, -16, 0 ], [ 16, 16, 72 ] ],
 		"studio": "models/hgrunt.mdl",
-		"data":
-		{
+		"data": {
 
 		}
 	},
-	"monster_handgrenade":
-	{
+	"monster_handgrenade": {
 		"Class": "Point",
 		"base": ["Weapon", "Targetx", "RenderFields", "Sequence"],
 		"studio": "models/w_grenade.mdl",
-		"data":
-		{
+		"data": {
 
 		}
 	},
-	"monster_headcrab":
-	{
+	"monster_headcrab": {
 		"Class": "Point",
 		"base": ["Monster", "Sequence"],
 		"size": [ [ -16, -16, 0 ], [ 16, 16, 36 ] ],
 		"studio": "models/headcrab.mdl",
-		"data":
-		{
+		"data": {
 
 		}
 	},
-	"monster_hevsuit_dead":
-	{
+	"monster_hevsuit_dead": {
 		"Class": "Point",
 		"base": ["Targetname", "Appearflags", "RenderFields", "Angles", "Sequence"],
 		"size": [ [ -16, -16, 0 ], [ 16, 16, 72 ] ],
 		"studio": "models/deadhaz.mdl",
-		"data":
-		{
-			"pose":
-			{
+		"data": {
+			"pose": {
 				"variable": "choices",
 				"value": "0",
-				"choices":
-				[
+				"choices": [
 					"0",
 					"1",
 					"2",
@@ -4496,31 +3604,25 @@
 			}
 		}
 	},
-	"monster_hgrunt_dead":
-	{
+	"monster_hgrunt_dead": {
 		"Class": "Point",
 		"base": ["Targetname", "Appearflags", "RenderFields", "Angles", "Sequence"],
 		"size": [ [ -16, -16, 0 ], [ 16, 16, 72 ] ],
 		"studio": "models/hgrunt.mdl",
-		"data":
-		{
-			"pose":
-			{
+		"data": {
+			"pose": {
 				"variable": "choices",
 				"value": "0",
-				"choices":
-				[
+				"choices": [
 					"0",
 					"1",
 					"2"
 				]
 			},
-			"body":
-			{
+			"body": {
 				"variable": "choices",
 				"value": "0",
-				"choices":
-				[
+				"choices": [
 					"0",
 					"1",
 					"2",
@@ -4529,69 +3631,55 @@
 			}
 		}
 	},
-	"monster_houndeye":
-	{
+	"monster_houndeye": {
 		"Class": "Point",
 		"base": ["Monster", "Sequence"],
 		"size": [ [ -16, -16, 0 ], [ 16, 16, 36 ] ],
 		"studio": "models/houndeye.mdl",
-		"data":
-		{
-			"netname":
-			{
+		"data": {
+			"netname": {
 				"variable": "string",
 				"value": ""
 			},
-			"spawnflags":
-			{
+			"spawnflags": {
 				"variable": "flags",
 				"value": "",
-				"choices":
-				[
+				"choices": [
 					"32"
 				]
 			}
 		}
 	},
-	"monster_human_assassin":
-	{
+	"monster_human_assassin": {
 		"Class": "Point",
 		"base": ["Monster", "Sequence"],
 		"size": [ [ -16, -16, 0 ], [ 16, 16, 72 ] ],
 		"studio": "models/hassassin.mdl",
-		"data":
-		{
+		"data": {
 
 		}
 	},
-	"monster_human_grunt":
-	{
+	"monster_human_grunt": {
 		"Class": "Point",
 		"base": ["Monster", "Sequence"],
 		"size": [ [ -16, -16, 0 ], [ 16, 16, 72 ] ],
 		"studio": "models/hgrunt.mdl",
-		"data":
-		{
-			"spawnflags":
-			{
+		"data": {
+			"spawnflags": {
 				"variable": "flags",
 				"value": "",
-				"choices":
-				[
+				"choices": [
 					"32"
 				]
 			},
-			"netname":
-			{
+			"netname": {
 				"variable": "string",
 				"value": ""
 			},
-			"weapons":
-			{
+			"weapons": {
 				"variable": "choices",
 				"value": "3",
-				"choices":
-				[
+				"choices": [
 					"1",
 					"3",
 					"5",
@@ -4601,137 +3689,110 @@
 			}
 		}
 	},
-	"monster_ichthyosaur":
-	{
+	"monster_ichthyosaur": {
 		"Class": "Point",
 		"base": ["Monster", "Sequence"],
 		"size": [ [ -32, -32, 0 ], [ 32, 32, 64 ] ],
 		"studio": "models/icky.mdl",
-		"data":
-		{
+		"data": {
 
 		}
 	},
-	"monster_leech":
-	{
+	"monster_leech": {
 		"Class": "Point",
 		"base": ["Monster", "Sequence"],
 		"size": [ [ -6, -6, 0 ], [ 6, 6, 6 ] ],
 		"studio": "models/leech.mdl",
-		"data":
-		{
+		"data": {
 
 		}
 	},
-	"monster_miniturret":
-	{
+	"monster_miniturret": {
 		"Class": "Point",
 		"base": ["Monster", "Sequence"],
 		"size": [ [ -16, -16, -32 ], [ 16, 16, 32 ] ],
 		"studio": "models/miniturret.mdl",
-		"data":
-		{
-			"orientation":
-			{
+		"data": {
+			"orientation": {
 				"variable": "choices",
 				"value": "0",
-				"choices":
-				[
+				"choices": [
 					"0",
 					"1"
 				]
 			},
-			"spawnflags":
-			{
+			"spawnflags": {
 				"variable": "flags",
 				"value": "",
-				"choices":
-				[
+				"choices": [
 					"32",
 					"64"
 				]
 			}
 		}
 	},
-	"monster_nihilanth":
-	{
+	"monster_nihilanth": {
 		"Class": "Point",
 		"base": ["Monster", "Sequence"],
 		"size": [ [ -192, -192, 0 ], [ 192, 192, 384 ] ],
 		"studio": "models/nihilanth.mdl",
-		"data":
-		{
+		"data": {
 
 		}
 	},
-	"BaseOsprey":
-	{
+	"BaseOsprey": {
 		"Class": "Base",
 		"base": ["MonsterWithChildren"],
-		"data":
-		{
-			"spawnflags":
-			{
+		"data": {
+			"spawnflags": {
 				"variable": "flags",
 				"value": "",
-				"choices":
-				[
+				"choices": [
 					"64"
 				]
 			},
-			"initial_capacity":
-			{
+			"initial_capacity": {
 				"variable": "integer",
 				"value": "0"
 			}
 		}
 	},
-	"monster_osprey":
-	{
+	"monster_osprey": {
 		"Class": "Point",
 		"base": ["Monster", "Sequence", "BaseOsprey"],
 		"size": [ [ -480, -480, -112 ], [ 480, 480, 24 ] ],
 		"studio": "models/osprey.mdl",
-		"data":
-		{
+		"data": {
 
 		}
 	},
-	"monster_rat":
-	{
+	"monster_rat": {
 		"Class": "Point",
 		"base": ["Monster", "Sequence"],
 		"size": [ [ -6, -6, 0 ], [ 6, 6, 6 ] ],
 		"studio": "models/bigrat.mdl",
-		"data":
-		{
+		"data": {
 
 		}
 	},
-	"monster_satchel":
-	{
+	"monster_satchel": {
 		"Class": "Point",
 		"base": ["Weapon", "Targetx", "RenderFields", "Sequence"],
 		"studio": "models/w_satchel.mdl",
-		"data":
-		{
+		"data": {
 
 		}
 	},
-	"monster_scientist":
-	{
+	"monster_scientist": {
 		"Class": "Point",
 		"base": ["Monster", "TalkMonster", "Sequence"],
 		"size": [ [ -16, -16, 0 ], [ 16, 16, 72 ] ],
 		"studio": "models/scientist.mdl",
-		"data":
-		{
-			"body":
-			{
+		"data": {
+			"body": {
 				"variable": "choices",
 				"value": "-1",
-				"choices":
-				[
+				"choices": [
 					"-1",
 					"0",
 					"1",
@@ -4739,12 +3800,10 @@
 					"3"
 				]
 			},
-			"item":
-			{
+			"item": {
 				"variable": "choices",
 				"value": "0",
-				"choices":
-				[
+				"choices": [
 					"0",
 					"1",
 					"2"
@@ -4752,20 +3811,16 @@
 			}
 		}
 	},
-	"monster_scientist_dead":
-	{
+	"monster_scientist_dead": {
 		"Class": "Point",
 		"base": ["Targetname", "Appearflags", "RenderFields", "Angles", "Sequence"],
 		"size": [ [ -16, -16, 0 ], [ 16, 16, 72 ] ],
 		"studio": "models/scientist.mdl",
-		"data":
-		{
-			"body":
-			{
+		"data": {
+			"body": {
 				"variable": "choices",
 				"value": "-1",
-				"choices":
-				[
+				"choices": [
 					"-1",
 					"0",
 					"1",
@@ -4773,12 +3828,10 @@
 					"3"
 				]
 			},
-			"pose":
-			{
+			"pose": {
 				"variable": "choices",
 				"value": "0",
-				"choices":
-				[
+				"choices": [
 					"0",
 					"1",
 					"2",
@@ -4790,20 +3843,16 @@
 			}
 		}
 	},
-	"monster_sitting_scientist":
-	{
+	"monster_sitting_scientist": {
 		"Class": "Point",
 		"base": ["Monster", "Sequence"],
 		"size": [ [ -14, -14, 22 ], [ 14, 14, 72 ] ],
 		"studio": "models/scientist.mdl",
-		"data":
-		{
-			"body":
-			{
+		"data": {
+			"body": {
 				"variable": "choices",
 				"value": "-1",
-				"choices":
-				[
+				"choices": [
 					"-1",
 					"0",
 					"1",
@@ -4811,665 +3860,532 @@
 					"3"
 				]
 			},
-			"suspicious":
-			{
+			"suspicious": {
 				"variable": "choices",
 				"value": "0",
-				"choices":
-				[
+				"choices": [
 					"0",
 					"1"
 				]
 			}
 		}
 	},
-	"monster_sentry":
-	{
+	"monster_sentry": {
 		"Class": "Point",
 		"base": ["Monster", "Sequence"],
 		"size": [ [ -16, -16, 0 ], [ 16, 16, 72 ] ],
 		"studio": "models/sentry.mdl",
-		"data":
-		{
-			"spawnflags":
-			{
+		"data": {
+			"spawnflags": {
 				"variable": "flags",
 				"value": "",
-				"choices":
-				[
+				"choices": [
 					"32",
 					"64"
 				]
 			}
 		}
 	},
-	"monster_snark":
-	{
+	"monster_snark": {
 		"Class": "Point",
 		"base": ["Monster", "Sequence"],
 		"size": [ [ -16, -16, 0 ], [ 16, 16, 36 ] ],
 		"studio": "models/w_squeak.mdl",
-		"data":
-		{
+		"data": {
 
 		}
 	},
-	"monster_tentacle":
-	{
+	"monster_tentacle": {
 		"Class": "Point",
 		"base": ["Monster", "Sequence"],
 		"size": [ [ -32, -32, 0 ], [ 32, 32, 64 ] ],
 		"studio": "models/tentacle2.mdl",
-		"data":
-		{
-			"spawnflags":
-			{
+		"data": {
+			"spawnflags": {
 				"variable": "flags",
 				"value": "",
-				"choices":
-				[
+				"choices": [
 					"64"
 				]
 			},
-			"sweeparc":
-			{
+			"sweeparc": {
 				"variable": "integer",
 				"value": "130"
 			},
-			"sound":
-			{
+			"sound": {
 				"variable": "choices",
 				"value": "-1",
-				"choices":
-				[
+				"choices": [
 					"-1",
 					"0",
 					"1",
 					"2"
 				]
 			},
-			"height0":
-			{
+			"height0": {
 				"variable": "integer",
 				"value": "0"
 			},
-			"height1":
-			{
+			"height1": {
 				"variable": "integer",
 				"value": "256"
 			},
-			"height2":
-			{
+			"height2": {
 				"variable": "integer",
 				"value": "448"
 			},
-			"height3":
-			{
+			"height3": {
 				"variable": "integer",
 				"value": "640"
 			}
 		}
 	},
-	"monster_tripmine":
-	{
+	"monster_tripmine": {
 		"Class": "Point",
 		"base": ["Monster", "Sequence"],
 		"studio": "models/w_tripmine.mdl",
-		"data":
-		{
-			"spawnflags":
-			{
+		"data": {
+			"spawnflags": {
 				"variable": "flags",
 				"value": "",
-				"choices":
-				[
+				"choices": [
 					"1"
 				]
 			}
 		}
 	},
-	"monster_turret":
-	{
+	"monster_turret": {
 		"Class": "Point",
 		"base": ["Monster", "Sequence"],
 		"size": [ [ -32, -32, -32 ], [ 32, 32, 32 ] ],
 		"studio": "models/turret.mdl",
-		"data":
-		{
-			"orientation":
-			{
+		"data": {
+			"orientation": {
 				"variable": "choices",
 				"value": "0",
-				"choices":
-				[
+				"choices": [
 					"0",
 					"1"
 				]
 			},
-			"spawnflags":
-			{
+			"spawnflags": {
 				"variable": "flags",
 				"value": "",
-				"choices":
-				[
+				"choices": [
 					"32",
 					"64"
 				]
 			}
 		}
 	},
-	"monster_zombie":
-	{
+	"monster_zombie": {
 		"Class": "Point",
 		"base": ["Monster", "Sequence"],
 		"size": [ [ -16, -16, 0 ], [ 16, 16, 72 ] ],
 		"studio": "models/zombie.mdl",
-		"data":
-		{
+		"data": {
 
 		}
 	},
-	"monstermaker":
-	{
+	"monstermaker": {
 		"Class": "Point",
 		"base": ["Targetname", "Angles"],
 		"size": [ [ -16, -16, -16 ], [ 16, 16, 16 ] ],
-		"data":
-		{
-			"target":
-			{
+		"data": {
+			"target": {
 				"variable": "target_destination",
 				"value": ""
 			},
-			"monstertype":
-			{
+			"monstertype": {
 				"variable": "string",
 				"value": ""
 			},
-			"netname":
-			{
+			"netname": {
 				"variable": "string",
 				"value": ""
 			},
-			"spawnflags":
-			{
+			"spawnflags": {
 				"variable": "flags",
 				"value": "",
-				"choices":
-				[
+				"choices": [
 					"1",
 					"4",
 					"8"
 				]
 			},
-			"monstercount":
-			{
+			"monstercount": {
 				"variable": "integer",
 				"value": "-1"
 			},
-			"delay":
-			{
+			"delay": {
 				"variable": "string",
 				"value": "5"
 			},
-			"m_imaxlivechildren":
-			{
+			"m_imaxlivechildren": {
 				"variable": "integer",
 				"value": "5"
 			}
 		}
 	},
-	"multi_manager":
-	{
+	"multi_manager": {
 		"Class": "Point",
 		"base": ["Targetname"],
 		"color": [255, 128, 0],
-		"data":
-		{
-			"spawnflags":
-			{
+		"data": {
+			"spawnflags": {
 				"variable": "flags",
 				"value": "",
-				"choices":
-				[
+				"choices": [
 					"1"
 				]
 			}
 		}
 	},
-	"multisource":
-	{
+	"multisource": {
 		"Class": "Point",
 		"base": ["Targetname", "Target"],
 		"color": [128, 255, 128],
 		"sprite": "sprites/multisource.spr",
 		"iconsprite": "sprites/multisource.spr",
-		"data":
-		{
-			"globalstate":
-			{
+		"data": {
+			"globalstate": {
 				"variable": "string",
 				"value": ""
 			}
 		}
 	},
-	"path_corner":
-	{
+	"path_corner": {
 		"Class": "Point",
 		"base": ["Targetname", "Angles"],
 		"size": [ [ 16, 16, 16 ] ],
 		"color": [247, 181, 82],
 		"flags": "Path",
-		"data":
-		{
-			"spawnflags":
-			{
+		"data": {
+			"spawnflags": {
 				"variable": "flags",
 				"value": "",
-				"choices":
-				[
+				"choices": [
 					"1",
 					"2",
 					"4"
 				]
 			},
-			"target":
-			{
+			"target": {
 				"variable": "target_destination",
 				"value": ""
 			},
-			"message":
-			{
+			"message": {
 				"variable": "target_destination",
 				"value": ""
 			},
-			"wait":
-			{
+			"wait": {
 				"variable": "integer",
 				"value": "0"
 			},
-			"speed":
-			{
+			"speed": {
 				"variable": "integer",
 				"value": "0"
 			},
-			"yaw_speed":
-			{
+			"yaw_speed": {
 				"variable": "integer",
 				"value": "0"
 			}
 		}
 	},
-	"path_track":
-	{
+	"path_track": {
 		"Class": "Point",
 		"base": ["Targetname"],
 		"size": [ [ 16, 16, 16 ] ],
 		"flags": "Path",
-		"data":
-		{
-			"spawnflags":
-			{
+		"data": {
+			"spawnflags": {
 				"variable": "flags",
 				"value": "",
-				"choices":
-				[
+				"choices": [
 					"1",
 					"2",
 					"4",
 					"8"
 				]
 			},
-			"target":
-			{
+			"target": {
 				"variable": "target_destination",
 				"value": ""
 			},
-			"message":
-			{
+			"message": {
 				"variable": "target_destination",
 				"value": ""
 			},
-			"altpath":
-			{
+			"altpath": {
 				"variable": "target_destination",
 				"value": ""
 			},
-			"netname":
-			{
+			"netname": {
 				"variable": "target_destination",
 				"value": ""
 			},
-			"speed":
-			{
+			"speed": {
 				"variable": "integer",
 				"value": "0"
 			}
 		}
 	},
-	"player_hassuit":
-	{
+	"player_hassuit": {
 		"Class": "Point",
 		"base": ["Targetname"],
 		"size": [ [ -16, -16, -16 ], [ 16, 16, 16 ] ],
-		"data":
-		{
-			"pass_target":
-			{
+		"data": {
+			"pass_target": {
 				"variable": "target_destination",
 				"value": ""
 			},
-			"fail_target":
-			{
+			"fail_target": {
 				"variable": "target_destination",
 				"value": ""
 			}
 		}
 	},
-	"player_hasweapon":
-	{
+	"player_hasweapon": {
 		"Class": "Point",
 		"base": ["Targetname"],
 		"size": [ [ -16, -16, -16 ], [ 16, 16, 16 ] ],
-		"data":
-		{
-			"pass_target":
-			{
+		"data": {
+			"pass_target": {
 				"variable": "target_destination",
 				"value": ""
 			},
-			"fail_target":
-			{
+			"fail_target": {
 				"variable": "target_destination",
 				"value": ""
 			},
-			"weapon_name":
-			{
+			"weapon_name": {
 				"variable": "string",
 				"value": ""
 			}
 		}
 	},
-	"player_loadsaved":
-	{
+	"player_loadsaved": {
 		"Class": "Point",
 		"base": ["Targetname"],
 		"size": [ [ -16, -16, -16 ], [ 16, 16, 16 ] ],
-		"data":
-		{
-			"duration":
-			{
+		"data": {
+			"duration": {
 				"variable": "string",
 				"value": "2"
 			},
-			"holdtime":
-			{
+			"holdtime": {
 				"variable": "string",
 				"value": "0"
 			},
-			"renderamt":
-			{
+			"renderamt": {
 				"variable": "integer",
 				"value": "255"
 			},
-			"rendercolor":
-			{
+			"rendercolor": {
 				"variable": "color255",
 				"value": "0 0 0"
 			},
-			"messagetime":
-			{
+			"messagetime": {
 				"variable": "string",
 				"value": "0"
 			},
-			"message":
-			{
+			"message": {
 				"variable": "string",
 				"value": ""
 			},
-			"loadtime":
-			{
+			"loadtime": {
 				"variable": "string",
 				"value": "0"
 			}
 		}
 	},
-	"player_sethealth":
-	{
+	"player_sethealth": {
 		"Class": "Point",
 		"base": ["Targetname"],
 		"size": [ [ -8, -8, -8 ], [ 8, 8, 8 ] ],
-		"data":
-		{
-			"all_players":
-			{
+		"data": {
+			"all_players": {
 				"variable": "choices",
 				"value": "0",
-				"choices":
-				[
+				"choices": [
 					"0",
 					"1"
 				]
 			},
-			"set_health":
-			{
+			"set_health": {
 				"variable": "choices",
 				"value": "1",
-				"choices":
-				[
+				"choices": [
 					"0",
 					"1"
 				]
 			},
-			"set_armor":
-			{
+			"set_armor": {
 				"variable": "choices",
 				"value": "0",
-				"choices":
-				[
+				"choices": [
 					"0",
 					"1"
 				]
 			},
-			"health_to_set":
-			{
+			"health_to_set": {
 				"variable": "integer",
 				"value": ""
 			},
-			"armor_to_set":
-			{
+			"armor_to_set": {
 				"variable": "integer",
 				"value": ""
 			}
 		}
 	},
-	"player_sethudcolor":
-	{
+	"player_sethudcolor": {
 		"Class": "Point",
 		"base": ["Targetname"],
 		"size": [ [ -16, -16, -16 ], [ 16, 16, 16 ] ],
-		"data":
-		{
-			"hud_color":
-			{
+		"data": {
+			"hud_color": {
 				"variable": "color255",
 				"value": "0 0 0"
 			},
-			"action":
-			{
+			"action": {
 				"variable": "choices",
 				"value": "0",
-				"choices":
-				[
+				"choices": [
 					"0",
 					"1"
 				]
 			}
 		}
 	},
-	"player_setcrosshaircolor":
-	{
+	"player_setcrosshaircolor": {
 		"Class": "Point",
 		"base": ["Targetname"],
 		"size": [ [ -16, -16, -16 ], [ 16, 16, 16 ] ],
-		"data":
-		{
-			"crosshair_color":
-			{
+		"data": {
+			"crosshair_color": {
 				"variable": "color255",
 				"value": "0 0 0"
 			},
-			"action":
-			{
+			"action": {
 				"variable": "choices",
 				"value": "0",
-				"choices":
-				[
+				"choices": [
 					"0",
 					"1"
 				]
 			}
 		}
 	},
-	"player_setsuitlighttype":
-	{
+	"player_setsuitlighttype": {
 		"Class": "Point",
 		"base": ["Targetname"],
 		"size": [ [ -8, -8, -8 ], [ 8, 8, 8 ] ],
-		"data":
-		{
-			"all_players":
-			{
+		"data": {
+			"all_players": {
 				"variable": "choices",
 				"value": "0",
-				"choices":
-				[
+				"choices": [
 					"0",
 					"1"
 				]
 			},
-			"light_type":
-			{
+			"light_type": {
 				"variable": "choices",
 				"value": "0",
-				"choices":
-				[
+				"choices": [
 					"0",
 					"1"
 				]
 			}
 		}
 	},
-	"player_weaponstrip":
-	{
+	"player_weaponstrip": {
 		"Class": "Point",
 		"base": ["Targetname"],
 		"size": [ [ -16, -16, -16 ], [ 16, 16, 16 ] ],
-		"data":
-		{
-			"all_players":
-			{
+		"data": {
+			"all_players": {
 				"variable": "choices",
 				"value": "0",
-				"choices":
-				[
+				"choices": [
 					"0",
 					"1"
 				]
 			},
-			"strip_weapons":
-			{
+			"strip_weapons": {
 				"variable": "choices",
 				"value": "1",
-				"choices":
-				[
+				"choices": [
 					"0",
 					"1"
 				]
 			},
-			"strip_suit":
-			{
+			"strip_suit": {
 				"variable": "choices",
 				"value": "0",
-				"choices":
-				[
+				"choices": [
 					"0",
 					"1"
 				]
 			},
-			"strip_longjump":
-			{
+			"strip_longjump": {
 				"variable": "choices",
 				"value": "0",
-				"choices":
-				[
+				"choices": [
 					"0",
 					"1"
 				]
 			}
 		}
 	},
-	"scripted_sentence":
-	{
+	"scripted_sentence": {
 		"Class": "Point",
 		"base": ["Targetname", "Targetx"],
 		"size": [ [ -16, -16, 0 ], [ 16, 16, 72 ] ],
 		"color": [255, 0, 255],
-		"data":
-		{
-			"spawnflags":
-			{
+		"data": {
+			"spawnflags": {
 				"variable": "flags",
 				"value": "",
-				"choices":
-				[
+				"choices": [
 					"1",
 					"2",
 					"4",
 					"8"
 				]
 			},
-			"sentence":
-			{
+			"sentence": {
 				"variable": "string",
 				"value": ""
 			},
-			"entity":
-			{
+			"entity": {
 				"variable": "string",
 				"value": ""
 			},
-			"duration":
-			{
+			"duration": {
 				"variable": "string",
 				"value": "3"
 			},
-			"radius":
-			{
+			"radius": {
 				"variable": "integer",
 				"value": "512"
 			},
-			"refire":
-			{
+			"refire": {
 				"variable": "string",
 				"value": "3"
 			},
-			"listener":
-			{
+			"listener": {
 				"variable": "string",
 				"value": ""
 			},
-			"volume":
-			{
+			"volume": {
 				"variable": "string",
 				"value": "10"
 			},
-			"attenuation":
-			{
+			"attenuation": {
 				"variable": "choices",
 				"value": "0",
-				"choices":
-				[
+				"choices": [
 					"0",
 					"1",
 					"2",
@@ -5478,26 +4394,21 @@
 			}
 		}
 	},
-	"scripted_sequence":
-	{
+	"scripted_sequence": {
 		"Class": "Point",
 		"base": ["Targetname", "Targetx", "Angles", "BaseScriptedSequence"],
 		"size": [ [ -16, -16, 0 ], [ 16, 16, 72 ] ],
 		"color": [255, 0, 255],
 		"flags": "Angle",
-		"data":
-		{
-			"m_iszIdle":
-			{
+		"data": {
+			"m_iszIdle": {
 				"variable": "string",
 				"value": ""
 			},
-			"spawnflags":
-			{
+			"spawnflags": {
 				"variable": "flags",
 				"value": "",
-				"choices":
-				[
+				"choices": [
 					"32",
 					"64",
 					"128",
@@ -5506,20 +4417,16 @@
 			}
 		}
 	},
-	"speaker":
-	{
+	"speaker": {
 		"Class": "Point",
 		"base": ["Targetname"],
 		"sprite": "sprites/speaker.spr",
 		"iconsprite": "sprites/speaker.spr",
-		"data":
-		{
-			"preset":
-			{
+		"data": {
+			"preset": {
 				"variable": "choices",
 				"value": "0",
-				"choices":
-				[
+				"choices": [
 					"0",
 					"1",
 					"2",
@@ -5533,55 +4440,44 @@
 					"12"
 				]
 			},
-			"message":
-			{
+			"message": {
 				"variable": "string",
 				"value": ""
 			},
-			"health":
-			{
+			"health": {
 				"variable": "integer",
 				"value": "5"
 			},
-			"spawnflags":
-			{
+			"spawnflags": {
 				"variable": "flags",
 				"value": "",
-				"choices":
-				[
+				"choices": [
 					"1"
 				]
 			}
 		}
 	},
-	"trigger_auto":
-	{
+	"trigger_auto": {
 		"Class": "Point",
 		"base": ["Targetx"],
 		"sprite": "sprites/trigger_auto.spr",
 		"iconsprite": "sprites/trigger_auto.spr",
-		"data":
-		{
-			"spawnflags":
-			{
+		"data": {
+			"spawnflags": {
 				"variable": "flags",
 				"value": "",
-				"choices":
-				[
+				"choices": [
 					"1"
 				]
 			},
-			"globalstate":
-			{
+			"globalstate": {
 				"variable": "string",
 				"value": ""
 			},
-			"triggerstate":
-			{
+			"triggerstate": {
 				"variable": "choices",
 				"value": "0",
-				"choices":
-				[
+				"choices": [
 					"0",
 					"1",
 					"2"
@@ -5589,218 +4485,172 @@
 			}
 		}
 	},
-	"trigger_autosave":
-	{
+	"trigger_autosave": {
 		"Class": "Solid",
 		"base": ["Targetname", "Master"],
-		"data":
-		{
+		"data": {
 
 		}
 	},
-	"trigger_camera":
-	{
+	"trigger_camera": {
 		"Class": "Point",
 		"base": ["Targetx", "Targetname"],
 		"sprite": "sprites/trigger_camera.spr",
 		"iconsprite": "sprites/trigger_camera.spr",
-		"data":
-		{
-			"wait":
-			{
+		"data": {
+			"wait": {
 				"variable": "integer",
 				"value": "10"
 			},
-			"moveto":
-			{
+			"moveto": {
 				"variable": "string",
 				"value": ""
 			},
-			"spawnflags":
-			{
+			"spawnflags": {
 				"variable": "flags",
 				"value": "",
-				"choices":
-				[
+				"choices": [
 					"1",
 					"2",
 					"4"
 				]
 			},
-			"speed":
-			{
+			"speed": {
 				"variable": "string",
 				"value": "0"
 			},
-			"acceleration":
-			{
+			"acceleration": {
 				"variable": "string",
 				"value": "500"
 			},
-			"deceleration":
-			{
+			"deceleration": {
 				"variable": "string",
 				"value": "500"
 			}
 		}
 	},
-	"trigger_changekeyvalue":
-	{
+	"trigger_changekeyvalue": {
 		"Class": "Point",
 		"base": ["Targetname", "Target"],
 		"size": [ [ -8, -8, -8 ], [ 8, 8, 8 ] ],
 		"color": [255, 0, 255],
-		"data":
-		{
-			"changetarget":
-			{
+		"data": {
+			"changetarget": {
 				"variable": "target_destination",
 				"value": ""
 			}
 		}
 	},
-	"trigger_changelevel":
-	{
+	"trigger_changelevel": {
 		"Class": "Solid",
 		"base": ["Targetname"],
-		"data":
-		{
-			"map":
-			{
+		"data": {
+			"map": {
 				"variable": "string",
 				"value": ""
 			},
-			"landmark":
-			{
+			"landmark": {
 				"variable": "string",
 				"value": ""
 			},
-			"changetarget":
-			{
+			"changetarget": {
 				"variable": "target_destination",
 				"value": ""
 			},
-			"changedelay":
-			{
+			"changedelay": {
 				"variable": "string",
 				"value": "0"
 			},
-			"use_persistent_level_change":
-			{
+			"use_persistent_level_change": {
 				"variable": "choices",
 				"value": "1",
-				"choices":
-				[
+				"choices": [
 					"0",
 					"1"
 				]
 			},
-			"use_persistent_inventory":
-			{
+			"use_persistent_inventory": {
 				"variable": "choices",
 				"value": "1",
-				"choices":
-				[
+				"choices": [
 					"0",
 					"1"
 				]
 			},
-			"spawnflags":
-			{
+			"spawnflags": {
 				"variable": "flags",
 				"value": "",
-				"choices":
-				[
+				"choices": [
 					"1",
 					"2"
 				]
 			}
 		}
 	},
-	"trigger_changetarget":
-	{
+	"trigger_changetarget": {
 		"Class": "Point",
 		"base": ["Targetx", "Targetname"],
 		"sprite": "sprites/trigger_changetarget.spr",
 		"iconsprite": "sprites/trigger_changetarget.spr",
-		"data":
-		{
-			"m_iszNewTarget":
-			{
+		"data": {
+			"m_iszNewTarget": {
 				"variable": "string",
 				"value": ""
 			}
 		}
 	},
-	"trigger_counter":
-	{
+	"trigger_counter": {
 		"Class": "Solid",
 		"base": ["Trigger", "Targetname", "Master"],
-		"data":
-		{
-			"spawnflags":
-			{
+		"data": {
+			"spawnflags": {
 				"variable": "flags",
 				"value": "",
-				"choices":
-				[
+				"choices": [
 					"1"
 				]
 			},
-			"count":
-			{
+			"count": {
 				"variable": "integer",
 				"value": "2"
 			}
 		}
 	},
-	"trigger_endsection":
-	{
+	"trigger_endsection": {
 		"Class": "Solid",
 		"base": ["Targetname"],
-		"data":
-		{
-			"section":
-			{
+		"data": {
+			"section": {
 				"variable": "string",
 				"value": ""
 			},
-			"spawnflags":
-			{
+			"spawnflags": {
 				"variable": "flags",
 				"value": "",
-				"choices":
-				[
+				"choices": [
 					"1"
 				]
 			}
 		}
 	},
-	"trigger_gravity":
-	{
+	"trigger_gravity": {
 		"Class": "Solid",
 		"base": ["Trigger"],
-		"data":
-		{
-			"gravity":
-			{
+		"data": {
+			"gravity": {
 				"variable": "integer",
 				"value": "1"
 			}
 		}
 	},
-	"trigger_hurt":
-	{
+	"trigger_hurt": {
 		"Class": "Solid",
 		"base": ["Targetname", "Target", "Master"],
-		"data":
-		{
-			"spawnflags":
-			{
+		"data": {
+			"spawnflags": {
 				"variable": "flags",
 				"value": "",
-				"choices":
-				[
+				"choices": [
 					"1",
 					"2",
 					"8",
@@ -5808,22 +4658,18 @@
 					"32"
 				]
 			},
-			"dmg":
-			{
+			"dmg": {
 				"variable": "integer",
 				"value": "10"
 			},
-			"delay":
-			{
+			"delay": {
 				"variable": "string",
 				"value": "0"
 			},
-			"damagetype":
-			{
+			"damagetype": {
 				"variable": "choices",
 				"value": "0",
-				"choices":
-				[
+				"choices": [
 					"0",
 					"1",
 					"2",
@@ -5849,92 +4695,72 @@
 			}
 		}
 	},
-	"trigger_monsterjump":
-	{
+	"trigger_monsterjump": {
 		"Class": "Solid",
 		"base": ["Angles", "Master"],
-		"data":
-		{
-			"speed":
-			{
+		"data": {
+			"speed": {
 				"variable": "integer",
 				"value": "40"
 			},
-			"height":
-			{
+			"height": {
 				"variable": "integer",
 				"value": "128"
 			}
 		}
 	},
-	"trigger_multiple":
-	{
+	"trigger_multiple": {
 		"Class": "Solid",
 		"base": ["Trigger"],
-		"data":
-		{
-			"wait":
-			{
+		"data": {
+			"wait": {
 				"variable": "integer",
 				"value": "10"
 			}
 		}
 	},
-	"trigger_once":
-	{
+	"trigger_once": {
 		"Class": "Solid",
 		"base": ["Trigger"],
-		"data":
-		{
+		"data": {
 
 		}
 	},
-	"trigger_push":
-	{
+	"trigger_push": {
 		"Class": "Solid",
 		"base": ["Trigger", "Angles"],
-		"data":
-		{
-			"spawnflags":
-			{
+		"data": {
+			"spawnflags": {
 				"variable": "flags",
 				"value": "",
-				"choices":
-				[
+				"choices": [
 					"1",
 					"2"
 				]
 			},
-			"speed":
-			{
+			"speed": {
 				"variable": "integer",
 				"value": "40"
 			}
 		}
 	},
-	"trigger_relay":
-	{
+	"trigger_relay": {
 		"Class": "Point",
 		"base": ["Targetname", "Targetx", "Master"],
 		"sprite": "sprites/trigger_relay.spr",
 		"iconsprite": "sprites/trigger_relay.spr",
-		"data":
-		{
-			"spawnflags":
-			{
+		"data": {
+			"spawnflags": {
 				"variable": "flags",
 				"value": "",
-				"choices":
-				[
+				"choices": [
 					"1"
 				]
 			},
-			"triggerstate":
-			{
+			"triggerstate": {
 				"variable": "choices",
 				"value": "0",
-				"choices":
-				[
+				"choices": [
 					"0",
 					"1",
 					"2"
@@ -5942,737 +4768,587 @@
 			}
 		}
 	},
-	"TeleportBase":
-	{
+	"TeleportBase": {
 		"Class": "Base",
 		"base": [],
-		"data":
-		{
-			"fire_on_teleport":
-			{
+		"data": {
+			"fire_on_teleport": {
 				"variable": "target_destination",
 				"value": ""
 			}
 		}
 	},
-	"trigger_teleport":
-	{
+	"trigger_teleport": {
 		"Class": "Solid",
 		"base": ["Trigger", "TeleportBase"],
-		"data":
-		{
+		"data": {
 
 		}
 	},
-	"point_teleport":
-	{
+	"point_teleport": {
 		"Class": "Point",
 		"base": ["Targetname", "Master", "Angles", "TeleportBase"],
 		"color": [0, 255, 0],
 		"flags": "Angle",
-		"data":
-		{
-			"target":
-			{
+		"data": {
+			"target": {
 				"variable": "target_destination",
 				"value": ""
 			}
 		}
 	},
-	"trigger_transition":
-	{
+	"trigger_transition": {
 		"Class": "Solid",
 		"base": ["Targetname"],
-		"data":
-		{
+		"data": {
 
 		}
 	},
-	"weapon_crowbar":
-	{
+	"weapon_crowbar": {
 		"Class": "Point",
 		"base": ["Targetx", "RenderFields", "Weapon"],
 		"studio": "models/w_crowbar.mdl",
-		"data":
-		{
+		"data": {
 
 		}
 	},
-	"weapon_9mmhandgun":
-	{
+	"weapon_9mmhandgun": {
 		"Class": "Point",
 		"base": ["Targetx", "RenderFields", "Weapon"],
 		"studio": "models/w_9mmhandgun.mdl",
-		"data":
-		{
+		"data": {
 
 		}
 	},
-	"weapon_357":
-	{
+	"weapon_357": {
 		"Class": "Point",
 		"base": ["Targetx", "RenderFields", "Weapon"],
 		"studio": "models/w_357.mdl",
-		"data":
-		{
+		"data": {
 
 		}
 	},
-	"weapon_9mmar":
-	{
+	"weapon_9mmar": {
 		"Class": "Point",
 		"base": ["Targetx", "RenderFields", "Weapon"],
 		"studio": "models/w_9mmar.mdl",
-		"data":
-		{
+		"data": {
 
 		}
 	},
-	"weapon_shotgun":
-	{
+	"weapon_shotgun": {
 		"Class": "Point",
 		"base": ["Targetx", "RenderFields", "Weapon"],
 		"studio": "models/w_shotgun.mdl",
-		"data":
-		{
+		"data": {
 
 		}
 	},
-	"weapon_rpg":
-	{
+	"weapon_rpg": {
 		"Class": "Point",
 		"base": ["Targetx", "RenderFields", "Weapon"],
 		"studio": "models/w_rpg.mdl",
-		"data":
-		{
-			"sequence":
-			{
+		"data": {
+			"sequence": {
 				"variable": "choices",
 				"value": "0",
-				"choices":
-				[
+				"choices": [
 					"0",
 					"1"
 				]
 			}
 		}
 	},
-	"weapon_gauss":
-	{
+	"weapon_gauss": {
 		"Class": "Point",
 		"base": ["Targetx", "RenderFields", "Weapon"],
 		"studio": "models/w_gauss.mdl",
-		"data":
-		{
-			"sequence":
-			{
+		"data": {
+			"sequence": {
 				"variable": "choices",
 				"value": "0",
-				"choices":
-				[
+				"choices": [
 					"0",
 					"1"
 				]
 			}
 		}
 	},
-	"weapon_crossbow":
-	{
+	"weapon_crossbow": {
 		"Class": "Point",
 		"base": ["Targetx", "RenderFields", "Weapon"],
 		"studio": "models/w_crossbow.mdl",
-		"data":
-		{
-			"sequence":
-			{
+		"data": {
+			"sequence": {
 				"variable": "choices",
 				"value": "0",
-				"choices":
-				[
+				"choices": [
 					"0",
 					"1"
 				]
 			}
 		}
 	},
-	"weapon_egon":
-	{
+	"weapon_egon": {
 		"Class": "Point",
 		"base": ["Targetx", "RenderFields", "Weapon"],
 		"studio": "models/w_egon.mdl",
-		"data":
-		{
+		"data": {
 
 		}
 	},
-	"weapon_tripmine":
-	{
+	"weapon_tripmine": {
 		"Class": "Point",
 		"base": ["Targetx", "RenderFields", "Weapon"],
 		"size": [ [ -16, -16, -5 ], [ 16, 16, 27 ] ],
 		"studio": "models/w_tripmine.mdl",
-		"data":
-		{
+		"data": {
 
 		}
 	},
-	"weapon_satchel":
-	{
+	"weapon_satchel": {
 		"Class": "Point",
 		"base": ["Targetx", "RenderFields", "Weapon"],
 		"studio": "models/w_satchel.mdl",
-		"data":
-		{
-			"sequence":
-			{
+		"data": {
+			"sequence": {
 				"variable": "choices",
 				"value": "0",
-				"choices":
-				[
+				"choices": [
 					"0",
 					"1"
 				]
 			}
 		}
 	},
-	"weapon_handgrenade":
-	{
+	"weapon_handgrenade": {
 		"Class": "Point",
 		"base": ["Targetx", "RenderFields", "Weapon"],
 		"studio": "models/w_grenade.mdl",
-		"data":
-		{
+		"data": {
 
 		}
 	},
-	"weapon_snark":
-	{
+	"weapon_snark": {
 		"Class": "Point",
 		"base": ["Targetx", "RenderFields", "Weapon"],
 		"studio": "models/w_squeak.mdl",
-		"data":
-		{
+		"data": {
 
 		}
 	},
-	"weapon_hornetgun":
-	{
+	"weapon_hornetgun": {
 		"Class": "Point",
 		"base": ["Targetx", "RenderFields", "Weapon"],
 		"studio": "models/w_hgun.mdl",
-		"data":
-		{
+		"data": {
 
 		}
 	},
-	"weaponbox":
-	{
+	"weaponbox": {
 		"Class": "Point",
 		"base": [],
 		"size": [ [ -16, -16, 0 ], [ 16, 16, 64 ] ],
 		"color": [0, 128, 0],
 		"studio": "models/w_chainammo.mdl",
-		"data":
-		{
+		"data": {
 
 		}
 	},
-	"xen_plantlight":
-	{
+	"xen_plantlight": {
 		"Class": "Point",
 		"base": ["Target", "Targetname", "RenderFields", "Angles"],
 		"studio": "models/light.mdl",
 		"flags": "Angle",
-		"data":
-		{
+		"data": {
 
 		}
 	},
-	"xen_hair":
-	{
+	"xen_hair": {
 		"Class": "Point",
 		"base": ["Targetname", "RenderFields", "Angles"],
 		"studio": "models/hair.mdl",
 		"flags": "Angle",
-		"data":
-		{
-			"spawnflags":
-			{
+		"data": {
+			"spawnflags": {
 				"variable": "flags",
 				"value": "",
-				"choices":
-				[
+				"choices": [
 					"1"
 				]
 			}
 		}
 	},
-	"xen_tree":
-	{
+	"xen_tree": {
 		"Class": "Point",
 		"base": ["Targetname", "RenderFields", "Angles"],
 		"studio": "models/tree.mdl",
 		"flags": "Angle",
-		"data":
-		{
+		"data": {
 
 		}
 	},
-	"xen_spore_small":
-	{
+	"xen_spore_small": {
 		"Class": "Point",
 		"base": ["Targetname", "RenderFields", "Angles"],
 		"studio": "models/fungus(small).mdl",
 		"flags": "Angle",
-		"data":
-		{
+		"data": {
 
 		}
 	},
-	"xen_spore_medium":
-	{
+	"xen_spore_medium": {
 		"Class": "Point",
 		"base": ["Targetname", "RenderFields", "Angles"],
 		"studio": "models/fungus.mdl",
 		"flags": "Angle",
-		"data":
-		{
+		"data": {
 
 		}
 	},
-	"xen_spore_large":
-	{
+	"xen_spore_large": {
 		"Class": "Point",
 		"base": ["Targetname", "RenderFields", "Angles"],
 		"studio": "models/fungus(large).mdl",
 		"flags": "Angle",
-		"data":
-		{
+		"data": {
 
 		}
 	},
-	"ammo_556":
-	{
+	"ammo_556": {
 		"Class": "Point",
 		"base": ["Targetx", "RenderFields", "Ammo"],
 		"studio": "models/W_saw_clip.mdl",
-		"data":
-		{
+		"data": {
 
 		}
 	},
-	"ammo_762":
-	{
+	"ammo_762": {
 		"Class": "Point",
 		"base": ["Targetx", "RenderFields", "Ammo"],
 		"studio": "models/w_m40a1clip.mdl",
-		"data":
-		{
+		"data": {
 
 		}
 	},
-	"ammo_spore":
-	{
+	"ammo_spore": {
 		"Class": "Point",
 		"base": ["Targetx", "RenderFields", "Ammo"],
 		"studio": "models/spore_ammo.mdl",
-		"data":
-		{
+		"data": {
 
 		}
 	},
-	"env_blowercannon":
-	{
+	"env_blowercannon": {
 		"Class": "Point",
 		"base": ["Targetname", "Target"],
 		"size": [ [ -16, -16, -16 ], [ 16, 16, 16 ] ],
-		"data":
-		{
-			"delay":
-			{
+		"data": {
+			"delay": {
 				"variable": "string",
 				"value": "0"
 			},
-			"zoffset":
-			{
+			"zoffset": {
 				"variable": "integer",
 				"value": "0"
 			},
-			"weaptype":
-			{
+			"weaptype": {
 				"variable": "choices",
 				"value": "1",
-				"choices":
-				[
+				"choices": [
 					"1",
 					"2",
 					"3",
 					"4"
 				]
 			},
-			"firetype":
-			{
+			"firetype": {
 				"variable": "choices",
 				"value": "1",
-				"choices":
-				[
+				"choices": [
 					"1",
 					"2"
 				]
 			}
 		}
 	},
-	"env_electrified_wire":
-	{
+	"env_electrified_wire": {
 		"Class": "Point",
 		"base": ["Targetname"],
 		"size": [ [ -16, -16, -16 ], [ 16, 16, 16 ] ],
-		"data":
-		{
-			"segments":
-			{
+		"data": {
+			"segments": {
 				"variable": "integer",
 				"value": "16"
 			},
-			"sparkfrequency":
-			{
+			"sparkfrequency": {
 				"variable": "integer",
 				"value": "3"
 			},
-			"bodysparkfrequency":
-			{
+			"bodysparkfrequency": {
 				"variable": "integer",
 				"value": "3"
 			},
-			"lightningfrequency":
-			{
+			"lightningfrequency": {
 				"variable": "integer",
 				"value": "3"
 			},
-			"xforce":
-			{
+			"xforce": {
 				"variable": "integer",
 				"value": "80000"
 			},
-			"yforce":
-			{
+			"yforce": {
 				"variable": "integer",
 				"value": "80000"
 			},
-			"zforce":
-			{
+			"zforce": {
 				"variable": "integer",
 				"value": "80000"
 			},
-			"disable":
-			{
+			"disable": {
 				"variable": "choices",
 				"value": "0",
-				"choices":
-				[
+				"choices": [
 					"0",
 					"1"
 				]
 			},
-			"endingmodel":
-			{
+			"endingmodel": {
 				"variable": "studio",
 				"value": "models/wire_copper16.mdl"
 			},
-			"bodymodel":
-			{
+			"bodymodel": {
 				"variable": "studio",
 				"value": "models/wire_black16.mdl"
 			}
 		}
 	},
-	"env_rope":
-	{
+	"env_rope": {
 		"Class": "Point",
 		"base": ["Targetname"],
 		"size": [ [ -16, -16, -16 ], [ 16, 16, 16 ] ],
-		"data":
-		{
-			"segments":
-			{
+		"data": {
+			"segments": {
 				"variable": "integer",
 				"value": "16"
 			},
-			"disable":
-			{
+			"disable": {
 				"variable": "choices",
 				"value": "0",
-				"choices":
-				[
+				"choices": [
 					"0",
 					"1"
 				]
 			},
-			"endingmodel":
-			{
+			"endingmodel": {
 				"variable": "studio",
 				"value": "models/rope16.mdl"
 			},
-			"bodymodel":
-			{
+			"bodymodel": {
 				"variable": "studio",
 				"value": "models/rope16.mdl"
 			}
 		}
 	},
-	"env_spritetrain":
-	{
+	"env_spritetrain": {
 		"Class": "Point",
 		"base": ["Targetname", "PlatSounds"],
 		"size": [ [ -16, -16, -16 ], [ 16, 16, 16 ] ],
 		"color": [0, 128, 255],
-		"data":
-		{
-			"target":
-			{
+		"data": {
+			"target": {
 				"variable": "target_destination",
 				"value": ""
 			},
-			"model":
-			{
+			"model": {
 				"variable": "sprite",
 				"value": "sprites/glow01.spr"
 			},
-			"speed":
-			{
+			"speed": {
 				"variable": "integer",
 				"value": "64"
 			},
-			"scale":
-			{
+			"scale": {
 				"variable": "string",
 				"value": ""
 			}
 		}
 	},
-	"func_op4mortarcontroller":
-	{
+	"func_op4mortarcontroller": {
 		"Class": "Solid",
 		"base": ["Target"],
-		"data":
-		{
-			"mortar_axis":
-			{
+		"data": {
+			"mortar_axis": {
 				"variable": "choices",
 				"value": "0",
-				"choices":
-				[
+				"choices": [
 					"0",
 					"1"
 				]
 			}
 		}
 	},
-	"info_displacer_xen_target":
-	{
+	"info_displacer_xen_target": {
 		"Class": "Point",
 		"base": ["Targetname"],
 		"size": [ [ -4, -4, -4 ], [ 4, 4, 4 ] ],
 		"color": [200, 100, 50],
-		"data":
-		{
+		"data": {
 
 		}
 	},
-	"info_displacer_earth_target":
-	{
+	"info_displacer_earth_target": {
 		"Class": "Point",
 		"base": ["Targetname"],
 		"size": [ [ -4, -4, -4 ], [ 4, 4, 4 ] ],
 		"color": [200, 100, 50],
-		"data":
-		{
+		"data": {
 
 		}
 	},
-	"info_pitworm_steam_lock":
-	{
+	"info_pitworm_steam_lock": {
 		"Class": "Point",
 		"base": ["Targetname", "Target"],
-		"data":
-		{
+		"data": {
 
 		}
 	},
-	"item_generic":
-	{
+	"item_generic": {
 		"Class": "Point",
 		"base": ["Targetx", "OtherItem"],
 		"studio": true,
-		"data":
-		{
-			"model":
-			{
+		"data": {
+			"model": {
 				"variable": "studio",
 				"value": "models/egg.mdl"
 			},
-			"sequencename":
-			{
+			"sequencename": {
 				"variable": "string",
 				"value": "idle"
 			},
-			"skin":
-			{
+			"skin": {
 				"variable": "integer",
 				"value": "0"
 			},
-			"body":
-			{
+			"body": {
 				"variable": "integer",
 				"value": "0"
 			},
-			"spawnflags":
-			{
+			"spawnflags": {
 				"variable": "flags",
 				"value": "",
-				"choices":
-				[
+				"choices": [
 					"1",
 					"2"
 				]
 			}
 		}
 	},
-	"item_nuclearbomb":
-	{
+	"item_nuclearbomb": {
 		"Class": "Point",
 		"base": ["Targetx", "OtherItem"],
 		"size": [ [ -16, -16, 0 ], [ 16, 16, 36 ] ],
-		"data":
-		{
-			"initialstate":
-			{
+		"data": {
+			"initialstate": {
 				"variable": "integer",
 				"value": "0"
 			},
-			"wait":
-			{
+			"wait": {
 				"variable": "integer",
 				"value": "1"
 			}
 		}
 	},
-	"monster_alien_babyvoltigore":
-	{
+	"monster_alien_babyvoltigore": {
 		"Class": "Point",
 		"base": ["Monster", "Sequence"],
 		"studio": "models/baby_voltigore.mdl",
-		"data":
-		{
-			"netname":
-			{
+		"data": {
+			"netname": {
 				"variable": "string",
 				"value": ""
 			},
-			"spawnflags":
-			{
+			"spawnflags": {
 				"variable": "flags",
 				"value": "",
-				"choices":
-				[
+				"choices": [
 					"32"
 				]
 			}
 		}
 	},
-	"monster_alien_voltigore":
-	{
+	"monster_alien_voltigore": {
 		"Class": "Point",
 		"base": ["Monster", "Sequence"],
 		"studio": "models/voltigore.mdl",
-		"data":
-		{
-			"netname":
-			{
+		"data": {
+			"netname": {
 				"variable": "string",
 				"value": ""
 			},
-			"spawnflags":
-			{
+			"spawnflags": {
 				"variable": "flags",
 				"value": "",
-				"choices":
-				[
+				"choices": [
 					"32"
 				]
 			}
 		}
 	},
-	"monster_alien_slave_dead":
-	{
+	"monster_alien_slave_dead": {
 		"Class": "Point",
 		"base": ["Monster", "Sequence"],
 		"studio": "models/islave.mdl",
-		"data":
-		{
-			"pose":
-			{
+		"data": {
+			"pose": {
 				"variable": "choices",
 				"value": "0",
-				"choices":
-				[
+				"choices": [
 					"0"
 				]
 			}
 		}
 	},
-	"monster_assassin_repel":
-	{
+	"monster_assassin_repel": {
 		"Class": "Point",
 		"base": ["Monster", "Sequence"],
 		"studio": "models/massn.mdl",
-		"data":
-		{
+		"data": {
 
 		}
 	},
-	"monster_blkop_apache":
-	{
+	"monster_blkop_apache": {
 		"Class": "Point",
 		"base": ["Monster", "Sequence"],
 		"studio": "models/blkop_apache.mdl",
-		"data":
-		{
-			"spawnflags":
-			{
+		"data": {
+			"spawnflags": {
 				"variable": "flags",
 				"value": "",
-				"choices":
-				[
+				"choices": [
 					"8",
 					"64"
 				]
 			}
 		}
 	},
-	"monster_blkop_osprey":
-	{
+	"monster_blkop_osprey": {
 		"Class": "Point",
 		"base": ["Monster", "Sequence", "BaseOsprey"],
 		"studio": "models/blkop_osprey.mdl",
-		"data":
-		{
+		"data": {
 
 		}
 	},
-	"monster_cleansuit_scientist":
-	{
+	"monster_cleansuit_scientist": {
 		"Class": "Point",
 		"base": ["Monster", "TalkMonster", "Sequence"],
 		"studio": "models/cleansuit_scientist.mdl",
-		"data":
-		{
-			"body":
-			{
+		"data": {
+			"body": {
 				"variable": "choices",
 				"value": "-1",
-				"choices":
-				[
+				"choices": [
 					"-1",
 					"0",
 					"1",
@@ -6682,19 +5358,15 @@
 			}
 		}
 	},
-	"monster_cleansuit_scientist_dead":
-	{
+	"monster_cleansuit_scientist_dead": {
 		"Class": "Point",
 		"base": ["Targetname", "Appearflags", "RenderFields", "Sequence"],
 		"studio": "models/cleansuit_scientist.mdl",
-		"data":
-		{
-			"body":
-			{
+		"data": {
+			"body": {
 				"variable": "choices",
 				"value": "-1",
-				"choices":
-				[
+				"choices": [
 					"-1",
 					"0",
 					"1",
@@ -6702,12 +5374,10 @@
 					"3"
 				]
 			},
-			"pose":
-			{
+			"pose": {
 				"variable": "choices",
 				"value": "0",
-				"choices":
-				[
+				"choices": [
 					"0",
 					"1",
 					"2",
@@ -6721,19 +5391,15 @@
 			}
 		}
 	},
-	"monster_sitting_cleansuit_scientist":
-	{
+	"monster_sitting_cleansuit_scientist": {
 		"Class": "Point",
 		"base": ["Monster", "Sequence"],
 		"studio": "models/cleansuit_scientist.mdl",
-		"data":
-		{
-			"body":
-			{
+		"data": {
+			"body": {
 				"variable": "choices",
 				"value": "-1",
-				"choices":
-				[
+				"choices": [
 					"-1",
 					"0",
 					"1",
@@ -6743,49 +5409,39 @@
 			}
 		}
 	},
-	"monster_drillsergeant":
-	{
+	"monster_drillsergeant": {
 		"Class": "Point",
 		"base": ["Monster", "TalkMonster", "Sequence"],
 		"studio": "models/drill.mdl",
-		"data":
-		{
+		"data": {
 
 		}
 	},
-	"monster_geneworm":
-	{
+	"monster_geneworm": {
 		"Class": "Point",
 		"base": ["Monster", "Sequence"],
 		"studio": "models/geneworm.mdl",
-		"data":
-		{
+		"data": {
 
 		}
 	},
-	"monster_gonome":
-	{
+	"monster_gonome": {
 		"Class": "Point",
 		"base": ["Monster", "Sequence"],
 		"studio": "models/gonome.mdl",
-		"data":
-		{
+		"data": {
 
 		}
 	},
-	"monster_gonome_dead":
-	{
+	"monster_gonome_dead": {
 		"Class": "Point",
 		"base": ["Targetname", "Appearflags", "RenderFields", "Sequence"],
 		"studio": "models/gonome.mdl",
-		"data":
-		{
-			"pose":
-			{
+		"data": {
+			"pose": {
 				"variable": "choices",
 				"value": "0",
-				"choices":
-				[
+				"choices": [
 					"0",
 					"1",
 					"2"
@@ -6793,51 +5449,40 @@
 			}
 		}
 	},
-	"monster_houndeye_dead":
-	{
+	"monster_houndeye_dead": {
 		"Class": "Point",
 		"base": ["Monster", "Sequence"],
 		"studio": "models/houndeye_dead.mdl",
-		"data":
-		{
-			"pose":
-			{
+		"data": {
+			"pose": {
 				"variable": "choices",
 				"value": "0",
-				"choices":
-				[
+				"choices": [
 					"0"
 				]
 			}
 		}
 	},
-	"monster_grunt_ally_repel":
-	{
+	"monster_grunt_ally_repel": {
 		"Class": "Point",
 		"base": ["Monster", "Sequence", "TalkMonster"],
 		"studio": "models/hgrunt_opfor.mdl",
-		"data":
-		{
-			"spawnflags":
-			{
+		"data": {
+			"spawnflags": {
 				"variable": "flags",
 				"value": "",
-				"choices":
-				[
+				"choices": [
 					"32"
 				]
 			},
-			"netname":
-			{
+			"netname": {
 				"variable": "string",
 				"value": ""
 			},
-			"weapons":
-			{
+			"weapons": {
 				"variable": "choices",
 				"value": "3",
-				"choices":
-				[
+				"choices": [
 					"1",
 					"3",
 					"5",
@@ -6846,12 +5491,10 @@
 					"16"
 				]
 			},
-			"head":
-			{
+			"head": {
 				"variable": "choices",
 				"value": "-1",
-				"choices":
-				[
+				"choices": [
 					"-1",
 					"0",
 					"1",
@@ -6865,33 +5508,26 @@
 			}
 		}
 	},
-	"monster_human_grunt_ally":
-	{
+	"monster_human_grunt_ally": {
 		"Class": "Point",
 		"base": ["Monster", "Sequence", "TalkMonster"],
 		"studio": "models/hgrunt_opfor.mdl",
-		"data":
-		{
-			"netname":
-			{
+		"data": {
+			"netname": {
 				"variable": "string",
 				"value": ""
 			},
-			"spawnflags":
-			{
+			"spawnflags": {
 				"variable": "flags",
 				"value": "",
-				"choices":
-				[
+				"choices": [
 					"32"
 				]
 			},
-			"weapons":
-			{
+			"weapons": {
 				"variable": "choices",
 				"value": "3",
-				"choices":
-				[
+				"choices": [
 					"0",
 					"1",
 					"3",
@@ -6901,12 +5537,10 @@
 					"16"
 				]
 			},
-			"head":
-			{
+			"head": {
 				"variable": "choices",
 				"value": "-1",
-				"choices":
-				[
+				"choices": [
 					"-1",
 					"0",
 					"1",
@@ -6920,19 +5554,15 @@
 			}
 		}
 	},
-	"monster_human_grunt_ally_dead":
-	{
+	"monster_human_grunt_ally_dead": {
 		"Class": "Point",
 		"base": ["Targetname", "Appearflags", "RenderFields", "Sequence"],
 		"studio": "models/hgrunt_opfor.mdl",
-		"data":
-		{
-			"pose":
-			{
+		"data": {
+			"pose": {
 				"variable": "choices",
 				"value": "0",
-				"choices":
-				[
+				"choices": [
 					"0",
 					"1",
 					"2",
@@ -6942,24 +5572,20 @@
 					"6"
 				]
 			},
-			"weapons":
-			{
+			"weapons": {
 				"variable": "choices",
 				"value": "1",
-				"choices":
-				[
+				"choices": [
 					"0",
 					"1",
 					"8",
 					"16"
 				]
 			},
-			"head":
-			{
+			"head": {
 				"variable": "choices",
 				"value": "0",
-				"choices":
-				[
+				"choices": [
 					"0",
 					"1",
 					"2",
@@ -6972,44 +5598,35 @@
 			}
 		}
 	},
-	"monster_human_medic_ally":
-	{
+	"monster_human_medic_ally": {
 		"Class": "Point",
 		"base": ["Monster", "Sequence"],
 		"studio": "models/hgrunt_medic.mdl",
-		"data":
-		{
-			"netname":
-			{
+		"data": {
+			"netname": {
 				"variable": "string",
 				"value": ""
 			},
-			"spawnflags":
-			{
+			"spawnflags": {
 				"variable": "flags",
 				"value": "",
-				"choices":
-				[
+				"choices": [
 					"32"
 				]
 			},
-			"head":
-			{
+			"head": {
 				"variable": "choices",
 				"value": "-1",
-				"choices":
-				[
+				"choices": [
 					"-1",
 					"0",
 					"1"
 				]
 			},
-			"weapons":
-			{
+			"weapons": {
 				"variable": "choices",
 				"value": "2",
-				"choices":
-				[
+				"choices": [
 					"0",
 					"1",
 					"2",
@@ -7018,33 +5635,26 @@
 			}
 		}
 	},
-	"monster_human_torch_ally":
-	{
+	"monster_human_torch_ally": {
 		"Class": "Point",
 		"base": ["Monster", "Sequence"],
 		"studio": "models/hgrunt_torch.mdl",
-		"data":
-		{
-			"netname":
-			{
+		"data": {
+			"netname": {
 				"variable": "string",
 				"value": ""
 			},
-			"spawnflags":
-			{
+			"spawnflags": {
 				"variable": "flags",
 				"value": "",
-				"choices":
-				[
+				"choices": [
 					"32"
 				]
 			},
-			"weapons":
-			{
+			"weapons": {
 				"variable": "choices",
 				"value": "1",
-				"choices":
-				[
+				"choices": [
 					"1",
 					"2",
 					"5",
@@ -7053,45 +5663,36 @@
 			}
 		}
 	},
-	"monster_male_assassin":
-	{
+	"monster_male_assassin": {
 		"Class": "Point",
 		"base": ["Monster", "Sequence"],
 		"studio": "models/massn.mdl",
-		"data":
-		{
-			"netname":
-			{
+		"data": {
+			"netname": {
 				"variable": "string",
 				"value": ""
 			},
-			"spawnflags":
-			{
+			"spawnflags": {
 				"variable": "flags",
 				"value": "",
-				"choices":
-				[
+				"choices": [
 					"32"
 				]
 			},
-			"head":
-			{
+			"head": {
 				"variable": "choices",
 				"value": "0",
-				"choices":
-				[
+				"choices": [
 					"-1",
 					"0",
 					"1",
 					"2"
 				]
 			},
-			"weapons":
-			{
+			"weapons": {
 				"variable": "choices",
 				"value": "3",
-				"choices":
-				[
+				"choices": [
 					"0",
 					"1",
 					"3",
@@ -7099,78 +5700,63 @@
 					"8"
 				]
 			},
-			"standgroundrange":
-			{
+			"standgroundrange": {
 				"variable": "string",
 				"value": "0.0"
 			}
 		}
 	},
-	"monster_op4loader":
-	{
+	"monster_op4loader": {
 		"Class": "Point",
 		"base": ["Monster", "RenderFields", "Sequence"],
 		"studio": "models/loader.mdl",
-		"data":
-		{
-			"spawnflags":
-			{
+		"data": {
+			"spawnflags": {
 				"variable": "flags",
 				"value": "",
-				"choices":
-				[
+				"choices": [
 					"4"
 				]
 			}
 		}
 	},
-	"monster_otis":
-	{
+	"monster_otis": {
 		"Class": "Point",
 		"base": ["Monster", "TalkMonster", "Sequence"],
 		"studio": "models/otis.mdl",
-		"data":
-		{
-			"bodystate":
-			{
+		"data": {
+			"bodystate": {
 				"variable": "choices",
 				"value": "1",
-				"choices":
-				[
+				"choices": [
 					"0",
 					"1",
 					"2"
 				]
 			},
-			"skin":
-			{
+			"skin": {
 				"variable": "choices",
 				"value": "-1",
-				"choices":
-				[
+				"choices": [
 					"-1",
 					"0",
 					"1",
 					"2"
 				]
 			},
-			"sleeves":
-			{
+			"sleeves": {
 				"variable": "choices",
 				"value": "-1",
-				"choices":
-				[
+				"choices": [
 					"-1",
 					"0",
 					"1"
 				]
 			},
-			"item":
-			{
+			"item": {
 				"variable": "choices",
 				"value": "0",
-				"choices":
-				[
+				"choices": [
 					"0",
 					"1",
 					"2"
@@ -7178,19 +5764,15 @@
 			}
 		}
 	},
-	"monster_otis_dead":
-	{
+	"monster_otis_dead": {
 		"Class": "Point",
 		"base": ["Targetname", "Appearflags", "Sequence"],
 		"studio": "models/otis.mdl",
-		"data":
-		{
-			"pose":
-			{
+		"data": {
+			"pose": {
 				"variable": "choices",
 				"value": "0",
-				"choices":
-				[
+				"choices": [
 					"0",
 					"1",
 					"2",
@@ -7198,34 +5780,28 @@
 					"4"
 				]
 			},
-			"bodystate":
-			{
+			"bodystate": {
 				"variable": "choices",
 				"value": "1",
-				"choices":
-				[
+				"choices": [
 					"0",
 					"1",
 					"2"
 				]
 			},
-			"sleeves":
-			{
+			"sleeves": {
 				"variable": "choices",
 				"value": "-1",
-				"choices":
-				[
+				"choices": [
 					"-1",
 					"0",
 					"1"
 				]
 			},
-			"item":
-			{
+			"item": {
 				"variable": "choices",
 				"value": "0",
-				"choices":
-				[
+				"choices": [
 					"0",
 					"1",
 					"2"
@@ -7233,113 +5809,90 @@
 			}
 		}
 	},
-	"monster_pitdrone":
-	{
+	"monster_pitdrone": {
 		"Class": "Point",
 		"base": ["Monster", "Sequence"],
 		"studio": "models/pit_drone.mdl",
-		"data":
-		{
-			"initammo":
-			{
+		"data": {
+			"initammo": {
 				"variable": "string",
 				"value": "6"
 			}
 		}
 	},
-	"monster_pitworm":
-	{
+	"monster_pitworm": {
 		"Class": "Point",
 		"base": ["Monster", "Sequence"],
 		"studio": "models/pit_worm_up.mdl",
-		"data":
-		{
+		"data": {
 
 		}
 	},
-	"monster_pitworm_up":
-	{
+	"monster_pitworm_up": {
 		"Class": "Point",
 		"base": ["Monster", "Sequence"],
 		"studio": "models/pit_worm_up.mdl",
-		"data":
-		{
+		"data": {
 
 		}
 	},
-	"monster_shockroach":
-	{
+	"monster_shockroach": {
 		"Class": "Point",
 		"base": ["Monster", "Sequence"],
 		"studio": "models/w_shock_rifle.mdl",
-		"data":
-		{
+		"data": {
 
 		}
 	},
-	"monster_zombie_barney":
-	{
+	"monster_zombie_barney": {
 		"Class": "Point",
 		"base": ["Monster", "Sequence"],
 		"studio": "models/zombie_barney.mdl",
-		"data":
-		{
+		"data": {
 
 		}
 	},
-	"monster_zombie_soldier":
-	{
+	"monster_zombie_soldier": {
 		"Class": "Point",
 		"base": ["Monster", "Sequence"],
 		"studio": "models/zombie_soldier.mdl",
-		"data":
-		{
+		"data": {
 
 		}
 	},
-	"monster_zombie_soldier_dead":
-	{
+	"monster_zombie_soldier_dead": {
 		"Class": "Point",
 		"base": ["Monster", "Sequence"],
 		"studio": "models/zombie_soldier.mdl",
-		"data":
-		{
-			"pose":
-			{
+		"data": {
+			"pose": {
 				"variable": "choices",
 				"value": "0",
-				"choices":
-				[
+				"choices": [
 					"0",
 					"1"
 				]
 			}
 		}
 	},
-	"monster_recruit":
-	{
+	"monster_recruit": {
 		"Class": "Point",
 		"base": ["Monster", "TalkMonster", "Sequence"],
 		"studio": "models/recruit.mdl",
-		"data":
-		{
+		"data": {
 
 		}
 	},
-	"monster_skeleton_dead":
-	{
+	"monster_skeleton_dead": {
 		"Class": "Point",
 		"base": ["Targetname", "Appearflags", "RenderFields", "Sequence"],
 		"size": [ [ -16, -16, 0 ], [ 16, 16, 72 ] ],
 		"studio": "models/skeleton.mdl",
-		"data":
-		{
-			"pose":
-			{
+		"data": {
+			"pose": {
 				"variable": "choices",
 				"value": "0",
-				"choices":
-				[
+				"choices": [
 					"0",
 					"1",
 					"2",
@@ -7348,33 +5901,26 @@
 			}
 		}
 	},
-	"monster_shocktrooper":
-	{
+	"monster_shocktrooper": {
 		"Class": "Point",
 		"base": ["Monster", "Sequence"],
 		"studio": "models/strooper.mdl",
-		"data":
-		{
-			"netname":
-			{
+		"data": {
+			"netname": {
 				"variable": "string",
 				"value": ""
 			},
-			"spawnflags":
-			{
+			"spawnflags": {
 				"variable": "flags",
 				"value": "",
-				"choices":
-				[
+				"choices": [
 					"32"
 				]
 			},
-			"weapons":
-			{
+			"weapons": {
 				"variable": "choices",
 				"value": "3",
-				"choices":
-				[
+				"choices": [
 					"1",
 					"3",
 					"5",
@@ -7384,87 +5930,69 @@
 			}
 		}
 	},
-	"op4mortar":
-	{
+	"op4mortar": {
 		"Class": "Point",
 		"base": ["Targetname"],
-		"data":
-		{
-			"spawnflags":
-			{
+		"data": {
+			"spawnflags": {
 				"variable": "flags",
 				"value": "",
-				"choices":
-				[
+				"choices": [
 					"1",
 					"16",
 					"32"
 				]
 			},
-			"mortar_velocity":
-			{
+			"mortar_velocity": {
 				"variable": "integer",
 				"value": "800"
 			},
-			"h_min":
-			{
+			"h_min": {
 				"variable": "integer",
 				"value": "-90"
 			},
-			"h_max":
-			{
+			"h_max": {
 				"variable": "integer",
 				"value": "90"
 			},
-			"mindist":
-			{
+			"mindist": {
 				"variable": "integer",
 				"value": "256"
 			},
-			"maxdist":
-			{
+			"maxdist": {
 				"variable": "integer",
 				"value": "2048"
 			},
-			"enemytype":
-			{
+			"enemytype": {
 				"variable": "choices",
 				"value": "0",
-				"choices":
-				[
+				"choices": [
 					"0",
 					"1",
 					"2"
 				]
 			},
-			"firedelay":
-			{
+			"firedelay": {
 				"variable": "integer",
 				"value": "5"
 			}
 		}
 	},
-	"pitworm_gibshooter":
-	{
+	"pitworm_gibshooter": {
 		"Class": "Point",
 		"base": ["gibshooterbase"],
-		"data":
-		{
+		"data": {
 
 		}
 	},
-	"trigger_geneworm_hit":
-	{
+	"trigger_geneworm_hit": {
 		"Class": "Solid",
 		"base": ["Targetname", "Target", "Master"],
-		"data":
-		{
-			"spawnflags":
-			{
+		"data": {
+			"spawnflags": {
 				"variable": "flags",
 				"value": "",
-				"choices":
-				[
+				"choices": [
 					"1",
 					"2",
 					"8",
@@ -7472,181 +6000,144 @@
 					"32"
 				]
 			},
-			"delay":
-			{
+			"delay": {
 				"variable": "string",
 				"value": "0"
 			}
 		}
 	},
-	"trigger_playerfreeze":
-	{
+	"trigger_playerfreeze": {
 		"Class": "Point",
 		"base": ["Targetx", "Targetname"],
-		"data":
-		{
+		"data": {
 
 		}
 	},
-	"trigger_xen_return":
-	{
+	"trigger_xen_return": {
 		"Class": "Solid",
 		"base": ["Trigger"],
-		"data":
-		{
+		"data": {
 
 		}
 	},
-	"weapon_displacer":
-	{
+	"weapon_displacer": {
 		"Class": "Point",
 		"base": ["Targetx", "RenderFields", "Weapon"],
 		"studio": "models/w_displacer.mdl",
-		"data":
-		{
+		"data": {
 
 		}
 	},
-	"weapon_eagle":
-	{
+	"weapon_eagle": {
 		"Class": "Point",
 		"base": ["Targetx", "RenderFields", "Weapon"],
 		"studio": "models/w_desert_eagle.mdl",
-		"data":
-		{
+		"data": {
 
 		}
 	},
-	"weapon_grapple":
-	{
+	"weapon_grapple": {
 		"Class": "Point",
 		"base": ["Targetx", "RenderFields", "Weapon"],
 		"studio": "models/w_bgrap.mdl",
-		"data":
-		{
+		"data": {
 
 		}
 	},
-	"weapon_knife":
-	{
+	"weapon_knife": {
 		"Class": "Point",
 		"base": ["Targetx", "RenderFields", "Weapon"],
 		"studio": "models/w_knife.mdl",
-		"data":
-		{
+		"data": {
 
 		}
 	},
-	"weapon_m249":
-	{
+	"weapon_m249": {
 		"Class": "Point",
 		"base": ["Targetx", "RenderFields", "Weapon"],
 		"studio": "models/w_saw.mdl",
-		"data":
-		{
+		"data": {
 
 		}
 	},
-	"weapon_penguin":
-	{
+	"weapon_penguin": {
 		"Class": "Point",
 		"base": ["Targetx", "RenderFields", "Weapon"],
 		"studio": "models/w_penguinnest.mdl",
-		"data":
-		{
+		"data": {
 
 		}
 	},
-	"weapon_pipewrench":
-	{
+	"weapon_pipewrench": {
 		"Class": "Point",
 		"base": ["Targetx", "RenderFields", "Weapon"],
 		"studio": "models/w_pipe_wrench.mdl",
-		"data":
-		{
+		"data": {
 
 		}
 	},
-	"weapon_shockrifle":
-	{
+	"weapon_shockrifle": {
 		"Class": "Point",
 		"base": ["Targetx", "RenderFields", "Weapon"],
 		"studio": "models/w_shock.mdl",
-		"data":
-		{
+		"data": {
 
 		}
 	},
-	"weapon_sniperrifle":
-	{
+	"weapon_sniperrifle": {
 		"Class": "Point",
 		"base": ["Targetx", "RenderFields", "Weapon"],
 		"studio": "models/w_m40a1.mdl",
-		"data":
-		{
+		"data": {
 
 		}
 	},
-	"weapon_sporelauncher":
-	{
+	"weapon_sporelauncher": {
 		"Class": "Point",
 		"base": ["Targetx", "RenderFields", "Weapon"],
 		"studio": "models/w_spore_launcher.mdl",
-		"data":
-		{
+		"data": {
 
 		}
 	},
-	"CTFAttributes":
-	{
+	"CTFAttributes": {
 		"Class": "Base",
 		"base": [],
-		"data":
-		{
-			"goal_no":
-			{
+		"data": {
+			"goal_no": {
 				"variable": "choices",
 				"value": "1",
-				"choices":
-				[
+				"choices": [
 					"1",
 					"2"
 				]
 			},
-			"goal_min":
-			{
+			"goal_min": {
 				"variable": "string",
 				"value": "-16 -16 0"
 			},
-			"goal_max":
-			{
+			"goal_max": {
 				"variable": "string",
 				"value": "16 16 72"
 			}
 		}
 	},
-	"CTFItem":
-	{
+	"CTFItem": {
 		"Class": "Base",
 		"base": [],
-		"data":
-		{
-			"spawnflags":
-			{
+		"data": {
+			"spawnflags": {
 				"variable": "flags",
 				"value": "",
-				"choices":
-				[
+				"choices": [
 					"4",
 					"8"
 				]
 			},
-			"team_no":
-			{
+			"team_no": {
 				"variable": "choices",
 				"value": "0",
-				"choices":
-				[
+				"choices": [
 					"0",
 					"1",
 					"2"
@@ -7654,65 +6145,51 @@
 			}
 		}
 	},
-	"item_ctfflag":
-	{
+	"item_ctfflag": {
 		"Class": "Point",
 		"base": ["CTFAttributes"],
 		"size": [ [ -16, -16, 0 ], [ 16, 16, 72 ] ],
-		"data":
-		{
-			"skin":
-			{
+		"data": {
+			"skin": {
 				"variable": "choices",
 				"value": "1",
-				"choices":
-				[
+				"choices": [
 					"1",
 					"2"
 				]
 			},
-			"model":
-			{
+			"model": {
 				"variable": "studio",
 				"value": "models/flag.mdl"
 			}
 		}
 	},
-	"item_ctfbase":
-	{
+	"item_ctfbase": {
 		"Class": "Point",
 		"base": ["CTFAttributes"],
 		"size": [ [ -16, -16, 0 ], [ 16, 16, 72 ] ],
-		"data":
-		{
-			"skin":
-			{
+		"data": {
+			"skin": {
 				"variable": "choices",
 				"value": "0",
-				"choices":
-				[
+				"choices": [
 					"0"
 				]
 			},
-			"model":
-			{
+			"model": {
 				"variable": "studio",
 				"value": "models/civ_stand.mdl"
 			}
 		}
 	},
-	"info_ctfspawn":
-	{
+	"info_ctfspawn": {
 		"Class": "Point",
 		"base": ["PlayerClass"],
-		"data":
-		{
-			"team_no":
-			{
+		"data": {
+			"team_no": {
 				"variable": "choices",
 				"value": "0",
-				"choices":
-				[
+				"choices": [
 					"0",
 					"1",
 					"2"
@@ -7720,117 +6197,93 @@
 			}
 		}
 	},
-	"info_ctfdetect":
-	{
+	"info_ctfdetect": {
 		"Class": "Point",
 		"base": [],
-		"data":
-		{
-			"flagreturntime":
-			{
+		"data": {
+			"flagreturntime": {
 				"variable": "string",
 				"value": "30.0"
 			},
-			"basedefenddist":
-			{
+			"basedefenddist": {
 				"variable": "string",
 				"value": "192.0"
 			},
-			"defendcarriertime":
-			{
+			"defendcarriertime": {
 				"variable": "string",
 				"value": "10.0"
 			},
-			"captureassisttime":
-			{
+			"captureassisttime": {
 				"variable": "string",
 				"value": "10.0"
 			},
-			"poweruprespawntime":
-			{
+			"poweruprespawntime": {
 				"variable": "string",
 				"value": "30.0"
 			},
-			"score_icon_namebm":
-			{
+			"score_icon_namebm": {
 				"variable": "string",
 				"value": "item_ctfscorebm"
 			},
-			"score_icon_nameof":
-			{
+			"score_icon_nameof": {
 				"variable": "string",
 				"value": "item_ctfscoreof"
 			},
-			"map_score_max":
-			{
+			"map_score_max": {
 				"variable": "string",
 				"value": "0"
 			}
 		}
 	},
-	"item_ctflongjump":
-	{
+	"item_ctflongjump": {
 		"Class": "Point",
 		"base": ["CTFItem"],
 		"studio": "models/w_jumppack.mdl",
-		"data":
-		{
+		"data": {
 
 		}
 	},
-	"item_ctfportablehev":
-	{
+	"item_ctfportablehev": {
 		"Class": "Point",
 		"base": ["CTFItem"],
 		"studio": "models/w_porthev.mdl",
-		"data":
-		{
+		"data": {
 
 		}
 	},
-	"item_ctfregeneration":
-	{
+	"item_ctfregeneration": {
 		"Class": "Point",
 		"base": ["CTFItem"],
 		"studio": "models/w_health.mdl",
-		"data":
-		{
+		"data": {
 
 		}
 	},
-	"item_ctfaccelerator":
-	{
+	"item_ctfaccelerator": {
 		"Class": "Point",
 		"base": ["CTFItem"],
 		"studio": "models/w_accelerator.mdl",
-		"data":
-		{
+		"data": {
 
 		}
 	},
-	"item_ctfbackpack":
-	{
+	"item_ctfbackpack": {
 		"Class": "Point",
 		"base": ["CTFItem"],
 		"studio": "models/w_backpack.mdl",
-		"data":
-		{
+		"data": {
 
 		}
 	},
-	"info_ctfspawn_powerup":
-	{
+	"info_ctfspawn_powerup": {
 		"Class": "Point",
 		"base": [],
 		"size": [ [ -16, -16, 0 ], [ 16, 16, 36 ] ],
-		"data":
-		{
-			"team_no":
-			{
+		"data": {
+			"team_no": {
 				"variable": "choices",
 				"value": "0",
-				"choices":
-				[
+				"choices": [
 					"0",
 					"1",
 					"2"
@@ -7838,44 +6291,35 @@
 			}
 		}
 	},
-	"trigger_ctfgeneric":
-	{
+	"trigger_ctfgeneric": {
 		"Class": "Solid",
 		"base": ["Target", "Targetname"],
-		"data":
-		{
-			"team_no":
-			{
+		"data": {
+			"team_no": {
 				"variable": "choices",
 				"value": "0",
-				"choices":
-				[
+				"choices": [
 					"0",
 					"1",
 					"2"
 				]
 			},
-			"trigger_delay":
-			{
+			"trigger_delay": {
 				"variable": "string",
 				"value": "5"
 			},
-			"score":
-			{
+			"score": {
 				"variable": "string",
 				"value": "0"
 			},
-			"team_score":
-			{
+			"team_score": {
 				"variable": "string",
 				"value": "0"
 			},
-			"triggerstate":
-			{
+			"triggerstate": {
 				"variable": "choices",
 				"value": "0",
-				"choices":
-				[
+				"choices": [
 					"0",
 					"1",
 					"2"
@@ -7883,57 +6327,46 @@
 			}
 		}
 	},
-	"env_warpball":
-	{
+	"env_warpball": {
 		"Class": "Point",
 		"base": ["Targetname", "Target"],
 		"size": [ [ -32, -32, -32 ], [ 32, 32, 32 ] ],
 		"color": [0, 255, 0],
 		"sprite": "sprites/env_warpball.spr",
 		"iconsprite": "sprites/env_warpball.spr",
-		"data":
-		{
-			"spawnflags":
-			{
+		"data": {
+			"spawnflags": {
 				"variable": "flags",
 				"value": "",
-				"choices":
-				[
+				"choices": [
 					"1",
 					"2"
 				]
 			},
-			"radius":
-			{
+			"radius": {
 				"variable": "string",
 				"value": "256"
 			},
-			"warp_target":
-			{
+			"warp_target": {
 				"variable": "string",
 				"value": ""
 			},
-			"damage_delay":
-			{
+			"damage_delay": {
 				"variable": "string",
 				"value": "0"
 			}
 		}
 	},
-	"item_helmet":
-	{
+	"item_helmet": {
 		"Class": "Point",
 		"base": ["item_battery"],
 		"size": [ [ -16, -16, 0 ], [ 16, 16, 36 ] ],
 		"studio": "models/barney_helmet.mdl",
-		"data":
-		{
-			"sequence":
-			{
+		"data": {
+			"sequence": {
 				"variable": "choices",
 				"value": "0",
-				"choices":
-				[
+				"choices": [
 					"0",
 					"1",
 					"2"
@@ -7941,20 +6374,16 @@
 			}
 		}
 	},
-	"item_armorvest":
-	{
+	"item_armorvest": {
 		"Class": "Point",
 		"base": ["item_battery"],
 		"size": [ [ -16, -16, 0 ], [ 16, 16, 36 ] ],
 		"studio": "models/barney_vest.mdl",
-		"data":
-		{
-			"sequence":
-			{
+		"data": {
+			"sequence": {
 				"variable": "choices",
 				"value": "0",
-				"choices":
-				[
+				"choices": [
 					"0",
 					"1",
 					"2",
@@ -7963,14 +6392,12 @@
 			}
 		}
 	},
-	"monster_rosenberg":
-	{
+	"monster_rosenberg": {
 		"Class": "Point",
 		"base": ["Monster", "TalkMonster"],
 		"size": [ [ -16, -16, 0 ], [ 16, 16, 72 ] ],
 		"studio": "models/rosenberg.mdl",
-		"data":
-		{
+		"data": {
 
 		}
 	}
