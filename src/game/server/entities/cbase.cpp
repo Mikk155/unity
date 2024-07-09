@@ -551,23 +551,23 @@ bool CBaseEntity::RequiredKeyValue(KeyValueData* pkvd)
 {
 	// Replacement maps can be changed at runtime using trigger_changekeyvalue.
 	// Note that this may cause host_error or sys_error if files aren't precached.
-	if (FStrEq(pkvd->szKeyName, "model_replacement_filename"))
+	if (FStrEq(pkvd->szKeyName, "modellist"))
 	{
 		m_ModelReplacementFileName = ALLOC_STRING(pkvd->szValue);
 		LoadFileNameReplacementMap(m_ModelReplacement, m_ModelReplacementFileName);
 	}
-	else if (FStrEq(pkvd->szKeyName, "sound_replacement_filename"))
+	else if (FStrEq(pkvd->szKeyName, "soundlist"))
 	{
 		m_SoundReplacementFileName = ALLOC_STRING(pkvd->szValue);
 		LoadFileNameReplacementMap(m_SoundReplacement, m_SoundReplacementFileName);
 	}
-	else if (FStrEq(pkvd->szKeyName, "sentence_replacement_filename"))
+	else if (FStrEq(pkvd->szKeyName, "sentencelist"))
 	{
 		m_SentenceReplacementFileName = ALLOC_STRING(pkvd->szValue);
 		LoadSentenceReplacementMap(m_SentenceReplacement, m_SentenceReplacementFileName);
 	}
 	// Note: while this code does fix backwards bounds here it will not apply to partial hulls mixing with hard-coded ones.
-	else if (FStrEq(pkvd->szKeyName, "custom_hull_min"))
+	else if (FStrEq(pkvd->szKeyName, "minhullsize"))
 	{
 		UTIL_StringToVector(m_CustomHullMin, pkvd->szValue);
 		m_HasCustomHullMin = true;
@@ -579,7 +579,7 @@ bool CBaseEntity::RequiredKeyValue(KeyValueData* pkvd)
 
 		return true;
 	}
-	else if (FStrEq(pkvd->szKeyName, "custom_hull_max"))
+	else if (FStrEq(pkvd->szKeyName, "maxhullsize"))
 	{
 		UTIL_StringToVector(m_CustomHullMax, pkvd->szValue);
 		m_HasCustomHullMax = true;

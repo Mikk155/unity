@@ -138,15 +138,15 @@
 		"Class": "Base",
 		"base": [],
 		"data": {
-			"model_replacement_filename": {
+			"modellist": {
 				"variable": "string",
 				"value": ""
 			},
-			"sound_replacement_filename": {
+			"soundlist": {
 				"variable": "string",
 				"value": ""
 			},
-			"sentence_replacement_filename": {
+			"sentencelist": {
 				"variable": "string",
 				"value": ""
 			}
@@ -160,11 +160,11 @@
 				"variable": "studio",
 				"value": ""
 			},
-			"custom_hull_min": {
+			"minhullsize": {
 				"variable": "string",
 				"value": ""
 			},
-			"custom_hull_max": {
+			"maxhullsize": {
 				"variable": "string",
 				"value": ""
 			}

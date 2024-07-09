@@ -458,27 +458,27 @@
 "english": "",
 "spanish": ""
 },
-"ReplacementFiles::model_replacement_filename": {
+"ReplacementFiles::modellist": {
 "english": "Model replacement file",
 "spanish": ""
 },
-"ReplacementFiles::model_replacement_filename::description": {
+"ReplacementFiles::modellist::description": {
 "english": "",
 "spanish": ""
 },
-"ReplacementFiles::sound_replacement_filename": {
+"ReplacementFiles::soundlist": {
 "english": "Sound replacement file",
 "spanish": ""
 },
-"ReplacementFiles::sound_replacement_filename::description": {
+"ReplacementFiles::soundlist::description": {
 "english": "",
 "spanish": ""
 },
-"ReplacementFiles::sentence_replacement_filename": {
+"ReplacementFiles::sentencelist": {
 "english": "Sentence replacement file",
 "spanish": ""
 },
-"ReplacementFiles::sentence_replacement_filename::description": {
+"ReplacementFiles::sentencelist::description": {
 "english": "",
 "spanish": ""
 },
@@ -490,19 +490,19 @@
 "english": "",
 "spanish": ""
 },
-"CustomModel::custom_hull_min": {
+"CustomModel::minhullsize": {
 "english": "Custom Hull Minimum",
 "spanish": ""
 },
-"CustomModel::custom_hull_min::description": {
+"CustomModel::minhullsize::description": {
 "english": "",
 "spanish": ""
 },
-"CustomModel::custom_hull_max": {
+"CustomModel::maxhullsize": {
 "english": "Custom Hull Maximum",
 "spanish": ""
 },
-"CustomModel::custom_hull_max::description": {
+"CustomModel::maxhullsize::description": {
 "english": "",
 "spanish": ""
 },
