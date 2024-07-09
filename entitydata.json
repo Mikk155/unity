@@ -987,6 +987,8 @@
 	},
     "Appearflags":
     {
+		"Class": "Base",
+		"base": [],
 		"data": {
 			"spawnflags": { "variable": "flags", "value": "", "choices": [ "2048" ] },
 			"appearflag_singleplayer": { "variable": "choices", "value": "0", "choices": [ "-1", "0", "1" ] },
