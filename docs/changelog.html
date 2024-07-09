@@ -7,15 +7,38 @@ To get a full changelog of the upstream repository <a style="color:aqua;" href="
 <span style="background-color:rgb(121, 121, 121);font-size: xx-large;">
 
 
-7/24
+<h1>7/24</h1>
 </span>
+<br><br>
 
 
+
+<br><br>
+<h2>Implement Appearance Flags</h2>
+<br><br>
+These are KeyValues supported on all entities that will deny the DispatchSpawn function if appearflag is matched
+<br><br>
+Appearance flags keys has 3 possible values
+<br><br>
+<li>-1 "Not in" Meaning this entity won't spawn if matched the condition</li>
+<br><br>
+<li>1 "Only in" Meaning this entity will spawn only if matched the condition</li>
+<br><br>
+<li>0 "Default" Has no effect at all</li>
+<br><br>
+i.e a entity with ``appearflag_singleplayer`` > -1 will only appear if this is not a single player match
+<br><br>
+on the other side a entity with ``appearflag_singleplayer`` > 1 will only appear in a single player match
+<br><br>
 
 <br><br>
 Prevent player killing upon spawning on an occupied spawnpoint, instead relocate the newest player in a valid hull around the spawnpoint, if none found then kill the standing player as it were before.
 <br><br>
+
+<br><br>
 Build up a python script for mass-encoding a FGD to a json-like data <button id="copyButton" onclick=";CopyElement( 'changelog/decoder.py' )">copy</button> or <a href="changelog/decoder.py" >download</a>
+<br><br>
+
 <br><br>
 Created a python script for mass-exporting key-value data from a json file to the FGD and the Entity Guide in the website.
 <br><br>
