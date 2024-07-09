@@ -3010,6 +3010,10 @@
 "english": "",
 "spanish": ""
 },
+"ammo_all::note_1": {
+"english": "Combine with `trigger_changekeyvalue` to dynamically change ammo type",
+"spanish": ""
+},
 "ammo_9mmclip::classname": {
 "english": "9mm Pistol Ammo",
 "spanish": ""
