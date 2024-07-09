@@ -911,7 +911,7 @@
 "spanish": ""
 },
 "BaseCharger::fire_on_recharge::description": {
-"english": "",
+"english": "Target to trigger when the charger recharges itself",
 "spanish": ""
 },
 "BaseCharger::fire_on_empty": {
@@ -919,7 +919,7 @@
 "spanish": ""
 },
 "BaseCharger::fire_on_empty::description": {
-"english": "",
+"english": "Target to trigger when the charger runs out of juice",
 "spanish": ""
 },
 "BaseCharger::fire_on_spawn": {
@@ -927,7 +927,7 @@
 "spanish": ""
 },
 "BaseCharger::fire_on_spawn::description": {
-"english": "",
+"english": "Whether to fire the `fire_on_recharge` target when the charger initially spawns",
 "spanish": ""
 },
 "BaseCharger::fire_on_spawn::0": {
@@ -951,7 +951,7 @@
 "spanish": ""
 },
 "BaseCharger::total_juice::description": {
-"english": "",
+"english": "Custom amount of juice in this charger. A value of **-1** enables unlimited juice. If not specified the amount specified in the skill configuration is used",
 "spanish": ""
 },
 "BaseCharger::recharge_delay": {
@@ -959,7 +959,7 @@
 "spanish": ""
 },
 "BaseCharger::recharge_delay::description": {
-"english": "",
+"english": "Custom recharge delay. A value of **-1** disables recharging. If not specified the amount specified in the skill configuration is used",
 "spanish": ""
 },
 "BaseCharger::charge_per_use": {
@@ -967,7 +967,7 @@
 "spanish": ""
 },
 "BaseCharger::charge_per_use::description": {
-"english": "",
+"english": "Amount of juice to discharge per interval. Default **1**. If set to **0** the charger will never discharge",
 "spanish": ""
 },
 "BaseCharger::_minlight": {
@@ -1623,7 +1623,7 @@
 "spanish": ""
 },
 "Breakable::spawnobject::description": {
-"english": "",
+"english": "Name of the item to spawn when this entity is broken. Only items can be spawned by this entity. This includes all weapons, ammo and all item entities except CTF items.",
 "spanish": ""
 },
 "Breakable::explodemagnitude": {
@@ -7491,7 +7491,7 @@
 "spanish": ""
 },
 "logic_setskill::classname::description": {
-"english": "",
+"english": "Changes the skill level setting. Due to how the skill system works some changes will only take effect after a map change.This entity is the equivalent of Quake 1's `trigger_setskill` but is a point entity that needs to be triggered. Its intended purpose is to be used in a campaign selection map.",
 "spanish": ""
 },
 "logic_setskill::skill_level": {
@@ -8843,7 +8843,7 @@
 "spanish": ""
 },
 "monster_tentacle::height0::description": {
-"english": "",
+"english": "Sets the height for the given floor level. There are **4** levels, starting at **0**. See the TWHL documentation for the default values.",
 "spanish": ""
 },
 "monster_tentacle::height1": {
@@ -8851,7 +8851,7 @@
 "spanish": ""
 },
 "monster_tentacle::height1::description": {
-"english": "",
+"english": "Sets the height for the given floor level. There are **4** levels, starting at **0**. See the TWHL documentation for the default values.",
 "spanish": ""
 },
 "monster_tentacle::height2": {
@@ -8859,7 +8859,7 @@
 "spanish": ""
 },
 "monster_tentacle::height2::description": {
-"english": "",
+"english": "Sets the height for the given floor level. There are **4** levels, starting at **0**. See the TWHL documentation for the default values.",
 "spanish": ""
 },
 "monster_tentacle::height3": {
@@ -8867,7 +8867,7 @@
 "spanish": ""
 },
 "monster_tentacle::height3::description": {
-"english": "",
+"english": "Sets the height for the given floor level. There are **4** levels, starting at **0**. See the TWHL documentation for the default values.",
 "spanish": ""
 },
 "monster_tripmine::classname": {
@@ -9259,7 +9259,7 @@
 "spanish": ""
 },
 "player_hassuit::classname::description": {
-"english": "",
+"english": "This entity allows level designers to check if the activating player has the HEV suit.",
 "spanish": ""
 },
 "player_hassuit::pass_target": {
@@ -9267,7 +9267,7 @@
 "spanish": ""
 },
 "player_hassuit::pass_target::description": {
-"english": "",
+"english": "Target to trigger if the player has the HEV suit",
 "spanish": ""
 },
 "player_hassuit::fail_target": {
@@ -9275,7 +9275,7 @@
 "spanish": ""
 },
 "player_hassuit::fail_target::description": {
-"english": "",
+"english": "Target to trigger if the player does not have the HEV suit",
 "spanish": ""
 },
 "player_hasweapon::classname": {
@@ -9283,7 +9283,7 @@
 "spanish": ""
 },
 "player_hasweapon::classname::description": {
-"english": "",
+"english": "This entity allows level designers to check if the player has a specific weapon.",
 "spanish": ""
 },
 "player_hasweapon::pass_target": {
@@ -9291,7 +9291,7 @@
 "spanish": ""
 },
 "player_hasweapon::pass_target::description": {
-"english": "",
+"english": "Target to trigger if the player has the specified weapon",
 "spanish": ""
 },
 "player_hasweapon::fail_target": {
@@ -9299,7 +9299,7 @@
 "spanish": ""
 },
 "player_hasweapon::fail_target::description": {
-"english": "",
+"english": "Target to trigger if the player does not have the specified weapon",
 "spanish": ""
 },
 "player_hasweapon::weapon_name": {
@@ -9307,7 +9307,7 @@
 "spanish": ""
 },
 "player_hasweapon::weapon_name::description": {
-"english": "",
+"english": "Name of the weapon to check for",
 "spanish": ""
 },
 "player_loadsaved::classname": {
@@ -9379,7 +9379,7 @@
 "spanish": ""
 },
 "player_sethealth::classname::description": {
-"english": "",
+"english": "This entity allows level designers to change the activating player's health and/or armor.",
 "spanish": ""
 },
 "player_sethealth::all_players": {
@@ -9411,7 +9411,7 @@
 "spanish": ""
 },
 "player_sethealth::set_health::description": {
-"english": "",
+"english": "Whether to set the player's health",
 "spanish": ""
 },
 "player_sethealth::set_health::0": {
@@ -9435,7 +9435,7 @@
 "spanish": ""
 },
 "player_sethealth::set_armor::description": {
-"english": "",
+"english": "Whether to set the player's armor",
 "spanish": ""
 },
 "player_sethealth::set_armor::0": {
@@ -9459,7 +9459,7 @@
 "spanish": ""
 },
 "player_sethealth::health_to_set::description": {
-"english": "",
+"english": "Amount to set the player's health to. Must be in the range **[1, 100]**",
 "spanish": ""
 },
 "player_sethealth::armor_to_set": {
@@ -9468,7 +9468,7 @@
 },
 "player_sethealth::armor_to_set::description": {
 "english": "",
-"spanish": ""
+"spanish": "Amount to set the player's armor to. Must be in the range **[0, 100]**"
 },
 "player_sethudcolor::classname": {
 "english": "Set or reset player hud color",
@@ -9563,7 +9563,7 @@
 "spanish": ""
 },
 "player_setsuitlighttype::all_players::description": {
-"english": "",
+"english": "Whether to affect all players or the activating player",
 "spanish": ""
 },
 "player_setsuitlighttype::all_players::0": {
