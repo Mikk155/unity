@@ -1455,6 +1455,7 @@ public:
 	void ShowBadNode();
 	void DropDelay();
 	void PathFind();
+	bool IsMonster() override { return false; }
 
 	Vector vecBadNodeOrigin;
 };

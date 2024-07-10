@@ -55,6 +55,8 @@ cvar_t sv_entityinfo_eager{"sv_entityinfo_eager", "1", FCVAR_SERVER};
 
 cvar_t sv_schedule_debug{"sv_schedule_debug", "0", FCVAR_SERVER};
 
+cvar_t mp_monster_roaming{"mp_monster_roaming", "0", FCVAR_SERVER};
+
 static bool SV_InitServer()
 {
 	if (!FileSystem_LoadFileSystem())
@@ -137,6 +139,8 @@ void GameDLLInit()
 #endif
 
 	CVAR_REGISTER(&sv_schedule_debug);
+
+	CVAR_REGISTER(&mp_monster_roaming);
 
 	// Link user messages immediately so there are no race conditions.
 	LinkUserMessages();

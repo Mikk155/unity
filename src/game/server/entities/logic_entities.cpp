@@ -60,7 +60,7 @@ bool CLogicSetCVar::KeyValue(KeyValueData* pkvd)
 
 void CLogicSetCVar::Use(CBaseEntity* pActivator, CBaseEntity* pCaller, USE_TYPE useType, float value)
 {
-	if (!UTIL_IsMasterTriggered(m_sMaster, pActivator))
+	if (!UTIL_IsMasterTriggered(m_sMaster, pActivator, m_UseLocked))
 	{
 		return;
 	}
@@ -158,7 +158,7 @@ bool CLogicIsSkill::KeyValue(KeyValueData* pkvd)
 
 void CLogicIsSkill::Use(CBaseEntity* pActivator, CBaseEntity* pCaller, USE_TYPE useType, float value)
 {
-	if (!UTIL_IsMasterTriggered(m_sMaster, pActivator))
+	if (!UTIL_IsMasterTriggered(m_sMaster, pActivator, m_UseLocked))
 	{
 		return;
 	}
@@ -217,7 +217,7 @@ void CLogicSetSkill::Spawn()
 
 void CLogicSetSkill::Use(CBaseEntity* pActivator, CBaseEntity* pCaller, USE_TYPE useType, float value)
 {
-	if (!UTIL_IsMasterTriggered(m_sMaster, pActivator))
+	if (!UTIL_IsMasterTriggered(m_sMaster, pActivator, m_UseLocked))
 	{
 		return;
 	}
@@ -279,7 +279,7 @@ void CLogicSetSkillVar::Spawn()
 
 void CLogicSetSkillVar::Use(CBaseEntity* pActivator, CBaseEntity* pCaller, USE_TYPE useType, float value)
 {
-	if (!UTIL_IsMasterTriggered(m_sMaster, pActivator))
+	if (!UTIL_IsMasterTriggered(m_sMaster, pActivator, m_UseLocked))
 	{
 		return;
 	}
@@ -417,4 +417,45 @@ eastl::fixed_vector<std::uint8_t, MaxRandomTargets, false> CLogicRandom::BuildMa
 	}
 
 	return map;
+}
+
+class CLogicUseValue : public CPointEntity
+{
+public:
+	void Use( CBaseEntity* pActivator, CBaseEntity* pCaller, USE_TYPE useType, float value ) override;
+};
+
+LINK_ENTITY_TO_CLASS( logic_usevalue, CLogicUseValue );
+
+void CLogicUseValue :: Use( CBaseEntity* pActivator, CBaseEntity* pCaller, USE_TYPE useType, float value )
+{
+	float flIn;
+	float flOut;
+	bool IsSame;
+
+	switch( (int)pev->max_health )
+	{
+		case 1:
+			flIn = (int)value;
+			flOut = (int)pev->health;
+		break;
+		case 0:
+			flIn = value;
+			flOut = pev->health;
+		break;
+	}
+
+	switch( (int)pev->frags )
+	{
+		case 0: IsSame = ( flIn == flOut ); break;
+		case 1: IsSame = ( flIn != flOut ); break;
+		case 2: IsSame = ( flIn > flOut );  break;
+		case 3: IsSame = ( flIn >= flOut ); break;
+		case 4: IsSame = ( flIn < flOut );  break;
+		case 5: IsSame = ( flIn <= flOut ); break;
+		case 6: IsSame = FBitSet( (int)flIn, (int)flOut ); break;
+		case 7: IsSame = FBitSet( (int)flOut, (int)flIn ); break;
+	}
+
+	FireTargets( IsSame ? STRING( pev->target ) : STRING( pev->netname ), pActivator, pCaller, useType, value );
 }

@@ -294,16 +294,8 @@ void CWorld::Precache()
 	PrecacheSound("common/bodydrop3.wav"); // dead bodies hitting the ground (animation events)
 	PrecacheSound("common/bodydrop4.wav");
 
-	g_Language = (int)CVAR_GET_FLOAT("sv_language");
-	if (g_Language == LANGUAGE_GERMAN)
-	{
-		PrecacheModel("models/germangibs.mdl");
-	}
-	else
-	{
-		PrecacheModel("models/hgibs.mdl");
-		PrecacheModel("models/agibs.mdl");
-	}
+	PrecacheModel("models/hgibs.mdl");
+	PrecacheModel("models/agibs.mdl");
 
 	PrecacheSound("weapons/ric1.wav");
 	PrecacheSound("weapons/ric2.wav");
@@ -397,11 +389,19 @@ void CWorld::Precache()
 		CBaseEntity* pEntity = CBaseEntity::Create("env_message", g_vecZero, g_vecZero, nullptr);
 		if (pEntity)
 		{
-			pEntity->SetThink(&CBaseEntity::SUB_CallUseToggle);
 			pEntity->pev->message = pev->netname;
 			pev->netname = string_t::Null;
-			pEntity->pev->nextthink = gpGlobals->time + 0.3;
-			pEntity->pev->spawnflags = SF_MESSAGE_ONCE;
+
+			if( g_pGameRules->IsMultiplayer() )
+			{
+				pEntity->pev->targetname = MAKE_STRING( "game_playerspawn" );
+			}
+			else
+			{
+				pEntity->SetThink(&CBaseEntity::SUB_CallUseToggle);
+				pEntity->pev->nextthink = gpGlobals->time + 0.3;
+				pEntity->pev->spawnflags = SF_MESSAGE_ONCE;
+			}
 		}
 	}
 
@@ -420,6 +420,11 @@ void CWorld::Precache()
 	}
 
 	CVAR_SET_FLOAT("sv_wateramp", pev->scale);
+
+	if( m_freeRoam ) // Delayed so the map overrides the server's setting
+	{
+		CVAR_SET_FLOAT( "mp_monster_roaming", m_freeRoam );
+	}
 }
 
 bool CWorld::KeyValue(KeyValueData* pkvd)
@@ -481,6 +486,11 @@ bool CWorld::KeyValue(KeyValueData* pkvd)
 		{
 			pev->spawnflags |= SF_WORLD_FORCETEAM;
 		}
+		return true;
+	}
+	else if( FStrEq( pkvd->szKeyName, "freeroam" ) )
+	{
+		m_freeRoam = atoi( pkvd->szValue );
 		return true;
 	}
 

@@ -14334,5 +14334,93 @@
 "english": "",
 "spanish": ""
 },
+"logic_usevalue::classname": {
+"english": "Test a Use value",
+"spanish": ""
+},
+"logic_usevalue::classname::description": {
+"english": "Fire true o false whatever the value received is the one specified",
+"spanish": ""
+},
+"logic_usevalue::health": {
+"english": "Value to read",
+"spanish": ""
+},
+"logic_usevalue::health::description": {
+"english": "",
+"spanish": ""
+},
+"logic_usevalue::max_health": {
+"english": "Value conversion",
+"spanish": ""
+},
+"logic_usevalue::max_health::description": {
+"english": "",
+"spanish": ""
+},
+"logic_usevalue::max_health::0": {
+"english": "integer",
+"spanish": ""
+},
+"logic_usevalue::max_health::0::description": {
+"english": "Both values are converted into integer before the comparision",
+"spanish": ""
+},
+"logic_usevalue::max_health::1": {
+"english": "float",
+"spanish": ""
+},
+"logic_usevalue::max_health::1::description": {
+"english": "Both values are converted into float before the comparision",
+"spanish": ""
+},
+"logic_usevalue::frags": {
+"english": "Value comparision",
+"spanish": ""
+},
+"logic_usevalue::frags::description": {
+"english": "",
+"spanish": ""
+},
+"logic_usevalue::frags::9": {
+"english": "Equal ( get == this )",
+"spanish": ""
+},
+"logic_usevalue::frags::1": {
+"english": "Not Equal ( get != this )",
+"spanish": ""
+},
+"logic_usevalue::frags::2": {
+"english": "Greater ( get > this )",
+"spanish": ""
+},
+"logic_usevalue::frags::3": {
+"english": "Greater or Equal ( get >= this )",
+"spanish": ""
+},
+"logic_usevalue::frags::4": {
+"english": "Less ( get < this )",
+"spanish": ""
+},
+"logic_usevalue::frags::5": {
+"english": "Less or Equal ( get <= this )",
+"spanish": ""
+},
+"logic_usevalue::frags::6": {
+"english": "Logical AND ( get & this != 0 )",
+"spanish": ""
+},
+"logic_usevalue::frags::7": {
+"english": "Logical AND inverse ( this & get != 0 )",
+"spanish": ""
+},
+"logic_usevalue::target": {
+"english": "Trigger on true",
+"spanish": ""
+},
+"logic_usevalue::netname": {
+"english": "Trigger on false",
+"spanish": ""
+},
 "EOF": true
 }

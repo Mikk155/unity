@@ -16,8 +16,15 @@
 	"apache_health2": 250,
 	"apache_health3": 400,
 
+	"apache_rockets": 1,
+
+	"barnacle_health": 35,
+	"barnacle_speed": 8,
+
 	// Barney
 	"barney_health": 35,
+	"barney_armor_chest": 0.5,
+	"barney_armor_helmet": 20,
 
 	// Bullsquid
 	"bullsquid_health1": 40,
@@ -85,6 +92,9 @@
 	"headcrab_dmg_bite2": 10,
 	"headcrab_dmg_bite3": 10,
 
+	"babycrab_dmg_bite": 5,
+	"babycrab_health": 5,
+
 	// Hgrunt 
 	"hgrunt_health1": 50,
 	"hgrunt_health2": 50,
@@ -102,6 +112,8 @@
 	"hgrunt_gspeed2": 600,
 	"hgrunt_gspeed3": 800,
 
+	"hgrunt_next_glauncher": 5,
+
 	// Houndeye
 	"houndeye_health1": 20,
 	"houndeye_health2": 20,
@@ -110,6 +122,8 @@
 	"houndeye_dmg_blast1": 10,
 	"houndeye_dmg_blast2": 15,
 	"houndeye_dmg_blast3": 15,
+
+	"houndeye_squad_bonus": 1.1,
 
 	// ISlave
 	"islave_health1": 30,
@@ -126,6 +140,10 @@
 	"islave_dmg_zap2": 10,
 	"islave_dmg_zap3": 15,
 	
+	"islave_speed_zap1": 1,
+	"islave_speed_zap2": 1.5,
+	"islave_speed_zap3": 2.0,
+
 	// Icthyosaur
 	"ichthyosaur_health1": 200,
 	"ichthyosaur_health2": 200,
@@ -198,12 +216,19 @@
 	"miniturret_health1": 40,
 	"miniturret_health2": 40,
 	"miniturret_health3": 50,
+	
+	"turret_turn_rate": 30,
+	"turret_active_time": 15,
+	"turret_max_range": 1200,
+	"turret_takedamage_off": 1,
 
 	// Sentry Turret
 	"sentry_health1": 40,
 	"sentry_health2": 40,
 	"sentry_health3": 50,
 	
+	"sentry_takedamage_off": 1,
+
 	// Otis
 	"otis_health": 35,
 
@@ -223,6 +248,8 @@
 	"pitdrone_dmg_spit1": 10,
 	"pitdrone_dmg_spit2": 10,
 	"pitdrone_dmg_spit3": 15,
+
+	"pitdrone_speed_spit": 900,
 
 	// Hgrunt Ally
 	"hgrunt_ally_health": 50,
@@ -288,6 +315,10 @@
 	"shocktrooper_maxcharge": 8,
 
 	"shocktrooper_rchgspeed": 1,
+
+	"shocktrooper_spore_dmg": 50,
+
+	"op4mortar_damage": 100,
 
 	// Scientist
 	"cleansuit_scientist_health": 20,
@@ -464,6 +495,18 @@
 	"plr_shockroachm": 15,
 
 	"plr_spore": 50,
+
+	// -1 = Never recharges
+	"plr_hornet_regen": 0.5,
+
+	"player_health": 100,
+	"player_armor": 0,
+	"player_maxhealth": 100,
+	"player_maxarmor": 100,
+
+	"longjump_falldamage": 0,
+	"longjump_sound": 1,
+	"longjump_straight": 0,
 
 	// MONSTER WEAPONS
 	"bullet_12mm1": 8,

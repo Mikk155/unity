@@ -3221,6 +3221,18 @@
 			}
 		}
 	},
+	"logic_usevalue":
+	{
+		"Class": "Point",
+		"base": ["Mandatory", "Appearflags"],
+		"data": {
+			"health": { "variable": "float", "value": "" },
+			"max_health": { "variable": "choices", "value": "0", "choices": [ "1", "0" ] },
+			"frags": { "variable": "choices", "value": "0", "choices": [ "0","1","2","3","4","5","6","7" ] },
+			"target": { "variable": "target_destination", "value": "" },
+			"netname": { "variable": "target_destination", "value": "" }
+		}
+	},
 	"logic_setcvar": {
 		"Class": "Point",
 		"base": ["Targetname", "Master"],

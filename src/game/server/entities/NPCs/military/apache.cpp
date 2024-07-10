@@ -488,8 +488,7 @@ void CApache::HuntThink()
 				m_flGoalSpeed = 400;
 		}
 
-		// don't fire rockets and gun on easy mode
-		if (g_Skill.GetSkillLevel() == SkillLevel::Easy)
+		if( GetSkillFloat( "apache_rockets"sv, 1 ) == 0 )
 			m_flNextRocket = gpGlobals->time + 10.0;
 	}
 

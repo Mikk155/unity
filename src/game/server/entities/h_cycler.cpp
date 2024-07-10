@@ -27,6 +27,7 @@ class CCycler : public CBaseMonster
 
 public:
 	int ObjectCaps() override { return (CBaseEntity::ObjectCaps() | FCAP_IMPULSE_USE); }
+	bool IsMonster() override { return false; }
 
 	/**
 	 *	@brief changes sequences when shot
@@ -255,6 +256,7 @@ public:
 	void Spawn() override;
 	void Precache() override;
 	void Think() override;
+	bool IsMonster() override { return false; }
 
 private:
 	float m_flStartTime;

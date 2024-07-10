@@ -153,6 +153,7 @@ public:
 	int m_iObserverWeapon;	 // weapon of current tracked target
 	int m_iObserverLastMode; // last used observer mode
 	bool IsObserver() { return 0 != pev->iuser1; }
+	bool IsMonster() override { return false; }
 
 	int random_seed; // See that is shared between client & server for shared weapons code
 

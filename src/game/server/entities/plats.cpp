@@ -2177,6 +2177,7 @@ public:
 	void Start();
 	void Wait();
 	void Stop() override;
+	bool IsMonster() override { return false; }
 
 	bool IsMachine() const override { return true; }
 

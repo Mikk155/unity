@@ -87,6 +87,7 @@ bool CFrictionModifier::KeyValue(KeyValueData* pkvd)
 }
 
 #define SF_AUTO_FIREONCE 0x0001
+#define SF_AUTO_WAITCLIENT ( 1 << 1 )
 
 /**
  *	@brief This trigger will fire when the level spawns (or respawns if not fire once)
@@ -159,6 +160,12 @@ void CAutoTrigger::Think()
 {
 	if (FStringNull(m_globalstate) || gGlobalState.EntityGetState(m_globalstate) == GLOBAL_ON)
 	{
+        if( FBitSet( pev->spawnflags, SF_AUTO_WAITCLIENT ) && UTIL_FindEntityByClassname( nullptr, "player" )  == nullptr )
+        {
+            pev->nextthink = gpGlobals->time + 0.1;
+            return;
+        }
+
 		SUB_UseTargets(this, triggerType, 0);
 		if ((pev->spawnflags & SF_AUTO_FIREONCE) != 0)
 			UTIL_Remove(this);
@@ -166,6 +173,7 @@ void CAutoTrigger::Think()
 }
 
 #define SF_RELAY_FIREONCE 0x0001
+#define SF_RELAY_ACTIVATOR	( 1 << 6 )
 
 class CTriggerRelay : public CBaseDelay
 {
@@ -218,12 +226,12 @@ void CTriggerRelay::Spawn()
 
 void CTriggerRelay::Use(CBaseEntity* pActivator, CBaseEntity* pCaller, USE_TYPE useType, float value)
 {
-	if (!UTIL_IsMasterTriggered(m_sMaster, pActivator))
+	if (!UTIL_IsMasterTriggered(m_sMaster, pActivator, m_UseLocked))
 	{
 		return;
 	}
 
-	SUB_UseTargets(this, triggerType, 0);
+	SUB_UseTargets( ( FBitSet( pev->spawnflags, SF_RELAY_ACTIVATOR ) ? pActivator : this ), triggerType, 0);
 	if ((pev->spawnflags & SF_RELAY_FIREONCE) != 0)
 		UTIL_Remove(this);
 }
@@ -444,48 +452,6 @@ void CMultiManager::ManagerReport()
 }
 #endif
 
-// Flags to indicate masking off various render parameters that are normally copied to the targets
-#define SF_RENDER_MASKFX (1 << 0)
-#define SF_RENDER_MASKAMT (1 << 1)
-#define SF_RENDER_MASKMODE (1 << 2)
-#define SF_RENDER_MASKCOLOR (1 << 3)
-
-/**
- *	@brief This entity will copy its render parameters (renderfx, rendermode, rendercolor, renderamt)
- *	to its targets when triggered.
- */
-class CRenderFxManager : public CBaseEntity
-{
-public:
-	void Spawn() override;
-	void Use(CBaseEntity* pActivator, CBaseEntity* pCaller, USE_TYPE useType, float value) override;
-};
-
-LINK_ENTITY_TO_CLASS(env_render, CRenderFxManager);
-
-void CRenderFxManager::Spawn()
-{
-	pev->solid = SOLID_NOT;
-}
-
-void CRenderFxManager::Use(CBaseEntity* pActivator, CBaseEntity* pCaller, USE_TYPE useType, float value)
-{
-	if (!FStringNull(pev->target))
-	{
-		for (auto target : UTIL_FindEntitiesByTargetname(STRING(pev->target)))
-		{
-			if (!FBitSet(pev->spawnflags, SF_RENDER_MASKFX))
-				target->pev->renderfx = pev->renderfx;
-			if (!FBitSet(pev->spawnflags, SF_RENDER_MASKAMT))
-				target->pev->renderamt = pev->renderamt;
-			if (!FBitSet(pev->spawnflags, SF_RENDER_MASKMODE))
-				target->pev->rendermode = pev->rendermode;
-			if (!FBitSet(pev->spawnflags, SF_RENDER_MASKCOLOR))
-				target->pev->rendercolor = pev->rendercolor;
-		}
-	}
-}
-
 /**
  *	@brief hurts anything that touches it. if the trigger has a targetname, firing it will toggle state
  */
@@ -683,6 +649,12 @@ void CTriggerHurt::HurtTouch(CBaseEntity* pOther)
 
 void CTriggerHurt::RadiationThink()
 {
+	if( pev->solid == SOLID_NOT )
+	{
+		pev->nextthink = gpGlobals->time + 0.25;
+		return;
+	}
+
 	float flRange;
 	Vector vecSpot1;
 	Vector vecSpot2;

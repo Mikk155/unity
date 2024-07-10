@@ -330,6 +330,39 @@ bool CBasePlayer::TakeDamage(CBaseEntity* inflictor, CBaseEntity* attacker, floa
 		return false;
 	// go take the damage first
 
+	if( ( bitsDamageType & DMG_FALL | DMG_GENERIC ) == DMG_FALL && HasLongJump() && (int)GetSkillFloat( "longjump_falldamage", 0 ) == 0 )
+	{
+		if( (int)GetSkillFloat( "longjump_fallsplash", 1 ) == 1 )
+		{
+			//TraceResult tr;
+			//UTIL_TraceLine( pev->origin, pev->origin + Vector( 0, 0, -64 ) * 100, dont_ignore_monsters, edict(), &tr );
+
+			MESSAGE_BEGIN( MSG_PAS, SVC_TEMPENTITY, pev->origin );
+				WRITE_BYTE( TE_BEAMTORUS );
+				WRITE_COORD( pev->origin.x );
+				WRITE_COORD( pev->origin.y );
+				WRITE_COORD( pev->origin.z + 32 );
+				WRITE_COORD( pev->origin.x );
+				WRITE_COORD( pev->origin.y );
+				WRITE_COORD( pev->origin.z + 128 );
+				WRITE_SHORT( g_sModelIndexLaser );
+				WRITE_BYTE( 0 ); // frame
+				WRITE_BYTE( 0 ); // framerate
+				WRITE_BYTE( 5 ); // life
+				WRITE_BYTE( 16 ); // width
+				WRITE_BYTE( 0 ); // noise
+				WRITE_BYTE( 255 ); // R
+				WRITE_BYTE( 255 ); // G
+				WRITE_BYTE( 255 ); // B
+				WRITE_BYTE( 60 ); // A
+				WRITE_BYTE( 0 ); // scrollspeed
+			MESSAGE_END();
+		}
+
+		pev->velocity.z = GetSkillFloat( "longjump_fallvelocity", 0 );
+
+		return false;
+	}
 
 	CBaseEntity* pAttacker = CBaseEntity::Instance(attacker);
 
@@ -1520,11 +1553,39 @@ void CBasePlayer::Jump()
 
 	SetAnimation(PLAYER_JUMP);
 
+	// -Mikk splash effect on fall damage + on using longjump
 	if (m_fLongJump &&
 		(pev->button & IN_DUCK) != 0 &&
 		(pev->flDuckTime > 0) &&
 		pev->velocity.Length() > 50)
 	{
+		if( (int)GetSkillFloat( "longjump_fallsplash", 1 ) == 1 )
+		{
+			TraceResult tr;
+			UTIL_TraceLine( pev->origin, pev->origin + Vector( 0, 0, -64 ) * 100, dont_ignore_monsters, edict(), &tr );
+
+			MESSAGE_BEGIN( MSG_PAS, SVC_TEMPENTITY, pev->origin );
+				WRITE_BYTE( TE_BEAMTORUS );
+				WRITE_COORD( tr.vecEndPos.x );
+				WRITE_COORD( tr.vecEndPos.y );
+				WRITE_COORD( tr.vecEndPos.z );
+				WRITE_COORD( tr.vecEndPos.x );
+				WRITE_COORD( tr.vecEndPos.y );
+				WRITE_COORD( tr.vecEndPos.z + 128 );
+				WRITE_SHORT( g_sModelIndexLaser );
+				WRITE_BYTE( 0 ); // frame
+				WRITE_BYTE( 0 ); // framerate
+				WRITE_BYTE( 5 ); // life
+				WRITE_BYTE( 16 ); // width
+				WRITE_BYTE( 0 ); // noise
+				WRITE_BYTE( 255 ); // R
+				WRITE_BYTE( 255 ); // G
+				WRITE_BYTE( 255 ); // B
+				WRITE_BYTE( 60 ); // A
+				WRITE_BYTE( 0 ); // scrollspeed
+			MESSAGE_END();
+		}
+
 		SetAnimation(PLAYER_SUPERJUMP);
 	}
 
@@ -2731,12 +2792,14 @@ void CBasePlayer::Spawn()
 			m_bIsSpawning = false;
 		}};
 
-	pev->health = 100;
+	pev->health = GetSkillFloat("player_health"sv, 100 );
+	pev->armortype = GetSkillFloat("player_armor"sv, 0 );
+	pev->armorvalue = GetSkillFloat("player_maxhealth"sv, 100 );
+	pev->armorvalue = GetSkillFloat("player_maxarmor"sv, 100 );
 	pev->armorvalue = 0;
 	pev->takedamage = DAMAGE_AIM;
 	pev->solid = SOLID_SLIDEBOX;
 	pev->movetype = MOVETYPE_WALK;
-	pev->max_health = pev->health;
 	pev->flags &= FL_PROXY | FL_FAKECLIENT; // keep proxy and fakeclient flags set by engine
 	pev->flags |= FL_CLIENT;
 	pev->air_finished = gpGlobals->time + 12;
@@ -3115,13 +3178,10 @@ void CBloodSplat::Spray()
 {
 	TraceResult tr;
 
-	if (g_Language != LANGUAGE_GERMAN)
-	{
-		UTIL_MakeVectors(pev->angles);
-		UTIL_TraceLine(pev->origin, pev->origin + gpGlobals->v_forward * 128, ignore_monsters, pev->owner, &tr);
+	UTIL_MakeVectors(pev->angles);
+	UTIL_TraceLine(pev->origin, pev->origin + gpGlobals->v_forward * 128, ignore_monsters, pev->owner, &tr);
 
-		UTIL_BloodDecalTrace(&tr, BLOOD_COLOR_RED);
-	}
+	UTIL_BloodDecalTrace(&tr, BLOOD_COLOR_RED);
 	SetThink(&CBloodSplat::SUB_Remove);
 	pev->nextthink = gpGlobals->time + 0.1;
 }

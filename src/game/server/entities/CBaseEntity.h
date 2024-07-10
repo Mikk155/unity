@@ -54,12 +54,25 @@ struct ReplacementMap;
 // UNDONE: This will ignore transition volumes (trigger_transition), but not the PVS!!!
 #define FCAP_FORCE_TRANSITION 0x00000080 // ALWAYS goes across transitions
 
+#define USE_VALUE_USE ( 1 << 0 )
+#define USE_VALUE_TOUCH ( 1 << 1 )
+#define USE_VALUE_MASTER ( 1 << 2 )
+#define USE_VALUE_THINK ( 1 << 3 )
+
 enum USE_TYPE : int
 {
+	USE_UNSET = -1,
 	USE_OFF = 0,
 	USE_ON = 1,
 	USE_SET = 2,
-	USE_TOGGLE = 3
+	USE_TOGGLE = 3,
+	USE_KILL = 4,
+	USE_SAME = 5,
+	USE_OPPOSITE = 6,
+	USE_TOUCH = 7,
+	USE_LOCK = 8,
+	USE_UNLOCK = 9,
+	USE_UNKNOWN = 10
 };
 
 enum appearflags : int
@@ -349,6 +362,7 @@ public:
 	virtual bool IsInWorld();
 	virtual bool IsPlayer() { return false; }
 	virtual bool IsNetClient() { return false; }
+	virtual bool IsMonster() { return false; }
 	virtual const char* TeamID() { return ""; }
 
 
@@ -592,9 +606,9 @@ public:
 	 */
 	virtual bool FVisible(const Vector& vecOrigin);
 
-	static float GetSkillFloat(std::string_view name)
+	static float GetSkillFloat(std::string_view name, float flDefault = 0)
 	{
-		return g_Skill.GetValue(name);
+		return g_Skill.GetValue(name, flDefault);
 	}
 
 	// Sound playback.
@@ -634,6 +648,11 @@ public:
 	 *	@details The entity's angles affect this offset.
 	 */
 	Vector m_SoundOffset{};
+
+	USE_TYPE m_UseType = USE_UNSET;
+	USE_TYPE m_UseTypeLast = USE_UNSET;
+	float m_UseValue;
+	int m_UseLocked;
 
 	int m_appearflag_notin = (int)appearflags::DEFAULT;
 	int m_appearflag_onlyin = (int)appearflags::DEFAULT;
