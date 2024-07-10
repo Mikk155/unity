@@ -4502,6 +4502,24 @@
 			}
 		}
 	},
+	"trigger_entity_iterator": {
+		"Class": "Point",
+		"base": ["Targetname"],
+		"size": [ [ -12, -12, -12 ], [ 12, 12, 12 ] ],
+		"color": [255, 255, 0],
+		"data": {
+			"name_filter": { "variable": "target_destination", "value": "" },
+			"classname_filter": { "variable": "string", "value": "" },
+			"status_filter": { "variable": "choices", "value": "0", "choices": [ "0", "1", "2" ] },
+			"delay_between_triggers": { "variable": "float", "value": "0.0" },
+			"target": { "variable": "target_destination", "value": "" },
+			"triggerstate": { "variable": "choices", "value": "0", "choices": [ "0", "1", "2" ] },
+			"run_mode": { "variable": "choices", "value": "0", "choices": [ "0", "1", "2" ] },
+			"trigger_after_run": { "variable": "target_destination", "value": "" },
+			"maximum_runs": { "variable": "integer", "value": "0" },
+			"delay_between_runs": { "variable": "float", "value": "0.5" }
+		}
+	},
 	"trigger_autosave": {
 		"Class": "Solid",
 		"base": ["Targetname", "Master"],

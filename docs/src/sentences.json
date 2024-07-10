@@ -14422,5 +14422,85 @@
 "english": "Trigger on false",
 "spanish": ""
 },
+"trigger_entity_iterator::classname": {
+"english": "Entity Iterator",
+"spanish": ""
+},
+"trigger_entity_iterator::name_filter": {
+"english": "Filter Entities by Name",
+"spanish": ""
+},
+"trigger_entity_iterator::classname_filter": {
+"english": "Filter Entities by Classname",
+"spanish": ""
+},
+"trigger_entity_iterator::status_filter": {
+"english": "Filter Entities by Status",
+"spanish": ""
+},
+"trigger_entity_iterator::status_filter::0": {
+"english": "No Filter (default)",
+"spanish": ""
+},
+"trigger_entity_iterator::status_filter::1": {
+"english": "Only Living Entities",
+"spanish": ""
+},
+"trigger_entity_iterator::status_filter::2": {
+"english": "Only Dead Entities",
+"spanish": ""
+},
+"trigger_entity_iterator::delay_between_triggers": {
+"english": "Delay between Entities (secs)",
+"spanish": ""
+},
+"trigger_entity_iterator::target": {
+"english": "Entity's Trigger Target",
+"spanish": ""
+},
+"trigger_entity_iterator::triggerstate": {
+"english": "Entity's Trigger State",
+"spanish": ""
+},
+"trigger_entity_iterator::triggerstate::0": {
+"english": "Off",
+"spanish": ""
+},
+"trigger_entity_iterator::triggerstate::1": {
+"english": "On",
+"spanish": ""
+},
+"trigger_entity_iterator::triggerstate::2": {
+"english": "Toggle",
+"spanish": ""
+},
+"trigger_entity_iterator::run_mode": {
+"english": "Run Mode",
+"spanish": ""
+},
+"trigger_entity_iterator::run_mode::0": {
+"english": "Run Once",
+"spanish": ""
+},
+"trigger_entity_iterator::run_mode::1": {
+"english": "Run Once; Multi-threaded",
+"spanish": ""
+},
+"trigger_entity_iterator::run_mode::2": {
+"english": "Toggle On/Off",
+"spanish": ""
+},
+"trigger_entity_iterator::trigger_after_run": {
+"english": "Trigger at end of each Run",
+"spanish": ""
+},
+"trigger_entity_iterator::maximum_runs": {
+"english": "Maximum Runs (0 for unlimited)",
+"spanish": ""
+},
+"trigger_entity_iterator::delay_between_runs": {
+"english": "Delay before Restarting (secs)",
+"spanish": ""
+},
 "EOF": true
 }
