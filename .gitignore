@@ -4,4 +4,13 @@
 .vscode/
 
 # Generate a fresh one on releases
-game/half-life-unity.fgd
+unity/half-life-unity.fgd
+
+# Local testing
+modinstall/
+modinstall/*
+unity/mods/port/
+unity/mods/port/*
+
+# Python cache
+*.pyc
