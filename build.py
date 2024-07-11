@@ -166,7 +166,7 @@ def write_class( entdata={}, FGD=None, name='', JsonData={} ):
 
     FGD.write( ']\n\n' )
 
-with open( f'{abs}/docs/entities.html', 'w' ) as html, open( f'{abs}/game/half-life-unity.fgd', 'w' ) as FGD, open( f'{abs}/entitydata.json', 'r' ) as Json, open( f'{abs}/docs/src/sentences.json', 'r' ) as sentence:
+with open( f'{abs}/docs/entities.html', 'w' ) as html, open( f'{abs}/unity/half-life-unity.fgd', 'w' ) as FGD, open( f'{abs}/entitydata.json', 'r' ) as Json, open( f'{abs}/docs/src/sentences.json', 'r' ) as sentence:
     JsonData = json.load( Json )
     sentences = json.load( sentence )
 
@@ -189,7 +189,7 @@ if not version:
 
 print( f'Preparing assets...' )
 
-shutil.copytree( f'{abs}/game/', f'{abs}/{gamename}/{modname}/' )
+shutil.copytree( f'{abs}/{modname}/', f'{abs}/{gamename}/{modname}/' )
 
 with zipfile.ZipFile( assets, 'w', zipfile.ZIP_DEFLATED ) as z:
 
