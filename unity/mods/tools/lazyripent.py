@@ -28,7 +28,7 @@ def RegTest(rk):
 		print("[lazyripent] Found steam: \"{}\"".format(PATH_STEAM))
 
 PATH_BSP = os.path.join( os.path.abspath(''), 'port/maps/' )
-PATH_RULE = os.path.join( os.path.abspath(''), 'tools/rules.txt' )
+PATH_RULE = os.path.join( os.path.abspath(''), 'tools/rules.ini' )
 
 if not os.path.exists(PATH_BSP):
 	Die("BSP Path \"{}\" does not exist!".format(PATH_BSP))
