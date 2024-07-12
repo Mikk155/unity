@@ -1,4 +1,4 @@
-import os, struct
+import os, struct, re
 from tools.path import halflife
 
 class PakFile:
@@ -20,9 +20,19 @@ class PakFile:
             num_files = dir_length // 64
             for i in range(num_files):
                 entry = dir_data[i*64:(i+1)*64]
-                name = entry[:56].rstrip(b'\x00').decode('utf-8')
+                name = entry[:56].rstrip(b'\x00').decode('latin-1')
                 (offset, length) = struct.unpack('ii', entry[56:])
-                self.files[name] = (offset, length)
+                clean_name = self.clean_filename(name)
+                self.files[clean_name] = (offset, length)
+
+    def clean_filename(self, name):
+        name = re.sub(r'[^\x20-\x7E]', '_', name)
+        name = re.sub(r'[<>:"\\|?*]', '_', name)
+        name = re.sub(r'_+', '_', name)
+        name = name.strip('_')
+        name = name[:name.find('_',name.find('.'))]
+        print(f'name {name}')
+        return name
 
     def extract(self, extract_to):
         with open(self.filename, 'rb') as f:

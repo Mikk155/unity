@@ -11,6 +11,8 @@ modinstall/
 modinstall/*
 unity/mods/port/
 unity/mods/port/*
+unity/mods/src/
+unity/mods/src/*
 
 # Python cache
 *.pyc
