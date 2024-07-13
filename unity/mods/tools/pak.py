@@ -1,4 +1,11 @@
-import os, struct, re
+# ===============================================================================
+# Decomprime .pak files
+# ===============================================================================
+
+import re
+import os
+import struct
+
 from tools.path import halflife
 
 class PakFile:
@@ -22,10 +29,10 @@ class PakFile:
                 entry = dir_data[i*64:(i+1)*64]
                 name = entry[:56].rstrip(b'\x00').decode('latin-1')
                 (offset, length) = struct.unpack('ii', entry[56:])
-                clean_name = self.clean_filename(name)
+                clean_name = self._clean_filename(name)
                 self.files[clean_name] = (offset, length)
 
-    def clean_filename(self, name):
+    def _clean_filename(self, name):
         name = re.sub(r'[^\x20-\x7E]', '_', name)
         name = re.sub(r'[<>:"\\|?*]', '_', name)
         name = re.sub(r'_+', '_', name)
@@ -34,7 +41,7 @@ class PakFile:
         print(f'name {name}')
         return name
 
-    def extract(self, extract_to):
+    def _extract(self, extract_to):
         with open(self.filename, 'rb') as f:
             for name, (offset, length) in self.files.items():
                 f.seek(offset)
@@ -57,4 +64,4 @@ def extract_pak( paks=[], mod='' ):
         if not p.endswith('.pak'):
             p = f'{p}.pak'
         pak = PakFile( f'{halflife}\{mod}\{p}' )
-        pak.extract( f'{halflife}\{mod}\\' )
+        pak._extract( f'{halflife}\{mod}\\' )
