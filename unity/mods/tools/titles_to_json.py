@@ -21,16 +21,23 @@ def titles_to_json( path='' ):
         FirstLineOf = True
         lines = txt.readlines()
         Title = ''
+        TitleSet = False
         Message = ''
         Params = {}
 
         for line in lines:
             line = line.strip()
 
-            if not line or line == '' or line.startswith( '//' ) or line.startswith( '{' ):
+            if not line or line == '' or line.startswith( '//' ):
+                continue
+
+            if line.startswith( '{' ):
+                TitleSet = True
                 continue
 
             if line.startswith( '}' ):
+
+                TitleSet = False
 
                 Message = Message.replace( '"', '\\"')
 
@@ -83,7 +90,7 @@ def titles_to_json( path='' ):
                         except Exception as e:
                             Params[ parameters[0] ] = 0
 
-            elif not Title or Title == '':
+            elif not TitleSet:
                 Title = line
             else:
                 Message = f'{Message}{line}\\n'
