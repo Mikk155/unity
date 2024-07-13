@@ -25,7 +25,7 @@ def load_resources( mod='' ):
             resources = line.split()
 
             if len(resources) < 2:
-                print(f'[load_resources] Error in {mod}.res file!' )
+                print(f'[load_resources] Error in {mod}.res file!\n{line}' )
                 exit(1)
 
             assets[ resources[0][ :-1 ] ] = resources[1][ 1 : ]
