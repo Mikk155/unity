@@ -17,9 +17,15 @@ def upgrade_map( entdata=[], mapname='' ):
 
         for name, obj in inspect.getmembers( upgrades ):
 
-            if inspect.isfunction(obj) and name != f'map_{mapname}':
+            if name.startswith('__') and name.endswith('__'):
+                continue
 
-                entblock = obj( entblock )
+            if inspect.isfunction(obj):
+
+                if name.startswith( 'map_' ) and name != f'map_{mapname}':
+                    continue
+
+                entblock = obj( entblock, entdata=entdata )
 
         if len( entblock ) > 0:
             entdata[i] = json.dumps( entblock )
@@ -49,18 +55,28 @@ def map_upgrader():
 
             entdata = []
 
-            with open( f'{port}/maps/{ent}', 'r' ) as entfile:
+            with open( f'{port}/maps/{ent}', 'r', errors='ignore' ) as entfile:
 
                 lines = entfile.readlines()
 
                 entity = {}
+                oldline = ''
 
                 for line in lines:
 
+                    if line == '{':
+                        continue
+
                     line = line.strip()
+
+                    if not line.endswith( '"' ): # ba_tram2.ent's "wad" was broken
+                        oldline = line # This is some sort of stupid fix i've did
+                    elif oldline != '' and not line.startswith( '"' ): # Hopefully momentarly.
+                        line = f'{oldline}{line}'
+
                     line = line.strip( '"' )
 
-                    if not line or line == '' or line == '{':
+                    if not line or line == '':
                         continue
 
                     if line.startswith( '}' ): # startswith due to [NULL]
@@ -75,13 +91,11 @@ def map_upgrader():
 
             MAPENTS[ map ] = entdata
 
-    print(f'[map_upgrader] Upgrading maps...')
-
     for m, data in MAPENTS.items():
 
         newdata = upgrade_map( entdata=data, mapname=m )
 
-        print(f'{m}')
+        print(f'[map_upgrader] Upgrading {m}')
 
         with open( f'{port}/maps/{m}.ent', 'w' ) as entfiles:
 
@@ -96,6 +110,8 @@ def map_upgrader():
                 entfiles.write( '}\n' )
 
             entfiles.close()
+
+        #subprocess.call( [ RIPENT, "-import", f'{port}/maps/{m}.ent' ], stdout = open( os.devnull, "wb" ) )
 
     if len( BSP_SOURCES ) == 0:
         return

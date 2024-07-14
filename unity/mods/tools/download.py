@@ -48,4 +48,4 @@ def download( urls ):
 
         else:
 
-            print(f"WARNING! Failed downloading assets from {response.status_code}")
+            print( f"WARNING! Error: {response.status_code} Failed downloading assets" )
