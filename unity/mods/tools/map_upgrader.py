@@ -30,6 +30,12 @@ def upgrade_map( entdata=[], mapname='' ):
         if len( entblock ) > 0:
             entdata[i] = json.dumps( entblock )
 
+    if os.path.exists( f'{port}/maps/{mapname}.json'):
+        with open( f'{port}/maps/{mapname}.json', 'r' ) as addent:
+            additionalentities = json.load( addent )
+            for newent in additionalentities:
+                entdata.append( json.dumps( newent ) )
+
     return entdata
 
 from tools.path import port, tools

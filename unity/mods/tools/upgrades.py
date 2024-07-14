@@ -1,13 +1,3 @@
-# ===============================================================================
-# Upgrades hooking goes here.
-# Call a function with a map name to execute it only for that map
-# i.e "def map_c1a0( entity:dict, entdata=[] )" will be applied only to the map c1a0
-# The functions are sorted by name, name them in order
-# a: Required to be called first
-# b: Doesn't conflict
-# c: Required to be called last
-# ===============================================================================
-
 from tools.Vector import Vector
 
 def a1_angle_to_angles( entity:dict, entdata=[] ):
