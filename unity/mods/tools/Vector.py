@@ -6,9 +6,9 @@ class Vector:
                 values += ['0'] * (3 - len(values))
             self.x, self.y, self.z = [self._parse_value(v) for v in values[:3]]
         else:
-            self.x = self._parse_value(x)
-            self.y = self._parse_value(y)
-            self.z = self._parse_value(z)
+            self.x = self._parse_value(x) if isinstance( x, ( float, int ) ) else 0
+            self.y = self._parse_value(y) if isinstance( y, ( float, int ) ) else 0
+            self.z = self._parse_value(z) if isinstance( z, ( float, int ) ) else 0
 
     def _parse_value(self, value):
         value = float(value)
@@ -16,8 +16,11 @@ class Vector:
             return int(value)
         return value
 
-    def ToString(self):
-        return f'{self.y} {self.z} {self.x}'
+    def __str__(self):
+        _y = str(self.y).split('.')[0] if str(self.y).endswith( '.0' ) else self.y
+        _z = str(self.z).split('.')[0] if str(self.z).endswith( '.0' ) else self.z
+        _x = str(self.x).split('.')[0] if str(self.x).endswith( '.0' ) else self.x
+        return f'{_x} {_y} {_z}'
 
     def __add__(self, other):
         return Vector(self.x + other.x, self.y + other.y, self.z + other.z)
@@ -32,4 +35,4 @@ class Vector:
         return self.x * other.x + self.y * other.y + self.z * other.z
 
     def __repr__(self):
-        return f"Vector({self.x}, {self.y}, {self.z})"
+        return f"Vector( {self.x}, {self.y}, {self.z} )"
