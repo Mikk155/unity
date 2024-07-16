@@ -72,7 +72,7 @@ std::vector<CampaignInfo> CampaignSelectSystem::LoadCampaigns()
 	std::string szMapName = std::string( gEngfuncs.pfnGetLevelName() );
 	szMapName = szMapName.substr( 5, szMapName.length() - 9 );
 
-	if (auto fileName = g_pFileSystem->FindFirst( fmt::format( "campaigns/{}/*.json", szMapName ).c_str(), &handle); fileName)
+	if (auto fileName = g_pFileSystem->FindFirst( fmt::format( "cfg/campaigns/{}/*.json", szMapName ).c_str(), &handle); fileName)
 	{
 		do
 		{
@@ -84,7 +84,7 @@ std::vector<CampaignInfo> CampaignSelectSystem::LoadCampaigns()
 				continue;
 			}
 
-			auto campaign = g_JSON.ParseJSONFile(fmt::format("campaigns/{}/{}", szMapName, fileName).c_str(),
+			auto campaign = g_JSON.ParseJSONFile(fmt::format("cfg/campaigns/{}/{}", szMapName, fileName).c_str(),
 				{.SchemaName = CampaignSchemaName}, [=, this](const auto& input)
 				{ return ParseCampaign(fileName, input); });
 
