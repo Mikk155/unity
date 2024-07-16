@@ -6,11 +6,14 @@ import os
 import json
 import inspect
 import tools.upgrades as upgrades
+from tools.Entity import Entity
 
 # This may be slow but i did it this way so "upgrades" can be easly implemented
 def upgrade_map( entdata=[], mapname='' ):
 
-    for i, entblock in enumerate( entdata ):
+    TempEntData = entdata.copy()
+
+    for i, entblock in enumerate( TempEntData ):
 
         for name, obj in inspect.getmembers( upgrades ):
 
@@ -22,7 +25,9 @@ def upgrade_map( entdata=[], mapname='' ):
                 if name.startswith( 'map_' ) and name != f'map_{mapname}':
                     continue
 
-                entblock = obj( entblock, entdata=entdata )
+                entity = Entity( entblock )
+                entity = obj( entity, entdata=entdata )
+                entblock = entity.ToDict()
 
         if len( entblock ) > 0:
             entdata[i] = json.dumps( entblock )
@@ -129,6 +134,6 @@ def map_upgrader():
                     newdata += f'"{key}" "{value}"\n'
                 newdata += '}\n'
 
-            bsp_read( f'{port}/maps/{bsp}', writedata=newdata )
+            #bsp_read( f'{port}/maps/{bsp}', writedata=newdata )
 
-        os.remove( f'{port}/maps/{ent}' )
+        #os.remove( f'{port}/maps/{ent}' )
