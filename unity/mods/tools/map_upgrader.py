@@ -5,15 +5,12 @@
 import os
 import json
 import inspect
-import subprocess
 import tools.upgrades as upgrades
 
 # This may be slow but i did it this way so "upgrades" can be easly implemented
 def upgrade_map( entdata=[], mapname='' ):
 
-    for i, e in enumerate( entdata ):
-
-        entblock = json.loads(e)
+    for i, entblock in enumerate( entdata ):
 
         for name, obj in inspect.getmembers( upgrades ):
 
@@ -30,94 +27,108 @@ def upgrade_map( entdata=[], mapname='' ):
         if len( entblock ) > 0:
             entdata[i] = json.dumps( entblock )
 
-    if os.path.exists( f'{port}/maps/{mapname}.json'):
-        with open( f'{port}/maps/{mapname}.json', 'r' ) as addent:
-            additionalentities = json.load( addent )
-            for newent in additionalentities:
-                entdata.append( json.dumps( newent ) )
+    if False:
+        if os.path.exists( f'{port}/maps/{mapname}.json'):
+            with open( f'{port}/maps/{mapname}.json', 'r' ) as addent:
+                additionalentities = json.load( addent )
+                for newent in additionalentities:
+                    entdata.append( json.dumps( newent ) )
 
     return entdata
 
 from tools.path import port, tools
-
-from tools.steam_installation import STEAM_IS64
+from tools.bsp_read import bsp_read
 
 def map_upgrader():
-
-    MAPENTS = {}
-
-    RIPENT = f'{tools}/' + 'Ripent.exe' if STEAM_IS64 else 'Ripent_x64'
-
-    BSP_SOURCES = {}
 
     for file in os.listdir( f'{port}/maps/'):
         if file.endswith( ".bsp" ):
             map = file[ : len(file) - 4 ]
             bsp = f'{map}.bsp'
-            ent = f'{map}.ent'
+            ent = f'{map}.json'
 
-            BSP_SOURCES[ map ] = ent
-            subprocess.call( [ RIPENT, "-export", f'{port}/maps/{ent}' ], stdout = open( os.devnull, "wb" ) )
+            lines = bsp_read( f'{port}/maps/{bsp}' )
 
+            if lines == None:
+                continue
+
+            entity = {}
             entdata = []
+            oldline = ''
 
-            with open( f'{port}/maps/{ent}', 'r', errors='ignore' ) as entfile:
+            for line in lines:
 
-                lines = entfile.readlines()
+                if line == '{':
+                    continue
 
-                entity = {}
-                oldline = ''
+                line = line.strip()
 
-                for line in lines:
+                if not line.endswith( '"' ):
+                    oldline = line
+                elif oldline != '' and not line.startswith( '"' ):
+                    line = f'{oldline}{line}'
 
-                    if line == '{':
-                        continue
+                if line.find( '\\' ) != -1:
+                    line = line.replace( '\\', '\\\\' )
 
-                    line = line.strip()
+                line = line.strip( '"' )
 
-                    if not line.endswith( '"' ): # ba_tram2.ent's "wad" was broken
-                        oldline = line # This is some sort of stupid fix i've did
-                    elif oldline != '' and not line.startswith( '"' ): # Hopefully momentarly.
-                        line = f'{oldline}{line}'
+                if not line or line == '':
+                    continue
 
-                    line = line.strip( '"' )
+                if line.startswith( '}' ): # startswith due to [NULL]
+                    entdata.append( json.loads( json.dumps( entity ) ) )
+                    entity.clear()
+                else:
+                    keyvalues = line.split( '" "' )
+                    if len( keyvalues ) == 2:
+                        entity[ keyvalues[0] ] = keyvalues[1]
 
-                    if not line or line == '':
-                        continue
+            print(f'[map_upgrader] Upgrading {map}')
 
-                    if line.startswith( '}' ): # startswith due to [NULL]
-                        entdata.append( json.dumps( entity ) )
-                        entity.clear()
+            entdata = upgrade_map( entdata=entdata, mapname=map )
+
+            with open( f'{port}/maps/{ent}', 'w', encoding='ascii' ) as jsonfile:
+
+                jsonfile.write( '[\n' )
+                FirstBlockOf = True
+                FirstKeyOf = True
+
+                for entblock in entdata:
+
+                    if FirstBlockOf:
+                        FirstBlockOf = False
                     else:
-                        keyvalues = line.split( '" "' )
-                        if len( keyvalues ) == 2:
-                            entity[ keyvalues[0] ] = keyvalues[1]
+                        jsonfile.write( ',\n' )
 
-                entfile.close()
+                    FirstKeyOf = True
 
-            MAPENTS[ map ] = entdata
+                    jsonfile.write( '\t{\n' )
 
-    for m, data in MAPENTS.items():
+                    for key, value in json.loads( entblock ).items():
 
-        newdata = upgrade_map( entdata=data, mapname=m )
+                        if FirstKeyOf:
+                            FirstKeyOf = False
+                        else:
+                            jsonfile.write( ',\n' )
 
-        print(f'[map_upgrader] Upgrading {m}')
+                        jsonfile.write( f'\t\t"{key}": "{value}"' )
 
-        with open( f'{port}/maps/{m}.ent', 'w' ) as entfiles:
+                    jsonfile.write( '\n\t}' )
 
-            for entblock in newdata:
+                jsonfile.write( '\n]\n' )
+                jsonfile.close()
 
-                entfiles.write( '{\n' )
+            newdata = ''
 
-                for key, value in json.loads( entblock ).items():
+            for entblock in entdata:
+                newdata += '{\n'
+                if not isinstance( entblock, dict ):
+                    entblock = json.loads( entblock )
+                for key, value in entblock.items():
+                    newdata += f'"{key}" "{value}"\n'
+                newdata += '}\n'
 
-                    entfiles.write( f'"{key}" "{value}"\n' )
+            bsp_read( f'{port}/maps/{bsp}', writedata=newdata )
 
-                entfiles.write( '}\n' )
-
-            entfiles.close()
-
-        #subprocess.call( [ RIPENT, "-import", f'{port}/maps/{m}.ent' ], stdout = open( os.devnull, "wb" ) )
-
-    if len( BSP_SOURCES ) == 0:
-        return
+        os.remove( f'{port}/maps/{ent}' )
