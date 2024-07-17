@@ -3,6 +3,11 @@ class Entity:
         self.KeyValueData = KeyValueData
 
     def ToDict( self ):
+        """
+            Converts this Entity class to a dict.
+            
+            Can also be accessed as Entity.KeyValueData
+        """
         return self.KeyValueData
 
     def __getattr__( self, key ):
@@ -15,3 +20,9 @@ class Entity:
             self.KeyValueData.pop( key, '' )
         else:
             self.KeyValueData[ key ] = str( value )
+
+    def remove( self ):
+        """
+        Removes this entity from the entity data
+        """
+        self.KeyValueData.clear()

@@ -22,7 +22,7 @@ def upgrade_map( entdata=[], mapname='' ):
 
             if inspect.isfunction(obj):
 
-                if name.startswith( 'map_' ) and name != f'map_{mapname}':
+                if name.startswith( 'map_' ) and name != f'map_{mapname}' or name.startswith( 'serie_' ) and not mapname.startswith( name[ 6 : ] ):
                     continue
 
                 entity = Entity( entblock )
@@ -100,6 +100,9 @@ def map_upgrader():
                 FirstKeyOf = True
 
                 for entblock in entdata:
+
+                    if len(entblock) <= 0:
+                        continue
 
                     if FirstBlockOf:
                         FirstBlockOf = False

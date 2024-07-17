@@ -76,7 +76,7 @@ def b1_world_items( entity:Entity, entdata=[] ):
         elif value == 45:
             entity.classname = 'item_suit'
         else:
-            entity.KeyValueData.clear()
+            entity.remove()
     return entity
 
 def b1_prop_human_hulls( entity:Entity, entdata=[] ):
@@ -110,6 +110,24 @@ def b1_monster_barney_dead( entity:Entity, entdata=[] ):
 # Blue Shift Map-specific upgrades
 # ===============================================================================
 
+def serie_ba_( entity:Entity, entdata=[] ):
+    if entity.classname == 'monster_rosenberg':
+        entity.model = None
+        SF_ROSENBERG_NO_USE = 256
+        spawnflags = int( entity.spawnflags ) if entity.spawnflags else 0
+        if spawnflags & SF_ROSENBERG_NO_USE:
+            entity.allow_follow = 0
+        else:
+            entity.allow_follow = 1
+        spawnflags &= ~SF_ROSENBERG_NO_USE
+    elif entity.classname == 'monster_generic' and entity.body == '3' and entity.model == 'models/scientist.mdl':
+        entity.model = 'models/rosenberg.mdl'
+    elif entity.classname == 'monster_scientist' and entity.body == '3':
+        entity.classname == 'monster_rosenberg'
+        entity.model = None
+    entity.body = None
+    return entity
+
 def map_ba_canal1( entity:Entity, entdata=[] ):
     if entity.classname == 'monstermaker':
         if entity.targetname == 'tele5_spawner' or entity.targetname == 'tele4_spawner':
@@ -128,6 +146,28 @@ def map_ba_outro( entity:Entity, entdata=[] ):
 def map_ba_power2( entity:Entity, entdata=[] ):
     if entity.classname == 'worldspawn':
         entity.chaptertitle = None
+    return entity
+
+def map_ba_security2( entity:Entity, entdata=[] ):
+    if entity.targetname == 'gina_push':
+        entity.model = 'models/blueshift/holo_cart.mdl'
+    return entity
+
+def map_ba_tram1( entity:Entity, entdata=[] ):
+    if entity.targetname == 'sitter':
+        entity.body = None
+    elif entity.classname == 'item_suit':
+        entity.remove()
+    return entity
+
+def map_ba_tram2( entity:Entity, entdata=[] ):
+    if entity.targetname == 'joey_normal' or entity.classname == 'joey_reflect':
+        entity.skin = 1
+    return entity
+
+def map_ba_yard1( entity:Entity, entdata=[] ):
+    if entity.classname == 'monster_scientist_dead' and entity.body == '3':
+        entity.body = 0
     return entity
 
 # ===============================================================================
