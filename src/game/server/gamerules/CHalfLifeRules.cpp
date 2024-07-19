@@ -66,7 +66,7 @@ bool CHalfLifeRules::GetNextBestWeapon(CBasePlayer* pPlayer, CBasePlayerWeapon* 
 
 bool CHalfLifeRules::ClientConnected(edict_t* pEntity, const char* pszName, const char* pszAddress, char szRejectReason[128])
 {
-	return true;
+	return CGameRules::ClientConnected(pEntity, pszName, pszAddress, szRejectReason);
 }
 
 void CHalfLifeRules::InitHUD(CBasePlayer* pl)

@@ -147,7 +147,7 @@ public:
 	 *	If ClientConnected returns false, the connection is rejected and the user is provided the reason specified in @c szRejectReason.
 	 *	Only the client's name and remote address are provided to the dll for verification.
 	 */
-	virtual bool ClientConnected(edict_t* pEntity, const char* pszName, const char* pszAddress, char szRejectReason[128]) = 0;
+	virtual bool ClientConnected(edict_t* pEntity, const char* pszName, const char* pszAddress, char szRejectReason[128]);
 
 	/**
 	 *	@brief the client dll is ready for updating

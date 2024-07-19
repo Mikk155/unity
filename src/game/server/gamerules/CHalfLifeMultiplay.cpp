@@ -243,7 +243,7 @@ bool CHalfLifeMultiplay::ClientConnected(edict_t* pEntity, const char* pszName, 
 		pszPlayerIPs[ENTINDEX(pEntity)] = strdup(pszAddress);
 	}
 
-	return true;
+	return CGameRules::ClientConnected(pEntity, pszName, pszAddress, szRejectReason);
 }
 
 void CHalfLifeMultiplay::UpdateGameMode(CBasePlayer* pPlayer)

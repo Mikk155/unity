@@ -442,6 +442,7 @@ public:
 	bool Draw(float flTime) override;
 	void MsgFunc_HudText(const char* pszName, BufferReader& reader);
 	void MsgFunc_GameTitle(const char* pszName, BufferReader& reader);
+	void MsgFunc_CustomTitles(const char* pszName, BufferReader& reader);
 
 	float FadeBlend(float fadein, float fadeout, float hold, float localTime);
 	int XPosition(float x, int width, int lineWidth);
@@ -458,6 +459,12 @@ private:
 	cvar_t* m_CustomMessageText{};
 	cvar_t* m_CustomMessageX{};
 	cvar_t* m_CustomMessageY{};
+
+	std::string m_CustomTitles;
+	std::string m_CustomTitlesLast;
+	std::optional<json> m_jsonTitles;
+	std::optional<json> m_jsonCustomTitles;
+	client_textmessage_t* GetGameMessage( const char* pName );
 
 	client_textmessage_t* m_pMessages[maxHUDMessages];
 	float m_startTime[maxHUDMessages];

@@ -86,4 +86,6 @@ inline int gmsgFog = 0;
 
 inline int gmsgClientGibs = 0;
 
+inline int gmsgCustomTitles = 0;
+
 void LinkUserMessages();

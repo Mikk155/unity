@@ -440,6 +440,20 @@ void CGameRules::BecomeSpectator(CBasePlayer* player, const CommandArgs& args)
 		ClientPrint(player, HUD_PRINTCONSOLE, "Spectator mode is disabled.\n");
 }
 
+bool CGameRules::ClientConnected(edict_t* pEntity, const char* pszName, const char* pszAddress, char szRejectReason[128])
+{
+	auto player = ToBasePlayer(pEntity);
+
+	if( player != nullptr && player->IsPlayer() )
+	{
+		MESSAGE_BEGIN(MSG_ONE, gmsgCustomTitles, nullptr, player );
+			WRITE_STRING( "blueshift" );
+		MESSAGE_END();
+	}
+
+	return true;
+}
+
 template <typename TGameRules>
 CGameRules* CreateGameRules()
 {

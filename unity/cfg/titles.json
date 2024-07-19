@@ -1,0 +1,227 @@
+{
+	"GAMESAVED":
+	{
+		"position": [-1, 0.65],
+		"effect": 2.0,
+		"color": [100, 100, 100],
+		"color2": [240, 110, 0],
+		"fadein": 0.01,
+		"fxtime": 0.25,
+		"holdtime": 2.0,
+		"fadeout": 0.5,
+		"english": "Saved...\n",
+		"spanish": "Guardado...\n"
+	},
+	"Spec_Mode1":
+	{
+		"english": "Locked Chase-Camera\n"
+	},
+	"Spec_Mode2":
+	{
+		"english": "Free Chase-Camera\n"
+	},
+	"Spec_Mode3":
+	{
+		"english": "Free-Look\n"
+	},
+	"Spec_Mode4":
+	{
+		"english": "First Person\n"
+	},
+	"Spec_Mode5":
+	{
+		"english": "Free Map Overview\n"
+	},
+	"Spec_Mode6":
+	{
+		"english": "Chase Map Overview\n"
+	},
+	"Spec_NoTarget":
+	{
+		"english": "No valid targets. Cannot switch to Chase-Camera Mode.\n"
+	},
+	"Spec_Help_Title":
+	{
+		"english": "Spectator Mode\n"
+	},
+	"Spec_Help_Text":
+	{
+		"english": "Use the following keys to change view styles:\nFIRE1 - Chase next player\nFIRE2 - Chase previous player\nJUMP - Change view modes\nUSE - Change inset window mode\nDUCK  - Enable spectator menu\nIn Overview Map Mode move around with:\nMOVELEFT - move left\nMOVERIGHT - move right\nFORWARD - zoom in\nBACK - zoom out\nMOUSE - rotate around map/target\n"
+	},
+	"Spec_Slow_Motion":
+	{
+		"english": "Slow Motion\n"
+	},
+	"Spec_Replay":
+	{
+		"english": "Instant Replay\n"
+	},
+	"Spec_Auto":
+	{
+		"english": "Auto\n"
+	},
+	"Spec_Map":
+	{
+		"english": "Map\n"
+	},
+	"Spectators":
+	{
+		"english": "Spectators\n"
+	},
+	"Unassigned":
+	{
+		"english": "Unassigned\n"
+	},
+	"TEAMS":
+	{
+		"english": "TEAMS\n"
+	},
+	"PLAYERS":
+	{
+		"english": "PLAYERS\n"
+	},
+	"CLASS":
+	{
+		"english": "CLASS\n"
+	},
+	"SCORE":
+	{
+		"english": "SCORE\n"
+	},
+	"DEATHS":
+	{
+		"english": "DEATHS\n"
+	},
+	"LATENCY":
+	{
+		"english": "PING\n"
+	},
+	"VOICE":
+	{
+		"english": "VOICE\n"
+	},
+	"Menu_OK":
+	{
+		"english": "OK\n"
+	},
+	"Menu_Cancel":
+	{
+		"english": "CANCEL\n"
+	},
+	"Mic_Volume":
+	{
+		"english": "Mic Volume\n"
+	},
+	"Speaker_Volume":
+	{
+		"english": "Speaker Volume\n"
+	},
+	"Voice_Properties":
+	{
+		"english": "Voice Properties\n"
+	},
+	"Map_Description_not_available":
+	{
+		"english": "Map Description not available.\n"
+	},
+	"Player":
+	{
+		"english": "player\n"
+	},
+	"Player_plural":
+	{
+		"english": "players\n"
+	},
+	"Muted":
+	{
+		"english": "You have muted %s.\n"
+	},
+	"Unmuted":
+	{
+		"english": "You have unmuted %s.\n"
+	},
+	"No_longer_hear_that_player":
+	{
+		"english": "You will no longer hear that player speak.\n"
+	},
+	"OBS_NONE":
+	{
+		"english": "Camera Options\n"
+	},
+	"OBS_CHASE_LOCKED":
+	{
+		"english": "Locked Chase-Cam\n"
+	},
+	"OBS_CHASE_FREE":
+	{
+		"english": "Free Chase-Cam\n"
+	},
+	"OBS_ROAMING":
+	{
+		"english": "Roaming\n"
+	},
+	"OBS_IN_EYE":
+	{
+		"english": "First Person\n"
+	},
+	"OBS_MAP_FREE":
+	{
+		"english": "Free Overview\n"
+	},
+	"OBS_MAP_CHASE":
+	{
+		"english": "Chase-Cam Overview\n"
+	},
+	"SPECT_OPTIONS":
+	{
+		"english": "Options\n"
+	},
+	"CAM_OPTIONS":
+	{
+		"english": "Camera Options\n"
+	},
+	"Spec_Duck":
+	{
+		"english": "Press DUCK for Spectator Menu\n"
+	},
+	"Valve_Close":
+	{
+		"english": "Close\n"
+	},
+	"Valve_Help":
+	{
+		"english": "Help\n"
+	},
+	"Valve_Settings":
+	{
+		"english": "Settings\n"
+	},
+	"Valve_Chat_Messages":
+	{
+		"english": "Chat Messages\n"
+	},
+	"Valve_Show_Status":
+	{
+		"english": "Show Status\n"
+	},
+	"Valve_View_Cone":
+	{
+		"english": "View Cone\n"
+	},
+	"Valve_Player_Names":
+	{
+		"english": "Player Names\n"
+	},
+	"Valve_PIP":
+	{
+		"english": "Picture-In-Picture\n"
+	},
+	"Valve_Auto_Director":
+	{
+		"english": "Auto Director\n"
+	},
+	"Valve_Show_Score":
+	{
+		"english": "Show Scores\n"
+	}
+}

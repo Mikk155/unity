@@ -438,38 +438,70 @@ bool CHudMessage::Draw(float fTime)
 	return true;
 }
 
+client_textmessage_t* CHudMessage::GetGameMessage( const char* pName )
+{
+	if( pName[0] == '#' ) // Trim off a leading # if it's there
+		pName = pName + 1;
+
+    json TitleParams = nullptr;
+	ConsolePrint( "m_CustomTitles > " ); ConsolePrint( m_CustomTitles.c_str() ); ConsolePrint( "\n" );
+	if( !m_CustomTitles.empty() && m_jsonCustomTitles.has_value() )
+		TitleParams = m_jsonCustomTitles->at( pName );
+	else if( m_jsonTitles.has_value() )
+		TitleParams = m_jsonTitles->at( pName );
+
+	g_pCustomMessage.pName = pName;
+
+	if( TitleParams != nullptr )
+	{
+		g_pCustomMessage.effect = TitleParams.value( "effect", 2 );
+		g_pCustomMessage.fadein = TitleParams.value( "fadein", 0.01 );
+		g_pCustomMessage.fxtime = TitleParams.value( "fxtime", 0.25 );
+		g_pCustomMessage.holdtime = TitleParams.value( "holdtime", 5 );
+		g_pCustomMessage.fadeout = TitleParams.value( "fadeout", 1.5 );
+		g_pCustomMessage.pMessage = TitleParams.value( "english", pName ).c_str();
+		ConsolePrint( "TitleParams > " ); ConsolePrint( TitleParams.value( "english", pName ).c_str() ); ConsolePrint( "\n" );
+	}
+	else
+	{
+		g_pCustomMessage.effect = 2;
+		g_pCustomMessage.fadein = 0.01;
+		g_pCustomMessage.fxtime = 0.25;
+		g_pCustomMessage.holdtime = 5;
+		g_pCustomMessage.fadeout = 1.5;
+		g_pCustomMessage.pMessage = pName;
+	}
+
+	// Needs to get arrays for values
+	//"color": [100, 100, 100],
+	g_pCustomMessage.r1 = 100;
+	g_pCustomMessage.g1 = 100;
+	g_pCustomMessage.b1 = 100;
+	g_pCustomMessage.a1 = 100;
+	//"color2": [240, 110, 0],
+	g_pCustomMessage.r2 = 240;
+	g_pCustomMessage.g2 = 110;
+	g_pCustomMessage.b2 = 0;
+	g_pCustomMessage.a2 = 0;
+	//"position": [-1, 0.65],
+	g_pCustomMessage.x = -1;
+	g_pCustomMessage.y = 0.7;
+
+	client_textmessage_t* tempMessage = &g_pCustomMessage;
+
+	return tempMessage;
+}
 
 void CHudMessage::MessageAdd(const char* pName, float time)
 {
-	client_textmessage_t* tempMessage;
-
-	// Trim off a leading # if it's there
-	if (pName[0] == '#')
-		tempMessage = TextMessageGet(pName + 1);
-	else
-		tempMessage = TextMessageGet(pName);
-
-	// If we couldnt find it in the titles.txt, just create it
-	if (!tempMessage)
-	{
-		g_pCustomMessage.effect = 2;
-		g_pCustomMessage.r1 = g_pCustomMessage.g1 = g_pCustomMessage.b1 = g_pCustomMessage.a1 = 100;
-		g_pCustomMessage.r2 = 240;
-		g_pCustomMessage.g2 = 110;
-		g_pCustomMessage.b2 = 0;
-		g_pCustomMessage.a2 = 0;
-		g_pCustomMessage.x = -1; // Centered
-		g_pCustomMessage.y = 0.7;
-		g_pCustomMessage.fadein = 0.01;
-		g_pCustomMessage.fadeout = 1.5;
-		g_pCustomMessage.fxtime = 0.25;
-		g_pCustomMessage.holdtime = 5;
-		g_pCustomMessage.pName = g_pCustomName;
-		strcpy(g_pCustomText, pName);
-		g_pCustomMessage.pMessage = g_pCustomText;
-
-		tempMessage = &g_pCustomMessage;
+	if( !m_jsonTitles || m_jsonTitles == nullptr ) // Update titles if needed
+		m_jsonTitles = g_JSON.LoadJSONFile( "cfg/titles.json" );
+	if( !m_CustomTitles.empty() && m_CustomTitles != m_CustomTitlesLast ) {
+		m_CustomTitlesLast = m_CustomTitles;
+		m_jsonCustomTitles = g_JSON.LoadJSONFile( fmt::format( "cfg/maps/{}.json", m_CustomTitles ).c_str() );
 	}
+
+	client_textmessage_t* tempMessage = GetGameMessage(pName);
 
 	for (int i = 0; i < maxHUDMessages; i++)
 	{
@@ -513,6 +545,13 @@ void CHudMessage::MessageAdd(const char* pName, float time)
 }
 
 
+void CHudMessage::MsgFunc_CustomTitles(const char* pszName, BufferReader& reader)
+{
+	const std::string TitleName = reader.ReadString();
+	m_CustomTitles = TitleName;
+}
+
+
 void CHudMessage::MsgFunc_HudText(const char* pszName, BufferReader& reader)
 {
 	char* pString = reader.ReadString();
@@ -535,12 +574,12 @@ void CHudMessage::MsgFunc_GameTitle(const char* pszName, BufferReader& reader)
 
 	titleName += "_GAMETITLE";
 
-	m_pGameTitle = TextMessageGet(titleName.c_str());
+	m_pGameTitle = GetGameMessage(titleName.c_str());
 
 	if (!m_pGameTitle)
 	{
 		// Fallback.
-		m_pGameTitle = TextMessageGet("VALVE_GAMETITLE");
+		m_pGameTitle = GetGameMessage("VALVE_GAMETITLE");
 	}
 
 	if (m_pGameTitle != nullptr)
