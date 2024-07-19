@@ -14,5 +14,9 @@ unity/mods/port/*
 unity/mods/src/
 unity/mods/src/*
 
+# CMake project
+build/*
+build/
+
 # Python cache
 *.pyc
