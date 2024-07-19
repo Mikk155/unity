@@ -115,11 +115,9 @@ def serie_ba_( entity:Entity, entdata=[] ):
         entity.model = None
         SF_ROSENBERG_NO_USE = 256
         spawnflags = int( entity.spawnflags ) if entity.spawnflags else 0
-        if spawnflags & SF_ROSENBERG_NO_USE:
-            entity.allow_follow = 0
-        else:
-            entity.allow_follow = 1
+        entity.allow_follow = 0 if spawnflags & SF_ROSENBERG_NO_USE else 1
         spawnflags &= ~SF_ROSENBERG_NO_USE
+        entity.spawnflags = spawnflags
     elif entity.classname == 'monster_generic' and entity.body == '3' and entity.model == 'models/scientist.mdl':
         entity.model = 'models/rosenberg.mdl'
     elif entity.classname == 'monster_scientist' and entity.body == '3':
