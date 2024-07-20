@@ -496,9 +496,9 @@ void CHalfLifeMultiplay::PlayerKilled(CBasePlayer* pVictim, CBaseEntity* pKiller
 		peKiller->m_flNextDecalTime = gpGlobals->time;
 	}
 
-	if( (int)mp_explode_satchels.value == 1 && pVictim->HasNamedPlayerWeapon( "weapon_satchel" ) )
+	if( (int)mp_explode_satchels.value != 0 && pVictim->HasNamedPlayerWeapon( "weapon_satchel" ) )
 	{
-		DeactivateSatchels(pVictim, true);
+		DeactivateSatchels(pVictim);
 	}
 
 	if (pVictim->IsPlayer() && !g_fGameOver && (pVictim->m_iItems & CTFItem::ItemsMask) != 0)
