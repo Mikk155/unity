@@ -1211,7 +1211,7 @@
 "spanish": ""
 },
 "Monster::allow_item_dropping": {
-"english": "Allow Item Dropping ",
+"english": "Allow Item Dropping",
 "spanish": ""
 },
 "Monster::allow_item_dropping::description": {
@@ -14502,12 +14502,24 @@
 "english": "Delay before Restarting (secs)",
 "spanish": ""
 },
-"AllocNewEntity::m_Activator": {
+"AllocNewActivator::m_Activator": {
 "english": "New activator to pass",
 "spanish": ""
 },
-"AllocNewEntity::m_Caller": {
-"english": "New caller to pass",
+"AllocNewActivator::m_Activator::description": {
+"english": "A targetname of a entity or either a special name\n!activator = current activator\n!caller = current caller\n!this = current entity\n!player = Nearest player",
+"spanish": ""
+},
+"trigger_event::classname": {
+"english": "trigger game events",
+"spanish": ""
+},
+"trigger_event::classname::description": {
+"english": "Handles a game event and trigger it's target if matched",
+"spanish": ""
+},
+"trigger_event::event_type": {
+"english": "Handle event type",
 "spanish": ""
 },
 "EOF": true
