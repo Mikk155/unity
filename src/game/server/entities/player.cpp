@@ -44,6 +44,8 @@
 #include "ctf/ctf_goals.h"
 #include "rope/CRope.h"
 
+#include "trigger_event.h"
+
 // #define DUCKFIX
 
 #define TRAIN_ACTIVE 0x80
@@ -787,6 +789,8 @@ void CBasePlayer::Killed(CBaseEntity* attacker, int iGib)
 	// Holster weapon immediately, to allow it to cleanup
 	if (m_pActiveWeapon)
 		m_pActiveWeapon->Holster();
+
+	TriggerEvent( TriggerEventType::PLAYER_DIE, this, attacker, iGib );
 
 	g_pGameRules->PlayerKilled(this, attacker, g_pevLastInflictor);
 

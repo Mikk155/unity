@@ -14522,5 +14522,13 @@
 "english": "Handle event type",
 "spanish": ""
 },
+"trigger_event::event_type::0": {
+"english": "None",
+"spanish": ""
+},
+"trigger_event::event_type::1": {
+"english": "Player has been killed",
+"spanish": ""
+},
 "EOF": true
 }

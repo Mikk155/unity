@@ -4776,10 +4776,10 @@
 		"data": {
 			"event_type": {
 				"variable": "choices",
-				"value": "",
+				"value": "0",
 				"choices": [
-					"1",
-					"2"
+					"0",
+					"1"
 				]
 			}
 		}
