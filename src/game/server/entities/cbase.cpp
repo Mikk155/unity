@@ -628,6 +628,16 @@ bool CBaseEntity::RequiredKeyValue(KeyValueData* pkvd)
 			}
 		}
 	}
+	else if( FStrEq( pkvd->szKeyName, "m_Activator" ) )
+	{
+		m_sNewActivator = ALLOC_STRING( pkvd->szValue );
+		return true;
+	}
+	else if( FStrEq( pkvd->szKeyName, "m_Caller" ) )
+	{
+		m_sNewCaller = ALLOC_STRING( pkvd->szValue );
+		return true;
+	}
 
 	return false;
 }
@@ -979,4 +989,35 @@ bool CBaseEntity :: CheckAppearanceFlags()
 		){ return false; }
 	}
 	return true;
+}
+
+CBaseEntity* CBaseEntity :: AllocNewEntity( CBaseEntity* pEntity, CBaseEntity* pActivator, CBaseEntity* pCaller )
+{
+	string_t MatchEntity = ( pEntity == pCaller ? m_sNewCaller : m_sNewActivator );
+
+	if( !FStringNull( MatchEntity ) )
+	{
+		if( FStrEq( STRING( MatchEntity ), "!activator" ) )
+		{
+			return pActivator;
+		}
+		else if( FStrEq( STRING( MatchEntity ), "!caller" ) )
+		{
+			return pCaller;
+		}
+		else if( FStrEq( STRING( MatchEntity ), "!this" ) )
+		{
+			return this;
+		}
+		else if( FStrEq( STRING( MatchEntity ), "!player" ) )
+		{
+			return static_cast<CBaseEntity*>( UTIL_FindNearestPlayer( pev->origin ) );
+		}
+		else
+		{
+			return UTIL_FindEntityByTargetname( nullptr, STRING( MatchEntity ) );
+		}
+	}
+
+	return pEntity;
 }

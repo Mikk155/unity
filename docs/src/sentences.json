@@ -1,4 +1,4 @@
- {
+{
 "english": true,
 "spanish": true,
 
@@ -14500,6 +14500,14 @@
 },
 "trigger_entity_iterator::delay_between_runs": {
 "english": "Delay before Restarting (secs)",
+"spanish": ""
+},
+"AllocNewEntity::m_Activator": {
+"english": "New activator to pass",
+"spanish": ""
+},
+"AllocNewEntity::m_Caller": {
+"english": "New caller to pass",
 "spanish": ""
 },
 "EOF": true

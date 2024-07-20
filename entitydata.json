@@ -187,6 +187,19 @@
 			}
 		}
 	},
+	"AllocNewEntity": {
+		"Class": "Base",
+		"data": {
+			"m_Activator": {
+				"variable": "target_destination",
+				"value": "!activator"
+			},
+			"m_Caller": {
+				"variable": "target_destination",
+				"value": "!this"
+			}
+		}
+	},
 	"Targetx": {
 		"Class": "Base",
 		"base": ["Target"],
