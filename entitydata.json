@@ -187,16 +187,12 @@
 			}
 		}
 	},
-	"AllocNewEntity": {
+	"AllocNewActivator": {
 		"Class": "Base",
 		"data": {
 			"m_Activator": {
 				"variable": "target_destination",
 				"value": "!activator"
-			},
-			"m_Caller": {
-				"variable": "target_destination",
-				"value": "!this"
 			}
 		}
 	},
@@ -4772,6 +4768,20 @@
 		"base": ["Trigger"],
 		"data": {
 
+		}
+	},
+	"trigger_event": {
+		"Class": "Point",
+		"base": ["Targetx", "AllocNewEntity" ],
+		"data": {
+			"event_type": {
+				"variable": "choices",
+				"value": "",
+				"choices": [
+					"1",
+					"2"
+				]
+			}
 		}
 	},
 	"trigger_push": {

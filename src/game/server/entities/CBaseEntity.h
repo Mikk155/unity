@@ -655,13 +655,11 @@ public:
 	int m_UseLocked;
 
 	/**
-	 *	@brief Allocate a new entity instance for pActivator or either pCaller.
-	 *	Set pEntity to be the same instance you want to update
+	 *	@brief Allocate a new entity instance for pActivator.
 	 *	pActivator and pCaller should be the ones from your UseFunction
-	 *	This function will return the updated instance with whatever the entity keyvalues wants
+	 *	This function will return the updated instance with whatever the entity keyvalue m_Activator wants
 	 */
-	CBaseEntity* AllocNewEntity( CBaseEntity* pEntity, CBaseEntity* pActivator, CBaseEntity* pCaller );
-	string_t m_sNewCaller;
+	CBaseEntity* AllocNewActivator( CBaseEntity* pActivator, CBaseEntity* pCaller );
 	string_t m_sNewActivator;
 
 	int m_appearflag_notin = (int)appearflags::DEFAULT;

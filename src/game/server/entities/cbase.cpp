@@ -633,11 +633,6 @@ bool CBaseEntity::RequiredKeyValue(KeyValueData* pkvd)
 		m_sNewActivator = ALLOC_STRING( pkvd->szValue );
 		return true;
 	}
-	else if( FStrEq( pkvd->szKeyName, "m_Caller" ) )
-	{
-		m_sNewCaller = ALLOC_STRING( pkvd->szValue );
-		return true;
-	}
 
 	return false;
 }
@@ -991,33 +986,31 @@ bool CBaseEntity :: CheckAppearanceFlags()
 	return true;
 }
 
-CBaseEntity* CBaseEntity :: AllocNewEntity( CBaseEntity* pEntity, CBaseEntity* pActivator, CBaseEntity* pCaller )
+CBaseEntity* CBaseEntity :: AllocNewActivator( CBaseEntity* pActivator, CBaseEntity* pCaller )
 {
-	string_t MatchEntity = ( pEntity == pCaller ? m_sNewCaller : m_sNewActivator );
-
-	if( !FStringNull( MatchEntity ) )
+	if( !FStringNull( m_sNewActivator ) )
 	{
-		if( FStrEq( STRING( MatchEntity ), "!activator" ) )
+		if( FStrEq( STRING( m_sNewActivator ), "!activator" ) )
 		{
 			return pActivator;
 		}
-		else if( FStrEq( STRING( MatchEntity ), "!caller" ) )
+		else if( FStrEq( STRING( m_sNewActivator ), "!caller" ) )
 		{
 			return pCaller;
 		}
-		else if( FStrEq( STRING( MatchEntity ), "!this" ) )
+		else if( FStrEq( STRING( m_sNewActivator ), "!this" ) )
 		{
 			return this;
 		}
-		else if( FStrEq( STRING( MatchEntity ), "!player" ) )
+		else if( FStrEq( STRING( m_sNewActivator ), "!player" ) )
 		{
 			return static_cast<CBaseEntity*>( UTIL_FindNearestPlayer( pev->origin ) );
 		}
 		else
 		{
-			return UTIL_FindEntityByTargetname( nullptr, STRING( MatchEntity ) );
+			return UTIL_FindEntityByTargetname( nullptr, STRING( m_sNewActivator ) );
 		}
 	}
 
-	return pEntity;
+	return pActivator;
 }
