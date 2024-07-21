@@ -8,6 +8,7 @@ import inspect
 import tools.upgrades as upgrades
 from tools.Entity import Entity
 
+AdditionalEntities = []
 # This may be slow but i did it this way so "upgrades" can be easly implemented
 def upgrade_map( entdata=[], mapname='' ):
 
@@ -26,11 +27,10 @@ def upgrade_map( entdata=[], mapname='' ):
                     continue
 
                 entity = Entity( entblock )
-                entity = obj( entity, entdata=entdata )
+                entity = obj( entity )
                 entblock = entity.ToDict()
 
-        if len( entblock ) > 0:
-            entdata[i] = json.dumps( entblock )
+        entdata[i] = ( json.dumps( entblock ) if len( entblock ) > 0 else {} )
 
     if False:
         if os.path.exists( f'{port}/maps/{mapname}.json'):
@@ -38,6 +38,9 @@ def upgrade_map( entdata=[], mapname='' ):
                 additionalentities = json.load( addent )
                 for newent in additionalentities:
                     entdata.append( json.dumps( newent ) )
+
+    for ae in upgrades.AdditionalEntities:
+        entdata.append( json.dumps( ae ) )
 
     return entdata
 
@@ -101,7 +104,7 @@ def map_upgrader():
 
                 for entblock in entdata:
 
-                    if len(entblock) <= 0:
+                    if len(entblock) <= 0 or not isinstance( entblock, str ):
                         continue
 
                     if FirstBlockOf:

@@ -1,7 +1,9 @@
 from tools.Entity import Entity
 from tools.Vector import Vector
 
-def a1_angle_to_angles( entity:Entity, entdata=[] ):
+AdditionalEntities = []
+
+def a1_angle_to_angles( entity:Entity ):
     if entity.angle:
         NewAngles = Vector()
         Angle = float( entity.angle )
@@ -18,7 +20,7 @@ def a1_angle_to_angles( entity:Entity, entdata=[] ):
         entity.angle = None
     return entity
 
-def a1_classname_mapping( entity:Entity, entdata=[] ):
+def a1_classname_mapping( entity:Entity ):
     classnames = {
         "weapon_glock": "weapon_9mmhandgun",
         "ammo_glockclip": "ammo_9mmclip",
@@ -41,7 +43,7 @@ def a1_classname_mapping( entity:Entity, entdata=[] ):
                 entity.KeyValueData.pop( old, '' )
     return entity
 
-def b1_worldspawn( entity:Entity, entdata=[] ):
+def b1_worldspawn( entity:Entity ):
     if entity.classname == 'worldspawn':
         wad = entity.wad
         if wad:
@@ -58,12 +60,12 @@ def b1_worldspawn( entity:Entity, entdata=[] ):
             entity.wad = dwads
     return entity
 
-def b1_chargers_dmdelay( entity:Entity, entdata=[] ):
+def b1_chargers_dmdelay( entity:Entity ):
     if entity.classname and entity.classname in [ 'func_healthcharger', 'func_recharge' ]:
         entity.dmdelay = None
     return entity
 
-def b1_world_items( entity:Entity, entdata=[] ):
+def b1_world_items( entity:Entity ):
     if entity.classname == 'world_items':
         value = int( entity.type )
         entity.type = None
@@ -79,19 +81,19 @@ def b1_world_items( entity:Entity, entdata=[] ):
             entity.remove()
     return entity
 
-def b1_prop_human_hulls( entity:Entity, entdata=[] ):
+def b1_prop_human_hulls( entity:Entity ):
     if entity.classname in [ 'monster_generic', 'monster_generic' ] and entity.model in [ 'models/player.mdl', 'models/holo.mdl' ]:
         entity.custom_hull_min = '-16 -16 -36'
         entity.custom_hull_max = '16 16 36'
     return entity
 
-def b1_ambient_generic_pitchbell( entity:Entity, entdata=[] ):
+def b1_ambient_generic_pitchbell( entity:Entity ):
     if entity.classname == 'ambient_generic' and entity.message == 'buttons/bell1.wav' and entity.pitch == '80':
         entity.message = 'buttons/bell1_alt.wav'
         entity.pitch = 100
     return entity
 
-def b1_monster_barney_dead( entity:Entity, entdata=[] ):
+def b1_monster_barney_dead( entity:Entity ):
     if entity.classname == 'monster_barney_dead' and entity.body != None:
         body = int(entity.body )
         if body == 0:
@@ -104,13 +106,27 @@ def b1_monster_barney_dead( entity:Entity, entdata=[] ):
         entity.bodystate = body
     return entity
 
+game_playerdie = False
+def b1_game_playerdie( entity:Entity ):
+    global game_playerdie
+    if not game_playerdie and entity.targetname == 'game_playerdie':
+        Newent = {
+            "classname": "trigger_event",
+            "event_type": "1",
+            "target": "game_playerdie",
+            "m_Caller": "!activator"
+        }
+        AdditionalEntities.append( Newent )
+        game_playerdie = True
+    return entity
+
 # Feel free to rename any function's name, they're automatically catched anyways.
 
 # ===============================================================================
 # Blue Shift Map-specific upgrades
 # ===============================================================================
 
-def serie_ba_( entity:Entity, entdata=[] ):
+def serie_ba_( entity:Entity ):
     if entity.classname == 'monster_rosenberg':
         entity.model = None
         SF_ROSENBERG_NO_USE = 256
@@ -126,13 +142,13 @@ def serie_ba_( entity:Entity, entdata=[] ):
     entity.body = None
     return entity
 
-def map_ba_canal1( entity:Entity, entdata=[] ):
+def map_ba_canal1( entity:Entity ):
     if entity.classname == 'monstermaker':
         if entity.targetname == 'tele5_spawner' or entity.targetname == 'tele4_spawner':
             entity.netname = None
     return entity
 
-def map_ba_outro( entity:Entity, entdata=[] ):
+def map_ba_outro( entity:Entity ):
     if entity.classname == 'trigger_auto' and entity.target == 'start_outro':
         entity.spawnflags = 1
     elif entity.targetname == 'drag_grunt1':
@@ -141,29 +157,29 @@ def map_ba_outro( entity:Entity, entdata=[] ):
         entity.body = 1
     return entity
 
-def map_ba_power2( entity:Entity, entdata=[] ):
+def map_ba_power2( entity:Entity ):
     if entity.classname == 'worldspawn':
         entity.chaptertitle = None
     return entity
 
-def map_ba_security2( entity:Entity, entdata=[] ):
+def map_ba_security2( entity:Entity ):
     if entity.targetname == 'gina_push':
         entity.model = 'models/blueshift/holo_cart.mdl'
     return entity
 
-def map_ba_tram1( entity:Entity, entdata=[] ):
+def map_ba_tram1( entity:Entity ):
     if entity.targetname == 'sitter':
         entity.body = None
     elif entity.classname == 'item_suit':
         entity.remove()
     return entity
 
-def map_ba_tram2( entity:Entity, entdata=[] ):
+def map_ba_tram2( entity:Entity ):
     if entity.targetname == 'joey_normal' or entity.classname == 'joey_reflect':
         entity.skin = 1
     return entity
 
-def map_ba_yard1( entity:Entity, entdata=[] ):
+def map_ba_yard1( entity:Entity ):
     if entity.classname == 'monster_scientist_dead' and entity.body == '3':
         entity.body = 0
     return entity
@@ -172,7 +188,7 @@ def map_ba_yard1( entity:Entity, entdata=[] ):
 # Half Life Map-specific upgrades
 # ===============================================================================
 
-def map_c2a2a( entity:Entity, entdata=[] ):
+def map_c2a2a( entity:Entity ):
     if entity.classname == 'worldspawn':
         entity.MaxRange = 8192
     return entity
