@@ -464,7 +464,6 @@ void CHalfLifeMultiplay::PlayerKilled(CBasePlayer* pVictim, CBaseEntity* pKiller
 
 	pVictim->m_iDeaths += 1;
 
-	FireTargets("game_playerdie", pVictim, pVictim, USE_TOGGLE, 0);
 	CBasePlayer* peKiller = ToBasePlayer(pKiller);
 
 	if (pVictim == pKiller)
