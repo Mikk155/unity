@@ -21,8 +21,8 @@ sentences={}
 
 EntListing=[]
 
-def description( name ):
-    return sentences.get( name, {} ).get( 'english', '' )
+def description( name, customdata = '', AdditionalData = '' ):
+    return sentences.get( f'{customdata}{AdditionalData}' if customdata != '' else name, {} ).get( 'english', '' ).replace( '\n', '\\n' )
 
 def write_table( classname='', key='', values={}, file=None ):
 
@@ -75,11 +75,14 @@ def write_keyvalues( entitydata, classname ):
             sfbits = data.get( "choices", [] )
 
             for bits in sfbits:
-                FGD.write( f'\t\t{bits} : "{description( f"{classname}::{key}::{bits}" )}" : 0 : "{description( f"{classname}::{key}::{bits}::description" )}"\n')
+                titlevar = description( f'{classname}::{key}::{bits}', data.get( "title", "" ) )
+                descrvar = description( f'{classname}::{key}::{bits}::description', data.get( 'description', '' ) )
+                FGD.write( f'\t\t{bits} : "{titlevar}" : 0 : "{descrvar}"\n')
             FGD.write( f'\t]\n' )
         else:
 
-            FGD.write( f'\t{key}({variable}) : "{description( f"{classname}::{key}" )}" : ' )
+            titlevar = description( f'{classname}::{key}', data.get( "title", "" ) )
+            FGD.write( f'\t{key}({variable}) : "{titlevar}" : ' )
 
             if variable != 'choices':
                 number = ( variable in [ "integer", "float" ] )
@@ -100,13 +103,17 @@ def write_keyvalues( entitydata, classname ):
                 if not number:
                     FGD.write( '"' )
 
-                FGD.write( f' : "{description( f"{classname}::{key}::description" )}"\n')
+                descrvar = description( f'{classname}::{key}::description', data.get( "description", "" ) )
+                FGD.write( f' : "{descrvar}"\n')
             else:
-                FGD.write( f'"{description( f"{classname}::{key}::description" )}" : "{value}" =\n\t[\n' )
+                descrvar = description( f'{classname}::{key}::description', data.get( "description", "" ) )
+                FGD.write( f'"{descrvar}" : "{value}" =\n\t[\n' )
                 choices = data.get( "choices", [] )
 
                 for choice in choices:
-                    FGD.write( f'\t\t"{choice}" : "{description( f"{classname}::{key}::{choice}" )}" : "{description( f"{classname}::{key}::{choice}::description" )}"\n')
+                    titlevar = description( f'{classname}::{key}::{choice}', data.get( "title_choices", "" ), f'::{choice}' )
+                    descrvar = description( f'{classname}::{key}::{choice}::description', data.get( "title_choices", "" ), f'::{choice}::description' )
+                    FGD.write( f'\t\t"{choice}" : "{titlevar}" : "{descrvar}"\n')
                 FGD.write( f'\t]\n' )
 
 
