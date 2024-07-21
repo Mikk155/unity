@@ -25,6 +25,11 @@ LINK_ENTITY_TO_CLASS( trigger_event, CTriggerEvent );
 
 void CTriggerEvent :: Spawn()
 {
+	if( FStringNull( m_Caller ) )
+	{
+		m_Caller = MAKE_STRING( "!this" );
+	}
+
 	pev->solid = SOLID_NOT;
 }
 
@@ -33,6 +38,10 @@ bool CTriggerEvent :: KeyValue( KeyValueData* pkvd )
 	if( FStrEq( pkvd->szKeyName, "event_type" ) )
 	{
 		m_pEventType = static_cast<TriggerEventType>( atoi( pkvd->szValue ) );
+	}
+	else if( FStrEq( pkvd->szKeyName, "m_Caller" ) )
+	{
+		m_Caller = ALLOC_STRING( pkvd->szValue );
 	}
 	else
 	{
@@ -46,9 +55,12 @@ void TriggerEvent( TriggerEventType EventType, CBaseEntity* pActivator, CBaseEnt
 {
 	for( auto handler : UTIL_FindEntitiesByClassname<CTriggerEvent>( "trigger_event" ) )
 	{
-		if( handler->m_pEventType == EventType && handler->m_pEventType != TriggerEventType::None )
+		if( handler->m_pEventType == EventType && !FStringNull( handler->pev->target ) && handler->m_pEventType != TriggerEventType::None )
 		{
-			handler->SUB_UseTargets( handler->AllocNewActivator( pActivator, pCaller ), USE_TOGGLE, flValue );
+			FireTargets( STRING( handler->pev->target ),
+				handler->AllocNewActivator( pActivator, pCaller ),
+					handler->AllocNewActivator( pActivator, pCaller, handler->m_Caller ), USE_TOGGLE, flValue
+			);
 		}
 	}
 }

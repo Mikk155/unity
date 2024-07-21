@@ -20,18 +20,20 @@
 enum class TriggerEventType
 {
     None = 0,
-    PLAYER_DIE = 1
+    PLAYER_DIE = 1,
+	PLAYER_L
 };
 
-class CTriggerEvent : public CBaseDelay
+class CTriggerEvent : public CBaseEntity
 {
-	DECLARE_CLASS( CTriggerEvent, CBaseDelay );
+	DECLARE_CLASS( CTriggerEvent, CBaseEntity );
 	DECLARE_DATAMAP();
 
 public:
 	void Spawn() override;
 	bool KeyValue( KeyValueData* pkvd ) override;
 
+	string_t m_Caller;
     TriggerEventType m_pEventType = TriggerEventType::None;
 };
 
