@@ -227,7 +227,7 @@
 "spanish": ""
 },
 "worldspawn::MaxRange": {
-"english": "Max viewable distance ",
+"english": "Max viewable distance",
 "spanish": ""
 },
 "worldspawn::MaxRange::description": {
@@ -243,7 +243,7 @@
 "spanish": ""
 },
 "worldspawn::startdark": {
-"english": "Level Fade In ",
+"english": "Level Fade In",
 "spanish": ""
 },
 "worldspawn::startdark::description": {
@@ -275,7 +275,7 @@
 "spanish": ""
 },
 "worldspawn::newunit": {
-"english": "New Level Unit ",
+"english": "New Level Unit",
 "spanish": ""
 },
 "worldspawn::newunit::description": {
@@ -299,7 +299,7 @@
 "spanish": ""
 },
 "worldspawn::mapteams": {
-"english": "Map Team List ",
+"english": "Map Team List",
 "spanish": ""
 },
 "worldspawn::mapteams::description": {
@@ -307,7 +307,7 @@
 "spanish": ""
 },
 "worldspawn::defaultteam": {
-"english": "Default Team ",
+"english": "Default Team",
 "spanish": ""
 },
 "worldspawn::defaultteam::description": {
@@ -331,7 +331,7 @@
 "spanish": ""
 },
 "Sequence::sequence": {
-"english": "Animation Sequence (editor) ",
+"english": "Animation Sequence (editor)",
 "spanish": ""
 },
 "Sequence::sequence::description": {
@@ -339,7 +339,7 @@
 "spanish": ""
 },
 "ZHLT::zhlt_lightflags": {
-"english": "ZHLT Lightflags ",
+"english": "ZHLT Lightflags",
 "spanish": ""
 },
 "ZHLT::zhlt_lightflags::description": {
@@ -395,7 +395,7 @@
 "spanish": ""
 },
 "ZHLT_point::_fade": {
-"english": "ZHLT Fade ",
+"english": "ZHLT Fade",
 "spanish": ""
 },
 "ZHLT_point::_fade::description": {
@@ -403,7 +403,7 @@
 "spanish": ""
 },
 "ZHLT_point::_falloff": {
-"english": "ZHLT Falloff ",
+"english": "ZHLT Falloff",
 "spanish": ""
 },
 "ZHLT_point::_falloff::description": {
@@ -434,24 +434,64 @@
 "english": "",
 "spanish": ""
 },
-"Appearflags::spawnflags": {
-"english": "spawnflags(flags) ",
-"spanish": ""
-},
-"Appearflags::spawnflags::description": {
-"english": "",
-"spanish": ""
-},
 "Appearflags::spawnflags::2048": {
-"english": "Not in Deathmatch",
+"english": "Only in SinglePlayer",
 "spanish": ""
 },
-"Appearflags::spawnflags::2048::description": {
-"english": "",
+"Appearflags::appearflag_singleplayer": {
+"english": "Single Player",
+"spanish": ""
+},
+"Appearflags::appearflag_multiplayer": {
+"english": "Multi Player",
+"spanish": ""
+},
+"Appearflags::appearflag_cooperative": {
+"english": "Cooperative",
+"spanish": ""
+},
+"Appearflags::appearflag_deathmatch": {
+"english": "Death Match",
+"spanish": ""
+},
+"Appearflags::appearflag_cft": {
+"english": "Capture The Flag",
+"spanish": ""
+},
+"Appearflags::appearflag_teamplay": {
+"english": "Team Play",
+"spanish": ""
+},
+"Appearflags::appearflag_dedicated": {
+"english": "Dedicated Server",
+"spanish": ""
+},
+"Appearflags::appearflag_skilleasy": {
+"english": "Difficulty Easy",
+"spanish": ""
+},
+"Appearflags::appearflag_skillmedium": {
+"english": "Difficulty Medium",
+"spanish": ""
+},
+"Appearflags::appearflag_skillhard": {
+"english": "Difficulty Hard",
+"spanish": ""
+},
+"Appearflags::choices::0": {
+"english": "Default",
+"spanish": ""
+},
+"Appearflags::choices::-1": {
+"english": "Not In",
+"spanish": ""
+},
+"Appearflags::choices::1": {
+"english": "Only In",
 "spanish": ""
 },
 "Angles::angles": {
-"english": "Pitch Yaw Roll (Y Z X) ",
+"english": "Pitch Yaw Roll (Y Z X)",
 "spanish": ""
 },
 "Angles::angles::description": {
@@ -539,7 +579,7 @@
 "spanish": ""
 },
 "Targetx::delay": {
-"english": "Delay before trigger ",
+"english": "Delay before trigger",
 "spanish": ""
 },
 "Targetx::delay::description": {
@@ -555,7 +595,7 @@
 "spanish": ""
 },
 "RenderFxChoices::renderfx": {
-"english": "Render FX ",
+"english": "Render FX",
 "spanish": ""
 },
 "RenderFxChoices::renderfx::description": {
@@ -699,7 +739,7 @@
 "spanish": ""
 },
 "RenderFields::rendermode": {
-"english": "Render Mode ",
+"english": "Render Mode",
 "spanish": ""
 },
 "RenderFields::rendermode::description": {
@@ -763,7 +803,7 @@
 "spanish": ""
 },
 "RenderFields::rendercolor": {
-"english": "FX Color (R G B) ",
+"english": "FX Color (R G B)",
 "spanish": ""
 },
 "RenderFields::rendercolor::description": {
@@ -779,7 +819,7 @@
 "spanish": ""
 },
 "BaseItem::stay_visible_during_respawn": {
-"english": "Stay Visible During Respawn ",
+"english": "Stay Visible During Respawn",
 "spanish": ""
 },
 "BaseItem::stay_visible_during_respawn::description": {
@@ -803,7 +843,7 @@
 "spanish": ""
 },
 "BaseItem::flash_on_respawn": {
-"english": "Flash On Respawn ",
+"english": "Flash On Respawn",
 "spanish": ""
 },
 "BaseItem::flash_on_respawn::description": {
@@ -827,7 +867,7 @@
 "spanish": ""
 },
 "BaseItem::play_pickup_sound": {
-"english": "Play Pickup Sound ",
+"english": "Play Pickup Sound",
 "spanish": ""
 },
 "BaseItem::play_pickup_sound::description": {
@@ -851,7 +891,7 @@
 "spanish": ""
 },
 "BaseItem::fall_mode": {
-"english": "Fall Mode ",
+"english": "Fall Mode",
 "spanish": ""
 },
 "BaseItem::fall_mode::description": {
@@ -923,7 +963,7 @@
 "spanish": ""
 },
 "BaseCharger::fire_on_spawn": {
-"english": "Fire Targets On Map Spawn ",
+"english": "Fire Targets On Map Spawn",
 "spanish": ""
 },
 "BaseCharger::fire_on_spawn::description": {
@@ -979,7 +1019,7 @@
 "spanish": ""
 },
 "Unkillable::unkillable": {
-"english": "Is Unkillable ",
+"english": "Is Unkillable",
 "spanish": ""
 },
 "Unkillable::unkillable::description": {
@@ -1019,7 +1059,7 @@
 "spanish": ""
 },
 "Monster::is_player_ally": {
-"english": "Is Player Ally ",
+"english": "Is Player Ally",
 "spanish": ""
 },
 "Monster::is_player_ally::description": {
@@ -1059,7 +1099,7 @@
 "spanish": ""
 },
 "Monster::TriggerCondition": {
-"english": "Trigger Condition ",
+"english": "Trigger Condition",
 "spanish": ""
 },
 "Monster::TriggerCondition::description": {
@@ -1147,7 +1187,7 @@
 "spanish": ""
 },
 "Monster::spawnflags": {
-"english": "spawnflags(flags) ",
+"english": "spawnflags(flags)",
 "spanish": ""
 },
 "Monster::spawnflags::description": {
@@ -1235,7 +1275,7 @@
 "spanish": ""
 },
 "Monster::allow_follow": {
-"english": "Allow NPC to follow players ",
+"english": "Allow NPC to follow players",
 "spanish": ""
 },
 "Monster::allow_follow::description": {
@@ -1283,7 +1323,7 @@
 "spanish": ""
 },
 "TalkMonster::suspicious": {
-"english": "Suspicious ",
+"english": "Suspicious",
 "spanish": ""
 },
 "TalkMonster::suspicious::description": {
@@ -1307,7 +1347,7 @@
 "spanish": ""
 },
 "gibshooterbase::m_iGibs": {
-"english": "Number of Gibs ",
+"english": "Number of Gibs",
 "spanish": ""
 },
 "gibshooterbase::m_iGibs::description": {
@@ -1315,7 +1355,7 @@
 "spanish": ""
 },
 "gibshooterbase::delay": {
-"english": "Delay between shots ",
+"english": "Delay between shots",
 "spanish": ""
 },
 "gibshooterbase::delay::description": {
@@ -1323,7 +1363,7 @@
 "spanish": ""
 },
 "gibshooterbase::m_flVelocity": {
-"english": "Gib Velocity ",
+"english": "Gib Velocity",
 "spanish": ""
 },
 "gibshooterbase::m_flVelocity::description": {
@@ -1331,7 +1371,7 @@
 "spanish": ""
 },
 "gibshooterbase::m_flVariance": {
-"english": "Course Variance ",
+"english": "Course Variance",
 "spanish": ""
 },
 "gibshooterbase::m_flVariance::description": {
@@ -1339,7 +1379,7 @@
 "spanish": ""
 },
 "gibshooterbase::m_flGibLife": {
-"english": "Gib Life ",
+"english": "Gib Life",
 "spanish": ""
 },
 "gibshooterbase::m_flGibLife::description": {
@@ -1347,7 +1387,7 @@
 "spanish": ""
 },
 "gibshooterbase::spawnflags": {
-"english": "spawnflags(flags) ",
+"english": "spawnflags(flags)",
 "spanish": ""
 },
 "gibshooterbase::spawnflags::description": {
@@ -1363,7 +1403,7 @@
 "spanish": ""
 },
 "Light::_light": {
-"english": "Brightness ",
+"english": "Brightness",
 "spanish": ""
 },
 "Light::_light::description": {
@@ -1371,7 +1411,7 @@
 "spanish": ""
 },
 "Light::style": {
-"english": "Appearance ",
+"english": "Appearance",
 "spanish": ""
 },
 "Light::style::description": {
@@ -1491,7 +1531,7 @@
 "spanish": ""
 },
 "Breakable::health": {
-"english": "Strength ",
+"english": "Strength",
 "spanish": ""
 },
 "Breakable::health::description": {
@@ -1499,7 +1539,7 @@
 "spanish": ""
 },
 "Breakable::material": {
-"english": "Material type ",
+"english": "Material type",
 "spanish": ""
 },
 "Breakable::material::description": {
@@ -1579,7 +1619,7 @@
 "spanish": ""
 },
 "Breakable::explosion": {
-"english": "Gibs Direction ",
+"english": "Gibs Direction",
 "spanish": ""
 },
 "Breakable::explosion::description": {
@@ -1603,7 +1643,7 @@
 "spanish": ""
 },
 "Breakable::delay": {
-"english": "Delay before fire ",
+"english": "Delay before fire",
 "spanish": ""
 },
 "Breakable::delay::description": {
@@ -1611,7 +1651,7 @@
 "spanish": ""
 },
 "Breakable::gibmodel": {
-"english": "Gib Model ",
+"english": "Gib Model",
 "spanish": ""
 },
 "Breakable::gibmodel::description": {
@@ -1627,7 +1667,7 @@
 "spanish": ""
 },
 "Breakable::explodemagnitude": {
-"english": "Explode Magnitude (0=none) ",
+"english": "Explode Magnitude (0=none)",
 "spanish": ""
 },
 "Breakable::explodemagnitude::description": {
@@ -1635,7 +1675,7 @@
 "spanish": ""
 },
 "Door::speed": {
-"english": "Speed ",
+"english": "Speed",
 "spanish": ""
 },
 "Door::speed::description": {
@@ -1659,7 +1699,7 @@
 "spanish": ""
 },
 "Door::wait": {
-"english": "Delay before close ",
+"english": "Delay before close",
 "spanish": ""
 },
 "Door::wait::description": {
@@ -1683,7 +1723,7 @@
 "spanish": ""
 },
 "Door::dmg": {
-"english": "Damage inflicted when blocked ",
+"english": "Damage inflicted when blocked",
 "spanish": ""
 },
 "Door::dmg::description": {
@@ -1707,7 +1747,7 @@
 "spanish": ""
 },
 "Door::health": {
-"english": "Health (shoot open) ",
+"english": "Health (shoot open)",
 "spanish": ""
 },
 "Door::health::description": {
@@ -1715,7 +1755,7 @@
 "spanish": ""
 },
 "Door::spawnflags": {
-"english": "spawnflags(flags) ",
+"english": "spawnflags(flags)",
 "spanish": ""
 },
 "Door::spawnflags::description": {
@@ -1811,7 +1851,7 @@
 "spanish": ""
 },
 "BaseTank::spawnflags": {
-"english": "spawnflags(flags) ",
+"english": "spawnflags(flags)",
 "spanish": ""
 },
 "BaseTank::spawnflags::description": {
@@ -1843,7 +1883,7 @@
 "spanish": ""
 },
 "BaseTank::yawrate": {
-"english": "Yaw rate ",
+"english": "Yaw rate",
 "spanish": ""
 },
 "BaseTank::yawrate::description": {
@@ -1851,7 +1891,7 @@
 "spanish": ""
 },
 "BaseTank::yawrange": {
-"english": "Yaw range ",
+"english": "Yaw range",
 "spanish": ""
 },
 "BaseTank::yawrange::description": {
@@ -1859,7 +1899,7 @@
 "spanish": ""
 },
 "BaseTank::yawtolerance": {
-"english": "Yaw tolerance ",
+"english": "Yaw tolerance",
 "spanish": ""
 },
 "BaseTank::yawtolerance::description": {
@@ -1867,7 +1907,7 @@
 "spanish": ""
 },
 "BaseTank::pitchrate": {
-"english": "Pitch rate ",
+"english": "Pitch rate",
 "spanish": ""
 },
 "BaseTank::pitchrate::description": {
@@ -1875,7 +1915,7 @@
 "spanish": ""
 },
 "BaseTank::pitchrange": {
-"english": "Pitch range ",
+"english": "Pitch range",
 "spanish": ""
 },
 "BaseTank::pitchrange::description": {
@@ -1883,7 +1923,7 @@
 "spanish": ""
 },
 "BaseTank::pitchtolerance": {
-"english": "Pitch tolerance ",
+"english": "Pitch tolerance",
 "spanish": ""
 },
 "BaseTank::pitchtolerance::description": {
@@ -1891,7 +1931,7 @@
 "spanish": ""
 },
 "BaseTank::barrel": {
-"english": "Barrel Length ",
+"english": "Barrel Length",
 "spanish": ""
 },
 "BaseTank::barrel::description": {
@@ -1899,7 +1939,7 @@
 "spanish": ""
 },
 "BaseTank::barrely": {
-"english": "Barrel Horizontal ",
+"english": "Barrel Horizontal",
 "spanish": ""
 },
 "BaseTank::barrely::description": {
@@ -1907,7 +1947,7 @@
 "spanish": ""
 },
 "BaseTank::barrelz": {
-"english": "Barrel Vertical ",
+"english": "Barrel Vertical",
 "spanish": ""
 },
 "BaseTank::barrelz::description": {
@@ -1915,7 +1955,7 @@
 "spanish": ""
 },
 "BaseTank::spritesmoke": {
-"english": "Smoke Sprite ",
+"english": "Smoke Sprite",
 "spanish": ""
 },
 "BaseTank::spritesmoke::description": {
@@ -1923,7 +1963,7 @@
 "spanish": ""
 },
 "BaseTank::spriteflash": {
-"english": "Flash Sprite ",
+"english": "Flash Sprite",
 "spanish": ""
 },
 "BaseTank::spriteflash::description": {
@@ -1931,7 +1971,7 @@
 "spanish": ""
 },
 "BaseTank::spritescale": {
-"english": "Sprite scale ",
+"english": "Sprite scale",
 "spanish": ""
 },
 "BaseTank::spritescale::description": {
@@ -1939,7 +1979,7 @@
 "spanish": ""
 },
 "BaseTank::rotatesound": {
-"english": "Rotate Sound ",
+"english": "Rotate Sound",
 "spanish": ""
 },
 "BaseTank::rotatesound::description": {
@@ -1947,7 +1987,7 @@
 "spanish": ""
 },
 "BaseTank::firerate": {
-"english": "Rate of Fire ",
+"english": "Rate of Fire",
 "spanish": ""
 },
 "BaseTank::firerate::description": {
@@ -1955,7 +1995,7 @@
 "spanish": ""
 },
 "BaseTank::bullet_damage": {
-"english": "Damage Per Bullet ",
+"english": "Damage Per Bullet",
 "spanish": ""
 },
 "BaseTank::bullet_damage::description": {
@@ -1963,7 +2003,7 @@
 "spanish": ""
 },
 "BaseTank::persistence": {
-"english": "Firing persistence ",
+"english": "Firing persistence",
 "spanish": ""
 },
 "BaseTank::persistence::description": {
@@ -1971,7 +2011,7 @@
 "spanish": ""
 },
 "BaseTank::firespread": {
-"english": "Bullet accuracy ",
+"english": "Bullet accuracy",
 "spanish": ""
 },
 "BaseTank::firespread::description": {
@@ -2019,7 +2059,7 @@
 "spanish": ""
 },
 "BaseTank::minRange": {
-"english": "Minmum target range ",
+"english": "Minmum target range",
 "spanish": ""
 },
 "BaseTank::minRange::description": {
@@ -2027,7 +2067,7 @@
 "spanish": ""
 },
 "BaseTank::maxRange": {
-"english": "Maximum target range ",
+"english": "Maximum target range",
 "spanish": ""
 },
 "BaseTank::maxRange::description": {
@@ -2043,7 +2083,7 @@
 "spanish": ""
 },
 "BaseTank::enemytype": {
-"english": "Enemy Type ",
+"english": "Enemy Type",
 "spanish": ""
 },
 "BaseTank::enemytype::description": {
@@ -2075,7 +2115,7 @@
 "spanish": ""
 },
 "BaseTank::enable_target_laser": {
-"english": "Enable Target Laser ",
+"english": "Enable Target Laser",
 "spanish": ""
 },
 "BaseTank::enable_target_laser::description": {
@@ -2099,7 +2139,7 @@
 "spanish": ""
 },
 "BaseTank::target_laser_sprite": {
-"english": "Target Laser Beam Sprite ",
+"english": "Target Laser Beam Sprite",
 "spanish": ""
 },
 "BaseTank::target_laser_sprite::description": {
@@ -2107,7 +2147,7 @@
 "spanish": ""
 },
 "BaseTank::target_laser_width": {
-"english": "Target Laser Beam Width ",
+"english": "Target Laser Beam Width",
 "spanish": ""
 },
 "BaseTank::target_laser_width::description": {
@@ -2115,7 +2155,7 @@
 "spanish": ""
 },
 "BaseTank::target_laser_color": {
-"english": "Target Laser Beam Color ",
+"english": "Target Laser Beam Color",
 "spanish": ""
 },
 "BaseTank::target_laser_color::description": {
@@ -2139,7 +2179,7 @@
 "spanish": ""
 },
 "PlatSounds::volume": {
-"english": "Sound Volume 0.0 - 1.0 ",
+"english": "Sound Volume 0.0 - 1.0",
 "spanish": ""
 },
 "PlatSounds::volume::description": {
@@ -2147,7 +2187,7 @@
 "spanish": ""
 },
 "Trackchange::height": {
-"english": "Travel altitude ",
+"english": "Travel altitude",
 "spanish": ""
 },
 "Trackchange::height::description": {
@@ -2155,7 +2195,7 @@
 "spanish": ""
 },
 "Trackchange::spawnflags": {
-"english": "spawnflags(flags) ",
+"english": "spawnflags(flags)",
 "spanish": ""
 },
 "Trackchange::spawnflags::description": {
@@ -2211,7 +2251,7 @@
 "spanish": ""
 },
 "Trackchange::rotation": {
-"english": "Spin amount ",
+"english": "Spin amount",
 "spanish": ""
 },
 "Trackchange::rotation::description": {
@@ -2243,7 +2283,7 @@
 "spanish": ""
 },
 "Trackchange::speed": {
-"english": "Move/Rotate speed ",
+"english": "Move/Rotate speed",
 "spanish": ""
 },
 "Trackchange::speed::description": {
@@ -2267,7 +2307,7 @@
 "spanish": ""
 },
 "Trigger::spawnflags": {
-"english": "spawnflags(flags) ",
+"english": "spawnflags(flags)",
 "spanish": ""
 },
 "Trigger::spawnflags::description": {
@@ -2307,7 +2347,7 @@
 "spanish": ""
 },
 "BaseScriptedSequence::m_iszPlay": {
-"english": "Action Animation ",
+"english": "Action Animation",
 "spanish": ""
 },
 "BaseScriptedSequence::m_iszPlay::description": {
@@ -2315,7 +2355,7 @@
 "spanish": ""
 },
 "BaseScriptedSequence::m_flRadius": {
-"english": "Search Radius ",
+"english": "Search Radius",
 "spanish": ""
 },
 "BaseScriptedSequence::m_flRadius::description": {
@@ -2323,7 +2363,7 @@
 "spanish": ""
 },
 "BaseScriptedSequence::m_flRepeat": {
-"english": "Repeat Rate ms ",
+"english": "Repeat Rate ms",
 "spanish": ""
 },
 "BaseScriptedSequence::m_flRepeat::description": {
@@ -2331,7 +2371,7 @@
 "spanish": ""
 },
 "BaseScriptedSequence::m_fMoveTo": {
-"english": "Move to Position ",
+"english": "Move to Position",
 "spanish": ""
 },
 "BaseScriptedSequence::m_fMoveTo::description": {
@@ -2379,7 +2419,7 @@
 "spanish": ""
 },
 "BaseScriptedSequence::m_iFinishSchedule": {
-"english": "AI Schedule when done ",
+"english": "AI Schedule when done",
 "spanish": ""
 },
 "BaseScriptedSequence::m_iFinishSchedule::description": {
@@ -2403,7 +2443,7 @@
 "spanish": ""
 },
 "BaseScriptedSequence::spawnflags": {
-"english": "spawnflags(flags) ",
+"english": "spawnflags(flags)",
 "spanish": ""
 },
 "BaseScriptedSequence::spawnflags::description": {
@@ -2435,7 +2475,7 @@
 "spanish": ""
 },
 "aiscripted_sequence::m_iFinishSchedule": {
-"english": "AI Schedule when done ",
+"english": "AI Schedule when done",
 "spanish": ""
 },
 "aiscripted_sequence::m_iFinishSchedule::description": {
@@ -2475,7 +2515,7 @@
 "spanish": ""
 },
 "ambient_generic::health": {
-"english": "Volume (10 = loudest) ",
+"english": "Volume (10 = loudest)",
 "spanish": ""
 },
 "ambient_generic::health::description": {
@@ -2483,7 +2523,7 @@
 "spanish": ""
 },
 "ambient_generic::preset": {
-"english": "Dynamic Presets ",
+"english": "Dynamic Presets",
 "spanish": ""
 },
 "ambient_generic::preset::description": {
@@ -2715,7 +2755,7 @@
 "spanish": ""
 },
 "ambient_generic::volstart": {
-"english": "Start Volume ",
+"english": "Start Volume",
 "spanish": ""
 },
 "ambient_generic::volstart::description": {
@@ -2723,7 +2763,7 @@
 "spanish": ""
 },
 "ambient_generic::fadein": {
-"english": "Fade in time (0-100) ",
+"english": "Fade in time (0-100)",
 "spanish": ""
 },
 "ambient_generic::fadein::description": {
@@ -2731,7 +2771,7 @@
 "spanish": ""
 },
 "ambient_generic::fadeout": {
-"english": "Fade out time (0-100) ",
+"english": "Fade out time (0-100)",
 "spanish": ""
 },
 "ambient_generic::fadeout::description": {
@@ -2739,7 +2779,7 @@
 "spanish": ""
 },
 "ambient_generic::pitch": {
-"english": "Pitch (> 100 = higher) ",
+"english": "Pitch (> 100 = higher)",
 "spanish": ""
 },
 "ambient_generic::pitch::description": {
@@ -2747,7 +2787,7 @@
 "spanish": ""
 },
 "ambient_generic::pitchstart": {
-"english": "Start Pitch ",
+"english": "Start Pitch",
 "spanish": ""
 },
 "ambient_generic::pitchstart::description": {
@@ -2755,7 +2795,7 @@
 "spanish": ""
 },
 "ambient_generic::spinup": {
-"english": "Spin up time (0-100) ",
+"english": "Spin up time (0-100)",
 "spanish": ""
 },
 "ambient_generic::spinup::description": {
@@ -2763,7 +2803,7 @@
 "spanish": ""
 },
 "ambient_generic::spindown": {
-"english": "Spin down time (0-100) ",
+"english": "Spin down time (0-100)",
 "spanish": ""
 },
 "ambient_generic::spindown::description": {
@@ -2771,7 +2811,7 @@
 "spanish": ""
 },
 "ambient_generic::lfotype": {
-"english": "LFO type 0)off 1)sqr 2)tri 3)rnd ",
+"english": "LFO type 0)off 1)sqr 2)tri 3)rnd",
 "spanish": ""
 },
 "ambient_generic::lfotype::description": {
@@ -2779,7 +2819,7 @@
 "spanish": ""
 },
 "ambient_generic::lforate": {
-"english": "LFO rate (0-1000) ",
+"english": "LFO rate (0-1000)",
 "spanish": ""
 },
 "ambient_generic::lforate::description": {
@@ -2787,7 +2827,7 @@
 "spanish": ""
 },
 "ambient_generic::lfomodpitch": {
-"english": "LFO mod pitch (0-100) ",
+"english": "LFO mod pitch (0-100)",
 "spanish": ""
 },
 "ambient_generic::lfomodpitch::description": {
@@ -2795,7 +2835,7 @@
 "spanish": ""
 },
 "ambient_generic::lfomodvol": {
-"english": "LFO mod vol (0-100) ",
+"english": "LFO mod vol (0-100)",
 "spanish": ""
 },
 "ambient_generic::lfomodvol::description": {
@@ -2803,7 +2843,7 @@
 "spanish": ""
 },
 "ambient_generic::cspinup": {
-"english": "Incremental spinup count ",
+"english": "Incremental spinup count",
 "spanish": ""
 },
 "ambient_generic::cspinup::description": {
@@ -2811,7 +2851,7 @@
 "spanish": ""
 },
 "ambient_generic::spawnflags": {
-"english": "spawnflags(flags) ",
+"english": "spawnflags(flags)",
 "spanish": ""
 },
 "ambient_generic::spawnflags::description": {
@@ -2883,7 +2923,7 @@
 "spanish": ""
 },
 "ambient_music::command": {
-"english": "Command ",
+"english": "Command",
 "spanish": ""
 },
 "ambient_music::command::description": {
@@ -2923,7 +2963,7 @@
 "spanish": ""
 },
 "ambient_music::target_selector": {
-"english": "Target selector ",
+"english": "Target selector",
 "spanish": ""
 },
 "ambient_music::target_selector::description": {
@@ -2963,7 +3003,7 @@
 "spanish": ""
 },
 "ambient_music::remove_on_fire": {
-"english": "Remove on fire ",
+"english": "Remove on fire",
 "spanish": ""
 },
 "ambient_music::remove_on_fire::description": {
@@ -3071,7 +3111,7 @@
 "spanish": ""
 },
 "ammo_rpgclip::sequence": {
-"english": "Placement ",
+"english": "Placement",
 "spanish": ""
 },
 "ammo_rpgclip::sequence::description": {
@@ -3119,7 +3159,7 @@
 "spanish": ""
 },
 "button_target::spawnflags": {
-"english": "spawnflags(flags) ",
+"english": "spawnflags(flags)",
 "spanish": ""
 },
 "button_target::spawnflags::description": {
@@ -3159,7 +3199,7 @@
 "spanish": ""
 },
 "cycler::bodygroup": {
-"english": "Body Group ",
+"english": "Body Group",
 "spanish": ""
 },
 "cycler::bodygroup::description": {
@@ -3183,7 +3223,7 @@
 "spanish": ""
 },
 "cycler_sprite::framerate": {
-"english": "Frames per second ",
+"english": "Frames per second",
 "spanish": ""
 },
 "cycler_sprite::framerate::description": {
@@ -3215,7 +3255,7 @@
 "spanish": ""
 },
 "env_beam::renderamt": {
-"english": "Brightness (1 - 255) ",
+"english": "Brightness (1 - 255)",
 "spanish": ""
 },
 "env_beam::renderamt::description": {
@@ -3223,7 +3263,7 @@
 "spanish": ""
 },
 "env_beam::rendercolor": {
-"english": "Beam Color (R G B) ",
+"english": "Beam Color (R G B)",
 "spanish": ""
 },
 "env_beam::rendercolor::description": {
@@ -3231,7 +3271,7 @@
 "spanish": ""
 },
 "env_beam::Radius": {
-"english": "Radius ",
+"english": "Radius",
 "spanish": ""
 },
 "env_beam::Radius::description": {
@@ -3239,7 +3279,7 @@
 "spanish": ""
 },
 "env_beam::life": {
-"english": "Life (seconds 0 = infinite) ",
+"english": "Life (seconds 0 = infinite)",
 "spanish": ""
 },
 "env_beam::life::description": {
@@ -3247,7 +3287,7 @@
 "spanish": ""
 },
 "env_beam::BoltWidth": {
-"english": "Width of beam (pixels*0.1 0-255) ",
+"english": "Width of beam (pixels*0.1 0-255)",
 "spanish": ""
 },
 "env_beam::BoltWidth::description": {
@@ -3255,7 +3295,7 @@
 "spanish": ""
 },
 "env_beam::NoiseAmplitude": {
-"english": "Amount of noise (0-255) ",
+"english": "Amount of noise (0-255)",
 "spanish": ""
 },
 "env_beam::NoiseAmplitude::description": {
@@ -3263,7 +3303,7 @@
 "spanish": ""
 },
 "env_beam::texture": {
-"english": "Sprite Name ",
+"english": "Sprite Name",
 "spanish": ""
 },
 "env_beam::texture::description": {
@@ -3271,7 +3311,7 @@
 "spanish": ""
 },
 "env_beam::TextureScroll": {
-"english": "Texture Scroll Rate (0-100) ",
+"english": "Texture Scroll Rate (0-100)",
 "spanish": ""
 },
 "env_beam::TextureScroll::description": {
@@ -3279,7 +3319,7 @@
 "spanish": ""
 },
 "env_beam::framerate": {
-"english": "Frames per 10 seconds ",
+"english": "Frames per 10 seconds",
 "spanish": ""
 },
 "env_beam::framerate::description": {
@@ -3287,7 +3327,7 @@
 "spanish": ""
 },
 "env_beam::framestart": {
-"english": "Starting Frame ",
+"english": "Starting Frame",
 "spanish": ""
 },
 "env_beam::framestart::description": {
@@ -3295,7 +3335,7 @@
 "spanish": ""
 },
 "env_beam::StrikeTime": {
-"english": "Strike again time (secs) ",
+"english": "Strike again time (secs)",
 "spanish": ""
 },
 "env_beam::StrikeTime::description": {
@@ -3303,7 +3343,7 @@
 "spanish": ""
 },
 "env_beam::damage": {
-"english": "Damage / second ",
+"english": "Damage / second",
 "spanish": ""
 },
 "env_beam::damage::description": {
@@ -3311,7 +3351,7 @@
 "spanish": ""
 },
 "env_beam::spawnflags": {
-"english": "spawnflags(flags) ",
+"english": "spawnflags(flags)",
 "spanish": ""
 },
 "env_beam::spawnflags::description": {
@@ -3399,7 +3439,7 @@
 "spanish": ""
 },
 "env_beverage::health": {
-"english": "Capacity ",
+"english": "Capacity",
 "spanish": ""
 },
 "env_beverage::health::description": {
@@ -3407,7 +3447,7 @@
 "spanish": ""
 },
 "env_beverage::skin": {
-"english": "Beverage Type ",
+"english": "Beverage Type",
 "spanish": ""
 },
 "env_beverage::skin::description": {
@@ -3479,7 +3519,7 @@
 "spanish": ""
 },
 "env_blood::color": {
-"english": "Blood Color ",
+"english": "Blood Color",
 "spanish": ""
 },
 "env_blood::color::description": {
@@ -3503,7 +3543,7 @@
 "spanish": ""
 },
 "env_blood::amount": {
-"english": "Amount of blood (damage to simulate) ",
+"english": "Amount of blood (damage to simulate)",
 "spanish": ""
 },
 "env_blood::amount::description": {
@@ -3511,7 +3551,7 @@
 "spanish": ""
 },
 "env_blood::spawnflags": {
-"english": "spawnflags(flags) ",
+"english": "spawnflags(flags)",
 "spanish": ""
 },
 "env_blood::spawnflags::description": {
@@ -3559,7 +3599,7 @@
 "spanish": ""
 },
 "env_bubbles::density": {
-"english": "Bubble density ",
+"english": "Bubble density",
 "spanish": ""
 },
 "env_bubbles::density::description": {
@@ -3567,7 +3607,7 @@
 "spanish": ""
 },
 "env_bubbles::frequency": {
-"english": "Bubble frequency ",
+"english": "Bubble frequency",
 "spanish": ""
 },
 "env_bubbles::frequency::description": {
@@ -3575,7 +3615,7 @@
 "spanish": ""
 },
 "env_bubbles::current": {
-"english": "Speed of Current ",
+"english": "Speed of Current",
 "spanish": ""
 },
 "env_bubbles::current::description": {
@@ -3583,7 +3623,7 @@
 "spanish": ""
 },
 "env_bubbles::spawnflags": {
-"english": "spawnflags(flags) ",
+"english": "spawnflags(flags)",
 "spanish": ""
 },
 "env_bubbles::spawnflags::description": {
@@ -3607,7 +3647,7 @@
 "spanish": ""
 },
 "env_explosion::iMagnitude": {
-"english": "Magnitude ",
+"english": "Magnitude",
 "spanish": ""
 },
 "env_explosion::iMagnitude::description": {
@@ -3615,7 +3655,7 @@
 "spanish": ""
 },
 "env_explosion::spawnflags": {
-"english": "spawnflags(flags) ",
+"english": "spawnflags(flags)",
 "spanish": ""
 },
 "env_explosion::spawnflags::description": {
@@ -3687,7 +3727,7 @@
 "spanish": ""
 },
 "env_global::triggermode": {
-"english": "Trigger Mode ",
+"english": "Trigger Mode",
 "spanish": ""
 },
 "env_global::triggermode::description": {
@@ -3727,7 +3767,7 @@
 "spanish": ""
 },
 "env_global::initialstate": {
-"english": "Initial State ",
+"english": "Initial State",
 "spanish": ""
 },
 "env_global::initialstate::description": {
@@ -3759,7 +3799,7 @@
 "spanish": ""
 },
 "env_global::spawnflags": {
-"english": "spawnflags(flags) ",
+"english": "spawnflags(flags)",
 "spanish": ""
 },
 "env_global::spawnflags::description": {
@@ -3783,7 +3823,7 @@
 "spanish": ""
 },
 "env_glow::model": {
-"english": "Sprite Name ",
+"english": "Sprite Name",
 "spanish": ""
 },
 "env_glow::model::description": {
@@ -3791,7 +3831,7 @@
 "spanish": ""
 },
 "env_glow::scale": {
-"english": "Scale ",
+"english": "Scale",
 "spanish": ""
 },
 "env_glow::scale::description": {
@@ -3807,7 +3847,7 @@
 "spanish": ""
 },
 "env_fade::spawnflags": {
-"english": "spawnflags(flags) ",
+"english": "spawnflags(flags)",
 "spanish": ""
 },
 "env_fade::spawnflags::description": {
@@ -3839,7 +3879,7 @@
 "spanish": ""
 },
 "env_fade::duration": {
-"english": "Duration (seconds) ",
+"english": "Duration (seconds)",
 "spanish": ""
 },
 "env_fade::duration::description": {
@@ -3847,7 +3887,7 @@
 "spanish": ""
 },
 "env_fade::holdtime": {
-"english": "Hold Fade (seconds) ",
+"english": "Hold Fade (seconds)",
 "spanish": ""
 },
 "env_fade::holdtime::description": {
@@ -3855,7 +3895,7 @@
 "spanish": ""
 },
 "env_fade::renderamt": {
-"english": "Fade Alpha ",
+"english": "Fade Alpha",
 "spanish": ""
 },
 "env_fade::renderamt::description": {
@@ -3863,7 +3903,7 @@
 "spanish": ""
 },
 "env_fade::rendercolor": {
-"english": "Fade Color (R G B) ",
+"english": "Fade Color (R G B)",
 "spanish": ""
 },
 "env_fade::rendercolor::description": {
@@ -3879,7 +3919,7 @@
 "spanish": ""
 },
 "env_fog::spawnflags": {
-"english": "spawnflags(flags) ",
+"english": "spawnflags(flags)",
 "spanish": ""
 },
 "env_fog::spawnflags::description": {
@@ -3895,7 +3935,7 @@
 "spanish": ""
 },
 "env_fog::density": {
-"english": "Density (0.0-1.0) ",
+"english": "Density (0.0-1.0)",
 "spanish": ""
 },
 "env_fog::density::description": {
@@ -3903,7 +3943,7 @@
 "spanish": ""
 },
 "env_fog::fogStartDistance": {
-"english": "Start Distance ",
+"english": "Start Distance",
 "spanish": ""
 },
 "env_fog::fogStartDistance::description": {
@@ -3911,7 +3951,7 @@
 "spanish": ""
 },
 "env_fog::fogStopDistance": {
-"english": "Stop Distance ",
+"english": "Stop Distance",
 "spanish": ""
 },
 "env_fog::fogStopDistance::description": {
@@ -3919,7 +3959,7 @@
 "spanish": ""
 },
 "env_fog::rendercolor": {
-"english": "Color (R G B) ",
+"english": "Color (R G B)",
 "spanish": ""
 },
 "env_fog::rendercolor::description": {
@@ -3935,7 +3975,7 @@
 "spanish": ""
 },
 "env_funnel::spawnflags": {
-"english": "spawnflags(flags) ",
+"english": "spawnflags(flags)",
 "spanish": ""
 },
 "env_funnel::spawnflags::description": {
@@ -3967,7 +4007,7 @@
 "spanish": ""
 },
 "env_laser::renderamt": {
-"english": "Brightness (1 - 255) ",
+"english": "Brightness (1 - 255)",
 "spanish": ""
 },
 "env_laser::renderamt::description": {
@@ -3975,7 +4015,7 @@
 "spanish": ""
 },
 "env_laser::rendercolor": {
-"english": "Beam Color (R G B) ",
+"english": "Beam Color (R G B)",
 "spanish": ""
 },
 "env_laser::rendercolor::description": {
@@ -3983,7 +4023,7 @@
 "spanish": ""
 },
 "env_laser::width": {
-"english": "Width of beam (pixels*0.1 0-255) ",
+"english": "Width of beam (pixels*0.1 0-255)",
 "spanish": ""
 },
 "env_laser::width::description": {
@@ -3991,7 +4031,7 @@
 "spanish": ""
 },
 "env_laser::NoiseAmplitude": {
-"english": "Amount of noise (0-255) ",
+"english": "Amount of noise (0-255)",
 "spanish": ""
 },
 "env_laser::NoiseAmplitude::description": {
@@ -3999,7 +4039,7 @@
 "spanish": ""
 },
 "env_laser::texture": {
-"english": "Sprite Name ",
+"english": "Sprite Name",
 "spanish": ""
 },
 "env_laser::texture::description": {
@@ -4007,7 +4047,7 @@
 "spanish": ""
 },
 "env_laser::EndSprite": {
-"english": "End Sprite ",
+"english": "End Sprite",
 "spanish": ""
 },
 "env_laser::EndSprite::description": {
@@ -4015,7 +4055,7 @@
 "spanish": ""
 },
 "env_laser::TextureScroll": {
-"english": "Texture Scroll Rate (0-100) ",
+"english": "Texture Scroll Rate (0-100)",
 "spanish": ""
 },
 "env_laser::TextureScroll::description": {
@@ -4023,7 +4063,7 @@
 "spanish": ""
 },
 "env_laser::framestart": {
-"english": "Starting Frame ",
+"english": "Starting Frame",
 "spanish": ""
 },
 "env_laser::framestart::description": {
@@ -4031,7 +4071,7 @@
 "spanish": ""
 },
 "env_laser::damage": {
-"english": "Damage / second ",
+"english": "Damage / second",
 "spanish": ""
 },
 "env_laser::damage::description": {
@@ -4039,7 +4079,7 @@
 "spanish": ""
 },
 "env_laser::spawnflags": {
-"english": "spawnflags(flags) ",
+"english": "spawnflags(flags)",
 "spanish": ""
 },
 "env_laser::spawnflags::description": {
@@ -4095,7 +4135,7 @@
 "spanish": ""
 },
 "env_message::spawnflags": {
-"english": "spawnflags(flags) ",
+"english": "spawnflags(flags)",
 "spanish": ""
 },
 "env_message::spawnflags::description": {
@@ -4127,7 +4167,7 @@
 "spanish": ""
 },
 "env_message::messagevolume": {
-"english": "Volume 0-10 ",
+"english": "Volume 0-10",
 "spanish": ""
 },
 "env_message::messagevolume::description": {
@@ -4135,7 +4175,7 @@
 "spanish": ""
 },
 "env_message::messageattenuation": {
-"english": "Sound Radius ",
+"english": "Sound Radius",
 "spanish": ""
 },
 "env_message::messageattenuation::description": {
@@ -4183,7 +4223,7 @@
 "spanish": ""
 },
 "env_render::spawnflags": {
-"english": "spawnflags(flags) ",
+"english": "spawnflags(flags)",
 "spanish": ""
 },
 "env_render::spawnflags::description": {
@@ -4231,7 +4271,7 @@
 "spanish": ""
 },
 "env_shake::spawnflags": {
-"english": "spawnflags(flags) ",
+"english": "spawnflags(flags)",
 "spanish": ""
 },
 "env_shake::spawnflags::description": {
@@ -4247,7 +4287,7 @@
 "spanish": ""
 },
 "env_shake::amplitude": {
-"english": "Amplitude 0-16 ",
+"english": "Amplitude 0-16",
 "spanish": ""
 },
 "env_shake::amplitude::description": {
@@ -4255,7 +4295,7 @@
 "spanish": ""
 },
 "env_shake::radius": {
-"english": "Effect radius ",
+"english": "Effect radius",
 "spanish": ""
 },
 "env_shake::radius::description": {
@@ -4263,7 +4303,7 @@
 "spanish": ""
 },
 "env_shake::duration": {
-"english": "Duration (seconds) ",
+"english": "Duration (seconds)",
 "spanish": ""
 },
 "env_shake::duration::description": {
@@ -4271,7 +4311,7 @@
 "spanish": ""
 },
 "env_shake::frequency": {
-"english": "0.1 = jerk, 255.0 = rumble ",
+"english": "0.1 = jerk, 255.0 = rumble",
 "spanish": ""
 },
 "env_shake::frequency::description": {
@@ -4287,7 +4327,7 @@
 "spanish": ""
 },
 "env_shooter::shootmodel": {
-"english": "Model or Sprite name ",
+"english": "Model or Sprite name",
 "spanish": ""
 },
 "env_shooter::shootmodel::description": {
@@ -4295,7 +4335,7 @@
 "spanish": ""
 },
 "env_shooter::shootsounds": {
-"english": "Material Sound ",
+"english": "Material Sound",
 "spanish": ""
 },
 "env_shooter::shootsounds::description": {
@@ -4351,7 +4391,7 @@
 "spanish": ""
 },
 "env_shooter::scale": {
-"english": "Gib Sprite Scale ",
+"english": "Gib Sprite Scale",
 "spanish": ""
 },
 "env_shooter::scale::description": {
@@ -4359,7 +4399,7 @@
 "spanish": ""
 },
 "env_shooter::skin": {
-"english": "Gib Skin ",
+"english": "Gib Skin",
 "spanish": ""
 },
 "env_shooter::skin::description": {
@@ -4375,7 +4415,7 @@
 "spanish": ""
 },
 "env_sound::radius": {
-"english": "Radius ",
+"english": "Radius",
 "spanish": ""
 },
 "env_sound::radius::description": {
@@ -4383,7 +4423,7 @@
 "spanish": ""
 },
 "env_sound::roomtype": {
-"english": "Room Type ",
+"english": "Room Type",
 "spanish": ""
 },
 "env_sound::roomtype::description": {
@@ -4631,7 +4671,7 @@
 "spanish": ""
 },
 "env_spark::MaxDelay": {
-"english": "Max Delay ",
+"english": "Max Delay",
 "spanish": ""
 },
 "env_spark::MaxDelay::description": {
@@ -4639,7 +4679,7 @@
 "spanish": ""
 },
 "env_spark::spawnflags": {
-"english": "spawnflags(flags) ",
+"english": "spawnflags(flags)",
 "spanish": ""
 },
 "env_spark::spawnflags::description": {
@@ -4671,7 +4711,7 @@
 "spanish": ""
 },
 "env_sprite::framerate": {
-"english": "Framerate ",
+"english": "Framerate",
 "spanish": ""
 },
 "env_sprite::framerate::description": {
@@ -4679,7 +4719,7 @@
 "spanish": ""
 },
 "env_sprite::model": {
-"english": "Sprite Name ",
+"english": "Sprite Name",
 "spanish": ""
 },
 "env_sprite::model::description": {
@@ -4687,7 +4727,7 @@
 "spanish": ""
 },
 "env_sprite::scale": {
-"english": "Scale ",
+"english": "Scale",
 "spanish": ""
 },
 "env_sprite::scale::description": {
@@ -4695,7 +4735,7 @@
 "spanish": ""
 },
 "env_sprite::spawnflags": {
-"english": "spawnflags(flags) ",
+"english": "spawnflags(flags)",
 "spanish": ""
 },
 "env_sprite::spawnflags::description": {
@@ -4727,7 +4767,7 @@
 "spanish": ""
 },
 "func_breakable::spawnflags": {
-"english": "spawnflags(flags) ",
+"english": "spawnflags(flags)",
 "spanish": ""
 },
 "func_breakable::spawnflags::description": {
@@ -4783,7 +4823,7 @@
 "spanish": ""
 },
 "func_button::speed": {
-"english": "Speed ",
+"english": "Speed",
 "spanish": ""
 },
 "func_button::speed::description": {
@@ -4815,7 +4855,7 @@
 "spanish": ""
 },
 "func_button::wait": {
-"english": "Delay before reset ",
+"english": "Delay before reset",
 "spanish": ""
 },
 "func_button::wait::description": {
@@ -4831,7 +4871,7 @@
 "spanish": ""
 },
 "func_button::spawnflags": {
-"english": "spawnflags(flags) ",
+"english": "spawnflags(flags)",
 "spanish": ""
 },
 "func_button::spawnflags::description": {
@@ -4919,7 +4959,7 @@
 "spanish": ""
 },
 "func_conveyor::spawnflags": {
-"english": "spawnflags(flags) ",
+"english": "spawnflags(flags)",
 "spanish": ""
 },
 "func_conveyor::spawnflags::description": {
@@ -4943,7 +4983,7 @@
 "spanish": ""
 },
 "func_conveyor::speed": {
-"english": "Conveyor Speed ",
+"english": "Conveyor Speed",
 "spanish": ""
 },
 "func_conveyor::speed::description": {
@@ -4975,7 +5015,7 @@
 "spanish": ""
 },
 "func_door_rotating::spawnflags": {
-"english": "spawnflags(flags) ",
+"english": "spawnflags(flags)",
 "spanish": ""
 },
 "func_door_rotating::spawnflags::description": {
@@ -5015,7 +5055,7 @@
 "spanish": ""
 },
 "func_door_rotating::distance": {
-"english": "Distance (deg) ",
+"english": "Distance (deg)",
 "spanish": ""
 },
 "func_door_rotating::distance::description": {
@@ -5031,7 +5071,7 @@
 "spanish": ""
 },
 "func_friction::modifier": {
-"english": "Percentage of standard (0 - 100) ",
+"english": "Percentage of standard (0 - 100)",
 "spanish": ""
 },
 "func_friction::modifier::description": {
@@ -5047,7 +5087,7 @@
 "spanish": ""
 },
 "func_guntarget::speed": {
-"english": "Speed (units per second) ",
+"english": "Speed (units per second)",
 "spanish": ""
 },
 "func_guntarget::speed::description": {
@@ -5071,7 +5111,7 @@
 "spanish": ""
 },
 "func_guntarget::health": {
-"english": "Damage to Take ",
+"english": "Damage to Take",
 "spanish": ""
 },
 "func_guntarget::health::description": {
@@ -5087,7 +5127,7 @@
 "spanish": ""
 },
 "func_guntarget::spawnflags": {
-"english": "spawnflags(flags) ",
+"english": "spawnflags(flags)",
 "spanish": ""
 },
 "func_guntarget::spawnflags::description": {
@@ -5119,7 +5159,7 @@
 "spanish": ""
 },
 "func_illusionary::skin": {
-"english": "Contents ",
+"english": "Contents",
 "spanish": ""
 },
 "func_illusionary::skin::description": {
@@ -5175,7 +5215,7 @@
 "spanish": ""
 },
 "func_mortar_field::m_flSpread": {
-"english": "Spread Radius ",
+"english": "Spread Radius",
 "spanish": ""
 },
 "func_mortar_field::m_flSpread::description": {
@@ -5183,7 +5223,7 @@
 "spanish": ""
 },
 "func_mortar_field::m_iCount": {
-"english": "Repeat Count ",
+"english": "Repeat Count",
 "spanish": ""
 },
 "func_mortar_field::m_iCount::description": {
@@ -5191,7 +5231,7 @@
 "spanish": ""
 },
 "func_mortar_field::m_fControl": {
-"english": "Targeting ",
+"english": "Targeting",
 "spanish": ""
 },
 "func_mortar_field::m_fControl::description": {
@@ -5247,7 +5287,7 @@
 "spanish": ""
 },
 "func_pendulum::speed": {
-"english": "Speed ",
+"english": "Speed",
 "spanish": ""
 },
 "func_pendulum::speed::description": {
@@ -5255,7 +5295,7 @@
 "spanish": ""
 },
 "func_pendulum::distance": {
-"english": "Distance (deg) ",
+"english": "Distance (deg)",
 "spanish": ""
 },
 "func_pendulum::distance::description": {
@@ -5263,7 +5303,7 @@
 "spanish": ""
 },
 "func_pendulum::damp": {
-"english": "Damping (0-1000) ",
+"english": "Damping (0-1000)",
 "spanish": ""
 },
 "func_pendulum::damp::description": {
@@ -5271,7 +5311,7 @@
 "spanish": ""
 },
 "func_pendulum::dmg": {
-"english": "Damage inflicted when blocked ",
+"english": "Damage inflicted when blocked",
 "spanish": ""
 },
 "func_pendulum::dmg::description": {
@@ -5279,7 +5319,7 @@
 "spanish": ""
 },
 "func_pendulum::spawnflags": {
-"english": "spawnflags(flags) ",
+"english": "spawnflags(flags)",
 "spanish": ""
 },
 "func_pendulum::spawnflags::description": {
@@ -5343,7 +5383,7 @@
 "spanish": ""
 },
 "func_plat::spawnflags": {
-"english": "spawnflags(flags) ",
+"english": "spawnflags(flags)",
 "spanish": ""
 },
 "func_plat::spawnflags::description": {
@@ -5359,7 +5399,7 @@
 "spanish": ""
 },
 "func_plat::height": {
-"english": "Travel altitude (can be negative) ",
+"english": "Travel altitude (can be negative)",
 "spanish": ""
 },
 "func_plat::height::description": {
@@ -5367,7 +5407,7 @@
 "spanish": ""
 },
 "func_plat::speed": {
-"english": "Speed ",
+"english": "Speed",
 "spanish": ""
 },
 "func_plat::speed::description": {
@@ -5391,7 +5431,7 @@
 "spanish": ""
 },
 "func_platrot::spawnflags": {
-"english": "spawnflags(flags) ",
+"english": "spawnflags(flags)",
 "spanish": ""
 },
 "func_platrot::spawnflags::description": {
@@ -5423,7 +5463,7 @@
 "spanish": ""
 },
 "func_platrot::speed": {
-"english": "Speed of rotation ",
+"english": "Speed of rotation",
 "spanish": ""
 },
 "func_platrot::speed::description": {
@@ -5431,7 +5471,7 @@
 "spanish": ""
 },
 "func_platrot::height": {
-"english": "Travel altitude (can be negative) ",
+"english": "Travel altitude (can be negative)",
 "spanish": ""
 },
 "func_platrot::height::description": {
@@ -5439,7 +5479,7 @@
 "spanish": ""
 },
 "func_platrot::rotation": {
-"english": "Spin amount ",
+"english": "Spin amount",
 "spanish": ""
 },
 "func_platrot::rotation::description": {
@@ -5463,7 +5503,7 @@
 "spanish": ""
 },
 "func_pushable::size": {
-"english": "Hull Size ",
+"english": "Hull Size",
 "spanish": ""
 },
 "func_pushable::size::description": {
@@ -5503,7 +5543,7 @@
 "spanish": ""
 },
 "func_pushable::spawnflags": {
-"english": "spawnflags(flags) ",
+"english": "spawnflags(flags)",
 "spanish": ""
 },
 "func_pushable::spawnflags::description": {
@@ -5519,7 +5559,7 @@
 "spanish": ""
 },
 "func_pushable::friction": {
-"english": "Friction (0-400) ",
+"english": "Friction (0-400)",
 "spanish": ""
 },
 "func_pushable::friction::description": {
@@ -5527,7 +5567,7 @@
 "spanish": ""
 },
 "func_pushable::buoyancy": {
-"english": "Buoyancy ",
+"english": "Buoyancy",
 "spanish": ""
 },
 "func_pushable::buoyancy::description": {
@@ -5567,7 +5607,7 @@
 "spanish": ""
 },
 "func_rot_button::speed": {
-"english": "Speed ",
+"english": "Speed",
 "spanish": ""
 },
 "func_rot_button::speed::description": {
@@ -5583,7 +5623,7 @@
 "spanish": ""
 },
 "func_rot_button::sounds": {
-"english": "Sounds ",
+"english": "Sounds",
 "spanish": ""
 },
 "func_rot_button::sounds::description": {
@@ -5591,7 +5631,7 @@
 "spanish": ""
 },
 "func_rot_button::wait": {
-"english": "Delay before reset ",
+"english": "Delay before reset",
 "spanish": ""
 },
 "func_rot_button::wait::description": {
@@ -5607,7 +5647,7 @@
 "spanish": ""
 },
 "func_rot_button::delay": {
-"english": "Delay before trigger ",
+"english": "Delay before trigger",
 "spanish": ""
 },
 "func_rot_button::delay::description": {
@@ -5615,7 +5655,7 @@
 "spanish": ""
 },
 "func_rot_button::distance": {
-"english": "Distance (deg) ",
+"english": "Distance (deg)",
 "spanish": ""
 },
 "func_rot_button::distance::description": {
@@ -5623,7 +5663,7 @@
 "spanish": ""
 },
 "func_rot_button::spawnflags": {
-"english": "spawnflags(flags) ",
+"english": "spawnflags(flags)",
 "spanish": ""
 },
 "func_rot_button::spawnflags::description": {
@@ -5695,7 +5735,7 @@
 "spanish": ""
 },
 "func_rotating::speed": {
-"english": "Rotation Speed ",
+"english": "Rotation Speed",
 "spanish": ""
 },
 "func_rotating::speed::description": {
@@ -5703,7 +5743,7 @@
 "spanish": ""
 },
 "func_rotating::volume": {
-"english": "Volume (10 = loudest) ",
+"english": "Volume (10 = loudest)",
 "spanish": ""
 },
 "func_rotating::volume::description": {
@@ -5711,7 +5751,7 @@
 "spanish": ""
 },
 "func_rotating::fanfriction": {
-"english": "Friction (0 - 100%) ",
+"english": "Friction (0 - 100%)",
 "spanish": ""
 },
 "func_rotating::fanfriction::description": {
@@ -5727,7 +5767,7 @@
 "spanish": ""
 },
 "func_rotating::spawnflags": {
-"english": "spawnflags(flags) ",
+"english": "spawnflags(flags)",
 "spanish": ""
 },
 "func_rotating::spawnflags::description": {
@@ -5823,7 +5863,7 @@
 "spanish": ""
 },
 "func_rotating::spawnorigin": {
-"english": "X Y Z - Move here after lighting ",
+"english": "X Y Z - Move here after lighting",
 "spanish": ""
 },
 "func_rotating::spawnorigin::description": {
@@ -5831,7 +5871,7 @@
 "spanish": ""
 },
 "func_rotating::dmg": {
-"english": "Damage inflicted when blocked ",
+"english": "Damage inflicted when blocked",
 "spanish": ""
 },
 "func_rotating::dmg::description": {
@@ -5847,7 +5887,7 @@
 "spanish": ""
 },
 "func_tank::bullet": {
-"english": "Bullets ",
+"english": "Bullets",
 "spanish": ""
 },
 "func_tank::bullet::description": {
@@ -5935,7 +5975,7 @@
 "spanish": ""
 },
 "func_tankmortar::iMagnitude": {
-"english": "Explosion Magnitude ",
+"english": "Explosion Magnitude",
 "spanish": ""
 },
 "func_tankmortar::iMagnitude::description": {
@@ -5983,7 +6023,7 @@
 "spanish": ""
 },
 "func_tracktrain::spawnflags": {
-"english": "spawnflags(flags) ",
+"english": "spawnflags(flags)",
 "spanish": ""
 },
 "func_tracktrain::spawnflags::description": {
@@ -6031,7 +6071,7 @@
 "spanish": ""
 },
 "func_tracktrain::wheels": {
-"english": "Distance between the wheels ",
+"english": "Distance between the wheels",
 "spanish": ""
 },
 "func_tracktrain::wheels::description": {
@@ -6039,7 +6079,7 @@
 "spanish": ""
 },
 "func_tracktrain::height": {
-"english": "Height above track ",
+"english": "Height above track",
 "spanish": ""
 },
 "func_tracktrain::height::description": {
@@ -6047,7 +6087,7 @@
 "spanish": ""
 },
 "func_tracktrain::startspeed": {
-"english": "Initial speed ",
+"english": "Initial speed",
 "spanish": ""
 },
 "func_tracktrain::startspeed::description": {
@@ -6055,7 +6095,7 @@
 "spanish": ""
 },
 "func_tracktrain::speed": {
-"english": "Speed (units per second) ",
+"english": "Speed (units per second)",
 "spanish": ""
 },
 "func_tracktrain::speed::description": {
@@ -6063,7 +6103,7 @@
 "spanish": ""
 },
 "func_tracktrain::dmg": {
-"english": "Damage on crush ",
+"english": "Damage on crush",
 "spanish": ""
 },
 "func_tracktrain::dmg::description": {
@@ -6071,7 +6111,7 @@
 "spanish": ""
 },
 "func_tracktrain::volume": {
-"english": "Volume (10 = loudest) ",
+"english": "Volume (10 = loudest)",
 "spanish": ""
 },
 "func_tracktrain::volume::description": {
@@ -6079,7 +6119,7 @@
 "spanish": ""
 },
 "func_tracktrain::bank": {
-"english": "Bank angle on turns ",
+"english": "Bank angle on turns",
 "spanish": ""
 },
 "func_tracktrain::bank::description": {
@@ -6127,7 +6167,7 @@
 "spanish": ""
 },
 "func_train::speed": {
-"english": "Speed (units per second) ",
+"english": "Speed (units per second)",
 "spanish": ""
 },
 "func_train::speed::description": {
@@ -6135,7 +6175,7 @@
 "spanish": ""
 },
 "func_train::dmg": {
-"english": "Damage on crush ",
+"english": "Damage on crush",
 "spanish": ""
 },
 "func_train::dmg::description": {
@@ -6143,7 +6183,7 @@
 "spanish": ""
 },
 "func_train::skin": {
-"english": "Contents ",
+"english": "Contents",
 "spanish": ""
 },
 "func_train::skin::description": {
@@ -6191,7 +6231,7 @@
 "spanish": ""
 },
 "func_train::spawnflags": {
-"english": "spawnflags(flags) ",
+"english": "spawnflags(flags)",
 "spanish": ""
 },
 "func_train::spawnflags::description": {
@@ -6239,7 +6279,7 @@
 "spanish": ""
 },
 "func_wall_toggle::spawnflags": {
-"english": "spawnflags(flags) ",
+"english": "spawnflags(flags)",
 "spanish": ""
 },
 "func_wall_toggle::spawnflags::description": {
@@ -6263,7 +6303,7 @@
 "spanish": ""
 },
 "func_water::spawnflags": {
-"english": "spawnflags(flags) ",
+"english": "spawnflags(flags)",
 "spanish": ""
 },
 "func_water::spawnflags::description": {
@@ -6287,7 +6327,7 @@
 "spanish": ""
 },
 "func_water::skin": {
-"english": "Contents ",
+"english": "Contents",
 "spanish": ""
 },
 "func_water::skin::description": {
@@ -6319,7 +6359,7 @@
 "spanish": ""
 },
 "func_water::WaveHeight": {
-"english": "Wave Height ",
+"english": "Wave Height",
 "spanish": ""
 },
 "func_water::WaveHeight::description": {
@@ -6335,7 +6375,7 @@
 "spanish": ""
 },
 "game_counter::spawnflags": {
-"english": "spawnflags(flags) ",
+"english": "spawnflags(flags)",
 "spanish": ""
 },
 "game_counter::spawnflags::description": {
@@ -6359,7 +6399,7 @@
 "spanish": ""
 },
 "game_counter::frags": {
-"english": "Initial Value ",
+"english": "Initial Value",
 "spanish": ""
 },
 "game_counter::frags::description": {
@@ -6367,7 +6407,7 @@
 "spanish": ""
 },
 "game_counter::health": {
-"english": "Limit Value ",
+"english": "Limit Value",
 "spanish": ""
 },
 "game_counter::health::description": {
@@ -6383,7 +6423,7 @@
 "spanish": ""
 },
 "game_counter_set::spawnflags": {
-"english": "spawnflags(flags) ",
+"english": "spawnflags(flags)",
 "spanish": ""
 },
 "game_counter_set::spawnflags::description": {
@@ -6399,7 +6439,7 @@
 "spanish": ""
 },
 "game_counter_set::frags": {
-"english": "New Value ",
+"english": "New Value",
 "spanish": ""
 },
 "game_counter_set::frags::description": {
@@ -6423,7 +6463,7 @@
 "spanish": ""
 },
 "game_player_equip::spawnflags": {
-"english": "spawnflags(flags) ",
+"english": "spawnflags(flags)",
 "spanish": ""
 },
 "game_player_equip::spawnflags::description": {
@@ -6447,7 +6487,7 @@
 "spanish": ""
 },
 "game_player_hurt::dmg": {
-"english": "Damage To Apply ",
+"english": "Damage To Apply",
 "spanish": ""
 },
 "game_player_hurt::dmg::description": {
@@ -6455,7 +6495,7 @@
 "spanish": ""
 },
 "game_player_hurt::spawnflags": {
-"english": "spawnflags(flags) ",
+"english": "spawnflags(flags)",
 "spanish": ""
 },
 "game_player_hurt::spawnflags::description": {
@@ -6479,7 +6519,7 @@
 "spanish": ""
 },
 "game_player_team::spawnflags": {
-"english": "spawnflags(flags) ",
+"english": "spawnflags(flags)",
 "spanish": ""
 },
 "game_player_team::spawnflags::description": {
@@ -6527,7 +6567,7 @@
 "spanish": ""
 },
 "game_score::spawnflags": {
-"english": "spawnflags(flags) ",
+"english": "spawnflags(flags)",
 "spanish": ""
 },
 "game_score::spawnflags::description": {
@@ -6551,7 +6591,7 @@
 "spanish": ""
 },
 "game_score::points": {
-"english": "Points to add (+/-) ",
+"english": "Points to add (+/-)",
 "spanish": ""
 },
 "game_score::points::description": {
@@ -6567,7 +6607,7 @@
 "spanish": ""
 },
 "game_team_master::spawnflags": {
-"english": "spawnflags(flags) ",
+"english": "spawnflags(flags)",
 "spanish": ""
 },
 "game_team_master::spawnflags::description": {
@@ -6583,7 +6623,7 @@
 "spanish": ""
 },
 "game_team_master::triggerstate": {
-"english": "Trigger State ",
+"english": "Trigger State",
 "spanish": ""
 },
 "game_team_master::triggerstate::description": {
@@ -6615,7 +6655,7 @@
 "spanish": ""
 },
 "game_team_master::teamindex": {
-"english": "Team Index (-1 = no team) ",
+"english": "Team Index (-1 = no team)",
 "spanish": ""
 },
 "game_team_master::teamindex::description": {
@@ -6631,7 +6671,7 @@
 "spanish": ""
 },
 "game_team_set::spawnflags": {
-"english": "spawnflags(flags) ",
+"english": "spawnflags(flags)",
 "spanish": ""
 },
 "game_team_set::spawnflags::description": {
@@ -6655,7 +6695,7 @@
 "spanish": ""
 },
 "game_text::spawnflags": {
-"english": "spawnflags(flags) ",
+"english": "spawnflags(flags)",
 "spanish": ""
 },
 "game_text::spawnflags::description": {
@@ -6679,7 +6719,7 @@
 "spanish": ""
 },
 "game_text::x": {
-"english": "X (0 - 1.0 = left to right) (-1 centers) ",
+"english": "X (0 - 1.0 = left to right) (-1 centers)",
 "spanish": ""
 },
 "game_text::x::description": {
@@ -6687,7 +6727,7 @@
 "spanish": ""
 },
 "game_text::y": {
-"english": "Y (0 - 1.0 = top to bottom) (-1 centers) ",
+"english": "Y (0 - 1.0 = top to bottom) (-1 centers)",
 "spanish": ""
 },
 "game_text::y::description": {
@@ -6695,7 +6735,7 @@
 "spanish": ""
 },
 "game_text::effect": {
-"english": "Text Effect ",
+"english": "Text Effect",
 "spanish": ""
 },
 "game_text::effect::description": {
@@ -6727,7 +6767,7 @@
 "spanish": ""
 },
 "game_text::color": {
-"english": "Color1 ",
+"english": "Color1",
 "spanish": ""
 },
 "game_text::color::description": {
@@ -6735,7 +6775,7 @@
 "spanish": ""
 },
 "game_text::color2": {
-"english": "Color2 ",
+"english": "Color2",
 "spanish": ""
 },
 "game_text::color2::description": {
@@ -6743,7 +6783,7 @@
 "spanish": ""
 },
 "game_text::fadein": {
-"english": "Fade in Time (or character scan time) ",
+"english": "Fade in Time (or character scan time)",
 "spanish": ""
 },
 "game_text::fadein::description": {
@@ -6751,7 +6791,7 @@
 "spanish": ""
 },
 "game_text::fadeout": {
-"english": "Fade Out Time ",
+"english": "Fade Out Time",
 "spanish": ""
 },
 "game_text::fadeout::description": {
@@ -6759,7 +6799,7 @@
 "spanish": ""
 },
 "game_text::holdtime": {
-"english": "Hold Time ",
+"english": "Hold Time",
 "spanish": ""
 },
 "game_text::holdtime::description": {
@@ -6767,7 +6807,7 @@
 "spanish": ""
 },
 "game_text::fxtime": {
-"english": "Scan time (scan effect only) ",
+"english": "Scan time (scan effect only)",
 "spanish": ""
 },
 "game_text::fxtime::description": {
@@ -6775,7 +6815,7 @@
 "spanish": ""
 },
 "game_text::channel": {
-"english": "Text Channel ",
+"english": "Text Channel",
 "spanish": ""
 },
 "game_text::channel::description": {
@@ -6887,7 +6927,7 @@
 "spanish": ""
 },
 "info_bigmomma::spawnflags": {
-"english": "spawnflags(flags) ",
+"english": "spawnflags(flags)",
 "spanish": ""
 },
 "info_bigmomma::spawnflags::description": {
@@ -6919,7 +6959,7 @@
 "spanish": ""
 },
 "info_bigmomma::radius": {
-"english": "Radius ",
+"english": "Radius",
 "spanish": ""
 },
 "info_bigmomma::radius::description": {
@@ -6927,7 +6967,7 @@
 "spanish": ""
 },
 "info_bigmomma::reachdelay": {
-"english": "Wait after approach ",
+"english": "Wait after approach",
 "spanish": ""
 },
 "info_bigmomma::reachdelay::description": {
@@ -6943,7 +6983,7 @@
 "spanish": ""
 },
 "info_bigmomma::reachsequence": {
-"english": "Sequence on approach ",
+"english": "Sequence on approach",
 "spanish": ""
 },
 "info_bigmomma::reachsequence::description": {
@@ -6951,7 +6991,7 @@
 "spanish": ""
 },
 "info_bigmomma::health": {
-"english": "Health on approach ",
+"english": "Health on approach",
 "spanish": ""
 },
 "info_bigmomma::health::description": {
@@ -6959,7 +6999,7 @@
 "spanish": ""
 },
 "info_bigmomma::presequence": {
-"english": "Sequence before approach ",
+"english": "Sequence before approach",
 "spanish": ""
 },
 "info_bigmomma::presequence::description": {
@@ -7127,7 +7167,7 @@
 "spanish": ""
 },
 "item_suit::body": {
-"english": "Body ",
+"english": "Body",
 "spanish": ""
 },
 "item_suit::body::description": {
@@ -7151,7 +7191,7 @@
 "spanish": ""
 },
 "item_suit::spawnflags": {
-"english": "spawnflags(flags) ",
+"english": "spawnflags(flags)",
 "spanish": ""
 },
 "item_suit::spawnflags::description": {
@@ -7175,7 +7215,7 @@
 "spanish": ""
 },
 "light::spawnflags": {
-"english": "spawnflags(flags) ",
+"english": "spawnflags(flags)",
 "spanish": ""
 },
 "light::spawnflags::description": {
@@ -7199,7 +7239,7 @@
 "spanish": ""
 },
 "light_spot::_cone": {
-"english": "Inner (bright) angle ",
+"english": "Inner (bright) angle",
 "spanish": ""
 },
 "light_spot::_cone::description": {
@@ -7207,7 +7247,7 @@
 "spanish": ""
 },
 "light_spot::_cone2": {
-"english": "Outer (fading) angle ",
+"english": "Outer (fading) angle",
 "spanish": ""
 },
 "light_spot::_cone2::description": {
@@ -7215,7 +7255,7 @@
 "spanish": ""
 },
 "light_spot::pitch": {
-"english": "Pitch ",
+"english": "Pitch",
 "spanish": ""
 },
 "light_spot::pitch::description": {
@@ -7223,7 +7263,7 @@
 "spanish": ""
 },
 "light_spot::_sky": {
-"english": "Is Sky ",
+"english": "Is Sky",
 "spanish": ""
 },
 "light_spot::_sky::description": {
@@ -7247,7 +7287,7 @@
 "spanish": ""
 },
 "light_spot::spawnflags": {
-"english": "spawnflags(flags) ",
+"english": "spawnflags(flags)",
 "spanish": ""
 },
 "light_spot::spawnflags::description": {
@@ -7271,7 +7311,7 @@
 "spanish": ""
 },
 "light_environment::pitch": {
-"english": "Pitch ",
+"english": "Pitch",
 "spanish": ""
 },
 "light_environment::pitch::description": {
@@ -7279,7 +7319,7 @@
 "spanish": ""
 },
 "light_environment::_light": {
-"english": "Brightness ",
+"english": "Brightness",
 "spanish": ""
 },
 "light_environment::_light::description": {
@@ -7495,7 +7535,7 @@
 "spanish": ""
 },
 "logic_setskill::skill_level": {
-"english": "Skill level to set ",
+"english": "Skill level to set",
 "spanish": ""
 },
 "logic_setskill::skill_level::description": {
@@ -7559,7 +7599,7 @@
 "spanish": ""
 },
 "momentary_door::spawnflags": {
-"english": "spawnflags(flags) ",
+"english": "spawnflags(flags)",
 "spanish": ""
 },
 "momentary_door::spawnflags::description": {
@@ -7583,7 +7623,7 @@
 "spanish": ""
 },
 "momentary_rot_button::speed": {
-"english": "Speed ",
+"english": "Speed",
 "spanish": ""
 },
 "momentary_rot_button::speed::description": {
@@ -7599,7 +7639,7 @@
 "spanish": ""
 },
 "momentary_rot_button::distance": {
-"english": "Distance (deg) ",
+"english": "Distance (deg)",
 "spanish": ""
 },
 "momentary_rot_button::distance::description": {
@@ -7607,7 +7647,7 @@
 "spanish": ""
 },
 "momentary_rot_button::returnspeed": {
-"english": "Auto-return speed ",
+"english": "Auto-return speed",
 "spanish": ""
 },
 "momentary_rot_button::returnspeed::description": {
@@ -7615,7 +7655,7 @@
 "spanish": ""
 },
 "momentary_rot_button::spawnflags": {
-"english": "spawnflags(flags) ",
+"english": "spawnflags(flags)",
 "spanish": ""
 },
 "momentary_rot_button::spawnflags::description": {
@@ -7695,7 +7735,7 @@
 "spanish": ""
 },
 "monster_alien_grunt::spawnflags": {
-"english": "spawnflags(flags) ",
+"english": "spawnflags(flags)",
 "spanish": ""
 },
 "monster_alien_grunt::spawnflags::description": {
@@ -7727,7 +7767,7 @@
 "spanish": ""
 },
 "monster_alien_slave::spawnflags": {
-"english": "spawnflags(flags) ",
+"english": "spawnflags(flags)",
 "spanish": ""
 },
 "monster_alien_slave::spawnflags::description": {
@@ -7759,7 +7799,7 @@
 "spanish": ""
 },
 "monster_apache::spawnflags": {
-"english": "spawnflags(flags) ",
+"english": "spawnflags(flags)",
 "spanish": ""
 },
 "monster_apache::spawnflags::description": {
@@ -7807,7 +7847,7 @@
 "spanish": ""
 },
 "monster_barney::bodystate": {
-"english": "bodystate ",
+"english": "bodystate",
 "spanish": ""
 },
 "monster_barney::bodystate::description": {
@@ -7847,7 +7887,7 @@
 "spanish": ""
 },
 "monster_barney_dead::bodystate": {
-"english": "bodystate ",
+"english": "bodystate",
 "spanish": ""
 },
 "monster_barney_dead::bodystate::description": {
@@ -7879,7 +7919,7 @@
 "spanish": ""
 },
 "monster_barney_dead::pose": {
-"english": "Pose ",
+"english": "Pose",
 "spanish": ""
 },
 "monster_barney_dead::pose::description": {
@@ -7919,7 +7959,7 @@
 "spanish": ""
 },
 "monster_bigmomma::netname": {
-"english": "First node ",
+"english": "First node",
 "spanish": ""
 },
 "monster_bigmomma::netname::description": {
@@ -7959,7 +7999,7 @@
 "spanish": ""
 },
 "monster_flyer_flock::iFlockSize": {
-"english": "Flock Size ",
+"english": "Flock Size",
 "spanish": ""
 },
 "monster_flyer_flock::iFlockSize::description": {
@@ -7967,7 +8007,7 @@
 "spanish": ""
 },
 "monster_flyer_flock::flFlockRadius": {
-"english": "Flock Radius ",
+"english": "Flock Radius",
 "spanish": ""
 },
 "monster_flyer_flock::flFlockRadius::description": {
@@ -7999,7 +8039,7 @@
 "spanish": ""
 },
 "monster_generic::spawnflags": {
-"english": "spawnflags(flags) ",
+"english": "spawnflags(flags)",
 "spanish": ""
 },
 "monster_generic::spawnflags::description": {
@@ -8023,7 +8063,7 @@
 "spanish": ""
 },
 "monster_generic::body": {
-"english": "Body ",
+"english": "Body",
 "spanish": ""
 },
 "monster_generic::body::description": {
@@ -8071,7 +8111,7 @@
 "spanish": ""
 },
 "monster_hevsuit_dead::pose": {
-"english": "Pose ",
+"english": "Pose",
 "spanish": ""
 },
 "monster_hevsuit_dead::pose::description": {
@@ -8119,7 +8159,7 @@
 "spanish": ""
 },
 "monster_hgrunt_dead::pose": {
-"english": "Pose ",
+"english": "Pose",
 "spanish": ""
 },
 "monster_hgrunt_dead::pose::description": {
@@ -8151,7 +8191,7 @@
 "spanish": ""
 },
 "monster_hgrunt_dead::body": {
-"english": "Body ",
+"english": "Body",
 "spanish": ""
 },
 "monster_hgrunt_dead::body::description": {
@@ -8207,7 +8247,7 @@
 "spanish": ""
 },
 "monster_houndeye::spawnflags": {
-"english": "spawnflags(flags) ",
+"english": "spawnflags(flags)",
 "spanish": ""
 },
 "monster_houndeye::spawnflags::description": {
@@ -8239,7 +8279,7 @@
 "spanish": ""
 },
 "monster_human_grunt::spawnflags": {
-"english": "spawnflags(flags) ",
+"english": "spawnflags(flags)",
 "spanish": ""
 },
 "monster_human_grunt::spawnflags::description": {
@@ -8263,7 +8303,7 @@
 "spanish": ""
 },
 "monster_human_grunt::weapons": {
-"english": "Weapons ",
+"english": "Weapons",
 "spanish": ""
 },
 "monster_human_grunt::weapons::description": {
@@ -8335,7 +8375,7 @@
 "spanish": ""
 },
 "monster_miniturret::orientation": {
-"english": "Orientation ",
+"english": "Orientation",
 "spanish": ""
 },
 "monster_miniturret::orientation::description": {
@@ -8359,7 +8399,7 @@
 "spanish": ""
 },
 "monster_miniturret::spawnflags": {
-"english": "spawnflags(flags) ",
+"english": "spawnflags(flags)",
 "spanish": ""
 },
 "monster_miniturret::spawnflags::description": {
@@ -8391,7 +8431,7 @@
 "spanish": ""
 },
 "BaseOsprey::spawnflags": {
-"english": "spawnflags(flags) ",
+"english": "spawnflags(flags)",
 "spanish": ""
 },
 "BaseOsprey::spawnflags::description": {
@@ -8407,7 +8447,7 @@
 "spanish": ""
 },
 "BaseOsprey::initial_capacity": {
-"english": "Initial NPC Capacity (0 == autodetect) ",
+"english": "Initial NPC Capacity (0 == autodetect)",
 "spanish": ""
 },
 "BaseOsprey::initial_capacity::description": {
@@ -8447,7 +8487,7 @@
 "spanish": ""
 },
 "monster_scientist::body": {
-"english": "Body ",
+"english": "Body",
 "spanish": ""
 },
 "monster_scientist::body::description": {
@@ -8495,7 +8535,7 @@
 "spanish": ""
 },
 "monster_scientist::item": {
-"english": "Item ",
+"english": "Item",
 "spanish": ""
 },
 "monster_scientist::item::description": {
@@ -8535,7 +8575,7 @@
 "spanish": ""
 },
 "monster_scientist_dead::body": {
-"english": "Body ",
+"english": "Body",
 "spanish": ""
 },
 "monster_scientist_dead::body::description": {
@@ -8583,7 +8623,7 @@
 "spanish": ""
 },
 "monster_scientist_dead::pose": {
-"english": "Pose ",
+"english": "Pose",
 "spanish": ""
 },
 "monster_scientist_dead::pose::description": {
@@ -8655,7 +8695,7 @@
 "spanish": ""
 },
 "monster_sitting_scientist::body": {
-"english": "Body ",
+"english": "Body",
 "spanish": ""
 },
 "monster_sitting_scientist::body::description": {
@@ -8703,7 +8743,7 @@
 "spanish": ""
 },
 "monster_sitting_scientist::suspicious": {
-"english": "Suspicious ",
+"english": "Suspicious",
 "spanish": ""
 },
 "monster_sitting_scientist::suspicious::description": {
@@ -8735,7 +8775,7 @@
 "spanish": ""
 },
 "monster_sentry::spawnflags": {
-"english": "spawnflags(flags) ",
+"english": "spawnflags(flags)",
 "spanish": ""
 },
 "monster_sentry::spawnflags::description": {
@@ -8775,7 +8815,7 @@
 "spanish": ""
 },
 "monster_tentacle::spawnflags": {
-"english": "spawnflags(flags) ",
+"english": "spawnflags(flags)",
 "spanish": ""
 },
 "monster_tentacle::spawnflags::description": {
@@ -8791,7 +8831,7 @@
 "spanish": ""
 },
 "monster_tentacle::sweeparc": {
-"english": "Sweep Arc ",
+"english": "Sweep Arc",
 "spanish": ""
 },
 "monster_tentacle::sweeparc::description": {
@@ -8799,7 +8839,7 @@
 "spanish": ""
 },
 "monster_tentacle::sound": {
-"english": "Tap Sound ",
+"english": "Tap Sound",
 "spanish": ""
 },
 "monster_tentacle::sound::description": {
@@ -8839,7 +8879,7 @@
 "spanish": ""
 },
 "monster_tentacle::height0": {
-"english": "Height for floor level ",
+"english": "Height for floor level",
 "spanish": ""
 },
 "monster_tentacle::height0::description": {
@@ -8847,7 +8887,7 @@
 "spanish": ""
 },
 "monster_tentacle::height1": {
-"english": "Height for level 1 ",
+"english": "Height for level 1",
 "spanish": ""
 },
 "monster_tentacle::height1::description": {
@@ -8855,7 +8895,7 @@
 "spanish": ""
 },
 "monster_tentacle::height2": {
-"english": "Height for level 1 ",
+"english": "Height for level 1",
 "spanish": ""
 },
 "monster_tentacle::height2::description": {
@@ -8863,7 +8903,7 @@
 "spanish": ""
 },
 "monster_tentacle::height3": {
-"english": "Height for level 3 ",
+"english": "Height for level 3",
 "spanish": ""
 },
 "monster_tentacle::height3::description": {
@@ -8879,7 +8919,7 @@
 "spanish": ""
 },
 "monster_tripmine::spawnflags": {
-"english": "spawnflags(flags) ",
+"english": "spawnflags(flags)",
 "spanish": ""
 },
 "monster_tripmine::spawnflags::description": {
@@ -8903,7 +8943,7 @@
 "spanish": ""
 },
 "monster_turret::orientation": {
-"english": "Orientation ",
+"english": "Orientation",
 "spanish": ""
 },
 "monster_turret::orientation::description": {
@@ -8927,7 +8967,7 @@
 "spanish": ""
 },
 "monster_turret::spawnflags": {
-"english": "spawnflags(flags) ",
+"english": "spawnflags(flags)",
 "spanish": ""
 },
 "monster_turret::spawnflags::description": {
@@ -8991,7 +9031,7 @@
 "spanish": ""
 },
 "monstermaker::spawnflags": {
-"english": "spawnflags(flags) ",
+"english": "spawnflags(flags)",
 "spanish": ""
 },
 "monstermaker::spawnflags::description": {
@@ -9023,7 +9063,7 @@
 "spanish": ""
 },
 "monstermaker::monstercount": {
-"english": "Number of Monsters ",
+"english": "Number of Monsters",
 "spanish": ""
 },
 "monstermaker::monstercount::description": {
@@ -9031,7 +9071,7 @@
 "spanish": ""
 },
 "monstermaker::delay": {
-"english": "Frequency ",
+"english": "Frequency",
 "spanish": ""
 },
 "monstermaker::delay::description": {
@@ -9039,7 +9079,7 @@
 "spanish": ""
 },
 "monstermaker::m_imaxlivechildren": {
-"english": "Max live children ",
+"english": "Max live children",
 "spanish": ""
 },
 "monstermaker::m_imaxlivechildren::description": {
@@ -9055,7 +9095,7 @@
 "spanish": ""
 },
 "multi_manager::spawnflags": {
-"english": "spawnflags(flags) ",
+"english": "spawnflags(flags)",
 "spanish": ""
 },
 "multi_manager::spawnflags::description": {
@@ -9095,7 +9135,7 @@
 "spanish": ""
 },
 "path_corner::spawnflags": {
-"english": "spawnflags(flags) ",
+"english": "spawnflags(flags)",
 "spanish": ""
 },
 "path_corner::spawnflags::description": {
@@ -9143,7 +9183,7 @@
 "spanish": ""
 },
 "path_corner::wait": {
-"english": "Wait here (secs) ",
+"english": "Wait here (secs)",
 "spanish": ""
 },
 "path_corner::wait::description": {
@@ -9151,7 +9191,7 @@
 "spanish": ""
 },
 "path_corner::speed": {
-"english": "New Train Speed ",
+"english": "New Train Speed",
 "spanish": ""
 },
 "path_corner::speed::description": {
@@ -9159,7 +9199,7 @@
 "spanish": ""
 },
 "path_corner::yaw_speed": {
-"english": "New Train rot. Speed ",
+"english": "New Train rot. Speed",
 "spanish": ""
 },
 "path_corner::yaw_speed::description": {
@@ -9175,7 +9215,7 @@
 "spanish": ""
 },
 "path_track::spawnflags": {
-"english": "spawnflags(flags) ",
+"english": "spawnflags(flags)",
 "spanish": ""
 },
 "path_track::spawnflags::description": {
@@ -9247,7 +9287,7 @@
 "spanish": ""
 },
 "path_track::speed": {
-"english": "New Train Speed ",
+"english": "New Train Speed",
 "spanish": ""
 },
 "path_track::speed::description": {
@@ -9319,7 +9359,7 @@
 "spanish": ""
 },
 "player_loadsaved::duration": {
-"english": "Fade Duration (seconds) ",
+"english": "Fade Duration (seconds)",
 "spanish": ""
 },
 "player_loadsaved::duration::description": {
@@ -9327,7 +9367,7 @@
 "spanish": ""
 },
 "player_loadsaved::holdtime": {
-"english": "Hold Fade (seconds) ",
+"english": "Hold Fade (seconds)",
 "spanish": ""
 },
 "player_loadsaved::holdtime::description": {
@@ -9335,7 +9375,7 @@
 "spanish": ""
 },
 "player_loadsaved::renderamt": {
-"english": "Fade Alpha ",
+"english": "Fade Alpha",
 "spanish": ""
 },
 "player_loadsaved::renderamt::description": {
@@ -9343,7 +9383,7 @@
 "spanish": ""
 },
 "player_loadsaved::rendercolor": {
-"english": "Fade Color (R G B) ",
+"english": "Fade Color (R G B)",
 "spanish": ""
 },
 "player_loadsaved::rendercolor::description": {
@@ -9351,7 +9391,7 @@
 "spanish": ""
 },
 "player_loadsaved::messagetime": {
-"english": "Show Message delay ",
+"english": "Show Message delay",
 "spanish": ""
 },
 "player_loadsaved::messagetime::description": {
@@ -9359,7 +9399,7 @@
 "spanish": ""
 },
 "player_loadsaved::message": {
-"english": "Message To Display ",
+"english": "Message To Display",
 "spanish": ""
 },
 "player_loadsaved::message::description": {
@@ -9367,7 +9407,7 @@
 "spanish": ""
 },
 "player_loadsaved::loadtime": {
-"english": "Reload delay ",
+"english": "Reload delay",
 "spanish": ""
 },
 "player_loadsaved::loadtime::description": {
@@ -9383,7 +9423,7 @@
 "spanish": ""
 },
 "player_sethealth::all_players": {
-"english": "Affect All Players ",
+"english": "Affect All Players",
 "spanish": ""
 },
 "player_sethealth::all_players::description": {
@@ -9407,7 +9447,7 @@
 "spanish": ""
 },
 "player_sethealth::set_health": {
-"english": "Set Player's Health ",
+"english": "Set Player's Health",
 "spanish": ""
 },
 "player_sethealth::set_health::description": {
@@ -9431,7 +9471,7 @@
 "spanish": ""
 },
 "player_sethealth::set_armor": {
-"english": "Set Player's Armor ",
+"english": "Set Player's Armor",
 "spanish": ""
 },
 "player_sethealth::set_armor::description": {
@@ -9479,7 +9519,7 @@
 "spanish": ""
 },
 "player_sethudcolor::hud_color": {
-"english": "Hud Color (R G B) ",
+"english": "Hud Color (R G B)",
 "spanish": ""
 },
 "player_sethudcolor::hud_color::description": {
@@ -9487,7 +9527,7 @@
 "spanish": ""
 },
 "player_sethudcolor::action": {
-"english": "Action To Take ",
+"english": "Action To Take",
 "spanish": ""
 },
 "player_sethudcolor::action::description": {
@@ -9519,7 +9559,7 @@
 "spanish": ""
 },
 "player_setcrosshaircolor::crosshair_color": {
-"english": "Crosshair Color (R G B) ",
+"english": "Crosshair Color (R G B)",
 "spanish": ""
 },
 "player_setcrosshaircolor::crosshair_color::description": {
@@ -9527,7 +9567,7 @@
 "spanish": ""
 },
 "player_setcrosshaircolor::action": {
-"english": "Action To Take ",
+"english": "Action To Take",
 "spanish": ""
 },
 "player_setcrosshaircolor::action::description": {
@@ -9559,7 +9599,7 @@
 "spanish": ""
 },
 "player_setsuitlighttype::all_players": {
-"english": "Affect All Players ",
+"english": "Affect All Players",
 "spanish": ""
 },
 "player_setsuitlighttype::all_players::description": {
@@ -9583,7 +9623,7 @@
 "spanish": ""
 },
 "player_setsuitlighttype::light_type": {
-"english": "Light Type ",
+"english": "Light Type",
 "spanish": ""
 },
 "player_setsuitlighttype::light_type::description": {
@@ -9615,7 +9655,7 @@
 "spanish": ""
 },
 "player_weaponstrip::all_players": {
-"english": "Affect All Players ",
+"english": "Affect All Players",
 "spanish": ""
 },
 "player_weaponstrip::all_players::description": {
@@ -9639,7 +9679,7 @@
 "spanish": ""
 },
 "player_weaponstrip::strip_weapons": {
-"english": "Strip Weapons ",
+"english": "Strip Weapons",
 "spanish": ""
 },
 "player_weaponstrip::strip_weapons::description": {
@@ -9663,7 +9703,7 @@
 "spanish": ""
 },
 "player_weaponstrip::strip_suit": {
-"english": "Strip Suit ",
+"english": "Strip Suit",
 "spanish": ""
 },
 "player_weaponstrip::strip_suit::description": {
@@ -9687,7 +9727,7 @@
 "spanish": ""
 },
 "player_weaponstrip::strip_longjump": {
-"english": "Strip Long Jump Module ",
+"english": "Strip Long Jump Module",
 "spanish": ""
 },
 "player_weaponstrip::strip_longjump::description": {
@@ -9719,7 +9759,7 @@
 "spanish": ""
 },
 "scripted_sentence::spawnflags": {
-"english": "spawnflags(flags) ",
+"english": "spawnflags(flags)",
 "spanish": ""
 },
 "scripted_sentence::spawnflags::description": {
@@ -9759,7 +9799,7 @@
 "spanish": ""
 },
 "scripted_sentence::sentence": {
-"english": "Sentence Name ",
+"english": "Sentence Name",
 "spanish": ""
 },
 "scripted_sentence::sentence::description": {
@@ -9775,7 +9815,7 @@
 "spanish": ""
 },
 "scripted_sentence::duration": {
-"english": "Sentence Time ",
+"english": "Sentence Time",
 "spanish": ""
 },
 "scripted_sentence::duration::description": {
@@ -9783,7 +9823,7 @@
 "spanish": ""
 },
 "scripted_sentence::radius": {
-"english": "Search Radius ",
+"english": "Search Radius",
 "spanish": ""
 },
 "scripted_sentence::radius::description": {
@@ -9791,7 +9831,7 @@
 "spanish": ""
 },
 "scripted_sentence::refire": {
-"english": "Delay Before Refire ",
+"english": "Delay Before Refire",
 "spanish": ""
 },
 "scripted_sentence::refire::description": {
@@ -9807,7 +9847,7 @@
 "spanish": ""
 },
 "scripted_sentence::volume": {
-"english": "Volume 0-10 ",
+"english": "Volume 0-10",
 "spanish": ""
 },
 "scripted_sentence::volume::description": {
@@ -9815,7 +9855,7 @@
 "spanish": ""
 },
 "scripted_sentence::attenuation": {
-"english": "Sound Radius ",
+"english": "Sound Radius",
 "spanish": ""
 },
 "scripted_sentence::attenuation::description": {
@@ -9863,7 +9903,7 @@
 "spanish": ""
 },
 "scripted_sequence::m_iszIdle": {
-"english": "Idle Animation ",
+"english": "Idle Animation",
 "spanish": ""
 },
 "scripted_sequence::m_iszIdle::description": {
@@ -9871,7 +9911,7 @@
 "spanish": ""
 },
 "scripted_sequence::spawnflags": {
-"english": "spawnflags(flags) ",
+"english": "spawnflags(flags)",
 "spanish": ""
 },
 "scripted_sequence::spawnflags::description": {
@@ -9919,7 +9959,7 @@
 "spanish": ""
 },
 "speaker::preset": {
-"english": "Announcement Presets ",
+"english": "Announcement Presets",
 "spanish": ""
 },
 "speaker::preset::description": {
@@ -10023,7 +10063,7 @@
 "spanish": ""
 },
 "speaker::health": {
-"english": "Volume (10 = loudest) ",
+"english": "Volume (10 = loudest)",
 "spanish": ""
 },
 "speaker::health::description": {
@@ -10031,7 +10071,7 @@
 "spanish": ""
 },
 "speaker::spawnflags": {
-"english": "spawnflags(flags) ",
+"english": "spawnflags(flags)",
 "spanish": ""
 },
 "speaker::spawnflags::description": {
@@ -10055,7 +10095,7 @@
 "spanish": ""
 },
 "trigger_auto::spawnflags": {
-"english": "spawnflags(flags) ",
+"english": "spawnflags(flags)",
 "spanish": ""
 },
 "trigger_auto::spawnflags::description": {
@@ -10079,7 +10119,7 @@
 "spanish": ""
 },
 "trigger_auto::triggerstate": {
-"english": "Trigger State ",
+"english": "Trigger State",
 "spanish": ""
 },
 "trigger_auto::triggerstate::description": {
@@ -10127,7 +10167,7 @@
 "spanish": ""
 },
 "trigger_camera::wait": {
-"english": "Hold time ",
+"english": "Hold time",
 "spanish": ""
 },
 "trigger_camera::wait::description": {
@@ -10143,7 +10183,7 @@
 "spanish": ""
 },
 "trigger_camera::spawnflags": {
-"english": "spawnflags(flags) ",
+"english": "spawnflags(flags)",
 "spanish": ""
 },
 "trigger_camera::spawnflags::description": {
@@ -10175,7 +10215,7 @@
 "spanish": ""
 },
 "trigger_camera::speed": {
-"english": "Initial Speed ",
+"english": "Initial Speed",
 "spanish": ""
 },
 "trigger_camera::speed::description": {
@@ -10183,7 +10223,7 @@
 "spanish": ""
 },
 "trigger_camera::acceleration": {
-"english": "Acceleration units/sec^2 ",
+"english": "Acceleration units/sec^2",
 "spanish": ""
 },
 "trigger_camera::acceleration::description": {
@@ -10191,7 +10231,7 @@
 "spanish": ""
 },
 "trigger_camera::deceleration": {
-"english": "Stop Deceleration units/sec^2 ",
+"english": "Stop Deceleration units/sec^2",
 "spanish": ""
 },
 "trigger_camera::deceleration::description": {
@@ -10247,7 +10287,7 @@
 "spanish": ""
 },
 "trigger_changelevel::changedelay": {
-"english": "Delay before change target ",
+"english": "Delay before change target",
 "spanish": ""
 },
 "trigger_changelevel::changedelay::description": {
@@ -10255,7 +10295,7 @@
 "spanish": ""
 },
 "trigger_changelevel::use_persistent_level_change": {
-"english": "Use Persistent Level Change ",
+"english": "Use Persistent Level Change",
 "spanish": ""
 },
 "trigger_changelevel::use_persistent_level_change::description": {
@@ -10279,7 +10319,7 @@
 "spanish": ""
 },
 "trigger_changelevel::use_persistent_inventory": {
-"english": "Use Persistent Inventory (Co-op only) ",
+"english": "Use Persistent Inventory (Co-op only)",
 "spanish": ""
 },
 "trigger_changelevel::use_persistent_inventory::description": {
@@ -10303,7 +10343,7 @@
 "spanish": ""
 },
 "trigger_changelevel::spawnflags": {
-"english": "spawnflags(flags) ",
+"english": "spawnflags(flags)",
 "spanish": ""
 },
 "trigger_changelevel::spawnflags::description": {
@@ -10351,7 +10391,7 @@
 "spanish": ""
 },
 "trigger_counter::spawnflags": {
-"english": "spawnflags(flags) ",
+"english": "spawnflags(flags)",
 "spanish": ""
 },
 "trigger_counter::spawnflags::description": {
@@ -10367,7 +10407,7 @@
 "spanish": ""
 },
 "trigger_counter::count": {
-"english": "Count before activation ",
+"english": "Count before activation",
 "spanish": ""
 },
 "trigger_counter::count::description": {
@@ -10391,7 +10431,7 @@
 "spanish": ""
 },
 "trigger_endsection::spawnflags": {
-"english": "spawnflags(flags) ",
+"english": "spawnflags(flags)",
 "spanish": ""
 },
 "trigger_endsection::spawnflags::description": {
@@ -10415,7 +10455,7 @@
 "spanish": ""
 },
 "trigger_gravity::gravity": {
-"english": "Gravity (0-1) ",
+"english": "Gravity (0-1)",
 "spanish": ""
 },
 "trigger_gravity::gravity::description": {
@@ -10431,7 +10471,7 @@
 "spanish": ""
 },
 "trigger_hurt::spawnflags": {
-"english": "spawnflags(flags) ",
+"english": "spawnflags(flags)",
 "spanish": ""
 },
 "trigger_hurt::spawnflags::description": {
@@ -10479,7 +10519,7 @@
 "spanish": ""
 },
 "trigger_hurt::dmg": {
-"english": "Damage ",
+"english": "Damage",
 "spanish": ""
 },
 "trigger_hurt::dmg::description": {
@@ -10487,7 +10527,7 @@
 "spanish": ""
 },
 "trigger_hurt::delay": {
-"english": "Delay before trigger ",
+"english": "Delay before trigger",
 "spanish": ""
 },
 "trigger_hurt::delay::description": {
@@ -10495,7 +10535,7 @@
 "spanish": ""
 },
 "trigger_hurt::damagetype": {
-"english": "Damage Type ",
+"english": "Damage Type",
 "spanish": ""
 },
 "trigger_hurt::damagetype::description": {
@@ -10679,7 +10719,7 @@
 "spanish": ""
 },
 "trigger_monsterjump::speed": {
-"english": "Jump Speed ",
+"english": "Jump Speed",
 "spanish": ""
 },
 "trigger_monsterjump::speed::description": {
@@ -10687,7 +10727,7 @@
 "spanish": ""
 },
 "trigger_monsterjump::height": {
-"english": "Jump Height ",
+"english": "Jump Height",
 "spanish": ""
 },
 "trigger_monsterjump::height::description": {
@@ -10703,7 +10743,7 @@
 "spanish": ""
 },
 "trigger_multiple::wait": {
-"english": "Delay before reset ",
+"english": "Delay before reset",
 "spanish": ""
 },
 "trigger_multiple::wait::description": {
@@ -10727,7 +10767,7 @@
 "spanish": ""
 },
 "trigger_push::spawnflags": {
-"english": "spawnflags(flags) ",
+"english": "spawnflags(flags)",
 "spanish": ""
 },
 "trigger_push::spawnflags::description": {
@@ -10751,7 +10791,7 @@
 "spanish": ""
 },
 "trigger_push::speed": {
-"english": "Speed of push ",
+"english": "Speed of push",
 "spanish": ""
 },
 "trigger_push::speed::description": {
@@ -10767,7 +10807,7 @@
 "spanish": ""
 },
 "trigger_relay::spawnflags": {
-"english": "spawnflags(flags) ",
+"english": "spawnflags(flags)",
 "spanish": ""
 },
 "trigger_relay::spawnflags::description": {
@@ -10783,7 +10823,7 @@
 "spanish": ""
 },
 "trigger_relay::triggerstate": {
-"english": "Trigger State ",
+"english": "Trigger State",
 "spanish": ""
 },
 "trigger_relay::triggerstate::description": {
@@ -10903,7 +10943,7 @@
 "spanish": ""
 },
 "weapon_rpg::sequence": {
-"english": "Placement ",
+"english": "Placement",
 "spanish": ""
 },
 "weapon_rpg::sequence::description": {
@@ -10935,7 +10975,7 @@
 "spanish": ""
 },
 "weapon_gauss::sequence": {
-"english": "Placement ",
+"english": "Placement",
 "spanish": ""
 },
 "weapon_gauss::sequence::description": {
@@ -10967,7 +11007,7 @@
 "spanish": ""
 },
 "weapon_crossbow::sequence": {
-"english": "Placement ",
+"english": "Placement",
 "spanish": ""
 },
 "weapon_crossbow::sequence::description": {
@@ -11015,7 +11055,7 @@
 "spanish": ""
 },
 "weapon_satchel::sequence": {
-"english": "Placement ",
+"english": "Placement",
 "spanish": ""
 },
 "weapon_satchel::sequence::description": {
@@ -11087,7 +11127,7 @@
 "spanish": ""
 },
 "xen_hair::spawnflags": {
-"english": "spawnflags(flags) ",
+"english": "spawnflags(flags)",
 "spanish": ""
 },
 "xen_hair::spawnflags::description": {
@@ -11167,7 +11207,7 @@
 "spanish": ""
 },
 "env_blowercannon::delay": {
-"english": "Delay ",
+"english": "Delay",
 "spanish": ""
 },
 "env_blowercannon::delay::description": {
@@ -11175,7 +11215,7 @@
 "spanish": ""
 },
 "env_blowercannon::zoffset": {
-"english": "Z Offset ",
+"english": "Z Offset",
 "spanish": ""
 },
 "env_blowercannon::zoffset::description": {
@@ -11183,7 +11223,7 @@
 "spanish": ""
 },
 "env_blowercannon::weaptype": {
-"english": "Weapon Type ",
+"english": "Weapon Type",
 "spanish": ""
 },
 "env_blowercannon::weaptype::description": {
@@ -11223,7 +11263,7 @@
 "spanish": ""
 },
 "env_blowercannon::firetype": {
-"english": "Fire Type ",
+"english": "Fire Type",
 "spanish": ""
 },
 "env_blowercannon::firetype::description": {
@@ -11255,7 +11295,7 @@
 "spanish": ""
 },
 "env_electrified_wire::segments": {
-"english": "Segments ",
+"english": "Segments",
 "spanish": ""
 },
 "env_electrified_wire::segments::description": {
@@ -11263,7 +11303,7 @@
 "spanish": ""
 },
 "env_electrified_wire::sparkfrequency": {
-"english": "Spark Frequency ",
+"english": "Spark Frequency",
 "spanish": ""
 },
 "env_electrified_wire::sparkfrequency::description": {
@@ -11271,7 +11311,7 @@
 "spanish": ""
 },
 "env_electrified_wire::bodysparkfrequency": {
-"english": "Body Spark Frequency ",
+"english": "Body Spark Frequency",
 "spanish": ""
 },
 "env_electrified_wire::bodysparkfrequency::description": {
@@ -11279,7 +11319,7 @@
 "spanish": ""
 },
 "env_electrified_wire::lightningfrequency": {
-"english": "Lightning Frequency ",
+"english": "Lightning Frequency",
 "spanish": ""
 },
 "env_electrified_wire::lightningfrequency::description": {
@@ -11287,7 +11327,7 @@
 "spanish": ""
 },
 "env_electrified_wire::xforce": {
-"english": "X Force ",
+"english": "X Force",
 "spanish": ""
 },
 "env_electrified_wire::xforce::description": {
@@ -11295,7 +11335,7 @@
 "spanish": ""
 },
 "env_electrified_wire::yforce": {
-"english": "Y Force ",
+"english": "Y Force",
 "spanish": ""
 },
 "env_electrified_wire::yforce::description": {
@@ -11303,7 +11343,7 @@
 "spanish": ""
 },
 "env_electrified_wire::zforce": {
-"english": "Z Force ",
+"english": "Z Force",
 "spanish": ""
 },
 "env_electrified_wire::zforce::description": {
@@ -11311,7 +11351,7 @@
 "spanish": ""
 },
 "env_electrified_wire::disable": {
-"english": "Disable Use ",
+"english": "Disable Use",
 "spanish": ""
 },
 "env_electrified_wire::disable::description": {
@@ -11335,7 +11375,7 @@
 "spanish": ""
 },
 "env_electrified_wire::endingmodel": {
-"english": "Ending Model ",
+"english": "Ending Model",
 "spanish": ""
 },
 "env_electrified_wire::endingmodel::description": {
@@ -11343,7 +11383,7 @@
 "spanish": ""
 },
 "env_electrified_wire::bodymodel": {
-"english": "Body Model ",
+"english": "Body Model",
 "spanish": ""
 },
 "env_electrified_wire::bodymodel::description": {
@@ -11359,7 +11399,7 @@
 "spanish": ""
 },
 "env_rope::segments": {
-"english": "Segments ",
+"english": "Segments",
 "spanish": ""
 },
 "env_rope::segments::description": {
@@ -11367,7 +11407,7 @@
 "spanish": ""
 },
 "env_rope::disable": {
-"english": "Disable Use ",
+"english": "Disable Use",
 "spanish": ""
 },
 "env_rope::disable::description": {
@@ -11391,7 +11431,7 @@
 "spanish": ""
 },
 "env_rope::endingmodel": {
-"english": "Ending Model ",
+"english": "Ending Model",
 "spanish": ""
 },
 "env_rope::endingmodel::description": {
@@ -11399,7 +11439,7 @@
 "spanish": ""
 },
 "env_rope::bodymodel": {
-"english": "Body Model ",
+"english": "Body Model",
 "spanish": ""
 },
 "env_rope::bodymodel::description": {
@@ -11423,7 +11463,7 @@
 "spanish": ""
 },
 "env_spritetrain::model": {
-"english": "Sprite Name ",
+"english": "Sprite Name",
 "spanish": ""
 },
 "env_spritetrain::model::description": {
@@ -11431,7 +11471,7 @@
 "spanish": ""
 },
 "env_spritetrain::speed": {
-"english": "Speed (units per second) ",
+"english": "Speed (units per second)",
 "spanish": ""
 },
 "env_spritetrain::speed::description": {
@@ -11455,7 +11495,7 @@
 "spanish": ""
 },
 "func_op4mortarcontroller::mortar_axis": {
-"english": "Axis ",
+"english": "Axis",
 "spanish": ""
 },
 "func_op4mortarcontroller::mortar_axis::description": {
@@ -11511,7 +11551,7 @@
 "spanish": ""
 },
 "item_generic::model": {
-"english": "Model ",
+"english": "Model",
 "spanish": ""
 },
 "item_generic::model::description": {
@@ -11519,7 +11559,7 @@
 "spanish": ""
 },
 "item_generic::sequencename": {
-"english": "Sequence Name ",
+"english": "Sequence Name",
 "spanish": ""
 },
 "item_generic::sequencename::description": {
@@ -11527,7 +11567,7 @@
 "spanish": ""
 },
 "item_generic::skin": {
-"english": "Skin ",
+"english": "Skin",
 "spanish": ""
 },
 "item_generic::skin::description": {
@@ -11535,7 +11575,7 @@
 "spanish": ""
 },
 "item_generic::body": {
-"english": "Body ",
+"english": "Body",
 "spanish": ""
 },
 "item_generic::body::description": {
@@ -11543,7 +11583,7 @@
 "spanish": ""
 },
 "item_generic::spawnflags": {
-"english": "spawnflags(flags) ",
+"english": "spawnflags(flags)",
 "spanish": ""
 },
 "item_generic::spawnflags::description": {
@@ -11575,7 +11615,7 @@
 "spanish": ""
 },
 "item_nuclearbomb::initialstate": {
-"english": "Initial State ",
+"english": "Initial State",
 "spanish": ""
 },
 "item_nuclearbomb::initialstate::description": {
@@ -11583,7 +11623,7 @@
 "spanish": ""
 },
 "item_nuclearbomb::wait": {
-"english": "Wait ",
+"english": "Wait",
 "spanish": ""
 },
 "item_nuclearbomb::wait::description": {
@@ -11607,7 +11647,7 @@
 "spanish": ""
 },
 "monster_alien_babyvoltigore::spawnflags": {
-"english": "spawnflags(flags) ",
+"english": "spawnflags(flags)",
 "spanish": ""
 },
 "monster_alien_babyvoltigore::spawnflags::description": {
@@ -11639,7 +11679,7 @@
 "spanish": ""
 },
 "monster_alien_voltigore::spawnflags": {
-"english": "spawnflags(flags) ",
+"english": "spawnflags(flags)",
 "spanish": ""
 },
 "monster_alien_voltigore::spawnflags::description": {
@@ -11663,7 +11703,7 @@
 "spanish": ""
 },
 "monster_alien_slave_dead::pose": {
-"english": "Pose ",
+"english": "Pose",
 "spanish": ""
 },
 "monster_alien_slave_dead::pose::description": {
@@ -11695,7 +11735,7 @@
 "spanish": ""
 },
 "monster_blkop_apache::spawnflags": {
-"english": "spawnflags(flags) ",
+"english": "spawnflags(flags)",
 "spanish": ""
 },
 "monster_blkop_apache::spawnflags::description": {
@@ -11735,7 +11775,7 @@
 "spanish": ""
 },
 "monster_cleansuit_scientist::body": {
-"english": "Body ",
+"english": "Body",
 "spanish": ""
 },
 "monster_cleansuit_scientist::body::description": {
@@ -11791,7 +11831,7 @@
 "spanish": ""
 },
 "monster_cleansuit_scientist_dead::body": {
-"english": "Body ",
+"english": "Body",
 "spanish": ""
 },
 "monster_cleansuit_scientist_dead::body::description": {
@@ -11839,7 +11879,7 @@
 "spanish": ""
 },
 "monster_cleansuit_scientist_dead::pose": {
-"english": "Pose ",
+"english": "Pose",
 "spanish": ""
 },
 "monster_cleansuit_scientist_dead::pose::description": {
@@ -11927,7 +11967,7 @@
 "spanish": ""
 },
 "monster_sitting_cleansuit_scientist::body": {
-"english": "Body ",
+"english": "Body",
 "spanish": ""
 },
 "monster_sitting_cleansuit_scientist::body::description": {
@@ -12007,7 +12047,7 @@
 "spanish": ""
 },
 "monster_gonome_dead::pose": {
-"english": "Pose ",
+"english": "Pose",
 "spanish": ""
 },
 "monster_gonome_dead::pose::description": {
@@ -12047,7 +12087,7 @@
 "spanish": ""
 },
 "monster_houndeye_dead::pose": {
-"english": "Pose ",
+"english": "Pose",
 "spanish": ""
 },
 "monster_houndeye_dead::pose::description": {
@@ -12071,7 +12111,7 @@
 "spanish": ""
 },
 "monster_grunt_ally_repel::spawnflags": {
-"english": "spawnflags(flags) ",
+"english": "spawnflags(flags)",
 "spanish": ""
 },
 "monster_grunt_ally_repel::spawnflags::description": {
@@ -12095,7 +12135,7 @@
 "spanish": ""
 },
 "monster_grunt_ally_repel::weapons": {
-"english": "Weapons ",
+"english": "Weapons",
 "spanish": ""
 },
 "monster_grunt_ally_repel::weapons::description": {
@@ -12151,7 +12191,7 @@
 "spanish": ""
 },
 "monster_grunt_ally_repel::head": {
-"english": "Heads ",
+"english": "Heads",
 "spanish": ""
 },
 "monster_grunt_ally_repel::head::description": {
@@ -12247,7 +12287,7 @@
 "spanish": ""
 },
 "monster_human_grunt_ally::spawnflags": {
-"english": "spawnflags(flags) ",
+"english": "spawnflags(flags)",
 "spanish": ""
 },
 "monster_human_grunt_ally::spawnflags::description": {
@@ -12263,7 +12303,7 @@
 "spanish": ""
 },
 "monster_human_grunt_ally::weapons": {
-"english": "Weapons ",
+"english": "Weapons",
 "spanish": ""
 },
 "monster_human_grunt_ally::weapons::description": {
@@ -12327,7 +12367,7 @@
 "spanish": ""
 },
 "monster_human_grunt_ally::head": {
-"english": "Heads ",
+"english": "Heads",
 "spanish": ""
 },
 "monster_human_grunt_ally::head::description": {
@@ -12415,7 +12455,7 @@
 "spanish": ""
 },
 "monster_human_grunt_ally_dead::pose": {
-"english": "Pose ",
+"english": "Pose",
 "spanish": ""
 },
 "monster_human_grunt_ally_dead::pose::description": {
@@ -12479,7 +12519,7 @@
 "spanish": ""
 },
 "monster_human_grunt_ally_dead::weapons": {
-"english": "Weapons ",
+"english": "Weapons",
 "spanish": ""
 },
 "monster_human_grunt_ally_dead::weapons::description": {
@@ -12519,7 +12559,7 @@
 "spanish": ""
 },
 "monster_human_grunt_ally_dead::head": {
-"english": "Heads ",
+"english": "Heads",
 "spanish": ""
 },
 "monster_human_grunt_ally_dead::head::description": {
@@ -12607,7 +12647,7 @@
 "spanish": ""
 },
 "monster_human_medic_ally::spawnflags": {
-"english": "spawnflags(flags) ",
+"english": "spawnflags(flags)",
 "spanish": ""
 },
 "monster_human_medic_ally::spawnflags::description": {
@@ -12623,7 +12663,7 @@
 "spanish": ""
 },
 "monster_human_medic_ally::head": {
-"english": "Heads ",
+"english": "Heads",
 "spanish": ""
 },
 "monster_human_medic_ally::head::description": {
@@ -12655,7 +12695,7 @@
 "spanish": ""
 },
 "monster_human_medic_ally::weapons": {
-"english": "Weapons ",
+"english": "Weapons",
 "spanish": ""
 },
 "monster_human_medic_ally::weapons::description": {
@@ -12711,7 +12751,7 @@
 "spanish": ""
 },
 "monster_human_torch_ally::spawnflags": {
-"english": "spawnflags(flags) ",
+"english": "spawnflags(flags)",
 "spanish": ""
 },
 "monster_human_torch_ally::spawnflags::description": {
@@ -12727,7 +12767,7 @@
 "spanish": ""
 },
 "monster_human_torch_ally::weapons": {
-"english": "Weapons ",
+"english": "Weapons",
 "spanish": ""
 },
 "monster_human_torch_ally::weapons::description": {
@@ -12783,7 +12823,7 @@
 "spanish": ""
 },
 "monster_male_assassin::spawnflags": {
-"english": "spawnflags(flags) ",
+"english": "spawnflags(flags)",
 "spanish": ""
 },
 "monster_male_assassin::spawnflags::description": {
@@ -12799,7 +12839,7 @@
 "spanish": ""
 },
 "monster_male_assassin::head": {
-"english": "Heads ",
+"english": "Heads",
 "spanish": ""
 },
 "monster_male_assassin::head::description": {
@@ -12839,7 +12879,7 @@
 "spanish": ""
 },
 "monster_male_assassin::weapons": {
-"english": "Weapons ",
+"english": "Weapons",
 "spanish": ""
 },
 "monster_male_assassin::weapons::description": {
@@ -12887,7 +12927,7 @@
 "spanish": ""
 },
 "monster_male_assassin::standgroundrange": {
-"english": "Stand Ground Range ",
+"english": "Stand Ground Range",
 "spanish": ""
 },
 "monster_male_assassin::standgroundrange::description": {
@@ -12903,7 +12943,7 @@
 "spanish": ""
 },
 "monster_op4loader::spawnflags": {
-"english": "spawnflags(flags) ",
+"english": "spawnflags(flags)",
 "spanish": ""
 },
 "monster_op4loader::spawnflags::description": {
@@ -12927,7 +12967,7 @@
 "spanish": ""
 },
 "monster_otis::bodystate": {
-"english": "bodystate ",
+"english": "bodystate",
 "spanish": ""
 },
 "monster_otis::bodystate::description": {
@@ -12959,7 +12999,7 @@
 "spanish": ""
 },
 "monster_otis::skin": {
-"english": "head ",
+"english": "head",
 "spanish": ""
 },
 "monster_otis::skin::description": {
@@ -12999,7 +13039,7 @@
 "spanish": ""
 },
 "monster_otis::sleeves": {
-"english": "sleeves ",
+"english": "sleeves",
 "spanish": ""
 },
 "monster_otis::sleeves::description": {
@@ -13031,7 +13071,7 @@
 "spanish": ""
 },
 "monster_otis::item": {
-"english": "item ",
+"english": "item",
 "spanish": ""
 },
 "monster_otis::item::description": {
@@ -13071,7 +13111,7 @@
 "spanish": ""
 },
 "monster_otis_dead::pose": {
-"english": "Pose ",
+"english": "Pose",
 "spanish": ""
 },
 "monster_otis_dead::pose::description": {
@@ -13119,7 +13159,7 @@
 "spanish": ""
 },
 "monster_otis_dead::bodystate": {
-"english": "bodystate ",
+"english": "bodystate",
 "spanish": ""
 },
 "monster_otis_dead::bodystate::description": {
@@ -13151,7 +13191,7 @@
 "spanish": ""
 },
 "monster_otis_dead::sleeves": {
-"english": "sleeves ",
+"english": "sleeves",
 "spanish": ""
 },
 "monster_otis_dead::sleeves::description": {
@@ -13183,7 +13223,7 @@
 "spanish": ""
 },
 "monster_otis_dead::item": {
-"english": "item ",
+"english": "item",
 "spanish": ""
 },
 "monster_otis_dead::item::description": {
@@ -13223,7 +13263,7 @@
 "spanish": ""
 },
 "monster_pitdrone::initammo": {
-"english": "Initial Ammo ",
+"english": "Initial Ammo",
 "spanish": ""
 },
 "monster_pitdrone::initammo::description": {
@@ -13279,7 +13319,7 @@
 "spanish": ""
 },
 "monster_zombie_soldier_dead::pose": {
-"english": "Pose ",
+"english": "Pose",
 "spanish": ""
 },
 "monster_zombie_soldier_dead::pose::description": {
@@ -13319,7 +13359,7 @@
 "spanish": ""
 },
 "monster_skeleton_dead::pose": {
-"english": "Pose ",
+"english": "Pose",
 "spanish": ""
 },
 "monster_skeleton_dead::pose::description": {
@@ -13375,7 +13415,7 @@
 "spanish": ""
 },
 "monster_shocktrooper::spawnflags": {
-"english": "spawnflags(flags) ",
+"english": "spawnflags(flags)",
 "spanish": ""
 },
 "monster_shocktrooper::spawnflags::description": {
@@ -13391,7 +13431,7 @@
 "spanish": ""
 },
 "monster_shocktrooper::weapons": {
-"english": "Weapons ",
+"english": "Weapons",
 "spanish": ""
 },
 "monster_shocktrooper::weapons::description": {
@@ -13447,7 +13487,7 @@
 "spanish": ""
 },
 "op4mortar::spawnflags": {
-"english": "spawnflags(flags) ",
+"english": "spawnflags(flags)",
 "spanish": ""
 },
 "op4mortar::spawnflags::description": {
@@ -13479,7 +13519,7 @@
 "spanish": ""
 },
 "op4mortar::mortar_velocity": {
-"english": "Velocity ",
+"english": "Velocity",
 "spanish": ""
 },
 "op4mortar::mortar_velocity::description": {
@@ -13487,7 +13527,7 @@
 "spanish": ""
 },
 "op4mortar::h_min": {
-"english": "Horiz MIN ",
+"english": "Horiz MIN",
 "spanish": ""
 },
 "op4mortar::h_min::description": {
@@ -13495,7 +13535,7 @@
 "spanish": ""
 },
 "op4mortar::h_max": {
-"english": "Horiz MAX ",
+"english": "Horiz MAX",
 "spanish": ""
 },
 "op4mortar::h_max::description": {
@@ -13503,7 +13543,7 @@
 "spanish": ""
 },
 "op4mortar::mindist": {
-"english": "Min Target Dist ",
+"english": "Min Target Dist",
 "spanish": ""
 },
 "op4mortar::mindist::description": {
@@ -13511,7 +13551,7 @@
 "spanish": ""
 },
 "op4mortar::maxdist": {
-"english": "Max Target Dist ",
+"english": "Max Target Dist",
 "spanish": ""
 },
 "op4mortar::maxdist::description": {
@@ -13519,7 +13559,7 @@
 "spanish": ""
 },
 "op4mortar::enemytype": {
-"english": "Enemy Type ",
+"english": "Enemy Type",
 "spanish": ""
 },
 "op4mortar::enemytype::description": {
@@ -13551,7 +13591,7 @@
 "spanish": ""
 },
 "op4mortar::firedelay": {
-"english": "Fire Rate ",
+"english": "Fire Rate",
 "spanish": ""
 },
 "op4mortar::firedelay::description": {
@@ -13575,7 +13615,7 @@
 "spanish": ""
 },
 "trigger_geneworm_hit::spawnflags": {
-"english": "spawnflags(flags) ",
+"english": "spawnflags(flags)",
 "spanish": ""
 },
 "trigger_geneworm_hit::spawnflags::description": {
@@ -13623,7 +13663,7 @@
 "spanish": ""
 },
 "trigger_geneworm_hit::delay": {
-"english": "Delay before trigger ",
+"english": "Delay before trigger",
 "spanish": ""
 },
 "trigger_geneworm_hit::delay::description": {
@@ -13727,7 +13767,7 @@
 "spanish": ""
 },
 "CTFAttributes::goal_no": {
-"english": "Team ",
+"english": "Team",
 "spanish": ""
 },
 "CTFAttributes::goal_no::description": {
@@ -13751,7 +13791,7 @@
 "spanish": ""
 },
 "CTFAttributes::goal_min": {
-"english": "Min Bounds ",
+"english": "Min Bounds",
 "spanish": ""
 },
 "CTFAttributes::goal_min::description": {
@@ -13759,7 +13799,7 @@
 "spanish": ""
 },
 "CTFAttributes::goal_max": {
-"english": "Max Bounds ",
+"english": "Max Bounds",
 "spanish": ""
 },
 "CTFAttributes::goal_max::description": {
@@ -13767,7 +13807,7 @@
 "spanish": ""
 },
 "CTFItem::spawnflags": {
-"english": "spawnflags(flags) ",
+"english": "spawnflags(flags)",
 "spanish": ""
 },
 "CTFItem::spawnflags::description": {
@@ -13791,7 +13831,7 @@
 "spanish": ""
 },
 "CTFItem::team_no": {
-"english": "Team ",
+"english": "Team",
 "spanish": ""
 },
 "CTFItem::team_no::description": {
@@ -13831,7 +13871,7 @@
 "spanish": ""
 },
 "item_ctfflag::skin": {
-"english": "Skin ",
+"english": "Skin",
 "spanish": ""
 },
 "item_ctfflag::skin::description": {
@@ -13855,7 +13895,7 @@
 "spanish": ""
 },
 "item_ctfflag::model": {
-"english": "Model ",
+"english": "Model",
 "spanish": ""
 },
 "item_ctfflag::model::description": {
@@ -13871,7 +13911,7 @@
 "spanish": ""
 },
 "item_ctfbase::skin": {
-"english": "Skin ",
+"english": "Skin",
 "spanish": ""
 },
 "item_ctfbase::skin::description": {
@@ -13887,7 +13927,7 @@
 "spanish": ""
 },
 "item_ctfbase::model": {
-"english": "Model ",
+"english": "Model",
 "spanish": ""
 },
 "item_ctfbase::model::description": {
@@ -13903,7 +13943,7 @@
 "spanish": ""
 },
 "info_ctfspawn::team_no": {
-"english": "Team ",
+"english": "Team",
 "spanish": ""
 },
 "info_ctfspawn::team_no::description": {
@@ -13943,7 +13983,7 @@
 "spanish": ""
 },
 "info_ctfdetect::flagreturntime": {
-"english": "Flag Return Time ",
+"english": "Flag Return Time",
 "spanish": ""
 },
 "info_ctfdetect::flagreturntime::description": {
@@ -13951,7 +13991,7 @@
 "spanish": ""
 },
 "info_ctfdetect::basedefenddist": {
-"english": "Base Defend Distance ",
+"english": "Base Defend Distance",
 "spanish": ""
 },
 "info_ctfdetect::basedefenddist::description": {
@@ -13959,7 +13999,7 @@
 "spanish": ""
 },
 "info_ctfdetect::defendcarriertime": {
-"english": "Defend Carrier Time ",
+"english": "Defend Carrier Time",
 "spanish": ""
 },
 "info_ctfdetect::defendcarriertime::description": {
@@ -13967,7 +14007,7 @@
 "spanish": ""
 },
 "info_ctfdetect::captureassisttime": {
-"english": "Capture Assist Time ",
+"english": "Capture Assist Time",
 "spanish": ""
 },
 "info_ctfdetect::captureassisttime::description": {
@@ -13975,7 +14015,7 @@
 "spanish": ""
 },
 "info_ctfdetect::poweruprespawntime": {
-"english": "Powerup Respawn Time ",
+"english": "Powerup Respawn Time",
 "spanish": ""
 },
 "info_ctfdetect::poweruprespawntime::description": {
@@ -13983,7 +14023,7 @@
 "spanish": ""
 },
 "info_ctfdetect::score_icon_namebm": {
-"english": "Non-Flag Black Mesa icon ",
+"english": "Non-Flag Black Mesa icon",
 "spanish": ""
 },
 "info_ctfdetect::score_icon_namebm::description": {
@@ -13991,7 +14031,7 @@
 "spanish": ""
 },
 "info_ctfdetect::score_icon_nameof": {
-"english": "Non-Flag Opposing Force icon ",
+"english": "Non-Flag Opposing Force icon",
 "spanish": ""
 },
 "info_ctfdetect::score_icon_nameof::description": {
@@ -13999,7 +14039,7 @@
 "spanish": ""
 },
 "info_ctfdetect::map_score_max": {
-"english": "Maximum Map Team Score ",
+"english": "Maximum Map Team Score",
 "spanish": ""
 },
 "info_ctfdetect::map_score_max::description": {
@@ -14055,7 +14095,7 @@
 "spanish": ""
 },
 "info_ctfspawn_powerup::team_no": {
-"english": "Team ",
+"english": "Team",
 "spanish": ""
 },
 "info_ctfspawn_powerup::team_no::description": {
@@ -14095,7 +14135,7 @@
 "spanish": ""
 },
 "trigger_ctfgeneric::team_no": {
-"english": "Team ",
+"english": "Team",
 "spanish": ""
 },
 "trigger_ctfgeneric::team_no::description": {
@@ -14127,7 +14167,7 @@
 "spanish": ""
 },
 "trigger_ctfgeneric::trigger_delay": {
-"english": "Re-activate delay ",
+"english": "Re-activate delay",
 "spanish": ""
 },
 "trigger_ctfgeneric::trigger_delay::description": {
@@ -14135,7 +14175,7 @@
 "spanish": ""
 },
 "trigger_ctfgeneric::score": {
-"english": "Player Score ",
+"english": "Player Score",
 "spanish": ""
 },
 "trigger_ctfgeneric::score::description": {
@@ -14143,7 +14183,7 @@
 "spanish": ""
 },
 "trigger_ctfgeneric::team_score": {
-"english": "Team Score ",
+"english": "Team Score",
 "spanish": ""
 },
 "trigger_ctfgeneric::team_score::description": {
@@ -14151,7 +14191,7 @@
 "spanish": ""
 },
 "trigger_ctfgeneric::triggerstate": {
-"english": "Trigger State ",
+"english": "Trigger State",
 "spanish": ""
 },
 "trigger_ctfgeneric::triggerstate::description": {
@@ -14191,7 +14231,7 @@
 "spanish": ""
 },
 "env_warpball::spawnflags": {
-"english": "spawnflags(flags) ",
+"english": "spawnflags(flags)",
 "spanish": ""
 },
 "env_warpball::spawnflags::description": {
@@ -14215,7 +14255,7 @@
 "spanish": ""
 },
 "env_warpball::radius": {
-"english": "Beam Radius ",
+"english": "Beam Radius",
 "spanish": ""
 },
 "env_warpball::radius::description": {
@@ -14223,7 +14263,7 @@
 "spanish": ""
 },
 "env_warpball::warp_target": {
-"english": "Warp Target ",
+"english": "Warp Target",
 "spanish": ""
 },
 "env_warpball::warp_target::description": {
@@ -14231,7 +14271,7 @@
 "spanish": ""
 },
 "env_warpball::damage_delay": {
-"english": "Damage delay ",
+"english": "Damage delay",
 "spanish": ""
 },
 "env_warpball::damage_delay::description": {
@@ -14247,7 +14287,7 @@
 "spanish": ""
 },
 "item_helmet::sequence": {
-"english": "Orientation ",
+"english": "Orientation",
 "spanish": ""
 },
 "item_helmet::sequence::description": {
@@ -14287,7 +14327,7 @@
 "spanish": ""
 },
 "item_armorvest::sequence": {
-"english": "Orientation ",
+"english": "Orientation",
 "spanish": ""
 },
 "item_armorvest::sequence::description": {

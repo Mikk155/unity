@@ -1000,16 +1000,16 @@
 		"base": [],
 		"data": {
 			"spawnflags": { "variable": "flags", "value": "", "choices": [ "2048" ] },
-			"appearflag_singleplayer": { "variable": "choices", "value": "0", "choices": [ "-1", "0", "1" ] },
-			"appearflag_multiplayer": { "variable": "choices", "value": "0", "choices": [ "-1", "0", "1" ] },
-			"appearflag_cooperative": { "variable": "choices", "value": "0", "choices": [ "-1", "0", "1" ] },
-			"appearflag_deathmatch": { "variable": "choices", "value": "0", "choices": [ "-1", "0", "1" ] },
-			"appearflag_cft": { "variable": "choices", "value": "0", "choices": [ "-1", "0", "1" ] },
-			"appearflag_teamplay": { "variable": "choices", "value": "0", "choices": [ "-1", "0", "1" ] },
-			"appearflag_dedicated": { "variable": "choices", "value": "0", "choices": [ "-1", "0", "1" ] },
-			"appearflag_skilleasy": { "variable": "choices", "value": "0", "choices": [ "-1", "0", "1" ] },
-			"appearflag_skillmedium": { "variable": "choices", "value": "0", "choices": [ "-1", "0", "1" ] },
-			"appearflag_skillhard": { "variable": "choices", "value": "0", "choices": [ "-1", "0", "1" ] }
+			"appearflag_singleplayer": { "variable": "choices", "value": "0", "choices": [ "-1", "0", "1" ], "title_choices": "Appearflags::choices" },
+			"appearflag_multiplayer": { "variable": "choices", "value": "0", "choices": [ "-1", "0", "1" ], "title_choices": "Appearflags::choices" },
+			"appearflag_cooperative": { "variable": "choices", "value": "0", "choices": [ "-1", "0", "1" ], "title_choices": "Appearflags::choices" },
+			"appearflag_deathmatch": { "variable": "choices", "value": "0", "choices": [ "-1", "0", "1" ], "title_choices": "Appearflags::choices" },
+			"appearflag_cft": { "variable": "choices", "value": "0", "choices": [ "-1", "0", "1" ], "title_choices": "Appearflags::choices" },
+			"appearflag_teamplay": { "variable": "choices", "value": "0", "choices": [ "-1", "0", "1" ], "title_choices": "Appearflags::choices" },
+			"appearflag_dedicated": { "variable": "choices", "value": "0", "choices": [ "-1", "0", "1" ], "title_choices": "Appearflags::choices" },
+			"appearflag_skilleasy": { "variable": "choices", "value": "0", "choices": [ "-1", "0", "1" ], "title_choices": "Appearflags::choices" },
+			"appearflag_skillmedium": { "variable": "choices", "value": "0", "choices": [ "-1", "0", "1" ], "title_choices": "Appearflags::choices" },
+			"appearflag_skillhard": { "variable": "choices", "value": "0", "choices": [ "-1", "0", "1" ], "title_choices": "Appearflags::choices" }
 		}
     },
 	"aiscripted_sequence": {
@@ -4774,6 +4774,10 @@
 		"Class": "Point",
 		"base": ["Targetx", "AllocNewEntity" ],
 		"data": {
+			"m_Caller": {
+				"variable": "target_destination",
+				"value": "!this"
+			},
 			"event_type": {
 				"variable": "choices",
 				"value": "0",
