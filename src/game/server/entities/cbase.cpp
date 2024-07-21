@@ -986,29 +986,34 @@ bool CBaseEntity :: CheckAppearanceFlags()
 	return true;
 }
 
-CBaseEntity* CBaseEntity :: AllocNewActivator( CBaseEntity* pActivator, CBaseEntity* pCaller )
+CBaseEntity* CBaseEntity :: AllocNewActivator( CBaseEntity* pActivator, CBaseEntity* pCaller, string_t szNewTarget = string_t::Null )
 {
-	if( !FStringNull( m_sNewActivator ) )
+	if( FStringNull( szNewTarget ) ) // If szNewTarget is set a custom one will be used
 	{
-		if( FStrEq( STRING( m_sNewActivator ), "!activator" ) )
+		szNewTarget = m_sNewActivator;
+	}
+
+	if( !FStringNull( szNewTarget ) )
+	{
+		if( FStrEq( STRING( szNewTarget ), "!activator" ) )
 		{
 			return pActivator;
 		}
-		else if( FStrEq( STRING( m_sNewActivator ), "!caller" ) )
+		else if( FStrEq( STRING( szNewTarget ), "!caller" ) )
 		{
 			return pCaller;
 		}
-		else if( FStrEq( STRING( m_sNewActivator ), "!this" ) )
+		else if( FStrEq( STRING( szNewTarget ), "!this" ) )
 		{
 			return this;
 		}
-		else if( FStrEq( STRING( m_sNewActivator ), "!player" ) )
+		else if( FStrEq( STRING( szNewTarget ), "!player" ) )
 		{
 			return static_cast<CBaseEntity*>( UTIL_FindNearestPlayer( pev->origin ) );
 		}
 		else
 		{
-			return UTIL_FindEntityByTargetname( nullptr, STRING( m_sNewActivator ) );
+			return UTIL_FindEntityByTargetname( nullptr, STRING( szNewTarget ) );
 		}
 	}
 
