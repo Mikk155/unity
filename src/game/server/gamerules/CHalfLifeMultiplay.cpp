@@ -27,6 +27,8 @@
 #include "items/CBaseItem.h"
 #include "items/weapons/CSatchelCharge.h"
 
+#include "entities/trigger_event.h"
+
 CVoiceGameMgr g_VoiceGameMgr;
 
 class CMultiplayGameMgrHelper : public IVoiceGameMgrHelper
@@ -305,7 +307,7 @@ void CHalfLifeMultiplay::ClientDisconnected(edict_t* pClient)
 			if (!g_fGameOver && (pPlayer->m_iItems & CTFItem::ItemsMask) != 0)
 				ScatterPlayerCTFPowerups(pPlayer);
 
-			FireTargets("game_playerleave", pPlayer, pPlayer, USE_TOGGLE, 0);
+			TriggerEvent( TriggerEventType::PLAYER_LEAVE, pPlayer, pPlayer, 0 );
 
 			Logger->trace("{} disconnected", PlayerLogInfo{*pPlayer});
 

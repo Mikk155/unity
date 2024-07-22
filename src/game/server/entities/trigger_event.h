@@ -21,7 +21,7 @@ enum class TriggerEventType
 {
     None = 0,
     PLAYER_DIE = 1,
-	PLAYER_L
+	PLAYER_LEAVE = 2
 };
 
 class CTriggerEvent : public CBaseEntity

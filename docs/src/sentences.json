@@ -14550,5 +14550,9 @@
 "english": "Player has been killed",
 "spanish": ""
 },
+"trigger_event::event_type::2": {
+"english": "Player left the server",
+"spanish": ""
+},
 "EOF": true
 }

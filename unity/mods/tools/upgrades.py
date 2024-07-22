@@ -120,6 +120,20 @@ def b1_game_playerdie( entity:Entity ):
         game_playerdie = True
     return entity
 
+game_playerleave = False
+def b1_game_playerleave( entity:Entity ):
+    global game_playerleave
+    if not game_playerleave and entity.targetname == 'game_playerleave':
+        Newent = {
+            "classname": "trigger_event",
+            "event_type": "2",
+            "target": "game_playerleave",
+            "m_Caller": "!activator"
+        }
+        AdditionalEntities.append( Newent )
+        game_playerleave = True
+    return entity
+
 # Feel free to rename any function's name, they're automatically catched anyways.
 
 # ===============================================================================
