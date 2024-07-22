@@ -25,6 +25,8 @@ enum class TriggerEventType
 	PLAYER_KILLED = 3,
 	PLAYER_ACTIVATE = 4,
 	PLAYER_JOIN = 5,
+	PLAYER_SPAWN = 6,
+	PLACEHOLDER
 };
 
 class CTriggerEvent : public CBaseEntity

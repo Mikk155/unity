@@ -3949,7 +3949,7 @@ void CBasePlayer::UpdateClientData()
 
 		// This counts as spawning, it suppresses weapon pickup notifications.
 		m_bIsSpawning = true;
-		FireTargets("game_playerspawn", this, this, USE_TOGGLE, 0);
+		TriggerEvent( TriggerEventType::PLAYER_SPAWN, this, this, 0 );
 		m_bIsSpawning = false;
 
 		m_AutoWepSwitch = savedAutoWepSwitch;
