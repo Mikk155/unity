@@ -134,6 +134,28 @@ def b1_game_playerleave( entity:Entity ):
         game_playerleave = True
     return entity
 
+
+game_playerkill = False
+def b1_game_playerkill( entity:Entity ):
+    global game_playerkill
+    if not game_playerkill and entity.targetname == 'game_playerkill':
+        Newent = {
+            "classname": "trigger_event",
+            "event_type": "2",
+            "target": "game_playerkill_check",
+            "m_Caller": "!activator"
+        }
+        AdditionalEntities.append( Newent )
+        Newent = {
+            "classname": "trigger_entity_condition",
+            "targetname": "game_playerkill_check",
+            "pass_target": "game_playerkill",
+            "condition": "0"
+        }
+        AdditionalEntities.append( Newent )
+        game_playerkill = True
+    return entity
+
 # Feel free to rename any function's name, they're automatically catched anyways.
 
 # ===============================================================================

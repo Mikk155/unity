@@ -476,13 +476,14 @@ void CHalfLifeMultiplay::PlayerKilled(CBasePlayer* pVictim, CBaseEntity* pKiller
 	{
 		// if a player dies in a deathmatch game and the killer is a client, award the killer some points
 		pKiller->pev->frags += IPointsForKill(peKiller, pVictim);
-
-		FireTargets("game_playerkill", peKiller, peKiller, USE_TOGGLE, 0);
 	}
 	else
 	{ // killed by the world
 		pKiller->pev->frags -= 1;
 	}
+
+	if( pVictim != pKiller ) // Not suicide
+		TriggerEvent( TriggerEventType::PLAYER_KILLED, pVictim, pKiller, 0 );
 
 	// update the scores
 	// killed scores
