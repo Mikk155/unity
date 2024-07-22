@@ -29,6 +29,8 @@
 
 #include "pm_shared.h"
 
+#include "entities/trigger_event.h"
+
 const int MaxTeamNameLength = 16;
 const int MaxTeamCharacters = 12;
 const int MaxTeamCharacterNameLength = 16;
@@ -745,7 +747,7 @@ void CHalfLifeCTFplay::ClientDisconnected(edict_t* pClient)
 			}
 			v2->m_iTeamNum = CTFTeam::None;
 			v2->m_iNewTeamNum = CTFTeam::None;
-			FireTargets("game_playerleave", v2, v2, USE_TOGGLE, 0.0);
+			TriggerEvent( TriggerEventType::PLAYER_LEAVE, v2, v2, 0 );
 
 			Logger->trace("{} disconnected", PlayerLogInfo{*v2});
 
