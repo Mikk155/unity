@@ -3906,7 +3906,7 @@ void CBasePlayer::UpdateClientData()
 	{
 		m_HasActivated = true;
 		g_Server.PlayerActivating(this);
-		FireTargets("game_playeractivate", this, this, USE_TOGGLE, 0);
+		TriggerEvent( TriggerEventType::PLAYER_ACTIVATE, this, this, 0 );
 	}
 
 	if (m_fInitHUD)
@@ -3932,6 +3932,7 @@ void CBasePlayer::UpdateClientData()
 			{
 				FireTargets("game_playerjoin", this, this, USE_TOGGLE, 0);
 			}
+			TriggerEvent( TriggerEventType::PLAYER_JOIN, this, this, 0 );
 		}
 
 		if (g_pGameRules->IsMultiplayer())

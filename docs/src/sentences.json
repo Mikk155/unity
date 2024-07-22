@@ -14547,11 +14547,19 @@
 "spanish": ""
 },
 "trigger_event::event_type::1": {
-"english": "Player has been killed",
+"english": "Player has died",
 "spanish": ""
 },
 "trigger_event::event_type::2": {
 "english": "Player left the server",
+"spanish": ""
+},
+"trigger_event::event_type::3": {
+"english": "Player has been kiled (not suicide)",
+"spanish": ""
+},
+"trigger_event::event_type::4": {
+"english": "Player has joined (game_playeractivate)",
 "spanish": ""
 },
 "EOF": true
