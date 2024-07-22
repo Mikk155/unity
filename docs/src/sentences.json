@@ -9294,60 +9294,40 @@
 "english": "",
 "spanish": ""
 },
-"player_hassuit::classname": {
-"english": "Fires a target based on whether the activating player has a suit or not",
+"player_entity_condition::classname": {
+"english": "Fires a target based on whether the activator match the condition",
 "spanish": ""
 },
-"player_hassuit::classname::description": {
-"english": "This entity allows level designers to check if the activating player has the HEV suit.",
-"spanish": ""
-},
-"player_hassuit::pass_target": {
+"player_entity_condition::pass_target": {
 "english": "Target To Fire On Pass",
 "spanish": ""
 },
-"player_hassuit::pass_target::description": {
-"english": "Target to trigger if the player has the HEV suit",
-"spanish": ""
-},
-"player_hassuit::fail_target": {
+"player_entity_condition::fail_target": {
 "english": "Target To Fire On Fail",
 "spanish": ""
 },
-"player_hassuit::fail_target::description": {
-"english": "Target to trigger if the player does not have the HEV suit",
+"player_entity_condition::condition": {
+"english": "Condition to check",
 "spanish": ""
 },
-"player_hasweapon::classname": {
-"english": "Fires a target based on whether the activating player has the given weapon or not",
+"player_entity_condition::condition::0": {
+"english": "Is Player",
 "spanish": ""
 },
-"player_hasweapon::classname::description": {
-"english": "This entity allows level designers to check if the player has a specific weapon.",
+"player_entity_condition::condition::1": {
+"english": "Has Suit",
 "spanish": ""
 },
-"player_hasweapon::pass_target": {
-"english": "Target To Fire On Pass",
+"player_entity_condition::condition::2": {
+"english": "Has Weapon/s (arg1)",
 "spanish": ""
 },
-"player_hasweapon::pass_target::description": {
-"english": "Target to trigger if the player has the specified weapon",
+"player_entity_condition::condition::3": {
+"english": "Checks if it's a player and if it haves the weapon listed in argument_1, if argument_1 is empty we'll check if the player have any weapon.",
 "spanish": ""
 },
-"player_hasweapon::fail_target": {
-"english": "Target To Fire On Fail",
-"spanish": ""
-},
-"player_hasweapon::fail_target::description": {
-"english": "Target to trigger if the player does not have the specified weapon",
-"spanish": ""
-},
-"player_hasweapon::weapon_name": {
-"english": "Weapon Name",
-"spanish": ""
-},
-"player_hasweapon::weapon_name::description": {
-"english": "Name of the weapon to check for",
+"player_entity_condition::argument_1": {
+"english": "Additional arguments to check",
 "spanish": ""
 },
 "player_loadsaved::classname": {

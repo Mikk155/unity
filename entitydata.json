@@ -4156,11 +4156,20 @@
 			}
 		}
 	},
-	"player_hassuit": {
+	"player_entity_condition": {
 		"Class": "Point",
 		"base": ["Targetname"],
 		"size": [ [ -16, -16, -16 ], [ 16, 16, 16 ] ],
 		"data": {
+			"condition": {
+				"variable": "choices",
+				"value": "0",
+				"choices":[
+					"0",
+					"1",
+					"2"
+				]
+			},
 			"pass_target": {
 				"variable": "target_destination",
 				"value": ""
@@ -4168,23 +4177,8 @@
 			"fail_target": {
 				"variable": "target_destination",
 				"value": ""
-			}
-		}
-	},
-	"player_hasweapon": {
-		"Class": "Point",
-		"base": ["Targetname"],
-		"size": [ [ -16, -16, -16 ], [ 16, 16, 16 ] ],
-		"data": {
-			"pass_target": {
-				"variable": "target_destination",
-				"value": ""
 			},
-			"fail_target": {
-				"variable": "target_destination",
-				"value": ""
-			},
-			"weapon_name": {
+			"argument_1": {
 				"variable": "string",
 				"value": ""
 			}
