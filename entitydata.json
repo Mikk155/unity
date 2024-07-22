@@ -4156,7 +4156,7 @@
 			}
 		}
 	},
-	"player_entity_condition": {
+	"trigger_entity_condition": {
 		"Class": "Point",
 		"base": ["Targetname"],
 		"size": [ [ -16, -16, -16 ], [ 16, 16, 16 ] ],
