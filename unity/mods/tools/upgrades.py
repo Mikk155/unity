@@ -169,6 +169,21 @@ def b1_game_playeractivate( entity:Entity ):
         game_playeractivate = True
     return entity
 
+game_playerjoin = False
+def b1_game_playerjoin( entity:Entity ):
+    global game_playerjoin
+    if not game_playerjoin and entity.targetname == 'game_playerjoin':
+        Newent = {
+            "classname": "trigger_event",
+            "event_type": "5",
+            "target": "game_playerjoin",
+            "m_Caller": "!activator",
+            "appearflag_multiplayer": "1" # Only in multiplayer
+        }
+        AdditionalEntities.append( Newent )
+        game_playerjoin = True
+    return entity
+
 # Feel free to rename any function's name, they're automatically catched anyways.
 
 # ===============================================================================

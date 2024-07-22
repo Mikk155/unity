@@ -3928,10 +3928,6 @@ void CBasePlayer::UpdateClientData()
 
 			m_iObserverLastMode = OBS_ROAMING;
 
-			if (g_pGameRules->IsMultiplayer())
-			{
-				FireTargets("game_playerjoin", this, this, USE_TOGGLE, 0);
-			}
 			TriggerEvent( TriggerEventType::PLAYER_JOIN, this, this, 0 );
 		}
 

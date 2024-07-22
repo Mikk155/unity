@@ -14562,5 +14562,9 @@
 "english": "Player has joined (game_playeractivate)",
 "spanish": ""
 },
+"trigger_event::event_type::5": {
+"english": "Player has joined (game_playerjoin)",
+"spanish": ""
+},
 "EOF": true
 }
