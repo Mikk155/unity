@@ -173,8 +173,20 @@ def write_class( entdata={}, FGD=None, name='', JsonData={} ):
 
     FGD.write( ']\n\n' )
 
+class jsonc:
+    def __init__( self, FileLines : list[ str ] ):
+        self.jsdata = ''
+        for t, line in enumerate( FileLines ):
+            line = line.strip()
+            if line and line != '' and not line.startswith( '//' ):
+                self.jsdata = f'{self.jsdata}\n{line}'
+        self.data = json.loads( self.jsdata )
+        self.data.pop( 'EOF', '' )
+    def load(self):
+        return self.data
+
 with open( f'{abs}/docs/entities.html', 'w' ) as html, open( f'{abs}/unity/half-life-unity.fgd', 'w' ) as FGD, open( f'{abs}/entitydata.json', 'r' ) as Json, open( f'{abs}/docs/src/sentences.json', 'r' ) as sentence:
-    JsonData = json.load( Json )
+    JsonData = jsonc( Json ).load()
     sentences = json.load( sentence )
 
     for key, value in JsonData.items():
