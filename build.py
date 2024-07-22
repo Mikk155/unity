@@ -22,10 +22,22 @@ sentences={}
 EntListing=[]
 
 def description( name, customdata = '', AdditionalData = '' ):
+    if customdata == '' and name.startswith( 'EntClass' ):
+        name = name[ 8: ]
     return sentences.get( f'{customdata}{AdditionalData}' if customdata != '' else name, {} ).get( 'english', '' ).replace( '\n', '\\n' )
 
-def write_table( classname='', key='', values={}, file=None ):
+def write_table( classname='', key='', values={}, file=None, choices=[] ):
 
+    if len(choices) > 0:
+        for c in choices:
+            file.write( f'\t</tr>\n')
+            file.write( f'\t\t<td pkvd="{classname}::{key}::{c}"></td>\n')
+            file.write( f'\t\t<td>{key}</td>\n')
+            file.write( f'\t\t<td>{values.get( "variable", "" )}</td>\n')
+            file.write( f'\t\t<td>{c}</td>\n')
+            file.write( f'\t\t<td style="text-align: left;" pkvd="{classname}::{key}::{c}::description"></td>\n')
+            file.write( f'\t</tr>\n')
+    else:
         file.write( f'\t</tr>\n')
         file.write( f'\t\t<td pkvd="{classname}::{key}"></td>\n')
         file.write( f'\t\t<td>{key}</td>\n')
@@ -48,16 +60,20 @@ def write_entity( entd={}, classname='', JsonData={} ):
 
         if "base" in entd:
             for base in entd.get( "base", [] ):
+                if base.startswith( 'EntClass' ):
+                    for bk, bv in entd.get( 'own_data', {} ).items():
+                        write_table( classname=classname, key=bk, values=bv, file=file, choices=bv.get( 'choices', [] ) )
+                    continue
                 baseclasses = JsonData.get( base, {} )
                 if 'data' in baseclasses:
                     dataclass = baseclasses.get( 'data', {} )
                     for bk, bv in dataclass.items():
-                        write_table( classname=base, key=bk, values=bv, file=file )
+                        write_table( classname=base, key=bk, values=bv, file=file, choices=bv.get( 'choices', [] ) )
 
         if 'data' in entd:
             dataclass = entd.get( 'data', {} )
             for bk, bv in dataclass.items():
-                write_table( classname=classname, key=bk, values=bv, file=file )
+                write_table( classname=classname, key=bk, values=bv, file=file, choices=bv.get( 'choices', [] ) )
 
         file.write( f'</table>\n')
         file.write( f'<br><br>\n')
@@ -70,7 +86,7 @@ def write_keyvalues( entitydata, classname ):
         variable = data.get( "variable", "" )
         value = data.get( "value", "" )
 
-        if variable == 'flags':
+        if key == 'spawnflags':
             FGD.write( f'\tspawnflags(flags) =\n\t[\n' )
             sfbits = data.get( "choices", [] )
 
@@ -107,7 +123,7 @@ def write_keyvalues( entitydata, classname ):
                 FGD.write( f' : "{descrvar}"\n')
             else:
                 descrvar = description( f'{classname}::{key}::description', data.get( "description", "" ) )
-                FGD.write( f'"{descrvar}" : "{value}" =\n\t[\n' )
+                FGD.write( f'"{value}" : "{descrvar}" =\n\t[\n' )
                 choices = data.get( "choices", [] )
 
                 for choice in choices:
@@ -173,6 +189,19 @@ def write_class( entdata={}, FGD=None, name='', JsonData={} ):
 
     FGD.write( ']\n\n' )
 
+    if entdata.get( 'point', False ):
+        entdata.pop( 'point', '' )
+        entdata.pop( 'data', '' )
+        entdata[ 'Class' ] = 'Point'
+        AddHulls = entdata.get( 'base', [] )
+        for b in [ 'Angles', 'Targetx', 'Target', 'Master', 'Global', 'Mandatory' ]:
+            if b in AddHulls:
+                AddHulls.insert( AddHulls.index( b ) + 1, f'hulls' )
+                break
+        entdata[ 'base' ] = AddHulls
+        write_class( entdata=entdata, FGD=FGD, name=name, JsonData=JsonData )
+
+
 class jsonc:
     def __init__( self, FileLines : list[ str ] ):
         self.jsdata = ''
@@ -191,7 +220,28 @@ with open( f'{abs}/docs/entities.html', 'w' ) as html, open( f'{abs}/unity/half-
 
     for key, value in JsonData.items():
 
-        write_class( FGD=FGD, entdata=JsonData.get( key, {} ), name=key, JsonData=JsonData )
+        if value.get( 'Class', '' ) in [ 'Point', 'Solid' ] and key != 'worldspawn':
+            if len( value.get( 'data', {} ) ) > 0:
+                KeyValueDatas = value.get( 'data', {} )
+                value.pop( 'data', '' )
+                value[ 'own_data' ] = KeyValueDatas
+                write_class( FGD=FGD, entdata={ "Class": "Base", "data": KeyValueDatas }, name=f'EntClass{key}', JsonData=JsonData )
+                base = value.get( 'base', [] )
+                for b in [ 'Angles', 'Targetx', 'Target', 'Master', 'Global', 'Mandatory' ]:
+                    if b in base:
+                        base.insert( base.index( b ) + 1, f'EntClass{key}' )
+                        break
+                if not f'EntClass{key}' in base:
+                    base.insert( 0, f'EntClass{key}')
+                value[ 'base' ] = base
+
+            # So not to include them on each entity manually. since all entities supports these
+            Mandatory = value.get( 'base', [] )
+            Mandatory.append( 'Appearflags' )
+            Mandatory.insert( 0, 'Mandatory' )
+            value[ 'base' ] = Mandatory
+
+        write_class( FGD=FGD, entdata=value, name=key, JsonData=JsonData )
 
     EntListing.sort()
     for entname in EntListing:
