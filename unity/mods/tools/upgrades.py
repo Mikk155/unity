@@ -3,7 +3,7 @@ from tools.Vector import Vector
 
 AdditionalEntities = []
 
-def a1_angle_to_angles( entity:Entity ):
+def a1_angle_to_angles( index:int, entity:Entity, map:str ):
     if entity.angle:
         NewAngles = Vector()
         Angle = float( entity.angle )
@@ -20,7 +20,7 @@ def a1_angle_to_angles( entity:Entity ):
         entity.angle = None
     return entity
 
-def a1_classname_mapping( entity:Entity ):
+def a1_classname_mapping( index:int, entity:Entity, map:str ):
     classnames = {
         "weapon_glock": "weapon_9mmhandgun",
         "ammo_glockclip": "ammo_9mmclip",
@@ -43,7 +43,7 @@ def a1_classname_mapping( entity:Entity ):
                 entity.KeyValueData.pop( old, '' )
     return entity
 
-def b1_worldspawn( entity:Entity ):
+def b1_worldspawn( index:int, entity:Entity, map:str ):
     if entity.classname == 'worldspawn':
         wad = entity.wad
         if wad:
@@ -60,12 +60,12 @@ def b1_worldspawn( entity:Entity ):
             entity.wad = dwads
     return entity
 
-def b1_chargers_dmdelay( entity:Entity ):
+def b1_chargers_dmdelay( index:int, entity:Entity, map:str ):
     if entity.classname and entity.classname in [ 'func_healthcharger', 'func_recharge' ]:
         entity.dmdelay = None
     return entity
 
-def b1_world_items( entity:Entity ):
+def b1_world_items( index:int, entity:Entity, map:str ):
     if entity.classname == 'world_items':
         value = int( entity.type )
         entity.type = None
@@ -81,19 +81,19 @@ def b1_world_items( entity:Entity ):
             entity.remove()
     return entity
 
-def b1_prop_human_hulls( entity:Entity ):
+def b1_prop_human_hulls( index:int, entity:Entity, map:str ):
     if entity.classname in [ 'monster_generic', 'monster_generic' ] and entity.model in [ 'models/player.mdl', 'models/holo.mdl' ]:
         entity.custom_hull_min = '-16 -16 -36'
         entity.custom_hull_max = '16 16 36'
     return entity
 
-def b1_ambient_generic_pitchbell( entity:Entity ):
+def b1_ambient_generic_pitchbell( index:int, entity:Entity, map:str ):
     if entity.classname == 'ambient_generic' and entity.message == 'buttons/bell1.wav' and entity.pitch == '80':
         entity.message = 'buttons/bell1_alt.wav'
         entity.pitch = 100
     return entity
 
-def b1_monster_barney_dead( entity:Entity ):
+def b1_monster_barney_dead( index:int, entity:Entity, map:str ):
     if entity.classname == 'monster_barney_dead' and entity.body != None:
         body = int(entity.body )
         if body == 0:
@@ -107,7 +107,7 @@ def b1_monster_barney_dead( entity:Entity ):
     return entity
 
 game_playerdie = False
-def b1_game_playerdie( entity:Entity ):
+def b1_game_playerdie( index:int, entity:Entity, map:str ):
     global game_playerdie
     if not game_playerdie and entity.targetname == 'game_playerdie':
         Newent = {
@@ -121,7 +121,7 @@ def b1_game_playerdie( entity:Entity ):
     return entity
 
 game_playerleave = False
-def b1_game_playerleave( entity:Entity ):
+def b1_game_playerleave( index:int, entity:Entity, map:str ):
     global game_playerleave
     if not game_playerleave and entity.targetname == 'game_playerleave':
         Newent = {
@@ -135,7 +135,7 @@ def b1_game_playerleave( entity:Entity ):
     return entity
 
 game_playerkill = False
-def b1_game_playerkill( entity:Entity ):
+def b1_game_playerkill( index:int, entity:Entity, map:str ):
     global game_playerkill
     if not game_playerkill and entity.targetname == 'game_playerkill':
         Newent = {
@@ -156,7 +156,7 @@ def b1_game_playerkill( entity:Entity ):
     return entity
 
 game_playeractivate = False
-def b1_game_playeractivate( entity:Entity ):
+def b1_game_playeractivate( index:int, entity:Entity, map:str ):
     global game_playeractivate
     if not game_playeractivate and entity.targetname == 'game_playeractivate':
         Newent = {
@@ -170,7 +170,7 @@ def b1_game_playeractivate( entity:Entity ):
     return entity
 
 game_playerjoin = False
-def b1_game_playerjoin( entity:Entity ):
+def b1_game_playerjoin( index:int, entity:Entity, map:str ):
     global game_playerjoin
     if not game_playerjoin and entity.targetname == 'game_playerjoin':
         Newent = {
@@ -185,7 +185,7 @@ def b1_game_playerjoin( entity:Entity ):
     return entity
 
 game_playerspawn = False
-def b1_game_playerspawn( entity:Entity ):
+def b1_game_playerspawn( index:int, entity:Entity, map:str ):
     global game_playerspawn
     if not game_playerspawn and entity.targetname == 'game_playerspawn':
         Newent = {
@@ -198,75 +198,7 @@ def b1_game_playerspawn( entity:Entity ):
         game_playerspawn = True
     return entity
 
-# Feel free to rename any function's name, they're automatically catched anyways.
-
-# ===============================================================================
-# Blue Shift Map-specific upgrades
-# ===============================================================================
-
-def serie_ba_( entity:Entity ):
-    if entity.classname == 'monster_rosenberg':
-        entity.model = None
-        SF_ROSENBERG_NO_USE = 256
-        spawnflags = int( entity.spawnflags ) if entity.spawnflags else 0
-        entity.allow_follow = 0 if spawnflags & SF_ROSENBERG_NO_USE else 1
-        spawnflags &= ~SF_ROSENBERG_NO_USE
-        entity.spawnflags = spawnflags
-    elif entity.classname == 'monster_generic' and entity.body == '3' and entity.model == 'models/scientist.mdl':
-        entity.model = 'models/rosenberg.mdl'
-    elif entity.classname == 'monster_scientist' and entity.body == '3':
-        entity.classname == 'monster_rosenberg'
-        entity.model = None
-    entity.body = None
-    return entity
-
-def map_ba_canal1( entity:Entity ):
-    if entity.classname == 'monstermaker':
-        if entity.targetname == 'tele5_spawner' or entity.targetname == 'tele4_spawner':
-            entity.netname = None
-    return entity
-
-def map_ba_outro( entity:Entity ):
-    if entity.classname == 'trigger_auto' and entity.target == 'start_outro':
-        entity.spawnflags = 1
-    elif entity.targetname == 'drag_grunt1':
-        entity.body = 4
-    elif entity.targetname == 'drag_grunt2':
-        entity.body = 1
-    return entity
-
-def map_ba_power2( entity:Entity ):
-    if entity.classname == 'worldspawn':
-        entity.chaptertitle = None
-    return entity
-
-def map_ba_security2( entity:Entity ):
-    if entity.targetname == 'gina_push':
-        entity.model = 'models/blueshift/holo_cart.mdl'
-    return entity
-
-def map_ba_tram1( entity:Entity ):
-    if entity.targetname == 'sitter':
-        entity.body = None
-    elif entity.classname == 'item_suit':
-        entity.remove()
-    return entity
-
-def map_ba_tram2( entity:Entity ):
-    if entity.targetname == 'joey_normal' or entity.classname == 'joey_reflect':
-        entity.skin = 1
-    return entity
-
-def map_ba_yard1( entity:Entity ):
-    if entity.classname == 'monster_scientist_dead' and entity.body == '3':
-        entity.body = 0
-    return entity
-
-# ===============================================================================
-# Half Life Map-specific upgrades
-# ===============================================================================
-
-def map_c2a2a( entity:Entity ):
+def map_c2a2a( index:int, entity:Entity, map:str ):
     if entity.classname == 'worldspawn':
         entity.MaxRange = 8192
     return entity

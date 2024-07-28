@@ -6,10 +6,20 @@ import os
 import json
 import inspect
 import tools.upgrades as upgrades
+import __main__ as main
 from tools.Entity import Entity
 
-AdditionalEntities = []
-# This may be slow but i did it this way so "upgrades" can be easly implemented
+new_entities = []
+
+def add_entity( entity:dict ):
+    global new_entities
+    new_entities.append( entity )
+
+def HookMembers( index:int, entblock:Entity, entdata:list[dict], map:str, obj, name:str ):
+    if not inspect.isfunction(obj) or not 'Entity.Entity' in str(inspect.signature(obj).parameters):
+        return entblock.ToDict()
+    return obj( index, entblock, map ).ToDict()
+
 def upgrade_map( entdata=[], mapname='' ):
 
     TempEntData = entdata.copy()
@@ -17,30 +27,20 @@ def upgrade_map( entdata=[], mapname='' ):
     for i, entblock in enumerate( TempEntData ):
 
         for name, obj in inspect.getmembers( upgrades ):
-
-            if name.startswith('__') and name.endswith('__'):
-                continue
-
-            if inspect.isfunction(obj):
-
-                if name.startswith( 'map_' ) and name != f'map_{mapname}' or name.startswith( 'serie_' ) and not mapname.startswith( name[ 6 : ] ):
-                    continue
-
-                entity = Entity( entblock )
-                entity = obj( entity )
-                entblock = entity.ToDict()
+            entblock = HookMembers( i, Entity( entblock ), entdata, mapname, obj, name )
+        for name, obj in inspect.getmembers( main ):
+            entblock = HookMembers( i, Entity( entblock ), entdata, mapname, obj, name )
 
         entdata[i] = ( json.dumps( entblock ) if len( entblock ) > 0 else {} )
 
-    if False:
-        if os.path.exists( f'{port}/maps/{mapname}.json'):
-            with open( f'{port}/maps/{mapname}.json', 'r' ) as addent:
-                additionalentities = json.load( addent )
-                for newent in additionalentities:
-                    entdata.append( json.dumps( newent ) )
-
     for ae in upgrades.AdditionalEntities:
         entdata.append( json.dumps( ae ) )
+    global new_entities
+    for ae in new_entities:
+        entdata.append( json.dumps( ae ) )
+
+    new_entities = []
+    upgrades.AdditionalEntities = []
 
     return entdata
 
