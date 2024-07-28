@@ -26,6 +26,7 @@
 #include "world.h"
 #include "ServerLibrary.h"
 #include "ctf/ctf_items.h"
+#include "trigger_event.h"
 
 /**
  *	@details This must match the list in util.h
@@ -387,14 +388,20 @@ void CWorld::Precache()
 	{
 		Logger->debug("Chapter title: {}", GetNetname());
 		CBaseEntity* pEntity = CBaseEntity::Create("env_message", g_vecZero, g_vecZero, nullptr);
-		if (pEntity)
+		if( pEntity != nullptr )
 		{
 			pEntity->pev->message = pev->netname;
 			pev->netname = string_t::Null;
 
 			if( g_pGameRules->IsMultiplayer() )
 			{
-				pEntity->pev->targetname = MAKE_STRING( "game_playerspawn" );
+				CTriggerEvent* pEvent = g_EntityDictionary->Create<CTriggerEvent>("trigger_event");
+
+				if( pEvent != nullptr )
+				{
+					pEvent->m_pEventType = TriggerEventType::PLAYER_JOIN;
+					pEvent->pev->target = pEntity->pev->targetname = MAKE_STRING( "game_playerspawn" );
+				}
 			}
 			else
 			{
