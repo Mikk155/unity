@@ -8,74 +8,452 @@
 	<th pkvd="value"></th>
 	<th pkvd="Description"></th>
 	</tr>
-		<td pkvd="Target::target"></td>
-		<td>target</td>
-		<td>target_destination</td>
-		<td></td>
-		<td style="text-align: left;" pkvd="Target::target::description"></td>
+		<td pkvd="button_target::spawnflags"></td>
+		<td>spawnflags</td>
+		<td>bits</td>
+		<td>2048</td>
+		<td style="text-align: left;" pkvd="button_target::spawnflags::description"></td>
 	</tr>
 	</tr>
-		<td pkvd="Targetname::targetname"></td>
+		<td pkvd="button_target::targetname"></td>
 		<td>targetname</td>
 		<td>target_source</td>
 		<td></td>
-		<td style="text-align: left;" pkvd="Targetname::targetname::description"></td>
-	</tr>
-	</tr>
-		<td pkvd="Angles::angles"></td>
-		<td>angles</td>
-		<td>string</td>
-		<td>0 0 0</td>
-		<td style="text-align: left;" pkvd="Angles::angles::description"></td>
-	</tr>
-	</tr>
-		<td pkvd="ZHLT::zhlt_lightflags"></td>
-		<td>zhlt_lightflags</td>
-		<td>choices</td>
-		<td>0</td>
-		<td style="text-align: left;" pkvd="ZHLT::zhlt_lightflags::description"></td>
-	</tr>
-	</tr>
-		<td pkvd="ZHLT::light_origin"></td>
-		<td>light_origin</td>
-		<td>string</td>
-		<td></td>
-		<td style="text-align: left;" pkvd="ZHLT::light_origin::description"></td>
-	</tr>
-	</tr>
-		<td pkvd="Master::master"></td>
-		<td>master</td>
-		<td>target_destination</td>
-		<td></td>
-		<td style="text-align: left;" pkvd="Master::master::description"></td>
-	</tr>
-	</tr>
-		<td pkvd="RenderFields::rendermode"></td>
-		<td>rendermode</td>
-		<td>choices</td>
-		<td>0</td>
-		<td style="text-align: left;" pkvd="RenderFields::rendermode::description"></td>
-	</tr>
-	</tr>
-		<td pkvd="RenderFields::renderamt"></td>
-		<td>renderamt</td>
-		<td>integer</td>
-		<td></td>
-		<td style="text-align: left;" pkvd="RenderFields::renderamt::description"></td>
-	</tr>
-	</tr>
-		<td pkvd="RenderFields::rendercolor"></td>
-		<td>rendercolor</td>
-		<td>color255</td>
-		<td>0 0 0</td>
-		<td style="text-align: left;" pkvd="RenderFields::rendercolor::description"></td>
+		<td style="text-align: left;" pkvd="button_target::targetname::description"></td>
 	</tr>
 	</tr>
 		<td pkvd="button_target::spawnflags"></td>
 		<td>spawnflags</td>
-		<td>flags</td>
-		<td></td>
+		<td>bits</td>
+		<td>1</td>
 		<td style="text-align: left;" pkvd="button_target::spawnflags::description"></td>
+	</tr>
+	</tr>
+		<td pkvd="button_target::spawnflags"></td>
+		<td>spawnflags</td>
+		<td>bits</td>
+		<td>2</td>
+		<td style="text-align: left;" pkvd="button_target::spawnflags::description"></td>
+	</tr>
+	</tr>
+		<td pkvd="button_target::target"></td>
+		<td>target</td>
+		<td>target_destination</td>
+		<td></td>
+		<td style="text-align: left;" pkvd="button_target::target::description"></td>
+	</tr>
+	</tr>
+		<td pkvd="button_target::m_UseType"></td>
+		<td>m_UseType</td>
+		<td>choices</td>
+		<td>-1</td>
+		<td style="text-align: left;" pkvd="button_target::m_UseType::description"></td>
+	</tr>
+	</tr>
+		<td pkvd="button_target::m_UseType"></td>
+		<td>m_UseType</td>
+		<td>choices</td>
+		<td>0</td>
+		<td style="text-align: left;" pkvd="button_target::m_UseType::description"></td>
+	</tr>
+	</tr>
+		<td pkvd="button_target::m_UseType"></td>
+		<td>m_UseType</td>
+		<td>choices</td>
+		<td>1</td>
+		<td style="text-align: left;" pkvd="button_target::m_UseType::description"></td>
+	</tr>
+	</tr>
+		<td pkvd="button_target::m_UseType"></td>
+		<td>m_UseType</td>
+		<td>choices</td>
+		<td>3</td>
+		<td style="text-align: left;" pkvd="button_target::m_UseType::description"></td>
+	</tr>
+	</tr>
+		<td pkvd="button_target::m_UseType"></td>
+		<td>m_UseType</td>
+		<td>choices</td>
+		<td>2</td>
+		<td style="text-align: left;" pkvd="button_target::m_UseType::description"></td>
+	</tr>
+	</tr>
+		<td pkvd="button_target::m_UseType"></td>
+		<td>m_UseType</td>
+		<td>choices</td>
+		<td>4</td>
+		<td style="text-align: left;" pkvd="button_target::m_UseType::description"></td>
+	</tr>
+	</tr>
+		<td pkvd="button_target::m_UseType"></td>
+		<td>m_UseType</td>
+		<td>choices</td>
+		<td>5</td>
+		<td style="text-align: left;" pkvd="button_target::m_UseType::description"></td>
+	</tr>
+	</tr>
+		<td pkvd="button_target::m_UseType"></td>
+		<td>m_UseType</td>
+		<td>choices</td>
+		<td>6</td>
+		<td style="text-align: left;" pkvd="button_target::m_UseType::description"></td>
+	</tr>
+	</tr>
+		<td pkvd="button_target::m_UseType"></td>
+		<td>m_UseType</td>
+		<td>choices</td>
+		<td>7</td>
+		<td style="text-align: left;" pkvd="button_target::m_UseType::description"></td>
+	</tr>
+	</tr>
+		<td pkvd="button_target::m_UseType"></td>
+		<td>m_UseType</td>
+		<td>choices</td>
+		<td>8</td>
+		<td style="text-align: left;" pkvd="button_target::m_UseType::description"></td>
+	</tr>
+	</tr>
+		<td pkvd="button_target::m_UseType"></td>
+		<td>m_UseType</td>
+		<td>choices</td>
+		<td>9</td>
+		<td style="text-align: left;" pkvd="button_target::m_UseType::description"></td>
+	</tr>
+	</tr>
+		<td pkvd="button_target::m_UseValue"></td>
+		<td>m_UseValue</td>
+		<td>float</td>
+		<td></td>
+		<td style="text-align: left;" pkvd="button_target::m_UseValue::description"></td>
+	</tr>
+	</tr>
+		<td pkvd="button_target::angles"></td>
+		<td>angles</td>
+		<td>string</td>
+		<td>0 0 0</td>
+		<td style="text-align: left;" pkvd="button_target::angles::description"></td>
+	</tr>
+	</tr>
+		<td pkvd="button_target::master"></td>
+		<td>master</td>
+		<td>target_source</td>
+		<td></td>
+		<td style="text-align: left;" pkvd="button_target::master::description"></td>
+	</tr>
+	</tr>
+		<td pkvd="button_target::rendermode"></td>
+		<td>rendermode</td>
+		<td>choices</td>
+		<td>0</td>
+		<td style="text-align: left;" pkvd="button_target::rendermode::description"></td>
+	</tr>
+	</tr>
+		<td pkvd="button_target::rendermode"></td>
+		<td>rendermode</td>
+		<td>choices</td>
+		<td>1</td>
+		<td style="text-align: left;" pkvd="button_target::rendermode::description"></td>
+	</tr>
+	</tr>
+		<td pkvd="button_target::rendermode"></td>
+		<td>rendermode</td>
+		<td>choices</td>
+		<td>2</td>
+		<td style="text-align: left;" pkvd="button_target::rendermode::description"></td>
+	</tr>
+	</tr>
+		<td pkvd="button_target::rendermode"></td>
+		<td>rendermode</td>
+		<td>choices</td>
+		<td>3</td>
+		<td style="text-align: left;" pkvd="button_target::rendermode::description"></td>
+	</tr>
+	</tr>
+		<td pkvd="button_target::rendermode"></td>
+		<td>rendermode</td>
+		<td>choices</td>
+		<td>4</td>
+		<td style="text-align: left;" pkvd="button_target::rendermode::description"></td>
+	</tr>
+	</tr>
+		<td pkvd="button_target::rendermode"></td>
+		<td>rendermode</td>
+		<td>choices</td>
+		<td>5</td>
+		<td style="text-align: left;" pkvd="button_target::rendermode::description"></td>
+	</tr>
+	</tr>
+		<td pkvd="button_target::renderamt"></td>
+		<td>renderamt</td>
+		<td>integer</td>
+		<td></td>
+		<td style="text-align: left;" pkvd="button_target::renderamt::description"></td>
+	</tr>
+	</tr>
+		<td pkvd="button_target::rendercolor"></td>
+		<td>rendercolor</td>
+		<td>color255</td>
+		<td>0 0 0</td>
+		<td style="text-align: left;" pkvd="button_target::rendercolor::description"></td>
+	</tr>
+	</tr>
+		<td pkvd="button_target::zhlt_lightflags"></td>
+		<td>zhlt_lightflags</td>
+		<td>choices</td>
+		<td>0</td>
+		<td style="text-align: left;" pkvd="button_target::zhlt_lightflags::description"></td>
+	</tr>
+	</tr>
+		<td pkvd="button_target::zhlt_lightflags"></td>
+		<td>zhlt_lightflags</td>
+		<td>choices</td>
+		<td>1</td>
+		<td style="text-align: left;" pkvd="button_target::zhlt_lightflags::description"></td>
+	</tr>
+	</tr>
+		<td pkvd="button_target::zhlt_lightflags"></td>
+		<td>zhlt_lightflags</td>
+		<td>choices</td>
+		<td>2</td>
+		<td style="text-align: left;" pkvd="button_target::zhlt_lightflags::description"></td>
+	</tr>
+	</tr>
+		<td pkvd="button_target::zhlt_lightflags"></td>
+		<td>zhlt_lightflags</td>
+		<td>choices</td>
+		<td>3</td>
+		<td style="text-align: left;" pkvd="button_target::zhlt_lightflags::description"></td>
+	</tr>
+	</tr>
+		<td pkvd="button_target::zhlt_lightflags"></td>
+		<td>zhlt_lightflags</td>
+		<td>choices</td>
+		<td>6</td>
+		<td style="text-align: left;" pkvd="button_target::zhlt_lightflags::description"></td>
+	</tr>
+	</tr>
+		<td pkvd="button_target::light_origin"></td>
+		<td>light_origin</td>
+		<td>string</td>
+		<td></td>
+		<td style="text-align: left;" pkvd="button_target::light_origin::description"></td>
+	</tr>
+	</tr>
+		<td pkvd="button_target::spawnflags"></td>
+		<td>spawnflags</td>
+		<td>bits</td>
+		<td>2</td>
+		<td style="text-align: left;" pkvd="button_target::spawnflags::description"></td>
+	</tr>
+	</tr>
+		<td pkvd="button_target::appearflag_singleplayer"></td>
+		<td>appearflag_singleplayer</td>
+		<td>choices</td>
+		<td>-1</td>
+		<td style="text-align: left;" pkvd="button_target::appearflag_singleplayer::description"></td>
+	</tr>
+	</tr>
+		<td pkvd="button_target::appearflag_singleplayer"></td>
+		<td>appearflag_singleplayer</td>
+		<td>choices</td>
+		<td>0</td>
+		<td style="text-align: left;" pkvd="button_target::appearflag_singleplayer::description"></td>
+	</tr>
+	</tr>
+		<td pkvd="button_target::appearflag_singleplayer"></td>
+		<td>appearflag_singleplayer</td>
+		<td>choices</td>
+		<td>1</td>
+		<td style="text-align: left;" pkvd="button_target::appearflag_singleplayer::description"></td>
+	</tr>
+	</tr>
+		<td pkvd="button_target::appearflag_multiplayer"></td>
+		<td>appearflag_multiplayer</td>
+		<td>choices</td>
+		<td>-1</td>
+		<td style="text-align: left;" pkvd="button_target::appearflag_multiplayer::description"></td>
+	</tr>
+	</tr>
+		<td pkvd="button_target::appearflag_multiplayer"></td>
+		<td>appearflag_multiplayer</td>
+		<td>choices</td>
+		<td>0</td>
+		<td style="text-align: left;" pkvd="button_target::appearflag_multiplayer::description"></td>
+	</tr>
+	</tr>
+		<td pkvd="button_target::appearflag_multiplayer"></td>
+		<td>appearflag_multiplayer</td>
+		<td>choices</td>
+		<td>1</td>
+		<td style="text-align: left;" pkvd="button_target::appearflag_multiplayer::description"></td>
+	</tr>
+	</tr>
+		<td pkvd="button_target::appearflag_cooperative"></td>
+		<td>appearflag_cooperative</td>
+		<td>choices</td>
+		<td>-1</td>
+		<td style="text-align: left;" pkvd="button_target::appearflag_cooperative::description"></td>
+	</tr>
+	</tr>
+		<td pkvd="button_target::appearflag_cooperative"></td>
+		<td>appearflag_cooperative</td>
+		<td>choices</td>
+		<td>0</td>
+		<td style="text-align: left;" pkvd="button_target::appearflag_cooperative::description"></td>
+	</tr>
+	</tr>
+		<td pkvd="button_target::appearflag_cooperative"></td>
+		<td>appearflag_cooperative</td>
+		<td>choices</td>
+		<td>1</td>
+		<td style="text-align: left;" pkvd="button_target::appearflag_cooperative::description"></td>
+	</tr>
+	</tr>
+		<td pkvd="button_target::appearflag_deathmatch"></td>
+		<td>appearflag_deathmatch</td>
+		<td>choices</td>
+		<td>-1</td>
+		<td style="text-align: left;" pkvd="button_target::appearflag_deathmatch::description"></td>
+	</tr>
+	</tr>
+		<td pkvd="button_target::appearflag_deathmatch"></td>
+		<td>appearflag_deathmatch</td>
+		<td>choices</td>
+		<td>0</td>
+		<td style="text-align: left;" pkvd="button_target::appearflag_deathmatch::description"></td>
+	</tr>
+	</tr>
+		<td pkvd="button_target::appearflag_deathmatch"></td>
+		<td>appearflag_deathmatch</td>
+		<td>choices</td>
+		<td>1</td>
+		<td style="text-align: left;" pkvd="button_target::appearflag_deathmatch::description"></td>
+	</tr>
+	</tr>
+		<td pkvd="button_target::appearflag_cft"></td>
+		<td>appearflag_cft</td>
+		<td>choices</td>
+		<td>-1</td>
+		<td style="text-align: left;" pkvd="button_target::appearflag_cft::description"></td>
+	</tr>
+	</tr>
+		<td pkvd="button_target::appearflag_cft"></td>
+		<td>appearflag_cft</td>
+		<td>choices</td>
+		<td>0</td>
+		<td style="text-align: left;" pkvd="button_target::appearflag_cft::description"></td>
+	</tr>
+	</tr>
+		<td pkvd="button_target::appearflag_cft"></td>
+		<td>appearflag_cft</td>
+		<td>choices</td>
+		<td>1</td>
+		<td style="text-align: left;" pkvd="button_target::appearflag_cft::description"></td>
+	</tr>
+	</tr>
+		<td pkvd="button_target::appearflag_teamplay"></td>
+		<td>appearflag_teamplay</td>
+		<td>choices</td>
+		<td>-1</td>
+		<td style="text-align: left;" pkvd="button_target::appearflag_teamplay::description"></td>
+	</tr>
+	</tr>
+		<td pkvd="button_target::appearflag_teamplay"></td>
+		<td>appearflag_teamplay</td>
+		<td>choices</td>
+		<td>0</td>
+		<td style="text-align: left;" pkvd="button_target::appearflag_teamplay::description"></td>
+	</tr>
+	</tr>
+		<td pkvd="button_target::appearflag_teamplay"></td>
+		<td>appearflag_teamplay</td>
+		<td>choices</td>
+		<td>1</td>
+		<td style="text-align: left;" pkvd="button_target::appearflag_teamplay::description"></td>
+	</tr>
+	</tr>
+		<td pkvd="button_target::appearflag_dedicated"></td>
+		<td>appearflag_dedicated</td>
+		<td>choices</td>
+		<td>-1</td>
+		<td style="text-align: left;" pkvd="button_target::appearflag_dedicated::description"></td>
+	</tr>
+	</tr>
+		<td pkvd="button_target::appearflag_dedicated"></td>
+		<td>appearflag_dedicated</td>
+		<td>choices</td>
+		<td>0</td>
+		<td style="text-align: left;" pkvd="button_target::appearflag_dedicated::description"></td>
+	</tr>
+	</tr>
+		<td pkvd="button_target::appearflag_dedicated"></td>
+		<td>appearflag_dedicated</td>
+		<td>choices</td>
+		<td>1</td>
+		<td style="text-align: left;" pkvd="button_target::appearflag_dedicated::description"></td>
+	</tr>
+	</tr>
+		<td pkvd="button_target::appearflag_skilleasy"></td>
+		<td>appearflag_skilleasy</td>
+		<td>choices</td>
+		<td>-1</td>
+		<td style="text-align: left;" pkvd="button_target::appearflag_skilleasy::description"></td>
+	</tr>
+	</tr>
+		<td pkvd="button_target::appearflag_skilleasy"></td>
+		<td>appearflag_skilleasy</td>
+		<td>choices</td>
+		<td>0</td>
+		<td style="text-align: left;" pkvd="button_target::appearflag_skilleasy::description"></td>
+	</tr>
+	</tr>
+		<td pkvd="button_target::appearflag_skilleasy"></td>
+		<td>appearflag_skilleasy</td>
+		<td>choices</td>
+		<td>1</td>
+		<td style="text-align: left;" pkvd="button_target::appearflag_skilleasy::description"></td>
+	</tr>
+	</tr>
+		<td pkvd="button_target::appearflag_skillmedium"></td>
+		<td>appearflag_skillmedium</td>
+		<td>choices</td>
+		<td>-1</td>
+		<td style="text-align: left;" pkvd="button_target::appearflag_skillmedium::description"></td>
+	</tr>
+	</tr>
+		<td pkvd="button_target::appearflag_skillmedium"></td>
+		<td>appearflag_skillmedium</td>
+		<td>choices</td>
+		<td>0</td>
+		<td style="text-align: left;" pkvd="button_target::appearflag_skillmedium::description"></td>
+	</tr>
+	</tr>
+		<td pkvd="button_target::appearflag_skillmedium"></td>
+		<td>appearflag_skillmedium</td>
+		<td>choices</td>
+		<td>1</td>
+		<td style="text-align: left;" pkvd="button_target::appearflag_skillmedium::description"></td>
+	</tr>
+	</tr>
+		<td pkvd="button_target::appearflag_skillhard"></td>
+		<td>appearflag_skillhard</td>
+		<td>choices</td>
+		<td>-1</td>
+		<td style="text-align: left;" pkvd="button_target::appearflag_skillhard::description"></td>
+	</tr>
+	</tr>
+		<td pkvd="button_target::appearflag_skillhard"></td>
+		<td>appearflag_skillhard</td>
+		<td>choices</td>
+		<td>0</td>
+		<td style="text-align: left;" pkvd="button_target::appearflag_skillhard::description"></td>
+	</tr>
+	</tr>
+		<td pkvd="button_target::appearflag_skillhard"></td>
+		<td>appearflag_skillhard</td>
+		<td>choices</td>
+		<td>1</td>
+		<td style="text-align: left;" pkvd="button_target::appearflag_skillhard::description"></td>
 	</tr>
 </table>
 <br><br>

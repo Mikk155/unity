@@ -8,32 +8,270 @@
 	<th pkvd="value"></th>
 	<th pkvd="Description"></th>
 	</tr>
-		<td pkvd="Trigger::netname"></td>
+		<td pkvd="trigger_teleport::spawnflags"></td>
+		<td>spawnflags</td>
+		<td>bits</td>
+		<td>2048</td>
+		<td style="text-align: left;" pkvd="trigger_teleport::spawnflags::description"></td>
+	</tr>
+	</tr>
+		<td pkvd="trigger_teleport::targetname"></td>
+		<td>targetname</td>
+		<td>target_source</td>
+		<td></td>
+		<td style="text-align: left;" pkvd="trigger_teleport::targetname::description"></td>
+	</tr>
+	</tr>
+		<td pkvd="trigger_teleport::netname"></td>
 		<td>netname</td>
 		<td>target_destination</td>
 		<td></td>
-		<td style="text-align: left;" pkvd="Trigger::netname::description"></td>
+		<td style="text-align: left;" pkvd="trigger_teleport::netname::description"></td>
 	</tr>
 	</tr>
-		<td pkvd="Trigger::message"></td>
+		<td pkvd="trigger_teleport::message"></td>
 		<td>message</td>
 		<td>string</td>
 		<td></td>
-		<td style="text-align: left;" pkvd="Trigger::message::description"></td>
+		<td style="text-align: left;" pkvd="trigger_teleport::message::description"></td>
 	</tr>
 	</tr>
-		<td pkvd="Trigger::spawnflags"></td>
+		<td pkvd="trigger_teleport::spawnflags"></td>
 		<td>spawnflags</td>
-		<td>flags</td>
-		<td></td>
-		<td style="text-align: left;" pkvd="Trigger::spawnflags::description"></td>
+		<td>bits</td>
+		<td>1</td>
+		<td style="text-align: left;" pkvd="trigger_teleport::spawnflags::description"></td>
 	</tr>
 	</tr>
-		<td pkvd="TeleportBase::fire_on_teleport"></td>
+		<td pkvd="trigger_teleport::spawnflags"></td>
+		<td>spawnflags</td>
+		<td>bits</td>
+		<td>2</td>
+		<td style="text-align: left;" pkvd="trigger_teleport::spawnflags::description"></td>
+	</tr>
+	</tr>
+		<td pkvd="trigger_teleport::spawnflags"></td>
+		<td>spawnflags</td>
+		<td>bits</td>
+		<td>4</td>
+		<td style="text-align: left;" pkvd="trigger_teleport::spawnflags::description"></td>
+	</tr>
+	</tr>
+		<td pkvd="trigger_teleport::fire_on_teleport"></td>
 		<td>fire_on_teleport</td>
 		<td>target_destination</td>
 		<td></td>
-		<td style="text-align: left;" pkvd="TeleportBase::fire_on_teleport::description"></td>
+		<td style="text-align: left;" pkvd="trigger_teleport::fire_on_teleport::description"></td>
+	</tr>
+	</tr>
+		<td pkvd="trigger_teleport::appearflag_singleplayer"></td>
+		<td>appearflag_singleplayer</td>
+		<td>choices</td>
+		<td>-1</td>
+		<td style="text-align: left;" pkvd="trigger_teleport::appearflag_singleplayer::description"></td>
+	</tr>
+	</tr>
+		<td pkvd="trigger_teleport::appearflag_singleplayer"></td>
+		<td>appearflag_singleplayer</td>
+		<td>choices</td>
+		<td>0</td>
+		<td style="text-align: left;" pkvd="trigger_teleport::appearflag_singleplayer::description"></td>
+	</tr>
+	</tr>
+		<td pkvd="trigger_teleport::appearflag_singleplayer"></td>
+		<td>appearflag_singleplayer</td>
+		<td>choices</td>
+		<td>1</td>
+		<td style="text-align: left;" pkvd="trigger_teleport::appearflag_singleplayer::description"></td>
+	</tr>
+	</tr>
+		<td pkvd="trigger_teleport::appearflag_multiplayer"></td>
+		<td>appearflag_multiplayer</td>
+		<td>choices</td>
+		<td>-1</td>
+		<td style="text-align: left;" pkvd="trigger_teleport::appearflag_multiplayer::description"></td>
+	</tr>
+	</tr>
+		<td pkvd="trigger_teleport::appearflag_multiplayer"></td>
+		<td>appearflag_multiplayer</td>
+		<td>choices</td>
+		<td>0</td>
+		<td style="text-align: left;" pkvd="trigger_teleport::appearflag_multiplayer::description"></td>
+	</tr>
+	</tr>
+		<td pkvd="trigger_teleport::appearflag_multiplayer"></td>
+		<td>appearflag_multiplayer</td>
+		<td>choices</td>
+		<td>1</td>
+		<td style="text-align: left;" pkvd="trigger_teleport::appearflag_multiplayer::description"></td>
+	</tr>
+	</tr>
+		<td pkvd="trigger_teleport::appearflag_cooperative"></td>
+		<td>appearflag_cooperative</td>
+		<td>choices</td>
+		<td>-1</td>
+		<td style="text-align: left;" pkvd="trigger_teleport::appearflag_cooperative::description"></td>
+	</tr>
+	</tr>
+		<td pkvd="trigger_teleport::appearflag_cooperative"></td>
+		<td>appearflag_cooperative</td>
+		<td>choices</td>
+		<td>0</td>
+		<td style="text-align: left;" pkvd="trigger_teleport::appearflag_cooperative::description"></td>
+	</tr>
+	</tr>
+		<td pkvd="trigger_teleport::appearflag_cooperative"></td>
+		<td>appearflag_cooperative</td>
+		<td>choices</td>
+		<td>1</td>
+		<td style="text-align: left;" pkvd="trigger_teleport::appearflag_cooperative::description"></td>
+	</tr>
+	</tr>
+		<td pkvd="trigger_teleport::appearflag_deathmatch"></td>
+		<td>appearflag_deathmatch</td>
+		<td>choices</td>
+		<td>-1</td>
+		<td style="text-align: left;" pkvd="trigger_teleport::appearflag_deathmatch::description"></td>
+	</tr>
+	</tr>
+		<td pkvd="trigger_teleport::appearflag_deathmatch"></td>
+		<td>appearflag_deathmatch</td>
+		<td>choices</td>
+		<td>0</td>
+		<td style="text-align: left;" pkvd="trigger_teleport::appearflag_deathmatch::description"></td>
+	</tr>
+	</tr>
+		<td pkvd="trigger_teleport::appearflag_deathmatch"></td>
+		<td>appearflag_deathmatch</td>
+		<td>choices</td>
+		<td>1</td>
+		<td style="text-align: left;" pkvd="trigger_teleport::appearflag_deathmatch::description"></td>
+	</tr>
+	</tr>
+		<td pkvd="trigger_teleport::appearflag_cft"></td>
+		<td>appearflag_cft</td>
+		<td>choices</td>
+		<td>-1</td>
+		<td style="text-align: left;" pkvd="trigger_teleport::appearflag_cft::description"></td>
+	</tr>
+	</tr>
+		<td pkvd="trigger_teleport::appearflag_cft"></td>
+		<td>appearflag_cft</td>
+		<td>choices</td>
+		<td>0</td>
+		<td style="text-align: left;" pkvd="trigger_teleport::appearflag_cft::description"></td>
+	</tr>
+	</tr>
+		<td pkvd="trigger_teleport::appearflag_cft"></td>
+		<td>appearflag_cft</td>
+		<td>choices</td>
+		<td>1</td>
+		<td style="text-align: left;" pkvd="trigger_teleport::appearflag_cft::description"></td>
+	</tr>
+	</tr>
+		<td pkvd="trigger_teleport::appearflag_teamplay"></td>
+		<td>appearflag_teamplay</td>
+		<td>choices</td>
+		<td>-1</td>
+		<td style="text-align: left;" pkvd="trigger_teleport::appearflag_teamplay::description"></td>
+	</tr>
+	</tr>
+		<td pkvd="trigger_teleport::appearflag_teamplay"></td>
+		<td>appearflag_teamplay</td>
+		<td>choices</td>
+		<td>0</td>
+		<td style="text-align: left;" pkvd="trigger_teleport::appearflag_teamplay::description"></td>
+	</tr>
+	</tr>
+		<td pkvd="trigger_teleport::appearflag_teamplay"></td>
+		<td>appearflag_teamplay</td>
+		<td>choices</td>
+		<td>1</td>
+		<td style="text-align: left;" pkvd="trigger_teleport::appearflag_teamplay::description"></td>
+	</tr>
+	</tr>
+		<td pkvd="trigger_teleport::appearflag_dedicated"></td>
+		<td>appearflag_dedicated</td>
+		<td>choices</td>
+		<td>-1</td>
+		<td style="text-align: left;" pkvd="trigger_teleport::appearflag_dedicated::description"></td>
+	</tr>
+	</tr>
+		<td pkvd="trigger_teleport::appearflag_dedicated"></td>
+		<td>appearflag_dedicated</td>
+		<td>choices</td>
+		<td>0</td>
+		<td style="text-align: left;" pkvd="trigger_teleport::appearflag_dedicated::description"></td>
+	</tr>
+	</tr>
+		<td pkvd="trigger_teleport::appearflag_dedicated"></td>
+		<td>appearflag_dedicated</td>
+		<td>choices</td>
+		<td>1</td>
+		<td style="text-align: left;" pkvd="trigger_teleport::appearflag_dedicated::description"></td>
+	</tr>
+	</tr>
+		<td pkvd="trigger_teleport::appearflag_skilleasy"></td>
+		<td>appearflag_skilleasy</td>
+		<td>choices</td>
+		<td>-1</td>
+		<td style="text-align: left;" pkvd="trigger_teleport::appearflag_skilleasy::description"></td>
+	</tr>
+	</tr>
+		<td pkvd="trigger_teleport::appearflag_skilleasy"></td>
+		<td>appearflag_skilleasy</td>
+		<td>choices</td>
+		<td>0</td>
+		<td style="text-align: left;" pkvd="trigger_teleport::appearflag_skilleasy::description"></td>
+	</tr>
+	</tr>
+		<td pkvd="trigger_teleport::appearflag_skilleasy"></td>
+		<td>appearflag_skilleasy</td>
+		<td>choices</td>
+		<td>1</td>
+		<td style="text-align: left;" pkvd="trigger_teleport::appearflag_skilleasy::description"></td>
+	</tr>
+	</tr>
+		<td pkvd="trigger_teleport::appearflag_skillmedium"></td>
+		<td>appearflag_skillmedium</td>
+		<td>choices</td>
+		<td>-1</td>
+		<td style="text-align: left;" pkvd="trigger_teleport::appearflag_skillmedium::description"></td>
+	</tr>
+	</tr>
+		<td pkvd="trigger_teleport::appearflag_skillmedium"></td>
+		<td>appearflag_skillmedium</td>
+		<td>choices</td>
+		<td>0</td>
+		<td style="text-align: left;" pkvd="trigger_teleport::appearflag_skillmedium::description"></td>
+	</tr>
+	</tr>
+		<td pkvd="trigger_teleport::appearflag_skillmedium"></td>
+		<td>appearflag_skillmedium</td>
+		<td>choices</td>
+		<td>1</td>
+		<td style="text-align: left;" pkvd="trigger_teleport::appearflag_skillmedium::description"></td>
+	</tr>
+	</tr>
+		<td pkvd="trigger_teleport::appearflag_skillhard"></td>
+		<td>appearflag_skillhard</td>
+		<td>choices</td>
+		<td>-1</td>
+		<td style="text-align: left;" pkvd="trigger_teleport::appearflag_skillhard::description"></td>
+	</tr>
+	</tr>
+		<td pkvd="trigger_teleport::appearflag_skillhard"></td>
+		<td>appearflag_skillhard</td>
+		<td>choices</td>
+		<td>0</td>
+		<td style="text-align: left;" pkvd="trigger_teleport::appearflag_skillhard::description"></td>
+	</tr>
+	</tr>
+		<td pkvd="trigger_teleport::appearflag_skillhard"></td>
+		<td>appearflag_skillhard</td>
+		<td>choices</td>
+		<td>1</td>
+		<td style="text-align: left;" pkvd="trigger_teleport::appearflag_skillhard::description"></td>
 	</tr>
 </table>
 <br><br>

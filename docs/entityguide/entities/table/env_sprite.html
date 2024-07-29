@@ -8,44 +8,23 @@
 	<th pkvd="value"></th>
 	<th pkvd="Description"></th>
 	</tr>
-		<td pkvd="Targetname::targetname"></td>
+		<td pkvd="env_sprite::spawnflags"></td>
+		<td>spawnflags</td>
+		<td>bits</td>
+		<td>2048</td>
+		<td style="text-align: left;" pkvd="env_sprite::spawnflags::description"></td>
+	</tr>
+	</tr>
+		<td pkvd="env_sprite::targetname"></td>
 		<td>targetname</td>
 		<td>target_source</td>
 		<td></td>
-		<td style="text-align: left;" pkvd="Targetname::targetname::description"></td>
-	</tr>
-	</tr>
-		<td pkvd="RenderFields::rendermode"></td>
-		<td>rendermode</td>
-		<td>choices</td>
-		<td>0</td>
-		<td style="text-align: left;" pkvd="RenderFields::rendermode::description"></td>
-	</tr>
-	</tr>
-		<td pkvd="RenderFields::renderamt"></td>
-		<td>renderamt</td>
-		<td>integer</td>
-		<td></td>
-		<td style="text-align: left;" pkvd="RenderFields::renderamt::description"></td>
-	</tr>
-	</tr>
-		<td pkvd="RenderFields::rendercolor"></td>
-		<td>rendercolor</td>
-		<td>color255</td>
-		<td>0 0 0</td>
-		<td style="text-align: left;" pkvd="RenderFields::rendercolor::description"></td>
-	</tr>
-	</tr>
-		<td pkvd="Angles::angles"></td>
-		<td>angles</td>
-		<td>string</td>
-		<td>0 0 0</td>
-		<td style="text-align: left;" pkvd="Angles::angles::description"></td>
+		<td style="text-align: left;" pkvd="env_sprite::targetname::description"></td>
 	</tr>
 	</tr>
 		<td pkvd="env_sprite::framerate"></td>
 		<td>framerate</td>
-		<td>string</td>
+		<td>float</td>
 		<td>10.0</td>
 		<td style="text-align: left;" pkvd="env_sprite::framerate::description"></td>
 	</tr>
@@ -57,18 +36,298 @@
 		<td style="text-align: left;" pkvd="env_sprite::model::description"></td>
 	</tr>
 	</tr>
-		<td pkvd="env_sprite::scale"></td>
-		<td>scale</td>
-		<td>string</td>
-		<td></td>
-		<td style="text-align: left;" pkvd="env_sprite::scale::description"></td>
+		<td pkvd="env_sprite::spawnflags"></td>
+		<td>spawnflags</td>
+		<td>bits</td>
+		<td>1</td>
+		<td style="text-align: left;" pkvd="env_sprite::spawnflags::description"></td>
 	</tr>
 	</tr>
 		<td pkvd="env_sprite::spawnflags"></td>
 		<td>spawnflags</td>
-		<td>flags</td>
-		<td></td>
+		<td>bits</td>
+		<td>2</td>
 		<td style="text-align: left;" pkvd="env_sprite::spawnflags::description"></td>
+	</tr>
+	</tr>
+		<td pkvd="env_sprite::scale"></td>
+		<td>scale</td>
+		<td>float</td>
+		<td>1.0</td>
+		<td style="text-align: left;" pkvd="env_sprite::scale::description"></td>
+	</tr>
+	</tr>
+		<td pkvd="env_sprite::rendermode"></td>
+		<td>rendermode</td>
+		<td>choices</td>
+		<td>0</td>
+		<td style="text-align: left;" pkvd="env_sprite::rendermode::description"></td>
+	</tr>
+	</tr>
+		<td pkvd="env_sprite::rendermode"></td>
+		<td>rendermode</td>
+		<td>choices</td>
+		<td>1</td>
+		<td style="text-align: left;" pkvd="env_sprite::rendermode::description"></td>
+	</tr>
+	</tr>
+		<td pkvd="env_sprite::rendermode"></td>
+		<td>rendermode</td>
+		<td>choices</td>
+		<td>2</td>
+		<td style="text-align: left;" pkvd="env_sprite::rendermode::description"></td>
+	</tr>
+	</tr>
+		<td pkvd="env_sprite::rendermode"></td>
+		<td>rendermode</td>
+		<td>choices</td>
+		<td>3</td>
+		<td style="text-align: left;" pkvd="env_sprite::rendermode::description"></td>
+	</tr>
+	</tr>
+		<td pkvd="env_sprite::rendermode"></td>
+		<td>rendermode</td>
+		<td>choices</td>
+		<td>4</td>
+		<td style="text-align: left;" pkvd="env_sprite::rendermode::description"></td>
+	</tr>
+	</tr>
+		<td pkvd="env_sprite::rendermode"></td>
+		<td>rendermode</td>
+		<td>choices</td>
+		<td>5</td>
+		<td style="text-align: left;" pkvd="env_sprite::rendermode::description"></td>
+	</tr>
+	</tr>
+		<td pkvd="env_sprite::renderamt"></td>
+		<td>renderamt</td>
+		<td>integer</td>
+		<td></td>
+		<td style="text-align: left;" pkvd="env_sprite::renderamt::description"></td>
+	</tr>
+	</tr>
+		<td pkvd="env_sprite::rendercolor"></td>
+		<td>rendercolor</td>
+		<td>color255</td>
+		<td>0 0 0</td>
+		<td style="text-align: left;" pkvd="env_sprite::rendercolor::description"></td>
+	</tr>
+	</tr>
+		<td pkvd="env_sprite::angles"></td>
+		<td>angles</td>
+		<td>string</td>
+		<td>0 0 0</td>
+		<td style="text-align: left;" pkvd="env_sprite::angles::description"></td>
+	</tr>
+	</tr>
+		<td pkvd="env_sprite::appearflag_singleplayer"></td>
+		<td>appearflag_singleplayer</td>
+		<td>choices</td>
+		<td>-1</td>
+		<td style="text-align: left;" pkvd="env_sprite::appearflag_singleplayer::description"></td>
+	</tr>
+	</tr>
+		<td pkvd="env_sprite::appearflag_singleplayer"></td>
+		<td>appearflag_singleplayer</td>
+		<td>choices</td>
+		<td>0</td>
+		<td style="text-align: left;" pkvd="env_sprite::appearflag_singleplayer::description"></td>
+	</tr>
+	</tr>
+		<td pkvd="env_sprite::appearflag_singleplayer"></td>
+		<td>appearflag_singleplayer</td>
+		<td>choices</td>
+		<td>1</td>
+		<td style="text-align: left;" pkvd="env_sprite::appearflag_singleplayer::description"></td>
+	</tr>
+	</tr>
+		<td pkvd="env_sprite::appearflag_multiplayer"></td>
+		<td>appearflag_multiplayer</td>
+		<td>choices</td>
+		<td>-1</td>
+		<td style="text-align: left;" pkvd="env_sprite::appearflag_multiplayer::description"></td>
+	</tr>
+	</tr>
+		<td pkvd="env_sprite::appearflag_multiplayer"></td>
+		<td>appearflag_multiplayer</td>
+		<td>choices</td>
+		<td>0</td>
+		<td style="text-align: left;" pkvd="env_sprite::appearflag_multiplayer::description"></td>
+	</tr>
+	</tr>
+		<td pkvd="env_sprite::appearflag_multiplayer"></td>
+		<td>appearflag_multiplayer</td>
+		<td>choices</td>
+		<td>1</td>
+		<td style="text-align: left;" pkvd="env_sprite::appearflag_multiplayer::description"></td>
+	</tr>
+	</tr>
+		<td pkvd="env_sprite::appearflag_cooperative"></td>
+		<td>appearflag_cooperative</td>
+		<td>choices</td>
+		<td>-1</td>
+		<td style="text-align: left;" pkvd="env_sprite::appearflag_cooperative::description"></td>
+	</tr>
+	</tr>
+		<td pkvd="env_sprite::appearflag_cooperative"></td>
+		<td>appearflag_cooperative</td>
+		<td>choices</td>
+		<td>0</td>
+		<td style="text-align: left;" pkvd="env_sprite::appearflag_cooperative::description"></td>
+	</tr>
+	</tr>
+		<td pkvd="env_sprite::appearflag_cooperative"></td>
+		<td>appearflag_cooperative</td>
+		<td>choices</td>
+		<td>1</td>
+		<td style="text-align: left;" pkvd="env_sprite::appearflag_cooperative::description"></td>
+	</tr>
+	</tr>
+		<td pkvd="env_sprite::appearflag_deathmatch"></td>
+		<td>appearflag_deathmatch</td>
+		<td>choices</td>
+		<td>-1</td>
+		<td style="text-align: left;" pkvd="env_sprite::appearflag_deathmatch::description"></td>
+	</tr>
+	</tr>
+		<td pkvd="env_sprite::appearflag_deathmatch"></td>
+		<td>appearflag_deathmatch</td>
+		<td>choices</td>
+		<td>0</td>
+		<td style="text-align: left;" pkvd="env_sprite::appearflag_deathmatch::description"></td>
+	</tr>
+	</tr>
+		<td pkvd="env_sprite::appearflag_deathmatch"></td>
+		<td>appearflag_deathmatch</td>
+		<td>choices</td>
+		<td>1</td>
+		<td style="text-align: left;" pkvd="env_sprite::appearflag_deathmatch::description"></td>
+	</tr>
+	</tr>
+		<td pkvd="env_sprite::appearflag_cft"></td>
+		<td>appearflag_cft</td>
+		<td>choices</td>
+		<td>-1</td>
+		<td style="text-align: left;" pkvd="env_sprite::appearflag_cft::description"></td>
+	</tr>
+	</tr>
+		<td pkvd="env_sprite::appearflag_cft"></td>
+		<td>appearflag_cft</td>
+		<td>choices</td>
+		<td>0</td>
+		<td style="text-align: left;" pkvd="env_sprite::appearflag_cft::description"></td>
+	</tr>
+	</tr>
+		<td pkvd="env_sprite::appearflag_cft"></td>
+		<td>appearflag_cft</td>
+		<td>choices</td>
+		<td>1</td>
+		<td style="text-align: left;" pkvd="env_sprite::appearflag_cft::description"></td>
+	</tr>
+	</tr>
+		<td pkvd="env_sprite::appearflag_teamplay"></td>
+		<td>appearflag_teamplay</td>
+		<td>choices</td>
+		<td>-1</td>
+		<td style="text-align: left;" pkvd="env_sprite::appearflag_teamplay::description"></td>
+	</tr>
+	</tr>
+		<td pkvd="env_sprite::appearflag_teamplay"></td>
+		<td>appearflag_teamplay</td>
+		<td>choices</td>
+		<td>0</td>
+		<td style="text-align: left;" pkvd="env_sprite::appearflag_teamplay::description"></td>
+	</tr>
+	</tr>
+		<td pkvd="env_sprite::appearflag_teamplay"></td>
+		<td>appearflag_teamplay</td>
+		<td>choices</td>
+		<td>1</td>
+		<td style="text-align: left;" pkvd="env_sprite::appearflag_teamplay::description"></td>
+	</tr>
+	</tr>
+		<td pkvd="env_sprite::appearflag_dedicated"></td>
+		<td>appearflag_dedicated</td>
+		<td>choices</td>
+		<td>-1</td>
+		<td style="text-align: left;" pkvd="env_sprite::appearflag_dedicated::description"></td>
+	</tr>
+	</tr>
+		<td pkvd="env_sprite::appearflag_dedicated"></td>
+		<td>appearflag_dedicated</td>
+		<td>choices</td>
+		<td>0</td>
+		<td style="text-align: left;" pkvd="env_sprite::appearflag_dedicated::description"></td>
+	</tr>
+	</tr>
+		<td pkvd="env_sprite::appearflag_dedicated"></td>
+		<td>appearflag_dedicated</td>
+		<td>choices</td>
+		<td>1</td>
+		<td style="text-align: left;" pkvd="env_sprite::appearflag_dedicated::description"></td>
+	</tr>
+	</tr>
+		<td pkvd="env_sprite::appearflag_skilleasy"></td>
+		<td>appearflag_skilleasy</td>
+		<td>choices</td>
+		<td>-1</td>
+		<td style="text-align: left;" pkvd="env_sprite::appearflag_skilleasy::description"></td>
+	</tr>
+	</tr>
+		<td pkvd="env_sprite::appearflag_skilleasy"></td>
+		<td>appearflag_skilleasy</td>
+		<td>choices</td>
+		<td>0</td>
+		<td style="text-align: left;" pkvd="env_sprite::appearflag_skilleasy::description"></td>
+	</tr>
+	</tr>
+		<td pkvd="env_sprite::appearflag_skilleasy"></td>
+		<td>appearflag_skilleasy</td>
+		<td>choices</td>
+		<td>1</td>
+		<td style="text-align: left;" pkvd="env_sprite::appearflag_skilleasy::description"></td>
+	</tr>
+	</tr>
+		<td pkvd="env_sprite::appearflag_skillmedium"></td>
+		<td>appearflag_skillmedium</td>
+		<td>choices</td>
+		<td>-1</td>
+		<td style="text-align: left;" pkvd="env_sprite::appearflag_skillmedium::description"></td>
+	</tr>
+	</tr>
+		<td pkvd="env_sprite::appearflag_skillmedium"></td>
+		<td>appearflag_skillmedium</td>
+		<td>choices</td>
+		<td>0</td>
+		<td style="text-align: left;" pkvd="env_sprite::appearflag_skillmedium::description"></td>
+	</tr>
+	</tr>
+		<td pkvd="env_sprite::appearflag_skillmedium"></td>
+		<td>appearflag_skillmedium</td>
+		<td>choices</td>
+		<td>1</td>
+		<td style="text-align: left;" pkvd="env_sprite::appearflag_skillmedium::description"></td>
+	</tr>
+	</tr>
+		<td pkvd="env_sprite::appearflag_skillhard"></td>
+		<td>appearflag_skillhard</td>
+		<td>choices</td>
+		<td>-1</td>
+		<td style="text-align: left;" pkvd="env_sprite::appearflag_skillhard::description"></td>
+	</tr>
+	</tr>
+		<td pkvd="env_sprite::appearflag_skillhard"></td>
+		<td>appearflag_skillhard</td>
+		<td>choices</td>
+		<td>0</td>
+		<td style="text-align: left;" pkvd="env_sprite::appearflag_skillhard::description"></td>
+	</tr>
+	</tr>
+		<td pkvd="env_sprite::appearflag_skillhard"></td>
+		<td>appearflag_skillhard</td>
+		<td>choices</td>
+		<td>1</td>
+		<td style="text-align: left;" pkvd="env_sprite::appearflag_skillhard::description"></td>
 	</tr>
 </table>
 <br><br>

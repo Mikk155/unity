@@ -8,38 +8,31 @@
 	<th pkvd="value"></th>
 	<th pkvd="Description"></th>
 	</tr>
-		<td pkvd="Targetname::targetname"></td>
+		<td pkvd="game_counter::spawnflags"></td>
+		<td>spawnflags</td>
+		<td>bits</td>
+		<td>2048</td>
+		<td style="text-align: left;" pkvd="game_counter::spawnflags::description"></td>
+	</tr>
+	</tr>
+		<td pkvd="game_counter::targetname"></td>
 		<td>targetname</td>
 		<td>target_source</td>
 		<td></td>
-		<td style="text-align: left;" pkvd="Targetname::targetname::description"></td>
-	</tr>
-	</tr>
-		<td pkvd="Targetx::killtarget"></td>
-		<td>killtarget</td>
-		<td>target_destination</td>
-		<td></td>
-		<td style="text-align: left;" pkvd="Targetx::killtarget::description"></td>
-	</tr>
-	</tr>
-		<td pkvd="Targetx::delay"></td>
-		<td>delay</td>
-		<td>string</td>
-		<td>0</td>
-		<td style="text-align: left;" pkvd="Targetx::delay::description"></td>
-	</tr>
-	</tr>
-		<td pkvd="Master::master"></td>
-		<td>master</td>
-		<td>target_destination</td>
-		<td></td>
-		<td style="text-align: left;" pkvd="Master::master::description"></td>
+		<td style="text-align: left;" pkvd="game_counter::targetname::description"></td>
 	</tr>
 	</tr>
 		<td pkvd="game_counter::spawnflags"></td>
 		<td>spawnflags</td>
-		<td>flags</td>
-		<td></td>
+		<td>bits</td>
+		<td>1</td>
+		<td style="text-align: left;" pkvd="game_counter::spawnflags::description"></td>
+	</tr>
+	</tr>
+		<td pkvd="game_counter::spawnflags"></td>
+		<td>spawnflags</td>
+		<td>bits</td>
+		<td>2</td>
 		<td style="text-align: left;" pkvd="game_counter::spawnflags::description"></td>
 	</tr>
 	</tr>
@@ -55,6 +48,328 @@
 		<td>integer</td>
 		<td>10</td>
 		<td style="text-align: left;" pkvd="game_counter::health::description"></td>
+	</tr>
+	</tr>
+		<td pkvd="game_counter::target"></td>
+		<td>target</td>
+		<td>target_destination</td>
+		<td></td>
+		<td style="text-align: left;" pkvd="game_counter::target::description"></td>
+	</tr>
+	</tr>
+		<td pkvd="game_counter::m_UseType"></td>
+		<td>m_UseType</td>
+		<td>choices</td>
+		<td>-1</td>
+		<td style="text-align: left;" pkvd="game_counter::m_UseType::description"></td>
+	</tr>
+	</tr>
+		<td pkvd="game_counter::m_UseType"></td>
+		<td>m_UseType</td>
+		<td>choices</td>
+		<td>0</td>
+		<td style="text-align: left;" pkvd="game_counter::m_UseType::description"></td>
+	</tr>
+	</tr>
+		<td pkvd="game_counter::m_UseType"></td>
+		<td>m_UseType</td>
+		<td>choices</td>
+		<td>1</td>
+		<td style="text-align: left;" pkvd="game_counter::m_UseType::description"></td>
+	</tr>
+	</tr>
+		<td pkvd="game_counter::m_UseType"></td>
+		<td>m_UseType</td>
+		<td>choices</td>
+		<td>3</td>
+		<td style="text-align: left;" pkvd="game_counter::m_UseType::description"></td>
+	</tr>
+	</tr>
+		<td pkvd="game_counter::m_UseType"></td>
+		<td>m_UseType</td>
+		<td>choices</td>
+		<td>2</td>
+		<td style="text-align: left;" pkvd="game_counter::m_UseType::description"></td>
+	</tr>
+	</tr>
+		<td pkvd="game_counter::m_UseType"></td>
+		<td>m_UseType</td>
+		<td>choices</td>
+		<td>4</td>
+		<td style="text-align: left;" pkvd="game_counter::m_UseType::description"></td>
+	</tr>
+	</tr>
+		<td pkvd="game_counter::m_UseType"></td>
+		<td>m_UseType</td>
+		<td>choices</td>
+		<td>5</td>
+		<td style="text-align: left;" pkvd="game_counter::m_UseType::description"></td>
+	</tr>
+	</tr>
+		<td pkvd="game_counter::m_UseType"></td>
+		<td>m_UseType</td>
+		<td>choices</td>
+		<td>6</td>
+		<td style="text-align: left;" pkvd="game_counter::m_UseType::description"></td>
+	</tr>
+	</tr>
+		<td pkvd="game_counter::m_UseType"></td>
+		<td>m_UseType</td>
+		<td>choices</td>
+		<td>7</td>
+		<td style="text-align: left;" pkvd="game_counter::m_UseType::description"></td>
+	</tr>
+	</tr>
+		<td pkvd="game_counter::m_UseType"></td>
+		<td>m_UseType</td>
+		<td>choices</td>
+		<td>8</td>
+		<td style="text-align: left;" pkvd="game_counter::m_UseType::description"></td>
+	</tr>
+	</tr>
+		<td pkvd="game_counter::m_UseType"></td>
+		<td>m_UseType</td>
+		<td>choices</td>
+		<td>9</td>
+		<td style="text-align: left;" pkvd="game_counter::m_UseType::description"></td>
+	</tr>
+	</tr>
+		<td pkvd="game_counter::m_UseValue"></td>
+		<td>m_UseValue</td>
+		<td>float</td>
+		<td></td>
+		<td style="text-align: left;" pkvd="game_counter::m_UseValue::description"></td>
+	</tr>
+	</tr>
+		<td pkvd="game_counter::delay"></td>
+		<td>delay</td>
+		<td>float</td>
+		<td>0.0</td>
+		<td style="text-align: left;" pkvd="game_counter::delay::description"></td>
+	</tr>
+	</tr>
+		<td pkvd="game_counter::killtarget"></td>
+		<td>killtarget</td>
+		<td>target_destination</td>
+		<td></td>
+		<td style="text-align: left;" pkvd="game_counter::killtarget::description"></td>
+	</tr>
+	</tr>
+		<td pkvd="game_counter::master"></td>
+		<td>master</td>
+		<td>target_source</td>
+		<td></td>
+		<td style="text-align: left;" pkvd="game_counter::master::description"></td>
+	</tr>
+	</tr>
+		<td pkvd="game_counter::appearflag_singleplayer"></td>
+		<td>appearflag_singleplayer</td>
+		<td>choices</td>
+		<td>-1</td>
+		<td style="text-align: left;" pkvd="game_counter::appearflag_singleplayer::description"></td>
+	</tr>
+	</tr>
+		<td pkvd="game_counter::appearflag_singleplayer"></td>
+		<td>appearflag_singleplayer</td>
+		<td>choices</td>
+		<td>0</td>
+		<td style="text-align: left;" pkvd="game_counter::appearflag_singleplayer::description"></td>
+	</tr>
+	</tr>
+		<td pkvd="game_counter::appearflag_singleplayer"></td>
+		<td>appearflag_singleplayer</td>
+		<td>choices</td>
+		<td>1</td>
+		<td style="text-align: left;" pkvd="game_counter::appearflag_singleplayer::description"></td>
+	</tr>
+	</tr>
+		<td pkvd="game_counter::appearflag_multiplayer"></td>
+		<td>appearflag_multiplayer</td>
+		<td>choices</td>
+		<td>-1</td>
+		<td style="text-align: left;" pkvd="game_counter::appearflag_multiplayer::description"></td>
+	</tr>
+	</tr>
+		<td pkvd="game_counter::appearflag_multiplayer"></td>
+		<td>appearflag_multiplayer</td>
+		<td>choices</td>
+		<td>0</td>
+		<td style="text-align: left;" pkvd="game_counter::appearflag_multiplayer::description"></td>
+	</tr>
+	</tr>
+		<td pkvd="game_counter::appearflag_multiplayer"></td>
+		<td>appearflag_multiplayer</td>
+		<td>choices</td>
+		<td>1</td>
+		<td style="text-align: left;" pkvd="game_counter::appearflag_multiplayer::description"></td>
+	</tr>
+	</tr>
+		<td pkvd="game_counter::appearflag_cooperative"></td>
+		<td>appearflag_cooperative</td>
+		<td>choices</td>
+		<td>-1</td>
+		<td style="text-align: left;" pkvd="game_counter::appearflag_cooperative::description"></td>
+	</tr>
+	</tr>
+		<td pkvd="game_counter::appearflag_cooperative"></td>
+		<td>appearflag_cooperative</td>
+		<td>choices</td>
+		<td>0</td>
+		<td style="text-align: left;" pkvd="game_counter::appearflag_cooperative::description"></td>
+	</tr>
+	</tr>
+		<td pkvd="game_counter::appearflag_cooperative"></td>
+		<td>appearflag_cooperative</td>
+		<td>choices</td>
+		<td>1</td>
+		<td style="text-align: left;" pkvd="game_counter::appearflag_cooperative::description"></td>
+	</tr>
+	</tr>
+		<td pkvd="game_counter::appearflag_deathmatch"></td>
+		<td>appearflag_deathmatch</td>
+		<td>choices</td>
+		<td>-1</td>
+		<td style="text-align: left;" pkvd="game_counter::appearflag_deathmatch::description"></td>
+	</tr>
+	</tr>
+		<td pkvd="game_counter::appearflag_deathmatch"></td>
+		<td>appearflag_deathmatch</td>
+		<td>choices</td>
+		<td>0</td>
+		<td style="text-align: left;" pkvd="game_counter::appearflag_deathmatch::description"></td>
+	</tr>
+	</tr>
+		<td pkvd="game_counter::appearflag_deathmatch"></td>
+		<td>appearflag_deathmatch</td>
+		<td>choices</td>
+		<td>1</td>
+		<td style="text-align: left;" pkvd="game_counter::appearflag_deathmatch::description"></td>
+	</tr>
+	</tr>
+		<td pkvd="game_counter::appearflag_cft"></td>
+		<td>appearflag_cft</td>
+		<td>choices</td>
+		<td>-1</td>
+		<td style="text-align: left;" pkvd="game_counter::appearflag_cft::description"></td>
+	</tr>
+	</tr>
+		<td pkvd="game_counter::appearflag_cft"></td>
+		<td>appearflag_cft</td>
+		<td>choices</td>
+		<td>0</td>
+		<td style="text-align: left;" pkvd="game_counter::appearflag_cft::description"></td>
+	</tr>
+	</tr>
+		<td pkvd="game_counter::appearflag_cft"></td>
+		<td>appearflag_cft</td>
+		<td>choices</td>
+		<td>1</td>
+		<td style="text-align: left;" pkvd="game_counter::appearflag_cft::description"></td>
+	</tr>
+	</tr>
+		<td pkvd="game_counter::appearflag_teamplay"></td>
+		<td>appearflag_teamplay</td>
+		<td>choices</td>
+		<td>-1</td>
+		<td style="text-align: left;" pkvd="game_counter::appearflag_teamplay::description"></td>
+	</tr>
+	</tr>
+		<td pkvd="game_counter::appearflag_teamplay"></td>
+		<td>appearflag_teamplay</td>
+		<td>choices</td>
+		<td>0</td>
+		<td style="text-align: left;" pkvd="game_counter::appearflag_teamplay::description"></td>
+	</tr>
+	</tr>
+		<td pkvd="game_counter::appearflag_teamplay"></td>
+		<td>appearflag_teamplay</td>
+		<td>choices</td>
+		<td>1</td>
+		<td style="text-align: left;" pkvd="game_counter::appearflag_teamplay::description"></td>
+	</tr>
+	</tr>
+		<td pkvd="game_counter::appearflag_dedicated"></td>
+		<td>appearflag_dedicated</td>
+		<td>choices</td>
+		<td>-1</td>
+		<td style="text-align: left;" pkvd="game_counter::appearflag_dedicated::description"></td>
+	</tr>
+	</tr>
+		<td pkvd="game_counter::appearflag_dedicated"></td>
+		<td>appearflag_dedicated</td>
+		<td>choices</td>
+		<td>0</td>
+		<td style="text-align: left;" pkvd="game_counter::appearflag_dedicated::description"></td>
+	</tr>
+	</tr>
+		<td pkvd="game_counter::appearflag_dedicated"></td>
+		<td>appearflag_dedicated</td>
+		<td>choices</td>
+		<td>1</td>
+		<td style="text-align: left;" pkvd="game_counter::appearflag_dedicated::description"></td>
+	</tr>
+	</tr>
+		<td pkvd="game_counter::appearflag_skilleasy"></td>
+		<td>appearflag_skilleasy</td>
+		<td>choices</td>
+		<td>-1</td>
+		<td style="text-align: left;" pkvd="game_counter::appearflag_skilleasy::description"></td>
+	</tr>
+	</tr>
+		<td pkvd="game_counter::appearflag_skilleasy"></td>
+		<td>appearflag_skilleasy</td>
+		<td>choices</td>
+		<td>0</td>
+		<td style="text-align: left;" pkvd="game_counter::appearflag_skilleasy::description"></td>
+	</tr>
+	</tr>
+		<td pkvd="game_counter::appearflag_skilleasy"></td>
+		<td>appearflag_skilleasy</td>
+		<td>choices</td>
+		<td>1</td>
+		<td style="text-align: left;" pkvd="game_counter::appearflag_skilleasy::description"></td>
+	</tr>
+	</tr>
+		<td pkvd="game_counter::appearflag_skillmedium"></td>
+		<td>appearflag_skillmedium</td>
+		<td>choices</td>
+		<td>-1</td>
+		<td style="text-align: left;" pkvd="game_counter::appearflag_skillmedium::description"></td>
+	</tr>
+	</tr>
+		<td pkvd="game_counter::appearflag_skillmedium"></td>
+		<td>appearflag_skillmedium</td>
+		<td>choices</td>
+		<td>0</td>
+		<td style="text-align: left;" pkvd="game_counter::appearflag_skillmedium::description"></td>
+	</tr>
+	</tr>
+		<td pkvd="game_counter::appearflag_skillmedium"></td>
+		<td>appearflag_skillmedium</td>
+		<td>choices</td>
+		<td>1</td>
+		<td style="text-align: left;" pkvd="game_counter::appearflag_skillmedium::description"></td>
+	</tr>
+	</tr>
+		<td pkvd="game_counter::appearflag_skillhard"></td>
+		<td>appearflag_skillhard</td>
+		<td>choices</td>
+		<td>-1</td>
+		<td style="text-align: left;" pkvd="game_counter::appearflag_skillhard::description"></td>
+	</tr>
+	</tr>
+		<td pkvd="game_counter::appearflag_skillhard"></td>
+		<td>appearflag_skillhard</td>
+		<td>choices</td>
+		<td>0</td>
+		<td style="text-align: left;" pkvd="game_counter::appearflag_skillhard::description"></td>
+	</tr>
+	</tr>
+		<td pkvd="game_counter::appearflag_skillhard"></td>
+		<td>appearflag_skillhard</td>
+		<td>choices</td>
+		<td>1</td>
+		<td style="text-align: left;" pkvd="game_counter::appearflag_skillhard::description"></td>
 	</tr>
 </table>
 <br><br>

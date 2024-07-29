@@ -8,11 +8,18 @@
 	<th pkvd="value"></th>
 	<th pkvd="Description"></th>
 	</tr>
-		<td pkvd="Targetname::targetname"></td>
+		<td pkvd="func_mortar_field::spawnflags"></td>
+		<td>spawnflags</td>
+		<td>bits</td>
+		<td>2048</td>
+		<td style="text-align: left;" pkvd="func_mortar_field::spawnflags::description"></td>
+	</tr>
+	</tr>
+		<td pkvd="func_mortar_field::targetname"></td>
 		<td>targetname</td>
 		<td>target_source</td>
 		<td></td>
-		<td style="text-align: left;" pkvd="Targetname::targetname::description"></td>
+		<td style="text-align: left;" pkvd="func_mortar_field::targetname::description"></td>
 	</tr>
 	</tr>
 		<td pkvd="func_mortar_field::m_flSpread"></td>
@@ -36,6 +43,20 @@
 		<td style="text-align: left;" pkvd="func_mortar_field::m_fControl::description"></td>
 	</tr>
 	</tr>
+		<td pkvd="func_mortar_field::m_fControl"></td>
+		<td>m_fControl</td>
+		<td>choices</td>
+		<td>1</td>
+		<td style="text-align: left;" pkvd="func_mortar_field::m_fControl::description"></td>
+	</tr>
+	</tr>
+		<td pkvd="func_mortar_field::m_fControl"></td>
+		<td>m_fControl</td>
+		<td>choices</td>
+		<td>2</td>
+		<td style="text-align: left;" pkvd="func_mortar_field::m_fControl::description"></td>
+	</tr>
+	</tr>
 		<td pkvd="func_mortar_field::m_iszXController"></td>
 		<td>m_iszXController</td>
 		<td>target_destination</td>
@@ -48,6 +69,216 @@
 		<td>target_destination</td>
 		<td></td>
 		<td style="text-align: left;" pkvd="func_mortar_field::m_iszYController::description"></td>
+	</tr>
+	</tr>
+		<td pkvd="func_mortar_field::appearflag_singleplayer"></td>
+		<td>appearflag_singleplayer</td>
+		<td>choices</td>
+		<td>-1</td>
+		<td style="text-align: left;" pkvd="func_mortar_field::appearflag_singleplayer::description"></td>
+	</tr>
+	</tr>
+		<td pkvd="func_mortar_field::appearflag_singleplayer"></td>
+		<td>appearflag_singleplayer</td>
+		<td>choices</td>
+		<td>0</td>
+		<td style="text-align: left;" pkvd="func_mortar_field::appearflag_singleplayer::description"></td>
+	</tr>
+	</tr>
+		<td pkvd="func_mortar_field::appearflag_singleplayer"></td>
+		<td>appearflag_singleplayer</td>
+		<td>choices</td>
+		<td>1</td>
+		<td style="text-align: left;" pkvd="func_mortar_field::appearflag_singleplayer::description"></td>
+	</tr>
+	</tr>
+		<td pkvd="func_mortar_field::appearflag_multiplayer"></td>
+		<td>appearflag_multiplayer</td>
+		<td>choices</td>
+		<td>-1</td>
+		<td style="text-align: left;" pkvd="func_mortar_field::appearflag_multiplayer::description"></td>
+	</tr>
+	</tr>
+		<td pkvd="func_mortar_field::appearflag_multiplayer"></td>
+		<td>appearflag_multiplayer</td>
+		<td>choices</td>
+		<td>0</td>
+		<td style="text-align: left;" pkvd="func_mortar_field::appearflag_multiplayer::description"></td>
+	</tr>
+	</tr>
+		<td pkvd="func_mortar_field::appearflag_multiplayer"></td>
+		<td>appearflag_multiplayer</td>
+		<td>choices</td>
+		<td>1</td>
+		<td style="text-align: left;" pkvd="func_mortar_field::appearflag_multiplayer::description"></td>
+	</tr>
+	</tr>
+		<td pkvd="func_mortar_field::appearflag_cooperative"></td>
+		<td>appearflag_cooperative</td>
+		<td>choices</td>
+		<td>-1</td>
+		<td style="text-align: left;" pkvd="func_mortar_field::appearflag_cooperative::description"></td>
+	</tr>
+	</tr>
+		<td pkvd="func_mortar_field::appearflag_cooperative"></td>
+		<td>appearflag_cooperative</td>
+		<td>choices</td>
+		<td>0</td>
+		<td style="text-align: left;" pkvd="func_mortar_field::appearflag_cooperative::description"></td>
+	</tr>
+	</tr>
+		<td pkvd="func_mortar_field::appearflag_cooperative"></td>
+		<td>appearflag_cooperative</td>
+		<td>choices</td>
+		<td>1</td>
+		<td style="text-align: left;" pkvd="func_mortar_field::appearflag_cooperative::description"></td>
+	</tr>
+	</tr>
+		<td pkvd="func_mortar_field::appearflag_deathmatch"></td>
+		<td>appearflag_deathmatch</td>
+		<td>choices</td>
+		<td>-1</td>
+		<td style="text-align: left;" pkvd="func_mortar_field::appearflag_deathmatch::description"></td>
+	</tr>
+	</tr>
+		<td pkvd="func_mortar_field::appearflag_deathmatch"></td>
+		<td>appearflag_deathmatch</td>
+		<td>choices</td>
+		<td>0</td>
+		<td style="text-align: left;" pkvd="func_mortar_field::appearflag_deathmatch::description"></td>
+	</tr>
+	</tr>
+		<td pkvd="func_mortar_field::appearflag_deathmatch"></td>
+		<td>appearflag_deathmatch</td>
+		<td>choices</td>
+		<td>1</td>
+		<td style="text-align: left;" pkvd="func_mortar_field::appearflag_deathmatch::description"></td>
+	</tr>
+	</tr>
+		<td pkvd="func_mortar_field::appearflag_cft"></td>
+		<td>appearflag_cft</td>
+		<td>choices</td>
+		<td>-1</td>
+		<td style="text-align: left;" pkvd="func_mortar_field::appearflag_cft::description"></td>
+	</tr>
+	</tr>
+		<td pkvd="func_mortar_field::appearflag_cft"></td>
+		<td>appearflag_cft</td>
+		<td>choices</td>
+		<td>0</td>
+		<td style="text-align: left;" pkvd="func_mortar_field::appearflag_cft::description"></td>
+	</tr>
+	</tr>
+		<td pkvd="func_mortar_field::appearflag_cft"></td>
+		<td>appearflag_cft</td>
+		<td>choices</td>
+		<td>1</td>
+		<td style="text-align: left;" pkvd="func_mortar_field::appearflag_cft::description"></td>
+	</tr>
+	</tr>
+		<td pkvd="func_mortar_field::appearflag_teamplay"></td>
+		<td>appearflag_teamplay</td>
+		<td>choices</td>
+		<td>-1</td>
+		<td style="text-align: left;" pkvd="func_mortar_field::appearflag_teamplay::description"></td>
+	</tr>
+	</tr>
+		<td pkvd="func_mortar_field::appearflag_teamplay"></td>
+		<td>appearflag_teamplay</td>
+		<td>choices</td>
+		<td>0</td>
+		<td style="text-align: left;" pkvd="func_mortar_field::appearflag_teamplay::description"></td>
+	</tr>
+	</tr>
+		<td pkvd="func_mortar_field::appearflag_teamplay"></td>
+		<td>appearflag_teamplay</td>
+		<td>choices</td>
+		<td>1</td>
+		<td style="text-align: left;" pkvd="func_mortar_field::appearflag_teamplay::description"></td>
+	</tr>
+	</tr>
+		<td pkvd="func_mortar_field::appearflag_dedicated"></td>
+		<td>appearflag_dedicated</td>
+		<td>choices</td>
+		<td>-1</td>
+		<td style="text-align: left;" pkvd="func_mortar_field::appearflag_dedicated::description"></td>
+	</tr>
+	</tr>
+		<td pkvd="func_mortar_field::appearflag_dedicated"></td>
+		<td>appearflag_dedicated</td>
+		<td>choices</td>
+		<td>0</td>
+		<td style="text-align: left;" pkvd="func_mortar_field::appearflag_dedicated::description"></td>
+	</tr>
+	</tr>
+		<td pkvd="func_mortar_field::appearflag_dedicated"></td>
+		<td>appearflag_dedicated</td>
+		<td>choices</td>
+		<td>1</td>
+		<td style="text-align: left;" pkvd="func_mortar_field::appearflag_dedicated::description"></td>
+	</tr>
+	</tr>
+		<td pkvd="func_mortar_field::appearflag_skilleasy"></td>
+		<td>appearflag_skilleasy</td>
+		<td>choices</td>
+		<td>-1</td>
+		<td style="text-align: left;" pkvd="func_mortar_field::appearflag_skilleasy::description"></td>
+	</tr>
+	</tr>
+		<td pkvd="func_mortar_field::appearflag_skilleasy"></td>
+		<td>appearflag_skilleasy</td>
+		<td>choices</td>
+		<td>0</td>
+		<td style="text-align: left;" pkvd="func_mortar_field::appearflag_skilleasy::description"></td>
+	</tr>
+	</tr>
+		<td pkvd="func_mortar_field::appearflag_skilleasy"></td>
+		<td>appearflag_skilleasy</td>
+		<td>choices</td>
+		<td>1</td>
+		<td style="text-align: left;" pkvd="func_mortar_field::appearflag_skilleasy::description"></td>
+	</tr>
+	</tr>
+		<td pkvd="func_mortar_field::appearflag_skillmedium"></td>
+		<td>appearflag_skillmedium</td>
+		<td>choices</td>
+		<td>-1</td>
+		<td style="text-align: left;" pkvd="func_mortar_field::appearflag_skillmedium::description"></td>
+	</tr>
+	</tr>
+		<td pkvd="func_mortar_field::appearflag_skillmedium"></td>
+		<td>appearflag_skillmedium</td>
+		<td>choices</td>
+		<td>0</td>
+		<td style="text-align: left;" pkvd="func_mortar_field::appearflag_skillmedium::description"></td>
+	</tr>
+	</tr>
+		<td pkvd="func_mortar_field::appearflag_skillmedium"></td>
+		<td>appearflag_skillmedium</td>
+		<td>choices</td>
+		<td>1</td>
+		<td style="text-align: left;" pkvd="func_mortar_field::appearflag_skillmedium::description"></td>
+	</tr>
+	</tr>
+		<td pkvd="func_mortar_field::appearflag_skillhard"></td>
+		<td>appearflag_skillhard</td>
+		<td>choices</td>
+		<td>-1</td>
+		<td style="text-align: left;" pkvd="func_mortar_field::appearflag_skillhard::description"></td>
+	</tr>
+	</tr>
+		<td pkvd="func_mortar_field::appearflag_skillhard"></td>
+		<td>appearflag_skillhard</td>
+		<td>choices</td>
+		<td>0</td>
+		<td style="text-align: left;" pkvd="func_mortar_field::appearflag_skillhard::description"></td>
+	</tr>
+	</tr>
+		<td pkvd="func_mortar_field::appearflag_skillhard"></td>
+		<td>appearflag_skillhard</td>
+		<td>choices</td>
+		<td>1</td>
+		<td style="text-align: left;" pkvd="func_mortar_field::appearflag_skillhard::description"></td>
 	</tr>
 </table>
 <br><br>

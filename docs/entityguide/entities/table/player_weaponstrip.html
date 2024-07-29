@@ -8,11 +8,18 @@
 	<th pkvd="value"></th>
 	<th pkvd="Description"></th>
 	</tr>
-		<td pkvd="Targetname::targetname"></td>
+		<td pkvd="player_weaponstrip::spawnflags"></td>
+		<td>spawnflags</td>
+		<td>bits</td>
+		<td>2048</td>
+		<td style="text-align: left;" pkvd="player_weaponstrip::spawnflags::description"></td>
+	</tr>
+	</tr>
+		<td pkvd="player_weaponstrip::targetname"></td>
 		<td>targetname</td>
 		<td>target_source</td>
 		<td></td>
-		<td style="text-align: left;" pkvd="Targetname::targetname::description"></td>
+		<td style="text-align: left;" pkvd="player_weaponstrip::targetname::description"></td>
 	</tr>
 	</tr>
 		<td pkvd="player_weaponstrip::all_players"></td>
@@ -20,6 +27,20 @@
 		<td>choices</td>
 		<td>0</td>
 		<td style="text-align: left;" pkvd="player_weaponstrip::all_players::description"></td>
+	</tr>
+	</tr>
+		<td pkvd="player_weaponstrip::all_players"></td>
+		<td>all_players</td>
+		<td>choices</td>
+		<td>1</td>
+		<td style="text-align: left;" pkvd="player_weaponstrip::all_players::description"></td>
+	</tr>
+	</tr>
+		<td pkvd="player_weaponstrip::strip_weapons"></td>
+		<td>strip_weapons</td>
+		<td>choices</td>
+		<td>0</td>
+		<td style="text-align: left;" pkvd="player_weaponstrip::strip_weapons::description"></td>
 	</tr>
 	</tr>
 		<td pkvd="player_weaponstrip::strip_weapons"></td>
@@ -36,11 +57,235 @@
 		<td style="text-align: left;" pkvd="player_weaponstrip::strip_suit::description"></td>
 	</tr>
 	</tr>
+		<td pkvd="player_weaponstrip::strip_suit"></td>
+		<td>strip_suit</td>
+		<td>choices</td>
+		<td>1</td>
+		<td style="text-align: left;" pkvd="player_weaponstrip::strip_suit::description"></td>
+	</tr>
+	</tr>
 		<td pkvd="player_weaponstrip::strip_longjump"></td>
 		<td>strip_longjump</td>
 		<td>choices</td>
 		<td>0</td>
 		<td style="text-align: left;" pkvd="player_weaponstrip::strip_longjump::description"></td>
+	</tr>
+	</tr>
+		<td pkvd="player_weaponstrip::strip_longjump"></td>
+		<td>strip_longjump</td>
+		<td>choices</td>
+		<td>1</td>
+		<td style="text-align: left;" pkvd="player_weaponstrip::strip_longjump::description"></td>
+	</tr>
+	</tr>
+		<td pkvd="player_weaponstrip::appearflag_singleplayer"></td>
+		<td>appearflag_singleplayer</td>
+		<td>choices</td>
+		<td>-1</td>
+		<td style="text-align: left;" pkvd="player_weaponstrip::appearflag_singleplayer::description"></td>
+	</tr>
+	</tr>
+		<td pkvd="player_weaponstrip::appearflag_singleplayer"></td>
+		<td>appearflag_singleplayer</td>
+		<td>choices</td>
+		<td>0</td>
+		<td style="text-align: left;" pkvd="player_weaponstrip::appearflag_singleplayer::description"></td>
+	</tr>
+	</tr>
+		<td pkvd="player_weaponstrip::appearflag_singleplayer"></td>
+		<td>appearflag_singleplayer</td>
+		<td>choices</td>
+		<td>1</td>
+		<td style="text-align: left;" pkvd="player_weaponstrip::appearflag_singleplayer::description"></td>
+	</tr>
+	</tr>
+		<td pkvd="player_weaponstrip::appearflag_multiplayer"></td>
+		<td>appearflag_multiplayer</td>
+		<td>choices</td>
+		<td>-1</td>
+		<td style="text-align: left;" pkvd="player_weaponstrip::appearflag_multiplayer::description"></td>
+	</tr>
+	</tr>
+		<td pkvd="player_weaponstrip::appearflag_multiplayer"></td>
+		<td>appearflag_multiplayer</td>
+		<td>choices</td>
+		<td>0</td>
+		<td style="text-align: left;" pkvd="player_weaponstrip::appearflag_multiplayer::description"></td>
+	</tr>
+	</tr>
+		<td pkvd="player_weaponstrip::appearflag_multiplayer"></td>
+		<td>appearflag_multiplayer</td>
+		<td>choices</td>
+		<td>1</td>
+		<td style="text-align: left;" pkvd="player_weaponstrip::appearflag_multiplayer::description"></td>
+	</tr>
+	</tr>
+		<td pkvd="player_weaponstrip::appearflag_cooperative"></td>
+		<td>appearflag_cooperative</td>
+		<td>choices</td>
+		<td>-1</td>
+		<td style="text-align: left;" pkvd="player_weaponstrip::appearflag_cooperative::description"></td>
+	</tr>
+	</tr>
+		<td pkvd="player_weaponstrip::appearflag_cooperative"></td>
+		<td>appearflag_cooperative</td>
+		<td>choices</td>
+		<td>0</td>
+		<td style="text-align: left;" pkvd="player_weaponstrip::appearflag_cooperative::description"></td>
+	</tr>
+	</tr>
+		<td pkvd="player_weaponstrip::appearflag_cooperative"></td>
+		<td>appearflag_cooperative</td>
+		<td>choices</td>
+		<td>1</td>
+		<td style="text-align: left;" pkvd="player_weaponstrip::appearflag_cooperative::description"></td>
+	</tr>
+	</tr>
+		<td pkvd="player_weaponstrip::appearflag_deathmatch"></td>
+		<td>appearflag_deathmatch</td>
+		<td>choices</td>
+		<td>-1</td>
+		<td style="text-align: left;" pkvd="player_weaponstrip::appearflag_deathmatch::description"></td>
+	</tr>
+	</tr>
+		<td pkvd="player_weaponstrip::appearflag_deathmatch"></td>
+		<td>appearflag_deathmatch</td>
+		<td>choices</td>
+		<td>0</td>
+		<td style="text-align: left;" pkvd="player_weaponstrip::appearflag_deathmatch::description"></td>
+	</tr>
+	</tr>
+		<td pkvd="player_weaponstrip::appearflag_deathmatch"></td>
+		<td>appearflag_deathmatch</td>
+		<td>choices</td>
+		<td>1</td>
+		<td style="text-align: left;" pkvd="player_weaponstrip::appearflag_deathmatch::description"></td>
+	</tr>
+	</tr>
+		<td pkvd="player_weaponstrip::appearflag_cft"></td>
+		<td>appearflag_cft</td>
+		<td>choices</td>
+		<td>-1</td>
+		<td style="text-align: left;" pkvd="player_weaponstrip::appearflag_cft::description"></td>
+	</tr>
+	</tr>
+		<td pkvd="player_weaponstrip::appearflag_cft"></td>
+		<td>appearflag_cft</td>
+		<td>choices</td>
+		<td>0</td>
+		<td style="text-align: left;" pkvd="player_weaponstrip::appearflag_cft::description"></td>
+	</tr>
+	</tr>
+		<td pkvd="player_weaponstrip::appearflag_cft"></td>
+		<td>appearflag_cft</td>
+		<td>choices</td>
+		<td>1</td>
+		<td style="text-align: left;" pkvd="player_weaponstrip::appearflag_cft::description"></td>
+	</tr>
+	</tr>
+		<td pkvd="player_weaponstrip::appearflag_teamplay"></td>
+		<td>appearflag_teamplay</td>
+		<td>choices</td>
+		<td>-1</td>
+		<td style="text-align: left;" pkvd="player_weaponstrip::appearflag_teamplay::description"></td>
+	</tr>
+	</tr>
+		<td pkvd="player_weaponstrip::appearflag_teamplay"></td>
+		<td>appearflag_teamplay</td>
+		<td>choices</td>
+		<td>0</td>
+		<td style="text-align: left;" pkvd="player_weaponstrip::appearflag_teamplay::description"></td>
+	</tr>
+	</tr>
+		<td pkvd="player_weaponstrip::appearflag_teamplay"></td>
+		<td>appearflag_teamplay</td>
+		<td>choices</td>
+		<td>1</td>
+		<td style="text-align: left;" pkvd="player_weaponstrip::appearflag_teamplay::description"></td>
+	</tr>
+	</tr>
+		<td pkvd="player_weaponstrip::appearflag_dedicated"></td>
+		<td>appearflag_dedicated</td>
+		<td>choices</td>
+		<td>-1</td>
+		<td style="text-align: left;" pkvd="player_weaponstrip::appearflag_dedicated::description"></td>
+	</tr>
+	</tr>
+		<td pkvd="player_weaponstrip::appearflag_dedicated"></td>
+		<td>appearflag_dedicated</td>
+		<td>choices</td>
+		<td>0</td>
+		<td style="text-align: left;" pkvd="player_weaponstrip::appearflag_dedicated::description"></td>
+	</tr>
+	</tr>
+		<td pkvd="player_weaponstrip::appearflag_dedicated"></td>
+		<td>appearflag_dedicated</td>
+		<td>choices</td>
+		<td>1</td>
+		<td style="text-align: left;" pkvd="player_weaponstrip::appearflag_dedicated::description"></td>
+	</tr>
+	</tr>
+		<td pkvd="player_weaponstrip::appearflag_skilleasy"></td>
+		<td>appearflag_skilleasy</td>
+		<td>choices</td>
+		<td>-1</td>
+		<td style="text-align: left;" pkvd="player_weaponstrip::appearflag_skilleasy::description"></td>
+	</tr>
+	</tr>
+		<td pkvd="player_weaponstrip::appearflag_skilleasy"></td>
+		<td>appearflag_skilleasy</td>
+		<td>choices</td>
+		<td>0</td>
+		<td style="text-align: left;" pkvd="player_weaponstrip::appearflag_skilleasy::description"></td>
+	</tr>
+	</tr>
+		<td pkvd="player_weaponstrip::appearflag_skilleasy"></td>
+		<td>appearflag_skilleasy</td>
+		<td>choices</td>
+		<td>1</td>
+		<td style="text-align: left;" pkvd="player_weaponstrip::appearflag_skilleasy::description"></td>
+	</tr>
+	</tr>
+		<td pkvd="player_weaponstrip::appearflag_skillmedium"></td>
+		<td>appearflag_skillmedium</td>
+		<td>choices</td>
+		<td>-1</td>
+		<td style="text-align: left;" pkvd="player_weaponstrip::appearflag_skillmedium::description"></td>
+	</tr>
+	</tr>
+		<td pkvd="player_weaponstrip::appearflag_skillmedium"></td>
+		<td>appearflag_skillmedium</td>
+		<td>choices</td>
+		<td>0</td>
+		<td style="text-align: left;" pkvd="player_weaponstrip::appearflag_skillmedium::description"></td>
+	</tr>
+	</tr>
+		<td pkvd="player_weaponstrip::appearflag_skillmedium"></td>
+		<td>appearflag_skillmedium</td>
+		<td>choices</td>
+		<td>1</td>
+		<td style="text-align: left;" pkvd="player_weaponstrip::appearflag_skillmedium::description"></td>
+	</tr>
+	</tr>
+		<td pkvd="player_weaponstrip::appearflag_skillhard"></td>
+		<td>appearflag_skillhard</td>
+		<td>choices</td>
+		<td>-1</td>
+		<td style="text-align: left;" pkvd="player_weaponstrip::appearflag_skillhard::description"></td>
+	</tr>
+	</tr>
+		<td pkvd="player_weaponstrip::appearflag_skillhard"></td>
+		<td>appearflag_skillhard</td>
+		<td>choices</td>
+		<td>0</td>
+		<td style="text-align: left;" pkvd="player_weaponstrip::appearflag_skillhard::description"></td>
+	</tr>
+	</tr>
+		<td pkvd="player_weaponstrip::appearflag_skillhard"></td>
+		<td>appearflag_skillhard</td>
+		<td>choices</td>
+		<td>1</td>
+		<td style="text-align: left;" pkvd="player_weaponstrip::appearflag_skillhard::description"></td>
 	</tr>
 </table>
 <br><br>

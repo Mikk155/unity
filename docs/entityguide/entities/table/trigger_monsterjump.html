@@ -8,18 +8,18 @@
 	<th pkvd="value"></th>
 	<th pkvd="Description"></th>
 	</tr>
-		<td pkvd="Angles::angles"></td>
-		<td>angles</td>
-		<td>string</td>
-		<td>0 0 0</td>
-		<td style="text-align: left;" pkvd="Angles::angles::description"></td>
+		<td pkvd="trigger_monsterjump::spawnflags"></td>
+		<td>spawnflags</td>
+		<td>bits</td>
+		<td>2048</td>
+		<td style="text-align: left;" pkvd="trigger_monsterjump::spawnflags::description"></td>
 	</tr>
 	</tr>
-		<td pkvd="Master::master"></td>
-		<td>master</td>
-		<td>target_destination</td>
+		<td pkvd="trigger_monsterjump::targetname"></td>
+		<td>targetname</td>
+		<td>target_source</td>
 		<td></td>
-		<td style="text-align: left;" pkvd="Master::master::description"></td>
+		<td style="text-align: left;" pkvd="trigger_monsterjump::targetname::description"></td>
 	</tr>
 	</tr>
 		<td pkvd="trigger_monsterjump::speed"></td>
@@ -34,6 +34,230 @@
 		<td>integer</td>
 		<td>128</td>
 		<td style="text-align: left;" pkvd="trigger_monsterjump::height::description"></td>
+	</tr>
+	</tr>
+		<td pkvd="trigger_monsterjump::angles"></td>
+		<td>angles</td>
+		<td>string</td>
+		<td>0 0 0</td>
+		<td style="text-align: left;" pkvd="trigger_monsterjump::angles::description"></td>
+	</tr>
+	</tr>
+		<td pkvd="trigger_monsterjump::master"></td>
+		<td>master</td>
+		<td>target_source</td>
+		<td></td>
+		<td style="text-align: left;" pkvd="trigger_monsterjump::master::description"></td>
+	</tr>
+	</tr>
+		<td pkvd="trigger_monsterjump::appearflag_singleplayer"></td>
+		<td>appearflag_singleplayer</td>
+		<td>choices</td>
+		<td>-1</td>
+		<td style="text-align: left;" pkvd="trigger_monsterjump::appearflag_singleplayer::description"></td>
+	</tr>
+	</tr>
+		<td pkvd="trigger_monsterjump::appearflag_singleplayer"></td>
+		<td>appearflag_singleplayer</td>
+		<td>choices</td>
+		<td>0</td>
+		<td style="text-align: left;" pkvd="trigger_monsterjump::appearflag_singleplayer::description"></td>
+	</tr>
+	</tr>
+		<td pkvd="trigger_monsterjump::appearflag_singleplayer"></td>
+		<td>appearflag_singleplayer</td>
+		<td>choices</td>
+		<td>1</td>
+		<td style="text-align: left;" pkvd="trigger_monsterjump::appearflag_singleplayer::description"></td>
+	</tr>
+	</tr>
+		<td pkvd="trigger_monsterjump::appearflag_multiplayer"></td>
+		<td>appearflag_multiplayer</td>
+		<td>choices</td>
+		<td>-1</td>
+		<td style="text-align: left;" pkvd="trigger_monsterjump::appearflag_multiplayer::description"></td>
+	</tr>
+	</tr>
+		<td pkvd="trigger_monsterjump::appearflag_multiplayer"></td>
+		<td>appearflag_multiplayer</td>
+		<td>choices</td>
+		<td>0</td>
+		<td style="text-align: left;" pkvd="trigger_monsterjump::appearflag_multiplayer::description"></td>
+	</tr>
+	</tr>
+		<td pkvd="trigger_monsterjump::appearflag_multiplayer"></td>
+		<td>appearflag_multiplayer</td>
+		<td>choices</td>
+		<td>1</td>
+		<td style="text-align: left;" pkvd="trigger_monsterjump::appearflag_multiplayer::description"></td>
+	</tr>
+	</tr>
+		<td pkvd="trigger_monsterjump::appearflag_cooperative"></td>
+		<td>appearflag_cooperative</td>
+		<td>choices</td>
+		<td>-1</td>
+		<td style="text-align: left;" pkvd="trigger_monsterjump::appearflag_cooperative::description"></td>
+	</tr>
+	</tr>
+		<td pkvd="trigger_monsterjump::appearflag_cooperative"></td>
+		<td>appearflag_cooperative</td>
+		<td>choices</td>
+		<td>0</td>
+		<td style="text-align: left;" pkvd="trigger_monsterjump::appearflag_cooperative::description"></td>
+	</tr>
+	</tr>
+		<td pkvd="trigger_monsterjump::appearflag_cooperative"></td>
+		<td>appearflag_cooperative</td>
+		<td>choices</td>
+		<td>1</td>
+		<td style="text-align: left;" pkvd="trigger_monsterjump::appearflag_cooperative::description"></td>
+	</tr>
+	</tr>
+		<td pkvd="trigger_monsterjump::appearflag_deathmatch"></td>
+		<td>appearflag_deathmatch</td>
+		<td>choices</td>
+		<td>-1</td>
+		<td style="text-align: left;" pkvd="trigger_monsterjump::appearflag_deathmatch::description"></td>
+	</tr>
+	</tr>
+		<td pkvd="trigger_monsterjump::appearflag_deathmatch"></td>
+		<td>appearflag_deathmatch</td>
+		<td>choices</td>
+		<td>0</td>
+		<td style="text-align: left;" pkvd="trigger_monsterjump::appearflag_deathmatch::description"></td>
+	</tr>
+	</tr>
+		<td pkvd="trigger_monsterjump::appearflag_deathmatch"></td>
+		<td>appearflag_deathmatch</td>
+		<td>choices</td>
+		<td>1</td>
+		<td style="text-align: left;" pkvd="trigger_monsterjump::appearflag_deathmatch::description"></td>
+	</tr>
+	</tr>
+		<td pkvd="trigger_monsterjump::appearflag_cft"></td>
+		<td>appearflag_cft</td>
+		<td>choices</td>
+		<td>-1</td>
+		<td style="text-align: left;" pkvd="trigger_monsterjump::appearflag_cft::description"></td>
+	</tr>
+	</tr>
+		<td pkvd="trigger_monsterjump::appearflag_cft"></td>
+		<td>appearflag_cft</td>
+		<td>choices</td>
+		<td>0</td>
+		<td style="text-align: left;" pkvd="trigger_monsterjump::appearflag_cft::description"></td>
+	</tr>
+	</tr>
+		<td pkvd="trigger_monsterjump::appearflag_cft"></td>
+		<td>appearflag_cft</td>
+		<td>choices</td>
+		<td>1</td>
+		<td style="text-align: left;" pkvd="trigger_monsterjump::appearflag_cft::description"></td>
+	</tr>
+	</tr>
+		<td pkvd="trigger_monsterjump::appearflag_teamplay"></td>
+		<td>appearflag_teamplay</td>
+		<td>choices</td>
+		<td>-1</td>
+		<td style="text-align: left;" pkvd="trigger_monsterjump::appearflag_teamplay::description"></td>
+	</tr>
+	</tr>
+		<td pkvd="trigger_monsterjump::appearflag_teamplay"></td>
+		<td>appearflag_teamplay</td>
+		<td>choices</td>
+		<td>0</td>
+		<td style="text-align: left;" pkvd="trigger_monsterjump::appearflag_teamplay::description"></td>
+	</tr>
+	</tr>
+		<td pkvd="trigger_monsterjump::appearflag_teamplay"></td>
+		<td>appearflag_teamplay</td>
+		<td>choices</td>
+		<td>1</td>
+		<td style="text-align: left;" pkvd="trigger_monsterjump::appearflag_teamplay::description"></td>
+	</tr>
+	</tr>
+		<td pkvd="trigger_monsterjump::appearflag_dedicated"></td>
+		<td>appearflag_dedicated</td>
+		<td>choices</td>
+		<td>-1</td>
+		<td style="text-align: left;" pkvd="trigger_monsterjump::appearflag_dedicated::description"></td>
+	</tr>
+	</tr>
+		<td pkvd="trigger_monsterjump::appearflag_dedicated"></td>
+		<td>appearflag_dedicated</td>
+		<td>choices</td>
+		<td>0</td>
+		<td style="text-align: left;" pkvd="trigger_monsterjump::appearflag_dedicated::description"></td>
+	</tr>
+	</tr>
+		<td pkvd="trigger_monsterjump::appearflag_dedicated"></td>
+		<td>appearflag_dedicated</td>
+		<td>choices</td>
+		<td>1</td>
+		<td style="text-align: left;" pkvd="trigger_monsterjump::appearflag_dedicated::description"></td>
+	</tr>
+	</tr>
+		<td pkvd="trigger_monsterjump::appearflag_skilleasy"></td>
+		<td>appearflag_skilleasy</td>
+		<td>choices</td>
+		<td>-1</td>
+		<td style="text-align: left;" pkvd="trigger_monsterjump::appearflag_skilleasy::description"></td>
+	</tr>
+	</tr>
+		<td pkvd="trigger_monsterjump::appearflag_skilleasy"></td>
+		<td>appearflag_skilleasy</td>
+		<td>choices</td>
+		<td>0</td>
+		<td style="text-align: left;" pkvd="trigger_monsterjump::appearflag_skilleasy::description"></td>
+	</tr>
+	</tr>
+		<td pkvd="trigger_monsterjump::appearflag_skilleasy"></td>
+		<td>appearflag_skilleasy</td>
+		<td>choices</td>
+		<td>1</td>
+		<td style="text-align: left;" pkvd="trigger_monsterjump::appearflag_skilleasy::description"></td>
+	</tr>
+	</tr>
+		<td pkvd="trigger_monsterjump::appearflag_skillmedium"></td>
+		<td>appearflag_skillmedium</td>
+		<td>choices</td>
+		<td>-1</td>
+		<td style="text-align: left;" pkvd="trigger_monsterjump::appearflag_skillmedium::description"></td>
+	</tr>
+	</tr>
+		<td pkvd="trigger_monsterjump::appearflag_skillmedium"></td>
+		<td>appearflag_skillmedium</td>
+		<td>choices</td>
+		<td>0</td>
+		<td style="text-align: left;" pkvd="trigger_monsterjump::appearflag_skillmedium::description"></td>
+	</tr>
+	</tr>
+		<td pkvd="trigger_monsterjump::appearflag_skillmedium"></td>
+		<td>appearflag_skillmedium</td>
+		<td>choices</td>
+		<td>1</td>
+		<td style="text-align: left;" pkvd="trigger_monsterjump::appearflag_skillmedium::description"></td>
+	</tr>
+	</tr>
+		<td pkvd="trigger_monsterjump::appearflag_skillhard"></td>
+		<td>appearflag_skillhard</td>
+		<td>choices</td>
+		<td>-1</td>
+		<td style="text-align: left;" pkvd="trigger_monsterjump::appearflag_skillhard::description"></td>
+	</tr>
+	</tr>
+		<td pkvd="trigger_monsterjump::appearflag_skillhard"></td>
+		<td>appearflag_skillhard</td>
+		<td>choices</td>
+		<td>0</td>
+		<td style="text-align: left;" pkvd="trigger_monsterjump::appearflag_skillhard::description"></td>
+	</tr>
+	</tr>
+		<td pkvd="trigger_monsterjump::appearflag_skillhard"></td>
+		<td>appearflag_skillhard</td>
+		<td>choices</td>
+		<td>1</td>
+		<td style="text-align: left;" pkvd="trigger_monsterjump::appearflag_skillhard::description"></td>
 	</tr>
 </table>
 <br><br>

@@ -8,129 +8,31 @@
 	<th pkvd="value"></th>
 	<th pkvd="Description"></th>
 	</tr>
-		<td pkvd="Door::speed"></td>
-		<td>speed</td>
-		<td>integer</td>
-		<td>100</td>
-		<td style="text-align: left;" pkvd="Door::speed::description"></td>
-	</tr>
-	</tr>
-		<td pkvd="Door::movesnd"></td>
-		<td>movesnd</td>
-		<td>sound</td>
-		<td></td>
-		<td style="text-align: left;" pkvd="Door::movesnd::description"></td>
-	</tr>
-	</tr>
-		<td pkvd="Door::stopsnd"></td>
-		<td>stopsnd</td>
-		<td>sound</td>
-		<td></td>
-		<td style="text-align: left;" pkvd="Door::stopsnd::description"></td>
-	</tr>
-	</tr>
-		<td pkvd="Door::wait"></td>
-		<td>wait</td>
-		<td>choices</td>
-		<td>4</td>
-		<td style="text-align: left;" pkvd="Door::wait::description"></td>
-	</tr>
-	</tr>
-		<td pkvd="Door::lip"></td>
-		<td>lip</td>
-		<td>integer</td>
-		<td></td>
-		<td style="text-align: left;" pkvd="Door::lip::description"></td>
-	</tr>
-	</tr>
-		<td pkvd="Door::dmg"></td>
-		<td>dmg</td>
-		<td>integer</td>
-		<td>0</td>
-		<td style="text-align: left;" pkvd="Door::dmg::description"></td>
-	</tr>
-	</tr>
-		<td pkvd="Door::message"></td>
-		<td>message</td>
-		<td>string</td>
-		<td></td>
-		<td style="text-align: left;" pkvd="Door::message::description"></td>
-	</tr>
-	</tr>
-		<td pkvd="Door::netname"></td>
-		<td>netname</td>
-		<td>string</td>
-		<td></td>
-		<td style="text-align: left;" pkvd="Door::netname::description"></td>
-	</tr>
-	</tr>
-		<td pkvd="Door::health"></td>
-		<td>health</td>
-		<td>integer</td>
-		<td>0</td>
-		<td style="text-align: left;" pkvd="Door::health::description"></td>
-	</tr>
-	</tr>
-		<td pkvd="Door::spawnflags"></td>
+		<td pkvd="func_water::spawnflags"></td>
 		<td>spawnflags</td>
-		<td>flags</td>
+		<td>bits</td>
+		<td>2048</td>
+		<td style="text-align: left;" pkvd="func_water::spawnflags::description"></td>
+	</tr>
+	</tr>
+		<td pkvd="func_water::targetname"></td>
+		<td>targetname</td>
+		<td>target_source</td>
 		<td></td>
-		<td style="text-align: left;" pkvd="Door::spawnflags::description"></td>
-	</tr>
-	</tr>
-		<td pkvd="Door::locked_sound"></td>
-		<td>locked_sound</td>
-		<td>sound</td>
-		<td></td>
-		<td style="text-align: left;" pkvd="Door::locked_sound::description"></td>
-	</tr>
-	</tr>
-		<td pkvd="Door::unlocked_sound"></td>
-		<td>unlocked_sound</td>
-		<td>sound</td>
-		<td></td>
-		<td style="text-align: left;" pkvd="Door::unlocked_sound::description"></td>
-	</tr>
-	</tr>
-		<td pkvd="Door::locked_sentence"></td>
-		<td>locked_sentence</td>
-		<td>string</td>
-		<td></td>
-		<td style="text-align: left;" pkvd="Door::locked_sentence::description"></td>
-	</tr>
-	</tr>
-		<td pkvd="Door::unlocked_sentence"></td>
-		<td>unlocked_sentence</td>
-		<td>string</td>
-		<td></td>
-		<td style="text-align: left;" pkvd="Door::unlocked_sentence::description"></td>
-	</tr>
-	</tr>
-		<td pkvd="Door::_minlight"></td>
-		<td>_minlight</td>
-		<td>string</td>
-		<td></td>
-		<td style="text-align: left;" pkvd="Door::_minlight::description"></td>
-	</tr>
-	</tr>
-		<td pkvd="ZHLT::zhlt_lightflags"></td>
-		<td>zhlt_lightflags</td>
-		<td>choices</td>
-		<td>0</td>
-		<td style="text-align: left;" pkvd="ZHLT::zhlt_lightflags::description"></td>
-	</tr>
-	</tr>
-		<td pkvd="ZHLT::light_origin"></td>
-		<td>light_origin</td>
-		<td>string</td>
-		<td></td>
-		<td style="text-align: left;" pkvd="ZHLT::light_origin::description"></td>
+		<td style="text-align: left;" pkvd="func_water::targetname::description"></td>
 	</tr>
 	</tr>
 		<td pkvd="func_water::spawnflags"></td>
 		<td>spawnflags</td>
-		<td>flags</td>
-		<td></td>
+		<td>bits</td>
+		<td>1</td>
+		<td style="text-align: left;" pkvd="func_water::spawnflags::description"></td>
+	</tr>
+	</tr>
+		<td pkvd="func_water::spawnflags"></td>
+		<td>spawnflags</td>
+		<td>bits</td>
+		<td>256</td>
 		<td style="text-align: left;" pkvd="func_water::spawnflags::description"></td>
 	</tr>
 	</tr>
@@ -141,11 +43,417 @@
 		<td style="text-align: left;" pkvd="func_water::skin::description"></td>
 	</tr>
 	</tr>
+		<td pkvd="func_water::skin"></td>
+		<td>skin</td>
+		<td>choices</td>
+		<td>-4</td>
+		<td style="text-align: left;" pkvd="func_water::skin::description"></td>
+	</tr>
+	</tr>
+		<td pkvd="func_water::skin"></td>
+		<td>skin</td>
+		<td>choices</td>
+		<td>-5</td>
+		<td style="text-align: left;" pkvd="func_water::skin::description"></td>
+	</tr>
+	</tr>
 		<td pkvd="func_water::WaveHeight"></td>
 		<td>WaveHeight</td>
 		<td>string</td>
 		<td>3.2</td>
 		<td style="text-align: left;" pkvd="func_water::WaveHeight::description"></td>
+	</tr>
+	</tr>
+		<td pkvd="func_water::speed"></td>
+		<td>speed</td>
+		<td>integer</td>
+		<td>100</td>
+		<td style="text-align: left;" pkvd="func_water::speed::description"></td>
+	</tr>
+	</tr>
+		<td pkvd="func_water::movesnd"></td>
+		<td>movesnd</td>
+		<td>sound</td>
+		<td></td>
+		<td style="text-align: left;" pkvd="func_water::movesnd::description"></td>
+	</tr>
+	</tr>
+		<td pkvd="func_water::stopsnd"></td>
+		<td>stopsnd</td>
+		<td>sound</td>
+		<td></td>
+		<td style="text-align: left;" pkvd="func_water::stopsnd::description"></td>
+	</tr>
+	</tr>
+		<td pkvd="func_water::wait"></td>
+		<td>wait</td>
+		<td>choices</td>
+		<td>-1</td>
+		<td style="text-align: left;" pkvd="func_water::wait::description"></td>
+	</tr>
+	</tr>
+		<td pkvd="func_water::lip"></td>
+		<td>lip</td>
+		<td>integer</td>
+		<td></td>
+		<td style="text-align: left;" pkvd="func_water::lip::description"></td>
+	</tr>
+	</tr>
+		<td pkvd="func_water::dmg"></td>
+		<td>dmg</td>
+		<td>integer</td>
+		<td>0</td>
+		<td style="text-align: left;" pkvd="func_water::dmg::description"></td>
+	</tr>
+	</tr>
+		<td pkvd="func_water::message"></td>
+		<td>message</td>
+		<td>string</td>
+		<td></td>
+		<td style="text-align: left;" pkvd="func_water::message::description"></td>
+	</tr>
+	</tr>
+		<td pkvd="func_water::netname"></td>
+		<td>netname</td>
+		<td>string</td>
+		<td></td>
+		<td style="text-align: left;" pkvd="func_water::netname::description"></td>
+	</tr>
+	</tr>
+		<td pkvd="func_water::health"></td>
+		<td>health</td>
+		<td>integer</td>
+		<td>0</td>
+		<td style="text-align: left;" pkvd="func_water::health::description"></td>
+	</tr>
+	</tr>
+		<td pkvd="func_water::spawnflags"></td>
+		<td>spawnflags</td>
+		<td>bits</td>
+		<td>1</td>
+		<td style="text-align: left;" pkvd="func_water::spawnflags::description"></td>
+	</tr>
+	</tr>
+		<td pkvd="func_water::spawnflags"></td>
+		<td>spawnflags</td>
+		<td>bits</td>
+		<td>4</td>
+		<td style="text-align: left;" pkvd="func_water::spawnflags::description"></td>
+	</tr>
+	</tr>
+		<td pkvd="func_water::spawnflags"></td>
+		<td>spawnflags</td>
+		<td>bits</td>
+		<td>8</td>
+		<td style="text-align: left;" pkvd="func_water::spawnflags::description"></td>
+	</tr>
+	</tr>
+		<td pkvd="func_water::spawnflags"></td>
+		<td>spawnflags</td>
+		<td>bits</td>
+		<td>32</td>
+		<td style="text-align: left;" pkvd="func_water::spawnflags::description"></td>
+	</tr>
+	</tr>
+		<td pkvd="func_water::spawnflags"></td>
+		<td>spawnflags</td>
+		<td>bits</td>
+		<td>256</td>
+		<td style="text-align: left;" pkvd="func_water::spawnflags::description"></td>
+	</tr>
+	</tr>
+		<td pkvd="func_water::spawnflags"></td>
+		<td>spawnflags</td>
+		<td>bits</td>
+		<td>512</td>
+		<td style="text-align: left;" pkvd="func_water::spawnflags::description"></td>
+	</tr>
+	</tr>
+		<td pkvd="func_water::locked_sound"></td>
+		<td>locked_sound</td>
+		<td>sound</td>
+		<td></td>
+		<td style="text-align: left;" pkvd="func_water::locked_sound::description"></td>
+	</tr>
+	</tr>
+		<td pkvd="func_water::unlocked_sound"></td>
+		<td>unlocked_sound</td>
+		<td>sound</td>
+		<td></td>
+		<td style="text-align: left;" pkvd="func_water::unlocked_sound::description"></td>
+	</tr>
+	</tr>
+		<td pkvd="func_water::locked_sentence"></td>
+		<td>locked_sentence</td>
+		<td>string</td>
+		<td></td>
+		<td style="text-align: left;" pkvd="func_water::locked_sentence::description"></td>
+	</tr>
+	</tr>
+		<td pkvd="func_water::unlocked_sentence"></td>
+		<td>unlocked_sentence</td>
+		<td>string</td>
+		<td></td>
+		<td style="text-align: left;" pkvd="func_water::unlocked_sentence::description"></td>
+	</tr>
+	</tr>
+		<td pkvd="func_water::_minlight"></td>
+		<td>_minlight</td>
+		<td>string</td>
+		<td></td>
+		<td style="text-align: left;" pkvd="func_water::_minlight::description"></td>
+	</tr>
+	</tr>
+		<td pkvd="func_water::zhlt_lightflags"></td>
+		<td>zhlt_lightflags</td>
+		<td>choices</td>
+		<td>0</td>
+		<td style="text-align: left;" pkvd="func_water::zhlt_lightflags::description"></td>
+	</tr>
+	</tr>
+		<td pkvd="func_water::zhlt_lightflags"></td>
+		<td>zhlt_lightflags</td>
+		<td>choices</td>
+		<td>1</td>
+		<td style="text-align: left;" pkvd="func_water::zhlt_lightflags::description"></td>
+	</tr>
+	</tr>
+		<td pkvd="func_water::zhlt_lightflags"></td>
+		<td>zhlt_lightflags</td>
+		<td>choices</td>
+		<td>2</td>
+		<td style="text-align: left;" pkvd="func_water::zhlt_lightflags::description"></td>
+	</tr>
+	</tr>
+		<td pkvd="func_water::zhlt_lightflags"></td>
+		<td>zhlt_lightflags</td>
+		<td>choices</td>
+		<td>3</td>
+		<td style="text-align: left;" pkvd="func_water::zhlt_lightflags::description"></td>
+	</tr>
+	</tr>
+		<td pkvd="func_water::zhlt_lightflags"></td>
+		<td>zhlt_lightflags</td>
+		<td>choices</td>
+		<td>6</td>
+		<td style="text-align: left;" pkvd="func_water::zhlt_lightflags::description"></td>
+	</tr>
+	</tr>
+		<td pkvd="func_water::light_origin"></td>
+		<td>light_origin</td>
+		<td>string</td>
+		<td></td>
+		<td style="text-align: left;" pkvd="func_water::light_origin::description"></td>
+	</tr>
+	</tr>
+		<td pkvd="func_water::appearflag_singleplayer"></td>
+		<td>appearflag_singleplayer</td>
+		<td>choices</td>
+		<td>-1</td>
+		<td style="text-align: left;" pkvd="func_water::appearflag_singleplayer::description"></td>
+	</tr>
+	</tr>
+		<td pkvd="func_water::appearflag_singleplayer"></td>
+		<td>appearflag_singleplayer</td>
+		<td>choices</td>
+		<td>0</td>
+		<td style="text-align: left;" pkvd="func_water::appearflag_singleplayer::description"></td>
+	</tr>
+	</tr>
+		<td pkvd="func_water::appearflag_singleplayer"></td>
+		<td>appearflag_singleplayer</td>
+		<td>choices</td>
+		<td>1</td>
+		<td style="text-align: left;" pkvd="func_water::appearflag_singleplayer::description"></td>
+	</tr>
+	</tr>
+		<td pkvd="func_water::appearflag_multiplayer"></td>
+		<td>appearflag_multiplayer</td>
+		<td>choices</td>
+		<td>-1</td>
+		<td style="text-align: left;" pkvd="func_water::appearflag_multiplayer::description"></td>
+	</tr>
+	</tr>
+		<td pkvd="func_water::appearflag_multiplayer"></td>
+		<td>appearflag_multiplayer</td>
+		<td>choices</td>
+		<td>0</td>
+		<td style="text-align: left;" pkvd="func_water::appearflag_multiplayer::description"></td>
+	</tr>
+	</tr>
+		<td pkvd="func_water::appearflag_multiplayer"></td>
+		<td>appearflag_multiplayer</td>
+		<td>choices</td>
+		<td>1</td>
+		<td style="text-align: left;" pkvd="func_water::appearflag_multiplayer::description"></td>
+	</tr>
+	</tr>
+		<td pkvd="func_water::appearflag_cooperative"></td>
+		<td>appearflag_cooperative</td>
+		<td>choices</td>
+		<td>-1</td>
+		<td style="text-align: left;" pkvd="func_water::appearflag_cooperative::description"></td>
+	</tr>
+	</tr>
+		<td pkvd="func_water::appearflag_cooperative"></td>
+		<td>appearflag_cooperative</td>
+		<td>choices</td>
+		<td>0</td>
+		<td style="text-align: left;" pkvd="func_water::appearflag_cooperative::description"></td>
+	</tr>
+	</tr>
+		<td pkvd="func_water::appearflag_cooperative"></td>
+		<td>appearflag_cooperative</td>
+		<td>choices</td>
+		<td>1</td>
+		<td style="text-align: left;" pkvd="func_water::appearflag_cooperative::description"></td>
+	</tr>
+	</tr>
+		<td pkvd="func_water::appearflag_deathmatch"></td>
+		<td>appearflag_deathmatch</td>
+		<td>choices</td>
+		<td>-1</td>
+		<td style="text-align: left;" pkvd="func_water::appearflag_deathmatch::description"></td>
+	</tr>
+	</tr>
+		<td pkvd="func_water::appearflag_deathmatch"></td>
+		<td>appearflag_deathmatch</td>
+		<td>choices</td>
+		<td>0</td>
+		<td style="text-align: left;" pkvd="func_water::appearflag_deathmatch::description"></td>
+	</tr>
+	</tr>
+		<td pkvd="func_water::appearflag_deathmatch"></td>
+		<td>appearflag_deathmatch</td>
+		<td>choices</td>
+		<td>1</td>
+		<td style="text-align: left;" pkvd="func_water::appearflag_deathmatch::description"></td>
+	</tr>
+	</tr>
+		<td pkvd="func_water::appearflag_cft"></td>
+		<td>appearflag_cft</td>
+		<td>choices</td>
+		<td>-1</td>
+		<td style="text-align: left;" pkvd="func_water::appearflag_cft::description"></td>
+	</tr>
+	</tr>
+		<td pkvd="func_water::appearflag_cft"></td>
+		<td>appearflag_cft</td>
+		<td>choices</td>
+		<td>0</td>
+		<td style="text-align: left;" pkvd="func_water::appearflag_cft::description"></td>
+	</tr>
+	</tr>
+		<td pkvd="func_water::appearflag_cft"></td>
+		<td>appearflag_cft</td>
+		<td>choices</td>
+		<td>1</td>
+		<td style="text-align: left;" pkvd="func_water::appearflag_cft::description"></td>
+	</tr>
+	</tr>
+		<td pkvd="func_water::appearflag_teamplay"></td>
+		<td>appearflag_teamplay</td>
+		<td>choices</td>
+		<td>-1</td>
+		<td style="text-align: left;" pkvd="func_water::appearflag_teamplay::description"></td>
+	</tr>
+	</tr>
+		<td pkvd="func_water::appearflag_teamplay"></td>
+		<td>appearflag_teamplay</td>
+		<td>choices</td>
+		<td>0</td>
+		<td style="text-align: left;" pkvd="func_water::appearflag_teamplay::description"></td>
+	</tr>
+	</tr>
+		<td pkvd="func_water::appearflag_teamplay"></td>
+		<td>appearflag_teamplay</td>
+		<td>choices</td>
+		<td>1</td>
+		<td style="text-align: left;" pkvd="func_water::appearflag_teamplay::description"></td>
+	</tr>
+	</tr>
+		<td pkvd="func_water::appearflag_dedicated"></td>
+		<td>appearflag_dedicated</td>
+		<td>choices</td>
+		<td>-1</td>
+		<td style="text-align: left;" pkvd="func_water::appearflag_dedicated::description"></td>
+	</tr>
+	</tr>
+		<td pkvd="func_water::appearflag_dedicated"></td>
+		<td>appearflag_dedicated</td>
+		<td>choices</td>
+		<td>0</td>
+		<td style="text-align: left;" pkvd="func_water::appearflag_dedicated::description"></td>
+	</tr>
+	</tr>
+		<td pkvd="func_water::appearflag_dedicated"></td>
+		<td>appearflag_dedicated</td>
+		<td>choices</td>
+		<td>1</td>
+		<td style="text-align: left;" pkvd="func_water::appearflag_dedicated::description"></td>
+	</tr>
+	</tr>
+		<td pkvd="func_water::appearflag_skilleasy"></td>
+		<td>appearflag_skilleasy</td>
+		<td>choices</td>
+		<td>-1</td>
+		<td style="text-align: left;" pkvd="func_water::appearflag_skilleasy::description"></td>
+	</tr>
+	</tr>
+		<td pkvd="func_water::appearflag_skilleasy"></td>
+		<td>appearflag_skilleasy</td>
+		<td>choices</td>
+		<td>0</td>
+		<td style="text-align: left;" pkvd="func_water::appearflag_skilleasy::description"></td>
+	</tr>
+	</tr>
+		<td pkvd="func_water::appearflag_skilleasy"></td>
+		<td>appearflag_skilleasy</td>
+		<td>choices</td>
+		<td>1</td>
+		<td style="text-align: left;" pkvd="func_water::appearflag_skilleasy::description"></td>
+	</tr>
+	</tr>
+		<td pkvd="func_water::appearflag_skillmedium"></td>
+		<td>appearflag_skillmedium</td>
+		<td>choices</td>
+		<td>-1</td>
+		<td style="text-align: left;" pkvd="func_water::appearflag_skillmedium::description"></td>
+	</tr>
+	</tr>
+		<td pkvd="func_water::appearflag_skillmedium"></td>
+		<td>appearflag_skillmedium</td>
+		<td>choices</td>
+		<td>0</td>
+		<td style="text-align: left;" pkvd="func_water::appearflag_skillmedium::description"></td>
+	</tr>
+	</tr>
+		<td pkvd="func_water::appearflag_skillmedium"></td>
+		<td>appearflag_skillmedium</td>
+		<td>choices</td>
+		<td>1</td>
+		<td style="text-align: left;" pkvd="func_water::appearflag_skillmedium::description"></td>
+	</tr>
+	</tr>
+		<td pkvd="func_water::appearflag_skillhard"></td>
+		<td>appearflag_skillhard</td>
+		<td>choices</td>
+		<td>-1</td>
+		<td style="text-align: left;" pkvd="func_water::appearflag_skillhard::description"></td>
+	</tr>
+	</tr>
+		<td pkvd="func_water::appearflag_skillhard"></td>
+		<td>appearflag_skillhard</td>
+		<td>choices</td>
+		<td>0</td>
+		<td style="text-align: left;" pkvd="func_water::appearflag_skillhard::description"></td>
+	</tr>
+	</tr>
+		<td pkvd="func_water::appearflag_skillhard"></td>
+		<td>appearflag_skillhard</td>
+		<td>choices</td>
+		<td>1</td>
+		<td style="text-align: left;" pkvd="func_water::appearflag_skillhard::description"></td>
 	</tr>
 </table>
 <br><br>

@@ -8,17 +8,38 @@
 	<th pkvd="value"></th>
 	<th pkvd="Description"></th>
 	</tr>
-		<td pkvd="Targetname::targetname"></td>
+		<td pkvd="op4mortar::spawnflags"></td>
+		<td>spawnflags</td>
+		<td>bits</td>
+		<td>2048</td>
+		<td style="text-align: left;" pkvd="op4mortar::spawnflags::description"></td>
+	</tr>
+	</tr>
+		<td pkvd="op4mortar::targetname"></td>
 		<td>targetname</td>
 		<td>target_source</td>
 		<td></td>
-		<td style="text-align: left;" pkvd="Targetname::targetname::description"></td>
+		<td style="text-align: left;" pkvd="op4mortar::targetname::description"></td>
 	</tr>
 	</tr>
 		<td pkvd="op4mortar::spawnflags"></td>
 		<td>spawnflags</td>
-		<td>flags</td>
-		<td></td>
+		<td>bits</td>
+		<td>1</td>
+		<td style="text-align: left;" pkvd="op4mortar::spawnflags::description"></td>
+	</tr>
+	</tr>
+		<td pkvd="op4mortar::spawnflags"></td>
+		<td>spawnflags</td>
+		<td>bits</td>
+		<td>16</td>
+		<td style="text-align: left;" pkvd="op4mortar::spawnflags::description"></td>
+	</tr>
+	</tr>
+		<td pkvd="op4mortar::spawnflags"></td>
+		<td>spawnflags</td>
+		<td>bits</td>
+		<td>32</td>
 		<td style="text-align: left;" pkvd="op4mortar::spawnflags::description"></td>
 	</tr>
 	</tr>
@@ -64,11 +85,235 @@
 		<td style="text-align: left;" pkvd="op4mortar::enemytype::description"></td>
 	</tr>
 	</tr>
+		<td pkvd="op4mortar::enemytype"></td>
+		<td>enemytype</td>
+		<td>choices</td>
+		<td>1</td>
+		<td style="text-align: left;" pkvd="op4mortar::enemytype::description"></td>
+	</tr>
+	</tr>
+		<td pkvd="op4mortar::enemytype"></td>
+		<td>enemytype</td>
+		<td>choices</td>
+		<td>2</td>
+		<td style="text-align: left;" pkvd="op4mortar::enemytype::description"></td>
+	</tr>
+	</tr>
 		<td pkvd="op4mortar::firedelay"></td>
 		<td>firedelay</td>
 		<td>integer</td>
 		<td>5</td>
 		<td style="text-align: left;" pkvd="op4mortar::firedelay::description"></td>
+	</tr>
+	</tr>
+		<td pkvd="op4mortar::appearflag_singleplayer"></td>
+		<td>appearflag_singleplayer</td>
+		<td>choices</td>
+		<td>-1</td>
+		<td style="text-align: left;" pkvd="op4mortar::appearflag_singleplayer::description"></td>
+	</tr>
+	</tr>
+		<td pkvd="op4mortar::appearflag_singleplayer"></td>
+		<td>appearflag_singleplayer</td>
+		<td>choices</td>
+		<td>0</td>
+		<td style="text-align: left;" pkvd="op4mortar::appearflag_singleplayer::description"></td>
+	</tr>
+	</tr>
+		<td pkvd="op4mortar::appearflag_singleplayer"></td>
+		<td>appearflag_singleplayer</td>
+		<td>choices</td>
+		<td>1</td>
+		<td style="text-align: left;" pkvd="op4mortar::appearflag_singleplayer::description"></td>
+	</tr>
+	</tr>
+		<td pkvd="op4mortar::appearflag_multiplayer"></td>
+		<td>appearflag_multiplayer</td>
+		<td>choices</td>
+		<td>-1</td>
+		<td style="text-align: left;" pkvd="op4mortar::appearflag_multiplayer::description"></td>
+	</tr>
+	</tr>
+		<td pkvd="op4mortar::appearflag_multiplayer"></td>
+		<td>appearflag_multiplayer</td>
+		<td>choices</td>
+		<td>0</td>
+		<td style="text-align: left;" pkvd="op4mortar::appearflag_multiplayer::description"></td>
+	</tr>
+	</tr>
+		<td pkvd="op4mortar::appearflag_multiplayer"></td>
+		<td>appearflag_multiplayer</td>
+		<td>choices</td>
+		<td>1</td>
+		<td style="text-align: left;" pkvd="op4mortar::appearflag_multiplayer::description"></td>
+	</tr>
+	</tr>
+		<td pkvd="op4mortar::appearflag_cooperative"></td>
+		<td>appearflag_cooperative</td>
+		<td>choices</td>
+		<td>-1</td>
+		<td style="text-align: left;" pkvd="op4mortar::appearflag_cooperative::description"></td>
+	</tr>
+	</tr>
+		<td pkvd="op4mortar::appearflag_cooperative"></td>
+		<td>appearflag_cooperative</td>
+		<td>choices</td>
+		<td>0</td>
+		<td style="text-align: left;" pkvd="op4mortar::appearflag_cooperative::description"></td>
+	</tr>
+	</tr>
+		<td pkvd="op4mortar::appearflag_cooperative"></td>
+		<td>appearflag_cooperative</td>
+		<td>choices</td>
+		<td>1</td>
+		<td style="text-align: left;" pkvd="op4mortar::appearflag_cooperative::description"></td>
+	</tr>
+	</tr>
+		<td pkvd="op4mortar::appearflag_deathmatch"></td>
+		<td>appearflag_deathmatch</td>
+		<td>choices</td>
+		<td>-1</td>
+		<td style="text-align: left;" pkvd="op4mortar::appearflag_deathmatch::description"></td>
+	</tr>
+	</tr>
+		<td pkvd="op4mortar::appearflag_deathmatch"></td>
+		<td>appearflag_deathmatch</td>
+		<td>choices</td>
+		<td>0</td>
+		<td style="text-align: left;" pkvd="op4mortar::appearflag_deathmatch::description"></td>
+	</tr>
+	</tr>
+		<td pkvd="op4mortar::appearflag_deathmatch"></td>
+		<td>appearflag_deathmatch</td>
+		<td>choices</td>
+		<td>1</td>
+		<td style="text-align: left;" pkvd="op4mortar::appearflag_deathmatch::description"></td>
+	</tr>
+	</tr>
+		<td pkvd="op4mortar::appearflag_cft"></td>
+		<td>appearflag_cft</td>
+		<td>choices</td>
+		<td>-1</td>
+		<td style="text-align: left;" pkvd="op4mortar::appearflag_cft::description"></td>
+	</tr>
+	</tr>
+		<td pkvd="op4mortar::appearflag_cft"></td>
+		<td>appearflag_cft</td>
+		<td>choices</td>
+		<td>0</td>
+		<td style="text-align: left;" pkvd="op4mortar::appearflag_cft::description"></td>
+	</tr>
+	</tr>
+		<td pkvd="op4mortar::appearflag_cft"></td>
+		<td>appearflag_cft</td>
+		<td>choices</td>
+		<td>1</td>
+		<td style="text-align: left;" pkvd="op4mortar::appearflag_cft::description"></td>
+	</tr>
+	</tr>
+		<td pkvd="op4mortar::appearflag_teamplay"></td>
+		<td>appearflag_teamplay</td>
+		<td>choices</td>
+		<td>-1</td>
+		<td style="text-align: left;" pkvd="op4mortar::appearflag_teamplay::description"></td>
+	</tr>
+	</tr>
+		<td pkvd="op4mortar::appearflag_teamplay"></td>
+		<td>appearflag_teamplay</td>
+		<td>choices</td>
+		<td>0</td>
+		<td style="text-align: left;" pkvd="op4mortar::appearflag_teamplay::description"></td>
+	</tr>
+	</tr>
+		<td pkvd="op4mortar::appearflag_teamplay"></td>
+		<td>appearflag_teamplay</td>
+		<td>choices</td>
+		<td>1</td>
+		<td style="text-align: left;" pkvd="op4mortar::appearflag_teamplay::description"></td>
+	</tr>
+	</tr>
+		<td pkvd="op4mortar::appearflag_dedicated"></td>
+		<td>appearflag_dedicated</td>
+		<td>choices</td>
+		<td>-1</td>
+		<td style="text-align: left;" pkvd="op4mortar::appearflag_dedicated::description"></td>
+	</tr>
+	</tr>
+		<td pkvd="op4mortar::appearflag_dedicated"></td>
+		<td>appearflag_dedicated</td>
+		<td>choices</td>
+		<td>0</td>
+		<td style="text-align: left;" pkvd="op4mortar::appearflag_dedicated::description"></td>
+	</tr>
+	</tr>
+		<td pkvd="op4mortar::appearflag_dedicated"></td>
+		<td>appearflag_dedicated</td>
+		<td>choices</td>
+		<td>1</td>
+		<td style="text-align: left;" pkvd="op4mortar::appearflag_dedicated::description"></td>
+	</tr>
+	</tr>
+		<td pkvd="op4mortar::appearflag_skilleasy"></td>
+		<td>appearflag_skilleasy</td>
+		<td>choices</td>
+		<td>-1</td>
+		<td style="text-align: left;" pkvd="op4mortar::appearflag_skilleasy::description"></td>
+	</tr>
+	</tr>
+		<td pkvd="op4mortar::appearflag_skilleasy"></td>
+		<td>appearflag_skilleasy</td>
+		<td>choices</td>
+		<td>0</td>
+		<td style="text-align: left;" pkvd="op4mortar::appearflag_skilleasy::description"></td>
+	</tr>
+	</tr>
+		<td pkvd="op4mortar::appearflag_skilleasy"></td>
+		<td>appearflag_skilleasy</td>
+		<td>choices</td>
+		<td>1</td>
+		<td style="text-align: left;" pkvd="op4mortar::appearflag_skilleasy::description"></td>
+	</tr>
+	</tr>
+		<td pkvd="op4mortar::appearflag_skillmedium"></td>
+		<td>appearflag_skillmedium</td>
+		<td>choices</td>
+		<td>-1</td>
+		<td style="text-align: left;" pkvd="op4mortar::appearflag_skillmedium::description"></td>
+	</tr>
+	</tr>
+		<td pkvd="op4mortar::appearflag_skillmedium"></td>
+		<td>appearflag_skillmedium</td>
+		<td>choices</td>
+		<td>0</td>
+		<td style="text-align: left;" pkvd="op4mortar::appearflag_skillmedium::description"></td>
+	</tr>
+	</tr>
+		<td pkvd="op4mortar::appearflag_skillmedium"></td>
+		<td>appearflag_skillmedium</td>
+		<td>choices</td>
+		<td>1</td>
+		<td style="text-align: left;" pkvd="op4mortar::appearflag_skillmedium::description"></td>
+	</tr>
+	</tr>
+		<td pkvd="op4mortar::appearflag_skillhard"></td>
+		<td>appearflag_skillhard</td>
+		<td>choices</td>
+		<td>-1</td>
+		<td style="text-align: left;" pkvd="op4mortar::appearflag_skillhard::description"></td>
+	</tr>
+	</tr>
+		<td pkvd="op4mortar::appearflag_skillhard"></td>
+		<td>appearflag_skillhard</td>
+		<td>choices</td>
+		<td>0</td>
+		<td style="text-align: left;" pkvd="op4mortar::appearflag_skillhard::description"></td>
+	</tr>
+	</tr>
+		<td pkvd="op4mortar::appearflag_skillhard"></td>
+		<td>appearflag_skillhard</td>
+		<td>choices</td>
+		<td>1</td>
+		<td style="text-align: left;" pkvd="op4mortar::appearflag_skillhard::description"></td>
 	</tr>
 </table>
 <br><br>

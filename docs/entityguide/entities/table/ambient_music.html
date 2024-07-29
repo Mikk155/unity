@@ -8,11 +8,18 @@
 	<th pkvd="value"></th>
 	<th pkvd="Description"></th>
 	</tr>
-		<td pkvd="Targetname::targetname"></td>
+		<td pkvd="ambient_music::spawnflags"></td>
+		<td>spawnflags</td>
+		<td>bits</td>
+		<td>2048</td>
+		<td style="text-align: left;" pkvd="ambient_music::spawnflags::description"></td>
+	</tr>
+	</tr>
+		<td pkvd="ambient_music::targetname"></td>
 		<td>targetname</td>
 		<td>target_source</td>
 		<td></td>
-		<td style="text-align: left;" pkvd="Targetname::targetname::description"></td>
+		<td style="text-align: left;" pkvd="ambient_music::targetname::description"></td>
 	</tr>
 	</tr>
 		<td pkvd="ambient_music::filename"></td>
@@ -29,10 +36,45 @@
 		<td style="text-align: left;" pkvd="ambient_music::command::description"></td>
 	</tr>
 	</tr>
+		<td pkvd="ambient_music::command"></td>
+		<td>command</td>
+		<td>choices</td>
+		<td>1</td>
+		<td style="text-align: left;" pkvd="ambient_music::command::description"></td>
+	</tr>
+	</tr>
+		<td pkvd="ambient_music::command"></td>
+		<td>command</td>
+		<td>choices</td>
+		<td>2</td>
+		<td style="text-align: left;" pkvd="ambient_music::command::description"></td>
+	</tr>
+	</tr>
+		<td pkvd="ambient_music::command"></td>
+		<td>command</td>
+		<td>choices</td>
+		<td>3</td>
+		<td style="text-align: left;" pkvd="ambient_music::command::description"></td>
+	</tr>
+	</tr>
 		<td pkvd="ambient_music::target_selector"></td>
 		<td>target_selector</td>
 		<td>choices</td>
 		<td>0</td>
+		<td style="text-align: left;" pkvd="ambient_music::target_selector::description"></td>
+	</tr>
+	</tr>
+		<td pkvd="ambient_music::target_selector"></td>
+		<td>target_selector</td>
+		<td>choices</td>
+		<td>1</td>
+		<td style="text-align: left;" pkvd="ambient_music::target_selector::description"></td>
+	</tr>
+	</tr>
+		<td pkvd="ambient_music::target_selector"></td>
+		<td>target_selector</td>
+		<td>choices</td>
+		<td>2</td>
 		<td style="text-align: left;" pkvd="ambient_music::target_selector::description"></td>
 	</tr>
 	</tr>
@@ -48,6 +90,223 @@
 		<td>choices</td>
 		<td>0</td>
 		<td style="text-align: left;" pkvd="ambient_music::remove_on_fire::description"></td>
+	</tr>
+	</tr>
+		<td pkvd="ambient_music::remove_on_fire"></td>
+		<td>remove_on_fire</td>
+		<td>choices</td>
+		<td>1</td>
+		<td style="text-align: left;" pkvd="ambient_music::remove_on_fire::description"></td>
+	</tr>
+	</tr>
+		<td pkvd="ambient_music::appearflag_singleplayer"></td>
+		<td>appearflag_singleplayer</td>
+		<td>choices</td>
+		<td>-1</td>
+		<td style="text-align: left;" pkvd="ambient_music::appearflag_singleplayer::description"></td>
+	</tr>
+	</tr>
+		<td pkvd="ambient_music::appearflag_singleplayer"></td>
+		<td>appearflag_singleplayer</td>
+		<td>choices</td>
+		<td>0</td>
+		<td style="text-align: left;" pkvd="ambient_music::appearflag_singleplayer::description"></td>
+	</tr>
+	</tr>
+		<td pkvd="ambient_music::appearflag_singleplayer"></td>
+		<td>appearflag_singleplayer</td>
+		<td>choices</td>
+		<td>1</td>
+		<td style="text-align: left;" pkvd="ambient_music::appearflag_singleplayer::description"></td>
+	</tr>
+	</tr>
+		<td pkvd="ambient_music::appearflag_multiplayer"></td>
+		<td>appearflag_multiplayer</td>
+		<td>choices</td>
+		<td>-1</td>
+		<td style="text-align: left;" pkvd="ambient_music::appearflag_multiplayer::description"></td>
+	</tr>
+	</tr>
+		<td pkvd="ambient_music::appearflag_multiplayer"></td>
+		<td>appearflag_multiplayer</td>
+		<td>choices</td>
+		<td>0</td>
+		<td style="text-align: left;" pkvd="ambient_music::appearflag_multiplayer::description"></td>
+	</tr>
+	</tr>
+		<td pkvd="ambient_music::appearflag_multiplayer"></td>
+		<td>appearflag_multiplayer</td>
+		<td>choices</td>
+		<td>1</td>
+		<td style="text-align: left;" pkvd="ambient_music::appearflag_multiplayer::description"></td>
+	</tr>
+	</tr>
+		<td pkvd="ambient_music::appearflag_cooperative"></td>
+		<td>appearflag_cooperative</td>
+		<td>choices</td>
+		<td>-1</td>
+		<td style="text-align: left;" pkvd="ambient_music::appearflag_cooperative::description"></td>
+	</tr>
+	</tr>
+		<td pkvd="ambient_music::appearflag_cooperative"></td>
+		<td>appearflag_cooperative</td>
+		<td>choices</td>
+		<td>0</td>
+		<td style="text-align: left;" pkvd="ambient_music::appearflag_cooperative::description"></td>
+	</tr>
+	</tr>
+		<td pkvd="ambient_music::appearflag_cooperative"></td>
+		<td>appearflag_cooperative</td>
+		<td>choices</td>
+		<td>1</td>
+		<td style="text-align: left;" pkvd="ambient_music::appearflag_cooperative::description"></td>
+	</tr>
+	</tr>
+		<td pkvd="ambient_music::appearflag_deathmatch"></td>
+		<td>appearflag_deathmatch</td>
+		<td>choices</td>
+		<td>-1</td>
+		<td style="text-align: left;" pkvd="ambient_music::appearflag_deathmatch::description"></td>
+	</tr>
+	</tr>
+		<td pkvd="ambient_music::appearflag_deathmatch"></td>
+		<td>appearflag_deathmatch</td>
+		<td>choices</td>
+		<td>0</td>
+		<td style="text-align: left;" pkvd="ambient_music::appearflag_deathmatch::description"></td>
+	</tr>
+	</tr>
+		<td pkvd="ambient_music::appearflag_deathmatch"></td>
+		<td>appearflag_deathmatch</td>
+		<td>choices</td>
+		<td>1</td>
+		<td style="text-align: left;" pkvd="ambient_music::appearflag_deathmatch::description"></td>
+	</tr>
+	</tr>
+		<td pkvd="ambient_music::appearflag_cft"></td>
+		<td>appearflag_cft</td>
+		<td>choices</td>
+		<td>-1</td>
+		<td style="text-align: left;" pkvd="ambient_music::appearflag_cft::description"></td>
+	</tr>
+	</tr>
+		<td pkvd="ambient_music::appearflag_cft"></td>
+		<td>appearflag_cft</td>
+		<td>choices</td>
+		<td>0</td>
+		<td style="text-align: left;" pkvd="ambient_music::appearflag_cft::description"></td>
+	</tr>
+	</tr>
+		<td pkvd="ambient_music::appearflag_cft"></td>
+		<td>appearflag_cft</td>
+		<td>choices</td>
+		<td>1</td>
+		<td style="text-align: left;" pkvd="ambient_music::appearflag_cft::description"></td>
+	</tr>
+	</tr>
+		<td pkvd="ambient_music::appearflag_teamplay"></td>
+		<td>appearflag_teamplay</td>
+		<td>choices</td>
+		<td>-1</td>
+		<td style="text-align: left;" pkvd="ambient_music::appearflag_teamplay::description"></td>
+	</tr>
+	</tr>
+		<td pkvd="ambient_music::appearflag_teamplay"></td>
+		<td>appearflag_teamplay</td>
+		<td>choices</td>
+		<td>0</td>
+		<td style="text-align: left;" pkvd="ambient_music::appearflag_teamplay::description"></td>
+	</tr>
+	</tr>
+		<td pkvd="ambient_music::appearflag_teamplay"></td>
+		<td>appearflag_teamplay</td>
+		<td>choices</td>
+		<td>1</td>
+		<td style="text-align: left;" pkvd="ambient_music::appearflag_teamplay::description"></td>
+	</tr>
+	</tr>
+		<td pkvd="ambient_music::appearflag_dedicated"></td>
+		<td>appearflag_dedicated</td>
+		<td>choices</td>
+		<td>-1</td>
+		<td style="text-align: left;" pkvd="ambient_music::appearflag_dedicated::description"></td>
+	</tr>
+	</tr>
+		<td pkvd="ambient_music::appearflag_dedicated"></td>
+		<td>appearflag_dedicated</td>
+		<td>choices</td>
+		<td>0</td>
+		<td style="text-align: left;" pkvd="ambient_music::appearflag_dedicated::description"></td>
+	</tr>
+	</tr>
+		<td pkvd="ambient_music::appearflag_dedicated"></td>
+		<td>appearflag_dedicated</td>
+		<td>choices</td>
+		<td>1</td>
+		<td style="text-align: left;" pkvd="ambient_music::appearflag_dedicated::description"></td>
+	</tr>
+	</tr>
+		<td pkvd="ambient_music::appearflag_skilleasy"></td>
+		<td>appearflag_skilleasy</td>
+		<td>choices</td>
+		<td>-1</td>
+		<td style="text-align: left;" pkvd="ambient_music::appearflag_skilleasy::description"></td>
+	</tr>
+	</tr>
+		<td pkvd="ambient_music::appearflag_skilleasy"></td>
+		<td>appearflag_skilleasy</td>
+		<td>choices</td>
+		<td>0</td>
+		<td style="text-align: left;" pkvd="ambient_music::appearflag_skilleasy::description"></td>
+	</tr>
+	</tr>
+		<td pkvd="ambient_music::appearflag_skilleasy"></td>
+		<td>appearflag_skilleasy</td>
+		<td>choices</td>
+		<td>1</td>
+		<td style="text-align: left;" pkvd="ambient_music::appearflag_skilleasy::description"></td>
+	</tr>
+	</tr>
+		<td pkvd="ambient_music::appearflag_skillmedium"></td>
+		<td>appearflag_skillmedium</td>
+		<td>choices</td>
+		<td>-1</td>
+		<td style="text-align: left;" pkvd="ambient_music::appearflag_skillmedium::description"></td>
+	</tr>
+	</tr>
+		<td pkvd="ambient_music::appearflag_skillmedium"></td>
+		<td>appearflag_skillmedium</td>
+		<td>choices</td>
+		<td>0</td>
+		<td style="text-align: left;" pkvd="ambient_music::appearflag_skillmedium::description"></td>
+	</tr>
+	</tr>
+		<td pkvd="ambient_music::appearflag_skillmedium"></td>
+		<td>appearflag_skillmedium</td>
+		<td>choices</td>
+		<td>1</td>
+		<td style="text-align: left;" pkvd="ambient_music::appearflag_skillmedium::description"></td>
+	</tr>
+	</tr>
+		<td pkvd="ambient_music::appearflag_skillhard"></td>
+		<td>appearflag_skillhard</td>
+		<td>choices</td>
+		<td>-1</td>
+		<td style="text-align: left;" pkvd="ambient_music::appearflag_skillhard::description"></td>
+	</tr>
+	</tr>
+		<td pkvd="ambient_music::appearflag_skillhard"></td>
+		<td>appearflag_skillhard</td>
+		<td>choices</td>
+		<td>0</td>
+		<td style="text-align: left;" pkvd="ambient_music::appearflag_skillhard::description"></td>
+	</tr>
+	</tr>
+		<td pkvd="ambient_music::appearflag_skillhard"></td>
+		<td>appearflag_skillhard</td>
+		<td>choices</td>
+		<td>1</td>
+		<td style="text-align: left;" pkvd="ambient_music::appearflag_skillhard::description"></td>
 	</tr>
 </table>
 <br><br>
