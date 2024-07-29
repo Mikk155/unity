@@ -4,7 +4,7 @@
 .vscode/settings.json
 
 # Generate a fresh one on releases
-unity/half-life-unity.fgd
+unity/half-life-unity-*.fgd
 
 # Local testing
 modinstall/
@@ -13,6 +13,7 @@ unity/mods/port/
 unity/mods/port/*
 unity/mods/src/
 unity/mods/src/*
+unity/mods/*.exe
 
 # CMake project
 build/*
@@ -20,3 +21,4 @@ build/
 
 # Python cache
 *.pyc
+*__pycache__/
