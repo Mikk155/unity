@@ -2798,9 +2798,8 @@ void CBasePlayer::Spawn()
 
 	pev->health = GetSkillFloat("player_health"sv, 100 );
 	pev->armortype = GetSkillFloat("player_armor"sv, 0 );
-	pev->armorvalue = GetSkillFloat("player_maxhealth"sv, 100 );
+	pev->max_health = GetSkillFloat("player_maxhealth"sv, 100 );
 	pev->armorvalue = GetSkillFloat("player_maxarmor"sv, 100 );
-	pev->armorvalue = 0;
 	pev->takedamage = DAMAGE_AIM;
 	pev->solid = SOLID_SLIDEBOX;
 	pev->movetype = MOVETYPE_WALK;
@@ -2855,15 +2854,8 @@ void CBasePlayer::Spawn()
 		pev->iuser1 = OBS_ROAMING;
 	}
 
-	g_pGameRules->GetPlayerSpawnSpot(this);
-
 	SetModel("models/player.mdl");
 	pev->sequence = LookupActivity(ACT_IDLE);
-
-	if (FBitSet(pev->flags, FL_DUCKING))
-		SetSize(VEC_DUCK_HULL_MIN, VEC_DUCK_HULL_MAX);
-	else
-		SetSize(VEC_HULL_MIN, VEC_HULL_MAX);
 
 	pev->view_ofs = VEC_VIEW;
 	Precache();
@@ -2897,8 +2889,6 @@ void CBasePlayer::Spawn()
 
 	m_flNextChatTime = gpGlobals->time;
 
-	g_pGameRules->PlayerSpawn(this);
-
 	if (g_pGameRules->IsCTF() && m_iTeamNum == CTFTeam::None)
 	{
 		pev->effects |= EF_NODRAW;
@@ -2926,6 +2916,10 @@ void CBasePlayer::Spawn()
 		if (g_pGameRules->IsCTF())
 			Player_Menu();
 	}
+
+	g_pGameRules->GetPlayerSpawnSpot(this);
+
+	g_pGameRules->PlayerSpawn(this);
 }
 
 void CBasePlayer::Precache()

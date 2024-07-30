@@ -1501,6 +1501,10 @@ Vector UTIL_GetNearestHull( Vector VecStart, int hull_number, float radius )
     const float StepSize = 16.0f;
     const int MaxSteps = static_cast<int>( radius / StepSize );
 
+    TraceResult tr;
+    UTIL_TraceHull( VecStart, VecStart, dont_ignore_monsters, hull_number, nullptr, &tr );
+    if( tr.fStartSolid == 0 && tr.fAllSolid == 0 ) { return VecStart; }
+
     for( int step = 1; step <= MaxSteps; ++step )
     {
         for( int x = -step; x <= step; ++x )
@@ -1514,7 +1518,6 @@ Vector UTIL_GetNearestHull( Vector VecStart, int hull_number, float radius )
 
                     Vector test_point = VecStart + Vector( x * StepSize, y * StepSize, z * StepSize );
 
-                    TraceResult tr;
                     UTIL_TraceHull( test_point, test_point, dont_ignore_monsters, hull_number, nullptr, &tr );
 
                     if( tr.fStartSolid == 0 && tr.fAllSolid == 0 )

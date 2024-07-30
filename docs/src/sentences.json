@@ -302,6 +302,10 @@
 "english": "Path/filename.wav to a sound file",
 "spanish": ""
 },
+"CSpawnPoint::m_flOffSet": {
+"english": "Random offset if blocked",
+"spanish": ""
+},
 "ambient_generic::classname": {
 "english": "Universal Ambient",
 "spanish": ""
@@ -3479,16 +3483,8 @@
 "english": "info_null (spotlight target)",
 "spanish": ""
 },
-"info_player_coop::classname": {
-"english": "Player cooperative start",
-"spanish": ""
-},
 "info_player_deathmatch::classname": {
 "english": "Player deathmatch start",
-"spanish": ""
-},
-"info_player_deathmatch::target": {
-"english": "Target",
 "spanish": ""
 },
 "info_player_start::classname": {

@@ -197,11 +197,6 @@ float CGameRules::FlPlayerFallDamage(CBasePlayer* pPlayer)
 
 void CGameRules::SetupPlayerInventory(CBasePlayer* player)
 {
-	// Originally game_player_equip entities were triggered in PlayerSpawn to set up the player's inventory.
-	// This is now handled by using trigger_event (see CBasePlayer::UpdateClientData).
-	// Handling it there avoids edge cases where this function is called during ClientPutInServer.
-	// It is not possible to send messages to clients during that function so ammo change messages are ignored.
-
 	if (!g_PersistentInventory.TryApplyToPlayer(player))
 	{
 		g_SpawnInventory.GetInventory()->ApplyToPlayer(player);
@@ -357,42 +352,18 @@ bool CGameRules::CanHaveAmmo(CBasePlayer* pPlayer, const char* pszAmmoName)
 
 void CGameRules::PlayerSpawn(CBasePlayer* pPlayer)
 {
+	if( CSpawnPoint* pSpawnPoint = dynamic_cast<CSpawnPoint*>( g_pGameRules->GetPlayerSpawnSpot( pPlayer ) ); pSpawnPoint != nullptr )
+	{
+		pSpawnPoint->PlayerSpawn( pPlayer );
+	}
+
 	SetupPlayerInventory(pPlayer);
 	pPlayer->m_FireSpawnTarget = true;
 }
 
 CBaseEntity* CGameRules::GetPlayerSpawnSpot(CBasePlayer* pPlayer)
 {
-	CBaseEntity* pSpawnSpot = EntSelectSpawnPoint(pPlayer);
-
-	pPlayer->pev->origin = pSpawnSpot->pev->origin + Vector(0, 0, 1);
-	pPlayer->pev->v_angle = g_vecZero;
-	pPlayer->pev->velocity = g_vecZero;
-	pPlayer->pev->angles = pSpawnSpot->pev->angles;
-	pPlayer->pev->punchangle = g_vecZero;
-	pPlayer->pev->fixangle = FIXANGLE_ABSOLUTE;
-
-	if( !FStringNull( pSpawnSpot->pev->target ) )
-	{
-		FireTargets( STRING( pSpawnSpot->pev->target ), pPlayer, pPlayer, USE_TOGGLE, 0 );
-	}
-
-	CBaseEntity* pBlocker = nullptr;
-	while( ( pBlocker = UTIL_FindEntityInSphere( pBlocker, pSpawnSpot->pev->origin, 128 ) ) != nullptr )
-	{
-		if( pBlocker->IsPlayer() && pBlocker != pPlayer )
-		{
-			Vector VecPos = UTIL_GetNearestHull( pSpawnSpot->pev->origin, human_hull, 256 );
-
-			if( VecPos != pSpawnSpot->pev->origin )
-				pPlayer->pev->origin = VecPos;
-			else // If can't find a spot then simply kill the old player as it was done before in EntTrySelectSpawnPoint
-				pBlocker->TakeDamage( CBaseEntity::World, CBaseEntity::World, 300, DMG_GENERIC );
-			break;
-		}
-	}
-
-	return pSpawnSpot;
+	return EntSelectSpawnPoint(pPlayer);
 }
 
 void CGameRules::ClientUserInfoChanged(CBasePlayer* pPlayer, char* infobuffer)

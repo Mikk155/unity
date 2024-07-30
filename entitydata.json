@@ -355,12 +355,6 @@
 			}
 		}
 	},
-	"PlayerClass": {
-		"Class": "Base",
-		"size": [ [ -16, -16, -36 ], [ 16, 16, 36 ] ],
-		"color": [0, 255, 0],
-		"offset": [0, 0, 36]
-	},
 	"CTFItem": {
 		"Class": "Base",
 		"data": {
@@ -1218,7 +1212,10 @@
 	},
 	"info_ctfspawn": {
 		"Class": "Point",
-		"base": ["PlayerClass", "Angles"],
+		"base": ["Angles"],
+		"size": [ [ -16, -16, -36 ], [ 16, 16, 36 ] ],
+		"color": [0, 255, 0],
+		"offset": [0, 0, 36],
 		"data": {
 			"team_no": {
 				"variable": "choices",
@@ -1282,20 +1279,24 @@
 		"Class": "Point",
 		"base": ["Target"]
 	},
-	"info_player_coop": {
-		"Class": "Point",
-		"base": ["PlayerClass", "Angles"],
-		"studio": "models/player.mdl"
+	"CSpawnPoint":
+	{
+		"Class": "Base",
+		"size": [ [ -16, -16, -36 ], [ 16, 16, 36 ] ],
+		"color": [0, 255, 0],
+		"offset": [0, 0, 36],
+		"studio": "models/player.mdl",
+		"data": {
+			"m_flOffSet": { "variable": "float", "value": 256.0 }
+		}
 	},
 	"info_player_deathmatch": {
 		"Class": "Point",
-		"base": [ "Target", "PlayerClass", "Angles", "Master"],
-		"studio": "models/player.mdl"
+		"base": [ "Target", "Angles", "Master", "CSpawnPoint" ]
 	},
 	"info_player_start": {
 		"Class": "Point",
-		"base": ["PlayerClass", "Angles"],
-		"studio": "models/player.mdl"
+		"base": [ "Target", "Angles", "Master", "CSpawnPoint" ]
 	},
 	"info_target": {
 		"Class": "Point",
@@ -1304,8 +1305,10 @@
 	},
 	"info_teleport_destination": {
 		"Class": "Point",
-		"base": ["PlayerClass", "Angles"],
-		"size": [ [ -8, -8, 0 ], [ 8, 8, 16 ] ]
+		"base": ["Angles"],
+		"size": [ [ -16, -16, -36 ], [ 16, 16, 36 ] ],
+		"color": [0, 255, 0],
+		"offset": [0, 0, 36]
 	},
 	"infodecal": {
 		"Class": "Point",
