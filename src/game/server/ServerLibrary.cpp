@@ -290,14 +290,8 @@ void ServerLibrary::NewMapStarted(bool loadGame)
 
 	g_ReplacementMaps.Clear();
 
-	string_t mapcfg = gpGlobals->mapname;
-
-	if( CWorld* pWorld = static_cast<CWorld*>( CBaseEntity::World ); pWorld != nullptr && !FStringNull( pWorld->m_mapcfg ) ) {
-		mapcfg = pWorld->m_mapcfg;
-	}
-
 	// Add BSP models to precache list.
-	const auto completeMapName = fmt::format("maps/{}.bsp", STRING( mapcfg ) );
+	const auto completeMapName = fmt::format("maps/{}.bsp", STRING(gpGlobals->mapname));
 
 	if (auto bspData = BspLoader::Load(completeMapName.c_str()); bspData)
 	{
@@ -508,7 +502,15 @@ void ServerLibrary::LoadServerConfigFiles()
 	std::string mapConfigFileName;
 
 	// Use the map-specific cfg if it exists.
-	if (auto mapCfgFileName = fmt::format("cfg/maps/{}.json", STRING(gpGlobals->mapname));
+	string_t mapcfg = gpGlobals->mapname;
+
+	// Check if worldspawn wants a custom cfg file.
+	if( CWorld* pWorld = static_cast<CWorld*>( CBaseEntity::World );
+		pWorld != nullptr && !FStringNull( pWorld->m_mapcfg ) ) {
+		mapcfg = pWorld->m_mapcfg;
+	}
+
+	if (auto mapCfgFileName = fmt::format( "cfg/maps/{}.json", STRING( mapcfg ) );
 		g_pFileSystem->FileExists(mapCfgFileName.c_str()))
 	{
 		mapConfigFileName = std::move(mapCfgFileName);
