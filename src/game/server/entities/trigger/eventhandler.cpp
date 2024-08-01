@@ -15,7 +15,7 @@
 
 #pragma once
 
-#include "trigger_event.h"
+#include "eventhandler.h"
 
 BEGIN_DATAMAP( CTriggerEvent )
 	DEFINE_FIELD( m_pEventType, FIELD_INTEGER ),

@@ -4659,7 +4659,7 @@ bool CBasePlayer::HasPlayerWeapon(CBasePlayerWeapon* checkWeapon)
 
 bool CBasePlayer::HasNamedPlayerWeapon(const char* pszItemName)
 {
-	return ( HasNamedPlayerWeaponPtr( pszItemName ) != nullptr )
+	return ( HasNamedPlayerWeaponPtr( pszItemName ) != nullptr );
 }
 
 CBasePlayerWeapon* CBasePlayer::HasNamedPlayerWeaponPtr(const char* pszItemName)
