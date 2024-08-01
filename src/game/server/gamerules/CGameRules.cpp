@@ -352,7 +352,7 @@ bool CGameRules::CanHaveAmmo(CBasePlayer* pPlayer, const char* pszAmmoName)
 
 void CGameRules::PlayerSpawn(CBasePlayer* pPlayer)
 {
-	if( CSpawnPoint* pSpawnPoint = dynamic_cast<CSpawnPoint*>( g_pGameRules->GetPlayerSpawnSpot( pPlayer ) ); pSpawnPoint != nullptr )
+	if( CSpawnPoint* pSpawnPoint = static_cast<CSpawnPoint*>( g_pGameRules->GetPlayerSpawnSpot( pPlayer ) ); pSpawnPoint != nullptr )
 	{
 		pSpawnPoint->PlayerSpawn( pPlayer );
 	}
