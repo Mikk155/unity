@@ -731,7 +731,7 @@ void CApache::FireRocket()
 		WRITE_BYTE(12); // framerate
 		MESSAGE_END();
 
-		pRocket->pev->velocity = pev->velocity + gpGlobals->v_forward * 100;
+		pRocket->pev->velocity = pev->velocity + gpGlobals->v_forward * GetSkillFloat( "apache_rocket_speed"sv, 100 );
 
 		m_iRockets--;
 

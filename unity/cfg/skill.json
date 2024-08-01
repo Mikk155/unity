@@ -18,6 +18,8 @@
 
 	"apache_rockets": 1,
 
+	"apache_rocket_speed": 100,
+
 	"barnacle_health": 35,
 	"barnacle_speed": 8,
 
