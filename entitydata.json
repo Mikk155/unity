@@ -2877,7 +2877,6 @@
 		"trigger_counter",
 		"trigger_ctfgeneric",
 		"trigger_endsection",
-		"trigger_entity_condition",
 		"trigger_entity_iterator",
 		"trigger_event",
 		"trigger_geneworm_hit",
@@ -3526,25 +3525,14 @@
 		"data": {
 			"condition": {
 				"variable": "choices",
-				"value": "0",
+				"value": 0,
 				"choices":[
-					"0",
-					"1",
-					"2"
+					0, 1, 2, 3, 4
 				]
 			},
-			"pass_target": {
-				"variable": "target_destination",
-				"value": ""
-			},
-			"fail_target": {
-				"variable": "target_destination",
-				"value": ""
-			},
-			"argument_1": {
-				"variable": "string",
-				"value": ""
-			}
+			"pass_target": { "variable": "target_destination" },
+			"fail_target": { "variable": "target_destination" },
+			"argument_1": { "variable": "string" }
 		}
 	},
 	"player_loadsaved": {

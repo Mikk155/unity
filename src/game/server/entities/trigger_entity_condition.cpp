@@ -82,10 +82,28 @@ void CTriggerEntityCondition :: Use( CBaseEntity* pActivator, CBaseEntity* pCall
                 break;
             }
             case 2: {
-                if( !FStringNull( m_Arg1 ) )
-                    bCondition = pActivator->IsPlayer() && ToBasePlayer( pActivator )->HasNamedPlayerWeapon( STRING( m_Arg1 ) );
-                else
-                    bCondition = pActivator->IsPlayer() && ToBasePlayer( pActivator )->HasWeapons();
+                if( CBasePlayer* player = ToBasePlayer( pActivator ); player != nullptr )
+                {
+                    if( !FStringNull( m_Arg1 ) )
+                    {
+                        if( FStrEq( STRING( m_Arg1 ), "item_longjump" ) ) {
+                            player->HasLongJump();
+                        }
+                        else {
+                            bCondition =  player->HasNamedPlayerWeapon( STRING( m_Arg1 ) );
+                        }
+                    }
+                    else
+                        bCondition = player->HasWeapons();
+                }
+                break;
+            }
+            case 3: {
+                bCondition = pActivator->IsMonster();
+                break;
+            }
+            case 4: {
+                bCondition = pActivator->IsAlive();
                 break;
             }
         }

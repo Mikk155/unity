@@ -4543,12 +4543,20 @@
 "english": "Has Weapon/s (arg1)",
 "spanish": ""
 },
+"trigger_entity_condition::condition::2::description": {
+"english": "Checks if it's a player and if it haves the weapon listed in argument_1, supports item_longjump, if argument_1 is empty we'll check if the player have any weapon.",
+"spanish": ""
+},
 "trigger_entity_condition::condition::3": {
-"english": "Checks if it's a player and if it haves the weapon listed in argument_1, if argument_1 is empty we'll check if the player have any weapon.",
+"english": "Is Monster",
+"spanish": ""
+},
+"trigger_entity_condition::condition::4": {
+"english": "Is Alive",
 "spanish": ""
 },
 "trigger_entity_condition::argument_1": {
-"english": "Additional arguments to check",
+"english": "Argument 1",
 "spanish": ""
 },
 "player_loadsaved::classname": {
