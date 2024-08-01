@@ -476,6 +476,9 @@
 
 	// PLAYER HORNET
 	"plr_hornet_dmg": 7,
+	// -1 = Never recharges
+	"plr_hornet_regen": 0.5,
+	"plr_hornet_lifetime": 5.0,
 	
 	"plr_pipewrench": 20,
 
@@ -497,9 +500,6 @@
 	"plr_shockroachm": 15,
 
 	"plr_spore": 50,
-
-	// -1 = Never recharges
-	"plr_hornet_regen": 0.5,
 
 	"player_health": 100,
 	"player_armor": 0,
@@ -527,6 +527,7 @@
 	"hornet_dmg1": 4,
 	"hornet_dmg2": 5,
 	"hornet_dmg3": 8,
+	"hornet_lifetime": 5.0,
 
 	// HEALTH/SUIT CHARGE DISTRIBUTION
 	"suitcharger1": 75,
