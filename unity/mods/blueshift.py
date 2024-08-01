@@ -2,34 +2,71 @@
 # Blue Shift installation script
 # ===============================================================================
 
+import os, struct
+
 mod = 'bshift'
 
-from tools.check_install import check_install
-#check_install( mod=mod, link='https://store.steampowered.com/app/130/HalfLife_Blue_Shift/' )
+from tools.path             import port
+from tools.check_install    import check_install
+from tools.resources        import load_resources
+from tools.copy_assets      import copy_assets
+from tools.titles_to_json   import titles_to_json
+from tools.map_upgrader     import map_upgrader
+from tools.Entity           import Entity
 
-from tools.resources import load_resources
+#check_install( mod=mod, link='https://store.steampowered.com/app/130/HalfLife_Blue_Shift/' )
 
 assets = load_resources( mod='blueshift' )
 
-from tools.copy_assets import copy_assets
 #copy_assets( mod=mod, assets=assets )
 
-from tools.titles_to_json import titles_to_json
 #titles_to_json( path='cfg/blueshift/titles.txt' )
 
-import subprocess, os
-from tools.path import port, tools
-if False:
+def BShiftMapConvert():
     for file in os.listdir( f'{port}/maps/'):
-        if file.endswith( ".bsp" ):
-            print(f'[bspfix] Converting Blue shift BSP {file}')
-            process = subprocess.Popen( [ f'{tools}/bspfix.exe', f'{port}/maps/{file}' ], stdin=subprocess.PIPE, stdout=subprocess.PIPE, stderr=subprocess.PIPE )
-            process.stdin.write(b'y\n')
-            process.stdin.flush()
-            process.wait()
+        if file.startswith( "ba_" ) and file.endswith( ".bsp" ):
+            try:
+                with open( f'{port}/maps/{file}', "rb+") as file:
+                    start = file.tell()
+                    if start == -1:
+                        print(f"Error getting start position in \"{file}\"")
+                        return
+                    header = read_header(file)
+                    header.lumps[0], header.lumps[1] = header.lumps[1], header.lumps[0]
+                    file.seek(start, os.SEEK_SET)
+                    print(f"Converting map \"{file}\"")
+                    write_header(file, header)
+            except IOError:
+                print(f"Error opening file \"{file}\"")
 
-from tools.map_upgrader import map_upgrader
-from tools.Entity import Entity
+HEADER_LUMPS = 15
+
+class Lump:
+    def __init__(self, fileofs, filelen):
+        self.fileofs = fileofs
+        self.filelen = filelen
+
+class DHeader:
+    def __init__(self):
+        self.version = 0
+        self.lumps = [Lump(0, 0) for _ in range(HEADER_LUMPS)]
+
+def read_header(file):
+    header = DHeader()
+    data = file.read(4 + 8 * HEADER_LUMPS)
+    header.version = struct.unpack('i', data[:4])[0]
+    for i in range(HEADER_LUMPS):
+        fileofs, filelen = struct.unpack('ii', data[4 + i * 8:4 + (i + 1) * 8])
+        header.lumps[i] = Lump(fileofs, filelen)
+    return header
+
+def write_header(file, header):
+    data = struct.pack('i', header.version)
+    for lump in header.lumps:
+        data += struct.pack('ii', lump.fileofs, lump.filelen)
+    file.write(data)
+
+#BShiftMapConvert()
 
 def ba_tram1( index:int, entity:Entity, map:str ):
     if map == 'ba_tram1':
