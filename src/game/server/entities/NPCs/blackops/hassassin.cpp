@@ -600,18 +600,9 @@ void CHAssassin::RunAI()
 	{
 		m_iTargetRanderamt = 255;
 	}
-	else if( GetSkillFloat( "hassassin_invisibility"sv, 1 ) == 1 )
-	{
-		m_iTargetRanderamt = RANDOM_LONG( 20, 255 );
-	}
 	else
 	{
-		m_iTargetRanderamt = 20;
-
-		if( GetSkillFloat( "hassassin_invisibility"sv, 1 ) == 3 )
-		{
-			m_iTargetRanderamt = RANDOM_LONG( 50, 255 );
-		}
+		m_iTargetRanderamt = RANDOM_LONG( 20, 255 );
 	}
 
 	if (pev->renderamt > m_iTargetRanderamt)
