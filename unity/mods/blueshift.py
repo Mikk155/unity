@@ -84,12 +84,19 @@ def globalfixes( index:int, entity:Entity, map:str ):
         entity.allow_follow = 0 if spawnflags & SF_ROSENBERG_NO_USE else 1
         spawnflags &= ~SF_ROSENBERG_NO_USE
         entity.spawnflags = spawnflags
+        entity.body = None
     elif entity.classname == 'monster_generic' and entity.body == '3' and entity.model == 'models/scientist.mdl':
         entity.model = 'models/rosenberg.mdl'
+        entity.body = None
     elif entity.classname == 'monster_scientist' and entity.body == '3':
         entity.classname == 'monster_rosenberg'
         entity.model = None
-    entity.body = None
+        entity.body = None
+    elif entity.classname == 'worldspawn':
+        if map == 'ba_tram1':
+            entity.mapcfg = 'blueshift/ba_tram1'
+        else:
+            entity.mapcfg = 'blueshift/default_config'
     return entity
 
 map_upgrader()
