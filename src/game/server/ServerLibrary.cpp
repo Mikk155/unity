@@ -290,8 +290,14 @@ void ServerLibrary::NewMapStarted(bool loadGame)
 
 	g_ReplacementMaps.Clear();
 
+	string_t mapcfg = gpGlobals->mapname;
+
+	if( CWorld* pWorld = static_cast<CWorld*>( CBaseEntity::World ); pWorld != nullptr && !FStringNull( pWorld->m_mapcfg ) ) {
+		mapcfg = pWorld->m_mapcfg;
+	}
+
 	// Add BSP models to precache list.
-	const auto completeMapName = fmt::format("maps/{}.bsp", STRING(gpGlobals->mapname));
+	const auto completeMapName = fmt::format("maps/{}.bsp", STRING( mapcfg ) );
 
 	if (auto bspData = BspLoader::Load(completeMapName.c_str()); bspData)
 	{
