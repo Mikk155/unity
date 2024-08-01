@@ -40,6 +40,7 @@ public:
 	void IncrementAmmo(CBasePlayer* pPlayer) override;
 	void PrimaryAttack() override;
 	void SecondaryAttack() override;
+	void TertiaryAttack() override;
 	bool Deploy() override;
 	void Holster() override;
 	void Reload() override;
