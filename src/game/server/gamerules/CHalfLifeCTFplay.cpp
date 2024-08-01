@@ -29,7 +29,7 @@
 
 #include "pm_shared.h"
 
-#include "entities/trigger_event.h"
+#include "entities/trigger/eventhandler.h"
 
 const int MaxTeamNameLength = 16;
 const int MaxTeamCharacters = 12;

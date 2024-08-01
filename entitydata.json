@@ -2878,7 +2878,7 @@
 		"trigger_ctfgeneric",
 		"trigger_endsection",
 		"trigger_entity_iterator",
-		"trigger_event",
+		"trigger_eventhandler",
 		"trigger_geneworm_hit",
 		"trigger_gravity",
 		"trigger_hurt",
@@ -4086,7 +4086,7 @@
 
 		}
 	},
-	"trigger_event": {
+	"trigger_eventhandler": {
 		"Class": "Point",
 		"base": ["Target", "CBaseDelay", "AllocNewEntity" ],
 		"data": {

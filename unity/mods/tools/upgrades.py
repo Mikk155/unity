@@ -111,7 +111,7 @@ def b1_game_playerdie( index:int, entity:Entity, map:str ):
     global game_playerdie
     if not game_playerdie and entity.targetname == 'game_playerdie':
         Newent = {
-            "classname": "trigger_event",
+            "classname": "trigger_eventhandler",
             "event_type": "1",
             "target": "game_playerdie",
             "m_Caller": "!activator"
@@ -125,7 +125,7 @@ def b1_game_playerleave( index:int, entity:Entity, map:str ):
     global game_playerleave
     if not game_playerleave and entity.targetname == 'game_playerleave':
         Newent = {
-            "classname": "trigger_event",
+            "classname": "trigger_eventhandler",
             "event_type": "2",
             "target": "game_playerleave",
             "m_Caller": "!activator"
@@ -139,7 +139,7 @@ def b1_game_playerkill( index:int, entity:Entity, map:str ):
     global game_playerkill
     if not game_playerkill and entity.targetname == 'game_playerkill':
         Newent = {
-            "classname": "trigger_event",
+            "classname": "trigger_eventhandler",
             "event_type": "3",
             "target": "game_playerkill_check",
             "m_Caller": "!activator"
@@ -160,7 +160,7 @@ def b1_game_playeractivate( index:int, entity:Entity, map:str ):
     global game_playeractivate
     if not game_playeractivate and entity.targetname == 'game_playeractivate':
         Newent = {
-            "classname": "trigger_event",
+            "classname": "trigger_eventhandler",
             "event_type": "4",
             "target": "game_playeractivate",
             "m_Caller": "!activator"
@@ -174,7 +174,7 @@ def b1_game_playerjoin( index:int, entity:Entity, map:str ):
     global game_playerjoin
     if not game_playerjoin and entity.targetname == 'game_playerjoin':
         Newent = {
-            "classname": "trigger_event",
+            "classname": "trigger_eventhandler",
             "event_type": "5",
             "target": "game_playerjoin",
             "m_Caller": "!activator",
@@ -189,7 +189,7 @@ def b1_game_playerspawn( index:int, entity:Entity, map:str ):
     global game_playerspawn
     if not game_playerspawn and entity.targetname == 'game_playerspawn':
         Newent = {
-            "classname": "trigger_event",
+            "classname": "trigger_eventhandler",
             "event_type": "6",
             "target": "game_playerspawn",
             "m_Caller": "!activator"

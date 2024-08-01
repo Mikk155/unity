@@ -26,7 +26,7 @@
 #include "world.h"
 #include "ServerLibrary.h"
 #include "ctf/ctf_items.h"
-#include "trigger_event.h"
+#include "trigger/eventhandler.h"
 
 /**
  *	@details This must match the list in util.h
@@ -395,9 +395,7 @@ void CWorld::Precache()
 
 			if( g_pGameRules->IsMultiplayer() )
 			{
-				CTriggerEvent* pEvent = g_EntityDictionary->Create<CTriggerEvent>("trigger_event");
-
-				if( pEvent != nullptr )
+				if( CTriggerEvent* pEvent = g_EntityDictionary->Create<CTriggerEvent>("trigger_eventhandler"); pEvent != nullptr )
 				{
 					pEvent->m_pEventType = TriggerEventType::PLAYER_JOIN;
 					pEvent->pev->target = pEntity->pev->targetname = MAKE_STRING( "game_playerspawn" );

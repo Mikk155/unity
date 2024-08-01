@@ -44,7 +44,7 @@
 #include "ctf/ctf_goals.h"
 #include "rope/CRope.h"
 
-#include "trigger_event.h"
+#include "trigger/eventhandler.h"
 
 // #define DUCKFIX
 

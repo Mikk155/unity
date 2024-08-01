@@ -27,7 +27,7 @@
 #include "items/CBaseItem.h"
 #include "items/weapons/CSatchelCharge.h"
 
-#include "entities/trigger_event.h"
+#include "../entities/trigger/eventhandler.h"
 
 CVoiceGameMgr g_VoiceGameMgr;
 

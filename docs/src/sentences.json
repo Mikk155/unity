@@ -7123,43 +7123,43 @@
 "english": "A targetname of a entity or either a special name\n!activator = current activator\n!caller = current caller\n!this = current entity\n!player = Nearest player",
 "spanish": ""
 },
-"trigger_event::classname": {
+"trigger_eventhandler::classname": {
 "english": "trigger game events",
 "spanish": ""
 },
-"trigger_event::classname::description": {
+"trigger_eventhandler::classname::description": {
 "english": "Handles a game event and trigger it's target if matched",
 "spanish": ""
 },
-"trigger_event::event_type": {
+"trigger_eventhandler::event_type": {
 "english": "Handle event type",
 "spanish": ""
 },
-"trigger_event::event_type::0": {
+"trigger_eventhandler::event_type::0": {
 "english": "None",
 "spanish": ""
 },
-"trigger_event::event_type::1": {
+"trigger_eventhandler::event_type::1": {
 "english": "Player has died",
 "spanish": ""
 },
-"trigger_event::event_type::2": {
+"trigger_eventhandler::event_type::2": {
 "english": "Player left the server",
 "spanish": ""
 },
-"trigger_event::event_type::3": {
+"trigger_eventhandler::event_type::3": {
 "english": "Player has been kiled (not suicide)",
 "spanish": ""
 },
-"trigger_event::event_type::4": {
+"trigger_eventhandler::event_type::4": {
 "english": "Player has joined (game_playeractivate)",
 "spanish": ""
 },
-"trigger_event::event_type::5": {
+"trigger_eventhandler::event_type::5": {
 "english": "Player has joined (game_playerjoin)",
 "spanish": ""
 },
-"trigger_event::event_type::6": {
+"trigger_eventhandler::event_type::6": {
 "english": "Player has joined (game_playerspawn)",
 "spanish": ""
 },

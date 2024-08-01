@@ -136,10 +136,10 @@ target_sources(server PRIVATE
 	entities/subs.cpp
 	entities/teleport_entities.cpp
 	entities/trains.h
-	entities/trigger_entity_condition.cpp
-	entities/trigger_entity_iterator.cpp
-	entities/trigger_event.cpp
-	entities/trigger_event.h
+	entities/trigger/entity_condition.cpp
+	entities/trigger/entity_iterator.cpp
+	entities/trigger/eventhandler.cpp
+	entities/trigger/eventhandler.h
 	entities/triggers.cpp
 	entities/world.cpp
 	entities/world.h

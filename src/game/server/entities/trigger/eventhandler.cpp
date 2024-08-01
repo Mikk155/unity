@@ -21,7 +21,7 @@ BEGIN_DATAMAP( CTriggerEvent )
 	DEFINE_FIELD( m_pEventType, FIELD_INTEGER ),
 END_DATAMAP();
 
-LINK_ENTITY_TO_CLASS( trigger_event, CTriggerEvent );
+LINK_ENTITY_TO_CLASS( trigger_eventhandler, CTriggerEvent );
 
 void CTriggerEvent :: Spawn()
 {
