@@ -244,18 +244,38 @@ public:
 	void Use(CBaseEntity* pActivator, CBaseEntity* pCaller, USE_TYPE useType, float value) override;
 
 private:
+	int m_cTargets;
+	string_t m_iKey[MAX_WEAPONS];
+	string_t m_iValue[MAX_WEAPONS];
 	int m_Flags = StripFlagRemoveWeapons;
 };
 
 LINK_ENTITY_TO_CLASS(player_weaponstrip, CStripWeapons);
 
 BEGIN_DATAMAP(CStripWeapons)
-DEFINE_FIELD(m_Flags, FIELD_INTEGER),
-	END_DATAMAP();
+	DEFINE_FIELD(m_Flags, FIELD_INTEGER),
+	DEFINE_FIELD(m_cTargets, FIELD_INTEGER),
+	DEFINE_ARRAY(m_iKey, FIELD_STRING, MAX_WEAPONS),
+	DEFINE_ARRAY(m_iValue, FIELD_STRING, MAX_WEAPONS),
+END_DATAMAP();
 
 bool CStripWeapons::KeyValue(KeyValueData* pkvd)
 {
-	if (FStrEq(pkvd->szKeyName, "all_players"))
+	if( std::string( pkvd->szKeyName ).find( "-" ) == 0 )
+	{
+		char temp[256];
+
+		UTIL_StripToken(pkvd->szKeyName, temp);
+		m_iKey[m_cTargets] = ALLOC_STRING(temp);
+
+		UTIL_StripToken(pkvd->szValue, temp);
+		m_iValue[m_cTargets] = ALLOC_STRING(temp);
+
+		++m_cTargets;
+
+		return true;
+	}
+	else if (FStrEq(pkvd->szKeyName, "all_players"))
 	{
 		if (atoi(pkvd->szValue) != 0)
 		{
@@ -318,6 +338,13 @@ void CStripWeapons::Use(CBaseEntity* pActivator, CBaseEntity* pCaller, USE_TYPE 
 		if ((m_Flags & StripFlagRemoveWeapons) != 0)
 		{
 			player->RemoveAllItems(false);
+		}
+		else {
+			for( int i = 0; i < m_cTargets; ++i ) {
+				if( player->RemovePlayerWeapon( player->HasNamedPlayerWeaponPtr( STRING( m_iKey[i] ) ) ) ) {
+					FireTargets( STRING( m_iValue[i] ), player, this, USE_TOGGLE, 0 );
+				}
+			}
 		}
 
 		if ((m_Flags & StripFlagRemoveSuit) != 0)

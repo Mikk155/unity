@@ -4735,6 +4735,10 @@
 "english": "Strips player's weapons",
 "spanish": ""
 },
+"player_weaponstrip::classname::description": {
+"english": "Strip individual weapons by key '-weapon_357' value 'target to fire if striped'",
+"spanish": ""
+},
 "player_weaponstrip::all_players": {
 "english": "Affect All Players",
 "spanish": ""
