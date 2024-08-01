@@ -94,11 +94,11 @@ kbutton_t in_use;
 kbutton_t in_jump;
 kbutton_t in_attack;
 kbutton_t in_attack2;
+kbutton_t in_attack3;
 kbutton_t in_up;
 kbutton_t in_down;
 kbutton_t in_duck;
 kbutton_t in_reload;
-kbutton_t in_alt1;
 kbutton_t in_score;
 kbutton_t in_break;
 kbutton_t in_graph; // Display the netgraph
@@ -421,8 +421,8 @@ void IN_DuckDown()
 void IN_DuckUp() { KeyUp(&in_duck); }
 void IN_ReloadDown() { KeyDown(&in_reload); }
 void IN_ReloadUp() { KeyUp(&in_reload); }
-void IN_Alt1Down() { KeyDown(&in_alt1); }
-void IN_Alt1Up() { KeyUp(&in_alt1); }
+void IN_Attack3Down() { KeyDown(&in_attack3); }
+void IN_Attack3Up() { KeyUp(&in_attack3); }
 void IN_GraphDown() { KeyDown(&in_graph); }
 void IN_GraphUp() { KeyUp(&in_graph); }
 
@@ -776,9 +776,9 @@ int CL_ButtonBits(bool bResetState)
 		bits |= IN_RELOAD;
 	}
 
-	if ((in_alt1.state & 3) != 0)
+	if ((in_attack3.state & 3) != 0)
 	{
-		bits |= IN_ALT1;
+		bits |= IN_ATTACK3;
 	}
 
 	if ((in_score.state & 3) != 0)
@@ -806,7 +806,7 @@ int CL_ButtonBits(bool bResetState)
 		in_moveright.state &= ~2;
 		in_attack2.state &= ~2;
 		in_reload.state &= ~2;
-		in_alt1.state &= ~2;
+		in_attack3.state &= ~2;
 		in_score.state &= ~2;
 	}
 
@@ -878,8 +878,8 @@ void InitInput()
 	gEngfuncs.pfnAddCommand("-duck", IN_DuckUp);
 	gEngfuncs.pfnAddCommand("+reload", IN_ReloadDown);
 	gEngfuncs.pfnAddCommand("-reload", IN_ReloadUp);
-	gEngfuncs.pfnAddCommand("+alt1", IN_Alt1Down);
-	gEngfuncs.pfnAddCommand("-alt1", IN_Alt1Up);
+	gEngfuncs.pfnAddCommand("+attack3", IN_Attack3Down);
+	gEngfuncs.pfnAddCommand("-attack3", IN_Attack3Up);
 	gEngfuncs.pfnAddCommand("+score", IN_ScoreDown);
 	gEngfuncs.pfnAddCommand("-score", IN_ScoreUp);
 	gEngfuncs.pfnAddCommand("+showscores", IN_ScoreDown);

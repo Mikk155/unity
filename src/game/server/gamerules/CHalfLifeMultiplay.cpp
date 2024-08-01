@@ -187,7 +187,7 @@ bool CHalfLifeMultiplay::FShouldSwitchWeapon(CBasePlayer* pPlayer, CBasePlayerWe
 	}
 
 	// Only switch if not attacking
-	if (pPlayer->m_AutoWepSwitch == WeaponSwitchMode::IfBetter && (pPlayer->m_afButtonLast & (IN_ATTACK | IN_ATTACK2)) != 0)
+	if (pPlayer->m_AutoWepSwitch == WeaponSwitchMode::IfBetter && (pPlayer->m_afButtonLast & (IN_ATTACK | IN_ATTACK2 | IN_ATTACK3)) != 0)
 	{
 		return false;
 	}
@@ -423,7 +423,7 @@ void CHalfLifeMultiplay::PlayerThink(CBasePlayer* pPlayer)
 	if (g_fGameOver)
 	{
 		// check for button presses
-		if ((pPlayer->m_afButtonPressed & (IN_DUCK | IN_ATTACK | IN_ATTACK2 | IN_USE | IN_JUMP)) != 0)
+		if ((pPlayer->m_afButtonPressed & (IN_DUCK | IN_ATTACK | IN_ATTACK2 | IN_ATTACK3 | IN_USE | IN_JUMP)) != 0)
 			m_iEndIntermissionButtonHit = true;
 
 		// clear attack/use commands from player

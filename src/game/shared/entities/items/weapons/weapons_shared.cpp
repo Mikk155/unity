@@ -31,10 +31,12 @@ DEFINE_FIELD(m_pPlayer, FIELD_CLASSPTR),
 #if defined(CLIENT_WEAPONS)
 	DEFINE_FIELD(m_flNextPrimaryAttack, FIELD_FLOAT),
 	DEFINE_FIELD(m_flNextSecondaryAttack, FIELD_FLOAT),
+	DEFINE_FIELD(m_flNextTertiaryAttack, FIELD_FLOAT),
 	DEFINE_FIELD(m_flTimeWeaponIdle, FIELD_FLOAT),
 #else  // CLIENT_WEAPONS
 	DEFINE_FIELD(m_flNextPrimaryAttack, FIELD_TIME),
 	DEFINE_FIELD(m_flNextSecondaryAttack, FIELD_TIME),
+	DEFINE_FIELD(m_flNextTertiaryAttack, FIELD_TIME),
 	DEFINE_FIELD(m_flTimeWeaponIdle, FIELD_TIME),
 #endif // CLIENT_WEAPONS
 	DEFINE_FIELD(m_iPrimaryAmmoType, FIELD_INTEGER),
@@ -362,7 +364,12 @@ void CBasePlayerWeapon::ItemPostFrame()
 		m_flLastFireTime = 0.0f;
 	}
 
-	if ((m_pPlayer->pev->button & IN_ATTACK2) != 0 && CanAttack(m_flNextSecondaryAttack, gpGlobals->time, UseDecrement()))
+	if ((m_pPlayer->pev->button & IN_ATTACK3) != 0 && CanAttack(m_flNextTertiaryAttack, gpGlobals->time, UseDecrement()))
+	{
+		TertiaryAttack();
+		m_pPlayer->pev->button &= ~IN_ATTACK3;
+	}
+	else if ((m_pPlayer->pev->button & IN_ATTACK2) != 0 && CanAttack(m_flNextSecondaryAttack, gpGlobals->time, UseDecrement()))
 	{
 		if (pszAmmo2() && 0 == m_pPlayer->GetAmmoCountByIndex(m_iSecondaryAmmoType))
 		{

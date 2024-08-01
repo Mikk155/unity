@@ -352,6 +352,11 @@ public:
 	virtual void SecondaryAttack() {}
 
 	/**
+	 *	@brief do "+ATTACK3"
+	 */
+	virtual void TertiaryAttack() {}
+
+	/**
 	 *	@brief do "+RELOAD"
 	 */
 	virtual void Reload() {}
@@ -464,6 +469,7 @@ public:
 	int m_fInSpecialReload;			 //!< Are we in the middle of a reload for the shotguns
 	float m_flNextPrimaryAttack;	 //!< soonest time ItemPostFrame will call PrimaryAttack
 	float m_flNextSecondaryAttack;	 //!< soonest time ItemPostFrame will call SecondaryAttack
+	float m_flNextTertiaryAttack;	 //!< soonest time ItemPostFrame will call TertiaryAttack
 	float m_flTimeWeaponIdle;		 //!< soonest time ItemPostFrame will call WeaponIdle
 	int m_iPrimaryAmmoType = -1;	 //!< "primary" ammo index into players m_rgAmmo[]
 	int m_iSecondaryAmmoType = -1;	 //!< "secondary" ammo index into players m_rgAmmo[]

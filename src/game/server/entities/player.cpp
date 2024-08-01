@@ -2735,6 +2735,7 @@ pt_end:
 				{
 					gun->m_flNextPrimaryAttack = std::max(gun->m_flNextPrimaryAttack - gpGlobals->frametime, -1.1f);
 					gun->m_flNextSecondaryAttack = std::max(gun->m_flNextSecondaryAttack - gpGlobals->frametime, -0.001f);
+					gun->m_flNextTertiaryAttack = std::max(gun->m_flNextTertiaryAttack - gpGlobals->frametime, -0.001f);
 
 					if (gun->m_flTimeWeaponIdle != 1000)
 					{
