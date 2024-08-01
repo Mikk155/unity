@@ -319,6 +319,11 @@
 	"shocktrooper_rchgspeed": 1,
 
 	"shocktrooper_spore_dmg": 50,
+	// Spores type
+	// 0 = grenade
+	// 1 = rocket
+	// 2 = random
+	"shocktrooper_sporetype": 2,
 
 	"op4mortar_damage": 100,
 
