@@ -439,6 +439,7 @@ public:
 	void DropPlayerWeapon(const char* pszItemName);
 
 	bool HasPlayerWeapon(CBasePlayerWeapon* checkWeapon);
+	CBasePlayerWeapon* HasNamedPlayerWeaponPtr(const char* pszItemName);
 	bool HasNamedPlayerWeapon(const char* pszItemName);
 	bool HasWeapons(); // do I have ANY weapons?
 	void SelectPrevItem(int iItem);
