@@ -58,6 +58,7 @@
 	"hgrunt_pellets": 6,
 	"hgrunt_gspeed": 800,
 	"hgrunt_next_glauncher": 5,
+	"9mmAR_grenade": 50,
 
 	// Houndeye
 	"houndeye_health": 30,
