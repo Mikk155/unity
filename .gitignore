@@ -22,3 +22,8 @@ build/
 # Python cache
 *.pyc
 *__pycache__/
+
+deliver/
+bshift/
+unity/mods/tools/bspfix.exe
+.gitignore
