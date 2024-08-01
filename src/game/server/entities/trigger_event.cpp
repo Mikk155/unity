@@ -58,7 +58,7 @@ void TriggerEvent( TriggerEventType EventType, CBaseEntity* pActivator, CBaseEnt
 		if( handler->m_pEventType == EventType && !FStringNull( handler->pev->target ) && handler->m_pEventType != TriggerEventType::None )
 		{
 			FireTargets( STRING( handler->pev->target ),
-				handler->AllocNewActivator( pActivator, pCaller ),
+				handler->AllocNewActivator( pActivator, pCaller, handler->m_sNewActivator ),
 					handler->AllocNewActivator( pActivator, pCaller, handler->m_Caller ), USE_TOGGLE, flValue
 			);
 		}

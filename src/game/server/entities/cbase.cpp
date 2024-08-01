@@ -986,13 +986,8 @@ bool CBaseEntity :: CheckAppearanceFlags()
 	return true;
 }
 
-CBaseEntity* CBaseEntity :: AllocNewActivator( CBaseEntity* pActivator, CBaseEntity* pCaller, string_t szNewTarget = string_t::Null )
+CBaseEntity* CBaseEntity :: AllocNewActivator( CBaseEntity* pActivator, CBaseEntity* pCaller, string_t szNewTarget )
 {
-	if( FStringNull( szNewTarget ) ) // If szNewTarget is set a custom one will be used
-	{
-		szNewTarget = m_sNewActivator;
-	}
-
 	if( !FStringNull( szNewTarget ) )
 	{
 		if( FStrEq( STRING( szNewTarget ), "!activator" ) )

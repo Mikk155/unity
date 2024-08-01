@@ -659,7 +659,7 @@ public:
 	 *	pActivator and pCaller should be the ones from your UseFunction
 	 *	This function will return the updated instance with whatever the entity keyvalue m_Activator wants
 	 */
-	CBaseEntity* AllocNewActivator( CBaseEntity* pActivator, CBaseEntity* pCaller, string_t szNewTarget = string_t::Null );
+	CBaseEntity* AllocNewActivator( CBaseEntity* pActivator, CBaseEntity* pCaller, string_t szNewTarget );
 	string_t m_sNewActivator;
 
 	int m_appearflag_notin = (int)appearflags::DEFAULT;
