@@ -1,7 +1,7 @@
 class Vector:
     def __init__(self, x=0, y=0, z=0):
         if isinstance(x, str):
-            values = x.split()
+            values = x.split( ',' ) if x.find( ',' ) != -1 else x.split()
             if len(values) < 3:
                 values += ['0'] * (3 - len(values))
             self.x, self.y, self.z = [self._parse_value(v) for v in values[:3]]

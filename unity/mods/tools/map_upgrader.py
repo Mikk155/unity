@@ -16,8 +16,11 @@ def add_entity( entity:dict ):
     new_entities.append( entity )
 
 def HookMembers( index:int, entblock:Entity, entdata:list[dict], map:str, obj, name:str ):
-    if not inspect.isfunction(obj) or not 'Entity.Entity' in str(inspect.signature(obj).parameters):
+    if not inspect.isfunction(obj):
         return entblock.ToDict()
+    for name in [ 'index', 'entity', 'map' ]:
+        if not name in inspect.signature(obj).parameters:
+            return entblock.ToDict()
     return obj( index, entblock, map ).ToDict()
 
 def upgrade_map( entdata=[], mapname='' ):
@@ -142,5 +145,5 @@ def map_upgrader():
                     newdata += f'"{key}" "{value}"\n'
                 newdata += '}\n'
 
-            bsp_read( f'{port}/maps/{bsp}', writedata=newdata )
+            #bsp_read( f'{port}/maps/{bsp}', writedata=newdata )
             #os.remove( f'{port}/maps/{ent}' )
