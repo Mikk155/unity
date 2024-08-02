@@ -111,8 +111,8 @@ def b1_world_items( index:int, entity:Entity, map:str ):
 # ==========================================================================================
 def b1_prop_human_hulls( index:int, entity:Entity, map:str ):
     if entity.classname in [ 'monster_generic', 'monster_generic' ] and entity.model in [ 'models/player.mdl', 'models/holo.mdl' ]:
-        entity.custom_hull_min = '-16 -16 -36'
-        entity.custom_hull_max = '16 16 36'
+        entity.custom_hull_min = Vector( -16, -16, -36 )
+        entity.custom_hull_max = Vector( 16, 16, 36 )
     return entity
 
 # ==========================================================================================

@@ -11,9 +11,9 @@ from tools.Entity import Entity
 
 new_entities = []
 
-def add_entity( entity:dict ):
+def add_entity( entity:Entity ):
     global new_entities
-    new_entities.append( entity )
+    new_entities.append( entity if isinstance( entity, dict ) else entity.ToDict() )
 
 def HookMembers( index:int, entblock:Entity, entdata:list[dict], map:str, obj, name:str ):
     if not inspect.isfunction(obj):
@@ -145,5 +145,5 @@ def map_upgrader():
                     newdata += f'"{key}" "{value}"\n'
                 newdata += '}\n'
 
-            #bsp_read( f'{port}/maps/{bsp}', writedata=newdata )
-            #os.remove( f'{port}/maps/{ent}' )
+            bsp_read( f'{port}/maps/{bsp}', writedata=newdata )
+            os.remove( f'{port}/maps/{ent}' )

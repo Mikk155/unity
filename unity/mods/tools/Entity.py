@@ -1,6 +1,6 @@
 class Entity:
-    def __init__( self, KeyValueData={} ):
-        self.KeyValueData = KeyValueData
+    def __init__( self, KeyValueData=None ):
+        self.KeyValueData = KeyValueData if KeyValueData is not None else {}
 
     def ToDict( self ):
         """
@@ -12,6 +12,9 @@ class Entity:
 
     def get( self, value:str ):
         self.KeyValueData.get( value )
+
+    def copy(self):
+        return Entity( self.KeyValueData.copy() )
 
     def set( self, value:str ):
         self.KeyValueData[ value ] = value
