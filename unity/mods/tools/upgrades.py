@@ -106,6 +106,25 @@ def b1_monster_barney_dead( index:int, entity:Entity, map:str ):
         entity.bodystate = body
     return entity
 
+
+def b1_func_breakable( index:int, entity:Entity, map:str ):
+    if entity.classname == 'func_breakable' or entity.classname == 'func_pushable':
+        if entity.spawnobject.isnumeric():
+            i = int( entity.spawnobject )
+            classnames = [ "item_battery", "item_healthkit",
+                "weapon_9mmhandgun", "ammo_9mmclip", "weapon_9mmar",
+                    "ammo_9mmar", "ammo_argrenades", "weapon_shotgun",
+                        "ammo_buckshot", "weapon_crossbow", "ammo_crossbow",
+                            "weapon_357", "ammo_357", "weapon_rpg", "ammo_rpgclip",
+                                "ammo_gaussclip", "weapon_handgrenade", "weapon_tripmine",
+                                    "weapon_satchel", "weapon_snark", "weapon_hornetgun", "weapon_penguin"
+            ]
+            if i  == 0:
+                entity.spawnobject = None
+            elif i > 0 and i <= len(classnames):
+                entity.spawnobject = classnames[i]
+    return entity
+
 game_playerdie = False
 def b1_game_playerdie( index:int, entity:Entity, map:str ):
     global game_playerdie

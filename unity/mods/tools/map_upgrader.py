@@ -133,6 +133,8 @@ def map_upgrader():
             newdata = ''
 
             for entblock in entdata:
+                if len(entblock) <= 0:
+                    continue
                 newdata += '{\n'
                 if not isinstance( entblock, dict ):
                     entblock = json.loads( entblock )
@@ -140,6 +142,5 @@ def map_upgrader():
                     newdata += f'"{key}" "{value}"\n'
                 newdata += '}\n'
 
-            #bsp_read( f'{port}/maps/{bsp}', writedata=newdata )
-
-        #os.remove( f'{port}/maps/{ent}' )
+            bsp_read( f'{port}/maps/{bsp}', writedata=newdata )
+            #os.remove( f'{port}/maps/{ent}' )

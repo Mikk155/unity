@@ -10,6 +10,9 @@ class Entity:
         """
         return self.KeyValueData
 
+    def copy( self ):
+        return Entity( self.KeyValueData.copy() )
+
     def __getattr__( self, key ):
         return str( self.KeyValueData.get( key, "" ) ) if key in self.KeyValueData else None
 
