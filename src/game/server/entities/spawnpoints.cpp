@@ -56,7 +56,8 @@ void CSpawnPoint :: PlayerSpawn( CBasePlayer* pPlayer )
 
 	pPlayer->SetOrigin( pev->origin + Vector(0, 0, 1) );
 
-	UTIL_InitializeKeyValues( pPlayer, m_iKey, m_iValue, m_cTargets );
+	if( m_cTargets > 0 )
+		UTIL_InitializeKeyValues( pPlayer, m_iKey, m_iValue, m_cTargets );
 
 	if( !FStringNull( pev->target ) )
 	{

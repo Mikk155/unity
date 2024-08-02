@@ -605,7 +605,7 @@ bool CBaseEntity::RequiredKeyValue(KeyValueData* pkvd)
 	{
 		if( atoi( pkvd->szValue ) != 0 )
 		{
-			int iBits;
+			int iBits = 0;
 
 			if( FStrEq( pkvd->szKeyName, "appearflag_singleplayer" ) )      iBits = appearflags::GM_SINGLEPLAYER;
 			else if( FStrEq( pkvd->szKeyName, "appearflag_multiplayer" ) )  iBits = appearflags::GM_MULTIPLAYER;
