@@ -505,14 +505,17 @@ void ServerLibrary::LoadServerConfigFiles()
 	string_t mapcfg = gpGlobals->mapname;
 
 	// Check if worldspawn wants a custom cfg file.
-	if( CWorld* pWorld = static_cast<CWorld*>( CBaseEntity::World );
-		pWorld != nullptr && !FStringNull( pWorld->m_mapcfg ) ) {
-		mapcfg = pWorld->m_mapcfg;
+	if( CWorld* pWorld = static_cast<CWorld*>( CBaseEntity::World ); pWorld != nullptr && !FStringNull( pWorld->m_mapcfg ) )
+	{
+		if( auto mapCfgFileName = fmt::format( "cfg/maps/{}.json", STRING( pWorld->m_mapcfg ) ); g_pFileSystem->FileExists( mapCfgFileName.c_str() ) )
+		{
+			mapcfg = pWorld->m_mapcfg;
+		}
 	}
 
-	if (auto mapCfgFileName = fmt::format( "cfg/maps/{}.json", STRING( mapcfg ) );
-		g_pFileSystem->FileExists(mapCfgFileName.c_str()))
+	if( auto mapCfgFileName = fmt::format( "cfg/maps/{}.json", STRING( mapcfg ) ); g_pFileSystem->FileExists( mapCfgFileName.c_str() ) )
 	{
+		g_GameLogger->debug("Using map config file \"{}\"", mapcfg );
 		mapConfigFileName = std::move(mapCfgFileName);
 	}
 	else
@@ -571,16 +574,24 @@ void ServerLibrary::LoadServerConfigFiles()
 	// Initialize file lists to their defaults.
 	context.SentencesFiles.push_back("sound/sentences.json");
 	context.MaterialsFiles.push_back("sound/materials.json");
-	context.SkillFiles.push_back("cfg/skill.json");
+	context.SkillFiles.push_back("cfg/skills/default_skills.json");
 
 	if (g_pGameRules->IsMultiplayer())
 	{
-		context.SkillFiles.push_back("cfg/skill_multiplayer.json");
+		context.SkillFiles.push_back("cfg/skills/multiplayer.json");
 	}
 
-	if (g_pGameRules->IsCoOp())
-	{
-		context.SkillFiles.push_back("cfg/skill_coop.json");
+	if( g_pGameRules->IsCoOp() ) {
+		context.SkillFiles.push_back("cfg/skills/cooperative.json");
+	}
+	else if( g_pGameRules->IsTeamplay() ) {
+		context.SkillFiles.push_back("cfg/skills/teamplay.json");
+	}
+	else if( g_pGameRules->IsDeathmatch() ) {
+		context.SkillFiles.push_back("cfg/skills/deathmatch.json");
+	}
+	else if( g_pGameRules->IsCTF() ) {
+		context.SkillFiles.push_back("cfg/skills/capturetheflag.json");
 	}
 
 	context.EntityClassificationsFileName = "cfg/default_entity_classes.json";

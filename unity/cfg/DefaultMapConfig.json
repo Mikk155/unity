@@ -1,8 +1,17 @@
-// Default map configuration file.
-// This file simply includes the game config for Half-Life.
-// This file should never be included by another configuration file.
 {
-	"Includes": [
-		"cfg/HalfLifeConfig.json"
-	]
+	"Includes":
+	[
+		"cfg/BaseGameConfig.json"
+	],
+    "SectionGroups":
+	[
+		{
+            "Sections":
+			{
+                "HudColor": "222 67 236",
+				"CrosshairColor": "222 67 236",
+                "SuitLightType": "flashlight"
+            }
+        }
+    ]
 }

@@ -1,7 +1,6 @@
 // Multiplayer-only skill values
 {
 	"suitcharger": 30,
-			
 	"plr_crowbar": 25,
 	"plr_9mm_bullet": 12,
 	"plr_357_bullet": 40,
@@ -17,7 +16,6 @@
 	"plr_tripmine": 150,
 	"plr_hornet_dmg": 10,
 	"plr_grapple": 50,
-	
 	"crowbar_full_damage": 1,
 	"revolver_laser_sight": 1,
 	"smg_wide_spread": 1,
@@ -37,21 +35,14 @@
 	"grapple_fast": 1,
 	"m249_wide_spread": 1,
 	"shockrifle_fast": 1,
-	
 	"allow_flashlight" : 0,
-	
 	"allow_monsters": 0,
-	
 	"falldamagemode": 0,
-	
 	"healthcharger_recharge_time": 60,
 	"hevcharger_recharge_time": 30,
-	
 	"weapon_respawn_time": 20,
 	"ammo_respawn_time": 20,
 	"pickupitem_respawn_time": 30,
-	
 	"weapon_instant_respawn": 0,
-	
 	"allow_player_weapon_dropping": 1
 }
