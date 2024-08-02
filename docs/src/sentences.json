@@ -258,6 +258,30 @@
 "english": "First Team",
 "spanish": ""
 },
+"worldspawn::freeroam": {
+"english": "Monster roaming",
+"spanish": ""
+},
+"worldspawn::freeroam::-1": {
+"english": "Not defined (server operator)",
+"spanish": ""
+},
+"worldspawn::freeroam::0": {
+"english": "Disabled",
+"spanish": ""
+},
+"worldspawn::freeroam::1": {
+"english": "Enabled",
+"spanish": ""
+},
+"worldspawn::mapcfg": {
+"english": "Custom map cfg",
+"spanish": ""
+},
+"worldspawn::mapcfg::description": {
+"english": "The json file defined for configuration, the path is within cfg/maps/ no need to specify .json, if not defined is maps/mapname.json",
+"spanish": ""
+},
 "Mandatory::spawnflags::2048": {
 "english": "Only in SinglePlayer",
 "spanish": ""
@@ -1249,6 +1273,22 @@
 },
 "Unkillable::unkillable::1": {
 "english": "Yes",
+"spanish": ""
+},
+"Monster::freeroam": {
+"english": "Monster roaming",
+"spanish": ""
+},
+"Monster::freeroam::0": {
+"english": "Default (map freeroam)",
+"spanish": ""
+},
+"Monster::freeroam::1": {
+"english": "Never",
+"spanish": ""
+},
+"Monster::freeroam::2": {
+"english": "Always",
 "spanish": ""
 },
 "Monster::health": {

@@ -40,5 +40,5 @@ public:
 	string_t m_mapcfg;
 
 private:
-	int m_freeRoam;
+	int m_freeRoam = -1;
 };

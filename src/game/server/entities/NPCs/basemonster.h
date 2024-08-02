@@ -451,7 +451,6 @@ public:
 	 *	Then calls monster's member function to get a pointer to a schedule of the proper type.
 	 */
 	virtual const Schedule_t* GetSchedule();
-	const Schedule_t* GetFreeroamSchedule();
 	virtual void ScheduleChange() {}
 
 	/*

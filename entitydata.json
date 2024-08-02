@@ -64,6 +64,16 @@
 					0,
 					1
 				]
+			},
+			"freeroam":
+			{
+				"variable": "choices",
+				"value": -1,
+				"choices": [ -1, 0, 1 ]
+			},
+			"mapcfg":
+			{
+				"variable": "string"
 			}
 		}
 	},
@@ -388,7 +398,13 @@
 			"allow_item_dropping": { "variable": "choices", "value": 1, "choices": [ 0, 1 ] },
 			"allow_follow": { "variable": "choices", "value": 1, "choices": [ 0, 1 ] },
 			"UseSentence": { "variable": "string" },
-			"UnUseSentence": { "variable": "string" }
+			"UnUseSentence": { "variable": "string" },
+			"freeroam":
+			{
+				"variable": "choices",
+				"value": 0,
+				"choices": [ 0, 1, 2 ]
+			}
 		}
 	},
 	"Unkillable": { "Class": "Base", "data": { "unkillable": { "variable": "choices", "value": 0, "choices": [ 0, 1 ] } } },
@@ -2916,7 +2932,6 @@
 		"weapon_sporelauncher",
 		"weapon_tripmine",
 		"weaponbox",
-		"worldspawn",
 		"xen_hair",
 		"xen_plantlight",
 		"xen_spore_large",

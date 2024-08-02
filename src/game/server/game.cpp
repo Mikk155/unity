@@ -55,8 +55,6 @@ cvar_t sv_entityinfo_eager{"sv_entityinfo_eager", "1", FCVAR_SERVER};
 
 cvar_t sv_schedule_debug{"sv_schedule_debug", "0", FCVAR_SERVER};
 
-cvar_t mp_monster_roaming{"mp_monster_roaming", "0", FCVAR_SERVER};
-
 cvar_t mp_explode_satchels{"mp_explode_satchels", "1", FCVAR_SERVER};
 
 static bool SV_InitServer()
@@ -142,7 +140,6 @@ void GameDLLInit()
 
 	CVAR_REGISTER(&sv_schedule_debug);
 
-	CVAR_REGISTER(&mp_monster_roaming);
 	CVAR_REGISTER(&mp_explode_satchels);
 
 	// Link user messages immediately so there are no race conditions.

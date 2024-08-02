@@ -2,6 +2,11 @@
 {
 	// MONSTERS
 
+	// Monsters free roaming
+	// 0 = disabled, enabled for npc-explicit
+	// 1 = enabled, disabled for npc-explicit
+	"freeroam": 0,
+
 	// Alien Grunt
 	"agrunt_health": 120,
 	"agrunt_dmg_punch": 20,

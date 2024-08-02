@@ -431,9 +431,9 @@ void CWorld::Precache()
 
 	CVAR_SET_FLOAT("sv_wateramp", pev->scale);
 
-	if( m_freeRoam ) // Delayed so the map overrides the server's setting
+	if( m_freeRoam != -1 ) // Delayed so the map overrides the server's setting
 	{
-		CVAR_SET_FLOAT( "mp_monster_roaming", m_freeRoam );
+		g_Skill.SetValue( "freeroam"sv, m_freeRoam );
 	}
 }
 

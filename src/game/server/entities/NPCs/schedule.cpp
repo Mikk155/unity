@@ -1390,10 +1390,12 @@ const Schedule_t* CBaseMonster::GetSchedule()
 		}
 		else if (FRouteClear())
 		{
-			// no valid route!
-			const Schedule_t* freeroamSchedule = GetFreeroamSchedule();
-			if (freeroamSchedule)
-				return freeroamSchedule;
+			// no valid route! get freeroam or stand
+			return GetScheduleOfType( ( m_freeRoam == NPCRoamingMode::Always
+				|| m_freeRoam == NPCRoamingMode::MapDefault && g_Skill.GetValue( "freeroam"sv, 0 ) )
+
+				? SCHED_FREEROAM : SCHED_IDLE_STAND
+			);
 		}
 		else
 		{
@@ -1408,10 +1410,6 @@ const Schedule_t* CBaseMonster::GetSchedule()
 		{
 			return GetScheduleOfType(SCHED_VICTORY_DANCE);
 		}
-
-		const Schedule_t* freeroamSchedule = GetFreeroamSchedule();
-		if (freeroamSchedule)
-			return freeroamSchedule;
 
 		if (HasConditions(bits_COND_LIGHT_DAMAGE | bits_COND_HEAVY_DAMAGE))
 		{
@@ -1433,6 +1431,7 @@ const Schedule_t* CBaseMonster::GetSchedule()
 		{
 			return GetScheduleOfType(SCHED_ALERT_STAND);
 		}
+
 		break;
 	}
 	case MONSTERSTATE_COMBAT:
@@ -1538,14 +1537,6 @@ const Schedule_t* CBaseMonster::GetSchedule()
 	}
 
 	return &slError[0];
-}
-
-const Schedule_t* CBaseMonster::GetFreeroamSchedule()
-{
-	if( m_freeRoam == NPCRoamingMode::Always
-	||  m_freeRoam == NPCRoamingMode::MapDefault && (int)CVAR_GET_FLOAT( "mp_monster_roaming" ) == 1 )
-		return GetScheduleOfType( SCHED_FREEROAM );
-	return NULL;
 }
 
 bool CBaseMonster::JumpToTarget(Activity movementAct, float waitTime)
