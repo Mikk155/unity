@@ -413,6 +413,16 @@
 		"data": { "model": { "variable": "studio" }
 		}
 	},
+	"PlayerSelector":
+	{
+		"Class": "Base",
+		"data": {
+			"m_iPlayerSelector_1": { "variable": "choices", "value": 0, "choices": [ 0, 1 ], "title_choices": { "0": "PlayerSelector::0", "1": "Yes" } },
+			"m_iPlayerSelector_2": { "variable": "choices", "value": 0, "choices": [ 0, 2 ], "title_choices": { "0": "PlayerSelector::0", "2": "Yes" } },
+			"m_iPlayerSelector_4": { "variable": "choices", "value": 0, "choices": [ 0, 4 ], "title_choices": { "0": "PlayerSelector::0", "4": "Yes" } },
+			"m_iPlayerSelector_8": { "variable": "choices", "value": 0, "choices": [ 0, 8 ], "title_choices": { "0": "PlayerSelector::0", "8": "Yes" } }
+		}
+	},
 	"aiscripted_sequence":
 	{
 		"Class": "Point",
@@ -1586,7 +1596,7 @@
 			"var_value": { "variable": "string", "value": "" }
 		}
 	},
-	"logic_usevalue":
+	"trigger_usevalue":
 	{
 		"Class": "Point",
 		"data": {
@@ -2738,7 +2748,8 @@
 	"monstermaker": {
 		"Class": "Point",
 		"base": ["Angles"],
-		"size": [ [ -16, -16, -16 ], [ 16, 16, 16 ] ],
+		"color": [ 245, 128, 96 ],
+		"size": [ [ -16, -16, 0 ], [ 16, 16, 72 ] ],
 		"data": {
 			"target": {
 				"variable": "target_destination",
@@ -2872,8 +2883,21 @@
 		"Class": "Point",
 		"base": [ "Angles", "gibshooterbase"]
 	},
+	"player_respawn": {
+		"Class": "Solid",
+		"point": true,
+		"base": [ "PlayerSelector" ],
+		"size": [ [ -16, -16, -16 ], [ 16, 16, 16 ] ],
+		"data": {
+			"spawnflags": { "choices": [ "1", "2" ] },
+			"message": { "variable": "target_destination" },
+			"netname": { "variable": "target_destination" },
+			"target": { "variable": "target_destination" }
+		}
+	},
 	"EOF":
 	[
+		"player_respawn",
 		"player_loadsaved",
 		"player_setcrosshaircolor",
 		"player_sethealth",
@@ -3193,7 +3217,7 @@
 	},
 	"Door": {
 		"Class": "Base",
-		"base": ["Target", "CBaseDelay", "RenderFields", "Global", "Angles", "Master", "ReplacementFiles"],
+		"base": ["Target", "CBaseDelay", "RenderFields", "Global", "Angles", "Master", "ReplacementFiles", "minlight" ],
 		"data": {
 			"speed": {
 				"variable": "integer",
@@ -3259,16 +3283,12 @@
 			"unlocked_sentence": {
 				"variable": "string",
 				"value": ""
-			},
-			"_minlight": {
-				"variable": "string",
-				"value": ""
 			}
 		}
 	},
 	"BaseTank": {
 		"Class": "Base",
-		"base": ["Target", "RenderFields", "Global", "Angles", "Master", "ReplacementFiles"],
+		"base": ["Target", "RenderFields", "Global", "Angles", "Master", "ReplacementFiles", "minlight" ],
 		"data": {
 			"spawnflags": {
 				"choices": [
@@ -3359,10 +3379,6 @@
 			"maxRange": {
 				"variable": "string",
 				"value": "0"
-			},
-			"_minlight": {
-				"variable": "string",
-				"value": ""
 			},
 			"enemytype": {
 				"variable": "choices",
@@ -3483,7 +3499,7 @@
 	},
 	"func_train": {
 		"Class": "Solid",
-		"base": ["Global", "RenderFields", "ZHLT", "PlatSounds"],
+		"base": ["Global", "RenderFields", "ZHLT", "PlatSounds", "minlight" ],
 		"data": {
 			"target": {
 				"variable": "target_destination",
@@ -3512,10 +3528,6 @@
 				"choices": [
 					"8"
 				]
-			},
-			"_minlight": {
-				"variable": "string",
-				"value": ""
 			}
 		}
 	},
@@ -3682,41 +3694,9 @@
 	},
 	"player_weaponstrip": {
 		"Class": "Point",
+		"base": [ "PlayerSelector" ],
 		"size": [ [ -16, -16, -16 ], [ 16, 16, 16 ] ],
-		"data": {
-			"all_players": {
-				"variable": "choices",
-				"value": "0",
-				"choices": [
-					"0",
-					"1"
-				]
-			},
-			"strip_weapons": {
-				"variable": "choices",
-				"value": "1",
-				"choices": [
-					"0",
-					"1"
-				]
-			},
-			"strip_suit": {
-				"variable": "choices",
-				"value": "0",
-				"choices": [
-					"0",
-					"1"
-				]
-			},
-			"strip_longjump": {
-				"variable": "choices",
-				"value": "0",
-				"choices": [
-					"0",
-					"1"
-				]
-			}
-		}
+		"data": { "spawnflags": { "choices": [ 1 ] } }
 	},
 	"scripted_sentence": {
 		"Class": "Point",
@@ -4103,7 +4083,7 @@
 	},
 	"trigger_eventhandler": {
 		"Class": "Point",
-		"base": ["Target", "CBaseDelay", "AllocNewEntity" ],
+		"base": ["Target", "CBaseDelay", "AllocNewActivator" ],
 		"data": {
 			"m_Caller": {
 				"variable": "target_destination",

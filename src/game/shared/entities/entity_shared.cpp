@@ -169,6 +169,8 @@ DEFINE_FIELD(m_pGoalEnt, FIELD_CLASSPTR),
 	DEFINE_FIELD( m_UseLocked, FIELD_INTEGER ),
 	DEFINE_FIELD( m_appearflag_notin, FIELD_INTEGER ),
 	DEFINE_FIELD( m_appearflag_onlyin, FIELD_INTEGER ),
+	DEFINE_FIELD( m_iPlayerSelector, FIELD_INTEGER ),
+	DEFINE_FIELD( m_sNewActivator, FIELD_STRING ),
 END_DATAMAP();
 
 void CBaseEntity::OnCreate()

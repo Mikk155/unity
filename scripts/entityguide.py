@@ -54,11 +54,16 @@ def build():
 
     entities_html = open( f'{abs}/docs/entities.html', 'w' )
 
+    tabledir = f'{abs}/docs/entityguide/entities/table'
+
+    if not os.path.exists( tabledir ):
+        os.makedirs( tabledir )
+
     for classname in entities:
 
         entities_html.write( f'<li><button class="menu-firstsub" onclick="SFX(\'sfx_open\');fetchent(\'{classname}\')" onmouseenter="SFX(\'sfx_view\')">{classname}</li>\n' )
 
-        with open( f'{abs}/docs/entityguide/entities/table/{classname}.html', 'w' ) as entfile:
+        with open( f'{tabledir}/{classname}.html', 'w' ) as entfile:
 
             entfile.write( f'<h1>{classname}</h1>\n')
             entfile.write( f'<h2 pkvd="{classname}::classname"></h2>\n')

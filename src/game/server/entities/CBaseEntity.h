@@ -92,6 +92,15 @@ enum appearflags : int
 	SV_DEDICATED
 };
 
+enum PlayerSelector
+{
+	None = 0,
+	Activator = 1,
+	Alive = 2,
+	Dead = 4,
+	NonActivator = 8
+};
+
 // people gib if their health is <= this at the time of death
 #define GIB_HEALTH_VALUE -30
 
@@ -665,6 +674,9 @@ public:
 	int m_appearflag_notin = (int)appearflags::DEFAULT;
 	int m_appearflag_onlyin = (int)appearflags::DEFAULT;
 	bool CheckAppearanceFlags();
+
+	int m_iPlayerSelector = PlayerSelector::None;
+	bool IsPlayerSelector( CBasePlayer* pPlayer, CBaseEntity* pActivator );
 };
 
 inline bool FNullEnt(CBaseEntity* ent) { return (ent == nullptr) || FNullEnt(ent->edict()); }

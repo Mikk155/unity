@@ -425,7 +425,7 @@ public:
 	void Use( CBaseEntity* pActivator, CBaseEntity* pCaller, USE_TYPE useType, float value ) override;
 };
 
-LINK_ENTITY_TO_CLASS( logic_usevalue, CLogicUseValue );
+LINK_ENTITY_TO_CLASS( trigger_usevalue, CLogicUseValue );
 
 void CLogicUseValue :: Use( CBaseEntity* pActivator, CBaseEntity* pCaller, USE_TYPE useType, float value )
 {

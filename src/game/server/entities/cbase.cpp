@@ -633,6 +633,12 @@ bool CBaseEntity::RequiredKeyValue(KeyValueData* pkvd)
 		m_sNewActivator = ALLOC_STRING( pkvd->szValue );
 		return true;
 	}
+	else if( std::string( pkvd->szKeyName ).find( "m_iPlayerSelector" ) == 0 )
+	{
+		if( atoi( pkvd->szValue ) > 0 )
+			SetBits( m_iPlayerSelector, atoi( pkvd->szValue ) );
+		return true;
+	}
 
 	return false;
 }
@@ -1013,4 +1019,24 @@ CBaseEntity* CBaseEntity :: AllocNewActivator( CBaseEntity* pActivator, CBaseEnt
 	}
 
 	return pActivator;
+}
+
+bool CBaseEntity :: IsPlayerSelector( CBasePlayer* pPlayer, CBaseEntity* pActivator )
+{
+	if( m_iPlayerSelector == PlayerSelector::None )
+		return true;
+
+	if( FBitSet( m_iPlayerSelector, PlayerSelector::NonActivator ) && pPlayer != pActivator )
+		return true;
+
+	if( FBitSet( m_iPlayerSelector, PlayerSelector::Activator ) && pPlayer == pActivator )
+		return true;
+
+	if( FBitSet( m_iPlayerSelector, PlayerSelector::Alive ) && pPlayer->IsAlive() )
+		return true;
+
+	if( FBitSet( m_iPlayerSelector, PlayerSelector::Dead ) && !pPlayer->IsAlive() )
+		return true;
+
+	return false;
 }

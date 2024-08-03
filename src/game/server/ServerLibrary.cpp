@@ -515,7 +515,7 @@ void ServerLibrary::LoadServerConfigFiles()
 
 	if( auto mapCfgFileName = fmt::format( "cfg/maps/{}.json", STRING( mapcfg ) ); g_pFileSystem->FileExists( mapCfgFileName.c_str() ) )
 	{
-		g_GameLogger->debug("Using map config file \"{}\"", mapcfg );
+		g_GameLogger->debug("Using map config file \"{}\"", STRING( mapcfg ) );
 		mapConfigFileName = std::move(mapCfgFileName);
 	}
 	else

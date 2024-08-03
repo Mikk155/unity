@@ -136,10 +136,6 @@ target_sources(server PRIVATE
 	entities/subs.cpp
 	entities/teleport_entities.cpp
 	entities/trains.h
-	entities/trigger/entity_condition.cpp
-	entities/trigger/entity_iterator.cpp
-	entities/trigger/eventhandler.cpp
-	entities/trigger/eventhandler.h
 	entities/triggers.cpp
 	entities/world.cpp
 	entities/world.h
@@ -185,16 +181,7 @@ target_sources(server PRIVATE
 	entities/items/weapons/CSpore.cpp
 	entities/items/weapons/CSpore.h
 	entities/items/weapons/weapons.cpp
-	
-	entities/rope/CElectrifiedWire.cpp
-	entities/rope/CElectrifiedWire.h
-	entities/rope/CRope.cpp
-	entities/rope/CRope.h
-	entities/rope/CRopeSample.cpp
-	entities/rope/CRopeSample.h
-	entities/rope/CRopeSegment.cpp
-	entities/rope/CRopeSegment.h
-	
+
 	entities/NPCs/basemonster.h
 	entities/NPCs/combat.cpp
 	entities/NPCs/defaultai.cpp
@@ -288,7 +275,24 @@ target_sources(server PRIVATE
 	entities/NPCs/zombies/zombie.h
 	entities/NPCs/zombies/zombie_barney.cpp
 	entities/NPCs/zombies/zombie_soldier.cpp
-	
+
+	entities/player/respawn.cpp
+	entities/player/weaponstrip.cpp
+
+	entities/rope/CElectrifiedWire.cpp
+	entities/rope/CElectrifiedWire.h
+	entities/rope/CRope.cpp
+	entities/rope/CRope.h
+	entities/rope/CRopeSample.cpp
+	entities/rope/CRopeSample.h
+	entities/rope/CRopeSegment.cpp
+	entities/rope/CRopeSegment.h
+
+	entities/trigger/entity_condition.cpp
+	entities/trigger/entity_iterator.cpp
+	entities/trigger/eventhandler.cpp
+	entities/trigger/eventhandler.h
+
 	gamerules/CGameRules.cpp
 	gamerules/CGameRules.h
 	gamerules/CHalfLifeCoopplay.cpp
