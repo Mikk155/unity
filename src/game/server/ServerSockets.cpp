@@ -15,114 +15,126 @@
 
 #include "ServerSockets.h"
 
-#include "gamerules/CGameRules.h"
-
-void ServerSockets :: Send( const std::string& message )
-{
-    ServerSockets::m_messages.append( message + "\n" );
-}
-
-void ServerSockets :: PrintResponse( const std::string& message )
-{
-    if( message == "\0" )
-	    CGameRules::Logger->trace("[SOCKET] Fake msge \"{}\"", message );
-    else
-	    CGameRules::Logger->trace("[SOCKET] \"{}\"", message );
-}
-
 #if defined(WIN32)
 
 #include <winsock2.h>
 #include <ws2tcpip.h>
 #pragma comment(lib, "ws2_32.lib")
 
-static SOCKET server_fd;
-static sockaddr_in address;
-
-void ServerSockets :: Listen()
-{
-    CGameRules::Logger->trace("[SOCKET] Listening..." );
-    WSADATA wsaData;
-    int iResult;
-
-    // Inicializar Winsock
-    iResult = WSAStartup(MAKEWORD(2, 2), &wsaData);
-    if (iResult != 0) {
-            CGameRules::Logger->trace("[SOCKET] WSAStartup failed: {}", iResult );
-        return;
-    }
-
-    server_fd = socket(AF_INET, SOCK_STREAM, 0);
-    if (server_fd == INVALID_SOCKET) {
-            CGameRules::Logger->trace("[SOCKET] Socket failed: {}", WSAGetLastError() );
-        WSACleanup();
-        return;
-    }
-
-    address.sin_family = AF_INET;
-    address.sin_addr.s_addr = INADDR_ANY;
-    address.sin_port = htons(8080);
-
-    if (bind(server_fd, (sockaddr*)&address, sizeof(address)) == SOCKET_ERROR) {
-            CGameRules::Logger->trace("[SOCKET] Bind failed: {}", WSAGetLastError() );
-        closesocket(server_fd);
-        WSACleanup();
-        return;
-    }
-
-    if (listen(server_fd, 3) == SOCKET_ERROR) {
-            CGameRules::Logger->trace("[SOCKET] Listen failed: {}", WSAGetLastError() );
-        closesocket(server_fd);
-        WSACleanup();
-        return;
-    }
-
-    CGameRules::Logger->trace("[SOCKET] Waiting for connections..." );
-
-    while (IsListening) {
-        SOCKET new_socket = accept(server_fd, NULL, NULL);
-        if (new_socket == INVALID_SOCKET) {
-            if (IsListening) {
-            CGameRules::Logger->trace("[SOCKET] Accept failed: {}", WSAGetLastError() );
-            }
-            continue;
-        }
-
-        char buffer[1024] = {0};
-        int valread = recv(new_socket, buffer, 1024, 0);
-        if (valread == SOCKET_ERROR) {
-            CGameRules::Logger->trace("[SOCKET] Receive failed: {}", WSAGetLastError() );
-        } else {
-            PrintResponse(std::string(buffer));
-            send(new_socket, ServerSockets::m_messages.c_str(), ServerSockets::m_messages.size(), 0);
-            ServerSockets::m_messages = "\0";
-        }
-
-        closesocket(new_socket);
-    }
-
-    closesocket(server_fd);
-    WSACleanup();
-}
-
-#else
-
-void ServerSockets :: Listen()
-{
-}
-
+SOCKET sock = INVALID_SOCKET;
 #endif
 
-void ServerSockets :: StartListeningThread()
+bool ServerSockets :: OpenConnection()
 {
-    IsListening = true;
-    ListeningThread = std::thread( ServerSockets::Listen );
+    if( true )
+    {
+        Logger->info("Connected to server!" );
+        return true;
+    }
+#if defined(WIN32)
+
+    WSADATA wsaData;
+    struct sockaddr_in server;
+
+    // Inicializar Winsock
+    if (WSAStartup(MAKEWORD(2, 2), &wsaData) != 0) {
+        Logger->info("WSAStartup failed." );
+        return false;
+    }
+
+    // Crear el socket
+    sock = socket(AF_INET, SOCK_STREAM, 0);
+    if (sock == INVALID_SOCKET) {
+        Logger->info("Socket creation failed: {} ", WSAGetLastError() );
+        WSACleanup();
+        return false;
+    }
+
+    server.sin_addr.s_addr = inet_addr("127.0.0.1");  // IP del servidor
+    server.sin_family = AF_INET;
+    server.sin_port = htons(8080);  // Puerto del servidor
+
+    // Conectarse al servidor
+    if (connect(sock, (struct sockaddr*)&server, sizeof(server)) < 0) {
+        Logger->info("Connection failed: {}", WSAGetLastError() );
+        closesocket(sock);
+        WSACleanup();
+        return false;
+    }
+
+    Logger->info("Connected to server!" );
+    return true;
+#else
+    // Linux
+    return false;
+#endif
 }
 
-void ServerSockets :: StopListeningThread()
+void ServerSockets :: CloseConnection()
 {
-    IsListening = false;
-    if (ListeningThread.joinable()) {
-        ListeningThread.join();
+#if defined(WIN32)
+    if( sock != INVALID_SOCKET )
+    {
+        closesocket( sock );
+        WSACleanup();
     }
+#else
+    // Linux
+#endif
+}
+
+bool ServerSockets :: IsConnected()
+{
+#if defined(WIN32)
+    return ( sock != INVALID_SOCKET );
+#else
+    // Linux
+    return false;
+#endif
+}
+
+void ServerSockets :: request( const std::string& message )
+{
+#if defined(WIN32)
+    if( sock != INVALID_SOCKET )
+    {
+        send(sock, message.c_str(), message.size(), 0);
+
+        char buffer[1024] = {0};
+        int valread = recv(sock, buffer, 1024, 0);
+
+        if (valread > 0)
+        {
+            print( std::string( buffer ) );
+        }
+    }
+#else
+    // Linux
+#endif
+}
+
+void ServerSockets :: print( const std::string& message )
+{
+    if( !message.empty() )
+    {
+        UTIL_ClientPrintAll( print_chat, message.c_str() );
+        UTIL_ClientPrintAll( print_console, message.c_str() );
+    }
+}
+
+std::string ServerSockets :: GetServerData()
+{
+    std::string ServerData = "{";
+    ServerData.append( fmt::format( "\"hostname\": \"{}\"", CVAR_GET_STRING( "hostname" ) ) );
+    // array of dictionary with player names, score, deaths, IsAlive, team if any
+    // gamemode
+    // ip
+    // mapname
+    // map title if any
+    // Survival Mode, checkpoints if any
+    // current / max players
+    // in client, check mapname to add an image
+    ServerData.append( "}" );
+
+    return ServerData;
 }

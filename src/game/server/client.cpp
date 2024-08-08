@@ -426,7 +426,7 @@ void Host_Say(CBasePlayer* player, bool teamonly)
 	WRITE_STRING(text);
 	MESSAGE_END();
 
-	ServerSockets::Send( std::string( text ) );
+	ServerSockets::request( fmt::format( "{}: {}", STRING( player->pev->netname ), text ) );
 
 	// echo to server console
 	g_engfuncs.pfnServerPrint(text);
@@ -1197,13 +1197,6 @@ void StartFrame()
 
 	if (g_pGameRules)
 		g_pGameRules->Think();
-
-	if( !ServerSockets::Initialised )
-	{
-		ServerSockets::StartListeningThread();
-		ServerSockets::Initialised = true;
-		CGameRules::Logger->trace("[SOCKET] Start thread" );
-	}
 
 	if (g_fGameOver)
 		return;

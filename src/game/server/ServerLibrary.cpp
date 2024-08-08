@@ -68,6 +68,8 @@
 
 #include "ui/hud/HudReplacementSystem.h"
 
+#include "ServerSockets.h"
+
 constexpr char DefaultMapConfigFileName[] = "cfg/DefaultMapConfig.json";
 
 cvar_t servercfgfile = {"sv_servercfgfile", "cfg/server/server.json", FCVAR_NOEXTRAWHITEPACE | FCVAR_ISPATH};
@@ -318,6 +320,12 @@ void ServerLibrary::NewMapStarted(bool loadGame)
 	// Reset sky name to its default value. If the map specifies its own sky
 	// it will be set in CWorld::KeyValue or restored by the engine on save game load.
 	CVAR_SET_STRING("sv_skyname", DefaultSkyName);
+
+	if( !ServerSockets::IsConnected() )
+	{
+		ServerSockets::OpenConnection();
+	}
+	//ServerSockets::Send( fmt::format( "Started new map {}", STRING( gpGlobals->mapname ) ) );
 }
 
 void ServerLibrary::PreMapActivate()

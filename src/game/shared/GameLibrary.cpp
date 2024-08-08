@@ -36,6 +36,8 @@
 #include "utils/JSONSystem.h"
 #include "utils/ReplacementMaps.h"
 
+#include "ServerSockets.h"
+
 bool GameLibrary::Initialize()
 {
 	if (!FileSystem_LoadFileSystem())
@@ -56,6 +58,7 @@ bool GameLibrary::Initialize()
 	g_GameLogger = g_Logging.CreateLogger("game");
 	g_AssertLogger = g_Logging.CreateLogger("assert");
 	CBaseEntity::Logger = g_Logging.CreateLogger("ent");
+	ServerSockets::Logger = g_Logging.CreateLogger("Sockets");
 	CBasePlayerWeapon::WeaponsLogger = g_Logging.CreateLogger("ent.weapons");
 
 	g_GameSystems.Invoke(&IGameSystem::PostInitialize);

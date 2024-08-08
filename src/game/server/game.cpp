@@ -57,6 +57,8 @@ cvar_t sv_schedule_debug{"sv_schedule_debug", "0", FCVAR_SERVER};
 
 cvar_t mp_explode_satchels{"mp_explode_satchels", "1", FCVAR_SERVER};
 
+cvar_t sv_sockets{"sv_sockets", "0", FCVAR_SERVER};
+
 static bool SV_InitServer()
 {
 	if (!FileSystem_LoadFileSystem())
@@ -141,6 +143,8 @@ void GameDLLInit()
 	CVAR_REGISTER(&sv_schedule_debug);
 
 	CVAR_REGISTER(&mp_explode_satchels);
+
+	CVAR_REGISTER(&sv_sockets);
 
 	// Link user messages immediately so there are no race conditions.
 	LinkUserMessages();

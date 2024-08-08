@@ -50,6 +50,8 @@ extern cvar_t sv_schedule_debug;
 
 extern cvar_t mp_explode_satchels;
 
+extern cvar_t sv_sockets;
+
 // Engine Cvars
 inline cvar_t* g_psv_gravity;
 inline cvar_t* g_psv_aim;

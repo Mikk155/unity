@@ -13,27 +13,36 @@
  *
  ****/
 
+#include "cbase.h"
+
 #include <iostream>
 #include <cstring>
 #include <string>
-#include <thread>
+
+#include <spdlog/logger.h>
 
 #pragma once
 
+// Need linux version wich as i dont know and can't test i won't do it for myself, pull requests are welcome
 namespace ServerSockets
 {
-    namespace {
-        std::string m_messages;
-    }
+    // Logger
+	static inline std::shared_ptr<spdlog::logger> Logger;
 
-    static std::thread thread;
-    static bool Initialised = false;
-    static std::atomic<bool> IsListening;
-    static std::thread ListeningThread;
+    // Opens the connection, Returns false if fails
+    bool OpenConnection();
+    // Closes the connection
+    void CloseConnection();
 
-    void Listen();
-    void Send( const std::string& message );
-    void PrintResponse( const std::string& message );
-    void StartListeningThread();
-    void StopListeningThread();
+    // Returns whatever the client is connected
+    bool IsConnected();
+
+    // Get the server information as a string in a json format ready to load
+    std::string GetServerData();
+
+    // Sends a string to the server connection
+    void request( const std::string& message );
+
+    // Prints in the game chat
+    void print( const std::string& message );
 }
