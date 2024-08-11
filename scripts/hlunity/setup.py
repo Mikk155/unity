@@ -16,5 +16,7 @@ setup(
         "Operating System :: OS Independent",
     ],
     python_requires='>=3.11',
-    libraries=[ "requests" ]
+    install_requires=[
+        "requests"
+    ],
 )
