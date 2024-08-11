@@ -6,23 +6,16 @@
 # Generate a fresh one on releases
 unity/half-life-unity-*.fgd
 
-# Local testing
-modinstall/
-modinstall/*
-unity/mods/port/
-unity/mods/port/*
-unity/mods/src/
-unity/mods/src/*
-unity/mods/*.exe
+# Local testing library
+scripts/hlunity/hlunity/test.*
+scripts/hlunity/hlunity/unity/
+
+src/mods/
+src/mods/src/
 
 # CMake project
 build/*
-build/
 
 # Python cache
 *.pyc
 *__pycache__/
-
-deliver/
-bshift/
-.gitignore
