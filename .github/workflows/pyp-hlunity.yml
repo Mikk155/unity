@@ -5,16 +5,30 @@ on:
     branches:
       - master
     paths:
-      - 'scripts/hlunity/setup.py' # Cuando cambiemos la version de setup.py
       - '.github/workflows/pyp-hlunity.yml'
 
 jobs:
   build:
     runs-on: ubuntu-latest
 
+    env:
+      PACKAGE_VERSION: "1.5"
+
     steps:
       - name: Checkout code
         uses: actions/checkout@v2
+
+      - name: Check hlunity version
+        id: check-version
+        run: |
+          LATEST_VERSION=$(python -m pip install hlunity==999.999.999 2>&1 | grep -Po '(?<=from versions: ).*' | tr ', ' '\n' | sort -V | tail -n 1)
+          echo "Latest published version: $LATEST_VERSION"
+          if [ "$(printf '%s\n' "$PACKAGE_VERSION" "$LATEST_VERSION" | sort -V | head -n 1)" = "$LATEST_VERSION" ]; then
+            echo "Updating Version $LATEST_VERSION to $PACKAGE_VERSION"
+          else
+            echo "Error: Version $PACKAGE_VERSION is older than $LATEST_VERSION"
+            exit 1
+          fi
 
       - name: Set up Python
         uses: actions/setup-python@v2
@@ -28,11 +42,13 @@ jobs:
 
       - name: Build package
         run: |
-          python scripts/hlunity/setup.py sdist bdist_wheel
+          cd scripts/hlunity
+          python setup.py sdist bdist_wheel --version=${{ env.PACKAGE_VERSION }}
 
       - name: Publish package to PyPI
         env:
           TWINE_USERNAME: __token__
           TWINE_PASSWORD: ${{ secrets.PYPI_API_TOKEN }}
         run: |
+          cd scripts/hlunity
           twine upload dist/*
