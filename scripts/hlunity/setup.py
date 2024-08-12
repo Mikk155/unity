@@ -1,10 +1,32 @@
 from setuptools import setup, find_packages
 from os import getenv
+from requests import get
 
 PACKAGE_VERSION = getenv( "PACKAGE_VERSION" )
 
 if not PACKAGE_VERSION or PACKAGE_VERSION == '':
-    raise ValueError( f'Can not get PACKAGE_VERSION from enviroment variables {PACKAGE_VERSION}')
+    raise ValueError( f'Can not get PACKAGE_VERSION from enviroment variables {PACKAGE_VERSION}' )
+
+proj_url = "https://pypi.org/pypi/hlunity/json"
+
+response = get( proj_url )
+
+#if response.status_code != 200:
+#    print(f'Failed to get a response from ')
+#    exit(1)
+
+response.raise_for_status()
+
+data = response.json()
+
+versions = list( data[ 'releases' ].keys() )
+
+latest_version = float( versions[ len( versions ) - 1 ] )
+
+PACKAGE_VERSION = 1.6
+
+if PACKAGE_VERSION <= latest_version:
+    raise FileExistsError( f'Version can NOT update {PACKAGE_VERSION}, a newer version already exists ({latest_version})' )
 
 setup(
     name="hlunity",

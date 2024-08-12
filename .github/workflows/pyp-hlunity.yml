@@ -18,18 +18,6 @@ jobs:
       - name: Checkout code
         uses: actions/checkout@v2
 
-      - name: Check package version
-        id: check-version
-        run: |
-          LATEST_VERSION=$(curl -s https://pypi.org/pypi/hlunity/json | python3 -c "import sys, json; print(sorted(json.load(sys.stdin)['releases'].keys(), key=lambda s: list(map(int, s.split('.'))))[-1])")
-          echo "Latest published version: $LATEST_VERSION"
-          if [ "$(printf '%s\n' "$PACKAGE_VERSION" "$LATEST_VERSION" | sort -V | head -n 1)" = "$LATEST_VERSION" ]; then
-            echo "Error: Version $PACKAGE_VERSION is the same or older than the latest published version $LATEST_VERSION"
-            exit 1
-          else
-            echo "Proceeding to publish Version $PACKAGE_VERSION"
-          fi
-
       - name: Set up Python
         uses: actions/setup-python@v2
         with:
@@ -37,8 +25,9 @@ jobs:
 
       - name: Install dependencies
         run: |
+          cd scripts/hlunity
           python -m pip install --upgrade pip
-          pip install setuptools wheel twine
+          pip install -r requirements.txt
 
       - name: Build package
         env:
