@@ -2,7 +2,7 @@
 
 import os
 from __main__ import abs
-from scripts.jsonc import jsonc
+from hlunity import jsonc
 
 def write_table( classname:str, key:str, values:dict, file=None, choices=None, get='value' ):
 
@@ -40,7 +40,7 @@ def read_base( data:list[str], classname:str, file, entitydata:dict ):
 
 def build():
 
-    entitydata = jsonc( open( f'{abs}/entitydata.json', 'r' ).readlines() ).load()
+    entitydata = jsonc( f'{abs}/entitydata.json' )
 
     entities = []
 

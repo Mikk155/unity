@@ -1,7 +1,7 @@
 # This script builds the FGD file with whatever entitydata.json has
 
 from __main__ import abs
-from scripts.jsonc import jsonc
+from hlunity import jsonc
 
 Language = ''
 #Languages = [ 'english', 'spanish' ]
@@ -220,7 +220,7 @@ def write_data( key, value={} ):
 def build():
 
     global entitydata
-    entitydata = jsonc( open( f'{abs}/entitydata.json', 'r' ).readlines() ).load()
+    entitydata = jsonc( f'{abs}/entitydata.json' )
 
     entities = []
     classess = []
@@ -234,7 +234,7 @@ def build():
     entities.sort()
 
     global sentences
-    sentences = jsonc( open( f'{abs}/docs/src/sentences.json', 'r' ).readlines() ).load()
+    sentences = jsonc( f'{abs}/docs/src/sentences.json' )
 
     for lang in Languages:
 
