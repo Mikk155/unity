@@ -1,8 +1,14 @@
 from setuptools import setup, find_packages
+from os import getenv
+
+PACKAGE_VERSION = getenv( "PACKAGE_VERSION" )
+
+if not PACKAGE_VERSION or PACKAGE_VERSION == '':
+    raise ValueError( f'Can not get PACKAGE_VERSION from enviroment variables {PACKAGE_VERSION}')
 
 setup(
     name="hlunity",
-    version="1.0",
+    version=f"{PACKAGE_VERSION}",
     author="Mikk155",
     author_email="",
     description="Utilities for scripting in my projects, almost is goldsource-related",

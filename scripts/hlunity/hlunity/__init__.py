@@ -22,20 +22,6 @@ FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER
 DEALINGS IN THE SOFTWARE.
 """
 
-import io
-import os
-import re
-import json
-import struct
-import shutil
-import locale
-import inspect
-import requests
-import platform
-from zipfile import ZipFile
-
-import __main__ as main
-
 __Logger__ = {
     "#init_nro1":
     {
@@ -120,11 +106,15 @@ __Logger__ = {
     },
 }
 
-syslang = locale.getlocale()
-lang = syslang[0]
-if lang.find( '_' ) != -1:
-    lang = lang[ 0 : lang.find( '_' ) ]
-language = str( lang.lower() )
+def __get_language__():
+    import locale
+    syslang = locale.getlocale()
+    lang = syslang[0]
+    if lang.find( '_' ) != -1:
+        lang = lang[ 0 : lang.find( '_' ) ]
+    return str( lang.lower() )
+
+language = __get_language__()
 '''
 Returns the OS's language, example ``english``, ``spanish``
 '''
@@ -200,17 +190,18 @@ def set_logger( logger_level: LOGGER_LEVEL ):
     elif __LOGGER_LEVEL__ < LOGGER_LEVEL.USER:
         __LOGGER_LEVEL__ = LOGGER_LEVEL.USER
 
-def logger( message: str, arguments: dict | list[str] = [], logger_level: LOGGER_LEVEL = LOGGER_LEVEL.USER ):
+def logger( message: str, arguments: dict | list[str] = [], logger_level: int = LOGGER_LEVEL.USER ):
     '''
     Prints message replacing {} with ``arguments``
 
     use ``set_logger( logger_level: LOGGER_LEVEL )`` to enable specific levels
     '''
     global __LOGGER_LEVEL__
-    if int(__LOGGER_LEVEL__) >= int(logger_level):
+    if __LOGGER_LEVEL__ >= logger_level:
         printf( message, arguments, True, True )
 
 def makedirs_file( file_path : str ):
+
     index = file_path.rfind( '\\' )
     find = '\\'
     if file_path.rfind( '/' ) > index:
@@ -218,8 +209,11 @@ def makedirs_file( file_path : str ):
         find = '/'
     if index != -1:
         __makedirs__ = file_path[ : file_path.rfind( find ) ]
-        if not os.path.exists( __makedirs__ ):
-            os.makedirs( __makedirs__ )
+
+        from os import path, makedirs
+
+        if not path.exists( __makedirs__ ):
+            makedirs( __makedirs__ )
 
 def jsonc( obj : list[str] | str ) -> dict | list:
     '''
@@ -241,7 +235,8 @@ def jsonc( obj : list[str] | str ) -> dict | list:
         if __line__ and __line__ != '' and not __line__.startswith( '//' ):
             __js_split__ = f'{__js_split__}\n{__line__}'
 
-    return json.loads( __js_split__ )
+    from json import loads
+    return loads( __js_split__ )
 
 class Vector:
     '''
@@ -258,7 +253,9 @@ class Vector:
 
         if isinstance( x, str ):
 
-            x = re.sub( r'[^0-9. ]', '', x )
+            from re import sub
+
+            x = sub( r'[^0-9. ]', '', x )
 
             __values__ = x.split( ',' ) if x.find( ',' ) != -1 else x.split()
 
@@ -366,16 +363,19 @@ def STEAM() -> str:
     Get steam's installation path
     '''
 
-    __OS__ = platform.system()
+    from platform import system
+    __OS__ = system()
+
+    from os import path
 
     if __OS__ == "Windows":
         __paths__ = [
-            os.path.expandvars( r"%ProgramFiles(x86)%\Steam" ),
-            os.path.expandvars( r"%ProgramFiles%\Steam" )
+            path.expandvars( r"%ProgramFiles(x86)%\Steam" ),
+            path.expandvars( r"%ProgramFiles%\Steam" )
         ]
 
         for __path__ in __paths__:
-            if os.path.exists( __path__ ):
+            if path.exists( __path__ ):
                 return __path__
 
         try:
@@ -392,8 +392,8 @@ def STEAM() -> str:
         ]    
 
         for __path__ in __paths__:
-            if os.path.exists( __path__ ):
-                return os.path.dirname( os.path.abspath( __path__ ) )
+            if path.exists( __path__ ):
+                return path.dirname( path.abspath( __path__ ) )
         return None
 
     else:
@@ -407,9 +407,11 @@ def HALFLIFE() -> str:
 
     __STEAM__ = STEAM()
 
+    from os import path
+
     if __STEAM__:
         __HALFLIFE__ = f'{__STEAM__}\steamapps\common\Half-Life'
-        if os.path.exists( __HALFLIFE__ ):
+        if path.exists( __HALFLIFE__ ):
             return __HALFLIFE__
 
     try:
@@ -429,9 +431,13 @@ class pak:
     '''
     def __init__( self, path_to_mod ):
 
+        import struct
+        from os import path, makedirs, walk
+        from re import sub
+
         paks = []
 
-        for root, dirs, files in os.walk( path_to_mod ):
+        for root, dirs, files in walk( path_to_mod ):
             for file in files:
                 if wildcard( file, '*pak*.pak' ):
                     paks.append( file )
@@ -461,7 +467,7 @@ class pak:
             for i in range( num_files ):
                 entry = dir_data[ i * 64 : ( i + 1 ) * 64 ]
                 name = entry[ : 56 ].split( b'\x00', 1 )[0].decode( 'latin-1' )
-                name = re.sub( r'[^a-zA-Z0-9_\-./!]', '', name ) # May be missing something X[
+                name = sub( r'[^a-zA-Z0-9_\-./!]', '', name ) # May be missing something X[
                 ( offset, length ) = struct.unpack( 'ii', entry[ 56 : ] )
                 __files__[ name ] = ( offset, length )
 
@@ -469,10 +475,10 @@ class pak:
                 __pak__.seek( offset )
                 data = __pak__.read( length )
 
-                extract_path = os.path.join( path_to_mod, name )
-                os.makedirs( os.path.dirname( extract_path ), exist_ok=True )
+                extract_path = path.join( path_to_mod, name )
+                makedirs( path.dirname( extract_path ), exist_ok=True )
 
-                if os.path.exists( extract_path ):
+                if path.exists( extract_path ):
                     logger( __Logger__[ '#pak_Skipping' ], [ name ], LOGGER_LEVEL.ALL )
                     continue
 
@@ -494,8 +500,11 @@ def convert_blueshift_bsp( bsp_path : str, bsp_output : str ):
     Converts a Blue-Shift BSP to a generic goldsource BSP
     '''
 
+    import struct
+    from shutil import copy
+
     if bsp_path != bsp_output:
-        shutil.copy( bsp_path, bsp_output )
+        copy( bsp_path, bsp_output )
 
     __LUMP_HEADER__ = 15
     __VERSION__ = 0
@@ -522,7 +531,9 @@ def convert_blueshift_bsp( bsp_path : str, bsp_output : str ):
             return
 
         header[__LUMPS__][0], header[__LUMPS__][1] = header[__LUMPS__][1], header[__LUMPS__][0]
-        file.seek(start, os.SEEK_SET)
+
+        from os import SEEK_SET
+        file.seek(start, SEEK_SET)
 
         data = struct.pack( 'i', header[__VERSION__] )
         for lump in header[__LUMPS__]:
@@ -648,6 +659,8 @@ class Ripent:
 
     def __manipulate_lump__( self, ent_data : list[Entity] | list[dict] = None ) -> list[Entity]:
 
+        from json import loads, dumps
+
         with open( self.path, 'rb+' ) as bsp_file:
 
             bsp_file.read(4) # BSP version.
@@ -665,7 +678,7 @@ class Ripent:
                     if isinstance( entblock, Entity ):
                         entblock = entblock.ToDict()
                     elif not isinstance( entblock, dict ):
-                        entblock = json.loads( entblock )
+                        entblock = loads( entblock )
 
                     if len(entblock) <= 0:
                         continue
@@ -683,7 +696,8 @@ class Ripent:
                     if new_len < read_len:
                         bsp_file.write(b'\x00' * (read_len - new_len))
                 else:
-                    bsp_file.seek(0, os.SEEK_END)
+                    from os import SEEK_END
+                    bsp_file.seek(0, SEEK_END)
                     new_start = bsp_file.tell()
                     bsp_file.write(writedata_bytes)
 
@@ -731,8 +745,8 @@ class Ripent:
 
                     if line.startswith( '}' ): # startswith due to [NULL]
                         try:
-                            lump = json.dumps( entblock )
-                            block = json.loads( lump )
+                            lump = dumps( entblock )
+                            block = loads( lump )
                             entity = Entity( block )
                             entdata.append( entity )
                             entblock.clear()
@@ -795,6 +809,8 @@ class Ripent:
         ``delete_json`` if **True** delete the json file used, if any.
         '''
 
+        from json import load
+
         if not entity_data:
 
             __fformat__ = '.bsp' if self.format == __RIPENT_BSP__ else '.map' if self.format == __RIPENT_MAP__ else None
@@ -803,18 +819,20 @@ class Ripent:
 
                 jsonpath = self.path.replace( __fformat__, '.json' )
 
-                if os.path.exists( jsonpath ):
+                from os import path, remove
+
+                if path.exists( jsonpath ):
 
                     with open( jsonpath, 'r' ) as jsonfile:
-                        entity_data = json.load( jsonfile )
+                        entity_data = load( jsonfile )
                         self.__manipulate_lump__( entity_data )
                         jsonfile.close()
 
                     if delete_json:
-                        os.remove( jsonpath )
+                        remove( jsonpath )
 
                 else:
-                    logger( __Logger__[ '#FileNotExists' ], [ jsonpath ], LOGGER_LEVEL.IMPORTANT )
+                    logger( __Logger__[ '#FileNotExists' ], [ jsonpath ], LOGGER_LEVEL.ALL )
 
         else:
             self.import_( self.__manipulate_lump__( entity_data ), False )
@@ -859,7 +877,10 @@ def init( urls : str | list[str] ) -> list[str]:
 
     __asset__ = input()
 
-    if __asset__ and os.path.exists( __asset__ ):
+    from os import path, makedirs
+    from shutil import rmtree
+
+    if __asset__ and path.exists( __asset__ ):
 
         __common_folders__ = (
             'sound',
@@ -873,17 +894,17 @@ def init( urls : str | list[str] ) -> list[str]:
             'models',
             'resource',
         )
-        if os.path.exists( any( f'{__asset__}\\{ __common_folders__ }\\' ) ):
+        if path.exists( any( f'{__asset__}\\{ __common_folders__ }\\' ) ):
 
-            __temp_folder__ = f'{os.path.abspath( "" )}\\unity'
-            if os.path.exists( __temp_folder__ ):
-                logger( __Logger__[ "#init_CleaningUp" ], LOGGER_LEVEL.ALL, [ __temp_folder__ ] )
+            __temp_folder__ = f'{path.abspath( "" )}\\unity'
+            if path.exists( __temp_folder__ ):
+                logger( __Logger__[ "#init_CleaningUp" ], [ __temp_folder__ ], LOGGER_LEVEL.ALL )
                 try:
-                    shutil.rmtree( __temp_folder__ )
+                    rmtree( __temp_folder__ )
                 except Exception as e:
                     logger( e, LOGGER_LEVEL.IMPORTANT )
 
-            os.makedirs( __temp_folder__, exist_ok=True )
+            makedirs( __temp_folder__, exist_ok=True )
 
             return __asset__
 
@@ -901,12 +922,15 @@ def copy_assets( mod_path : str, resources_path : str ) -> list[str]:
 
     assets = []
 
+    from os import path
+    from shutil import copy
+
     for resource in resources:
 
-        __absp__ = f'{os.path.abspath( "" )}\\unity\\'
+        __absp__ = f'{path.abspath( "" )}\\unity\\'
 
         makedirs_file( __absp__ + resource[1] )
-        shutil.copy( f'{mod_path}\\{resource[0]}', __absp__ + resource[1] )
+        copy( f'{mod_path}\\{resource[0]}', __absp__ + resource[1] )
         assets.append( resource[1] )
 
     return assets
@@ -915,6 +939,10 @@ def download( urls : list[str] ):
     '''
     Download third party assets if needed
     '''
+
+    from os import path
+    from io import BytesIO
+    from requests import get
 
     links = []
 
@@ -926,22 +954,24 @@ def download( urls : list[str] ):
     for url in links:
         logger( __Logger__[ '#download_Downloading' ], [ url ], LOGGER_LEVEL.IMPORTANT )
 
-        response = requests.get( url )
+        response = get( url )
 
         if response.status_code == 200:
 
-            zip_file = ZipFile( io.BytesIO( response.content ) )
+            from zipfile import ZipFile
 
-            zip_file.extractall( os.path.abspath( "" ) + '\\unity' )
+            zip_file = ZipFile( BytesIO( response.content ) )
+
+            zip_file.extractall( path.abspath( "" ) + '\\unity' )
 
             for member in zip_file.namelist():
 
-                filename = os.path.basename( member )
+                filename = path.basename( member )
 
                 if not filename:
                     continue
 
-                to_target = os.path.abspath( "" ) + '\\unity\\' + member[ member.find( '/' ) : ]
+                to_target = path.abspath( "" ) + '\\unity\\' + member[ member.find( '/' ) : ]
 
                 makedirs_file( to_target )
 
@@ -1422,12 +1452,17 @@ def upgrade_maps():
     ``def PostMapUpgrade( index : int, entity : Entity, map : str ):``
     '''
 
-    for file in os.listdir( f'{os.path.abspath( "" )}\\unity\\maps\\'):
+    from json import dumps
+    from os import listdir, path
+    from inspect import getmembers, isfunction
+    import __main__ as main
+
+    for file in listdir( f'{path.abspath( "" )}\\unity\\maps\\'):
         if file.endswith( ".bsp" ):
             map = file[ : len(file) - 4 ]
             bsp = f'{map}.bsp'
 
-            BSPEnt = Ripent( f'{os.path.abspath( "" )}\\unity\\maps\\{bsp}' )
+            BSPEnt = Ripent( f'{path.abspath( "" )}\\unity\\maps\\{bsp}' )
             entdata = BSPEnt.export()
  
             if entdata == None:
@@ -1439,8 +1474,8 @@ def upgrade_maps():
 
             for i, entblock in enumerate( TempEntData ):
 
-                for name, obj in inspect.getmembers( main ):
-                    if inspect.isfunction(obj) and name == 'PreMapUpgrade':
+                for name, obj in getmembers( main ):
+                    if isfunction(obj) and name == 'PreMapUpgrade':
                         entblock =  obj( i, Entity( entblock ), map )
 
                 # Converts the obsolete "angle" keyvalue to "angles"
@@ -1492,19 +1527,19 @@ def upgrade_maps():
                 # In practice this only affects a handful of entities used in retinal scanner scripts.
                 entblock = __upg_multi_manager_maxkeys__( i, Entity( entblock ), map )
 
-                for name, obj in inspect.getmembers( main ):
-                    if inspect.isfunction(obj) and name == 'PostMapUpgrade':
+                for name, obj in getmembers( main ):
+                    if isfunction(obj) and name == 'PostMapUpgrade':
                         entblock =  obj( i, Entity( entblock ), map )
 
                 if isinstance( entblock, Entity ):
                     entblock = entblock.ToDict()
 
-                entdata[i] = ( json.dumps( entblock ) if len( entblock ) > 0 else {} )
+                entdata[i] = ( dumps( entblock ) if len( entblock ) > 0 else {} )
 
             global __upgrades_new_entities__
 
             for ae in __upgrades_new_entities__:
-                entdata.append( json.dumps( ae ) )
+                entdata.append( dumps( ae ) )
 
             __upgrades_new_entities__ = []
 
