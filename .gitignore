@@ -10,7 +10,15 @@ unity/half-life-unity-*.fgd
 scripts/hlunity/hlunity/test.*
 scripts/hlunity/hlunity/unity/
 
-src/mods/
+# Local pyp push
+scripts/hlunity/build/
+scripts/hlunity/dist/
+scripts/hlunity/hlunity.egg-info/
+
+# Local testing mod installations
+src/mods/*/unity/
+
+# Un-ported yet Unified SDK CSharp tools
 src/mods/src/
 
 # CMake project
