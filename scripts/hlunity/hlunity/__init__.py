@@ -1452,12 +1452,16 @@ def upgrade_maps():
     You can hook your own upgrades in ``__main__``
 
     ``def PreMapUpgrade( index : int, entity : Entity, map : str ):``
+
     ``def PostMapUpgrade( index : int, entity : Entity, map : str ):``
+
+    These upgrades has been ported from C#
+
+    https://github.com/twhl-community/HalfLife.UnifiedSdk-CSharp/tree/master/src/HalfLife.UnifiedSdk.MapUpgrader.Upgrades
     '''
 
     from json import dumps
     from os import listdir, path
-    from inspect import getmembers, isfunction
     import __main__ as main
 
     for file in listdir( f'{path.abspath( "" )}\\unity\\maps\\'):
@@ -1477,9 +1481,10 @@ def upgrade_maps():
 
             for i, entblock in enumerate( TempEntData ):
 
-                for name, obj in getmembers( main ):
-                    if isfunction(obj) and name == 'PreMapUpgrade':
-                        entblock =  obj( i, Entity( entblock ), map )
+                try:
+                    entblock =  main.PreMapUpgrade( i, Entity( entblock ), map )
+                except:
+                    pass
 
                 # Converts the obsolete "angle" keyvalue to "angles"
                 entblock = __upg_angle_to_angles__( i, Entity( entblock ), map )
@@ -1530,9 +1535,10 @@ def upgrade_maps():
                 # In practice this only affects a handful of entities used in retinal scanner scripts.
                 entblock = __upg_multi_manager_maxkeys__( i, Entity( entblock ), map )
 
-                for name, obj in getmembers( main ):
-                    if isfunction(obj) and name == 'PostMapUpgrade':
-                        entblock =  obj( i, Entity( entblock ), map )
+                try:
+                    entblock =  main.PostMapUpgrade( i, Entity( entblock ), map )
+                except:
+                    pass
 
                 if isinstance( entblock, Entity ):
                     entblock = entblock.ToDict()
