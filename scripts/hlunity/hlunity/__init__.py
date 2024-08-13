@@ -1419,7 +1419,7 @@ def __upg_rendercolor_invalid__( index:int, entity:Entity, map:str ):
 
 def __upg_multi_manager_maxkeys__( index:int, entity:Entity, map:str ):
     if entity.classname == 'multi_manager':
-        KeySize = 15
+        KeySize = 16
         NewEnt = {}
         pEnt = entity.ToDict().copy()
         ignorelist = { "targetname", "classname", "origin", "wait", "spawnflags" }
@@ -1439,6 +1439,9 @@ def __upg_multi_manager_maxkeys__( index:int, entity:Entity, map:str ):
             add_entity( __upg_multi_manager_maxkeys__( index, Entity( pEnt ), map ).ToDict() )
             NewEnt[ pEnt.get( "targetname" ) ] = 0
             logger( __Logger__[ '#upgrades_multi_manager_exceds' ], logger_level=LOGGER_LEVEL.ALL )
+        for k in ignorelist:
+            if k in entity.ToDict():
+                NewEnt[ k ] = entity.ToDict().get( k, '' )
         entity = Entity( NewEnt )
     return entity
 
