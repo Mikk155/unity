@@ -221,6 +221,7 @@ def build():
 
     global entitydata
     entitydata = jsonc( f'{abs}/entitydata.json' )
+    entitydata.pop( "EOF", '' )
 
     entities = []
     classess = []
@@ -235,6 +236,7 @@ def build():
 
     global sentences
     sentences = jsonc( f'{abs}/docs/src/sentences.json' )
+    sentences.pop( "EOF", '' )
 
     for lang in Languages:
 

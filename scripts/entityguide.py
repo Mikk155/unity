@@ -41,6 +41,7 @@ def read_base( data:list[str], classname:str, file, entitydata:dict ):
 def build():
 
     entitydata = jsonc( f'{abs}/entitydata.json' )
+    entitydata.pop( "EOF", '' )
 
     entities = []
 
