@@ -4081,6 +4081,20 @@
 
 		}
 	},
+	"trigger_entity_zone": {
+		"Class": "Solid",
+		"point": true,
+		"base": [ "Target", "Master" ],
+		"data": {
+			"m_iszEntity": {"variable": "target_destination","value": ""},
+			"message": {"variable": "target_destination","value": ""},
+			"m_InUse": {"variable": "target_destination","value": ""},
+			"m_InValue": {"variable": "target_destination","value": ""},
+			"netname": {"variable": "target_destination","value": ""},
+			"m_OutUse": {"variable": "target_destination","value": ""},
+			"m_OutValue": {"variable": "target_destination","value": ""}
+		}
+	},
 	"trigger_eventhandler": {
 		"Class": "Point",
 		"base": ["Target", "CBaseDelay", "AllocNewActivator" ],

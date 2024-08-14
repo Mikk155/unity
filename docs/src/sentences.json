@@ -309,6 +309,38 @@
 {
 "english": "The json file defined for configuration, the path is within cfg/maps/ no need to specify .json, if not defined is maps/mapname.json"
 },
+"trigger_entity_zone::classname":
+{
+"english": "Trigger for entities in zone"
+},
+"trigger_entity_zone::m_iszEntity":
+{
+"english": "Entity classname"
+},
+"trigger_entity_zone::message":
+{
+"english": "Inside Trigger Target"
+},
+"trigger_entity_zone::m_InUse":
+{
+"english": "Inside Trigger Type"
+},
+"trigger_entity_zone::m_InValue":
+{
+"english": "Inside Trigger value"
+},
+"trigger_entity_zone::netname":
+{
+"english": "Outside Trigger Target"
+},
+"trigger_entity_zone::m_OutUse":
+{
+"english": "Outside Trigger Type"
+},
+"trigger_entity_zone::m_OutValue":
+{
+"english": "Outside Trigger value"
+},
 "Mandatory::spawnflags::2048":
 {
 "english": "Only in SinglePlayer"
