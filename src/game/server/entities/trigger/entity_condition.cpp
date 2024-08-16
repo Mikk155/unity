@@ -87,7 +87,7 @@ void CTriggerEntityCondition :: Use( CBaseEntity* pActivator, CBaseEntity* pCall
                     if( !FStringNull( m_Arg1 ) )
                     {
                         if( FStrEq( STRING( m_Arg1 ), "item_longjump" ) ) {
-                            player->HasLongJump();
+                            bCondition = player->HasLongJump();
                         }
                         else {
                             bCondition =  player->HasNamedPlayerWeapon( STRING( m_Arg1 ) );
