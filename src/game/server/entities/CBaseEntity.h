@@ -26,6 +26,8 @@
 #include "EntityClassificationSystem.h"
 #include "skill.h"
 
+#include <unordered_map>
+
 class CBaseEntity;
 class CBaseItem;
 class CBaseMonster;
@@ -677,6 +679,9 @@ public:
 
 	int m_iPlayerSelector = PlayerSelector::None;
 	bool IsPlayerSelector( CBasePlayer* pPlayer, CBaseEntity* pActivator );
+
+	std::unordered_map<std::string, std::string> keyvalues;
+	std::string GetKeyValue( const char* sKey, std::string DefaultValue = "" );
 };
 
 inline bool FNullEnt(CBaseEntity* ent) { return (ent == nullptr) || FNullEnt(ent->edict()); }

@@ -549,6 +549,8 @@ static void LoadSentenceReplacementMap(const ReplacementMap*& destination, strin
 
 bool CBaseEntity::RequiredKeyValue(KeyValueData* pkvd)
 {
+	keyvalues[ pkvd->szKeyName ] = std::string( pkvd->szValue );
+
 	// Replacement maps can be changed at runtime using trigger_changekeyvalue.
 	// Note that this may cause host_error or sys_error if files aren't precached.
 	if (FStrEq(pkvd->szKeyName, "modellist"))
@@ -1039,4 +1041,13 @@ bool CBaseEntity :: IsPlayerSelector( CBasePlayer* pPlayer, CBaseEntity* pActiva
 		return true;
 
 	return false;
+}
+
+std::string CBaseEntity :: GetKeyValue( const char* sKey, std::string DefaultValue )
+{
+	if( sKey == "health" )
+	{
+		return std::to_string( pev->health );
+	}
+	return ( keyvalues.find( sKey ) != keyvalues.end() ? keyvalues[ sKey ] : DefaultValue );
 }
