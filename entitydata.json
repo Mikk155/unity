@@ -431,6 +431,62 @@
         "studio": "models/editor/aiscripted_sequence.mdl",
 		"base": [ "Target", "CBaseDelay", "Angles", "BaseScriptedSequence" ]
 	},
+	"trigger_changevalue":
+	{
+		"Class": "Point",
+		"base": [ "Target", "CBaseDelay" ],
+		"data":
+		{
+			"m_sTargetEntity":
+			{
+				"variable": "target_destination"
+			},
+			"m_sSourceEntity":
+			{
+				"variable": "target_destination"
+			},
+			"m_sKeyName":
+			{
+				"variable": "string"
+			},
+			"m_sSourceKeyName":
+			{
+				"variable": "string"
+			},
+			"m_sValue":
+			{
+				"variable": "string"
+			},
+			"m_iSetType":
+			{
+				"variable": "integer"
+			},
+			"m_FloatConversion":
+			{
+				"variable": "integer"
+			},
+			"m_iMaxTargets":
+			{
+				"variable": "integer"
+			},
+			"m_iAppendSpaces":
+			{
+				"variable": "integer"
+			},
+			"m_SkipVector_X":
+			{
+				"variable": "integer"
+			},
+			"m_SkipVector_Y":
+			{
+				"variable": "integer"
+			},
+			"m_SkipVector_Z":
+			{
+				"variable": "integer"
+			}
+		}
+	},
 	"ambient_generic":
 	{
 		"Class": "Point",

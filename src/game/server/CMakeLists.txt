@@ -101,7 +101,6 @@ target_sources(server PRIVATE
 	entities/changelevel.h
 	entities/CMultiSource.h
 	entities/CPointEntity.h
-	entities/CTriggerChangeKeyValue.cpp
 	entities/doors.cpp
 	entities/doors.h
 	entities/effects.cpp
@@ -288,6 +287,9 @@ target_sources(server PRIVATE
 	entities/rope/CRopeSegment.cpp
 	entities/rope/CRopeSegment.h
 
+	entities/trigger/changevalue.cpp
+	entities/trigger/CKeyValueLogic.cpp
+	entities/trigger/CKeyValueLogic.h
 	entities/trigger/entity_condition.cpp
 	entities/trigger/entity_iterator.cpp
 	entities/trigger/entity_zone.cpp
