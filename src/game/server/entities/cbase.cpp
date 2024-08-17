@@ -1043,11 +1043,13 @@ bool CBaseEntity :: IsPlayerSelector( CBasePlayer* pPlayer, CBaseEntity* pActiva
 	return false;
 }
 
-std::string CBaseEntity :: GetKeyValue( const char* sKey, std::string DefaultValue )
+std::string CBaseEntity :: GetKeyValue( const char* sKey, const char* DefaultValue )
 {
-	if( sKey == "health" )
+	if( FStrEq( sKey, "health" ) )
 	{
+		CBaseEntity::Logger->debug( "Call on health {}, {}", pev->health, std::to_string( pev->health ) );
+
 		return std::to_string( pev->health );
 	}
-	return ( keyvalues.find( sKey ) != keyvalues.end() ? keyvalues[ sKey ] : DefaultValue );
+	return ( keyvalues.find( sKey ) != keyvalues.end() ? keyvalues[ sKey ] : std::string( DefaultValue ) );
 }

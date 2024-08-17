@@ -290,6 +290,7 @@ target_sources(server PRIVATE
 	entities/trigger/changevalue.cpp
 	entities/trigger/CKeyValueLogic.cpp
 	entities/trigger/CKeyValueLogic.h
+	entities/trigger/condition.cpp
 	entities/trigger/entity_condition.cpp
 	entities/trigger/entity_iterator.cpp
 	entities/trigger/entity_zone.cpp

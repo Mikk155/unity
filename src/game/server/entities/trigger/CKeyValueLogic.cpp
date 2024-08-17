@@ -72,23 +72,25 @@ bool CKeyValueLogic :: KeyValue( KeyValueData* pkvd )
     {
         m_iAppendSpaces = atoi( pkvd->szValue );
     }
-    else if( std::string( pkvd->szValue ).find( "m_SkipVector_" ) == 0 )
+    else if( FStrEq( pkvd->szValue, "m_SkipVector_X" ) )
     {
         if( atoi( pkvd->szValue ) == 1 )
-        {
-            if( FStrEq( pkvd->szValue, "m_SkipVector_X" ) )
-            {
-                m_SkipVector |= KeyValueVector::X;
-            }
-            else if( FStrEq( pkvd->szValue, "m_SkipVector_Y" ) )
-            {
-                m_SkipVector |= KeyValueVector::Y;
-            }
-            else if( FStrEq( pkvd->szValue, "m_SkipVector_Z" ) )
-            {
-                m_SkipVector |= KeyValueVector::Z;
-            }
-        }
+            m_SkipVector |= KeyValueVector::X;
+    }
+    else if( FStrEq( pkvd->szValue, "m_SkipVector_Y" ) )
+    {
+        if( atoi( pkvd->szValue ) == 1 )
+            m_SkipVector |= KeyValueVector::Y;
+    }
+    else if( FStrEq( pkvd->szValue, "m_SkipVector_Z" ) )
+    {
+        if( atoi( pkvd->szValue ) == 1 )
+            m_SkipVector |= KeyValueVector::Z;
+    }
+    else if( FStrEq( pkvd->szValue, "m_SkipVector_A" ) )
+    {
+        if( atoi( pkvd->szValue ) == 1 )
+            m_SkipVector |= KeyValueVector::A;
     }
     else
     {
@@ -103,24 +105,26 @@ void CKeyValueLogic :: Use( CBaseEntity* pActivator, CBaseEntity* pCaller, USE_T
         FireTargets( STRING( pev->target ), pActivator, this, USE_TOGGLE, value );
 }
 
-string_t CKeyValueLogic :: GetValue( CBaseEntity* pActivator, CBaseEntity* pCaller )
+std::string CKeyValueLogic :: GetValue( CBaseEntity* pActivator, CBaseEntity* pCaller )
 {
+    const char* szValue = STRING( m_sValue );
+
     if( !FStringNull( m_sSourceEntity ) )
     {
         if( auto entity = UTIL_FindEntityByTargetname( nullptr, STRING( m_sSourceEntity ), pActivator, pCaller ); entity != nullptr )
         {
-            return ALLOC_STRING( entity->GetKeyValue( STRING( m_sSourceKeyName ), std::string( STRING( m_sValue ) ) ).c_str() );
+            return entity->GetKeyValue( STRING( m_sSourceKeyName ), szValue );
         }
     }
 
-    return m_sValue;
+    return std::string( szValue );
 }
 
 CBaseEntity* CKeyValueLogic :: GetTarget( CBaseEntity* pActivator, CBaseEntity* pCaller )
 {
     m_iCurrentTarget++;
 
-    if( m_iCurrentTarget > m_iMaxTargets )
+    if( m_iMaxTargets != -1 && m_iCurrentTarget > m_iMaxTargets )
     {
         pLastFind = nullptr;
         m_iCurrentTarget = 0;
@@ -128,7 +132,118 @@ CBaseEntity* CKeyValueLogic :: GetTarget( CBaseEntity* pActivator, CBaseEntity* 
     else
     {
         pLastFind = UTIL_FindEntityByTargetname( pLastFind, STRING( m_sTargetEntity ), pActivator, pCaller );
+
+        if( m_iMaxTargets == -1 && ( !pLastFind || pLastFind == nullptr ) )
+            pLastFind = nullptr;
     }
 
     return pLastFind;
+}
+
+std::string CKeyValueLogic :: format( std::string szValue )
+{
+    auto FloatConversion = []( const std::string& str, KeyValueFloatConversion floatConversion ) -> std::string
+    {
+        std::ostringstream oss;
+        double number = std::stod( str );
+
+        switch( floatConversion )
+        {
+            case KeyValueFloatConversion::DECIMALS_5:
+                oss << std::fixed << std::setprecision(5) << number;
+            break;
+            case KeyValueFloatConversion::DECIMALS_4:
+                oss << std::fixed << std::setprecision(4) << number;
+            break;
+            case KeyValueFloatConversion::DECIMALS_3:
+                oss << std::fixed << std::setprecision(3) << number;
+            break;
+            case KeyValueFloatConversion::DECIMALS_2:
+                oss << std::fixed << std::setprecision(2) << number;
+            break;
+            case KeyValueFloatConversion::DECIMALS_1:
+                oss << std::fixed << std::setprecision(1) << number;
+            break;
+            case KeyValueFloatConversion::INTEGER:
+                oss << static_cast<int>(number);
+            break;
+            case KeyValueFloatConversion::INTEGER_RUP:
+                oss << static_cast<int>( std::ceil(number) );
+            break;
+            case KeyValueFloatConversion::INTEGER_RDN:
+                oss << static_cast<int>( std::floor(number) );
+            break;
+            case KeyValueFloatConversion::DECIMALS_6:
+                oss << std::fixed << std::setprecision(6) << number;
+            break;
+            default:
+                oss << number;
+            break;
+        }
+
+        return oss.str();
+    };
+
+    auto IsStringVector = [&]( const std::string& str ) -> std::vector<std::string>
+    {
+        std::istringstream stream(str);
+        std::string segment;
+        std::vector<std::string> numbers;
+
+        while( std::getline( stream, segment, ' ' ) )
+        {
+            if( !segment.empty() && std::all_of( segment.begin(), segment.end(), [](char c) { return ::isdigit(c) || c == '.' || c == '-'; } ) )
+                numbers.push_back(FloatConversion(segment, m_FloatConversion));
+            else
+                return std::vector<std::string>();
+        }
+
+        return numbers; // Vector2D, Vector, RGBA
+    };
+
+    auto isFloat = []( const std::string& str ) -> bool
+    {
+        std::istringstream iss( str );
+        float f;
+        char c;
+        return !( !( iss >> f) || ( iss >> c ) );
+    };
+
+    if( auto VecValue = IsStringVector( szValue ); VecValue.size() >= 2 && VecValue.size() <= 4 )
+    {
+        if( ( m_SkipVector & KeyValueVector::X ) != 0 )
+            VecValue[0] = "0";
+
+        if( ( m_SkipVector & KeyValueVector::Y ) != 0 )
+            VecValue[1] = "0";
+
+        if( VecValue.size() >= 3 && ( m_SkipVector & KeyValueVector::Z ) != 0 )
+            VecValue[2] = "0";
+
+        if( VecValue.size() >= 4 && ( m_SkipVector & KeyValueVector::A ) != 0 )
+            VecValue[3] = "0";
+
+        while( VecValue.size() < 4 ) // Fill up with zeros for simply string checking
+            VecValue.push_back( "0" );
+
+        std::ostringstream oss;
+
+        for( size_t i = 0; i < VecValue.size(); ++i )
+        {
+            oss << VecValue[i];
+
+            if( i != VecValue.size() - 1 )
+            {
+                oss << " ";
+            }
+        }
+
+        szValue = oss.str();
+    }
+    else if( isFloat( szValue ) )
+    {
+        szValue = FloatConversion( szValue, m_FloatConversion );
+    }
+
+    return szValue;
 }

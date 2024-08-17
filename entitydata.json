@@ -431,10 +431,9 @@
         "studio": "models/editor/aiscripted_sequence.mdl",
 		"base": [ "Target", "CBaseDelay", "Angles", "BaseScriptedSequence" ]
 	},
-	"trigger_changevalue":
+	"CKeyValueLogic":
 	{
-		"Class": "Point",
-		"base": [ "Target", "CBaseDelay" ],
+		"Class": "Base",
 		"data":
 		{
 			"m_sTargetEntity":
@@ -457,19 +456,11 @@
 			{
 				"variable": "string"
 			},
-			"m_iSetType":
-			{
-				"variable": "integer"
-			},
 			"m_FloatConversion":
 			{
 				"variable": "integer"
 			},
 			"m_iMaxTargets":
-			{
-				"variable": "integer"
-			},
-			"m_iAppendSpaces":
 			{
 				"variable": "integer"
 			},
@@ -482,6 +473,34 @@
 				"variable": "integer"
 			},
 			"m_SkipVector_Z":
+			{
+				"variable": "integer"
+			}
+		}
+	},
+	"trigger_changevalue":
+	{
+		"Class": "Point",
+		"base": [ "CKeyValueLogic", "Target", "CBaseDelay" ],
+		"data":
+		{
+			"m_iAppendSpaces":
+			{
+				"variable": "integer"
+			},
+			"m_iSetType":
+			{
+				"variable": "integer"
+			}
+		}
+	},
+	"trigger_condition":
+	{
+		"Class": "Point",
+		"base": [ "CKeyValueLogic", "Target", "CBaseDelay" ],
+		"data":
+		{
+			"m_iSetType":
 			{
 				"variable": "integer"
 			}

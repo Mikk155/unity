@@ -221,6 +221,66 @@
 {
 "english": "Yes"
 },
+"trigger_changevalue::classname":
+{
+"english": "Change/Copy a value"
+},
+"trigger_changevalue::m_iSetType":
+{
+"english": "Set type"
+},
+"trigger_changevalue::m_iAppendSpaces":
+{
+"english": "Spaces to append (Append)"
+},
+"trigger_condition::m_iSetType":
+{
+"english": "Check type"
+},
+"CKeyValueLogic::m_sTargetEntity":
+{
+"english": "Target Entity"
+},
+"CKeyValueLogic::m_sKeyName":
+{
+"english": "Target Key"
+},
+"CKeyValueLogic::m_sSourceKeyName":
+{
+"english": "Source Key"
+},
+"CKeyValueLogic::m_sValue":
+{
+"english": "Target Value"
+},
+"CKeyValueLogic::m_sSourceEntity":
+{
+"english": "Source Entity"
+},
+"CKeyValueLogic::m_FloatConversion":
+{
+"english": "Source Entity"
+},
+"CKeyValueLogic::m_iMaxTargets":
+{
+"english": "Max target entities (-1 all)"
+},
+"CKeyValueLogic::m_SkipVector_X":
+{
+"english": "Skip X/R"
+},
+"CKeyValueLogic::m_SkipVector_Y":
+{
+"english": "Skip Y/G"
+},
+"CKeyValueLogic::m_SkipVector_Z":
+{
+"english": "Skip Z/B"
+},
+"CKeyValueLogic::m_SkipVector_A":
+{
+"english": "Skip A"
+},
 "worldspawn::classname":
 {
 "english": "World entity"

@@ -681,7 +681,7 @@ public:
 	bool IsPlayerSelector( CBasePlayer* pPlayer, CBaseEntity* pActivator );
 
 	std::unordered_map<std::string, std::string> keyvalues;
-	std::string GetKeyValue( const char* sKey, std::string DefaultValue = "" );
+	std::string GetKeyValue( const char* sKey, const char* DefaultValue = "" );
 };
 
 inline bool FNullEnt(CBaseEntity* ent) { return (ent == nullptr) || FNullEnt(ent->edict()); }

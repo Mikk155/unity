@@ -14,6 +14,7 @@
 ****/
 
 #include "cbase.h"
+#include <iomanip>
 
 enum KeyValueMath : int
 {
@@ -39,22 +40,24 @@ enum KeyValueMath : int
 
 enum KeyValueFloatConversion : int
 {
-    DECIMALS_6 = 0,
-    DECIMALS_5 = 1,
-    DECIMALS_4 = 2,
-    DECIMALS_3 = 3,
-    DECIMALS_2 = 4,
-    DECIMALS_1 = 5,
-    INTEGER = 6,
-    INTEGER_RUP = 7,
-    INTEGER_RDN = 8
+    NONE = 0,
+    DECIMALS_6,
+    DECIMALS_5,
+    DECIMALS_4,
+    DECIMALS_3,
+    DECIMALS_2,
+    DECIMALS_1,
+    INTEGER,
+    INTEGER_RUP,
+    INTEGER_RDN
 };
 
 enum KeyValueVector : int
 {
     X = ( 1 << 0 ),
     Y = ( 1 << 1 ),
-    Z = ( 1 << 2 )
+    Z = ( 1 << 2 ),
+    A = ( 1 << 3 )
 };
 
 class CKeyValueLogic : public CBaseDelay
@@ -67,7 +70,9 @@ class CKeyValueLogic : public CBaseDelay
         bool KeyValue( KeyValueData* pkvd ) override;
         void Use( CBaseEntity* pActivator, CBaseEntity* pCaller, USE_TYPE useType, float value ) override;
 
-        string_t GetValue( CBaseEntity* pActivator, CBaseEntity* pCaller );
+        std::string format( std::string szValue );
+
+        std::string GetValue( CBaseEntity* pActivator, CBaseEntity* pCaller );
 
         CBaseEntity* GetTarget( CBaseEntity* pActivator, CBaseEntity* pCaller );
 
