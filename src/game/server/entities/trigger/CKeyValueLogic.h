@@ -25,9 +25,9 @@ enum KeyValueMath : int
     DIVIDE = 4,
     AND = 5,
     OR = 6,
-    DIRECTION_TO_ANGLES = 9,
-    ANGLES_TO_DIRECTION = 10,
-    APPEND_STRING = 11,
+    DIRECTION_TO_ANGLES = 7,
+    ANGLES_TO_DIRECTION = 8,
+    APPEND_STRING = 9,
 
     EQUAL = 0,
     NOT_EQUAL = 1,
@@ -41,15 +41,15 @@ enum KeyValueMath : int
 enum KeyValueFloatConversion : int
 {
     NONE = 0,
-    DECIMALS_6,
-    DECIMALS_5,
-    DECIMALS_4,
-    DECIMALS_3,
-    DECIMALS_2,
-    DECIMALS_1,
-    INTEGER,
-    INTEGER_RUP,
-    INTEGER_RDN
+    DECIMALS_6 = 1,
+    DECIMALS_5 = 2,
+    DECIMALS_4 = 3,
+    DECIMALS_3 = 4,
+    DECIMALS_2 = 5,
+    DECIMALS_1 = 6,
+    INTEGER = 7,
+    INTEGER_RUP = 8,
+    INTEGER_RDN = 9
 };
 
 enum KeyValueVector : int
