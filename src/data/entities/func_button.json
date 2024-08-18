@@ -8,6 +8,7 @@
         "RenderFields",
         "Angles",
         "ZHLT",
+        "UseLineOfSight",
         "Master",
         "ReplacementFiles"
     ],

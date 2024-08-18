@@ -3,6 +3,7 @@
     "Class": "Solid",
     "base": [
         "BaseTank",
+        "UseLineOfSight",
         "ZHLT"
     ],
     "data": {

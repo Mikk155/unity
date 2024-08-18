@@ -1,6 +1,9 @@
 {
 	"$schema": "../schema.json",
     "Class": "Base",
+    "base": [
+        "UseLineOfSight"
+    ],
     "color": [
         0,
         200,

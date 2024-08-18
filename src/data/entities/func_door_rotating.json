@@ -3,6 +3,7 @@
     "Class": "Solid",
     "base": [
         "Door",
+        "UseLineOfSight",
         "ZHLT"
     ],
     "data": {
