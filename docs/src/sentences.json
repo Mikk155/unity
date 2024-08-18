@@ -225,6 +225,10 @@
 {
 "english": "Default"
 },
+"UseLineOfSight::m_uselos":
+{
+"english": "Use only in line of sight"
+},
 "trigger_changevalue::classname":
 {
 "english": "Change/Copy a value"

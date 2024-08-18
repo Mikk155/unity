@@ -682,6 +682,8 @@ public:
 
 	std::unordered_map<std::string, std::string> keyvalues;
 	std::string GetKeyValue( const char* sKey, const char* DefaultValue = "" );
+
+	int m_uselos = 1;
 };
 
 inline bool FNullEnt(CBaseEntity* ent) { return (ent == nullptr) || FNullEnt(ent->edict()); }

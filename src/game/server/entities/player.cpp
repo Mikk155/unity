@@ -1499,10 +1499,28 @@ void CBasePlayer::PlayerUse()
 	}
 	pObject = pClosest;
 
-	// Found an object
-	if (pObject)
+	auto UseOnDirectLineOfSight = []( CBasePlayer* pPlayer, CBaseEntity* pObjectCap ) -> bool
 	{
-		//!!!UNDONE: traceline here to prevent USEing buttons through walls
+		if( pObjectCap != nullptr )
+		{
+			if( pObjectCap->m_uselos == 1 )
+			{
+				TraceResult tr;
+
+				Vector VecSrc = pPlayer->pev->origin + pPlayer->pev->view_ofs;
+				UTIL_TraceLine( VecSrc, VecSrc + gpGlobals->v_forward * PLAYER_SEARCH_RADIUS, dont_ignore_monsters, dont_ignore_glass, pPlayer->edict(), &tr );
+
+				if( tr.pHit != pObjectCap->edict() )
+					return false;
+			}
+			return true;
+		}
+		return false;
+	};
+
+	// Found an object
+	if( UseOnDirectLineOfSight( this, pObject ) )
+	{
 		int caps = pObject->ObjectCaps();
 
 		if ((m_afButtonPressed & IN_USE) != 0)

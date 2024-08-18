@@ -641,6 +641,11 @@ bool CBaseEntity::RequiredKeyValue(KeyValueData* pkvd)
 			SetBits( m_iPlayerSelector, atoi( pkvd->szValue ) );
 		return true;
 	}
+	else if( std::string( pkvd->szKeyName ).find( "m_uselos" ) == 0 )
+	{
+		m_uselos = atoi( pkvd->szValue );
+		return true;
+	}
 
 	return false;
 }
