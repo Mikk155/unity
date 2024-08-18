@@ -17,42 +17,6 @@ GAME_NAME = os.getenv( "GAME_NAME" )
 
 MOD_NAME = os.getenv( "MOD_NAME" )
 
-from scripts.forgegamedata import build
-print(f'Building FGD File...')
-build()
-
-# Only release on virtual machine. if run on my local it's only for the website htmls or testing FGD
-if not TOKEN:
-
-    import importlib
-
-    importlib.import_module( f'scripts.entityguide' ).build()
-
-    exit(0)
-
-def mods_installer():
-
-    for root, dirs, files in os.walk( f'{abs}/unity/mods/' ):
-
-        if root[:len(root)-1].endswith( 'mods' ):
-
-            for file in files:
-
-                if file.endswith( '.py' ):
-
-                    print(f'Building executable script for porting tool "{file}"')
-
-                    process = subprocess.Popen( f'pyinstaller --onefile "{abs}/unity/mods/{file}"', stdin=subprocess.PIPE, stdout=subprocess.PIPE, stderr=subprocess.PIPE )
-                    process.wait()
-
-                    shutil.copy( f'{abs}/dist/{file.replace( ".py", ".exe" )}', f'{abs}/unity/mods/' )
-
-                    # Cleanup
-                    os.remove( f'{abs}/{file.replace( ".py", ".spec" )}')
-                    os.remove( f'{abs}/dist/{file.replace( ".py", ".exe" )}')
-
-# mods_installer()
-
 print( f'Copying game assets...' )
 
 shutil.copytree( f'{abs}/{MOD_NAME}/', f'{abs}/{GAME_NAME}/{MOD_NAME}/' )

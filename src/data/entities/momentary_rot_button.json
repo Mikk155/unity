@@ -1,0 +1,65 @@
+{
+	"$schema": "../schema.json",
+    "Class": "Solid",
+    "base": [
+        "RenderFields",
+        "Target",
+        "Angles",
+        "ZHLT",
+        "Master",
+        "ReplacementFiles",
+        "minlight"
+    ],
+    "data": {
+        "speed": {
+            "variable": "integer",
+            "value": "50",
+            "title": "momentary_rot_button::speed",
+            "description": "momentary_rot_button::speed::description"
+        },
+        "sounds": {
+            "variable": "sound",
+            "value": "",
+            "title": "momentary_rot_button::sounds",
+            "description": "momentary_rot_button::sounds::description"
+        },
+        "distance": {
+            "variable": "integer",
+            "value": "90",
+            "title": "momentary_rot_button::distance",
+            "description": "momentary_rot_button::distance::description"
+        },
+        "returnspeed": {
+            "variable": "integer",
+            "value": "0",
+            "title": "momentary_rot_button::returnspeed",
+            "description": "momentary_rot_button::returnspeed::description"
+        },
+        "spawnflags": {
+            "choices": {
+                "1": {
+                    "title": "momentary_rot_button::spawnflags::1",
+                    "description": "momentary_rot_button::spawnflags::1::description"
+                },
+                "2": {
+                    "title": "momentary_rot_button::spawnflags::2",
+                    "description": "momentary_rot_button::spawnflags::2::description"
+                },
+                "16": {
+                    "title": "momentary_rot_button::spawnflags::16",
+                    "description": "momentary_rot_button::spawnflags::16::description"
+                },
+                "64": {
+                    "title": "momentary_rot_button::spawnflags::64",
+                    "description": "momentary_rot_button::spawnflags::64::description"
+                },
+                "128": {
+                    "title": "momentary_rot_button::spawnflags::128",
+                    "description": "momentary_rot_button::spawnflags::128::description"
+                }
+            }
+        }
+    },
+    "title": "momentary_rot_button::classname",
+    "description": "momentary_rot_button::classname::description"
+}

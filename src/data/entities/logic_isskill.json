@@ -1,0 +1,43 @@
+{
+	"$schema": "../schema.json",
+    "Class": "Point",
+    "base": [
+        "Master"
+    ],
+    "size": [
+        [
+            -8,
+            -8,
+            -8
+        ],
+        [
+            8,
+            8,
+            8
+        ]
+    ],
+    "color": [
+        200,
+        100,
+        50
+    ],
+    "data": {
+        "skill1": {
+            "variable": "target_destination",
+            "title": "logic_isskill::skill1",
+            "description": "logic_isskill::skill1::description"
+        },
+        "skill2": {
+            "variable": "target_destination",
+            "title": "logic_isskill::skill2",
+            "description": "logic_isskill::skill2::description"
+        },
+        "skill3": {
+            "variable": "target_destination",
+            "title": "logic_isskill::skill3",
+            "description": "logic_isskill::skill3::description"
+        }
+    },
+    "title": "logic_isskill::classname",
+    "description": "logic_isskill::classname::description"
+}

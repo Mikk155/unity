@@ -1,0 +1,41 @@
+{
+	"$schema": "../schema.json",
+    "Class": "Point",
+    "base": [
+        "Target",
+        "Master"
+    ],
+    "size": [
+        [
+            -8,
+            -8,
+            -8
+        ],
+        [
+            8,
+            8,
+            8
+        ]
+    ],
+    "color": [
+        200,
+        100,
+        50
+    ],
+    "data": {
+        "var_name": {
+            "variable": "string",
+            "value": "",
+            "title": "logic_setskillvar::var_name",
+            "description": "logic_setskillvar::var_name::description"
+        },
+        "var_value": {
+            "variable": "string",
+            "value": "",
+            "title": "logic_setskillvar::var_value",
+            "description": "logic_setskillvar::var_value::description"
+        }
+    },
+    "title": "logic_setskillvar::classname",
+    "description": "logic_setskillvar::classname::description"
+}

@@ -221,6 +221,10 @@
 {
 "english": "Yes"
 },
+"Default":
+{
+"english": "Default"
+},
 "trigger_changevalue::classname":
 {
 "english": "Change/Copy a value"
@@ -229,6 +233,46 @@
 {
 "english": "Set type"
 },
+"trigger_changevalue::m_iSetType::0":
+{
+"english": "Replace ( target = source )"
+},
+"trigger_changevalue::m_iSetType::1":
+{
+"english": "Add ( target += source )"
+},
+"trigger_changevalue::m_iSetType::2":
+{
+"english": "Multiply ( target += source )"
+},
+"trigger_changevalue::m_iSetType::3":
+{
+"english": "Substract ( target -= source )"
+},
+"trigger_changevalue::m_iSetType::4":
+{
+"english": "Divide ( target /= source )"
+},
+"trigger_changevalue::m_iSetType::5":
+{
+"english": "AND ( target &= source )"
+},
+"trigger_changevalue::m_iSetType::6":
+{
+"english": "OR ( target |= source )"
+},
+"trigger_changevalue::m_iSetType::7":
+{
+"english": "Direction to Angles"
+},
+"trigger_changevalue::m_iSetType::8":
+{
+"english": "Angles to Direction"
+},
+"trigger_changevalue::m_iSetType::9":
+{
+"english": "Append string ( target + m_iAppendSpaces + source )"
+},
 "trigger_changevalue::m_iAppendSpaces":
 {
 "english": "Spaces to append (Append)"
@@ -236,6 +280,34 @@
 "trigger_condition::m_iSetType":
 {
 "english": "Check type"
+},
+"trigger_condition::m_iSetType::0":
+{
+"english": "Equal ( target == source )"
+},
+"trigger_condition::m_iSetType::1":
+{
+"english": "Not equal ( target != source )"
+},
+"trigger_condition::m_iSetType::2":
+{
+"english": "Less ( target < source )"
+},
+"trigger_condition::m_iSetType::3":
+{
+"english": "Greater ( target > source )"
+},
+"trigger_condition::m_iSetType::4":
+{
+"english": "Less or equal ( target <= source )"
+},
+"trigger_condition::m_iSetType::5":
+{
+"english": "Greater or equal ( target >= source )"
+},
+"trigger_condition::m_iSetType::6":
+{
+"english": "Logical AND ( (target & source) != 0 )"
 },
 "CKeyValueLogic::m_sTargetEntity":
 {
@@ -259,7 +331,47 @@
 },
 "CKeyValueLogic::m_FloatConversion":
 {
-"english": "Source Entity"
+"english": "float/int to string conversion"
+},
+"CKeyValueLogic::m_FloatConversion::0":
+{
+"english": "None (As-Is)"
+},
+"CKeyValueLogic::m_FloatConversion::1":
+{
+"english": "6 Decimals float"
+},
+"CKeyValueLogic::m_FloatConversion::2":
+{
+"english": "5 Decimals float"
+},
+"CKeyValueLogic::m_FloatConversion::3":
+{
+"english": "4 Decimals float"
+},
+"CKeyValueLogic::m_FloatConversion::4":
+{
+"english": "3 Decimals float"
+},
+"CKeyValueLogic::m_FloatConversion::5":
+{
+"english": "2 Decimals float"
+},
+"CKeyValueLogic::m_FloatConversion::6":
+{
+"english": "1 Decimal float"
+},
+"CKeyValueLogic::m_FloatConversion::7":
+{
+"english": "Rounded integer"
+},
+"CKeyValueLogic::m_FloatConversion::8":
+{
+"english": "Rounded UP integer"
+},
+"CKeyValueLogic::m_FloatConversion::9":
+{
+"english": "Rounded DOWN integer"
 },
 "CKeyValueLogic::m_iMaxTargets":
 {
@@ -285,81 +397,141 @@
 {
 "english": "World entity"
 },
+"worldspawn::classname::description":
+{
+},
 "worldspawn::message":
 {
 "english": "Map Description / Title"
+},
+"worldspawn::message::description":
+{
 },
 "worldspawn::skyname":
 {
 "english": "environment map (cl_skyname)"
 },
+"worldspawn::skyname::description":
+{
+},
 "worldspawn::light":
 {
 "english": "Default light level"
+},
+"worldspawn::light::description":
+{
 },
 "worldspawn::WaveHeight":
 {
 "english": "Default Wave Height"
 },
+"worldspawn::WaveHeight::description":
+{
+},
 "worldspawn::MaxRange":
 {
 "english": "Max viewable distance"
+},
+"worldspawn::MaxRange::description":
+{
 },
 "worldspawn::chaptertitle":
 {
 "english": "Chapter Title Message"
 },
+"worldspawn::chaptertitle::description":
+{
+},
 "worldspawn::startdark":
 {
 "english": "Level Fade In"
+},
+"worldspawn::startdark::description":
+{
 },
 "worldspawn::gametitle":
 {
 "english": "Game whose title to display"
 },
+"worldspawn::gametitle::description":
+{
+},
 "worldspawn::newunit":
 {
 "english": "New Level Unit"
+},
+"worldspawn::newunit::description":
+{
 },
 "worldspawn::newunit::0":
 {
 "english": "No, keep current"
 },
+"worldspawn::newunit::0::description":
+{
+},
 "worldspawn::newunit::1":
 {
 "english": "Yes, clear previous levels"
+},
+"worldspawn::newunit::1::description":
+{
 },
 "worldspawn::mapteams":
 {
 "english": "Map Team List"
 },
+"worldspawn::mapteams::description":
+{
+},
 "worldspawn::defaultteam":
 {
 "english": "Default Team"
+},
+"worldspawn::defaultteam::description":
+{
 },
 "worldspawn::defaultteam::0":
 {
 "english": "Fewest Players"
 },
+"worldspawn::defaultteam::0::description":
+{
+},
 "worldspawn::defaultteam::1":
 {
 "english": "First Team"
+},
+"worldspawn::defaultteam::1::description":
+{
 },
 "worldspawn::freeroam":
 {
 "english": "Monster roaming"
 },
+"worldspawn::freeroam::description":
+{
+},
 "worldspawn::freeroam::-1":
 {
 "english": "Not defined (server operator)"
+},
+"worldspawn::freeroam::-1::description":
+{
 },
 "worldspawn::freeroam::0":
 {
 "english": "Disabled"
 },
+"worldspawn::freeroam::0::description":
+{
+},
 "worldspawn::freeroam::1":
 {
 "english": "Enabled"
+},
+"worldspawn::freeroam::1::description":
+{
 },
 "worldspawn::mapcfg":
 {
@@ -369,6 +541,158 @@
 {
 "english": "The json file defined for configuration, the path is within cfg/maps/ no need to specify .json, if not defined is maps/mapname.json"
 },
+
+"Mandatory::spawnflags::2048":
+{
+"english": "Only in SinglePlayer"
+},
+"Mandatory::spawnflags::2048::description":
+{
+"english": "This entity won't appear at all in a Multi-Player game"
+},
+"Mandatory::targetname":
+{
+"english": "Name"
+},
+"Mandatory::targetname::description":
+{
+},
+
+"Appearflags_notin":
+{
+"english": "Not In"
+},
+"Appearflags_onlyin":
+{
+"english": "Only In"
+},
+"Appearflags::appearflag_singleplayer":
+{
+"english": "Appearance Single Player"
+},
+"Appearflags::appearflag_multiplayer":
+{
+"english": "Appearance Multi Player"
+},
+"Appearflags::appearflag_cooperative":
+{
+"english": "Appearance Cooperative"
+},
+"Appearflags::appearflag_deathmatch":
+{
+"english": "Appearance Death Match"
+},
+"Appearflags::appearflag_cft":
+{
+"english": "Appearance Capture The Flag"
+},
+"Appearflags::appearflag_teamplay":
+{
+"english": "Appearance Team Play"
+},
+"Appearflags::appearflag_dedicated":
+{
+"english": "Appearance Dedicated Server"
+},
+"Appearflags::appearflag_skilleasy":
+{
+"english": "Appearance Difficulty Easy"
+},
+"Appearflags::appearflag_skillmedium":
+{
+"english": "Appearance Difficulty Medium"
+},
+"Appearflags::appearflag_skillhard":
+{
+"english": "Appearance Difficulty Hard"
+},
+"_minlight":
+{
+"english": "Minimum light level"
+},
+"minhullsize":
+{
+"english": "Custom Hull Minimum"
+},
+"maxhullsize":
+{
+"english": "Custom Hull Maximum"
+},
+"BaseCharger::fire_on_recharge":
+{
+"english": "Target To Fire On Recharge"
+},
+"BaseCharger::fire_on_recharge::description":
+{
+"english": "Target to trigger when the charger recharges itself"
+},
+"BaseCharger::fire_on_empty":
+{
+"english": "Target To Fire On Empty"
+},
+"BaseCharger::fire_on_empty::description":
+{
+"english": "Target to trigger when the charger runs out of juice"
+},
+"BaseCharger::fire_on_spawn":
+{
+"english": "Fire Targets On Map Spawn"
+},
+"BaseCharger::fire_on_spawn::description":
+{
+"english": "Whether to fire the `fire_on_recharge` target when the charger initially spawns"
+},
+"BaseCharger::total_juice":
+{
+"english": "Total Juice In Charger (-1 == Unlimited)"
+},
+"BaseCharger::total_juice::description":
+{
+"english": "Custom amount of juice in this charger. A value of **-1** enables unlimited juice. If not specified the amount specified in the skill configuration is used"
+},
+"BaseCharger::recharge_delay":
+{
+"english": "Recharge Delay"
+},
+"BaseCharger::recharge_delay::description":
+{
+"english": "Custom recharge delay. A value of **-1** disables recharging. If not specified the amount specified in the skill configuration is used"
+},
+"BaseCharger::charge_per_use":
+{
+"english": "Charge Per Use"
+},
+"BaseCharger::charge_per_use::description":
+{
+"english": "Amount of juice to discharge per interval. Default **1**. If set to **0** the charger will never discharge"
+},
+"AllocNewActivator::m_Activator":
+{
+"english": "New activator to pass"
+},
+"AllocNewActivator::m_Activator::description":
+{
+"english": "A targetname of a entity or either a special name !activator = current activator !caller = current caller !this = current entity !player = Nearest player"
+},
+"aiscripted_sequence::classname":
+{
+"english": "AI Scripted Sequence"
+},
+"spawnflags":
+{
+"english": ""
+},
+"spawnflags::description":
+{
+"english": ""
+},
+
+"-TODO": "Check out bellow labels",
+
+
+
+
+
 "trigger_entity_zone::classname":
 {
 "english": "Trigger for entities in zone"
@@ -401,14 +725,6 @@
 {
 "english": "Outside Trigger value"
 },
-"Mandatory::spawnflags::2048":
-{
-"english": "Only in SinglePlayer"
-},
-"Mandatory::targetname":
-{
-"english": "Name"
-},
 "CustomKeys::model":
 {
 "english": "Model"
@@ -420,22 +736,6 @@
 "CustomKeys::scale":
 {
 "english": "Scale"
-},
-"minlight::_minlight":
-{
-"english": "Minimum light level"
-},
-"hulls::minhullsize":
-{
-"english": "Custom Hull Minimum"
-},
-"hulls::maxhullsize":
-{
-"english": "Custom Hull Maximum"
-},
-"aiscripted_sequence::classname":
-{
-"english": "AI Scripted Sequence"
 },
 "Sound":
 {
@@ -1022,58 +1322,6 @@
 {
 "english": "Inverse Square"
 },
-"Appearflags::appearflag_singleplayer":
-{
-"english": "Appearance Single Player"
-},
-"Appearflags::appearflag_multiplayer":
-{
-"english": "Appearance Multi Player"
-},
-"Appearflags::appearflag_cooperative":
-{
-"english": "Appearance Cooperative"
-},
-"Appearflags::appearflag_deathmatch":
-{
-"english": "Appearance Death Match"
-},
-"Appearflags::appearflag_cft":
-{
-"english": "Appearance Capture The Flag"
-},
-"Appearflags::appearflag_teamplay":
-{
-"english": "Appearance Team Play"
-},
-"Appearflags::appearflag_dedicated":
-{
-"english": "Appearance Dedicated Server"
-},
-"Appearflags::appearflag_skilleasy":
-{
-"english": "Appearance Difficulty Easy"
-},
-"Appearflags::appearflag_skillmedium":
-{
-"english": "Appearance Difficulty Medium"
-},
-"Appearflags::appearflag_skillhard":
-{
-"english": "Appearance Difficulty Hard"
-},
-"Default":
-{
-"english": "Default"
-},
-"Appearflags_notin":
-{
-"english": "Not In"
-},
-"Appearflags_onlyin":
-{
-"english": "Only In"
-},
 "Angles::angles":
 {
 "english": "Pitch Yaw Roll (Y Z X)"
@@ -1357,62 +1605,6 @@
 "Weapon::default_ammo":
 {
 "english": "Default Ammo In Weapon (-1 == Maximum)"
-},
-"BaseCharger::fire_on_recharge":
-{
-"english": "Target To Fire On Recharge"
-},
-"BaseCharger::fire_on_recharge::description":
-{
-"english": "Target to trigger when the charger recharges itself"
-},
-"BaseCharger::fire_on_empty":
-{
-"english": "Target To Fire On Empty"
-},
-"BaseCharger::fire_on_empty::description":
-{
-"english": "Target to trigger when the charger runs out of juice"
-},
-"BaseCharger::fire_on_spawn":
-{
-"english": "Fire Targets On Map Spawn"
-},
-"BaseCharger::fire_on_spawn::description":
-{
-"english": "Whether to fire the `fire_on_recharge` target when the charger initially spawns"
-},
-"BaseCharger::fire_on_spawn::0":
-{
-"english": "No"
-},
-"BaseCharger::fire_on_spawn::1":
-{
-"english": "Yes"
-},
-"BaseCharger::total_juice":
-{
-"english": "Total Juice In Charger (-1 == Unlimited)"
-},
-"BaseCharger::total_juice::description":
-{
-"english": "Custom amount of juice in this charger. A value of **-1** enables unlimited juice. If not specified the amount specified in the skill configuration is used"
-},
-"BaseCharger::recharge_delay":
-{
-"english": "Recharge Delay"
-},
-"BaseCharger::recharge_delay::description":
-{
-"english": "Custom recharge delay. A value of **-1** disables recharging. If not specified the amount specified in the skill configuration is used"
-},
-"BaseCharger::charge_per_use":
-{
-"english": "Charge Per Use"
-},
-"BaseCharger::charge_per_use::description":
-{
-"english": "Amount of juice to discharge per interval. Default **1**. If set to **0** the charger will never discharge"
 },
 "Unkillable::unkillable":
 {
@@ -3896,7 +4088,7 @@
 },
 "logic_setskill::classname":
 {
-"english": "Set skill level to specified value\nSome variables require a map change to take effect"
+"english": "Set skill level to specified value Some variables require a map change to take effect"
 },
 "logic_setskill::classname::description":
 {
@@ -4929,7 +5121,7 @@
 },
 "player_weaponstrip::classname::description":
 {
-"english": "Strip individual weapons ammo and items by key 'weapon_357' value 'target to fire if striped'\nammo and weapons are special and can be matched as 'ammo_*' or 'weapon_*'"
+"english": "Strip individual weapons ammo and items by key 'weapon_357' value 'target to fire if striped' ammo and weapons are special and can be matched as 'ammo_*' or 'weapon_*'"
 },
 "player_weaponstrip::spawnflags::1":
 {
@@ -7286,14 +7478,6 @@
 "trigger_entity_iterator::delay_between_runs":
 {
 "english": "Delay before Restarting (secs)"
-},
-"AllocNewActivator::m_Activator":
-{
-"english": "New activator to pass"
-},
-"AllocNewActivator::m_Activator::description":
-{
-"english": "A targetname of a entity or either a special name\n!activator = current activator\n!caller = current caller\n!this = current entity\n!player = Nearest player"
 },
 "trigger_eventhandler::classname":
 {

@@ -28,6 +28,11 @@ jobs:
         pip install --upgrade pip
         pip install -r requirements.txt
 
+    - name: Build FGD
+      run: |
+        cd src/data
+        python main.py
+
     - name: release
       id: generated
       env:

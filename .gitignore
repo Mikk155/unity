@@ -3,8 +3,8 @@
 
 .vscode/settings.json
 
-# Generate a fresh one on releases
-unity/half-life-unity-*.fgd
+# Generate fresh FGDs on release
+unity/tools/fgd/*
 
 # Local testing library
 scripts/hlunity/hlunity/test.*
