@@ -291,6 +291,9 @@
 	"player_maxhealth": 100,
 	"player_maxarmor": 100,
 
+	// Distance at which the player can interact with entities
+	"player_use_distance": 64,
+
 	"longjump_falldamage": 0,
 	"longjump_sound": 1,
 	"longjump_straight": 0,

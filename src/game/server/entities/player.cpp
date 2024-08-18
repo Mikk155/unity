@@ -1411,8 +1411,6 @@ void CBasePlayer::StartObserver(Vector vecPosition, Vector vecViewAngle)
 	Observer_SetMode(m_iObserverLastMode);
 }
 
-#define PLAYER_SEARCH_RADIUS (float)64
-
 void CBasePlayer::PlayerUse()
 {
 	if (IsObserver())
@@ -1421,6 +1419,8 @@ void CBasePlayer::PlayerUse()
 	// Was use pressed or released?
 	if (((pev->button | m_afButtonPressed | m_afButtonReleased) & IN_USE) == 0)
 		return;
+
+	const float PLAYER_SEARCH_RADIUS = GetSkillFloat( "player_use_distance"sv, 64 );
 
 	// Hit Use on a train?
 	if ((m_afButtonPressed & IN_USE) != 0)
@@ -1499,7 +1499,7 @@ void CBasePlayer::PlayerUse()
 	}
 	pObject = pClosest;
 
-	auto UseOnDirectLineOfSight = []( CBasePlayer* pPlayer, CBaseEntity* pObjectCap ) -> bool
+	auto UseOnDirectLineOfSight = []( CBasePlayer* pPlayer, CBaseEntity* pObjectCap, float PLAYER_SEARCH_RADIUS ) -> bool
 	{
 		if( pObjectCap != nullptr )
 		{
@@ -1519,7 +1519,7 @@ void CBasePlayer::PlayerUse()
 	};
 
 	// Found an object
-	if( UseOnDirectLineOfSight( this, pObject ) )
+	if( UseOnDirectLineOfSight( this, pObject, PLAYER_SEARCH_RADIUS ) )
 	{
 		int caps = pObject->ObjectCaps();
 
