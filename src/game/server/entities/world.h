@@ -37,8 +37,6 @@ public:
 	void Precache() override;
 	bool KeyValue(KeyValueData* pkvd) override;
 
-	string_t m_mapcfg;
-
 private:
 	int m_freeRoam = -1;
 };

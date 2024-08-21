@@ -190,7 +190,6 @@ bool CDecal::KeyValue(KeyValueData* pkvd)
 }
 
 BEGIN_DATAMAP( CWorld )
-	DEFINE_FIELD( m_mapcfg, FIELD_STRING ),
 	DEFINE_FIELD( m_freeRoam, FIELD_INTEGER ),
 END_DATAMAP();
 
@@ -501,11 +500,6 @@ bool CWorld::KeyValue(KeyValueData* pkvd)
 	else if( FStrEq( pkvd->szKeyName, "freeroam" ) )
 	{
 		m_freeRoam = atoi( pkvd->szValue );
-		return true;
-	}
-	else if( FStrEq( pkvd->szKeyName, "mapcfg" ) )
-	{
-		m_mapcfg = ALLOC_STRING( pkvd->szValue );
 		return true;
 	}
 

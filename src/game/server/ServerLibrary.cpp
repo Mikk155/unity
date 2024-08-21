@@ -501,21 +501,9 @@ void ServerLibrary::LoadServerConfigFiles()
 
 	std::string mapConfigFileName;
 
-	// Use the map-specific cfg if it exists.
-	string_t mapcfg = gpGlobals->mapname;
-
-	// Check if worldspawn wants a custom cfg file.
-	if( CWorld* pWorld = static_cast<CWorld*>( CBaseEntity::World ); pWorld != nullptr && !FStringNull( pWorld->m_mapcfg ) )
+	if( auto mapCfgFileName = fmt::format( "cfg/maps/{}.json", STRING( gpGlobals->mapname ) ); g_pFileSystem->FileExists( mapCfgFileName.c_str() ) )
 	{
-		if( auto mapCfgFileName = fmt::format( "cfg/maps/{}.json", STRING( pWorld->m_mapcfg ) ); g_pFileSystem->FileExists( mapCfgFileName.c_str() ) )
-		{
-			mapcfg = pWorld->m_mapcfg;
-		}
-	}
-
-	if( auto mapCfgFileName = fmt::format( "cfg/maps/{}.json", STRING( mapcfg ) ); g_pFileSystem->FileExists( mapCfgFileName.c_str() ) )
-	{
-		g_GameLogger->debug("Using map config file \"{}\"", STRING( mapcfg ) );
+		g_GameLogger->debug("Using map config file \"{}\"", STRING( gpGlobals->mapname ) );
 		mapConfigFileName = std::move(mapCfgFileName);
 	}
 	else
