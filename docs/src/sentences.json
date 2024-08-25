@@ -1045,11 +1045,11 @@
 {
 "english": "Crossbow Ammo"
 },
-"button_target::classname":
+"func_button_target::classname":
 {
 "english": "Target Button"
 },
-"button_target::spawnflags::1":
+"func_button_target::spawnflags::1":
 {
 "english": "Use Activates"
 },
@@ -4126,55 +4126,55 @@
 {
 "english": "Value (number)"
 },
-"momentary_door::classname":
+"func_door_momentary::classname":
 {
 "english": "Momentary/Continuous door"
 },
-"momentary_door::spawnflags::1":
+"func_door_momentary::spawnflags::1":
 {
 "english": "Starts Open"
 },
-"momentary_rot_button::classname":
+"func_button_rotating::classname":
 {
 "english": "Direct wheel control"
 },
-"momentary_rot_button::speed":
+"func_button_rotating::speed":
 {
 "english": "Speed"
 },
-"momentary_rot_button::sounds":
+"func_button_rotating::sounds":
 {
 "english": "Sounds"
 },
-"momentary_rot_button::distance":
+"func_button_rotating::distance":
 {
 "english": "Distance (deg)"
 },
-"momentary_rot_button::returnspeed":
+"func_button_rotating::returnspeed":
 {
 "english": "Auto-return speed"
 },
-"momentary_rot_button::spawnflags::1":
+"func_button_rotating::spawnflags::1":
 {
 "english": "Door Hack"
 },
-"momentary_rot_button::spawnflags::2":
+"func_button_rotating::spawnflags::2":
 {
 "english": "Not useable"
 },
-"momentary_rot_button::spawnflags::16":
+"func_button_rotating::spawnflags::16":
 {
 "english": "Auto Return"
 },
-"momentary_rot_button::spawnflags::64":
+"func_button_rotating::spawnflags::64":
 {
 "english": "X Axis"
 },
-"momentary_rot_button::spawnflags::128":
+"func_button_rotating::spawnflags::128":
 {
 "english": "Y Axis"
 },
-"momentary_rot_button::_minlight":
+"func_button_rotating::_minlight":
 {
 "english": "_minlight"
 },
