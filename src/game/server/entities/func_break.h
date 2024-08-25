@@ -98,4 +98,5 @@ public:
 	string_t m_iszSpawnObject;
 
 	Vector m_VecDirection = g_vecZero;
+	float m_DirectionSpeed = 200;
 };

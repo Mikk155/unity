@@ -1938,6 +1938,10 @@
 {
 "english": "Direction (Gibs Direction 2)"
 },
+"Breakable::direction_speed":
+{
+"english": "Direction speed"
+},
 "Breakable::delay":
 {
 "english": "Delay before fire"

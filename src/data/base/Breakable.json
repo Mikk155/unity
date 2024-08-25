@@ -83,10 +83,16 @@
             "description": "Breakable::explosion::description"
         },
         "direction": {
-            "variable": "studio",
+            "variable": "vector",
             "value": "",
             "title": "Breakable::direction",
             "description": "Breakable::direction::description"
+        },
+        "direction_speed": {
+            "variable": "float",
+            "value": "200",
+            "title": "Breakable::direction_speed",
+            "description": "Breakable::direction_speed::description"
         },
         "delay": {
             "variable": "string",
