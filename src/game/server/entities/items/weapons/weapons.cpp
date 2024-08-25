@@ -241,10 +241,7 @@ void W_Precache()
 	UTIL_PrecacheSound("weapons/spore_hit2.wav");
 	UTIL_PrecacheSound("weapons/spore_hit3.wav");
 
-	if (g_pGameRules->IsMultiplayer())
-	{
-		UTIL_PrecacheOther("weaponbox"); // container for dropped deathmatch weapons
-	}
+	UTIL_PrecacheOther("weaponbox"); // container for dropped deathmatch weapons
 
 	g_sModelIndexFireball = UTIL_PrecacheModel("sprites/zerogxplode.spr");	// fireball
 	g_sModelIndexWExplosion = UTIL_PrecacheModel("sprites/WXplo1.spr");		// underwater fireball
