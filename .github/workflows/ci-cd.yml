@@ -8,7 +8,7 @@ on:
       - '.github/workflows/ci-cd.yml'
 
 env:
-  VERSION: 0.0.0
+  VERSION: 0.0.1
   USER: Mikk155
   REPOSITORY: unity
   BUILD_TYPE: Release
