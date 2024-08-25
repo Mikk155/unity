@@ -793,6 +793,14 @@
 {
 "english": "Volume (10 = loudest)"
 },
+"ambient_generic::playfrom":
+{
+"english": "Entity to play from"
+},
+"ambient_generic::playfrom::description":
+{
+"english": "Plays the sound on this entity's origin, if it's a brush model it is played on the center of the brush unless it has an origin texture"
+},
 "ambient_generic::preset":
 {
 "english": "Dynamic Presets"

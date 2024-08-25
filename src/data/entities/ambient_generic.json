@@ -18,6 +18,12 @@
             "title": "ambient_generic::health",
             "description": "ambient_generic::health::description"
         },
+        "playfrom": {
+            "variable": "target_destination",
+            "value": "",
+            "title": "ambient_generic::playfrom",
+            "description": "ambient_generic::playfrom::description"
+        },
         "preset": {
             "variable": "choices",
             "value": "0",
