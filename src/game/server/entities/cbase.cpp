@@ -874,17 +874,17 @@ bool CBaseEntity::IsLockedByMaster()
 bool CBaseEntity::IsInWorld()
 {
 	// position
-	if (pev->origin.x >= 4096)
+	if (pev->origin.x >= WORLD_BOUNDS_LIMIT)
 		return false;
-	if (pev->origin.y >= 4096)
+	if (pev->origin.y >= WORLD_BOUNDS_LIMIT)
 		return false;
-	if (pev->origin.z >= 4096)
+	if (pev->origin.z >= WORLD_BOUNDS_LIMIT)
 		return false;
-	if (pev->origin.x <= -4096)
+	if (pev->origin.x <= -WORLD_BOUNDS_LIMIT)
 		return false;
-	if (pev->origin.y <= -4096)
+	if (pev->origin.y <= -WORLD_BOUNDS_LIMIT)
 		return false;
-	if (pev->origin.z <= -4096)
+	if (pev->origin.z <= -WORLD_BOUNDS_LIMIT)
 		return false;
 	// speed
 	if (pev->velocity.x >= 2000)
