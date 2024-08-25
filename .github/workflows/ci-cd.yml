@@ -22,7 +22,7 @@ jobs:
     runs-on: windows-latest
     steps:
     - name: Checkout
-      uses: actions/checkout@v3
+      uses: actions/checkout@v4
 
     - name: Set up Python
       uses: actions/setup-python@v2
@@ -97,9 +97,6 @@ jobs:
 
       - name: Release
         uses: xresloader/upload-to-github-release@v1.6.0
-        
-      - name: Upload artifacts
-        uses: actions/upload-artifact@v4
         with:
           file: Linux-x86.zip
           tag_name: ${{ env.VERSION }}
@@ -149,9 +146,6 @@ jobs:
 
       - name: Release
         uses: xresloader/upload-to-github-release@v1.6.0
-        
-      - name: Upload artifacts
-        uses: actions/upload-artifact@v4
         with:
           file: Win32.zip
           tag_name: ${{ env.VERSION }}
