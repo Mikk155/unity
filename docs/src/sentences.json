@@ -1930,6 +1930,14 @@
 {
 "english": "Relative to Attack"
 },
+"Breakable::explosion::2":
+{
+"english": "Relative to direction"
+},
+"Breakable::direction":
+{
+"english": "Direction (Gibs Direction 2)"
+},
 "Breakable::delay":
 {
 "english": "Delay before fire"

@@ -40,6 +40,11 @@ bool CBreakable::KeyValue(KeyValueData* pkvd)
 
 		return true;
 	}
+	else if (FStrEq(pkvd->szKeyName, "direction"))
+	{
+		UTIL_StringToVector(m_VecDirection, pkvd->szValue);
+		return true;
+	}
 	else if (FStrEq(pkvd->szKeyName, "material"))
 	{
 		int i = atoi(pkvd->szValue);
@@ -95,6 +100,7 @@ DEFINE_FIELD(m_Material, FIELD_INTEGER),
 	DEFINE_FIELD(m_angle, FIELD_FLOAT),
 	DEFINE_FIELD(m_iszGibModel, FIELD_STRING),
 	DEFINE_FIELD(m_iszSpawnObject, FIELD_STRING),
+	DEFINE_FIELD(m_VecDirection, FIELD_VECTOR),
 	DEFINE_FUNCTION(BreakTouch),
 	DEFINE_FUNCTION(Die),
 
@@ -636,6 +642,8 @@ void CBreakable::Die()
 
 	if (m_Explosion == expDirected)
 		vecVelocity = -g_vecAttackDir * 200;
+	else if (m_Explosion == expSpecific)
+		vecVelocity = m_VecDirection * 200;
 	else
 	{
 		vecVelocity.x = 0;

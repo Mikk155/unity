@@ -73,10 +73,20 @@
                 "1": {
                     "title": "Breakable::explosion::1",
                     "description": "Breakable::explosion::1::description"
+                },
+                "2": {
+                    "title": "Breakable::explosion::2",
+                    "description": "Breakable::explosion::2::description"
                 }
             },
             "title": "Breakable::explosion",
             "description": "Breakable::explosion::description"
+        },
+        "direction": {
+            "variable": "studio",
+            "value": "",
+            "title": "Breakable::direction",
+            "description": "Breakable::direction::description"
         },
         "delay": {
             "variable": "string",
