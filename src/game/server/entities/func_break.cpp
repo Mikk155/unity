@@ -769,11 +769,15 @@ public:
 	int m_lastSound; // no need to save/restore, just keeps the same sound from playing twice in a row
 	float m_maxSpeed;
 	float m_soundTime;
+
+private:
+	bool m_bCustomSize = false;
 };
 
 BEGIN_DATAMAP(CPushable)
 DEFINE_FIELD(m_maxSpeed, FIELD_FLOAT),
 	DEFINE_FIELD(m_soundTime, FIELD_TIME),
+	DEFINE_FIELD(m_bCustomSize, FIELD_BOOLEAN),
 	// DEFINE_FUNCTION(StopPushSound),
 	END_DATAMAP();
 
@@ -834,6 +838,10 @@ bool CPushable::KeyValue(KeyValueData* pkvd)
 
 		case 3: // Player duck
 			SetSize(VEC_DUCK_HULL_MIN, VEC_DUCK_HULL_MAX);
+			break;
+
+		case 4:
+			m_bCustomSize = true;
 			break;
 
 		default:

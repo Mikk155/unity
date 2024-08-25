@@ -3210,6 +3210,10 @@
 {
 "english": "Player duck"
 },
+"func_pushable::size::4":
+{
+"english": "Custom (min/max hullsize)"
+},
 "func_pushable::spawnflags::128":
 {
 "english": "Breakable"
