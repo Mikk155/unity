@@ -1,4 +1,4 @@
-import os, shutil, zipfile, subprocess
+import os, shutil, zipfile
 from github import Github, GithubException
 
 abs = os.path.abspath( '' )
