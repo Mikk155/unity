@@ -7487,6 +7487,14 @@
 {
 "english": "Delay before Restarting (secs)"
 },
+"game_precache::classname":
+{
+"english": "Precache content"
+},
+"game_precache::classname::description":
+{
+"english": "Precache it's values with the defined keys \"model\" for models \"sound\" for sounds \"generic\" for generic stuff \"other\" for entities classnames"
+},
 "trigger_eventhandler::classname":
 {
 "english": "trigger game events"
