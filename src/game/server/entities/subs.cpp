@@ -200,6 +200,12 @@ void FireTargets(const char* targetName, CBaseEntity* pActivator, CBaseEntity* p
 			if( !target || FBitSet( target->pev->flags, FL_KILLME ) )
 				continue; // Don't use dying ents
 
+			if( target->ClassnameIs( "trigger_usecheck" ) )
+			{
+				target->Use( pActivator, pCaller, ( pCaller->m_UseType > USE_UNSET ? pCaller->m_UseType : useType ), value );
+				continue;
+			}
+
 			const char* s1 = STRING( target->pev->classname );
 
 			if( FBitSet( target->m_UseLocked, USE_VALUE_USE ) && pCaller->m_UseType != USE_UNLOCK )

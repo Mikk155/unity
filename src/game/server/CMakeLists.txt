@@ -296,6 +296,7 @@ target_sources(server PRIVATE
 	entities/trigger/entity_zone.cpp
 	entities/trigger/eventhandler.cpp
 	entities/trigger/eventhandler.h
+	entities/trigger/usecheck.cpp
 
 	gamerules/CGameRules.cpp
 	gamerules/CGameRules.h

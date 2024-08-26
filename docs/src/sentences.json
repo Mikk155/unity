@@ -7351,79 +7351,59 @@
 {
 "english": "Dr. Rosenberg"
 },
-"trigger_usevalue::classname":
+"trigger_usecheck::classname":
 {
 "english": "Test a Use value"
 },
-"trigger_usevalue::classname::description":
+"trigger_usecheck::classname::description":
 {
 "english": "Fire true o false whatever the value received is the one specified"
 },
-"trigger_usevalue::health":
+"trigger_usecheck::is_value":
 {
-"english": "Value to read"
+"english": "Value to read (undefined don't read)"
 },
-"trigger_usevalue::max_health":
+"trigger_usecheck::is_usetype":
+{
+"english": "Use Type to read (-1 don't read)"
+},
+"trigger_usecheck::value_int":
 {
 "english": "Value conversion"
 },
-"trigger_usevalue::max_health::0":
+"trigger_usecheck::value_int::0":
 {
 "english": "integer"
 },
-"trigger_usevalue::max_health::0::description":
+"trigger_usecheck::value_int::0::description":
 {
 "english": "Both values are converted into integer before the comparision"
 },
-"trigger_usevalue::max_health::1":
+"trigger_usecheck::value_int::1":
 {
 "english": "float"
 },
-"trigger_usevalue::max_health::1::description":
+"trigger_usecheck::value_int::1::description":
 {
 "english": "Both values are converted into float before the comparision"
 },
-"trigger_usevalue::frags":
+"trigger_usecheck::value_comparator":
 {
 "english": "Value comparision"
 },
-"trigger_usevalue::frags::0":
+"trigger_usecheck::m_iSetType::7":
 {
-"english": "Equal ( get == this )"
+"english": "Logical AND ( (source & target) != 0 )"
 },
-"trigger_usevalue::frags::1":
+"trigger_usecheck::usetype_comparator":
 {
-"english": "Not Equal ( get != this )"
+"english": "Use Type comparision"
 },
-"trigger_usevalue::frags::2":
-{
-"english": "Greater ( get > this )"
-},
-"trigger_usevalue::frags::3":
-{
-"english": "Greater or Equal ( get >= this )"
-},
-"trigger_usevalue::frags::4":
-{
-"english": "Less ( get < this )"
-},
-"trigger_usevalue::frags::5":
-{
-"english": "Less or Equal ( get <= this )"
-},
-"trigger_usevalue::frags::6":
-{
-"english": "Logical AND ( get & this != 0 )"
-},
-"trigger_usevalue::frags::7":
-{
-"english": "Logical AND inverse ( this & get != 0 )"
-},
-"trigger_usevalue::target":
+"trigger_usecheck::message":
 {
 "english": "Trigger on true"
 },
-"trigger_usevalue::netname":
+"trigger_usecheck::netname":
 {
 "english": "Trigger on false"
 },
