@@ -51,7 +51,7 @@ def write_keyvalues( entdata, classname ):
         else:
 
             global Hammer
-            if Hammer:
+            if Hammer and False:
                 variables = {
                     "sky": "string",
                     "float": "string",
@@ -247,7 +247,6 @@ def build():
 
     global sentences
     sentences = jsonc( '{}..\\..\\docs\\src\\sentences.json'.format( abs ) )
-    sentences.pop( "EOF", '' )
 
     Languages = sentences.get( "languages", [ 'english' ] )
 
@@ -285,9 +284,9 @@ def build():
 ''' )
 
             for key in classess:
-                write_data( key, entitydata.get( key, {} ) )
+                write_data( key, entitydata.get( key, {} ).copy() )
 
             for key in entities:
-                write_data( key, entitydata.get( key, {} ) )
+                write_data( key, entitydata.get( key, {} ).copy() )
 
 build()
