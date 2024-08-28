@@ -179,15 +179,16 @@ def write_class( entdata={}, name='' ):
         entdata.pop( 'point', '' )
         entdata.pop( 'data', '' )
         entdata[ 'Class' ] = 'Point'
-        AddHulls = entdata.get( 'base', [] )
+        AddHulls = entdata.get( 'base', [] ).copy()
 
-        for b in [ 'Angles', 'Targetx', 'Target', 'Master', 'Global', 'Mandatory' ]:
+        if not 'hulls' in AddHulls:
+            for b in [ 'Angles', 'Targetx', 'Target', 'Master', 'Global', 'Mandatory' ]:
 
-            if b in AddHulls:
-                AddHulls.insert( AddHulls.index( b ) + 1, f'hulls' )
-                break
+                if b in AddHulls:
+                    AddHulls.insert( AddHulls.index( b ) + 1, f'hulls' )
+                    break
 
-        entdata[ 'base' ] = AddHulls
+            entdata[ 'base' ] = AddHulls
 
         write_class( entdata=entdata, name=name )
 
@@ -205,21 +206,25 @@ def write_data( key, value={} ):
 
             base = value.get( 'base', [] )
 
-            for b in [ 'Angles', 'Targetx', 'Target', 'Master', 'Global', 'Mandatory' ]:
-                if b in base:
-                    base.insert( base.index( b ) + 1, f'EntClass{key}' )
-                    break
-
             if not f'EntClass{key}' in base:
 
-                base.insert( 0, f'EntClass{key}')
+                for b in [ 'Angles', 'Targetx', 'Target', 'Master', 'Global', 'Mandatory' ]:
+                    if b in base:
+                        base.insert( base.index( b ) + 1, f'EntClass{key}' )
+                        break
 
-            value[ 'base' ] = base
+                if not f'EntClass{key}' in base:
+
+                    base.insert( 0, f'EntClass{key}')
+
+                value[ 'base' ] = base
 
         # So not to include them on each entity manually. since all entities supports these
         Mandatory = value.get( 'base', [] )
-        Mandatory.append( 'Appearflags' )
-        Mandatory.insert( 0, 'Mandatory' )
+        if not 'Appearflags' in Mandatory:
+            Mandatory.append( 'Appearflags' )
+        if not 'Mandatory' in Mandatory:
+            Mandatory.insert( 0, 'Mandatory' )
 
         value[ 'base' ] = Mandatory
 
