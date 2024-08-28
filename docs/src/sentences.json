@@ -1,7 +1,9 @@
 {
-"english": true,
-"spanish": true,
-
+"languages":
+[
+    "english",
+    "spanish"
+],
 "Language":
 {
 "english": "Language",

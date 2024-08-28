@@ -4,9 +4,6 @@ from hlunity import jsonc
 abs = '{}\\'.format( path.abspath( "" ) )
 
 Language = ''
-#-TODO Get languages from sentences.json
-#Languages = [ 'english', 'spanish' ]
-Languages = [ 'english' ]
 sentences = {}
 entitydata = {}
 FGD = None
@@ -251,6 +248,8 @@ def build():
     global sentences
     sentences = jsonc( '{}..\\..\\docs\\src\\sentences.json'.format( abs ) )
     sentences.pop( "EOF", '' )
+
+    Languages = sentences.get( "languages", [ 'english' ] )
 
     programs = [ 'Hammer', 'JACK' ]
 
