@@ -10,6 +10,7 @@ Languages = [ 'english' ]
 sentences = {}
 entitydata = {}
 FGD = None
+Hammer = None
 
 def get_lang( label ):
     if label:
@@ -51,6 +52,19 @@ def write_keyvalues( entdata, classname ):
             FGD.write( f'\t]\n' )
 
         else:
+
+            global Hammer
+            if Hammer:
+                variables = {
+                    "sky": "string",
+                    "float": "string",
+                    "scale": "string",
+                    "vector": "string",
+                    "target_name_or_class": "target_destination",
+                    "target_generic": "target_destination"
+                    }
+                if variable in variables:
+                    variable = variables[ variable ]
 
             FGD.write( f'\t{key}({variable}) : "{get_lang( data.get( "title", "" ) )}" : ' )
 
@@ -238,19 +252,26 @@ def build():
     sentences = jsonc( '{}..\\..\\docs\\src\\sentences.json'.format( abs ) )
     sentences.pop( "EOF", '' )
 
-    # -TODO build FGD for JACK/ and Hammer/ to not use JACK's specific variables
-    for lang in Languages:
+    programs = [ 'Hammer', 'JACK' ]
 
-        global Language
-        Language = lang
+    for program in programs:
 
-        if not path.exists( '{}\\..\\..\\unity\\tools\\fgd\\'.format( abs ) ):
-            makedirs( '{}\\..\\..\\unity\\tools\\fgd\\'.format( abs ) )
+        global Hammer
+        Hammer = ( program == 'Hammer' )
 
-        global FGD
-        FGD = open( '{}..\\..\\unity\\tools\\fgd\\halflife-unity-{}.fgd'.format( abs, Language ), 'w' )
+        for lang in Languages:
 
-        FGD.write( '''
+            global Language
+            Language = lang
+
+            if not path.exists( '{}\\..\\..\\unity\\tools\\fgd\\{}\\'.format( abs, program ) ):
+                makedirs( '{}\\..\\..\\unity\\tools\\fgd\\{}\\'.format( abs, program ) )
+
+            global FGD
+            FGD = open( '{}..\\..\\unity\\tools\\fgd\\{}\\halflife-unity-{}.fgd'.format( abs, program, Language ), 'w' )
+
+
+            FGD.write( '''
 //============ Copyright 1996-2005, Valve Corporation, All rights reserved. ============//
 //                                                                                      //
 // Purpose: Half-Life: Unity game definition file (.fgd)                                //
@@ -264,10 +285,10 @@ def build():
 
 ''' )
 
-        for key in classess:
-            write_data( key, entitydata.get( key, {} ) )
+            for key in classess:
+                write_data( key, entitydata.get( key, {} ) )
 
-        for key in entities:
-            write_data( key, entitydata.get( key, {} ) )
+            for key in entities:
+                write_data( key, entitydata.get( key, {} ) )
 
 build()
