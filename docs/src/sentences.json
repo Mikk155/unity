@@ -4088,17 +4088,45 @@
 {
 "english": "Target 16"
 },
-"logic_setcvar::classname":
+"game_variable::classname":
 {
-"english": "Set cvar on trigger"
+"english": "Game variables"
 },
-"logic_setcvar::cvar_name":
+"game_variable::variable":
 {
-"english": "CVar Name"
+"english": "Game variable"
 },
-"logic_setcvar::cvar_value":
+"game_variable::type":
 {
-"english": "CVar Value To Set"
+"english": "Type of variable"
+},
+"game_variable::type::0":
+{
+"english": "Command"
+},
+"game_variable::type::1":
+{
+"english": "Console Variable"
+},
+"game_variable::type::2":
+{
+"english": "Skill Variable"
+},
+"game_variable::type::3":
+{
+"english": "Json Variable"
+},
+"game_variable::value":
+{
+"english": "Value"
+},
+"game_variable::spawnflag::2":
+{
+"english": "Don't Set"
+},
+"game_variable::spawnflag::2::description":
+{
+"english": "By default, the variable is stored in 'message' before being set, with this flag enabled this entity will only store the variable but not set."
 },
 "logic_isskill::classname":
 {

@@ -153,6 +153,7 @@ target_sources(server PRIVATE
 	entities/ctf/CTFSpawn.h
 
 	entities/game/precache.cpp
+	entities/game/variable.cpp
 
 	entities/items/airtank.cpp
 	entities/items/CAmmoAll.cpp
