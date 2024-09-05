@@ -78,6 +78,16 @@ void CGameVariable :: Use( CBaseEntity* pActivator, CBaseEntity* pCaller, USE_TY
     if( !UTIL_IsMasterTriggered( m_sMaster, pActivator, m_UseLocked ) )
         return;
 
+    // Commands should be evaluated on execution
+    // In case we've saved and restored and the whitelist has changed.
+    // Or either the cvar sv_commandlist has been updated.
+	auto IsCommandAllowed = []( const char* sVariable ) -> bool
+	{
+        if( (int)CVAR_GET_FLOAT( "sv_commandlist" ) == 1 )
+            return !g_CommandWhitelist.contains( sVariable );
+        return g_CommandWhitelist.contains( sVariable );
+	};
+
     switch( m_iVariableType )
     {
         case VARIABLE_TYPE_CVAR:
@@ -85,8 +95,7 @@ void CGameVariable :: Use( CBaseEntity* pActivator, CBaseEntity* pCaller, USE_TY
             const auto cvarName = STRING( m_sVariable );
             const auto cvarValue = STRING( useType == USE_OFF ? pev->message : m_sValue );
 
-            // Commands should be evaluated on execution in case we've saved and restored and the whitelist has changed.
-            if (!g_CommandWhitelist.contains(cvarName))
+            if( !IsCommandAllowed( cvarName ) )
             {
                 Logger->error("The console variable \"{} {}\" cannot be changed because it is not listed in the command whitelist", cvarName, cvarValue);
                 break;
@@ -141,7 +150,7 @@ void CGameVariable :: Use( CBaseEntity* pActivator, CBaseEntity* pCaller, USE_TY
         case VARIABLE_TYPE_COMMAND:
         default:
         {
-            if( !g_CommandWhitelist.contains( STRING( m_sVariable ) ) )
+            if( !IsCommandAllowed( STRING( m_sVariable ) ) )
             {
                 Logger->error("The console command \"{} {}\" cannot be sent because it is not listed in the command whitelist", STRING( m_sVariable ) );
                 break;
