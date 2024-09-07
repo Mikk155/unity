@@ -29,6 +29,7 @@
 #include "skill.h"
 
 #include "scripting/AS/as_utils.h"
+#include <unordered_map>
 
 class CBaseEntity;
 class CBaseItem;
@@ -63,16 +64,57 @@ class ICustomEntity;
 // UNDONE: This will ignore transition volumes (trigger_transition), but not the PVS!!!
 #define FCAP_FORCE_TRANSITION 0x00000080 // ALWAYS goes across transitions
 
+#define USE_VALUE_USE ( 1 << 0 )
+#define USE_VALUE_TOUCH ( 1 << 1 )
+#define USE_VALUE_MASTER ( 1 << 2 )
+#define USE_VALUE_THINK ( 1 << 3 )
+
 enum USE_TYPE : int
 {
+	USE_UNSET = -1,
 	USE_OFF = 0,
 	USE_ON = 1,
 	USE_SET = 2,
-	USE_TOGGLE = 3
+	USE_TOGGLE = 3,
+	USE_KILL = 4,
+	USE_SAME = 5,
+	USE_OPPOSITE = 6,
+	USE_TOUCH = 7,
+	USE_LOCK = 8,
+	USE_UNLOCK = 9,
+	USE_UNKNOWN = 10
+};
+
+enum appearflags : int
+{
+	NOT_IN = -1, // Does not appears when
+	DEFAULT = 0, // Has no effect
+	ONLY_IN = 1, // Only appears when
+	SKILL_EASY = 1,
+	SKILL_MEDIUM,
+	SKILL_HARD,
+	GM_DEATHMATCH,
+	GM_COOPERATIVE,
+	GM_CAPTURETHEFLAG,
+	GM_TEAMPLAY,
+	GM_MULTIPLAYER,
+	GM_SINGLEPLAYER,
+	SV_DEDICATED
+};
+
+enum PlayerSelector
+{
+	None = 0,
+	Activator = 1,
+	Alive = 2,
+	Dead = 4,
+	NonActivator = 8
 };
 
 // people gib if their health is <= this at the time of death
 #define GIB_HEALTH_VALUE -30
+
+#define WORLD_BOUNDS_LIMIT 4096
 
 #define bits_CAP_DUCK (1 << 0)		 // crouch
 #define bits_CAP_JUMP (1 << 1)		 // jump/leap
@@ -344,6 +386,7 @@ public:
 	virtual bool IsInWorld();
 	virtual bool IsPlayer() { return false; }
 	virtual bool IsNetClient() { return false; }
+	virtual bool IsMonster() { return false; }
 	virtual const char* TeamID() { return ""; }
 
 
@@ -587,9 +630,9 @@ public:
 	 */
 	virtual bool FVisible(const Vector& vecOrigin);
 
-	static float GetSkillFloat(std::string_view name)
+	static float GetSkillFloat(std::string_view name, float flDefault = 0)
 	{
-		return g_Skill.GetValue(name);
+		return g_Skill.GetValue(name, flDefault);
 	}
 
 	// Sound playback.
@@ -633,6 +676,31 @@ public:
 	as::UniquePtr<CScriptDictionary> m_UserDataDictionary;
 
 	CScriptDictionary* GetUserData();
+
+	USE_TYPE m_UseType = USE_UNSET;
+	USE_TYPE m_UseTypeLast = USE_UNSET;
+	float m_UseValue;
+	int m_UseLocked;
+
+	/**
+	 *	@brief Allocate a new entity instance for pActivator.
+	 *	pActivator and pCaller should be the ones from your UseFunction
+	 *	This function will return the updated instance with whatever the entity keyvalue m_Activator wants
+	 */
+	CBaseEntity* AllocNewActivator( CBaseEntity* pActivator, CBaseEntity* pCaller, string_t szNewTarget );
+	string_t m_sNewActivator;
+
+	int m_appearflag_notin = (int)appearflags::DEFAULT;
+	int m_appearflag_onlyin = (int)appearflags::DEFAULT;
+	bool CheckAppearanceFlags();
+
+	int m_iPlayerSelector = PlayerSelector::None;
+	bool IsPlayerSelector( CBasePlayer* pPlayer, CBaseEntity* pActivator );
+
+	std::unordered_map<std::string, std::string> keyvalues;
+	std::string GetKeyValue( const char* sKey, const char* DefaultValue = "" );
+
+	int m_uselos = 1;
 };
 
 inline bool FNullEnt(CBaseEntity* ent) { return (ent == nullptr) || FNullEnt(ent->edict()); }

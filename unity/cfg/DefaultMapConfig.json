@@ -1,0 +1,17 @@
+{
+	"Includes":
+	[
+		"cfg/BaseGameConfig.json"
+	],
+    "SectionGroups":
+	[
+		{
+            "Sections":
+			{
+                "HudColor": "222 67 236",
+				"CrosshairColor": "222 67 236",
+                "SuitLightType": "flashlight"
+            }
+        }
+    ]
+}

@@ -783,8 +783,19 @@ void CShockTrooper::HandleAnimEvent(MonsterEvent_t* pEvent)
 	case STROOPER_AE_GREN_TOSS:
 	{
 		UTIL_MakeVectors(pev->angles);
-		// CGrenade::ShootTimed(this, pev->origin + gpGlobals->v_forward * 34 + Vector (0, 0, 32), m_vecTossVelocity, 3.5);
-		CSpore::CreateSpore(pev->origin + Vector(0, 0, 98), m_vecTossVelocity, this, CSpore::SporeType::GRENADE, true, false);
+
+		switch( ( (int)GetSkillFloat( "shocktrooper_sporetype"sv, 2 ) == 2 ? RANDOM_LONG( 0, 1 ) : (int)GetSkillFloat( "shocktrooper_sporetype"sv ) ) )
+		{
+			case 1:
+				if( CSpore* pSpore = CSpore::CreateSpore( pev->origin + Vector(0, 0, 98),
+					m_vecTossVelocity, this, CSpore::SporeType::ROCKET, false, false); pSpore != nullptr ) {
+						pSpore->pev->velocity = pSpore->pev->velocity + DotProduct(pSpore->pev->velocity, gpGlobals->v_forward) * gpGlobals->v_forward;
+				}
+			break;
+			default:
+				CSpore::CreateSpore(pev->origin + Vector(0, 0, 98), m_vecTossVelocity, this, CSpore::SporeType::GRENADE, true, false);
+			break;
+		}
 
 		m_fThrowGrenade = false;
 		m_flNextGrenadeCheck = gpGlobals->time + 6; // wait six seconds before even looking again to see if a grenade can be thrown.
@@ -2167,6 +2178,8 @@ void CShockTrooperRepel::RepelUse(CBaseEntity* pActivator, CBaseEntity* pCaller,
 	pBeam->SetColor(255, 255, 255);
 	pBeam->SetThink(&CBeam::SUB_Remove);
 	pBeam->pev->nextthink = gpGlobals->time + -4096.0 * tr.flFraction / pGrunt->pev->velocity.z + 0.5;
+
+	FireTargets( STRING( pev->target ), pGrunt, this, USE_TOGGLE, 0 );
 
 	UTIL_Remove(this);
 }

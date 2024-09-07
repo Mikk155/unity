@@ -18,7 +18,8 @@
 enum Explosions
 {
 	expRandom,
-	expDirected
+	expDirected,
+	expSpecific
 };
 enum Materials
 {
@@ -95,4 +96,7 @@ public:
 	float m_angle;
 	string_t m_iszGibModel;
 	string_t m_iszSpawnObject;
+
+	Vector m_VecDirection = g_vecZero;
+	float m_DirectionSpeed = 200;
 };

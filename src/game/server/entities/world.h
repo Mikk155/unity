@@ -26,6 +26,9 @@
  */
 class CWorld : public CBaseEntity
 {
+	DECLARE_CLASS( CWorld, CBaseEntity );
+	DECLARE_DATAMAP();
+
 public:
 	CWorld();
 	~CWorld() override;
@@ -33,4 +36,7 @@ public:
 	void Spawn() override;
 	void Precache() override;
 	bool KeyValue(KeyValueData* pkvd) override;
+
+private:
+	int m_freeRoam = -1;
 };

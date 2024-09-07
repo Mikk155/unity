@@ -775,6 +775,7 @@ public:
 	void FindThink();
 	void DelayThink();
 	int ObjectCaps() override { return (CBaseToggle::ObjectCaps() & ~FCAP_ACROSS_TRANSITION); }
+	bool IsMonster() override { return false; }
 
 	CBaseMonster* FindEntity();
 	bool AcceptableSpeaker(CBaseMonster* pMonster);

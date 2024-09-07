@@ -31,7 +31,7 @@ int DispatchSpawn(edict_t* pent)
 {
 	CBaseEntity* pEntity = (CBaseEntity*)GET_PRIVATE(pent);
 
-	if (pEntity)
+	if (pEntity && pEntity->CheckAppearanceFlags() )
 	{
 		// Initialize these or entities who don't link to the world won't have anything in here
 		pEntity->pev->absmin = pEntity->pev->origin - Vector(1, 1, 1);
@@ -171,7 +171,7 @@ void DispatchTouch(edict_t* pentTouched, edict_t* pentOther)
 	CBaseEntity* pEntity = (CBaseEntity*)GET_PRIVATE(pentTouched);
 	CBaseEntity* pOther = (CBaseEntity*)GET_PRIVATE(pentOther);
 
-	if (pEntity && pOther && ((pEntity->pev->flags | pOther->pev->flags) & FL_KILLME) == 0)
+	if( pEntity && pOther && ( (pEntity->pev->flags | pOther->pev->flags) & FL_KILLME) == 0 && !FBitSet( pEntity->m_UseLocked, USE_VALUE_TOUCH ) )
 		pEntity->Touch(pOther);
 }
 
@@ -180,14 +180,14 @@ void DispatchUse(edict_t* pentUsed, edict_t* pentOther)
 	CBaseEntity* pEntity = (CBaseEntity*)GET_PRIVATE(pentUsed);
 	CBaseEntity* pOther = (CBaseEntity*)GET_PRIVATE(pentOther);
 
-	if (pEntity && (pEntity->pev->flags & FL_KILLME) == 0)
+	if (pEntity && (pEntity->pev->flags & FL_KILLME) == 0 && !FBitSet( pEntity->m_UseLocked, USE_VALUE_USE ) )
 		pEntity->Use(pOther, pOther, USE_TOGGLE, 0);
 }
 
 void DispatchThink(edict_t* pent)
 {
 	CBaseEntity* pEntity = (CBaseEntity*)GET_PRIVATE(pent);
-	if (pEntity)
+	if( pEntity && !FBitSet( pEntity->m_UseLocked, USE_VALUE_THINK ) )
 	{
 		if (FBitSet(pEntity->pev->flags, FL_DORMANT))
 			CBaseEntity::Logger->error("Dormant entity {} is thinking!!", STRING(pEntity->pev->classname));
@@ -552,25 +552,27 @@ static void LoadSentenceReplacementMap(const ReplacementMap*& destination, strin
 
 bool CBaseEntity::RequiredKeyValue(KeyValueData* pkvd)
 {
+	keyvalues[ pkvd->szKeyName ] = std::string( pkvd->szValue );
+
 	// Replacement maps can be changed at runtime using trigger_changekeyvalue.
 	// Note that this may cause host_error or sys_error if files aren't precached.
-	if (FStrEq(pkvd->szKeyName, "model_replacement_filename"))
+	if (FStrEq(pkvd->szKeyName, "modellist"))
 	{
 		m_ModelReplacementFileName = ALLOC_STRING(pkvd->szValue);
 		LoadFileNameReplacementMap(m_ModelReplacement, m_ModelReplacementFileName);
 	}
-	else if (FStrEq(pkvd->szKeyName, "sound_replacement_filename"))
+	else if (FStrEq(pkvd->szKeyName, "soundlist"))
 	{
 		m_SoundReplacementFileName = ALLOC_STRING(pkvd->szValue);
 		LoadFileNameReplacementMap(m_SoundReplacement, m_SoundReplacementFileName);
 	}
-	else if (FStrEq(pkvd->szKeyName, "sentence_replacement_filename"))
+	else if (FStrEq(pkvd->szKeyName, "sentencelist"))
 	{
 		m_SentenceReplacementFileName = ALLOC_STRING(pkvd->szValue);
 		LoadSentenceReplacementMap(m_SentenceReplacement, m_SentenceReplacementFileName);
 	}
 	// Note: while this code does fix backwards bounds here it will not apply to partial hulls mixing with hard-coded ones.
-	else if (FStrEq(pkvd->szKeyName, "custom_hull_min"))
+	else if (FStrEq(pkvd->szKeyName, "minhullsize"))
 	{
 		UTIL_StringToVector(m_CustomHullMin, pkvd->szValue);
 		m_HasCustomHullMin = true;
@@ -582,7 +584,7 @@ bool CBaseEntity::RequiredKeyValue(KeyValueData* pkvd)
 
 		return true;
 	}
-	else if (FStrEq(pkvd->szKeyName, "custom_hull_max"))
+	else if (FStrEq(pkvd->szKeyName, "maxhullsize"))
 	{
 		UTIL_StringToVector(m_CustomHullMax, pkvd->szValue);
 		m_HasCustomHullMax = true;
@@ -592,6 +594,59 @@ bool CBaseEntity::RequiredKeyValue(KeyValueData* pkvd)
 			CheckForBackwardsBounds(this);
 		}
 
+		return true;
+	}
+	else if( FStrEq( pkvd->szKeyName, "m_UseType" ) && atoi( pkvd->szValue ) > USE_UNSET && atoi( pkvd->szValue ) < USE_UNKNOWN )
+	{
+		m_UseType = static_cast<USE_TYPE>( atoi( pkvd->szValue ) );
+		return true;
+	}
+	else if( FStrEq( pkvd->szKeyName, "m_UseValue" ) )
+	{
+		m_UseValue = atof( pkvd->szValue );
+		return true;
+	}
+	else if( std::string( pkvd->szKeyName ).find( "appearflag_" ) == 0 )
+	{
+		if( atoi( pkvd->szValue ) != 0 )
+		{
+			int iBits = 0;
+
+			if( FStrEq( pkvd->szKeyName, "appearflag_singleplayer" ) )      iBits = appearflags::GM_SINGLEPLAYER;
+			else if( FStrEq( pkvd->szKeyName, "appearflag_multiplayer" ) )  iBits = appearflags::GM_MULTIPLAYER;
+			else if( FStrEq( pkvd->szKeyName, "appearflag_cooperative" ) )  iBits = appearflags::GM_COOPERATIVE;
+			else if( FStrEq( pkvd->szKeyName, "appearflag_skilleasy" ) )    iBits = appearflags::SKILL_EASY;
+			else if( FStrEq( pkvd->szKeyName, "appearflag_skillmedium" ) )  iBits = appearflags::SKILL_MEDIUM;
+			else if( FStrEq( pkvd->szKeyName, "appearflag_skillhard" ) )    iBits = appearflags::SKILL_HARD;
+			else if( FStrEq( pkvd->szKeyName, "appearflag_deathmatch" ) )   iBits = appearflags::GM_DEATHMATCH;
+			else if( FStrEq( pkvd->szKeyName, "appearflag_cft" ) )          iBits = appearflags::GM_CAPTURETHEFLAG;
+			else if( FStrEq( pkvd->szKeyName, "appearflag_teamplay" ) )     iBits = appearflags::GM_TEAMPLAY;
+			else if( FStrEq( pkvd->szKeyName, "appearflag_dedicated" ) )    iBits = appearflags::SV_DEDICATED;
+
+			if( iBits != 0 )
+			{
+				if( atoi( pkvd->szValue ) == (int)appearflags::NOT_IN )
+					SetBits( m_appearflag_notin, iBits );
+				else if( atoi( pkvd->szValue ) == (int)appearflags::ONLY_IN )
+					SetBits( m_appearflag_onlyin, iBits );
+				return true;
+			}
+		}
+	}
+	else if( FStrEq( pkvd->szKeyName, "m_Activator" ) )
+	{
+		m_sNewActivator = ALLOC_STRING( pkvd->szValue );
+		return true;
+	}
+	else if( std::string( pkvd->szKeyName ).find( "m_iPlayerSelector" ) == 0 )
+	{
+		if( atoi( pkvd->szValue ) > 0 )
+			SetBits( m_iPlayerSelector, atoi( pkvd->szValue ) );
+		return true;
+	}
+	else if( std::string( pkvd->szKeyName ).find( "m_uselos" ) == 0 )
+	{
+		m_uselos = atoi( pkvd->szValue );
 		return true;
 	}
 
@@ -816,23 +871,23 @@ bool CBaseEntity::IsDormant()
 
 bool CBaseEntity::IsLockedByMaster()
 {
-	return !FStringNull(m_sMaster) && !UTIL_IsMasterTriggered(m_sMaster, m_hActivator);
+	return !FStringNull(m_sMaster) && !UTIL_IsMasterTriggered(m_sMaster, m_hActivator, m_UseLocked);
 }
 
 bool CBaseEntity::IsInWorld()
 {
 	// position
-	if (pev->origin.x >= 4096)
+	if (pev->origin.x >= WORLD_BOUNDS_LIMIT)
 		return false;
-	if (pev->origin.y >= 4096)
+	if (pev->origin.y >= WORLD_BOUNDS_LIMIT)
 		return false;
-	if (pev->origin.z >= 4096)
+	if (pev->origin.z >= WORLD_BOUNDS_LIMIT)
 		return false;
-	if (pev->origin.x <= -4096)
+	if (pev->origin.x <= -WORLD_BOUNDS_LIMIT)
 		return false;
-	if (pev->origin.y <= -4096)
+	if (pev->origin.y <= -WORLD_BOUNDS_LIMIT)
 		return false;
-	if (pev->origin.z <= -4096)
+	if (pev->origin.z <= -WORLD_BOUNDS_LIMIT)
 		return false;
 	// speed
 	if (pev->velocity.x >= 2000)
@@ -924,4 +979,224 @@ CScriptDictionary* CBaseEntity::GetUserData()
 	m_UserDataDictionary->AddRef();
 
 	return m_UserDataDictionary.get();
+}
+
+bool CBaseEntity :: CheckAppearanceFlags()
+{
+	if( m_appearflag_notin != (int)appearflags::DEFAULT )
+	{
+		if(( ( m_appearflag_notin & appearflags::GM_SINGLEPLAYER )   != 0 &&    !g_pGameRules->IsMultiplayer() )
+		|| ( ( m_appearflag_notin & appearflags::GM_MULTIPLAYER )    != 0 &&     g_pGameRules->IsMultiplayer() )
+		|| ( ( m_appearflag_notin & appearflags::GM_COOPERATIVE )    != 0 &&     g_pGameRules->IsCoOp() )
+		|| ( ( m_appearflag_notin & appearflags::SKILL_EASY )        != 0 &&     g_Skill.GetSkillLevel() == SkillLevel::Easy )
+		|| ( ( m_appearflag_notin & appearflags::SKILL_MEDIUM )      != 0 &&     g_Skill.GetSkillLevel() == SkillLevel::Medium )
+		|| ( ( m_appearflag_notin & appearflags::SKILL_HARD )        != 0 &&     g_Skill.GetSkillLevel() == SkillLevel::Hard )
+		|| ( ( m_appearflag_notin & appearflags::GM_TEAMPLAY )       != 0 &&    !g_pGameRules->IsTeamplay() )
+		|| ( ( m_appearflag_notin & appearflags::GM_DEATHMATCH )     != 0 &&    !g_pGameRules->IsDeathmatch() )
+		|| ( ( m_appearflag_notin & appearflags::GM_CAPTURETHEFLAG ) != 0 &&    !g_pGameRules->IsCTF() )
+		|| ( ( m_appearflag_notin & appearflags::SV_DEDICATED )      != 0 &&    !IS_DEDICATED_SERVER() )
+		){ return false; }
+	}
+
+	if( m_appearflag_onlyin != (int)appearflags::DEFAULT )
+	{
+		if(( ( m_appearflag_onlyin & appearflags::GM_SINGLEPLAYER )  != 0 &&     g_pGameRules->IsMultiplayer() )
+		|| ( ( m_appearflag_onlyin & appearflags::GM_MULTIPLAYER )   != 0 &&    !g_pGameRules->IsMultiplayer() )
+		|| ( ( m_appearflag_onlyin & appearflags::GM_COOPERATIVE )   != 0 &&    !g_pGameRules->IsCoOp() )
+		|| ( ( m_appearflag_onlyin & appearflags::SKILL_EASY )       != 0 &&     g_Skill.GetSkillLevel() != SkillLevel::Easy )
+		|| ( ( m_appearflag_onlyin & appearflags::SKILL_MEDIUM )     != 0 &&     g_Skill.GetSkillLevel() != SkillLevel::Medium )
+		|| ( ( m_appearflag_onlyin & appearflags::SKILL_HARD )       != 0 &&     g_Skill.GetSkillLevel() != SkillLevel::Hard )
+		|| ( ( m_appearflag_onlyin & appearflags::GM_TEAMPLAY )      != 0 &&     g_pGameRules->IsTeamplay() )
+		|| ( ( m_appearflag_onlyin & appearflags::GM_DEATHMATCH )    != 0 &&     g_pGameRules->IsDeathmatch() )
+		|| ( ( m_appearflag_onlyin & appearflags::GM_CAPTURETHEFLAG )!= 0 &&     g_pGameRules->IsCTF() )
+		|| ( ( m_appearflag_onlyin & appearflags::SV_DEDICATED )     != 0 &&     IS_DEDICATED_SERVER() )
+		){ return false; }
+	}
+	return true;
+}
+
+CBaseEntity* CBaseEntity :: AllocNewActivator( CBaseEntity* pActivator, CBaseEntity* pCaller, string_t szNewTarget )
+{
+	if( !FStringNull( szNewTarget ) )
+	{
+		if( FStrEq( STRING( szNewTarget ), "!activator" ) )
+		{
+			return pActivator;
+		}
+		else if( FStrEq( STRING( szNewTarget ), "!caller" ) )
+		{
+			return pCaller;
+		}
+		else if( FStrEq( STRING( szNewTarget ), "!this" ) )
+		{
+			return this;
+		}
+		else if( FStrEq( STRING( szNewTarget ), "!player" ) )
+		{
+			return static_cast<CBaseEntity*>( UTIL_FindNearestPlayer( pev->origin ) );
+		}
+		else
+		{
+			return UTIL_FindEntityByTargetname( nullptr, STRING( szNewTarget ) );
+		}
+	}
+
+	return pActivator;
+}
+
+bool CBaseEntity :: IsPlayerSelector( CBasePlayer* pPlayer, CBaseEntity* pActivator )
+{
+	if( m_iPlayerSelector == PlayerSelector::None )
+		return true;
+
+	if( FBitSet( m_iPlayerSelector, PlayerSelector::NonActivator ) && pPlayer != pActivator )
+		return true;
+
+	if( FBitSet( m_iPlayerSelector, PlayerSelector::Activator ) && pPlayer == pActivator )
+		return true;
+
+	if( FBitSet( m_iPlayerSelector, PlayerSelector::Alive ) && pPlayer->IsAlive() )
+		return true;
+
+	if( FBitSet( m_iPlayerSelector, PlayerSelector::Dead ) && !pPlayer->IsAlive() )
+		return true;
+
+	return false;
+}
+
+std::string CBaseEntity :: GetKeyValue( const char* sKey, const char* DefaultValue )
+{
+    static const std::unordered_map< std::string, std::function< std::string( const entvars_t* ) > > entvars_map =
+	{
+        { "classname", [](const entvars_t* pev) { return STRING( pev->classname ); } },
+        { "globalname", [](const entvars_t* pev) { return STRING( pev->globalname ); } },
+        { "origin", [](const entvars_t* pev) { return pev->origin.ToString(); } },
+        { "oldorigin", [](const entvars_t* pev) { return pev->oldorigin.ToString(); } },
+        { "velocity", [](const entvars_t* pev) { return pev->velocity.ToString(); } },
+        { "basevelocity", [](const entvars_t* pev) { return pev->basevelocity.ToString(); } },
+        { "clbasevelocity", [](const entvars_t* pev) { return pev->clbasevelocity.ToString(); } },
+        { "movedir", [](const entvars_t* pev) { return pev->movedir.ToString(); } },
+        { "angles", [](const entvars_t* pev) { return pev->angles.ToString(); } },
+        { "avelocity", [](const entvars_t* pev) { return pev->avelocity.ToString(); } },
+        { "punchangle", [](const entvars_t* pev) { return pev->punchangle.ToString(); } },
+        { "v_angle", [](const entvars_t* pev) { return pev->v_angle.ToString(); } },
+        { "endpos", [](const entvars_t* pev) { return pev->endpos.ToString(); } },
+        { "startpos", [](const entvars_t* pev) { return pev->startpos.ToString(); } },
+        { "impacttime", [](const entvars_t* pev) { return std::to_string( pev->impacttime ); } },
+        { "starttime", [](const entvars_t* pev) { return std::to_string( pev->starttime ); } },
+        { "fixangle", [](const entvars_t* pev) { return std::to_string( pev->fixangle ); } },
+        { "idealpitch", [](const entvars_t* pev) { return std::to_string( pev->idealpitch ); } },
+        { "pitch_speed", [](const entvars_t* pev) { return std::to_string( pev->pitch_speed ); } },
+        { "ideal_yaw", [](const entvars_t* pev) { return std::to_string( pev->ideal_yaw ); } },
+        { "yaw_speed", [](const entvars_t* pev) { return std::to_string( pev->yaw_speed ); } },
+        { "modelindex", [](const entvars_t* pev) { return std::to_string( pev->modelindex ); } },
+        { "model", [](const entvars_t* pev) { return STRING( pev->model ); } },
+        { "viewmodel", [](const entvars_t* pev) { return STRING( pev->viewmodel ); } },
+        { "weaponmodel", [](const entvars_t* pev) { return STRING( pev->weaponmodel ); } },
+        { "absmin", [](const entvars_t* pev) { return pev->absmin.ToString(); } },
+        { "absmax", [](const entvars_t* pev) { return pev->absmax.ToString(); } },
+        { "mins", [](const entvars_t* pev) { return pev->mins.ToString(); } },
+        { "maxs", [](const entvars_t* pev) { return pev->maxs.ToString(); } },
+        { "size", [](const entvars_t* pev) { return pev->size.ToString(); } },
+        { "ltime", [](const entvars_t* pev) { return std::to_string( pev->ltime ); } },
+        { "nextthink", [](const entvars_t* pev) { return std::to_string( pev->nextthink ); } },
+        { "movetype", [](const entvars_t* pev) { return std::to_string( pev->movetype ); } },
+        { "solid", [](const entvars_t* pev) { return std::to_string( pev->solid ); } },
+        { "skin", [](const entvars_t* pev) { return std::to_string( pev->skin ); } },
+        { "body", [](const entvars_t* pev) { return std::to_string( pev->body ); } },
+        { "effects", [](const entvars_t* pev) { return std::to_string( pev->effects ); } },
+        { "gravity", [](const entvars_t* pev) { return std::to_string( pev->gravity ); } },
+        { "friction", [](const entvars_t* pev) { return std::to_string( pev->friction ); } },
+        { "light_level", [](const entvars_t* pev) { return std::to_string( pev->light_level ); } },
+        { "sequence", [](const entvars_t* pev) { return std::to_string( pev->sequence ); } },
+        { "gaitsequence", [](const entvars_t* pev) { return std::to_string( pev->gaitsequence ); } },
+        { "frame", [](const entvars_t* pev) { return std::to_string( pev->frame ); } },
+        { "animtime", [](const entvars_t* pev) { return std::to_string( pev->animtime ); } },
+        { "framerate", [](const entvars_t* pev) { return std::to_string( pev->framerate ); } },
+//        { "controller", [](const entvars_t* pev) { return std::to_string( pev->controller ); } },
+//        { "blending", [](const entvars_t* pev) { return std::to_string( pev->blending ); } },
+        { "scale", [](const entvars_t* pev) { return std::to_string( pev->scale ); } },
+        { "rendermode", [](const entvars_t* pev) { return std::to_string( pev->rendermode ); } },
+        { "renderamt", [](const entvars_t* pev) { return std::to_string( pev->renderamt ); } },
+        { "rendercolor", [](const entvars_t* pev) { return pev->rendercolor.ToString(); } },
+        { "renderfx", [](const entvars_t* pev) { return std::to_string( pev->renderfx ); } },
+        { "health", [](const entvars_t* pev) { return std::to_string( pev->health ); } },
+        { "frags", [](const entvars_t* pev) { return std::to_string( pev->frags ); } },
+        { "weapons", [](const entvars_t* pev) { return std::to_string( pev->weapons ); } },
+        { "takedamage", [](const entvars_t* pev) { return std::to_string( pev->takedamage ); } },
+        { "deadflag", [](const entvars_t* pev) { return std::to_string( pev->deadflag ); } },
+        { "view_ofs", [](const entvars_t* pev) { return pev->view_ofs.ToString(); } },
+        { "button", [](const entvars_t* pev) { return std::to_string( pev->button ); } },
+        { "impulse", [](const entvars_t* pev) { return std::to_string( pev->impulse ); } },
+//        { "chain", [](const entvars_t* pev) { return std::to_string( pev->chain ); } },
+//        { "dmg_inflictor", [](const entvars_t* pev) { return std::to_string( pev->dmg_inflictor ); } },
+//        { "enemy", [](const entvars_t* pev) { return std::to_string( pev->enemy ); } },
+//        { "aiment", [](const entvars_t* pev) { return std::to_string( pev->aiment ); } },
+//        { "owner", [](const entvars_t* pev) { return std::to_string( pev->owner ); } },
+//        { "groundentity", [](const entvars_t* pev) { return std::to_string( pev->groundentity ); } },
+        { "spawnflags", [](const entvars_t* pev) { return std::to_string( pev->spawnflags ); } },
+        { "flags", [](const entvars_t* pev) { return std::to_string( pev->flags ); } },
+        { "colormap", [](const entvars_t* pev) { return std::to_string( pev->colormap ); } },
+        { "team", [](const entvars_t* pev) { return STRING( pev->team ); } },
+        { "max_health", [](const entvars_t* pev) { return std::to_string( pev->max_health ); } },
+        { "teleport_time", [](const entvars_t* pev) { return std::to_string( pev->teleport_time ); } },
+        { "armortype", [](const entvars_t* pev) { return std::to_string( pev->armortype ); } },
+        { "armorvalue", [](const entvars_t* pev) { return std::to_string( pev->armorvalue ); } },
+        { "waterlevel", [](const entvars_t* pev) { return std::to_string( (int)pev->waterlevel ); } },
+        { "watertype", [](const entvars_t* pev) { return std::to_string( pev->watertype ); } },
+        { "target", [](const entvars_t* pev) { return STRING( pev->target ); } },
+        { "targetname", [](const entvars_t* pev) { return STRING( pev->targetname ); } },
+        { "netname", [](const entvars_t* pev) { return STRING( pev->netname ); } },
+        { "message", [](const entvars_t* pev) { return STRING( pev->message ); } },
+        { "dmg_take", [](const entvars_t* pev) { return std::to_string( pev->dmg_take ); } },
+        { "dmg_save", [](const entvars_t* pev) { return std::to_string( pev->dmg_save ); } },
+        { "dmg", [](const entvars_t* pev) { return std::to_string( pev->dmg ); } },
+        { "dmgtime", [](const entvars_t* pev) { return std::to_string( pev->dmgtime ); } },
+        { "noise", [](const entvars_t* pev) { return STRING( pev->noise ); } },
+        { "noise1", [](const entvars_t* pev) { return STRING( pev->noise1 ); } },
+        { "noise2", [](const entvars_t* pev) { return STRING( pev->noise2 ); } },
+        { "noise3", [](const entvars_t* pev) { return STRING( pev->noise3 ); } },
+        { "speed", [](const entvars_t* pev) { return std::to_string( pev->speed ); } },
+        { "air_finished", [](const entvars_t* pev) { return std::to_string( pev->air_finished ); } },
+        { "pain_finished", [](const entvars_t* pev) { return std::to_string( pev->pain_finished ); } },
+        { "radsuit_finished", [](const entvars_t* pev) { return std::to_string( pev->radsuit_finished ); } },
+//        { "pContainingEntity", [](const entvars_t* pev) { return std::to_string( pev->pContainingEntity ); } },
+        { "playerclass", [](const entvars_t* pev) { return std::to_string( pev->playerclass ); } },
+        { "maxspeed", [](const entvars_t* pev) { return std::to_string( pev->maxspeed ); } },
+        { "fov", [](const entvars_t* pev) { return std::to_string( pev->fov ); } },
+        { "weaponanim", [](const entvars_t* pev) { return std::to_string( pev->weaponanim ); } },
+        { "pushmsec", [](const entvars_t* pev) { return std::to_string( pev->pushmsec ); } },
+        { "bInDuck", [](const entvars_t* pev) { return std::to_string( pev->bInDuck ); } },
+        { "flTimeStepSound", [](const entvars_t* pev) { return std::to_string( pev->flTimeStepSound ); } },
+        { "flSwimTime", [](const entvars_t* pev) { return std::to_string( pev->flSwimTime ); } },
+        { "flDuckTime", [](const entvars_t* pev) { return std::to_string( pev->flDuckTime ); } },
+        { "iStepLeft", [](const entvars_t* pev) { return std::to_string( pev->iStepLeft ); } },
+        { "flFallVelocity", [](const entvars_t* pev) { return std::to_string( pev->flFallVelocity ); } },
+        { "gamestate", [](const entvars_t* pev) { return std::to_string( pev->gamestate ); } },
+        { "oldbuttons", [](const entvars_t* pev) { return std::to_string( pev->oldbuttons ); } },
+        { "groupinfo", [](const entvars_t* pev) { return std::to_string( pev->groupinfo ); } },
+        { "iuser1", [](const entvars_t* pev) { return std::to_string( pev->iuser1 ); } },
+        { "iuser2", [](const entvars_t* pev) { return std::to_string( pev->iuser2 ); } },
+        { "iuser3", [](const entvars_t* pev) { return std::to_string( pev->iuser3 ); } },
+        { "iuser4", [](const entvars_t* pev) { return std::to_string( pev->iuser4 ); } },
+        { "fuser1", [](const entvars_t* pev) { return std::to_string( pev->fuser1 ); } },
+        { "fuser2", [](const entvars_t* pev) { return std::to_string( pev->fuser2 ); } },
+        { "fuser3", [](const entvars_t* pev) { return std::to_string( pev->fuser3 ); } },
+        { "fuser4", [](const entvars_t* pev) { return std::to_string( pev->fuser4 ); } },
+        { "vuser1", [](const entvars_t* pev) { return pev->vuser1.ToString(); } },
+        { "vuser2", [](const entvars_t* pev) { return pev->vuser2.ToString(); } },
+        { "vuser3", [](const entvars_t* pev) { return pev->vuser3.ToString(); } },
+        { "vuser4", [](const entvars_t* pev) { return pev->vuser4.ToString(); } },
+//        { "euser1", [](const entvars_t* pev) { return std::to_string( pev->euser1 ); } },
+//        { "euser2", [](const entvars_t* pev) { return std::to_string( pev->euser2 ); } },
+//        { "euser3", [](const entvars_t* pev) { return std::to_string( pev->euser3 ); } },
+//        { "euser4", [](const entvars_t* pev) { return std::to_string( pev->euser4 ); } },
+    };
+
+    if( auto var = entvars_map.find( sKey ); var != entvars_map.end() )
+	{
+        return var->second( pev );
+    }
+
+	return ( keyvalues.find( sKey ) != keyvalues.end() ? keyvalues[ sKey ] : std::string( DefaultValue ) );
 }

@@ -1,0 +1,20 @@
+{
+    "exclude":
+    [
+        "**/__pycache__",
+        "**/node_modules",
+        "**/.git",
+        "**/.github",
+        "**/build",
+        "**/docs",
+        "**/external",
+        "**/src/common",
+        "**/src/engine",
+        "**/src/game",
+        "**/src/public",
+        "**/unity",
+        "**/utils",
+        "**/vcpkg",
+        "**/vcpkg_config"
+    ]
+}

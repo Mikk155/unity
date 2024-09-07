@@ -17,10 +17,23 @@
 
 #include "CBaseEntity.h"
 
-class CBaseDMStart : public CPointEntity
+#define SF_SPAWNPOINT_STARTOFF ( 0 << 1 )
+
+class CSpawnPoint : public CPointEntity
 {
-public:
-	bool IsTriggered(CBaseEntity* pEntity) override;
+	public:
+		void Spawn() override;
+		bool KeyValue( KeyValueData* pkvd ) override;
+		void Use( CBaseEntity* pActivator, CBaseEntity* pCaller, USE_TYPE useType, float value ) override;
+		bool IsTriggered( CBaseEntity* pEntity ) override;
+		void PlayerSpawn( CBasePlayer* pPlayer );
+
+	private:
+		float m_flOffSet = 256.0f;
+		bool InitialState;
+		int m_cTargets;
+		string_t m_iKey[16];
+		string_t m_iValue[16];
 };
 
 inline CBaseEntity* g_pLastSpawn = nullptr;

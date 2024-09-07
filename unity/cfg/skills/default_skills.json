@@ -1,0 +1,384 @@
+// DON'T MESS WITH THIS.
+{
+	// MONSTERS
+
+	// Monsters free roaming
+	// 0 = disabled, enabled for npc-explicit
+	// 1 = enabled, disabled for npc-explicit
+	"freeroam": 0,
+
+	// Alien Grunt
+	"agrunt_health": 120,
+	"agrunt_dmg_punch": 20,
+
+	// Apache 
+	"apache_health": 400,
+	"apache_rockets": 1,
+	"apache_rocket_speed": 100,
+
+	// Barnacle
+	"barnacle_health": 35,
+	"barnacle_speed": 8,
+
+	// Barney
+	"barney_health": 35,
+	"barney_armor_chest": 0.5,
+	"barney_armor_helmet": 20,
+
+	// Bullsquid
+	"bullsquid_health": 120,
+	"bullsquid_dmg_bite": 25,
+	"bullsquid_dmg_whip": 35,
+	"bullsquid_dmg_spit": 15,
+
+	// Big momma
+	"bigmomma_health_factor": 2,
+	"bigmomma_dmg_slash": 70,
+	"bigmomma_dmg_blast": 160,
+	"bigmomma_radius_blast": 275,
+
+	// Gargantua
+	"gargantua_health": 1000,
+	"gargantua_dmg_slash": 30,
+	"gargantua_dmg_fire": 5,
+	"gargantua_dmg_stomp": 100,
+
+	// Hassassin
+	"hassassin_health": 50,
+	// 0 = never invisible
+	// 1 = random 20 - 255
+	"hassassin_invisibility": 1,
+
+	// Headcrab
+	"headcrab_health": 20,
+	"headcrab_dmg_bite": 10,
+
+	// Baby Headcrab
+	"babycrab_dmg_bite": 5,
+	"babycrab_health": 5,
+
+	// Hgrunt 
+	"hgrunt_health": 80,
+	"hgrunt_kick": 10,
+	"hgrunt_pellets": 6,
+	"hgrunt_gspeed": 800,
+	"hgrunt_next_glauncher": 5,
+	"9mmAR_grenade": 50,
+
+	// Houndeye
+	"houndeye_health": 30,
+	"houndeye_dmg_blast": 15,
+	"houndeye_squad_bonus": 1.1,
+
+	// ISlave
+	"islave_health": 60,
+	"islave_dmg_claw": 10,
+	"islave_dmg_clawrake": 25,
+	"islave_dmg_zap": 15,
+	"islave_speed_zap": 2.0,
+
+	// Icthyosaur
+	"ichthyosaur_health": 400,
+	"ichthyosaur_shake": 50,
+
+	// Leech
+	"leech_health": 2,
+	"leech_dmg_bite": 2,
+
+	// Controller
+	"controller_health": 100,
+	"controller_dmgzap": 35,
+	"controller_speedball": 1000,
+	"controller_dmgball": 5,
+
+	// Nihilanth
+	"nihilanth_health": 1000,
+	"nihilanth_zap": 50,
+
+	// Scientist
+	"scientist_health": 20,
+
+	// Snark
+	"snark_health": 2,
+	"snark_dmg_bite": 10,
+	"snark_dmg_pop": 5,
+
+	// Zombie
+	"zombie_health": 100,
+	"zombie_dmg_one_slash": 20,
+	"zombie_dmg_both_slash": 40,
+
+	//Turret
+	"turret_health": 60,
+
+	// MiniTurret
+	"miniturret_health": 50,
+
+	"turret_turn_rate": 30,
+	"turret_active_time": 15,
+	"turret_max_range": 1200,
+	"turret_takedamage_off": 1,
+
+	// Sentry Turret
+	"sentry_health": 50,
+	"sentry_takedamage_off": 1,
+
+	// Otis
+	"otis_health": 35,
+
+	// Pitdrone
+	"pitdrone_health": 110,
+	"pitdrone_dmg_bite": 25,
+	"pitdrone_dmg_whip": 35,
+	"pitdrone_dmg_spit": 15,
+	"pitdrone_speed_spit": 900,
+
+	// Hgrunt Ally
+	"hgrunt_ally_health": 50,
+	"hgrunt_ally_kick": 5,
+	"hgrunt_ally_pellets": 3,
+	"hgrunt_ally_gspeed": 600,
+
+	// Medic Ally 
+	"medic_ally_health": 50,
+	"medic_ally_kick": 5,
+	"medic_ally_gspeed": 600,
+	"medic_ally_heal": 75,
+
+	// Torch Ally 
+	"torch_ally_health": 50,
+	"torch_ally_kick": 5,
+	"torch_ally_gspeed": 600,
+
+	// Male Assassin 
+	"massassin_health": 80,
+	"massassin_kick": 25,
+	"massassin_gspeed": 800,
+
+	// ShockTrooper 
+	"shocktrooper_health": 200,
+	"shocktrooper_kick": 10,
+	"shocktrooper_gspeed": 800,
+	"shocktrooper_maxcharge": 8,
+	"shocktrooper_rchgspeed": 1,
+	"shocktrooper_spore_dmg": 50,
+	// Spores type
+	// 0 = grenade
+	// 1 = rocket
+	// 2 = random
+	"shocktrooper_sporetype": 2,
+
+	"op4mortar_damage": 100,
+
+	// Scientist
+	"cleansuit_scientist_health": 20,
+	"cleansuit_scientist_heal": 25,
+
+	// Voltigore
+	"voltigore_health": 450,
+	"voltigore_dmg_punch": 50,
+	"voltigore_dmg_beam": 60,
+
+	// Baby Voltigore
+	"babyvoltigore_health": 120,
+	"babyvoltigore_dmg_punch": 20,
+
+	// Pitworm
+	"pitworm_health": 100,
+	"pitworm_dmg_swipe": 50,
+	"pitworm_dmg_beam": 20,
+
+	// Geneworm
+	"geneworm_health": 100,
+	"geneworm_dmg_spit": 30,
+	"geneworm_dmg_hit": 40,
+
+	// Zombie Barney
+	"zombie_barney_health": 100,
+	"zombie_barney_dmg_one_slash": 20,
+	"zombie_barney_dmg_both_slash": 40,
+
+	// Zombie Soldier
+	"zombie_soldier_health": 120,
+	"zombie_soldier_dmg_one_slash": 20,
+	"zombie_soldier_dmg_both_slash": 40,
+
+	// Gonome
+	"gonome_health": 160,
+	"gonome_dmg_one_slash": 20,
+	"gonome_dmg_guts": 15,
+	"gonome_dmg_one_bite": 14,
+
+	// Shock Roach
+	"shockroach_health": 20,
+	"shockroach_dmg_bite": 10,
+	"shockroach_lifespan": 10,
+
+	// PLAYER WEAPONS
+
+	// Crowbar whack
+	"plr_crowbar": 10,
+
+	// 9mmhandgun Round
+	"plr_9mm_bullet": 8,
+
+	// 357 Round
+	"plr_357_bullet": 40,
+
+	// 9mmAR Round
+	"plr_9mmAR_bullet": 5,
+
+	// M203 grenade
+	"plr_9mmAR_grenade": 100,
+
+	// Shotgun buckshot
+	"plr_buckshot": 5,
+
+	// Crossbow
+	"plr_xbow_bolt_client": 10,
+
+	"plr_xbow_bolt_monster": 50,
+
+	// RPG
+	"plr_rpg": 100,
+
+	// Gauss Gun
+	"plr_gauss": 20,
+
+	// Egon Gun
+	"plr_egon_narrow": 6,
+
+	"plr_egon_wide": 14,
+
+	// Hand Grendade
+	"plr_hand_grenade": 100,
+
+	// Satchel Charge
+	"plr_satchel": 150,
+
+	// Tripmine
+	"plr_tripmine": 150,
+
+	// PLAYER HORNET
+	"plr_hornet_dmg": 7,
+	// -1 = Never recharges
+	"plr_hornet_regen": 0.5,
+	"plr_hornet_lifetime": 5.0,
+
+	"plr_pipewrench": 20,
+
+	"plr_knife": 10,
+
+	"plr_grapple": 25,
+
+	"plr_eagle": 34,
+
+	"plr_762_bullet": 100,
+
+	"plr_556_bullet": 15,
+
+	"plr_displacer_self": 5,
+	"plr_displacer_other": 250,
+	"plr_displacer_radius": 300,
+
+	"plr_shockroachs": 10,
+	"plr_shockroachm": 15,
+
+	"plr_spore": 50,
+
+	"player_health": 100,
+	"player_armor": 0,
+	"player_maxhealth": 100,
+	"player_maxarmor": 100,
+
+	// Distance at which the player can interact with entities
+	"player_use_distance": 64,
+
+	"longjump_falldamage": 0,
+	"longjump_sound": 1,
+	"longjump_straight": 0,
+
+	// MONSTER WEAPONS
+	"bullet_12mm": 10,
+	"bullet_9mmAR": 5,
+	"bullet_9mm": 8,
+
+	// HORNET
+	"hornet_dmg": 8,
+	"hornet_lifetime": 5.0,
+
+	// HEALTH/SUIT CHARGE DISTRIBUTION
+	"suitcharger": 35,
+	"battery": 10,
+	"healthcharger": 25,
+	"healthkit": 10,
+	"scientist_heal": 25,
+
+	// monster damage adjusters
+	"monster_head": 3,
+	"monster_chest": 1,
+	"monster_stomach": 1,
+	"monster_arm": 1,
+	"monster_leg": 1,
+
+	// player damage adjusters
+	"player_head": 3,
+	"player_chest": 1,
+	"player_stomach": 1,
+	"player_arm": 1,
+	"player_leg": 1,
+
+	// Enables the buggy melee weapon behavior that allows for chainsaw-like effects.
+	"chainsaw_melee": 0,
+
+	// Multiplayer weapon configuration
+	"crowbar_full_damage": 0,
+	"revolver_laser_sight": 0,
+	"smg_wide_spread": 0,
+	"shotgun_single_tight_spread": 0,
+	"shotgun_double_wide_spread": 0,
+	"crossbow_sniper_bolt": 0,
+	"crossbow_explosive_bolt": 0,
+	"gauss_charge_time": 4,
+	"gauss_fast_ammo_use": 0,
+	"gauss_vertical_force": 0,
+	"gauss_damage_radius": 2.5,
+	"egon_narrow_ammo_per_second": 6,
+	"egon_wide_ammo_per_second": 10,
+	"egon_wide_radius_damage": 0,
+	"pipewrench_full_damage": 0,
+	"knife_allow_backstab": 0,
+	"grapple_fast": 0,
+	"m249_wide_spread": 0,
+	"shockrifle_fast": 0,
+
+	// If set to 1, players can +USE entities while their current weapon is busy
+	"allow_use_while_busy": 0,
+
+	"allow_flashlight" : 1,
+
+	"allow_monsters": 1,
+
+	// 0 == fixed damage
+	// 1 == progressive, longer falls deal more damage
+	"falldamagemode": 1,
+
+	// -1 == never recharge
+	// 0 == recharge immediately
+	// > 0 == recharge after given amount of time has passed
+	"healthcharger_recharge_time": -1,
+	"hevcharger_recharge_time": -1,
+
+	// -1 == never respawn
+	// 0 == respawn immediately
+	// > 0 == respawn after given amount of time has passed
+	"weapon_respawn_time": -1,
+	"ammo_respawn_time": -1,
+	"pickupitem_respawn_time": -1,
+
+	// If set to 1, weapons not flagged to be limited in world will respawn immediately
+	"weapon_instant_respawn": 0,
+
+	"allow_npc_item_dropping": 1,
+	"allow_player_weapon_dropping": 0
+}

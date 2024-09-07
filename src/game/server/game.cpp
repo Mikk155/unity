@@ -55,6 +55,10 @@ cvar_t sv_entityinfo_eager{"sv_entityinfo_eager", "1", FCVAR_SERVER};
 
 cvar_t sv_schedule_debug{"sv_schedule_debug", "0", FCVAR_SERVER};
 
+cvar_t mp_explode_satchels{"mp_explode_satchels", "1", FCVAR_SERVER};
+
+cvar_t sv_commandlist{"sv_commandlist", "1", FCVAR_SERVER};
+
 static bool SV_InitServer()
 {
 	if (!FileSystem_LoadFileSystem())
@@ -137,6 +141,10 @@ void GameDLLInit()
 #endif
 
 	CVAR_REGISTER(&sv_schedule_debug);
+
+	CVAR_REGISTER(&mp_explode_satchels);
+
+	CVAR_REGISTER(&sv_commandlist);
 
 	// Link user messages immediately so there are no race conditions.
 	LinkUserMessages();

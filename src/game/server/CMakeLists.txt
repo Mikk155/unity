@@ -101,13 +101,13 @@ target_sources(server PRIVATE
 	entities/changelevel.h
 	entities/CMultiSource.h
 	entities/CPointEntity.h
-	entities/CTriggerChangeKeyValue.cpp
 	entities/doors.cpp
 	entities/doors.h
 	entities/effects.cpp
 	entities/effects.h
 	entities/EntityTemplateSystem.cpp
 	entities/EntityTemplateSystem.h
+	entities/env_render.cpp
 	entities/explode.cpp
 	entities/explode.h
 	entities/func_break.cpp
@@ -151,7 +151,10 @@ target_sources(server PRIVATE
 	entities/ctf/CTFDetect.h
 	entities/ctf/CTFSpawn.cpp
 	entities/ctf/CTFSpawn.h
-	
+
+	entities/game/precache.cpp
+	entities/game/variable.cpp
+
 	entities/items/airtank.cpp
 	entities/items/CAmmoAll.cpp
 	entities/items/CAmmoGeneric.cpp
@@ -180,16 +183,7 @@ target_sources(server PRIVATE
 	entities/items/weapons/CSpore.cpp
 	entities/items/weapons/CSpore.h
 	entities/items/weapons/weapons.cpp
-	
-	entities/rope/CElectrifiedWire.cpp
-	entities/rope/CElectrifiedWire.h
-	entities/rope/CRope.cpp
-	entities/rope/CRope.h
-	entities/rope/CRopeSample.cpp
-	entities/rope/CRopeSample.h
-	entities/rope/CRopeSegment.cpp
-	entities/rope/CRopeSegment.h
-	
+
 	entities/NPCs/basemonster.h
 	entities/NPCs/combat.cpp
 	entities/NPCs/defaultai.cpp
@@ -283,7 +277,30 @@ target_sources(server PRIVATE
 	entities/NPCs/zombies/zombie.h
 	entities/NPCs/zombies/zombie_barney.cpp
 	entities/NPCs/zombies/zombie_soldier.cpp
-	
+
+	entities/player/respawn.cpp
+	entities/player/weaponstrip.cpp
+
+	entities/rope/CElectrifiedWire.cpp
+	entities/rope/CElectrifiedWire.h
+	entities/rope/CRope.cpp
+	entities/rope/CRope.h
+	entities/rope/CRopeSample.cpp
+	entities/rope/CRopeSample.h
+	entities/rope/CRopeSegment.cpp
+	entities/rope/CRopeSegment.h
+
+	entities/trigger/changevalue.cpp
+	entities/trigger/CKeyValueLogic.cpp
+	entities/trigger/CKeyValueLogic.h
+	entities/trigger/condition.cpp
+	entities/trigger/entity_condition.cpp
+	entities/trigger/entity_iterator.cpp
+	entities/trigger/entity_zone.cpp
+	entities/trigger/eventhandler.cpp
+	entities/trigger/eventhandler.h
+	entities/trigger/usecheck.cpp
+
 	gamerules/CGameRules.cpp
 	gamerules/CGameRules.h
 	gamerules/CHalfLifeCoopplay.cpp

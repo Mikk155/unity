@@ -57,7 +57,7 @@ void CBaseTrigger::ActivateMultiTrigger(CBaseEntity* pActivator)
 	if (pev->nextthink > gpGlobals->time)
 		return; // still waiting for reset time
 
-	if (!UTIL_IsMasterTriggered(m_sMaster, pActivator))
+	if (!UTIL_IsMasterTriggered(m_sMaster, pActivator, m_UseLocked))
 		return;
 
 	if (!FStringNull(pev->noise))
@@ -102,6 +102,7 @@ void CBaseTrigger::MultiWaitOver()
 	//		pev->solid		= SOLID_BBOX;
 	//		}
 	SetThink(nullptr);
+	gpGlobals->force_retouch++;
 }
 
 void CBaseTrigger::ToggleUse(CBaseEntity* pActivator, CBaseEntity* pCaller, USE_TYPE useType, float value)

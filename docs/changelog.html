@@ -1,0 +1,219 @@
+<span style="background-color:rgb(255, 0, 0);font-size: xx-large;">
+This changelog only covers what has been changed in this repository.
+<br>
+To get a full changelog of the upstream repository <a style="color:aqua;" href="https://github.com/twhl-community/halflife-unified-sdk" target="_blank">Half-Life: Unified SDK</a> Check their changelog.
+</span>
+<br><br>
+
+<details><summary>7/24</summary><p>
+
+
+<h2>Add bool CBaseEntity::IsMonster()</h2>
+<h3>Function that will return true for classes that inherits from CBaseMonster that are not:</h3>
+<li>monstermaker</li>
+<li>scripted_sentence</li>
+<li>env_explosion</li>
+<li>cycler</li>
+<li>op4mortar</li>
+<li>func_guntarget</li>
+<li>player</li>
+<li>nodes</li>
+<br>
+<br>
+<br>
+<br>
+<h2>misc</h2>
+<li>trigger_endsection will now finish a multiplayer game as a game_end it was</li>
+<br>
+<li>CBaseTrigger now forces retouch for stationary monsters</li>
+<br>
+<li>Show chapter title for all players upon spawning, only apply to multiplayer</li>
+<br>
+<li>Remove game censure on German language</li>
+<br>
+<li>"Use Angles" for func_wall/wall_toggle/illusionary</li>
+<br>
+<li>Allow FL_GODMODE on monsters. it is written on TakeDamage so TraceAttack effects will still apply (throw blood, sparks etc)</li>
+<br>
+<br>
+<br>
+<br>
+<h2>Add a bunch of new skill variables:</h2>
+<br>
+<li>barnacle_health</li>
+<br>
+<li>barnacle_speed</li>
+    controlls the speed at wich a barnacle can lift monsters
+<br>
+<br>
+<br>
+<li>player_health</li>
+<br>
+<li>player_armor</li>
+<br>
+<li>babycrab_dmg_bite</li>
+<br>
+<li>babycrab_health</li>
+<br>
+<li>houndeye_squad_bonus</li>
+    multiplier bonus for squad, originally at 1.1
+<br>
+<br>
+<br>
+<li>islave_speed_zap</li>
+    pev->framerate, 1.0 is normal speed
+<br>
+<br>
+<br>
+<li>barney_armor_chest</li>
+    divide the damage get on chest for this value, originaly 2
+<br>
+<br>
+<br>
+<li>barney_armor_helmet</li>
+    reduce the damage get on the helmet for this value, originaly 20
+<br>
+<br>
+<br>
+<li>hassassin_invisibility</li>
+0 = never invisible
+<br>
+1 = semi visible
+<br>
+2 = invisible when out of combat
+<br>
+3 = always semi visible between 50 and 255 amt
+<br>
+<br>
+<br>
+<li>apache_rockets</li>
+0 disable rockets
+<br>
+<br>
+<br>
+<li>hgrunt_next_glauncher</li>
+on non-easy, this is the max time interval at wich the grunts will launch another grenade
+<br>
+on easy this is a fixed interval
+<br>
+<br>
+<br>
+<li>turret_max_range</li>
+<br>
+<li>turret_turn_rate</li>
+<br>
+<li>turret_active_time</li>
+<br>
+<li>turret_takedamage_off</li>
+1 = the turret won't get damage while it's inactive
+<br>
+<br>
+<br>
+<li>sentry_takedamage_off</li>
+1 = the sentry won't get damage while it's inactive
+<br>
+<br>
+<br>
+<li>pitdrone_speed_spit</li>
+<br>
+<li>shocktrooper_spore_dmg</li>
+<br>
+<li>op4mortar_damage</li>
+<br>
+<li>plr_hornet_regen</li>
+rate of regen for hornet gun
+<br>
+-1 = never regen
+<br>
+<br>
+<br>
+<br>
+<li>now grunt and shoocktrooper repel will fire it's target after spawning the child, pActivator will be the child spawned</li>
+<br>
+<li>monster_barnacle won't die by a single hit of a crowbar</li>
+<br>
+<li>game_text will now print the messages on the console. added spawnflag "No echo console" for preventing this</li>
+<br>
+<li>trigger_auto now has a spawnflag "Wait for clients" that will prevent the entity from triggering it's target until at least one player is connected</li>
+<br>
+<li>trigger_relay now has a spawnflag for "Keep activator" forwarding it's activator instead of overriding with the trigger_relay entity</li>
+<br>
+<li>env_render now supports !activator and !caller for target</li>
+<br>
+<li>defined ``SND_PRIVATE`` on ServerSoundSystem for sending the audio to only one target. meant for HEV sentences in a future</li>
+<br>
+<li>added two experimental entities player_command and player_percent, these may change in the future.</li>
+<br>
+<li>game_text now can print all the supported message types</li>
+<br>
+<li>game_text new spawnflag "Fire Per Player" that will fire it's target for every player that sees the message</li>
+<br>
+<li>trigger_hurt now doesn't reproduce geiger noises when it is off</li>
+<br>
+<li>Added std::string Vector::ToString()</li>
+<br>
+<li>Added special features to FireTarget (Entity triggering)</li>
+<br>
+<li>Added monster roaming. code by [FreeSlave](https://github.com/FreeSlave)</li>
+<br>
+<br>
+<br>
+<br>
+<h2>Implement back and side long jumping inspired by Black Mesa</h2>
+<li>longjump_falldamage</li>
+0 do not take fall damage if longjump is equiped
+<br>
+1 always take fall damage
+<br>
+<br>    
+<li>longjump_fallvelocity</li>
+Z velocity to apply to the player when he touch the floor
+<br>
+<br>
+<li>longjump_sound</li>
+0 do not any noise
+<br>
+1 do player/pl_long_jump.wav
+<br>
+<br>
+<br>
+<br>
+<h2>Implement new entity logic_usevalue.</h2>
+Will fire it's target/netname whatever the flValue it received on trigger is the same as the specified.
+<br>
+This entity will make more sense and will be used on advanced logics in a future.
+<br>
+<br>
+<br>
+<br>
+<h2>Implement Appearance Flags</h2>
+These are KeyValues supported on all entities that will deny the DispatchSpawn function if appearflag is matched
+<br>
+Appearance flags keys has 3 possible values
+<br>
+<br>
+<li>-1 "Not in" Meaning this entity won't spawn if matched the condition</li>
+<br>
+<li>1 "Only in" Meaning this entity will spawn only if matched the condition</li>
+<br>
+<li>0 "Default" Has no effect at all</li>
+<br>
+i.e a entity with ``appearflag_singleplayer`` > -1 will only appear if this is not a single player match
+<br>
+on the other side a entity with ``appearflag_singleplayer`` > 1 will only appear in a single player match
+<br>
+<br>
+<br>
+<br>
+Prevent player killing upon spawning on an occupied spawnpoint, instead relocate the newest player in a valid hull around the spawnpoint, if none found then kill the standing player as it were before.
+<br>
+<br>
+<br>
+<br>
+Build up a python script for mass-encoding a FGD to a json-like data <button id="copyButton" onclick=";CopyElement( 'changelog/decoder.py' )">copy</button> or <a href="changelog/decoder.py" >download</a>
+<br>
+<br>
+<br>
+<br>
+Created a python script for mass-exporting key-value data from a json file to the FGD and the Entity Guide in the website.
+</p></details>

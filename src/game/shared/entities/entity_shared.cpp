@@ -163,7 +163,15 @@ DEFINE_FIELD(m_pGoalEnt, FIELD_CLASSPTR),
 	DEFINE_FUNCTION(SUB_StartFadeOut),
 	DEFINE_FUNCTION(SUB_FadeOut),
 	DEFINE_FUNCTION(SUB_CallUseToggle),
-	END_DATAMAP();
+	DEFINE_FIELD( m_UseType, FIELD_INTEGER ),
+	DEFINE_FIELD( m_UseTypeLast, FIELD_INTEGER ),
+	DEFINE_FIELD( m_UseValue, FIELD_FLOAT ),
+	DEFINE_FIELD( m_UseLocked, FIELD_INTEGER ),
+	DEFINE_FIELD( m_appearflag_notin, FIELD_INTEGER ),
+	DEFINE_FIELD( m_appearflag_onlyin, FIELD_INTEGER ),
+	DEFINE_FIELD( m_iPlayerSelector, FIELD_INTEGER ),
+	DEFINE_FIELD( m_sNewActivator, FIELD_STRING ),
+END_DATAMAP();
 
 void CBaseEntity::OnCreate()
 {

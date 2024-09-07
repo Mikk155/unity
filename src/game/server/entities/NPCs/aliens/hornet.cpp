@@ -60,16 +60,6 @@ void CHornet::Spawn()
 	pev->flags |= FL_MONSTER;
 	pev->health = 1; // weak!
 
-	if (g_pGameRules->IsMultiplayer())
-	{
-		// hornets don't live as long in multiplayer
-		m_flStopAttack = gpGlobals->time + 3.5;
-	}
-	else
-	{
-		m_flStopAttack = gpGlobals->time + 5.0;
-	}
-
 	m_flFieldOfView = 0.9; // +- 25 degrees
 
 	if (RANDOM_LONG(1, 5) <= 2)
@@ -92,11 +82,13 @@ void CHornet::Spawn()
 	if (!FNullEnt(pev->owner) && (pev->owner->v.flags & FL_CLIENT) != 0)
 	{
 		pev->dmg = GetSkillFloat("plr_hornet_dmg"sv);
+		m_flStopAttack = gpGlobals->time + GetSkillFloat( "plr_hornet_lifetime"sv, 5.0 );
 	}
 	else
 	{
 		// no real owner, or owner isn't a client.
 		pev->dmg = GetSkillFloat("hornet_dmg"sv);
+		m_flStopAttack = gpGlobals->time + GetSkillFloat( "hornet_lifetime"sv, 5.0 );
 	}
 
 	pev->nextthink = gpGlobals->time + 0.1;

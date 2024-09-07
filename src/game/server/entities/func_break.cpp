@@ -40,6 +40,18 @@ bool CBreakable::KeyValue(KeyValueData* pkvd)
 
 		return true;
 	}
+	else if (FStrEq(pkvd->szKeyName, "direction"))
+	{
+		UTIL_StringToVector(m_VecDirection, pkvd->szValue);
+		return true;
+	}
+	else if (FStrEq(pkvd->szKeyName, "direction_speed"))
+	{
+		m_DirectionSpeed = atoi( pkvd->szValue );
+		if( m_DirectionSpeed < 10 )
+			m_DirectionSpeed = 10;
+		return true;
+	}
 	else if (FStrEq(pkvd->szKeyName, "material"))
 	{
 		int i = atoi(pkvd->szValue);
@@ -95,6 +107,8 @@ DEFINE_FIELD(m_Material, FIELD_INTEGER),
 	DEFINE_FIELD(m_angle, FIELD_FLOAT),
 	DEFINE_FIELD(m_iszGibModel, FIELD_STRING),
 	DEFINE_FIELD(m_iszSpawnObject, FIELD_STRING),
+	DEFINE_FIELD(m_VecDirection, FIELD_VECTOR),
+	DEFINE_FIELD(m_DirectionSpeed, FIELD_FLOAT),
 	DEFINE_FUNCTION(BreakTouch),
 	DEFINE_FUNCTION(Die),
 
@@ -635,7 +649,9 @@ void CBreakable::Die()
 
 
 	if (m_Explosion == expDirected)
-		vecVelocity = -g_vecAttackDir * 200;
+		vecVelocity = -g_vecAttackDir * m_DirectionSpeed;
+	else if (m_Explosion == expSpecific)
+		vecVelocity = m_VecDirection * m_DirectionSpeed;
 	else
 	{
 		vecVelocity.x = 0;
@@ -771,11 +787,15 @@ public:
 	int m_lastSound; // no need to save/restore, just keeps the same sound from playing twice in a row
 	float m_maxSpeed;
 	float m_soundTime;
+
+private:
+	bool m_bCustomSize = false;
 };
 
 BEGIN_DATAMAP(CPushable)
 DEFINE_FIELD(m_maxSpeed, FIELD_FLOAT),
 	DEFINE_FIELD(m_soundTime, FIELD_TIME),
+	DEFINE_FIELD(m_bCustomSize, FIELD_BOOLEAN),
 	// DEFINE_FUNCTION(StopPushSound),
 	END_DATAMAP();
 
@@ -836,6 +856,10 @@ bool CPushable::KeyValue(KeyValueData* pkvd)
 
 		case 3: // Player duck
 			SetSize(VEC_DUCK_HULL_MIN, VEC_DUCK_HULL_MAX);
+			break;
+
+		case 4:
+			m_bCustomSize = true;
 			break;
 
 		default:

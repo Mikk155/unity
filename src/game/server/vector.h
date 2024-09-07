@@ -13,6 +13,8 @@
  *
  ****/
 
+#include <fmt/core.h>
+
 #pragma once
 
 //=========================================================
@@ -38,6 +40,11 @@ public:
 	[[nodiscard]] constexpr Vector2D operator/(float fl) const { return Vector2D(x / fl, y / fl); }
 
 	[[nodiscard]] float Length() const { return static_cast<float>(sqrt(x * x + y * y)); }
+
+	[[nodiscard]] std::string ToString() const
+	{
+		return fmt::format("{} {}", x, y );
+	}
 
 	[[nodiscard]] Vector2D Normalize() const
 	{
@@ -100,6 +107,11 @@ public:
 	[[nodiscard]] float Length() const { return static_cast<float>(sqrt(LengthSquared())); }
 	[[nodiscard]] constexpr operator float*() { return &x; }			 // Vectors will now automatically convert to float * when needed
 	[[nodiscard]] constexpr operator const float*() const { return &x; } // Vectors will now automatically convert to float * when needed
+
+	[[nodiscard]] std::string ToString() const
+	{
+		return fmt::format("{} {} {}", x, y, z);
+	}
 
 	[[nodiscard]] Vector Normalize() const
 	{

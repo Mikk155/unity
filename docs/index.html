@@ -1,0 +1,259 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<title>Half-Life: Unity</title>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+	<!-- CSS -->
+	<link rel="stylesheet" type="text/css" href="src/stylesheet.css">
+	
+	<!-- JAVASCRIPT -->
+	<script src="src/index.js"></script>
+</head>
+
+<body>
+	<!-- sounds -->
+	<audio id="sfx_view" src="media/sounds/common/launch_glow1.wav" preload="auto"></audio>
+	<audio id="sfx_open" src="media/sounds/common/launch_select2.wav" preload="auto"></audio>
+	<audio id="sfx_close" src="media/sounds/common/launch_dnmenu1.wav" preload="auto"></audio>
+
+	<!-- website container -->
+	<div class="container">
+
+		<!-- title with animation -->
+		<a href="index.html"><h1 id="title1">HλLF-LIFE UNITY<span id="blink">HλLF-LIFE UNITY</span></h1></a>
+
+		<!-- Language popup -->
+		<div id="LanguageList" class="emergent-window" onclick="SFX('sfx_close');closeElement('LanguageList')">
+			<table class="emergent-window-content">
+				<td><button onclick="changeLanguage('english');">English</button></td>
+				<tr>
+				<td><button onclick="changeLanguage('spanish');">Español</button></td>
+			</table>
+		</div>
+
+		<!-- This is filled up with a JavaScript function -->
+		<div id="EntityGuideList" class="emergent-window" onclick="SFX('sfx_close');closeElement('EntityGuideList')">
+			<div class="big-textbox" id="entityguide-index-list" style="margin-top: 10%;"></div>
+		</div>
+
+		<!-- This is filled up with a JavaScript function -->
+		<div id="EntityGuideEntity" class="emergent-window" onclick="SFX('sfx_close');">
+			<div class="big-textbox" id="entityguide-entity-list" style="margin-top: 10%;"></div>
+		</div>
+		
+		<!-- Contribute popup -->
+		<div id="Contribute" class="emergent-window" onclick="SFX('sfx_close');closeElement('Contribute');">
+			<table class="emergent-window-content">
+				<td>
+					<a href="https://github.com/Mikk155/unity/tree/master/docs/src/sentences.json" target="_blank" pkvd="translations"></a>
+				<tr>
+				<td>
+					<a href="https://paypal.me/mikk1555" target="_blank" pkvd="donations"></a>
+				<tr>
+				<td>
+					<a href="https://github.com/Mikk155/unity/fork" target="_blank" pkvd="Programing"></a>
+				<tr>
+			</table>
+		</div>
+
+		<!-- Mods popup -->
+		<div id="Mods" class="emergent-window" onclick="SFX('sfx_close');closeElement('Mods');">
+			<div class="chapters">
+				<div class="chapter-gamemodes">
+					<h3 pkvd="Cooperative"></h3>
+					<br>
+					<h3 pkvd="SinglePlayer"></h3>
+					<br>
+					<div class="chapter">
+						<button onclick="openElement('VGCampaigns')">
+							<img src="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/70/header.jpg?t=1700269108">
+							<h3>Half-Life</h3>
+						</a>
+					</div>
+					<br>
+					<div class="chapter">
+						<a href="https://mikk155.github.io/episodic/" target="_blank">
+							<img src="https://github.com/Mikk155/episodic/blob/main/docs/media/header.jpg?raw=true">
+							<h3>Half-Life: Episode One</h3>
+						</a>
+					</div>
+					<br>
+					<div class="chapter">
+						<button onclick="openElement('VGCampaigns')">
+							<img src="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/50/header.jpg?t=1579628243">
+							<h3>Half-Life: Opposing Force</h3>
+						</a>
+					</div>
+					<br>
+					<div class="chapter">
+						<button onclick="openElement('VGCampaigns')">
+							<img src="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/130/header.jpg?t=1579629868">
+							<h3>Half-Life: Blue Shift</h3>
+						</a>
+					</div>
+					<br>
+					<div class="chapter">
+						<button onclick="openElement('VGCampaigns')">
+							<img src="https://m.media-amazon.com/images/M/MV5BOGJkNDVhYzYtZjA4ZC00MzZmLWFlYmEtYjk5YThlNWVkNjUyXkEyXkFqcGdeQXVyMTEwNTU2MTkx._V1_.jpg">
+							<h3>Half-Life: Uplink</h3>
+						</a>
+					</div>
+					<br>
+					<div class="chapter">
+						<button onclick="openElement('VGCampaigns')">
+							<img src="media/images/banner/mods/deliver.bmp">
+							<h3>Half-Life: Deliverance</h3>
+						</a>
+					</div>
+					<br>
+					<h3 pkvd="Cooperative"></h3>
+					<br>
+					<h3 pkvd="DeathMatch"></h3>
+					<br>
+					<h3 pkvd="CaptureTheFlag"></h3>
+					<br>
+					<h3 pkvd="TeamPlay"></h3>
+				</div>
+			</div>
+		</div>
+
+		<!-- Official Expansions -->
+		<div id="VGCampaigns" class="emergent-window" onclick="SFX('sfx_close');closeElement('VGCampaigns');">
+			<div class="emergent-textbox">
+				<span style="background-color:rgb(255, 0, 0);font-size: xx-large;" pkvd="valve_expansions"></span>
+				<br>
+				<br>
+				<li pkvd="valve_expansions_1"></li>
+				<br>
+				<a target="_blank" href="dotnet-tools.md#installing-the-net-sdk"><li pkvd="valve_expansions_2"></li></a>
+				<br>
+				<li pkvd="valve_expansions_3"></li>
+				<br>
+				<button onclick="openElement('content-installer')"><li pkvd="valve_expansions_4"></li></button>
+				<div class="emergent-textbox" style="max-width: none;margin: 10px auto;">cd "path/to/Half-Life/directory"<br>dotnet "unity/tools/ContentInstaller.dll" --mod-directory unity</div>
+			</div>
+		</div>
+
+		<!-- content-installer.md -->
+		<div id="content-installer" class="emergent-window" onclick="SFX('sfx_close');">
+			<div class="emergent-textbox">
+				<span style="background-color:rgb(255, 0, 0);font-size: xx-large;" pkvd="valve_expansions"></span>
+				<br>
+				<br>
+				<li pkvd="content_installer_1"></li>
+				<br>
+				<li pkvd="content_installer_2"></li>
+				<br>
+				<li pkvd="content_installer_3"></li>
+				<br>
+				ContentInstaller.exe
+				<br>
+				<div class="emergent-textbox" style="max-width: none;margin: 10px auto;">
+					<b class="inactive" pkvd="content_installer_4"></b>
+					<br>
+					--mod-directory unity
+					<br>
+					<br>
+					<b class="inactive" pkvd="content_installer_5"></b>
+					<br>
+					--dry-run
+					<br>
+					<br>
+					<b class="inactive" pkvd="content_installer_6"></b> <b class="inactive" pkvd="content_installer_6">[default: Disabled]</b>
+					<br>
+					--diagnostics-level ( All | Common | Disabled )
+					<br>
+					<br>
+					<b class="inactive" pkvd="content_installer_7"></b>
+					<br>
+					--version
+					<br>
+					<br>
+					<b class="inactive" pkvd="content_installer_8"></b>
+					<br>
+					-?, -h, --help
+				</div>
+				<br>
+				<li pkvd="content_installer_9"></li>
+				<br>
+			</div>
+		</div>
+
+		<!-- tutorials popup -->
+		<div id="tutorials" class="emergent-window" onclick="SFX('sfx_close');closeElement('tutorials')">
+			<div class="emergent-textbox">
+				<li><button pkvd="valve_expansions" class="menu-firstsub" onclick="SFX('sfx_open');openElement('VGCampaigns')" onmouseenter="SFX('sfx_view')"></li>
+			</div>
+		</div>
+
+		<!-- Changelog popup -->
+		<div id="Changelog" class="emergent-window" onclick="SFX('sfx_close');">
+			<div class="emergent-textbox" id="changelog-container">
+			</div>
+		</div>
+
+		<!-- credits popup -->
+		<div id="credits" class="emergent-window" onclick="SFX('sfx_close');">
+			<div class="emergent-textbox" id="credits-container">
+			</div>
+		</div>
+
+		<!-- menu contents -->
+		<table id="menu">
+
+			<tr>
+				<th><button class="menu-firstsub" pkvd="Mods" onclick="SFX('sfx_open');openElement('Mods')" onmouseenter="SFX('sfx_view')"></button></th>
+				<td pkvd="ModsDescription"></td>
+			</tr>
+
+			<tr>
+				<th><button class="menu-firstsub" pkvd="EntityGuide" onclick="SFX('sfx_open');openElement('EntityGuideList')" onmouseenter="SFX('sfx_view')"></button></th>
+				<td pkvd="EntityGuideDescription"></td>
+			</tr>
+
+			<tr>
+				<th><button class="menu-firstsub" onclick="SFX('sfx_open');openElement('tutorials')" pkvd="Tutorials" onmouseenter="SFX('sfx_view')"></button></th>
+				<td pkvd="TutorialsDescription"></td>
+			</tr>
+			
+			<tr>
+				<th><button class="menu-firstsub" onclick="SFX('sfx_open');openElement('Changelog')" onmouseenter="SFX('sfx_view')">Changelog</button></th>
+				<td pkvd="Changelog"></td>
+			</tr>
+
+			<tr>
+				<th><button class="menu-firstsub" onclick="SFX('sfx_open');openElement('credits')" pkvd="credits" onmouseenter="SFX('sfx_view')"></button></th>
+				<td pkvd="creditsDescription"></td>
+			</tr>
+			
+			<tr>
+				<!--<img src="media/images/icons/discord.ico" style="width: 28px;">-->
+				<th class="menu-firstsub" onmouseenter="SFX('sfx_view')">#Discord</th>
+				<td pkvd="DiscordServer"></td>
+			</tr>
+
+			<tr>
+				<th><button class="menu-firstsub" pkvd="Contribute" onclick="SFX('sfx_open');openElement('Contribute')" onmouseenter="SFX('sfx_view')"></button></th>
+				<td pkvd="ContributeDescription"></td>
+			</tr>
+
+			<tr>
+				<th><button class="menu-firstsub" pkvd="Language" onclick="SFX('sfx_open');openElement('LanguageList')" onmouseenter="SFX('sfx_view')"></button></th>
+				<td pkvd="LanguageSelection"></td>
+			</tr>
+			
+			<tr>
+				<th><a target="_blank" href="https://github.com/Mikk155/unity/releases"><button pkvd="Download" class="menu-firstsub" onclick="SFX('sfx_open');" onmouseenter="SFX('sfx_view')">Source</button></a></th>
+				<td><def pkvd="Download"></def> mod</td>
+			</tr>
+
+			<tr>
+				<th><a target="_blank" href="https://github.com/Mikk155/unity"><button class="menu-firstsub" onclick="SFX('sfx_open');" onmouseenter="SFX('sfx_view')">Source</button></a></th>
+				<td pkvd="SourceOpen"></td>
+			</tr>
+			
+		</table>
+	</div>
+</body>

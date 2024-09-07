@@ -913,8 +913,11 @@ Vector UTIL_GetAimVector(edict_t* pent, float flSpeed)
 	return tmp;
 }
 
-bool UTIL_IsMasterTriggered(string_t sMaster, CBaseEntity* pActivator)
+bool UTIL_IsMasterTriggered(string_t sMaster, CBaseEntity* pActivator, int UseLock)
 {
+	if( FBitSet( UseLock, USE_VALUE_MASTER ) )
+		return false;
+
 	if (!FStringNull(sMaster))
 	{
 		auto master = UTIL_FindEntityByTargetname(nullptr, STRING(sMaster));
@@ -960,10 +963,6 @@ void UTIL_BloodStream(const Vector& origin, const Vector& direction, int color, 
 	if (!UTIL_ShouldShowBlood(color))
 		return;
 
-	if (g_Language == LANGUAGE_GERMAN && color == BLOOD_COLOR_RED)
-		color = 0;
-
-
 	MESSAGE_BEGIN(MSG_PVS, SVC_TEMPENTITY, origin);
 	WRITE_BYTE(TE_BLOODSTREAM);
 	WRITE_COORD(origin.x);
@@ -984,9 +983,6 @@ void UTIL_BloodDrips(const Vector& origin, const Vector& direction, int color, i
 
 	if (color == DONT_BLEED || amount == 0)
 		return;
-
-	if (g_Language == LANGUAGE_GERMAN && color == BLOOD_COLOR_RED)
-		color = 0;
 
 	if (g_pGameRules->IsMultiplayer())
 	{
@@ -1498,4 +1494,45 @@ bool UTIL_IsMultiplayer()
 {
 	// Can be null during weapon registration.
 	return g_pGameRules != nullptr && g_pGameRules->IsMultiplayer();
+}
+
+Vector UTIL_GetNearestHull( Vector VecStart, int hull_number, float radius )
+{
+    const float StepSize = 16.0f;
+    const int MaxSteps = static_cast<int>( radius / StepSize );
+
+    TraceResult tr;
+    UTIL_TraceHull( VecStart, VecStart, dont_ignore_monsters, hull_number, nullptr, &tr );
+    if( tr.fStartSolid == 0 && tr.fAllSolid == 0 ) { return VecStart; }
+
+    for( int step = 1; step <= MaxSteps; ++step )
+    {
+        for( int x = -step; x <= step; ++x )
+        {
+            for( int y = -step; y <= step; ++y )
+            {
+                for( int z = -step; z <= step; ++z )
+                {
+                    if( x == 0 && y == 0 && z == 0 )
+						continue;
+
+                    Vector test_point = VecStart + Vector( x * StepSize, y * StepSize, z * StepSize );
+
+                    UTIL_TraceHull( test_point, test_point, dont_ignore_monsters, hull_number, nullptr, &tr );
+
+                    if( tr.fStartSolid == 0 && tr.fAllSolid == 0 )
+                    {
+                        TraceResult trLine; // Check we're not outside of where we're supposed to spawn (i.e a wall is blocking)
+                        UTIL_TraceLine( VecStart, test_point, dont_ignore_monsters, nullptr, &trLine );
+
+                        if( trLine.flFraction == 1.0 )
+                        {
+                            return test_point;
+                        }
+                    }
+                }
+            }
+        }
+    }
+    return VecStart;
 }

@@ -520,7 +520,7 @@ void CBaseButton::ButtonTouch(CBaseEntity* pOther)
 	if (code == BUTTON_NOTHING)
 		return;
 
-	if (!UTIL_IsMasterTriggered(m_sMaster, pOther))
+	if (!UTIL_IsMasterTriggered(m_sMaster, pOther, m_UseLocked))
 	{
 		// play button locked sound
 		PlayLockSounds(this, &m_ls, true, true);
@@ -544,7 +544,7 @@ void CBaseButton::ButtonActivate()
 {
 	EmitSound(CHAN_VOICE, STRING(m_sounds), 1, ATTN_NORM);
 
-	if (!UTIL_IsMasterTriggered(m_sMaster, m_hActivator))
+	if (!UTIL_IsMasterTriggered(m_sMaster, m_hActivator, m_UseLocked))
 	{
 		// button is locked, play locked sound
 		PlayLockSounds(this, &m_ls, true, true);
@@ -570,7 +570,7 @@ void CBaseButton::TriggerAndWait()
 {
 	ASSERT(m_toggle_state == TS_GOING_UP);
 
-	if (!UTIL_IsMasterTriggered(m_sMaster, m_hActivator))
+	if (!UTIL_IsMasterTriggered(m_sMaster, m_hActivator, m_UseLocked))
 		return;
 
 	m_toggle_state = TS_AT_TOP;
@@ -778,7 +778,7 @@ DEFINE_FIELD(m_lastUsed, FIELD_BOOLEAN),
 	DEFINE_FUNCTION(Return),
 	END_DATAMAP();
 
-LINK_ENTITY_TO_CLASS(momentary_rot_button, CMomentaryRotButton);
+LINK_ENTITY_TO_CLASS(func_button_rotating, CMomentaryRotButton);
 
 void CMomentaryRotButton::Spawn()
 {
@@ -860,7 +860,7 @@ void CMomentaryRotButton::UpdateAllButtons(float value, bool start)
 	// Update all rot buttons attached to the same target
 	for (auto target : UTIL_FindEntitiesByTarget(STRING(pev->target)))
 	{
-		if (target->ClassnameIs("momentary_rot_button"))
+		if (target->ClassnameIs("func_button_rotating"))
 		{
 			auto pEntity = static_cast<CMomentaryRotButton*>(target);
 			if (start)
@@ -1065,7 +1065,7 @@ public:
 	int ObjectCaps() override;
 };
 
-LINK_ENTITY_TO_CLASS(button_target, CButtonTarget);
+LINK_ENTITY_TO_CLASS(func_button_target, CButtonTarget);
 
 void CButtonTarget::Spawn()
 {

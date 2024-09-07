@@ -27,6 +27,8 @@
 #include "items/CBaseItem.h"
 #include "items/weapons/CSatchelCharge.h"
 
+#include "../entities/trigger/eventhandler.h"
+
 CVoiceGameMgr g_VoiceGameMgr;
 
 class CMultiplayGameMgrHelper : public IVoiceGameMgrHelper
@@ -305,7 +307,7 @@ void CHalfLifeMultiplay::ClientDisconnected(edict_t* pClient)
 			if (!g_fGameOver && (pPlayer->m_iItems & CTFItem::ItemsMask) != 0)
 				ScatterPlayerCTFPowerups(pPlayer);
 
-			FireTargets("game_playerleave", pPlayer, pPlayer, USE_TOGGLE, 0);
+			TriggerEvent( TriggerEventType::PLAYER_LEAVE, pPlayer, pPlayer, 0 );
 
 			Logger->trace("{} disconnected", PlayerLogInfo{*pPlayer});
 
@@ -313,6 +315,9 @@ void CHalfLifeMultiplay::ClientDisconnected(edict_t* pClient)
 
 			free(pszPlayerIPs[playerIndex]);
 			pszPlayerIPs[playerIndex] = nullptr;
+
+			if( pPlayer->HasNamedPlayerWeapon( "weapon_satchel" ) )
+				DeactivateSatchels(pPlayer);
 
 			pPlayer->RemoveAllItems(true); // destroy all of the players weapons and items
 
@@ -461,7 +466,6 @@ void CHalfLifeMultiplay::PlayerKilled(CBasePlayer* pVictim, CBaseEntity* pKiller
 
 	pVictim->m_iDeaths += 1;
 
-	FireTargets("game_playerdie", pVictim, pVictim, USE_TOGGLE, 0);
 	CBasePlayer* peKiller = ToBasePlayer(pKiller);
 
 	if (pVictim == pKiller)
@@ -472,13 +476,14 @@ void CHalfLifeMultiplay::PlayerKilled(CBasePlayer* pVictim, CBaseEntity* pKiller
 	{
 		// if a player dies in a deathmatch game and the killer is a client, award the killer some points
 		pKiller->pev->frags += IPointsForKill(peKiller, pVictim);
-
-		FireTargets("game_playerkill", peKiller, peKiller, USE_TOGGLE, 0);
 	}
 	else
 	{ // killed by the world
 		pKiller->pev->frags -= 1;
 	}
+
+	if( pVictim != pKiller ) // Not suicide
+		TriggerEvent( TriggerEventType::PLAYER_KILLED, pVictim, pKiller, 0 );
 
 	// update the scores
 	// killed scores
@@ -493,7 +498,7 @@ void CHalfLifeMultiplay::PlayerKilled(CBasePlayer* pVictim, CBaseEntity* pKiller
 		peKiller->m_flNextDecalTime = gpGlobals->time;
 	}
 
-	if (pVictim->HasNamedPlayerWeapon("weapon_satchel"))
+	if( (int)mp_explode_satchels.value != 0 && pVictim->HasNamedPlayerWeapon( "weapon_satchel" ) )
 	{
 		DeactivateSatchels(pVictim);
 	}
@@ -660,17 +665,6 @@ int CHalfLifeMultiplay::DeadPlayerWeapons(CBasePlayer* pPlayer)
 int CHalfLifeMultiplay::DeadPlayerAmmo(CBasePlayer* pPlayer)
 {
 	return GR_PLR_DROP_AMMO_ACTIVE;
-}
-
-CBaseEntity* CHalfLifeMultiplay::GetPlayerSpawnSpot(CBasePlayer* pPlayer)
-{
-	CBaseEntity* pSpawnSpot = CGameRules::GetPlayerSpawnSpot(pPlayer);
-	if (IsMultiplayer() && !FStringNull(pSpawnSpot->pev->target))
-	{
-		FireTargets(STRING(pSpawnSpot->pev->target), pPlayer, pPlayer, USE_TOGGLE, 0);
-	}
-
-	return pSpawnSpot;
 }
 
 int CHalfLifeMultiplay::PlayerRelationship(CBasePlayer* pPlayer, CBaseEntity* pTarget)

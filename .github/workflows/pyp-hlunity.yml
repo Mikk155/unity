@@ -1,0 +1,45 @@
+name: pyp-package
+
+on:
+  push:
+    branches:
+      - master
+    paths:
+      - '.github/workflows/pyp-hlunity.yml'
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+
+    env:
+      PACKAGE_VERSION: "1.6"
+
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v2
+
+      - name: Set up Python
+        uses: actions/setup-python@v2
+        with:
+          python-version: '3.11.4'
+
+      - name: Install dependencies
+        run: |
+          cd scripts/hlunity
+          python -m pip install --upgrade pip
+          pip install -r requirements.txt
+
+      - name: Build package
+        env:
+          PACKAGE_VERSION: ${{ env.PACKAGE_VERSION }}
+        run: |
+          cd scripts/hlunity
+          python setup.py sdist bdist_wheel
+
+      - name: Publish package to PyPI
+        env:
+          TWINE_USERNAME: __token__
+          TWINE_PASSWORD: ${{ secrets.PYPI_API_TOKEN }}
+        run: |
+          cd scripts/hlunity
+          twine upload dist/*

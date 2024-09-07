@@ -516,10 +516,9 @@ void ServerLibrary::LoadServerConfigFiles()
 
 	std::string mapConfigFileName;
 
-	// Use the map-specific cfg if it exists.
-	if (auto mapCfgFileName = fmt::format("cfg/maps/{}.json", STRING(gpGlobals->mapname));
-		g_pFileSystem->FileExists(mapCfgFileName.c_str()))
+	if( auto mapCfgFileName = fmt::format( "cfg/maps/{}.json", STRING( gpGlobals->mapname ) ); g_pFileSystem->FileExists( mapCfgFileName.c_str() ) )
 	{
+		g_GameLogger->debug("Using map config file \"{}\"", STRING( gpGlobals->mapname ) );
 		mapConfigFileName = std::move(mapCfgFileName);
 	}
 	else
@@ -578,16 +577,24 @@ void ServerLibrary::LoadServerConfigFiles()
 	// Initialize file lists to their defaults.
 	context.SentencesFiles.push_back("sound/sentences.json");
 	context.MaterialsFiles.push_back("sound/materials.json");
-	context.SkillFiles.push_back("cfg/skill.json");
+	context.SkillFiles.push_back("cfg/skills/default_skills.json");
 
 	if (g_pGameRules->IsMultiplayer())
 	{
-		context.SkillFiles.push_back("cfg/skill_multiplayer.json");
+		context.SkillFiles.push_back("cfg/skills/multiplayer.json");
 	}
 
-	if (g_pGameRules->IsCoOp())
-	{
-		context.SkillFiles.push_back("cfg/skill_coop.json");
+	if( g_pGameRules->IsCoOp() ) {
+		context.SkillFiles.push_back("cfg/skills/cooperative.json");
+	}
+	else if( g_pGameRules->IsTeamplay() ) {
+		context.SkillFiles.push_back("cfg/skills/teamplay.json");
+	}
+	else if( g_pGameRules->IsDeathmatch() ) {
+		context.SkillFiles.push_back("cfg/skills/deathmatch.json");
+	}
+	else if( g_pGameRules->IsCTF() ) {
+		context.SkillFiles.push_back("cfg/skills/capturetheflag.json");
 	}
 
 	context.EntityClassificationsFileName = "cfg/default_entity_classes.json";

@@ -36,6 +36,16 @@ enum NPCWeaponState
 };
 }
 
+/**
+ *	@brief Values for NPC roaming mode.
+ */
+enum NPCRoamingMode : int
+{
+	MapDefault = 0,
+	Never,
+	Always
+};
+
 enum class PlayerAllyRelationship : int
 {
 	Default = 0,
@@ -222,6 +232,8 @@ public:
 
 	float m_flLastYawTime;
 
+	int m_freeRoam = NPCRoamingMode::MapDefault;
+	
 	bool m_AllowItemDropping = true;
 
 	int ObjectCaps() override
@@ -270,6 +282,9 @@ public:
 	void Listen();
 
 	bool IsAlive() override { return (pev->deadflag != DEAD_DEAD); }
+
+	bool IsMonster() override { return true; }
+
 	virtual bool ShouldFadeOnDeath();
 
 	// Basic Monster AI functions

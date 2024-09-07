@@ -1,2 +1,29 @@
 # Allow Half-Life-specific files that would otherwise be ignored
 !utils/procinfo/lib/win32_vc6/procinfo.lib
+
+.vscode/settings.json
+
+# Generate fresh FGDs on release
+unity/tools/fgd/*
+
+# Local testing library
+scripts/hlunity/hlunity/test.*
+scripts/hlunity/hlunity/unity/
+
+# Local pyp push
+scripts/hlunity/build/
+scripts/hlunity/dist/
+scripts/hlunity/hlunity.egg-info/
+
+# Local testing mod installations
+src/mods/*/unity/
+
+# Un-ported yet Unified SDK CSharp tools
+src/mods/src/
+
+# CMake project
+build/*
+
+# Python cache
+*.pyc
+*__pycache__/

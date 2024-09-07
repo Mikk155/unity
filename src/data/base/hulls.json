@@ -1,0 +1,17 @@
+{
+    "$schema": "../schema.json",
+	"Class": "Base",
+    "data":
+    {
+        "minhullsize":
+        {
+            "variable": "vector",
+            "title": "minhullsize"
+        },
+        "maxhullsize":
+        {
+            "variable": "vector",
+            "title": "maxhullsize"
+        }
+    }
+}

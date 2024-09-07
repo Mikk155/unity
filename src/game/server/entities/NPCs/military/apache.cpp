@@ -488,8 +488,7 @@ void CApache::HuntThink()
 				m_flGoalSpeed = 400;
 		}
 
-		// don't fire rockets and gun on easy mode
-		if (g_Skill.GetSkillLevel() == SkillLevel::Easy)
+		if( GetSkillFloat( "apache_rockets"sv, 1 ) == 0 )
 			m_flNextRocket = gpGlobals->time + 10.0;
 	}
 
@@ -732,7 +731,7 @@ void CApache::FireRocket()
 		WRITE_BYTE(12); // framerate
 		MESSAGE_END();
 
-		pRocket->pev->velocity = pev->velocity + gpGlobals->v_forward * 100;
+		pRocket->pev->velocity = pev->velocity + gpGlobals->v_forward * GetSkillFloat( "apache_rocket_speed"sv, 100 );
 
 		m_iRockets--;
 
@@ -996,7 +995,7 @@ void CApacheHVR::IgniteThink()
 void CApacheHVR::AccelerateThink()
 {
 	// check world boundaries
-	if (pev->origin.x < -4096 || pev->origin.x > 4096 || pev->origin.y < -4096 || pev->origin.y > 4096 || pev->origin.z < -4096 || pev->origin.z > 4096)
+	if (!IsInWorld())
 	{
 		UTIL_Remove(this);
 		return;

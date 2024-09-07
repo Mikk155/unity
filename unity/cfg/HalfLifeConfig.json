@@ -1,0 +1,17 @@
+{
+	"Includes": [
+		"cfg/BaseGameConfig.json"
+	],
+    "SectionGroups": [
+		{
+            "Sections": {
+                "GlobalModelReplacement": {
+                    "FileNames": ["cfg/HalfLifeModelReplacement.json"]
+                },
+                "HudColor": "255 160 0",
+				"CrosshairColor": "255 160 0",
+                "SuitLightType": "flashlight"
+            }
+        }
+    ]
+}

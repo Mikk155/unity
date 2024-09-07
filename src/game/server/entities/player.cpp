@@ -44,6 +44,8 @@
 #include "ctf/ctf_goals.h"
 #include "rope/CRope.h"
 
+#include "trigger/eventhandler.h"
+
 // #define DUCKFIX
 
 #define TRAIN_ACTIVE 0x80
@@ -330,6 +332,39 @@ bool CBasePlayer::TakeDamage(CBaseEntity* inflictor, CBaseEntity* attacker, floa
 		return false;
 	// go take the damage first
 
+	if( ( bitsDamageType & DMG_FALL | DMG_GENERIC ) == DMG_FALL && HasLongJump() && (int)GetSkillFloat( "longjump_falldamage", 0 ) == 0 )
+	{
+		if( (int)GetSkillFloat( "longjump_fallsplash", 1 ) == 1 )
+		{
+			//TraceResult tr;
+			//UTIL_TraceLine( pev->origin, pev->origin + Vector( 0, 0, -64 ) * 100, dont_ignore_monsters, edict(), &tr );
+
+			MESSAGE_BEGIN( MSG_PAS, SVC_TEMPENTITY, pev->origin );
+				WRITE_BYTE( TE_BEAMTORUS );
+				WRITE_COORD( pev->origin.x );
+				WRITE_COORD( pev->origin.y );
+				WRITE_COORD( pev->origin.z + 32 );
+				WRITE_COORD( pev->origin.x );
+				WRITE_COORD( pev->origin.y );
+				WRITE_COORD( pev->origin.z + 128 );
+				WRITE_SHORT( g_sModelIndexLaser );
+				WRITE_BYTE( 0 ); // frame
+				WRITE_BYTE( 0 ); // framerate
+				WRITE_BYTE( 5 ); // life
+				WRITE_BYTE( 16 ); // width
+				WRITE_BYTE( 0 ); // noise
+				WRITE_BYTE( 255 ); // R
+				WRITE_BYTE( 255 ); // G
+				WRITE_BYTE( 255 ); // B
+				WRITE_BYTE( 60 ); // A
+				WRITE_BYTE( 0 ); // scrollspeed
+			MESSAGE_END();
+		}
+
+		pev->velocity.z = GetSkillFloat( "longjump_fallvelocity", 0 );
+
+		return false;
+	}
 
 	CBaseEntity* pAttacker = CBaseEntity::Instance(attacker);
 
@@ -754,6 +789,8 @@ void CBasePlayer::Killed(CBaseEntity* attacker, int iGib)
 	// Holster weapon immediately, to allow it to cleanup
 	if (m_pActiveWeapon)
 		m_pActiveWeapon->Holster();
+
+	TriggerEvent( TriggerEventType::PLAYER_DIE, this, attacker, iGib );
 
 	g_pGameRules->PlayerKilled(this, attacker, g_pevLastInflictor);
 
@@ -1374,8 +1411,6 @@ void CBasePlayer::StartObserver(Vector vecPosition, Vector vecViewAngle)
 	Observer_SetMode(m_iObserverLastMode);
 }
 
-#define PLAYER_SEARCH_RADIUS (float)64
-
 void CBasePlayer::PlayerUse()
 {
 	if (IsObserver())
@@ -1384,6 +1419,8 @@ void CBasePlayer::PlayerUse()
 	// Was use pressed or released?
 	if (((pev->button | m_afButtonPressed | m_afButtonReleased) & IN_USE) == 0)
 		return;
+
+	const float PLAYER_SEARCH_RADIUS = GetSkillFloat( "player_use_distance"sv, 64 );
 
 	// Hit Use on a train?
 	if ((m_afButtonPressed & IN_USE) != 0)
@@ -1462,10 +1499,28 @@ void CBasePlayer::PlayerUse()
 	}
 	pObject = pClosest;
 
-	// Found an object
-	if (pObject)
+	auto UseOnDirectLineOfSight = []( CBasePlayer* pPlayer, CBaseEntity* pObjectCap, float PLAYER_SEARCH_RADIUS ) -> bool
 	{
-		//!!!UNDONE: traceline here to prevent USEing buttons through walls
+		if( pObjectCap != nullptr )
+		{
+			if( pObjectCap->m_uselos == 1 )
+			{
+				TraceResult tr;
+
+				Vector VecSrc = pPlayer->pev->origin + pPlayer->pev->view_ofs;
+				UTIL_TraceLine( VecSrc, VecSrc + gpGlobals->v_forward * PLAYER_SEARCH_RADIUS, dont_ignore_monsters, dont_ignore_glass, pPlayer->edict(), &tr );
+
+				if( tr.pHit != pObjectCap->edict() )
+					return false;
+			}
+			return true;
+		}
+		return false;
+	};
+
+	// Found an object
+	if( UseOnDirectLineOfSight( this, pObject, PLAYER_SEARCH_RADIUS ) )
+	{
 		int caps = pObject->ObjectCaps();
 
 		if ((m_afButtonPressed & IN_USE) != 0)
@@ -1520,11 +1575,39 @@ void CBasePlayer::Jump()
 
 	SetAnimation(PLAYER_JUMP);
 
+	// -Mikk splash effect on fall damage + on using longjump
 	if (m_fLongJump &&
 		(pev->button & IN_DUCK) != 0 &&
 		(pev->flDuckTime > 0) &&
 		pev->velocity.Length() > 50)
 	{
+		if( (int)GetSkillFloat( "longjump_fallsplash", 1 ) == 1 )
+		{
+			TraceResult tr;
+			UTIL_TraceLine( pev->origin, pev->origin + Vector( 0, 0, -64 ) * 100, dont_ignore_monsters, edict(), &tr );
+
+			MESSAGE_BEGIN( MSG_PAS, SVC_TEMPENTITY, pev->origin );
+				WRITE_BYTE( TE_BEAMTORUS );
+				WRITE_COORD( tr.vecEndPos.x );
+				WRITE_COORD( tr.vecEndPos.y );
+				WRITE_COORD( tr.vecEndPos.z );
+				WRITE_COORD( tr.vecEndPos.x );
+				WRITE_COORD( tr.vecEndPos.y );
+				WRITE_COORD( tr.vecEndPos.z + 128 );
+				WRITE_SHORT( g_sModelIndexLaser );
+				WRITE_BYTE( 0 ); // frame
+				WRITE_BYTE( 0 ); // framerate
+				WRITE_BYTE( 5 ); // life
+				WRITE_BYTE( 16 ); // width
+				WRITE_BYTE( 0 ); // noise
+				WRITE_BYTE( 255 ); // R
+				WRITE_BYTE( 255 ); // G
+				WRITE_BYTE( 255 ); // B
+				WRITE_BYTE( 60 ); // A
+				WRITE_BYTE( 0 ); // scrollspeed
+			MESSAGE_END();
+		}
+
 		SetAnimation(PLAYER_SUPERJUMP);
 	}
 
@@ -2731,12 +2814,13 @@ void CBasePlayer::Spawn()
 			m_bIsSpawning = false;
 		}};
 
-	pev->health = 100;
-	pev->armorvalue = 0;
+	pev->health = GetSkillFloat("player_health"sv, 100 );
+	pev->armortype = GetSkillFloat("player_armor"sv, 0 );
+	pev->max_health = GetSkillFloat("player_maxhealth"sv, 100 );
+	pev->armorvalue = GetSkillFloat("player_maxarmor"sv, 100 );
 	pev->takedamage = DAMAGE_AIM;
 	pev->solid = SOLID_SLIDEBOX;
 	pev->movetype = MOVETYPE_WALK;
-	pev->max_health = pev->health;
 	pev->flags &= FL_PROXY | FL_FAKECLIENT; // keep proxy and fakeclient flags set by engine
 	pev->flags |= FL_CLIENT;
 	pev->air_finished = gpGlobals->time + 12;
@@ -2788,15 +2872,8 @@ void CBasePlayer::Spawn()
 		pev->iuser1 = OBS_ROAMING;
 	}
 
-	g_pGameRules->GetPlayerSpawnSpot(this);
-
 	SetModel("models/player.mdl");
 	pev->sequence = LookupActivity(ACT_IDLE);
-
-	if (FBitSet(pev->flags, FL_DUCKING))
-		SetSize(VEC_DUCK_HULL_MIN, VEC_DUCK_HULL_MAX);
-	else
-		SetSize(VEC_HULL_MIN, VEC_HULL_MAX);
 
 	pev->view_ofs = VEC_VIEW;
 	Precache();
@@ -2830,8 +2907,6 @@ void CBasePlayer::Spawn()
 
 	m_flNextChatTime = gpGlobals->time;
 
-	g_pGameRules->PlayerSpawn(this);
-
 	if (g_pGameRules->IsCTF() && m_iTeamNum == CTFTeam::None)
 	{
 		pev->effects |= EF_NODRAW;
@@ -2859,6 +2934,10 @@ void CBasePlayer::Spawn()
 		if (g_pGameRules->IsCTF())
 			Player_Menu();
 	}
+
+	g_pGameRules->GetPlayerSpawnSpot(this);
+
+	g_pGameRules->PlayerSpawn(this);
 }
 
 void CBasePlayer::Precache()
@@ -3115,13 +3194,10 @@ void CBloodSplat::Spray()
 {
 	TraceResult tr;
 
-	if (g_Language != LANGUAGE_GERMAN)
-	{
-		UTIL_MakeVectors(pev->angles);
-		UTIL_TraceLine(pev->origin, pev->origin + gpGlobals->v_forward * 128, ignore_monsters, pev->owner, &tr);
+	UTIL_MakeVectors(pev->angles);
+	UTIL_TraceLine(pev->origin, pev->origin + gpGlobals->v_forward * 128, ignore_monsters, pev->owner, &tr);
 
-		UTIL_BloodDecalTrace(&tr, BLOOD_COLOR_RED);
-	}
+	UTIL_BloodDecalTrace(&tr, BLOOD_COLOR_RED);
 	SetThink(&CBloodSplat::SUB_Remove);
 	pev->nextthink = gpGlobals->time + 0.1;
 }
@@ -3842,7 +3918,7 @@ void CBasePlayer::UpdateClientData()
 	{
 		m_HasActivated = true;
 		g_Server.PlayerActivating(this);
-		FireTargets("game_playeractivate", this, this, USE_TOGGLE, 0);
+		TriggerEvent( TriggerEventType::PLAYER_ACTIVATE, this, this, 0 );
 	}
 
 	if (m_fInitHUD)
@@ -3864,10 +3940,7 @@ void CBasePlayer::UpdateClientData()
 
 			m_iObserverLastMode = OBS_ROAMING;
 
-			if (g_pGameRules->IsMultiplayer())
-			{
-				FireTargets("game_playerjoin", this, this, USE_TOGGLE, 0);
-			}
+			TriggerEvent( TriggerEventType::PLAYER_JOIN, this, this, 0 );
 		}
 
 		if (g_pGameRules->IsMultiplayer())
@@ -3888,7 +3961,7 @@ void CBasePlayer::UpdateClientData()
 
 		// This counts as spawning, it suppresses weapon pickup notifications.
 		m_bIsSpawning = true;
-		FireTargets("game_playerspawn", this, this, USE_TOGGLE, 0);
+		TriggerEvent( TriggerEventType::PLAYER_SPAWN, this, this, 0 );
 		m_bIsSpawning = false;
 
 		m_AutoWepSwitch = savedAutoWepSwitch;
@@ -4604,6 +4677,11 @@ bool CBasePlayer::HasPlayerWeapon(CBasePlayerWeapon* checkWeapon)
 
 bool CBasePlayer::HasNamedPlayerWeapon(const char* pszItemName)
 {
+	return ( HasNamedPlayerWeaponPtr( pszItemName ) != nullptr );
+}
+
+CBasePlayerWeapon* CBasePlayer::HasNamedPlayerWeaponPtr(const char* pszItemName)
+{
 	CBasePlayerWeapon* weapon;
 	int i;
 
@@ -4615,13 +4693,13 @@ bool CBasePlayer::HasNamedPlayerWeapon(const char* pszItemName)
 		{
 			if (0 == strcmp(pszItemName, STRING(weapon->pev->classname)))
 			{
-				return true;
+				return weapon;
 			}
 			weapon = weapon->m_pNext;
 		}
 	}
 
-	return false;
+	return nullptr;
 }
 
 bool CBasePlayer::SwitchWeapon(CBasePlayerWeapon* weapon)

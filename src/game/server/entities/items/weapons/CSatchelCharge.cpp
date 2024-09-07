@@ -146,7 +146,10 @@ void DeactivateSatchels(CBasePlayer* pOwner)
 	{
 		if (satchel->pev->owner == pOwner->edict())
 		{
-			satchel->Deactivate();
+			if( (int)mp_explode_satchels.value == 1 )
+				satchel->Use( pOwner, pOwner, USE_TOGGLE, 0 );
+			else
+				satchel->Deactivate();
 		}
 	}
 }
