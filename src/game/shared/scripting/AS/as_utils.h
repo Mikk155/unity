@@ -15,15 +15,11 @@
 
 #pragma once
 
-#include <cassert>
-#include <limits>
 #include <memory>
 #include <string>
 #include <string_view>
 
 #include <fmt/format.h>
-
-#include <spdlog/logger.h>
 
 #include <angelscript.h>
 
@@ -56,7 +52,7 @@ struct ScriptModuleDeleter
 using ModulePtr = std::unique_ptr<asIScriptModule, ScriptModuleDeleter>;
 
 /**
- *	@brief Custom deleter for Angelscript objects stored in @c std::unique_ptr
+ *	@brief Custom deleter for Angelscript objects stored in \c std::unique_ptr
  */
 template <typename T>
 struct ObjectDeleter
@@ -73,84 +69,26 @@ struct ObjectDeleter
 template <typename T>
 using UniquePtr = std::unique_ptr<T, ObjectDeleter<T>>;
 
-template <typename T>
-UniquePtr<T> MakeUnique(T* object)
+inline std::string FormatFunctionName(const asIScriptFunction& function)
 {
-	UniquePtr<T> ptr{object};
+	std::string buffer;
 
-	if (ptr)
+	if (const auto ns = function.GetNamespace(); ns && ns[0])
 	{
-		ptr->AddRef();
+		buffer += ns;
+		buffer += "::";
 	}
 
-	return ptr;
-}
-
-class RefCountedClass
-{
-public:
-	RefCountedClass() = default;
-	virtual ~RefCountedClass() = default;
-
-	void AddRef() const
+	if (const auto clazz = function.GetObjectName(); clazz)
 	{
-		++m_RefCount;
+		buffer += clazz;
+		buffer += "::";
 	}
 
-	void Release() const
-	{
-		if (--m_RefCount == 0)
-		{
-			delete this;
-		}
-	}
+	buffer += function.GetName();
 
-private:
-	mutable int m_RefCount = 1;
-};
-
-void RegisterRefCountedClass(asIScriptEngine& engine, const char* name);
-
-template <typename TDerived, typename TBase>
-TDerived* DownCast(TBase* base)
-{
-	return dynamic_cast<TDerived*>(base);
+	return buffer;
 }
-
-template <typename TBase, typename TDerived>
-TBase* UpCast(TDerived* derived)
-{
-	return static_cast<TBase*>(derived);
-}
-
-/**
-*	@brief Registers an implicit conversion from derived to base and an explicit cast from base to derived.
-*/
-template <typename TDerived, typename TBase>
-void RegisterCasts(asIScriptEngine& engine, const char* derivedName, const char* baseName)
-{
-	engine.RegisterObjectMethod(derivedName, fmt::format("{}@ opImplCast()", baseName).c_str(),
-		asFUNCTION((UpCast<TBase, TDerived>)), asCALL_CDECL_OBJFIRST);
-
-		engine.RegisterObjectMethod(baseName, fmt::format("{}@ opCast()", derivedName).c_str(),
-		asFUNCTION((DownCast<TDerived, TBase>)), asCALL_CDECL_OBJFIRST);
-}
-
-asITypeInfo* GetFuncDefByName(asIScriptEngine& engine, const char* name);
-
-/**
- *	@brief Gets the actual script function that this function refers to.
- *	If this is a delegate it will return the function it wraps.
- */
-const asIScriptFunction* GetUnderlyingFunction(const asIScriptFunction* function);
-
-/**
- *	@copydoc GetUnderlyingFunction(const asIScriptFunction*)
- */
-asIScriptFunction* GetUnderlyingFunction(asIScriptFunction* function);
-
-std::string FormatFunctionName(const asIScriptFunction& function);
-std::string FormatTypeName(const asITypeInfo& typeInfo);
 
 std::string_view ReturnCodeToString(int code);
 std::string_view ContextStateToString(int code);
@@ -158,12 +96,21 @@ std::string_view ContextStateToString(int code);
 /**
  *	@brief Gets a printable string for the function's module
  */
-const char* GetModuleName(const asIScriptFunction& function);
+inline const char* GetModuleName(const asIScriptFunction& function)
+{
+	if (const auto moduleName = function.GetModuleName(); moduleName)
+	{
+		return moduleName;
+	}
 
-/**
-*	@brief If a script is calling native code, gets the module that's calling it.
-*/
-asIScriptModule* GetCallingModule();
+	switch (function.GetFuncType())
+	{
+	case asFUNC_SYSTEM:
+		return "System";
+	default:
+		return "Unknown";
+	}
+}
 
 struct SectionInfo
 {
@@ -172,126 +119,81 @@ struct SectionInfo
 	int Column = 0;
 };
 
-std::string GetSectionName(const asIScriptFunction& function);
-std::string GetSectionName(const asIScriptFunction* function);
-
-SectionInfo GetExecutingSectionInfo(asIScriptContext& context, asUINT stackLevel = 0);
-SectionInfo GetExceptionSectionInfo(asIScriptContext& context);
-
-void PrintStackTrace(
-	spdlog::logger& logger, spdlog::level::level_enum level, asIScriptContext& context, asUINT maxDepth = std::numeric_limits<asUINT>::max());
-
-struct PushContextState final
+inline std::string GetSectionName(const asIScriptFunction& function)
 {
-	explicit PushContextState(spdlog::logger* logger, asIScriptContext* context)
-		: m_Logger(logger), m_Context(context)
+	if (const auto sectionName = function.GetScriptSectionName(); sectionName && sectionName[0])
 	{
-		assert(m_Logger);
-		assert(m_Context);
-
-		// TODO: probably needs a more robust check
-		m_IsActive = m_Context->GetState() == asEXECUTION_ACTIVE;
-
-		if (m_IsActive)
-		{
-			const int result = m_Context->PushState();
-
-			if (result < 0)
-			{
-				m_Logger->error("Error \"{}\" ({}) while pushing context state", ReturnCodeToString(result), result);
-				m_IsValid = false;
-			}
-		}
+		return sectionName;
 	}
 
-	~PushContextState()
+	if (const auto module = function.GetModule(); module)
 	{
-		if (m_IsValid && m_IsActive)
-		{
-			const int result = m_Context->PopState();
-
-			if (result < 0)
-			{
-				m_Logger->error("Error \"{}\" ({}) while popping context state", ReturnCodeToString(result), result);
-			}
-		}
+		return fmt::format("Unknown section in module \"{}\"", module->GetName());
 	}
 
-	PushContextState(const PushContextState&) = delete;
-	PushContextState& operator=(const PushContextState&) = delete;
-
-	operator bool() const { return m_IsValid; }
-
-private:
-	spdlog::logger* const m_Logger;
-	asIScriptContext* const m_Context;
-	bool m_IsActive;
-	bool m_IsValid = true;
-};
+	switch (function.GetFuncType())
+	{
+	case asFUNC_SYSTEM:
+		return "System function";
+	default:
+		return "Unknown section";
+	}
 }
 
-template <>
-struct fmt::formatter<asIScriptModule>
+inline std::string GetSectionName(const asIScriptFunction* function)
 {
-	constexpr auto parse(format_parse_context& ctx) -> decltype(ctx.begin())
+	if (!function)
 	{
-		auto it = ctx.begin();
-
-		if (it != ctx.end() && *it != '}')
-		{
-			throw format_error("invalid format");
-		}
-
-		return it;
+		// Should never happen
+		return "No function to get section";
 	}
 
-	template <typename FormatContext>
-	auto format(const asIScriptModule& module, FormatContext& ctx) const -> decltype(ctx.out())
-	{
-		return fmt::format_to(ctx.out(), "{}", module.GetName());
-	}
-};
+	return GetSectionName(*function);
+}
 
-template <>
-struct fmt::formatter<asIScriptFunction>
+inline SectionInfo GetExecutingSectionInfo(asIScriptContext& context, asUINT stackLevel = 0)
 {
-	constexpr auto parse(format_parse_context& ctx) -> decltype(ctx.begin())
+	const char* sectionName;
+	int column;
+	const int lineNumber = context.GetLineNumber(stackLevel, &column, &sectionName);
+
+	std::string sectionNameString;
+
+	if (sectionName)
 	{
-		auto it = ctx.begin();
-
-		if (it != ctx.end() && *it != '}')
-		{
-			throw format_error("invalid format");
-		}
-
-		return it;
+		sectionNameString = sectionName;
+	}
+	else
+	{
+		sectionNameString = GetSectionName(context.GetFunction(stackLevel));
 	}
 
-	template <typename FormatContext>
-	auto format(const asIScriptFunction& function, FormatContext& ctx) const -> decltype(ctx.out())
-	{
-		return fmt::format_to(ctx.out(), "{}", as::FormatFunctionName(function));
-	}
-};
+	return {
+		.SectionName = std::move(sectionNameString),
+		.Line = lineNumber,
+		.Column = column};
+}
 
-template <>
-struct fmt::formatter<asITypeInfo>
+inline SectionInfo GetExceptionSectionInfo(asIScriptContext& context)
 {
-	constexpr auto parse(format_parse_context& ctx) -> decltype(ctx.begin())
+	const char* sectionName;
+	int column;
+	const int lineNumber = context.GetExceptionLineNumber(&column, &sectionName);
+
+	std::string sectionNameString;
+
+	if (sectionName)
 	{
-		auto it = ctx.begin();
-
-		if (it != ctx.end() && *it != '}')
-		{
-			throw format_error("invalid format");
-		}
-
-		return it;
+		sectionNameString = sectionName;
+	}
+	else
+	{
+		sectionNameString = GetSectionName(context.GetExceptionFunction());
 	}
 
-	template <typename FormatContext>
-	auto format(const asITypeInfo& typeInfo, FormatContext& ctx) const -> decltype(ctx.out())
-	{
-		return fmt::format_to(ctx.out(), "{}", as::FormatTypeName(typeInfo));
-	}
-};
+	return {
+		.SectionName = std::move(sectionNameString),
+		.Line = lineNumber,
+		.Column = column};
+}
+}

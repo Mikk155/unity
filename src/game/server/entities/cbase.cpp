@@ -15,13 +15,10 @@
 
 #include <unordered_map>
 
-#include <angelscript/scriptdictionary/scriptdictionary.h>
-
 #include "cbase.h"
 #include "ServerLibrary.h"
 #include "pm_shared.h"
 #include "world.h"
-#include "scripting/AS/ASScriptingSystem.h"
 #include "sound/ServerSoundSystem.h"
 #include "utils/ReplacementMaps.h"
 
@@ -1186,17 +1183,4 @@ std::string CBaseEntity :: GetKeyValue( const char* sKey, const char* DefaultVal
     }
 
 	return ( keyvalues.find( sKey ) != keyvalues.end() ? keyvalues[ sKey ] : std::string( DefaultValue ) );
-}
-
-CScriptDictionary* CBaseEntity::GetUserData()
-{
-	// Lazily create to avoid wasting memory.
-	if (!m_UserDataDictionary)
-	{
-		m_UserDataDictionary.reset(CScriptDictionary::Create(scripting::g_Scripting.GetEngine()));
-	}
-
-	m_UserDataDictionary->AddRef();
-
-	return m_UserDataDictionary.get();
 }
