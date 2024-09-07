@@ -15,13 +15,10 @@
 
 #include <unordered_map>
 
-#include <angelscript/scriptdictionary/scriptdictionary.h>
-
 #include "cbase.h"
 #include "ServerLibrary.h"
 #include "pm_shared.h"
 #include "world.h"
-#include "scripting/AS/ASScriptingSystem.h"
 #include "sound/ServerSoundSystem.h"
 #include "utils/ReplacementMaps.h"
 

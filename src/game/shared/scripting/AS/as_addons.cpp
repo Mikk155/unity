@@ -15,11 +15,6 @@
 
 #include "cbase.h"
 
-// If you need one of the addons included with the Angelscript library itself, add it here by including the .cpp file.
-// Note: if you need to modify the code, copy the header and source files and add them to the project directly.
+// Add all Angelscript addons provided by the library itself to this source file by including them.
 
-#include <angelscript/scriptarray/scriptarray.cpp>
-#include <angelscript/scriptdictionary/scriptdictionary.cpp>
-#include <angelscript/scriptbuilder/scriptbuilder.cpp>
 #include <angelscript/scriptstdstring/scriptstdstring.cpp>
-#include <angelscript/scriptstdstring/scriptstdstring_utils.cpp>
