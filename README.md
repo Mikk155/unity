@@ -1,17 +1,19 @@
-# **Note**: The Unified SDK is still in development and not ready for use beyond pre-alpha testing and feedback. Do not attempt to use it to make a mod! **Take this warning seriously.**
-
 # Half-Life Unified SDK
 
 The [Half-Life Unified SDK](docs/README.md#developer-resources) is a project that provides an updated version of the Half-Life SDK, with full support for the expansion packs Opposing Force and Blue Shift as well as new features.
 
-[![CI/CD](https://github.com/SamVanheer/halflife-unified-sdk/actions/workflows/ci-cd.yml/badge.svg?branch=master)](https://github.com/SamVanheer/halflife-unified-sdk/actions/workflows/ci-cd.yml)
+[![CI/CD](https://github.com/twhl-community/halflife-unified-sdk/actions/workflows/ci-cd.yml/badge.svg?branch=master)](https://github.com/twhl-community/halflife-unified-sdk/actions/workflows/ci-cd.yml)
 
 The SDK provides a CMake-based project structure with support for Visual Studio 2019 and 2022 on Windows and GCC 11 on Linux, as well as many bug fixes and improvements.
 Opposing Force and Blue Shift features have been integrated with code refactored to reduce the amount of code duplication.
 
-The goal of the Unified SDK is to allow modders to make mods based on these games, while providing bug fixes that could be applied to the official games as well in addition to bug fixes that would be a breaking change.
+**You will need a strong grasp of of C++, build systems like Visual Studio or Make (depending on the platform you're developing for), CMake, command line interfaces, version control systems (Git in particular) and package managers (vcpkg in particular) to make a mod with this SDK. If you do not have experience with these technologies then you will have a very hard time getting started.**
+
+The goal of the Unified SDK is to allow modders to make mods based on these games, while providing bug fixes that could be applied to the official games as well in addition to bug fixes that would be a breaking change. Check out the documentation linked below for a list of features.
 
 A mod installation is also provided to allow players to play these games with all bug fixes applied. It includes files that are required when making a mod based on this SDK.
+
+The Unified SDK works on the `steam_legacy` and anniversary versions of the game but requires the game to be switched to the `steam_legacy` version during installation. See the installation guide for more information.
 
 > <span style="background-color:orange; color: black">Warning
 > </br>
@@ -166,3 +168,67 @@ There are basic rules of conduct that should be followed at all times by everyon
 - Do not repeatedly update an open issue remarking that the issue persists.
 
 Remember: Just because the issue you reported was reported here does not mean that it is an issue with Half-Life.  As well, should your issue not be resolved immediately, it does not mean that a resolution is not being researched or tested.  Patience is always appreciated.
+
+# Contributors
+
+This is a list of everybody who contributed to these projects. Thanks for helping to make them better!
+
+If you believe your name should be on this list make sure to let us know!
+
+* Sam Vanheer
+* JoelTroch
+* malortie
+* dtugend
+* Revenant100
+* fel1x-developer
+* LogicAndTrick
+* FreeSlave
+* zpl-zak
+* edgarbarney
+* Toodles2You
+* Jengerer
+* thefoofighter
+* Maxxiii
+* johndrinkwater
+* anchurcn
+* DanielOaks
+* MegaBrutal
+* suXinjke
+* IntriguingTiles
+* Oxofemple
+* YaLTeR
+* Ronin4862
+* the man
+* vasiavasiavasia95
+* NongBenz
+* Hezus
+* Anton
+* ArroganceJustified
+* a1batross
+* zaklaus
+* Uncle Mike
+* Bacontsu
+* L453rh4wk
+* P38TaKjYzY
+* hammermaps
+* LuckNukeHunter99
+* Veinhelm
+* jay!
+* BryanHaley
+* λλλλλλ
+* Streit
+* rbar1um43
+* LambdaLuke87
+* almix
+* sabian
+
+## Special Thanks
+
+* Valve Software
+* Gearbox Software
+* Alfred Reynolds
+* mikela-valve
+* TWHL Community
+* Knockout
+* Gamebanana
+* ModDB

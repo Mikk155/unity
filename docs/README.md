@@ -13,21 +13,21 @@ The files in this directory and subdirectories contain documentation for the Uni
 
 ## Developer Resources
 
-* [SDK Source Code](https://github.com/SamVanheer/halflife-unified-sdk) (Source code for mods and original SDK tools)
+* [SDK Source Code](https://github.com/twhl-community/halflife-unified-sdk) (Source code for mods and original SDK tools)
 * [.NET Tools](dotnet-tools.md)
-* [Asset Source Files](https://github.com/SamVanheer/halflife-unified-sdk-assets)
-* [C# Tools Source Code](https://github.com/SamVanheer/HalfLife.UnifiedSdk-CSharp) (Source code for new tools written in C#)
-* [Releases](https://github.com/SamVanheer/halflife-unified-sdk/releases) (Game installation package)
-* [Github Actions](https://github.com/SamVanheer/halflife-unified-sdk/actions) (Automated builds, pre-built binaries for Windows and Linux)
-* [Map Decompiler](https://github.com/SamVanheer/HalfLife.UnifiedSdk.MapDecompiler) (Note: GPLv2-licensed)
+* [Asset Source Files](https://github.com/twhl-community/halflife-unified-sdk-assets)
+* [C# Tools Source Code](https://github.com/twhl-community/HalfLife.UnifiedSdk-CSharp) (Source code for new tools written in C#)
+* [Releases](https://github.com/twhl-community/halflife-unified-sdk/releases) (Game installation package)
+* [Github Actions](https://github.com/twhl-community/halflife-unified-sdk/actions) (Automated builds, pre-built binaries for Windows and Linux)
+* [Map Decompiler](https://github.com/twhl-community/HalfLife.UnifiedSdk.MapDecompiler) (Note: GPLv2-licensed)
 
 ## Other Source Code Repositories
 
-* [Half-Life Updated](https://github.com/SamVanheer/halflife-updated)
-* [Half-Life: Opposing Force Updated](https://github.com/SamVanheer/halflife-op4-updated)
-* [Half-Life: Blue Shift Updated](https://github.com/SamVanheer/halflife-bs-updated)
-* [DMC Updated](https://github.com/SamVanheer/dmc-updated)
-* [Ricochet Updated](https://github.com/SamVanheer/ricochet-updated)
+* [Half-Life Updated](https://github.com/twhl-community/halflife-updated)
+* [Half-Life: Opposing Force Updated](https://github.com/twhl-community/halflife-op4-updated)
+* [Half-Life: Blue Shift Updated](https://github.com/twhl-community/halflife-bs-updated)
+* [DMC Updated](https://github.com/twhl-community/dmc-updated)
+* [Ricochet Updated](https://github.com/twhl-community/ricochet-updated)
 
 ## Entity guide
 
@@ -89,6 +89,7 @@ The files in this directory and subdirectories contain documentation for the Uni
 
 ## Tutorials
 
+* [Using FastDL with servers](tutorials/using-fastdl-with-servers.md)
 * [Setting up Visual Studio Code to edit PowerShell scripts](tutorials/setting-up-vscode-for-powershell.md)
 * [Setting up and using dotnet script](tutorials/setting-up-and-using-dotnet-script.md)
 * [Extracting the Opposing Force relationship table](tutorials/extracting-relationship-table.md)
