@@ -3,16 +3,56 @@ name: CI/CD
 on:
   push:
     branches:
-      - nonfunctional-angelscript
+      - master
+    paths:
+      - '.github/workflows/ci-cd.yml'
 
 env:
+  VERSION: 0.0.1
+  USER: Mikk155
+  REPOSITORY: unity
   BUILD_TYPE: Release
   GAME_NAME: Half-Life
   MOD_NAME: unity
   VCPKG_ROOT: ${{github.workspace}}/vcpkg
 
 jobs:
+  release:
+    name: release
+    runs-on: windows-latest
+    steps:
+    - name: Checkout
+      uses: actions/checkout@v4
+
+    - name: Set up Python
+      uses: actions/setup-python@v2
+      with:
+        python-version: '3.11.4'
+
+    - name: Install dependencies
+      run: |
+        python -m pip install --upgrade pip
+        pip install --no-cache-dir -r requirements.txt
+        pip install --upgrade pip
+
+    - name: Build FGD
+      run: |
+        cd src/data
+        python main.py
+
+    - name: release
+      id: generated
+      env:
+        TOKEN: ${{ secrets.TOKEN }}
+        VERSION: ${{ env.VERSION }}
+        USER: ${{ env.USER }}
+        REPOSITORY: ${{ env.REPOSITORY }}
+        GAME_NAME: ${{ env.GAME_NAME }}
+        MOD_NAME: ${{ env.MOD_NAME }}
+      run: python3 build.py
+
   linux:
+    needs: release
     name: Linux-x86
     runs-on: ubuntu-latest
     steps:
@@ -21,6 +61,10 @@ jobs:
         with:
           submodules: recursive
 
+      - name: Pre-Release
+        if: success() && needs.release.outputs.generated
+        run: echo "Waiting for release task."
+          
       - name: Install G++ Multilib & 32 bit OpenGL library
         run: |
           sudo dpkg --add-architecture i386
@@ -51,13 +95,19 @@ jobs:
       - name: Zip Binaries
         run: zip -r Linux-x86 ${{ env.GAME_NAME }}
 
-      - name: Upload artifacts
-        uses: actions/upload-artifact@v4
+      - name: Release
+        uses: xresloader/upload-to-github-release@v1.6.0
         with:
-          name: Linux-x86
-          path: ${{env.GAME_NAME}}
-
+          file: Linux-x86.zip
+          tag_name: ${{ env.VERSION }}
+          token: ${{ secrets.TOKEN }}
+          target_owner: ${{ env.USER }}
+          target_repo: ${{ env.REPOSITORY }}
+          prerelease: true
+          tags: true
+        
   win32:
+    needs: release
     name: Win32
     runs-on: windows-latest
     steps:
@@ -66,6 +116,10 @@ jobs:
         with:
           submodules: recursive
 
+      - name: Pre-Release
+        if: success() && needs.release.outputs.generated
+        run: echo "Waiting for release task."
+      
       - uses: lukka/get-cmake@latest
       
       - name: setup vcpkg
@@ -90,8 +144,13 @@ jobs:
         run: |
           powershell Compress-Archive -Path ${{ env.GAME_NAME }} -DestinationPath Win32.zip
 
-      - name: Upload artifacts
-        uses: actions/upload-artifact@v4
+      - name: Release
+        uses: xresloader/upload-to-github-release@v1.6.0
         with:
-          name: Win32
-          path: ${{env.GAME_NAME}}
+          file: Win32.zip
+          tag_name: ${{ env.VERSION }}
+          token: ${{ secrets.TOKEN }}
+          target_owner: ${{ env.USER }}
+          target_repo: ${{ env.REPOSITORY }}
+          prerelease: true
+          tags: true
