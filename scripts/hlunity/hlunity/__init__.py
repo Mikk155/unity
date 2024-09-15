@@ -109,11 +109,11 @@ def language() -> str:
 
     lang = syslang[ 0 ];
 
-    if lang.find( '_' ) != -1:
+    if lang.find( '_' ) != -1: # type: ignore
 
-        lang = lang[ 0 : lang.find( '_' ) ];
+        lang = lang[ 0 : lang.find( '_' ) ]; # type: ignore
 
-    return str( lang.lower() );
+    return str( lang.lower() ); # type: ignore
 
 #============================================================================================================
 # printf
@@ -142,19 +142,19 @@ def printf( string: str | dict, arguments: dict | list[str] = [], cut_not_matche
 
         for __arg__ in arguments:
 
-            string = string.replace( "{}", str( __arg__ ), 1 );
+            string = string.replace( "{}", str( __arg__ ), 1 ); # type: ignore
 
         if cut_not_matched:
 
             __replace__ = '{} ' if not_matched_trim else '{}';
 
-            string.replace( __replace__, '' );
+            string.replace( __replace__, '' ); # type: ignore
 
     elif isinstance( arguments, dict ):
 
         for __oarg__, __narg__ in arguments.items():
 
-            string = string.replace( "{"+__oarg__+"}", str( __narg__ ) );
+            string = string.replace( "{"+__oarg__+"}", str( __narg__ ) ); # type: ignore
 
             #if cut_not_matched: -TODO find open-bracket and check until closes for removing
     else:
@@ -167,7 +167,7 @@ def printf( string: str | dict, arguments: dict | list[str] = [], cut_not_matche
 
         print( string );
 
-    return string;
+    return string; # type: ignore
 
 #============================================================================================================
 # Logger System
@@ -203,6 +203,7 @@ class Logger:
         elif ( __LOGGER_LEVEL__ & logger_level ) != 0:
                 __LOGGER_LEVEL__ &= ~logger_level;
 
+    @staticmethod
     def __log__( log_type, message, arguments, logger_level ):
         global __LOGGER_LEVEL__;
         if ( __LOGGER_LEVEL__ & logger_level ) != 0:
@@ -245,7 +246,7 @@ def makedirs( file_path : str ):
     index = right_slash if right_slash > left_slash else left_slash;
 
     if index != -1:
-        makedir = file_path[ : file_path.rfind( find ) ];
+        makedir = file_path[ : index ];
 
         from os import path;
         if not path.exists( makedir ):
@@ -325,18 +326,18 @@ def __conver_float_2__( number ):
         number = number[ : len( number ) - 1 ];
     return number;
 
-def convert_float( number: float | str, float_conversion: FloatConversion = FloatConversion.none ) -> str:
+def convert_float( number: float | str, float_conversion: int = FloatConversion.none ) -> str:
     '''Converts a float to int/str'''
 
     if isinstance( number, float ):
         number = str( number );
 
     if float_conversion == FloatConversion.none:
-        return number;
+        return number; # type: ignore
 
-    digits = number[ number.find( '.' ) + 1 : ] if number.find( '.' ) != -1 else '0';
+    digits = number[ number.find( '.' ) + 1 : ] if number.find( '.' ) != -1 else '0'; # type: ignore
 
-    number = number[ : number.find( '.' ) ] if number.find( '.' ) != -1 else number;
+    number = number[ : number.find( '.' ) ] if number.find( '.' ) != -1 else number; # type: ignore
 
     if float_conversion == FloatConversion.digits_6:
         return '{}.{}'.format( number, __convert_float__( digits, 6 ) );
@@ -351,15 +352,15 @@ def convert_float( number: float | str, float_conversion: FloatConversion = Floa
     elif float_conversion == FloatConversion.digits_1:
         return '{}.{}'.format( number, __convert_float__( digits, 1 ) );
     elif float_conversion == FloatConversion.integer:
-        return number if int( digits[0] ) < 5 else str( int( number ) + 1 );
+        return number if int( digits[0] ) < 5 else str( int( number ) + 1 ); # type: ignore
     elif float_conversion == FloatConversion.integer_round_up:
-        return number if int( digits[0] ) == 0 else str( int( number ) + 1 );
+        return number if int( digits[0] ) == 0 else str( int( number ) + 1 ); # type: ignore
     elif float_conversion == FloatConversion.integer_round_down:
-        return number if int( digits[0] ) != 0 else str( int( number ) + 1 );
+        return number if int( digits[0] ) != 0 else str( int( number ) + 1 ); # type: ignore
     elif float_conversion == FloatConversion.not_zero:
         return __conver_float_2__( '{}.{}'.format( number, digits ) );
 
-    return number;
+    return number; # type: ignore
 
 #============================================================================================================
 # Vector
@@ -397,7 +398,7 @@ class Vector:
             return float( int( __value__ ) );
         return __value__;
 
-    def to_string( self, apply_coma : bool = False, rounded : FloatConversion = FloatConversion.not_zero ) -> str:
+    def to_string( self, apply_coma : bool = False, rounded : int = FloatConversion.not_zero ) -> str:
         '''
         Converts a ``Vector`` to a ``str``
 
@@ -410,7 +411,7 @@ class Vector:
 
     def to_list( self ) -> list[float]:
         '''Converts a ``Vector`` to a ``list[float]``'''
-        return [ x, y, z ];
+        return [ self.x, self.y, self.z ];
 
     def __getitem__( self, index: int ) -> float:
 
@@ -424,7 +425,7 @@ class Vector:
             return self.z;
 
         else:
-            Logger.warning( __Logger__[ '#Vector_out_of_index' ], [ index ], );
+            Logger.warning( __Logger__[ '#Vector_out_of_index' ], [ index ], ); # type: ignore
             return 0;
 
     def __setitem__( self, index, new_value ):
@@ -442,7 +443,7 @@ class Vector:
             Logger.warning( __Logger__[ '#Vector_out_of_index' ], [ index ], );
 
     def __repr__( self ):
-        return "Vector( {} )".format( self.to_string( True, FloatConversion.digits_6 ) );
+        return "Vector( {} )".format( self.to_string( True, FloatConversion.digits_6 ) ); # type: ignore
 
     def __add__( self, other ):
         return Vector( self.x + other.x, self.y + other.y, self.z + other.z );
@@ -451,7 +452,7 @@ class Vector:
         return Vector( self.x - other.x, self.y - other.y, self.z - other.z );
 
     def __mul__( self, scalar ):
-        return Vector( self.x * scalar.x, self.y * scalar.y, self.z * scalar.z ) if isinstance( scalar, Vector ) else Vector( self.x * scalar, self.y * scalar, self.z * scalar );
+        return Vector( self.x * scalar.x, self.y * scalar.y, self.z * scalar.z ) if isinstance( scalar, Vector ) else Vector( self.x * scalar, self.y * scalar, self.z * scalar ); # type: ignore
 
     def __eq__( self, other ):
         return ( self.x == other.x and self.z == other.z and self.y == other.y ) if isinstance( other, Vector ) else False;
@@ -524,7 +525,7 @@ def STEAM() -> str:
             with winreg.OpenKey(winreg.HKEY_CURRENT_USER, r"Software\Valve\Steam") as key:
                 return winreg.QueryValueEx(key, "SteamPath")[0];
         except (ImportError, FileNotFoundError, OSError, PermissionError) as e:
-            Logger.error( __Logger__[ "#Something_went_wrong" ], [ e ] );
+            Logger.error( __Logger__[ "#Something_went_wrong" ], [ e ] ); # type: ignore
 
     elif __OS__ == "Linux":
         __paths__ = [
@@ -558,11 +559,12 @@ def HALFLIFE() -> str:
     Get "Half-Life" folder within a steam installation
     '''
 
+    from os import path;
+
     __STEAM__ = STEAM();
 
     if __STEAM__:
-        __HALFLIFE__ = f'{__STEAM__}\steamapps\common\Half-Life';
-        from os import path;
+        __HALFLIFE__ = f'{__STEAM__}\\steamapps\\common\\Half-Life';
         if path.exists( __HALFLIFE__ ):
             return __HALFLIFE__;
 
@@ -591,7 +593,7 @@ class Entity( dict ):
 
     Convert to str for getting the entblock as-is in the entity lump
     '''
-    def __init__( self, data: dict = None ):
+    def __init__( self, data: dict = None ): # type: ignore
         if isinstance( data, dict ):
             super().__init__( data );
         elif isinstance( data, Entity ):
@@ -604,8 +606,8 @@ class Entity( dict ):
                 super().__init__( {} );
                 Logger.warning( __Logger__[ "#Entity_INIT_ERROR" ] );
 
-    def __getattr__( self, key ):
-        return str( self[ key ] ) if key in self else None;
+    def __getattr__( self, key ) -> str:
+        return str( self[ key ] ) if key in self else None; # type: ignore
 
     def __setattr__( self, key, value ):
         if key == 'KeyValueData':
@@ -781,7 +783,7 @@ class BSP:
 
             return lump_read;
 
-    def write_data( self, ent_data: list[Entity] | list[dict] = None ) -> list[Entity]:
+    def write_data( self, ent_data: list[Entity] | list[dict] = None ) -> list[Entity]: # type: ignore
         '''
         Writes the given entity data into it's lump
         '''
@@ -800,7 +802,7 @@ class BSP:
         Reads the entity lump and returns a json object in a list of dict
         '''
 
-        entities_lump = self.read_lump( BSP_LUMPS.LUMP_ENTITIES );
+        entities_lump = self.read_lump( BSP_LUMPS.LUMP_ENTITIES ); # type: ignore
 
         try:
 
@@ -855,7 +857,7 @@ class BSP:
         '''
         return '{}{}.bsp'.format(self.__path__, self.___name__).replace('\\', '/')
 
-    def export_json( self, filename: str = None ):
+    def export_json( self, filename: str = None ): # type: ignore
         '''
         Writes a json object containing the entity data
 
@@ -936,7 +938,7 @@ class BSP:
 
         writedata_bytes = newdata.encode( 'ascii' );
 
-        self.write_lump( BSP_LUMPS.LUMP_ENTITIES, writedata_bytes );
+        self.write_lump( BSP_LUMPS.LUMP_ENTITIES, writedata_bytes ); # type: ignore
 class pak:
     '''
     Extracts pak's assets from the given mod folder
@@ -1009,10 +1011,16 @@ def add_entity( entity:Entity ):
 
 class MapUpgrader:
 
+    class Upgrades:
+        OpposingForce = False;
+        '''Change to **True** For applying Opposing-Force mods upgrades'''
+        Cooperative = False;
+        '''Change to **True** For applying Co-Operative mods upgrades'''
+        SvenCoop = False;
+        '''Change to **True** For applying Sven Co-op mods upgrades'''
+
     def __init__( self, bsp_path : str ):
         self.__bsp_path__ = bsp_path;
-
-        self.upgrade();
 
     def upgrade( self ):
         '''
@@ -1047,57 +1055,36 @@ class MapUpgrader:
             except:
                 pass
 
-            # Converts the obsolete "angle" keyvalue to "angles"
             entblock = self.__upg_angle_to_angles__( i, Entity( entblock ), bsp.name() )
-
-            # Renames weapon and item classnames to their primary name.
+            if self.Upgrades.OpposingForce: # Pre __upg_remap_classnames__
+                entblock = self.__upg_op4_TankPersistance__( i, Entity( entblock ), bsp.name() )
             entblock = self.__upg_remap_classnames__( i, Entity( entblock ), bsp.name() )
-
-            # Delete wad paths to prevent issues
             entblock = self.__upg_worldspawn_format_wad__( i, Entity( entblock ), bsp.name() )
-
-            # Removes the "dmdelay" keyvalue from charger entities. The original game ignores these.
             entblock = self.__upg_chargers_dmdelay__( i, Entity( entblock ), bsp.name() )
-
-            # Converts <c>world_items</c> entities to their equivalent entity.
             entblock = self.__upg_remap_world_items__( i, Entity( entblock ), bsp.name() )
-
-            # Sets a custom hull size for <c>monster_generic</c> entities that use a model
-            # that was originally hard-coded to use one.
             entblock = self.__upg_update_human_hulls__( i, Entity( entblock ), bsp.name() )
-
-            # Find all buttons/bell1.wav sounds that have a pitch set to 80.
-            # Change those to use an alternative sound and set their pitch to 100.
             entblock = self.__upg_ambient_generic_pitch__( i, Entity( entblock ), bsp.name() )
-
-            # Converts <c>monster_barney_dead</c> entities with custom body value
-            # to use the new <c>bodystate</c> keyvalue.
             entblock = self.__upg_barney_dead_body__( i, Entity( entblock ), bsp.name() )
-
-            # Converts <c>func_breakable</c>'s spawn object keyvalue from an index to a classname.
             entblock = self.__upg_breakable_spawnobject__( i, Entity( entblock ), bsp.name() )
-
-            # Convert special targetnames to our new entity trigger_eventhandler
             entblock = self.__upg_event_playerdie__( i, Entity( entblock ), bsp.name() )
             entblock = self.__upg_event_playerleave__( i, Entity( entblock ), bsp.name() )
             entblock = self.__upg_event_playerkill__( i, Entity( entblock ), bsp.name() )
             entblock = self.__upg_event_playeractivate__( i, Entity( entblock ), bsp.name() )
             entblock = self.__upg_event_playerjoin__( i, Entity( entblock ), bsp.name() )
             entblock = self.__upg_event_playerspawn__( i, Entity( entblock ), bsp.name() )
-
-            # Converts all entities that use sounds or sentences by index
-            # to use sound filenames or sentence names instead.
             entblock = self.__upg_fix_sounds_indexes__( i, Entity( entblock ), bsp.name() )
-
-            # Fixes the use of invalid render color formats in some maps.
             entblock = self.__upg_rendercolor_invalid__( i, Entity( entblock ), bsp.name() )
-
-            # Prunes excess keyvalues specified for <c>multi_manager</c> entities.
-            # In practice this only affects a handful of entities used in retinal scanner scripts.
             entblock = self.__upg_multi_manager_maxkeys__( i, Entity( entblock ), bsp.name() )
-
-            # -TODO This is momentary till issue #3 is fixed. https://github.com/Mikk155/unity/issues/3
             entblock = self.__upg_env_message_to_game_text__( i, Entity( entblock ), bsp.name() )
+
+            if self.Upgrades.OpposingForce:
+
+                entblock = self.__upg_op4_FixMassnHeadSkin__( i, Entity( entblock ), bsp.name() )
+                entblock = self.__upg_op4_OtisBodyState__( i, Entity( entblock ), bsp.name() )
+                entblock = self.__upg_op4_ScientistBody__( i, Entity( entblock ), bsp.name() )
+                entblock = self.__upg_op4_ItemSuit__( i, Entity( entblock ), bsp.name() )
+                entblock = self.__upg_op4_RemoveGameModeSetting__( i, Entity( entblock ), bsp.name() )
+                entblock = self.__upg_op4_MassnAnimations__( i, Entity( entblock ), bsp.name() )
 
             try:
                 entblock =  main.PostMapUpgrade( i, Entity( entblock ), bsp.name() )
@@ -1109,11 +1096,11 @@ class MapUpgrader:
                 if not v or v is None:
                     entblock.pop( e )
 
-            entdata[i] = ( dumps( entblock ) if len( entblock ) > 0 else {} )
+            entdata[i] = ( dumps( entblock ) if len( entblock ) > 0 else {} ) # type: ignore
 
         global __upgrades_new_entities__;
         for ae in __upgrades_new_entities__:
-            entdata.append( dumps( ae ) )
+            entdata.append( dumps( ae ) ) # type: ignore
 
         __upgrades_new_entities__ = []
 
@@ -1150,7 +1137,7 @@ class MapUpgrader:
     }
 
     def __upg_remap_classnames__( self, index:int, entity:Entity, map:str ):
-
+        '''Renames classnames to their new classname.'''
         if entity.classname in self.__upg_ItemMapping__:
 
             entity.classname = self.__upg_ItemMapping__.get( entity.classname );
@@ -1252,7 +1239,7 @@ class MapUpgrader:
     ]
 
     class __upg_FixSoundsData__:
-        def __init__( self, KeyName:str, DefaultValue:str = None, Names:list[str] = None, Optional:str = None ):
+        def __init__( self, KeyName:str, DefaultValue:str = None, Names:list[str] = None, Optional:str = None ): # type: ignore
             self.KeyName = KeyName
             self.DefaultValue = DefaultValue
             self.Names = Names
@@ -1360,7 +1347,7 @@ class MapUpgrader:
     }
 
     def __upg_angle_to_angles__( self, index : int, entity : Entity, map : str ) -> Entity:
-
+        '''Converts the obsolete "angle" keyvalue to "angles"'''
         if entity.angle != None:
 
             NewAngles = Vector()
@@ -1386,6 +1373,7 @@ class MapUpgrader:
         return entity
 
     def __upg_worldspawn_format_wad__( self, index:int, entity:Entity, map:str ):
+        '''Delete wad paths to prevent issues'''
         if entity.classname == 'worldspawn':
             if entity.wad != None:
                 wad = entity.wad
@@ -1403,11 +1391,15 @@ class MapUpgrader:
         return entity
 
     def __upg_chargers_dmdelay__( self, index:int, entity:Entity, map:str ):
+        '''Removes the "dmdelay" keyvalue from charger entities.
+
+        The original game ignores these.'''
         if entity.classname in [ 'func_healthcharger', 'func_recharge' ]:
             entity.dmdelay = None
         return entity
 
     def __upg_remap_world_items__( self, index:int, entity:Entity, map:str ):
+        '''Converts world_items entities to their equivalent entity.'''
         if entity.classname == 'world_items':
             if entity.type != None and entity.type.isnumeric():
                 value = int( entity.type )
@@ -1427,18 +1419,23 @@ class MapUpgrader:
         return entity
 
     def __upg_update_human_hulls__( self, index:int, entity:Entity, map:str ):
+        '''Sets a custom hull size for monster_generic entities that use a model that was originally hard-coded to use one.'''
         if entity.classname in [ 'monster_generic', 'monster_generic' ] and entity.model in [ 'models/player.mdl', 'models/holo.mdl' ]:
             entity.custom_hull_min = Vector( -16, -16, -36 )
             entity.custom_hull_max = Vector( 16, 16, 36 )
         return entity
 
     def __upg_ambient_generic_pitch__( self, index:int, entity:Entity, map:str ):
+        '''Find all buttons/bell1.wav sounds that have a pitch set to 80.
+
+        Change those to use an alternative sound and set their pitch to 100.'''
         if entity.classname == 'ambient_generic' and entity.message == 'buttons/bell1.wav' and entity.pitch == '80':
             entity.message = 'buttons/bell1_alt.wav'
             entity.pitch = 100
         return entity
 
     def __upg_barney_dead_body__( self, index:int, entity:Entity, map:str ):
+        '''Converts monster_barney_dead entities with custom body value to use the new bodystate keyvalue.'''
         if entity.classname == 'monster_barney_dead' and entity.body != None:
             body = int( entity.body )
             if body == 0:
@@ -1452,6 +1449,7 @@ class MapUpgrader:
         return entity
 
     def __upg_breakable_spawnobject__( self, index:int, entity:Entity, map:str ):
+        '''Converts func_breakable's spawn object keyvalue from an index to a classname.'''
         if entity.classname == 'func_breakable' or entity.classname == 'func_pushable':
             if entity.spawnobject != None and entity.spawnobject.isnumeric():
                 i = int( entity.spawnobject )
@@ -1474,6 +1472,7 @@ class MapUpgrader:
     __upg_eventhandler__ = Entity( { "classname": "trigger_eventhandler", "m_Caller": "!activator" } )
 
     def __upg_event_playerdie__( self, index:int, entity:Entity, map:str ):
+        '''Convert special targetnames to our new entity trigger_eventhandler'''
         if not self.__TempData__.__upg_game_playerdie__ and entity.targetname == 'game_playerdie':
             self.__upg_eventhandler__.target = entity.targetname
             self.__upg_eventhandler__.event_type = 1
@@ -1482,6 +1481,7 @@ class MapUpgrader:
         return entity
 
     def __upg_event_playerleave__( self, index:int, entity:Entity, map:str ):
+        '''Convert special targetnames to our new entity trigger_eventhandler'''
         if not self.__TempData__.__upg_game_playerleave__ and entity.targetname == 'game_playerleave':
             self.__upg_eventhandler__target = entity.targetname
             self.__upg_eventhandler__event_type = 2
@@ -1490,6 +1490,7 @@ class MapUpgrader:
         return entity
 
     def __upg_event_playerkill__( self, index:int, entity:Entity, map:str ):
+        '''Convert special targetnames to our new entity trigger_eventhandler'''
         if not self.__TempData__.__upg_game_playerkill__ and entity.targetname == 'game_playerkill':
             self.__upg_eventhandler__target = 'game_playerkill_check'
             self.__upg_eventhandler__event_type = 3
@@ -1500,11 +1501,12 @@ class MapUpgrader:
                 "pass_target": "game_playerkill",
                 "condition": "0"
             }
-            add_entity( Newent )
+            add_entity( Entity( Newent ) )
             self.__TempData__.__upg_game_playerkill__ = True
         return entity
 
     def __upg_event_playeractivate__( self, index:int, entity:Entity, map:str ):
+        '''Convert special targetnames to our new entity trigger_eventhandler'''
         if not self.__TempData__.__upg_game_playeractivate__ and entity.targetname == 'game_playeractivate':
             self.__upg_eventhandler__target = entity.targetname
             self.__upg_eventhandler__event_type = 4
@@ -1513,16 +1515,18 @@ class MapUpgrader:
         return entity
 
     def __upg_event_playerjoin__( self, index:int, entity:Entity, map:str ):
+        '''Convert special targetnames to our new entity trigger_eventhandler'''
         if not self.__TempData__.__upg_game_playerjoin__ and entity.targetname == 'game_playerjoin':
             self.__upg_eventhandler__target = entity.targetname
             self.__upg_eventhandler__event_type = 5
             Newent = self.__upg_eventhandler__.copy()
             Newent[ "appearflag_multiplayer" ] = "1" # Only in multiplayer
-            add_entity( Newent )
+            add_entity( Entity( Newent ) )
             self.__TempData__.__upg_game_playerjoin__ = True
         return entity
 
     def __upg_event_playerspawn__( self, index:int, entity:Entity, map:str ):
+        '''Convert special targetnames to our new entity trigger_eventhandler'''
         if not self.__TempData__.__upg_game_playerspawn__ and entity.targetname == 'game_playerspawn':
             self.__upg_eventhandler__target = entity.targetname
             self.__upg_eventhandler__event_type = 6
@@ -1536,8 +1540,8 @@ class MapUpgrader:
         name = Data.Optional
         if name is None:
             name = Data.DefaultValue
-            if Data.KeyName in entity and entity.get( Data.KeyName ).isnumeric():
-                index = int( entity.get( Data.KeyName ) )
+            if Data.KeyName in entity and entity.get( Data.KeyName, '' ).isnumeric():
+                index = int( entity.get( Data.KeyName, '' ) )
                 if index >= 0 and index < len( Data.Names ):
                     name = Data.Names[ index ]
         entity[ Data.KeyName ] = None
@@ -1546,21 +1550,26 @@ class MapUpgrader:
         return Entity( entity )
 
     def __upg_fix_sounds_indexes__( self, index:int, entity:Entity, map:str ):
+        '''Converts all entities that use sounds or sentences by index to use sound filenames or sentence names instead.'''
         if entity.classname in self.__upg_FixSoundsEntityData__:
             DataFix = self.__upg_FixSoundsEntityData__.get( entity.classname )
             if isinstance( DataFix, self.__upg_FixSoundsData__ ):
                 entity = self.__upg_TryFixSoundsEnt__( entity, DataFix )
             else:
-                for D in DataFix:
+                for D in DataFix: # type: ignore
                     entity = self.__upg_TryFixSoundsEnt__( entity, D )
         return entity
 
     def __upg_rendercolor_invalid__( self, index:int, entity:Entity, map:str ):
+        '''Fixes the use of invalid render color formats in some maps.'''
         if entity.rendercolor != None:
             entity.rendercolor = Vector( entity.rendercolor ).to_string()
         return entity
 
     def __upg_multi_manager_maxkeys__( self, index:int, entity:Entity, map:str ):
+        '''Prunes excess keyvalues specified for multi_manager entities.
+
+        In practice this only affects a handful of entities used in retinal scanner scripts.'''
         if entity.classname == 'multi_manager':
             KeySize = 16
             NewEnt = {}
@@ -1578,7 +1587,7 @@ class MapUpgrader:
                 for k, v in NewEnt.items():
                     if not k in ignorelist:
                         pEnt.pop( k, '' )
-                pEnt[ "targetname" ] = entity.targetname + f'_{index}'
+                pEnt[ "targetname" ] = entity.targetname + f'_{index}' # type: ignore
                 AnotherEnt = self.__upg_multi_manager_maxkeys__( index, Entity( pEnt ), map );
                 add_entity( AnotherEnt )
                 NewEnt[ pEnt.get( "targetname" ) ] = 0
@@ -1597,4 +1606,99 @@ class MapUpgrader:
             except:
                 s:str
                 #logger( "No \"titles\" path defined in main", logger_level=LOGGER_LEVEL.IMPORTANT )
+        return entity
+
+    def __upg_op4_FixMassnHeadSkin__( self, index:int, entity:Entity, map:str ):
+        '''Adjust monster_male_assassin NPCs to use the correct head and skin value.'''
+        if entity.classname == 'monster_male_assassin':
+            head = int( entity.head ) if entity.head else 0;
+            skin = 0;
+            if head == 1:
+                head = 0;
+                skin = 1
+            elif head == 2:
+                head = 1;
+                skin = 1;
+            entity.head = head;
+            entity.skin = skin;
+        return entity
+
+    def __upg_op4_OtisBodyState__( self, index:int, entity:Entity, map:str ):
+        '''Converts monster_otis bodystate keyvalues to no longer include the Random value, which is equivalent to Holstered.'''
+        if entity.classname == 'monster_otis':
+            if entity.bodystate and int( entity.bodystate ) == -1:
+                entity.bodystate = 0;
+        return entity
+
+    def __upg_op4_ScientistBody__( self, index:int, entity:Entity, map:str ):
+        '''Converts the Opposing Force scientist clipboard and stick heads to use the item body group instead.'''
+        def DetermineValues( body ):
+            values = {
+                4: (1, 1),
+                5: (3, 2)
+            }
+            return values.get( body, ( body, 0 ) );
+        if entity.classname == 'monster_scientist' and entity.body:
+            new_body, item = DetermineValues( entity.body )
+            entity.item = item;
+            entity.body = new_body;
+        elif entity.classname == 'monster_generic' and entity.model == 'models/scientist.mdl':
+            # Update any generics that use the model.
+            new_body, item = DetermineValues( entity.body )
+            entity.item = item;
+            entity.body = new_body;
+            StudioCount = 1;
+            HeadsCount = 4;
+            NeedleCount = 2;
+            # This hardcoded stuff is pretty ugly, but there is no way around it without loading the model.
+            new_body += StudioCount * HeadsCount * NeedleCount * item;
+            entity.body = new_body;
+        return entity
+
+    def __upg_op4_ItemSuit__( self, index:int, entity:Entity, map:str ):
+        '''Converts item_suit's model to use w_pcv.mdl in Opposing Force maps.'''
+        if entity.classname == 'item_suit':
+            entity.model = 'models/w_pcv.mdl';
+        return entity
+
+    def __upg_op4_TankPersistance__( self, index:int, entity:Entity, map:str ):
+        '''Disables the persistence behavior for all Opposing Force tank entities to match the original's behavior.'''
+        if entity.classname in [ "func_tank_of", "func_tanklaser_of", "func_tankrocket_of", "func_tankmortar_of" ]:
+            entity.persistence = 0;
+        return entity
+
+    def __upg_op4_RemoveGameModeSetting__( self, index:int, entity:Entity, map:str ):
+        '''Removes the CTF game mode settings from Opposing Force maps.'''
+        if entity.classname == 'worldspawn':
+            entity.defaultctf = None;
+        return entity
+
+    def __upg_op4_MassnAnimations__( self, index:int, entity:Entity, map:str ):
+        '''Renames certain animations referenced by <c>scripted_sequence</c>s targeting <c>monster_male_assassin</c> or entities using its model to use the new animation names.'''
+        #if entity.classname == 'monster_male_assassin':
+            # private static readonly ImmutableDictionary<string, string> AnimationRemap = new Dictionary<string, string>
+            # {
+            #     { "strafeleft", "strafeleft_cine" },
+            #     { "straferight", "straferight_cine" }
+            # }.ToImmutableDictionary();
+
+            # protected override void ApplyCore(MapUpgradeContext context)
+            # {
+            #     ScriptedSequenceUtilities.RenameAnimations(context, "monster_male_assassin", "models/massn.mdl", AnimationRemap);
+            # }
+        return entity
+
+    def __upg_op4_OtisAnimations__( self, index:int, entity:Entity, map:str ):
+        '''Renames certain animations referenced by <c>scripted_sequence</c>s targeting <c>monster_otis</c> or entities using its model to use the new animation names.'''
+        #if entity.classname == 'monster_otis':
+            # private static readonly ImmutableDictionary<string, string> AnimationRemap = new Dictionary<string, string>
+            # {
+            #     { "fence", "otis_fence" },
+            #     { "wave", "otis_wave" }
+            # }.ToImmutableDictionary();
+
+            # protected override void ApplyCore(MapUpgradeContext context)
+            # {
+            #     ScriptedSequenceUtilities.RenameAnimations(context, "monster_otis", "models/otis.mdl", AnimationRemap);
+            # }
         return entity
