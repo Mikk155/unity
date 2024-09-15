@@ -1,7 +1,7 @@
 """
 The MIT License (MIT)
 
-Copyright (c) 2024 Mikk
+Copyright (c) 2024 Mikk155
 
 Permission is hereby granted, free of charge, to any person obtaining a
 copy of this software and associated documentation files (the "Software"),
@@ -100,7 +100,7 @@ __Logger__ = {
 def language() -> str:
 
     '''
-    Returns the OS's language, example ``english``, ``spanish``
+    Returns the Operative System's language, example ``english``, ``spanish``
     '''
 
     import locale;
@@ -132,8 +132,6 @@ def printf( string: str | dict, arguments: dict | list[str] = [], cut_not_matche
     ``not_matched_trim`` = **True**, when ``cut_not_matched`` = **True**, trims leading white space for continuity
 
     ``dont_print`` = **True** don't print message, only return
-
-    Returns the formatted string, if needed
     '''
 
     if isinstance( string, dict ):
@@ -192,7 +190,7 @@ class Logger:
     '''Logger instance'''
 
     @staticmethod
-    def set_logger( logger_level: LogLevel, clear_level: bool = False ):
+    def set_logger( logger_level: int, clear_level: bool = False ):
         '''
         Set a logger level
 
@@ -732,6 +730,8 @@ class BSP_HEADER:
     @classmethod
     def from_file( cls, file ):
 
+        import struct
+
         version = struct.unpack( 'i', file.read( 4 ) )[0];
 
         lumps = []
@@ -998,493 +998,23 @@ class pak:
                     Logger.info( __Logger__[ '#pak_Extracted' ], [ name ] )
                     out_file.write( data )
 
-class Unity:
+__upgrades_new_entities__: list[Entity] = []
+
+def add_entity( entity:Entity ):
     '''
-    This class contains utilities for Half-Life: Unity
+        Adds a new entity to the current MapUpgrader instance
     '''
+    global __upgrades_new_entities__;
+    __upgrades_new_entities__.append( entity if isinstance( entity, dict ) else entity )
 
-    class MapUpgrades:
+class MapUpgrader:
 
-        def __upg_angle_to_angles__( index : int, entity : Entity, map : str ) -> Entity:
+    def __init__( self, bsp_path : str ):
+        self.__bsp_path__ = bsp_path;
 
-            if entity.angle != None:
+        self.upgrade();
 
-                NewAngles = Vector()
-
-                Angle = float( entity.angle )
-
-                if Angle >= 0:
-
-                    NewAngles = Vector( entity.angles )
-                    NewAngles.y = Angle
-
-                else:
-                    if int(Angle) == -1: # floor?
-                        Angle = -90
-                    else:
-                        Angle = 90
-
-                    NewAngles.y = Angle
-
-                entity.angles = NewAngles
-                entity.angle = None
-
-            return entity
-
-        __upgrades_new_entities__ = []
-
-        def add_entity( entity:Entity ):
-            '''
-                Adds a new entity to the current map
-            '''
-            global __upgrades_new_entities__
-            __upgrades_new_entities__.append( entity if isinstance( entity, dict ) else entity )
-
-        __upg_ItemMapping__ = {
-            "weapon_glock": "weapon_9mmhandgun",
-            "ammo_glockclip": "ammo_9mmclip",
-            "weapon_mp5": "weapon_9mmar",
-            "ammo_mp5clip": "ammo_9mmar",
-            "ammo_mp5grenades": "ammo_argrenades",
-            "weapon_python": "weapon_357",
-            "weapon_shockroach": "weapon_shockrifle",
-            "weapon_9mmAR": "weapon_9mmar",
-            "ammo_9mmAR": "ammo_9mmar",
-            "ammo_ARgrenades": "ammo_argrenades",
-            "monster_ShockTrooper_dead": "monster_shocktrooper_dead",
-        }
-
-        def __upg_remap_classnames__( index:int, entity:Entity, map:str ):
-            global __upg_ItemMapping__
-            if entity.classname in __upg_ItemMapping__:
-                entity.classname = __upg_ItemMapping__.get( entity.classname )
-            elif entity.classname == 'game_player_equip':
-                for old, new in __upg_ItemMapping__.items():
-                    if old in entity:
-                        entity.set( new, entity.get( old ) )
-                        entity.pop( old )
-            return entity
-
-        def __upg_worldspawn_format_wad__( index:int, entity:Entity, map:str ):
-            if entity.classname == 'worldspawn':
-                if entity.wad != None:
-                    wad = entity.wad
-                    dwads = ''
-                    wads = wad.split( ';' )
-                    for w in wads:
-                        if not w or w == '':
-                            continue
-                        if w.rfind( '\\' ) != -1:
-                            w = w[ w.rfind( '\\' ) + 1 : ]
-                        if w.rfind( '/' ) != -1:
-                            w = w[ w.rfind( '/' ) + 1 : ]
-                        dwads = f'{dwads}{w};'
-                    entity.wad = dwads
-            return entity
-
-        def __upg_chargers_dmdelay__( index:int, entity:Entity, map:str ):
-            if entity.classname in [ 'func_healthcharger', 'func_recharge' ]:
-                entity.dmdelay = None
-            return entity
-
-        def __upg_remap_world_items__( index:int, entity:Entity, map:str ):
-            if entity.classname == 'world_items':
-                if entity.type != None and entity.type.isnumeric():
-                    value = int( entity.type )
-                    entity.type = None
-                    if value == 42:
-                        entity.classname = 'item_antidote'
-                    elif value == 43:
-                        entity.classname = 'item_security'
-                    elif value == 44:
-                        entity.classname = 'item_battery'
-                    elif value == 45:
-                        entity.classname = 'item_suit'
-                if entity.classname == 'world_items':
-                    logger( __Logger__[ '#upgrades_unknown_keyvalue' ], [ f'"type" "{entity.value}"', 'world_items' ], LOGGER_LEVEL.IMPORTANT )
-                    entity.remove()
-            return entity
-
-        def __upg_update_human_hulls__( index:int, entity:Entity, map:str ):
-            if entity.classname in [ 'monster_generic', 'monster_generic' ] and entity.model in [ 'models/player.mdl', 'models/holo.mdl' ]:
-                entity.custom_hull_min = Vector( -16, -16, -36 )
-                entity.custom_hull_max = Vector( 16, 16, 36 )
-            return entity
-
-        def __upg_ambient_generic_pitch__( index:int, entity:Entity, map:str ):
-            if entity.classname == 'ambient_generic' and entity.message == 'buttons/bell1.wav' and entity.pitch == '80':
-                entity.message = 'buttons/bell1_alt.wav'
-                entity.pitch = 100
-            return entity
-
-        def __upg_barney_dead_body__( index:int, entity:Entity, map:str ):
-            if entity.classname == 'monster_barney_dead' and entity.body != None:
-                body = int( entity.body )
-                if body == 0:
-                    body = 1
-                elif body == 2:
-                    body = 0
-                else:
-                    body = 2
-                entity.body = None
-                entity.bodystate = body
-            return entity
-
-        def __upg_breakable_spawnobject__( index:int, entity:Entity, map:str ):
-            if entity.classname == 'func_breakable' or entity.classname == 'func_pushable':
-                if entity.spawnobject != None and entity.spawnobject.isnumeric():
-                    i = int( entity.spawnobject )
-                    classnames = [ "item_battery", "item_healthkit",
-                        "weapon_9mmhandgun", "ammo_9mmclip", "weapon_9mmar",
-                            "ammo_9mmar", "ammo_argrenades", "weapon_shotgun",
-                                "ammo_buckshot", "weapon_crossbow", "ammo_crossbow",
-                                    "weapon_357", "ammo_357", "weapon_rpg", "ammo_rpgclip",
-                                        "ammo_gaussclip", "weapon_handgrenade", "weapon_tripmine",
-                                            "weapon_satchel", "weapon_snark", "weapon_hornetgun", "weapon_penguin"
-                    ]
-                    if i > 0 and i <= len(classnames):
-                        entity.spawnobject = classnames[i]
-                    else:
-                        entity.spawnobject = None
-                        if i != 0:
-                            logger( __Logger__[ '#upgrades_unknown_keyvalue' ], [ f'"spawnobject" "{i}"', entity.classname ], LOGGER_LEVEL.IMPORTANT )
-            return entity
-
-        __upg_eventhandler__ = Entity( { "classname": "trigger_eventhandler", "m_Caller": "!activator" } )
-
-        __upg_game_playerdie__ = False
-        def __upg_event_playerdie__( index:int, entity:Entity, map:str ):
-            global __upg_game_playerdie__
-            if not __upg_game_playerdie__ and entity.targetname == 'game_playerdie':
-                __upg_eventhandler__.target = entity.targetname
-                __upg_eventhandler__.event_type = 1
-                add_entity( __upg_eventhandler__ )
-                __upg_game_playerdie__ = True
-            return entity
-
-        __upg_game_playerleave__ = False
-        def __upg_event_playerleave__( index:int, entity:Entity, map:str ):
-            global __upg_game_playerleave__
-            if not __upg_game_playerleave__ and entity.targetname == 'game_playerleave':
-                __upg_eventhandler__target = entity.targetname
-                __upg_eventhandler__event_type = 2
-                add_entity( __upg_eventhandler__ )
-                __upg_game_playerleave__ = True
-            return entity
-
-        __upg_game_playerkill__ = False
-        def __upg_event_playerkill__( index:int, entity:Entity, map:str ):
-            global __upg_game_playerkill__
-            if not __upg_game_playerkill__ and entity.targetname == 'game_playerkill':
-                __upg_eventhandler__target = 'game_playerkill_check'
-                __upg_eventhandler__event_type = 3
-                add_entity( __upg_eventhandler__ )
-                Newent = {
-                    "classname": "trigger_entity_condition",
-                    "targetname": "game_playerkill_check",
-                    "pass_target": "game_playerkill",
-                    "condition": "0"
-                }
-                add_entity( Newent )
-                __upg_game_playerkill__ = True
-            return entity
-
-        __upg_game_playeractivate__ = False
-        def __upg_event_playeractivate__( index:int, entity:Entity, map:str ):
-            global __upg_game_playeractivate__
-            if not __upg_game_playeractivate__ and entity.targetname == 'game_playeractivate':
-                __upg_eventhandler__target = entity.targetname
-                __upg_eventhandler__event_type = 4
-                add_entity( __upg_eventhandler__ )
-                __upg_game_playeractivate__ = True
-            return entity
-
-        __upg_game_playerjoin__ = False
-        def __upg_event_playerjoin__( index:int, entity:Entity, map:str ):
-            global __upg_game_playerjoin__
-            if not __upg_game_playerjoin__ and entity.targetname == 'game_playerjoin':
-                __upg_eventhandler__target = entity.targetname
-                __upg_eventhandler__event_type = 5
-                Newent = __upg_eventhandler__.copy()
-                Newent[ "appearflag_multiplayer" ] = "1" # Only in multiplayer
-                add_entity( Newent )
-                __upg_game_playerjoin__ = True
-            return entity
-
-        __upg_game_playerspawn__ = False
-        def __upg_event_playerspawn__( index:int, entity:Entity, map:str ):
-            global __upg_game_playerspawn__
-            if not __upg_game_playerspawn__ and entity.targetname == 'game_playerspawn':
-                __upg_eventhandler__target = entity.targetname
-                __upg_eventhandler__event_type = 6
-                add_entity( __upg_eventhandler__ )
-                __upg_game_playerspawn__ = True
-            return entity
-
-        __upg_DefaultSound__ = "common/null.wav"
-        __upg_DefaultSentence__ = ""
-        __upg_DefaultButtonSound__ = ""
-        __upg_DefaultMomentaryButtonSound__ = "buttons/button9.wav"
-        __upg_DefaultTrackTrainSound__ = ""
-
-        __upg_DoorMoveSounds__ = [
-            __upg_DefaultSound__,
-            "doors/doormove1.wav",
-            "doors/doormove2.wav",
-            "doors/doormove3.wav",
-            "doors/doormove4.wav",
-            "doors/doormove5.wav",
-            "doors/doormove6.wav",
-            "doors/doormove7.wav",
-            "doors/doormove8.wav",
-            "doors/doormove9.wav",
-            "doors/doormove10.wav"
-        ]
-
-        __upg_DoorStopSounds__ = [
-            __upg_DefaultSound__,
-            "doors/doorstop1.wav",
-            "doors/doorstop2.wav",
-            "doors/doorstop3.wav",
-            "doors/doorstop4.wav",
-            "doors/doorstop5.wav",
-            "doors/doorstop6.wav",
-            "doors/doorstop7.wav",
-            "doors/doorstop8.wav"
-        ]
-
-        __upg_ButtonSounds__ = [
-            __upg_DefaultSound__,
-            "buttons/button1.wav",
-            "buttons/button2.wav",
-            "buttons/button3.wav",
-            "buttons/button4.wav",
-            "buttons/button5.wav",
-            "buttons/button6.wav",
-            "buttons/button7.wav",
-            "buttons/button8.wav",
-            "buttons/button9.wav",
-            "buttons/button10.wav",
-            "buttons/button11.wav",
-            "buttons/latchlocked1.wav",
-            "buttons/latchunlocked1.wav",
-            "buttons/lightswitch2.wav",
-            "buttons/button9.wav",
-            "buttons/button9.wav",
-            "buttons/button9.wav",
-            "buttons/button9.wav",
-            "buttons/button9.wav",
-            "buttons/button9.wav",
-            "buttons/lever1.wav",
-            "buttons/lever2.wav",
-            "buttons/lever3.wav",
-            "buttons/lever4.wav",
-            "buttons/lever5.wav"
-        ]
-
-        __upg_ButtonLockedSentences__ = [
-            "",
-            "NA",
-            "ND",
-            "NF",
-            "NFIRE",
-            "NCHEM",
-            "NRAD",
-            "NCON",
-            "NH",
-            "NG"
-        ]
-
-        __upg_ButtonUnlockedSentences__ = [
-            "",
-            "EA",
-            "ED",
-            "EF",
-            "EFIRE",
-            "ECHEM",
-            "ERAD",
-            "ECON",
-            "EH"
-        ]
-
-        class __upg_FixSoundsData__:
-            def __init__( self, KeyName:str, DefaultValue:str = None, Names:list[str] = None, Optional:str = None ):
-                self.KeyName = KeyName
-                self.DefaultValue = DefaultValue
-                self.Names = Names
-                self.Optional = Optional
-
-        __upg_DoorData__ = [
-            __upg_FixSoundsData__( "movesnd", __upg_DefaultSound__, __upg_DoorMoveSounds__ ),
-            __upg_FixSoundsData__( "stopsnd", __upg_DefaultSound__, __upg_DoorStopSounds__ ),
-            __upg_FixSoundsData__( "locked_sound", __upg_DefaultButtonSound__, __upg_ButtonSounds__ ),
-            __upg_FixSoundsData__( "unlocked_sound", __upg_DefaultButtonSound__, __upg_ButtonSounds__ ),
-            __upg_FixSoundsData__( "locked_sentence", __upg_DefaultSentence__, __upg_ButtonLockedSentences__ ),
-            __upg_FixSoundsData__( "unlocked_sentence", __upg_DefaultSentence__, __upg_ButtonUnlockedSentences__ )
-        ]
-
-        __upg_ButtonData__ = [
-            __upg_FixSoundsData__( "sounds", __upg_DefaultButtonSound__, __upg_ButtonSounds__ ),
-            __upg_FixSoundsData__( "locked_sound", __upg_DefaultButtonSound__, __upg_ButtonSounds__ ),
-            __upg_FixSoundsData__( "unlocked_sound", __upg_DefaultButtonSound__, __upg_ButtonSounds__ ),
-            __upg_FixSoundsData__( "locked_sentence", __upg_DefaultSentence__, __upg_ButtonLockedSentences__ ),
-            __upg_FixSoundsData__( "unlocked_sentence", __upg_DefaultSentence__, __upg_ButtonUnlockedSentences__ )
-        ]
-
-        __upg_Momentary_DoorMoveSounds__ = [
-            __upg_DefaultSound__,
-            "doors/doormove1.wav",
-            "doors/doormove2.wav",
-            "doors/doormove3.wav",
-            "doors/doormove4.wav",
-            "doors/doormove5.wav",
-            "doors/doormove6.wav",
-            "doors/doormove7.wav",
-            "doors/doormove8.wav"
-        ]
-
-        __upg_RotatingMoveSounds__ = [
-            __upg_DefaultSound__,
-            "fans/fan1.wav",
-            "fans/fan2.wav",
-            "fans/fan3.wav",
-            "fans/fan4.wav",
-            "fans/fan5.wav"
-        ]
-
-        __upg_PlatMoveSounds__ = [
-            __upg_DefaultSound__,
-            "plats/bigmove1.wav",
-            "plats/bigmove2.wav",
-            "plats/elevmove1.wav",
-            "plats/elevmove2.wav",
-            "plats/elevmove3.wav",
-            "plats/freightmove1.wav",
-            "plats/freightmove2.wav",
-            "plats/heavymove1.wav",
-            "plats/rackmove1.wav",
-            "plats/railmove1.wav",
-            "plats/squeekmove1.wav",
-            "plats/talkmove1.wav",
-            "plats/talkmove2.wav"
-        ]
-
-        __upg_PlatStopSounds__ = [
-            __upg_DefaultSound__,
-            "plats/bigstop1.wav",
-            "plats/bigstop2.wav",
-            "plats/freightstop1.wav",
-            "plats/heavystop2.wav",
-            "plats/rackstop1.wav",
-            "plats/railstop1.wav",
-            "plats/squeekstop1.wav",
-            "plats/talkstop1.wav"
-        ]
-
-        __upg_PlatData__ = [
-            __upg_FixSoundsData__( "movesnd", __upg_DefaultButtonSound__, __upg_PlatMoveSounds__ ),
-            __upg_FixSoundsData__( "stopsnd", __upg_DefaultButtonSound__, __upg_PlatStopSounds__ )
-        ]
-
-        __upg_TrackTrainMoveSounds__ = [
-            "",
-            "plats/ttrain1.wav",
-            "plats/ttrain2.wav",
-            "plats/ttrain3.wav",
-            "plats/ttrain4.wav",
-            "plats/ttrain6.wav",
-            "plats/ttrain7.wav"
-        ]
-
-        __upg_FixSoundsEntityData__ = {
-
-            "func_door": __upg_DoorData__,
-            "func_water": __upg_DoorData__,
-            "func_door_rotating": __upg_DoorData__,
-            "momentary_door": __upg_FixSoundsData__( "movesnd", __upg_DefaultSound__, __upg_Momentary_DoorMoveSounds__ ),
-            "func_rotating": __upg_FixSoundsData__( "sounds", __upg_DefaultSound__, __upg_RotatingMoveSounds__, "message" ),
-            "func_button": __upg_ButtonData__,
-            "func_rot_button": __upg_ButtonData__,
-            "momentary_rot_button": __upg_FixSoundsData__( "sounds", __upg_DefaultMomentaryButtonSound__, __upg_ButtonSounds__ ),
-            "func_train": __upg_PlatData__,
-            "func_plat": __upg_PlatData__,
-            "func_platrot": __upg_PlatData__,
-            "func_trackchange": __upg_PlatData__,
-            "func_trackautochange": __upg_PlatData__,
-            "env_spritetrain": __upg_PlatData__,
-            "func_tracktrain": __upg_FixSoundsData__( "sounds", __upg_DefaultTrackTrainSound__, __upg_TrackTrainMoveSounds__ )
-        }
-
-        def __upg_TryFixSoundsEnt__( entity:dict, Data:__upg_FixSoundsData__ ):
-            #-TODO "func_rotating": __upg_FixSoundsData__( "sounds", __upg_DefaultSound__, __upg_RotatingMoveSounds__, "message" ),
-            # [cl] [sound.cache] [error] Could not find sound file message
-            name = Data.Optional
-            if name is None:
-                name = Data.DefaultValue
-                if Data.KeyName in entity and entity.get( Data.KeyName ).isnumeric():
-                    index = int( entity.get( Data.KeyName ) )
-                    if index >= 0 and index < len( Data.Names ):
-                        name = Data.Names[ index ]
-            entity[ Data.KeyName ] = None
-            if len( name ) > 0:
-                entity[ Data.KeyName ] = name
-            return Entity( entity )
-
-        def __upg_fix_sounds_indexes__( index:int, entity:Entity, map:str ):
-            if entity.classname in __upg_FixSoundsEntityData__:
-                DataFix = __upg_FixSoundsEntityData__.get( entity.classname )
-                if isinstance( DataFix, __upg_FixSoundsData__ ):
-                    entity = Unity.MapUpgrades.__upg_TryFixSoundsEnt__( entity, DataFix )
-                else:
-                    for D in DataFix:
-                        entity = Unity.MapUpgrades.__upg_TryFixSoundsEnt__( entity, D )
-            return entity
-
-        def __upg_rendercolor_invalid__( index:int, entity:Entity, map:str ):
-            if entity.rendercolor != None:
-                entity.rendercolor = Vector( entity.rendercolor ).to_string()
-            return entity
-
-        def __upg_multi_manager_maxkeys__( index:int, entity:Entity, map:str ):
-            if entity.classname == 'multi_manager':
-                KeySize = 16
-                NewEnt = {}
-                pEnt = entity.copy()
-                ignorelist = { "targetname", "classname", "origin", "wait", "spawnflags" }
-                for p in ignorelist:
-                    if p in entity:
-                        NewEnt[ p ] = entity.get( p )
-                        KeySize+=1
-                for p, v in pEnt.items():
-                    NewEnt[ p ] = v
-                    if len( NewEnt ) >= KeySize:
-                        break
-                if len( entity ) > len( NewEnt ):
-                    for k, v in NewEnt.items():
-                        if not k in ignorelist:
-                            pEnt.pop( k, '' )
-                    pEnt[ "targetname" ] = entity.targetname + f'_{index}'
-                    add_entity( __upg_multi_manager_maxkeys__( index, Entity( pEnt ), map ) )
-                    NewEnt[ pEnt.get( "targetname" ) ] = 0
-                    Logger.info( __Logger__[ '#upgrades_multi_manager_exceds' ] )
-                for k in ignorelist:
-                    if k in entity:
-                        NewEnt[ k ] = entity.get( k, '' )
-                entity = Entity( NewEnt )
-            return entity
-
-        def __upg_env_message_to_game_text__( index:int, entity:Entity, map:str ):
-            if entity.classname == 'env_message':
-                try:
-                    from __main__ import titles
-                    sztitles = open( titles, 'r' )
-                except:
-                    s:str
-                    #logger( "No \"titles\" path defined in main", logger_level=LOGGER_LEVEL.IMPORTANT )
-            return entity
-
-    @staticmethod
-    def upgrade_map( bsp_path: str ):
+    def upgrade( self ):
         '''
         Apply map upgrades
 
@@ -1499,77 +1029,78 @@ class Unity:
         https://github.com/twhl-community/HalfLife.UnifiedSdk-CSharp/tree/master/src/HalfLife.UnifiedSdk.MapUpgrader.Upgrades
         '''
 
-        bsp = BSP( bsp_path );
+        bsp = BSP( self.__bsp_path__ );
 
         entdata = bsp.read_entities();
 
-        Logger.info( __Logger__[ '#upgrades_upgrading_map' ], [ bsp ] );
+        Logger.info( __Logger__[ '#upgrades_upgrading_map' ], [ bsp.name() ] );
 
         TempEntData = entdata.copy()
 
+        from json import dumps
         import __main__ as main
 
         for i, entblock in enumerate( TempEntData ):
 
             try:
-                entblock =  main.PreMapUpgrade( i, Entity( entblock ), map )
+                entblock =  main.PreMapUpgrade( i, Entity( entblock ), bsp.name() )
             except:
                 pass
 
             # Converts the obsolete "angle" keyvalue to "angles"
-            entblock = Unity.MapUpgrades.__upg_angle_to_angles__( i, Entity( entblock ), map )
+            entblock = self.__upg_angle_to_angles__( i, Entity( entblock ), bsp.name() )
 
             # Renames weapon and item classnames to their primary name.
-            entblock = Unity.MapUpgrades.__upg_remap_classnames__( i, Entity( entblock ), map )
+            entblock = self.__upg_remap_classnames__( i, Entity( entblock ), bsp.name() )
 
             # Delete wad paths to prevent issues
-            entblock = Unity.MapUpgrades.__upg_worldspawn_format_wad__( i, Entity( entblock ), map )
+            entblock = self.__upg_worldspawn_format_wad__( i, Entity( entblock ), bsp.name() )
 
             # Removes the "dmdelay" keyvalue from charger entities. The original game ignores these.
-            entblock = Unity.MapUpgrades.__upg_chargers_dmdelay__( i, Entity( entblock ), map )
+            entblock = self.__upg_chargers_dmdelay__( i, Entity( entblock ), bsp.name() )
 
             # Converts <c>world_items</c> entities to their equivalent entity.
-            entblock = Unity.MapUpgrades.__upg_remap_world_items__( i, Entity( entblock ), map )
+            entblock = self.__upg_remap_world_items__( i, Entity( entblock ), bsp.name() )
 
             # Sets a custom hull size for <c>monster_generic</c> entities that use a model
             # that was originally hard-coded to use one.
-            entblock = Unity.MapUpgrades.__upg_update_human_hulls__( i, Entity( entblock ), map )
+            entblock = self.__upg_update_human_hulls__( i, Entity( entblock ), bsp.name() )
 
             # Find all buttons/bell1.wav sounds that have a pitch set to 80.
             # Change those to use an alternative sound and set their pitch to 100.
-            entblock = Unity.MapUpgrades.__upg_ambient_generic_pitch__( i, Entity( entblock ), map )
+            entblock = self.__upg_ambient_generic_pitch__( i, Entity( entblock ), bsp.name() )
 
             # Converts <c>monster_barney_dead</c> entities with custom body value
             # to use the new <c>bodystate</c> keyvalue.
-            entblock = Unity.MapUpgrades.__upg_barney_dead_body__( i, Entity( entblock ), map )
+            entblock = self.__upg_barney_dead_body__( i, Entity( entblock ), bsp.name() )
 
             # Converts <c>func_breakable</c>'s spawn object keyvalue from an index to a classname.
-            entblock = Unity.MapUpgrades.__upg_breakable_spawnobject__( i, Entity( entblock ), map )
+            entblock = self.__upg_breakable_spawnobject__( i, Entity( entblock ), bsp.name() )
 
             # Convert special targetnames to our new entity trigger_eventhandler
-            entblock = Unity.MapUpgrades.__upg_event_playerdie__( i, Entity( entblock ), map )
-            entblock = Unity.MapUpgrades.__upg_event_playerleave__( i, Entity( entblock ), map )
-            entblock = Unity.MapUpgrades.__upg_event_playerkill__( i, Entity( entblock ), map )
-            entblock = Unity.MapUpgrades.__upg_event_playeractivate__( i, Entity( entblock ), map )
-            entblock = Unity.MapUpgrades.__upg_event_playerjoin__( i, Entity( entblock ), map )
-            entblock = Unity.MapUpgrades.__upg_event_playerspawn__( i, Entity( entblock ), map )
+            entblock = self.__upg_event_playerdie__( i, Entity( entblock ), bsp.name() )
+            entblock = self.__upg_event_playerleave__( i, Entity( entblock ), bsp.name() )
+            entblock = self.__upg_event_playerkill__( i, Entity( entblock ), bsp.name() )
+            entblock = self.__upg_event_playeractivate__( i, Entity( entblock ), bsp.name() )
+            entblock = self.__upg_event_playerjoin__( i, Entity( entblock ), bsp.name() )
+            entblock = self.__upg_event_playerspawn__( i, Entity( entblock ), bsp.name() )
 
             # Converts all entities that use sounds or sentences by index
             # to use sound filenames or sentence names instead.
-            entblock = Unity.MapUpgrades.__upg_fix_sounds_indexes__( i, Entity( entblock ), map )
+            entblock = self.__upg_fix_sounds_indexes__( i, Entity( entblock ), bsp.name() )
 
             # Fixes the use of invalid render color formats in some maps.
-            entblock = Unity.MapUpgrades.__upg_rendercolor_invalid__( i, Entity( entblock ), map )
+            entblock = self.__upg_rendercolor_invalid__( i, Entity( entblock ), bsp.name() )
 
             # Prunes excess keyvalues specified for <c>multi_manager</c> entities.
             # In practice this only affects a handful of entities used in retinal scanner scripts.
-            entblock = Unity.MapUpgrades.__upg_multi_manager_maxkeys__( i, Entity( entblock ), map )
+            entblock = self.__upg_multi_manager_maxkeys__( i, Entity( entblock ), bsp.name() )
 
             # -TODO This is momentary till issue #3 is fixed. https://github.com/Mikk155/unity/issues/3
-            entblock = Unity.MapUpgrades.__upg_env_message_to_game_text__( i, Entity( entblock ), map )
+            entblock = self.__upg_env_message_to_game_text__( i, Entity( entblock ), bsp.name() )
 
             try:
-                entblock =  main.PostMapUpgrade( i, Entity( entblock ), map )
+                entblock =  main.PostMapUpgrade( i, Entity( entblock ), bsp.name() )
             except:
                 pass
 
@@ -1580,11 +1111,490 @@ class Unity:
 
             entdata[i] = ( dumps( entblock ) if len( entblock ) > 0 else {} )
 
-        global __upgrades_new_entities__
-
+        global __upgrades_new_entities__;
         for ae in __upgrades_new_entities__:
             entdata.append( dumps( ae ) )
 
         __upgrades_new_entities__ = []
 
         bsp.write_data( entdata );
+
+    class __TempData__:
+        __upg_game_playerdie__ = False
+        __upg_game_playerleave__ = False
+        __upg_game_playerkill__ = False
+        __upg_game_playeractivate__ = False
+        __upg_game_playerjoin__ = False
+        __upg_game_playerspawn__ = False
+
+    __upg_ItemMapping__ = {
+        "weapon_glock": "weapon_9mmhandgun",
+        "ammo_glockclip": "ammo_9mmclip",
+        "weapon_mp5": "weapon_9mmar",
+        "ammo_mp5clip": "ammo_9mmar",
+        "ammo_mp5grenades": "ammo_argrenades",
+        "weapon_python": "weapon_357",
+        "weapon_shockroach": "weapon_shockrifle",
+        "weapon_9mmAR": "weapon_9mmar",
+        "ammo_9mmAR": "ammo_9mmar",
+        "ammo_ARgrenades": "ammo_argrenades",
+
+        # Add weapons and items above because game_playerequip will break and stop when get monster_ShockTrooper_dead
+        "monster_ShockTrooper_dead": "monster_shocktrooper_dead",
+        "button_target": "func_button_target",
+        "momentary_rot_button": "func_button_rotating",
+        "func_tank_of": "func_tank",
+        "func_tanklaser_of": "func_tanklaser",
+        "func_tankrocket_of": "func_tankrocket",
+        "func_tankcontrols_of": "func_tankcontrols",
+    }
+
+    def __upg_remap_classnames__( self, index:int, entity:Entity, map:str ):
+
+        if entity.classname in self.__upg_ItemMapping__:
+
+            entity.classname = self.__upg_ItemMapping__.get( entity.classname );
+
+        elif entity.classname == 'game_player_equip':
+
+            for old, new in self.__upg_ItemMapping__.items():
+
+                if old[0] in [ 'w', 'i', 'a' ] and old in entity:
+                    entity[ new ] = entity.get( old );
+                    entity.pop( old );
+
+        return entity
+
+    __upg_DefaultSound__ = "common/null.wav"
+    __upg_DefaultSentence__ = ""
+    __upg_DefaultButtonSound__ = ""
+    __upg_DefaultMomentaryButtonSound__ = "buttons/button9.wav"
+    __upg_DefaultTrackTrainSound__ = ""
+
+    __upg_DoorMoveSounds__ = [
+        __upg_DefaultSound__,
+        "doors/doormove1.wav",
+        "doors/doormove2.wav",
+        "doors/doormove3.wav",
+        "doors/doormove4.wav",
+        "doors/doormove5.wav",
+        "doors/doormove6.wav",
+        "doors/doormove7.wav",
+        "doors/doormove8.wav",
+        "doors/doormove9.wav",
+        "doors/doormove10.wav"
+    ]
+
+    __upg_DoorStopSounds__ = [
+        __upg_DefaultSound__,
+        "doors/doorstop1.wav",
+        "doors/doorstop2.wav",
+        "doors/doorstop3.wav",
+        "doors/doorstop4.wav",
+        "doors/doorstop5.wav",
+        "doors/doorstop6.wav",
+        "doors/doorstop7.wav",
+        "doors/doorstop8.wav"
+    ]
+
+    __upg_ButtonSounds__ = [
+        __upg_DefaultSound__,
+        "buttons/button1.wav",
+        "buttons/button2.wav",
+        "buttons/button3.wav",
+        "buttons/button4.wav",
+        "buttons/button5.wav",
+        "buttons/button6.wav",
+        "buttons/button7.wav",
+        "buttons/button8.wav",
+        "buttons/button9.wav",
+        "buttons/button10.wav",
+        "buttons/button11.wav",
+        "buttons/latchlocked1.wav",
+        "buttons/latchunlocked1.wav",
+        "buttons/lightswitch2.wav",
+        "buttons/button9.wav",
+        "buttons/button9.wav",
+        "buttons/button9.wav",
+        "buttons/button9.wav",
+        "buttons/button9.wav",
+        "buttons/button9.wav",
+        "buttons/lever1.wav",
+        "buttons/lever2.wav",
+        "buttons/lever3.wav",
+        "buttons/lever4.wav",
+        "buttons/lever5.wav"
+    ]
+
+    __upg_ButtonLockedSentences__ = [
+        "",
+        "NA",
+        "ND",
+        "NF",
+        "NFIRE",
+        "NCHEM",
+        "NRAD",
+        "NCON",
+        "NH",
+        "NG"
+    ]
+
+    __upg_ButtonUnlockedSentences__ = [
+        "",
+        "EA",
+        "ED",
+        "EF",
+        "EFIRE",
+        "ECHEM",
+        "ERAD",
+        "ECON",
+        "EH"
+    ]
+
+    class __upg_FixSoundsData__:
+        def __init__( self, KeyName:str, DefaultValue:str = None, Names:list[str] = None, Optional:str = None ):
+            self.KeyName = KeyName
+            self.DefaultValue = DefaultValue
+            self.Names = Names
+            self.Optional = Optional
+
+    __upg_DoorData__ = [
+        __upg_FixSoundsData__( "movesnd", __upg_DefaultSound__, __upg_DoorMoveSounds__ ),
+        __upg_FixSoundsData__( "stopsnd", __upg_DefaultSound__, __upg_DoorStopSounds__ ),
+        __upg_FixSoundsData__( "locked_sound", __upg_DefaultButtonSound__, __upg_ButtonSounds__ ),
+        __upg_FixSoundsData__( "unlocked_sound", __upg_DefaultButtonSound__, __upg_ButtonSounds__ ),
+        __upg_FixSoundsData__( "locked_sentence", __upg_DefaultSentence__, __upg_ButtonLockedSentences__ ),
+        __upg_FixSoundsData__( "unlocked_sentence", __upg_DefaultSentence__, __upg_ButtonUnlockedSentences__ )
+    ]
+
+    __upg_ButtonData__ = [
+        __upg_FixSoundsData__( "sounds", __upg_DefaultButtonSound__, __upg_ButtonSounds__ ),
+        __upg_FixSoundsData__( "locked_sound", __upg_DefaultButtonSound__, __upg_ButtonSounds__ ),
+        __upg_FixSoundsData__( "unlocked_sound", __upg_DefaultButtonSound__, __upg_ButtonSounds__ ),
+        __upg_FixSoundsData__( "locked_sentence", __upg_DefaultSentence__, __upg_ButtonLockedSentences__ ),
+        __upg_FixSoundsData__( "unlocked_sentence", __upg_DefaultSentence__, __upg_ButtonUnlockedSentences__ )
+    ]
+
+    __upg_Momentary_DoorMoveSounds__ = [
+        __upg_DefaultSound__,
+        "doors/doormove1.wav",
+        "doors/doormove2.wav",
+        "doors/doormove3.wav",
+        "doors/doormove4.wav",
+        "doors/doormove5.wav",
+        "doors/doormove6.wav",
+        "doors/doormove7.wav",
+        "doors/doormove8.wav"
+    ]
+
+    __upg_RotatingMoveSounds__ = [
+        __upg_DefaultSound__,
+        "fans/fan1.wav",
+        "fans/fan2.wav",
+        "fans/fan3.wav",
+        "fans/fan4.wav",
+        "fans/fan5.wav"
+    ]
+
+    __upg_PlatMoveSounds__ = [
+        __upg_DefaultSound__,
+        "plats/bigmove1.wav",
+        "plats/bigmove2.wav",
+        "plats/elevmove1.wav",
+        "plats/elevmove2.wav",
+        "plats/elevmove3.wav",
+        "plats/freightmove1.wav",
+        "plats/freightmove2.wav",
+        "plats/heavymove1.wav",
+        "plats/rackmove1.wav",
+        "plats/railmove1.wav",
+        "plats/squeekmove1.wav",
+        "plats/talkmove1.wav",
+        "plats/talkmove2.wav"
+    ]
+
+    __upg_PlatStopSounds__ = [
+        __upg_DefaultSound__,
+        "plats/bigstop1.wav",
+        "plats/bigstop2.wav",
+        "plats/freightstop1.wav",
+        "plats/heavystop2.wav",
+        "plats/rackstop1.wav",
+        "plats/railstop1.wav",
+        "plats/squeekstop1.wav",
+        "plats/talkstop1.wav"
+    ]
+
+    __upg_PlatData__ = [
+        __upg_FixSoundsData__( "movesnd", __upg_DefaultButtonSound__, __upg_PlatMoveSounds__ ),
+        __upg_FixSoundsData__( "stopsnd", __upg_DefaultButtonSound__, __upg_PlatStopSounds__ )
+    ]
+
+    __upg_TrackTrainMoveSounds__ = [
+        "",
+        "plats/ttrain1.wav",
+        "plats/ttrain2.wav",
+        "plats/ttrain3.wav",
+        "plats/ttrain4.wav",
+        "plats/ttrain6.wav",
+        "plats/ttrain7.wav"
+    ]
+
+    __upg_FixSoundsEntityData__ = {
+
+        "func_door": __upg_DoorData__,
+        "func_water": __upg_DoorData__,
+        "func_door_rotating": __upg_DoorData__,
+        "momentary_door": __upg_FixSoundsData__( "movesnd", __upg_DefaultSound__, __upg_Momentary_DoorMoveSounds__ ),
+        "func_rotating": __upg_FixSoundsData__( "sounds", __upg_DefaultSound__, __upg_RotatingMoveSounds__, "message" ),
+        "func_button": __upg_ButtonData__,
+        "func_rot_button": __upg_ButtonData__,
+        "func_button_rotating": __upg_FixSoundsData__( "sounds", __upg_DefaultMomentaryButtonSound__, __upg_ButtonSounds__ ),
+        "func_train": __upg_PlatData__,
+        "func_plat": __upg_PlatData__,
+        "func_platrot": __upg_PlatData__,
+        "func_trackchange": __upg_PlatData__,
+        "func_trackautochange": __upg_PlatData__,
+        "env_spritetrain": __upg_PlatData__,
+        "func_tracktrain": __upg_FixSoundsData__( "sounds", __upg_DefaultTrackTrainSound__, __upg_TrackTrainMoveSounds__ )
+    }
+
+    def __upg_angle_to_angles__( self, index : int, entity : Entity, map : str ) -> Entity:
+
+        if entity.angle != None:
+
+            NewAngles = Vector()
+
+            Angle = float( entity.angle )
+
+            if Angle >= 0:
+
+                NewAngles = Vector( entity.angles )
+                NewAngles.y = Angle
+
+            else:
+                if int(Angle) == -1: # floor?
+                    Angle = -90
+                else:
+                    Angle = 90
+
+                NewAngles.y = Angle
+
+            entity.angles = NewAngles
+            entity.angle = None
+
+        return entity
+
+    def __upg_worldspawn_format_wad__( self, index:int, entity:Entity, map:str ):
+        if entity.classname == 'worldspawn':
+            if entity.wad != None:
+                wad = entity.wad
+                dwads = ''
+                wads = wad.split( ';' )
+                for w in wads:
+                    if not w or w == '':
+                        continue
+                    if w.rfind( '\\' ) != -1:
+                        w = w[ w.rfind( '\\' ) + 1 : ]
+                    if w.rfind( '/' ) != -1:
+                        w = w[ w.rfind( '/' ) + 1 : ]
+                    dwads = f'{dwads}{w};'
+                entity.wad = dwads
+        return entity
+
+    def __upg_chargers_dmdelay__( self, index:int, entity:Entity, map:str ):
+        if entity.classname in [ 'func_healthcharger', 'func_recharge' ]:
+            entity.dmdelay = None
+        return entity
+
+    def __upg_remap_world_items__( self, index:int, entity:Entity, map:str ):
+        if entity.classname == 'world_items':
+            if entity.type != None and entity.type.isnumeric():
+                value = int( entity.type )
+                entity.type = None
+                if value == 42:
+                    entity.classname = 'item_antidote'
+                elif value == 43:
+                    entity.classname = 'item_security'
+                elif value == 44:
+                    entity.classname = 'item_battery'
+                elif value == 45:
+                    entity.classname = 'item_suit'
+            if entity.classname == 'world_items':
+                keytypevalue = ' "' + entity.value + '"' if entity.value else '';
+                Logger.warning( __Logger__[ '#upgrades_unknown_keyvalue' ], [ f'"type"{keytypevalue}', 'world_items' ] )
+                entity.clear()
+        return entity
+
+    def __upg_update_human_hulls__( self, index:int, entity:Entity, map:str ):
+        if entity.classname in [ 'monster_generic', 'monster_generic' ] and entity.model in [ 'models/player.mdl', 'models/holo.mdl' ]:
+            entity.custom_hull_min = Vector( -16, -16, -36 )
+            entity.custom_hull_max = Vector( 16, 16, 36 )
+        return entity
+
+    def __upg_ambient_generic_pitch__( self, index:int, entity:Entity, map:str ):
+        if entity.classname == 'ambient_generic' and entity.message == 'buttons/bell1.wav' and entity.pitch == '80':
+            entity.message = 'buttons/bell1_alt.wav'
+            entity.pitch = 100
+        return entity
+
+    def __upg_barney_dead_body__( self, index:int, entity:Entity, map:str ):
+        if entity.classname == 'monster_barney_dead' and entity.body != None:
+            body = int( entity.body )
+            if body == 0:
+                body = 1
+            elif body == 2:
+                body = 0
+            else:
+                body = 2
+            entity.body = None
+            entity.bodystate = body
+        return entity
+
+    def __upg_breakable_spawnobject__( self, index:int, entity:Entity, map:str ):
+        if entity.classname == 'func_breakable' or entity.classname == 'func_pushable':
+            if entity.spawnobject != None and entity.spawnobject.isnumeric():
+                i = int( entity.spawnobject )
+                classnames = [ "item_battery", "item_healthkit",
+                    "weapon_9mmhandgun", "ammo_9mmclip", "weapon_9mmar",
+                        "ammo_9mmar", "ammo_argrenades", "weapon_shotgun",
+                            "ammo_buckshot", "weapon_crossbow", "ammo_crossbow",
+                                "weapon_357", "ammo_357", "weapon_rpg", "ammo_rpgclip",
+                                    "ammo_gaussclip", "weapon_handgrenade", "weapon_tripmine",
+                                        "weapon_satchel", "weapon_snark", "weapon_hornetgun", "weapon_penguin"
+                ]
+                if i > 0 and i <= len(classnames):
+                    entity.spawnobject = classnames[i]
+                else:
+                    entity.spawnobject = None
+                    if i != 0:
+                        Logger.warning( __Logger__[ '#upgrades_unknown_keyvalue' ], [ f'"spawnobject" "{i}"', entity.classname ] )
+        return entity
+
+    __upg_eventhandler__ = Entity( { "classname": "trigger_eventhandler", "m_Caller": "!activator" } )
+
+    def __upg_event_playerdie__( self, index:int, entity:Entity, map:str ):
+        if not self.__TempData__.__upg_game_playerdie__ and entity.targetname == 'game_playerdie':
+            self.__upg_eventhandler__.target = entity.targetname
+            self.__upg_eventhandler__.event_type = 1
+            add_entity( self.__upg_eventhandler__ )
+            self.__TempData__.__upg_game_playerdie__ = True
+        return entity
+
+    def __upg_event_playerleave__( self, index:int, entity:Entity, map:str ):
+        if not self.__TempData__.__upg_game_playerleave__ and entity.targetname == 'game_playerleave':
+            self.__upg_eventhandler__target = entity.targetname
+            self.__upg_eventhandler__event_type = 2
+            add_entity( self.__upg_eventhandler__ )
+            self.__TempData__.__upg_game_playerleave__ = True
+        return entity
+
+    def __upg_event_playerkill__( self, index:int, entity:Entity, map:str ):
+        if not self.__TempData__.__upg_game_playerkill__ and entity.targetname == 'game_playerkill':
+            self.__upg_eventhandler__target = 'game_playerkill_check'
+            self.__upg_eventhandler__event_type = 3
+            add_entity( self.__upg_eventhandler__ )
+            Newent = {
+                "classname": "trigger_entity_condition",
+                "targetname": "game_playerkill_check",
+                "pass_target": "game_playerkill",
+                "condition": "0"
+            }
+            add_entity( Newent )
+            self.__TempData__.__upg_game_playerkill__ = True
+        return entity
+
+    def __upg_event_playeractivate__( self, index:int, entity:Entity, map:str ):
+        if not self.__TempData__.__upg_game_playeractivate__ and entity.targetname == 'game_playeractivate':
+            self.__upg_eventhandler__target = entity.targetname
+            self.__upg_eventhandler__event_type = 4
+            add_entity( self.__upg_eventhandler__ )
+            self.__TempData__.__upg_game_playeractivate__ = True
+        return entity
+
+    def __upg_event_playerjoin__( self, index:int, entity:Entity, map:str ):
+        if not self.__TempData__.__upg_game_playerjoin__ and entity.targetname == 'game_playerjoin':
+            self.__upg_eventhandler__target = entity.targetname
+            self.__upg_eventhandler__event_type = 5
+            Newent = self.__upg_eventhandler__.copy()
+            Newent[ "appearflag_multiplayer" ] = "1" # Only in multiplayer
+            add_entity( Newent )
+            self.__TempData__.__upg_game_playerjoin__ = True
+        return entity
+
+    def __upg_event_playerspawn__( self, index:int, entity:Entity, map:str ):
+        if not self.__TempData__.__upg_game_playerspawn__ and entity.targetname == 'game_playerspawn':
+            self.__upg_eventhandler__target = entity.targetname
+            self.__upg_eventhandler__event_type = 6
+            add_entity( self.__upg_eventhandler__ )
+            self.__TempData__.__upg_game_playerspawn__ = True
+        return entity
+
+    def __upg_TryFixSoundsEnt__( self, entity:dict, Data:__upg_FixSoundsData__ ):
+        #-TODO "func_rotating": __upg_FixSoundsData__( "sounds", __upg_DefaultSound__, __upg_RotatingMoveSounds__, "message" ),
+        # [cl] [sound.cache] [error] Could not find sound file message
+        name = Data.Optional
+        if name is None:
+            name = Data.DefaultValue
+            if Data.KeyName in entity and entity.get( Data.KeyName ).isnumeric():
+                index = int( entity.get( Data.KeyName ) )
+                if index >= 0 and index < len( Data.Names ):
+                    name = Data.Names[ index ]
+        entity[ Data.KeyName ] = None
+        if len( name ) > 0:
+            entity[ Data.KeyName ] = name
+        return Entity( entity )
+
+    def __upg_fix_sounds_indexes__( self, index:int, entity:Entity, map:str ):
+        if entity.classname in self.__upg_FixSoundsEntityData__:
+            DataFix = self.__upg_FixSoundsEntityData__.get( entity.classname )
+            if isinstance( DataFix, self.__upg_FixSoundsData__ ):
+                entity = self.__upg_TryFixSoundsEnt__( entity, DataFix )
+            else:
+                for D in DataFix:
+                    entity = self.__upg_TryFixSoundsEnt__( entity, D )
+        return entity
+
+    def __upg_rendercolor_invalid__( self, index:int, entity:Entity, map:str ):
+        if entity.rendercolor != None:
+            entity.rendercolor = Vector( entity.rendercolor ).to_string()
+        return entity
+
+    def __upg_multi_manager_maxkeys__( self, index:int, entity:Entity, map:str ):
+        if entity.classname == 'multi_manager':
+            KeySize = 16
+            NewEnt = {}
+            pEnt = entity.copy()
+            ignorelist = { "targetname", "classname", "origin", "wait", "spawnflags" }
+            for p in ignorelist:
+                if p in entity:
+                    NewEnt[ p ] = entity.get( p )
+                    KeySize+=1
+            for p, v in pEnt.items():
+                NewEnt[ p ] = v
+                if len( NewEnt ) >= KeySize:
+                    break
+            if len( entity ) > len( NewEnt ):
+                for k, v in NewEnt.items():
+                    if not k in ignorelist:
+                        pEnt.pop( k, '' )
+                pEnt[ "targetname" ] = entity.targetname + f'_{index}'
+                AnotherEnt = self.__upg_multi_manager_maxkeys__( index, Entity( pEnt ), map );
+                add_entity( AnotherEnt )
+                NewEnt[ pEnt.get( "targetname" ) ] = 0
+                Logger.info( __Logger__[ '#upgrades_multi_manager_exceds' ] )
+            for k in ignorelist:
+                if k in entity:
+                    NewEnt[ k ] = entity.get( k, '' )
+            entity = Entity( NewEnt )
+        return entity
+
+    def __upg_env_message_to_game_text__( self, index:int, entity:Entity, map:str ):
+        if entity.classname == 'env_message':
+            try:
+                from __main__ import titles
+                sztitles = open( titles, 'r' )
+            except:
+                s:str
+                #logger( "No \"titles\" path defined in main", logger_level=LOGGER_LEVEL.IMPORTANT )
+        return entity
