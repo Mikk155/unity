@@ -624,6 +624,18 @@
 {
 "english": "Custom Hull Maximum"
 },
+"originhullsize":
+{
+"english": "Custom Hull Box"
+},
+"originhullsize::0":
+{
+"english": "Relative to the entity"
+},
+"originhullsize::1":
+{
+"english": "Absolute to the world"
+},
 "BaseCharger::fire_on_recharge":
 {
 "english": "Target To Fire On Recharge"
