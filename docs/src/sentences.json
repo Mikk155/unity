@@ -2752,6 +2752,30 @@
 {
 "english": "Gib Skin"
 },
+"env_soundmark::classname":
+{
+"english": "Sound Ent"
+},
+"env_soundmark::classname::description":
+{
+"english": "Sound Ent is what monsters hears in the world, it doesn't emit any sound really"
+},
+"env_soundmark::sound_type":
+{
+"english": "Sound type"
+},
+"env_soundmark::sound_origin":
+{
+"english": "Entity to play from"
+},
+"env_soundmark::sound_volume":
+{
+"english": "Volume"
+},
+"env_soundmark::sound_duration":
+{
+"english": "Duration"
+},
 "env_sound::classname":
 {
 "english": "DSP Sound"
