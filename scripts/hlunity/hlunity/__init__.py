@@ -1,4 +1,12 @@
 """
+# Description
+
+This library contains utility functions to make mod porting easy in Half-Life: Unity
+
+Some functions may not be explicit for the mod so aim directly to the global class ``mod``
+
+# Licence
+
 The MIT License (MIT)
 
 Copyright (c) 2024 Mikk155
@@ -443,7 +451,8 @@ class Vector:
             Logger.warning( __Logger__[ '#Vector_out_of_index' ], [ index ], );
 
     def __repr__( self ):
-        return "Vector( {} )".format( self.to_string( True, FloatConversion.digits_6 ) ); # type: ignore
+        return self.to_string()
+        #return "Vector( {} )".format( self.to_string( True, FloatConversion.digits_6 ) ); # type: ignore
 
     def __add__( self, other ):
         return Vector( self.x + other.x, self.y + other.y, self.z + other.z );
@@ -1651,7 +1660,7 @@ class MapUpgrader:
             HeadsCount = 4;
             NeedleCount = 2;
             # This hardcoded stuff is pretty ugly, but there is no way around it without loading the model.
-            new_body += StudioCount * HeadsCount * NeedleCount * item;
+            new_body = int(new_body) + ( StudioCount * HeadsCount * NeedleCount * item );
             entity.body = new_body;
         return entity
 
@@ -1702,3 +1711,56 @@ class MapUpgrader:
             #     ScriptedSequenceUtilities.RenameAnimations(context, "monster_otis", "models/otis.mdl", AnimationRemap);
             # }
         return entity
+
+class __ModPorting__:
+
+    def __init__( self ):
+
+        import os
+        self.__workdir__ = '{}\\unity'.format( os.path.abspath( "" ) );
+
+    __workdir__:str
+
+    def workdir( self ) -> str:
+        '''Working directory. consider this as unity_addon/ folder just before copying all within it'''
+        return self.__workdir__;
+
+    class maps:
+
+        @staticmethod
+        def copy( mod_path: str, ignore_maps: list[str] = [] ) -> dict[ str, str ]:
+            '''
+            Copy all the BSP files from ``mod_path`` to a working directory then returns a dicto of [ filename, file absolute path ]
+
+            ``ignore_maps`` Maps to ignore
+            '''
+
+            from os import walk
+            from shutil import copy2
+
+            map_list = {};
+
+            maps_mfolder = '{}\\maps'.format( mod_path );
+            maps_dfolder = '{}\\maps'.format( mod.workdir() );
+
+            makedirs( maps_dfolder+'\\' );
+
+            for root, dirs, files in walk( maps_mfolder ):
+
+                for file in files:
+
+                    if file.endswith( '.bsp' ):
+
+                        src = '{}\\{}'.format( maps_mfolder, file );
+
+                        dest = '{}\\{}'.format( maps_dfolder, file );
+
+                        map_list[file] = dest;
+
+                        copy2( src, dest );
+
+            return map_list;
+
+global mod;
+mod = __ModPorting__();
+'''This class should be used when porting mods'''
