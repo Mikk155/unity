@@ -26,14 +26,12 @@ class CSoundMark : public CPointEntity
         void Use( CBaseEntity* pActivator, CBaseEntity* pCaller, USE_TYPE useType, float value ) override;
 
 	private:
-		int m_iSoundType;
-        float m_fSoundVolume;
-        float m_fSoundDuration;
+        float m_fSoundVolume = 1.0;
+        float m_fSoundDuration = 0.3;
         string_t m_sOriginEntity;
 };
 
 BEGIN_DATAMAP( CSoundMark )
-	DEFINE_FIELD( m_iSoundType, FIELD_INTEGER ),
 	DEFINE_FIELD( m_fSoundVolume, FIELD_FLOAT ),
 	DEFINE_FIELD( m_fSoundDuration, FIELD_FLOAT ),
 	DEFINE_FIELD( m_sOriginEntity, FIELD_STRING ),
@@ -44,11 +42,7 @@ LINK_ENTITY_TO_CLASS( env_soundmark, CSoundMark );
 
 bool CSoundMark :: KeyValue( KeyValueData* pkvd )
 {
-	if( fStrEq( pkvd->szKeyName, "sound_type" ) )
-	{
-        m_iSoundType = atoi( pkvd->szValue );
-	}
-	else if( fStrEq( pkvd->szKeyName, "sound_origin" ) )
+	if( fStrEq( pkvd->szKeyName, "sound_origin" ) )
 	{
         m_sOriginEntity = ALLOC_STRING( pkvd->szValue );
 	}
@@ -75,5 +69,5 @@ void CSoundMark :: Use( CBaseEntity* pActivator, CBaseEntity* pCaller, USE_TYPE 
 
     auto pTarget = AllocNewActivator( pActivator, pCaller, m_sOriginEntity );
 
-    CSoundEnt::InsertSound( m_iSoundType, ( pTarget != nullptr ? pTarget->pev->origin : pev->origin ), m_fSoundVolume, m_fSoundDuration );
+    CSoundEnt::InsertSound( pev->spawnflags, ( pTarget != nullptr ? pTarget->pev->origin : pev->origin ), m_fSoundVolume, m_fSoundDuration );
 }
