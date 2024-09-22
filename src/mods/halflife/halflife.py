@@ -6,18 +6,9 @@ unity.Logger.set_logger( unity.LogLevel.info );
 unity.Logger.set_logger( unity.LogLevel.error );
 unity.Logger.set_logger( unity.LogLevel.warning );
 
-import os
-import shutil
+mod_folder = "{}\\valve".format( unity.HALFLIFE() );
 
-maps = {}
-
-for root, dirs, files in os.walk( '{}\\valve\\maps'.format( unity.HALFLIFE() ) ):
-    for file in files:
-        if file.endswith( '.bsp' ):
-            src = '{}\\valve\\maps\\{}'.format( unity.HALFLIFE(), file );
-            dest = '{}\\unity\\maps\\{}'.format( unity.HALFLIFE(), file );
-            maps[file] = dest;
-            shutil.copy2( src, dest );
+maps = unity.mod.maps.copy( mod_folder );
 
 def PostMapUpgrade( index : int, entity : unity.Entity, map : str ):
 
@@ -109,6 +100,7 @@ def PostMapUpgrade( index : int, entity : unity.Entity, map : str ):
 
     return entity
 
-for mapname, path in maps.items():
 
-    map = unity.MapUpgrader( path )
+for mapname, path in maps.items():
+    map = unity.MapUpgrader( path );
+    map.upgrade();
