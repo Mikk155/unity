@@ -6,19 +6,9 @@ unity.Logger.set_logger( unity.LogLevel.info );
 unity.Logger.set_logger( unity.LogLevel.error );
 unity.Logger.set_logger( unity.LogLevel.warning );
 
-import os
-import shutil
+mod_folder = "{}\\gearbox".format( unity.HALFLIFE() );
 
-maps = {}
-
-for root, dirs, files in os.walk( '{}\\gearbox\\maps'.format( unity.HALFLIFE() ) ):
-    for file in files:
-        if file.endswith( '.bsp' ):
-            src = '{}\\gearbox\\maps\\{}'.format( unity.HALFLIFE(), file );
-            dest = '{}\\unity_addon\\maps\\{}'.format( unity.HALFLIFE(), file );
-            maps[file] = dest;
-            shutil.copy2( src, dest );
-
+maps = unity.mod.maps.copy( mod_folder );
 
 def PostMapUpgrade( index : int, entity : unity.Entity, map : str ):
 
