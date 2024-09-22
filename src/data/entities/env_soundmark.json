@@ -3,11 +3,37 @@
     "Class": "Point",
     "iconsprite": "sprites/speaker.spr",
     "data": {
-        "sound_type": {
-            "variable": "integer",
-            "value": "1",
-            "title": "env_soundmark::sound_type",
-            "description": "env_soundmark::sound_type::description"
+        "spawnflags": {
+            "choices": {
+                "1": {
+                    "title": "env_soundmark::spawnflags::1",
+                    "description": "env_soundmark::spawnflags::1::description"
+                },
+                "2": {
+                    "title": "env_soundmark::spawnflags::2",
+                    "description": "env_soundmark::spawnflags::2::description"
+                },
+                "4": {
+                    "title": "env_soundmark::spawnflags::4",
+                    "description": "env_soundmark::spawnflags::4::description"
+                },
+                "8": {
+                    "title": "env_soundmark::spawnflags::8",
+                    "description": "env_soundmark::spawnflags::8::description"
+                },
+                "16": {
+                    "title": "env_soundmark::spawnflags::16",
+                    "description": "env_soundmark::spawnflags::16::description"
+                },
+                "32": {
+                    "title": "env_soundmark::spawnflags::32",
+                    "description": "env_soundmark::spawnflags::32::description"
+                },
+                "64": {
+                    "title": "env_soundmark::spawnflags::64",
+                    "description": "env_soundmark::spawnflags::64::description"
+                }
+            }
         },
         "sound_origin": {
             "variable": "target_generic",
