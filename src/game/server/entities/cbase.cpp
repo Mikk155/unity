@@ -965,19 +965,6 @@ void CBaseEntity::StopSound(int channel, const char* sample)
 	sound::g_ServerSound.EmitSound(this, channel, sample, 0, 0, SND_STOP, PITCH_NORM);
 }
 
-CScriptDictionary* CBaseEntity::GetUserData()
-{
-	// Lazily create to avoid wasting memory.
-	if (!m_UserDataDictionary)
-	{
-		m_UserDataDictionary.reset(CScriptDictionary::Create(scripting::g_Scripting.GetEngine()));
-	}
-
-	m_UserDataDictionary->AddRef();
-
-	return m_UserDataDictionary.get();
-}
-
 bool CBaseEntity :: CheckAppearanceFlags()
 {
 	if( m_appearflag_notin != (int)appearflags::DEFAULT )

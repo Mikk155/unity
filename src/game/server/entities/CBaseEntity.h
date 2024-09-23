@@ -663,10 +663,6 @@ public:
 	 */
 	Vector m_SoundOffset{};
 
-	as::UniquePtr<CScriptDictionary> m_UserDataDictionary;
-
-	CScriptDictionary* GetUserData();
-
 	USE_TYPE m_UseType = USE_UNSET;
 	USE_TYPE m_UseTypeLast = USE_UNSET;
 	float m_UseValue;
