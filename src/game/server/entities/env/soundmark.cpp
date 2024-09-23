@@ -42,15 +42,15 @@ LINK_ENTITY_TO_CLASS( env_soundmark, CSoundMark );
 
 bool CSoundMark :: KeyValue( KeyValueData* pkvd )
 {
-	if( fStrEq( pkvd->szKeyName, "sound_origin" ) )
+	if( FStrEq( pkvd->szKeyName, "sound_origin" ) )
 	{
         m_sOriginEntity = ALLOC_STRING( pkvd->szValue );
 	}
-	else if( fStrEq( pkvd->szKeyName, "sound_volume" ) )
+	else if( FStrEq( pkvd->szKeyName, "sound_volume" ) )
 	{
         m_fSoundVolume = atof( pkvd->szValue );
 	}
-	else if( fStrEq( pkvd->szKeyName, "sound_duration" ) )
+	else if( FStrEq( pkvd->szKeyName, "sound_duration" ) )
 	{
         m_fSoundDuration = atof( pkvd->szValue );
 	}
