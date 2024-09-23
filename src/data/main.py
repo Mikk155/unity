@@ -235,9 +235,15 @@ def build():
     global entitydata
 
     for file in listdir( '{}base'.format( abs ) ):
-        entitydata[ file[ : len(file) - len('.json') ] ] = jsonc( '{}base\\{}'.format( abs, file ) )
+        try:
+            entitydata[ file[ : len(file) - len('.json') ] ] = jsonc( '{}base\\{}'.format( abs, file ) )
+        except Exception as e:
+            print( "Failed to open {}: {}".format( file, e ) );
     for file in listdir( '{}entities'.format( abs ) ):
-        entitydata[ file[ : len(file) - len('.json') ] ] = jsonc( '{}entities\\{}'.format( abs, file ) )
+        try:
+            entitydata[ file[ : len(file) - len('.json') ] ] = jsonc( '{}entities\\{}'.format( abs, file ) )
+        except Exception as e:
+            print( "Failed to open {}: {}".format( file, e ) );
 
     entities = []
     classess = []

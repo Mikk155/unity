@@ -152,7 +152,7 @@ void CGameVariable :: Use( CBaseEntity* pActivator, CBaseEntity* pCaller, USE_TY
         {
             if( !IsCommandAllowed( STRING( m_sVariable ) ) )
             {
-                Logger->error("The console command \"{} {}\" cannot be sent because it is not listed in the command whitelist", STRING( m_sVariable ) );
+                Logger->error("The console command \"{}\" cannot be sent because it is not listed in the command whitelist", STRING( m_sVariable ) );
                 break;
             }
 

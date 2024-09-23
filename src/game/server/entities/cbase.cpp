@@ -593,6 +593,11 @@ bool CBaseEntity::RequiredKeyValue(KeyValueData* pkvd)
 
 		return true;
 	}
+	else if (FStrEq(pkvd->szKeyName, "originhullsize"))
+	{
+		m_HasZeroOrigin = ( atoi( pkvd->szValue ) == 1 );
+		return true;
+	}
 	else if( FStrEq( pkvd->szKeyName, "m_UseType" ) && atoi( pkvd->szValue ) > USE_UNSET && atoi( pkvd->szValue ) < USE_UNKNOWN )
 	{
 		m_UseType = static_cast<USE_TYPE>( atoi( pkvd->szValue ) );
@@ -685,6 +690,9 @@ void CBaseEntity::SetModel(const char* s)
 
 	if (m_HasCustomHullMin || m_HasCustomHullMax)
 	{
+		if( m_HasZeroOrigin ) // Set g_vecZero to mark as absolute size in the world
+			SetOrigin( g_vecZero );
+
 		SetSize(pev->mins, pev->maxs);
 	}
 }

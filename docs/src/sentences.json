@@ -624,6 +624,18 @@
 {
 "english": "Custom Hull Maximum"
 },
+"originhullsize":
+{
+"english": "Custom Hull Box"
+},
+"originhullsize::0":
+{
+"english": "Relative to the entity"
+},
+"originhullsize::1":
+{
+"english": "Absolute to the world"
+},
 "BaseCharger::fire_on_recharge":
 {
 "english": "Target To Fire On Recharge"
@@ -2739,6 +2751,54 @@
 "env_shooter::skin":
 {
 "english": "Gib Skin"
+},
+"env_soundmark::classname":
+{
+"english": "Sound Ent"
+},
+"env_soundmark::classname::description":
+{
+"english": "Sound Ent is what monsters hears in the world, it doesn't emit any sound really"
+},
+"env_soundmark::spawnflags::1":
+{
+"english": "Gunshot, Explosions (COMBAT)"
+},
+"env_soundmark::spawnflags::2":
+{
+"english": "Door open/close, Class break (WORLD)"
+},
+"env_soundmark::spawnflags::4":
+{
+"english": "Walk, Fall, Splash, Shoot (PLAYER)"
+},
+"env_soundmark::spawnflags::8":
+{
+"english": "Dead body (CARCASS)"
+},
+"env_soundmark::spawnflags::16":
+{
+"english": "Gib or pork chop (MEAT)"
+},
+"env_soundmark::spawnflags::32":
+{
+"english": "Iminent danger (DANGER)"
+},
+"env_soundmark::spawnflags::64":
+{
+"english": "Trash cans, banana peels (GARBAGE)"
+},
+"env_soundmark::sound_origin":
+{
+"english": "Entity to play from"
+},
+"env_soundmark::sound_volume":
+{
+"english": "Volume"
+},
+"env_soundmark::sound_duration":
+{
+"english": "Duration"
 },
 "env_sound::classname":
 {

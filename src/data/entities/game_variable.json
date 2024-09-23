@@ -12,8 +12,12 @@
         "spawnflags": {
             "choices": {
                 "1": {
-                    "title": "game_variable::spawnflag::4",
-                    "description": "game_variable::spawnflag::4"
+                    "title": "StartOn",
+                    "description": "StartOn"
+                },
+                "2": {
+                    "title": "game_variable::spawnflag::2",
+                    "description": "game_variable::spawnflag::2"
                 }
             }
         },
