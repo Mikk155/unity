@@ -1653,13 +1653,18 @@ void CNihilanthHVR::TeleportTouch(CBaseEntity* pOther)
 {
 	CBaseEntity* pEnemy = m_hEnemy;
 
-	if (pOther == pEnemy)
+	if( auto player = ToBasePlayer( pOther ); pOther != nullptr )
 	{
 		if (m_hTargetEnt != nullptr)
 			m_hTargetEnt->Use(pEnemy, pEnemy, USE_ON, 1.0);
 
 		if (m_hTouch != nullptr && pEnemy != nullptr)
 			m_hTouch->Touch(pEnemy);
+	}
+	else if( pOther != nullptr && !pOther->ClassNameIs( "worldspawn" ) && !pOther->IsBSPModel() )
+	{
+		UTIL_Remove( pOther );
+		return;
 	}
 	else
 	{
