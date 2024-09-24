@@ -4568,7 +4568,7 @@ int CBasePlayer::GetCustomDecalFrames()
 	return m_nCustomSprayFrames;
 }
 
-void CBasePlayer::DropPlayerWeapon(const char* pszItemName)
+void CBasePlayer::DropPlayerWeapon( const char* pszItemName, const char* pszItemCount )
 {
 	if (g_Skill.GetValue("allow_player_weapon_dropping", 0) == 0)
 	{
@@ -4579,99 +4579,105 @@ void CBasePlayer::DropPlayerWeapon(const char* pszItemName)
 	{
 		// if this string has no length, the client didn't type a name!
 		// assume player wants to drop the active item.
-		// make the string null to make future operations in this function easier
-		pszItemName = nullptr;
+		pszItemName = "current";
 	}
 
-	CBasePlayerWeapon* weapon;
-	int i;
-
-	for (i = 0; i < MAX_WEAPON_SLOTS; i++)
+	auto ShouldCreateWeaponBox = []( CBasePlayer* pPlayer, const char* pszItemName ) -> bool
 	{
-		weapon = m_rgpPlayerWeapons[i];
+		if( FStrEq( pszItemName, "all" ) ) {
+			return pPlayer->HasWeapons();
+		}
+		if( FStrEq( pszItemName, "current" ) ) {
+			return ( pPlayer->m_pActiveWeapon != nullptr );
+		}
+		if( std::string( pszItemName ).find( "weapon_" ) == 0 ) {
+			return pPlayer->HasNamedPlayerWeapon( pszItemName );
+		}
+		if( std::string( pszItemName ).find( "ammo_" ) == 0 ) {
+			if( int iCountTest = pPlayer->GetAmmoIndex( pszItemName ); iCountTest != -1 ) {
+				return ( pPlayer->m_rgAmmo[ iCountTest ] > 0 );
+			}
+		}
+		return false;
+	};
 
-		while (weapon)
+	if( !ShouldCreateWeaponBox( this, pszItemName ) )
+		return;
+
+	auto AddToWeaponBox = []( CBasePlayer* pPlayer, CBasePlayerWeapon* pWeapon, const char* szAmmoType, CWeaponBox* pWeaponBox, int iAmmoCount ) -> bool
+	{
+		if( pWeapon != nullptr )
 		{
-			if (pszItemName)
-			{
-				// try to match by name.
-				if (0 == strcmp(pszItemName, STRING(weapon->pev->classname)))
-				{
-					// match!
-					break;
-				}
-				else if( FStrEq( pszItemName, "dropall" ) )
-				{
-					// Drop all items!
-					break;
-				}
-			}
-			else
-			{
-				// trying to drop active item
-				if (weapon == m_pActiveWeapon)
-				{
-					// active item!
-					break;
-				}
-			}
+			pPlayer->ClearWeaponBit( pWeapon->m_iId ); //take item off hud
 
-			weapon = weapon->m_pNext;
+			pWeaponBox->PackWeapon( pWeapon );
+
+			szAmmoType = pWeapon->pszAmmo1();
+
+			// pack up all the ammo, this weapon is its own ammo type
+			if( FBitSet( pWeapon->iFlags(), ITEM_FLAG_EXHAUSTIBLE ) )
+				iAmmoCount = pPlayer->m_rgAmmo[ pPlayer->GetAmmoIndex( szAmmoType ) ];
+
+			if( pWeapon == pPlayer->m_pActiveWeapon )
+				g_pGameRules->GetNextBestWeapon( pPlayer, pWeapon );
+
+			return true;
 		}
 
-
-		// if we land here with a valid pWeapon pointer, that's because we found the
-		// item we want to drop and hit a BREAK;  pWeapon is the item.
-		if (weapon)
+		if( szAmmoType )
 		{
-			if (!g_pGameRules->GetNextBestWeapon(this, weapon))
-				return; // can't drop the item they asked for, may be our last item or something we can't holster
-
-			UTIL_MakeVectors(pev->angles);
-
-
-			CWeaponBox* pWeaponBox = (CWeaponBox*)CBaseEntity::Create("weaponbox", pev->origin + gpGlobals->v_forward * 10, pev->angles, this);
-			pWeaponBox->pev->angles.x = 0;
-			pWeaponBox->pev->angles.z = 0;
-			pWeaponBox->pev->velocity = gpGlobals->v_forward * 300 + gpGlobals->v_forward * 100;
-
-			while( weapon )
+			if( int iAmmoIndex = pPlayer->GetAmmoIndex( szAmmoType ); iAmmoIndex != -1 )
 			{
-				ClearWeaponBit(weapon->m_iId); // take item off hud
+				if( iAmmoCount > pPlayer->m_rgAmmo[iAmmoIndex] )
+					iAmmoCount = pPlayer->m_rgAmmo[iAmmoIndex];
+				else if( iAmmoCount <= 0 )
+						 iAmmoCount = 1;
 
-				pWeaponBox->PackWeapon(weapon);
+				pWeaponBox->PackAmmo( MAKE_STRING( szAmmoType ), iAmmoCount );
+				pPlayer->m_rgAmmo[iAmmoIndex] -= iAmmoCount;
+				return true;
+			}
+		}
 
-				// drop half of the ammo for this weapon.
-				int iAmmoIndex;
+		return false;
+	};
 
-				iAmmoIndex = GetAmmoIndex(weapon->pszAmmo1()); // ???
+	UTIL_MakeVectors(pev->angles);
 
-				if (iAmmoIndex != -1)
-				{
-					// this weapon weapon uses ammo, so pack an appropriate amount.
-					if ((weapon->iFlags() & ITEM_FLAG_EXHAUSTIBLE) != 0)
-					{
-						// pack up all the ammo, this weapon is its own ammo type
-						pWeaponBox->PackAmmo(MAKE_STRING(weapon->pszAmmo1()), m_rgAmmo[iAmmoIndex]);
-						m_rgAmmo[iAmmoIndex] = 0;
-					}
-					else
-					{
-						// pack half of the ammo
-						pWeaponBox->PackAmmo(MAKE_STRING(weapon->pszAmmo1()), m_rgAmmo[iAmmoIndex] / 2);
-						m_rgAmmo[iAmmoIndex] /= 2;
-					}
-				}
+	CWeaponBox* pWeaponBox = (CWeaponBox*)CBaseEntity::Create("weaponbox", pev->origin + gpGlobals->v_forward * 10, pev->angles, this);
+	pWeaponBox->pev->angles.x = 0;
+	pWeaponBox->pev->angles.z = 0;
+	pWeaponBox->pev->velocity = gpGlobals->v_forward * 300 + gpGlobals->v_forward * 100;
 
-				// Break if not dropall
-				if( !FStrEq( pszItemName, "dropall" ) )
-					break;
+	int iItemCount = ( 0 != strlen(pszItemCount) ? atoi( pszItemCount ) : 1 );
 
+	if( FStrEq( pszItemName, "all" ) )
+	{
+		CBasePlayerWeapon* weapon;
+		int i;
+
+		for (i = 0; i < MAX_WEAPON_SLOTS; i++)
+		{
+			weapon = m_rgpPlayerWeapons[i];
+
+			while (weapon)
+			{
+				AddToWeaponBox( this, weapon, nullptr, pWeaponBox, iItemCount );
 				weapon = weapon->m_pNext;
 			}
-
-			return; // we're done, so stop searching with the FOR loop.
 		}
+	}
+	else if( FStrEq( pszItemName, "current" ) )
+	{
+		AddToWeaponBox( this, m_pActiveWeapon, nullptr, pWeaponBox, iItemCount );
+	}
+	else if( std::string( pszItemName ).find( "weapon_" ) == 0 )
+	{
+		AddToWeaponBox( this, HasNamedPlayerWeaponPtr( pszItemName ), nullptr, pWeaponBox, iItemCount );
+	}
+	else if( std::string( pszItemName ).find( "ammo_" ) == 0 )
+	{
+		AddToWeaponBox( this, nullptr, pszItemName, pWeaponBox, iItemCount );
 	}
 }
 

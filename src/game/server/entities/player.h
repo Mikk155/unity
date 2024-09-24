@@ -436,7 +436,7 @@ public:
 	/**
 	 *	@brief drop the named item, or if no name, the active item.
 	 */
-	void DropPlayerWeapon(const char* pszItemName);
+	void DropPlayerWeapon( const char* pszItemName, const char* pszItemCount );
 
 	bool HasPlayerWeapon(CBasePlayerWeapon* checkWeapon);
 	CBasePlayerWeapon* HasNamedPlayerWeaponPtr(const char* pszItemName);

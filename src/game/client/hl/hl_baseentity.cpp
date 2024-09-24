@@ -291,7 +291,7 @@ Vector CBasePlayer::AutoaimDeflection(const Vector& vecSrc, float flDist, float 
 void CBasePlayer::ResetAutoaim() {}
 void CBasePlayer::SetCustomDecalFrames(int nFrames) {}
 int CBasePlayer::GetCustomDecalFrames() { return -1; }
-void CBasePlayer::DropPlayerWeapon(const char* pszItemName) {}
+void CBasePlayer::DropPlayerWeapon( const char* pszItemName, const char* pszItemCount ) {}
 bool CBasePlayer::HasPlayerWeapon(CBasePlayerWeapon* weapon) { return false; }
 bool CBasePlayer::SwitchWeapon(CBasePlayerWeapon* weapon) { return false; }
 Vector CBasePlayer::GetGunPosition() { return g_vecZero; }
