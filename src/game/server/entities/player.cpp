@@ -4600,6 +4600,11 @@ void CBasePlayer::DropPlayerWeapon(const char* pszItemName)
 					// match!
 					break;
 				}
+				else if( FStrEq( pszItemName, "dropall" ) )
+				{
+					// Drop all items!
+					break;
+				}
 			}
 			else
 			{
@@ -4624,34 +4629,45 @@ void CBasePlayer::DropPlayerWeapon(const char* pszItemName)
 
 			UTIL_MakeVectors(pev->angles);
 
-			ClearWeaponBit(weapon->m_iId); // take item off hud
 
 			CWeaponBox* pWeaponBox = (CWeaponBox*)CBaseEntity::Create("weaponbox", pev->origin + gpGlobals->v_forward * 10, pev->angles, this);
 			pWeaponBox->pev->angles.x = 0;
 			pWeaponBox->pev->angles.z = 0;
-			pWeaponBox->PackWeapon(weapon);
 			pWeaponBox->pev->velocity = gpGlobals->v_forward * 300 + gpGlobals->v_forward * 100;
 
-			// drop half of the ammo for this weapon.
-			int iAmmoIndex;
-
-			iAmmoIndex = GetAmmoIndex(weapon->pszAmmo1()); // ???
-
-			if (iAmmoIndex != -1)
+			while( weapon )
 			{
-				// this weapon weapon uses ammo, so pack an appropriate amount.
-				if ((weapon->iFlags() & ITEM_FLAG_EXHAUSTIBLE) != 0)
+				ClearWeaponBit(weapon->m_iId); // take item off hud
+
+				pWeaponBox->PackWeapon(weapon);
+
+				// drop half of the ammo for this weapon.
+				int iAmmoIndex;
+
+				iAmmoIndex = GetAmmoIndex(weapon->pszAmmo1()); // ???
+
+				if (iAmmoIndex != -1)
 				{
-					// pack up all the ammo, this weapon is its own ammo type
-					pWeaponBox->PackAmmo(MAKE_STRING(weapon->pszAmmo1()), m_rgAmmo[iAmmoIndex]);
-					m_rgAmmo[iAmmoIndex] = 0;
+					// this weapon weapon uses ammo, so pack an appropriate amount.
+					if ((weapon->iFlags() & ITEM_FLAG_EXHAUSTIBLE) != 0)
+					{
+						// pack up all the ammo, this weapon is its own ammo type
+						pWeaponBox->PackAmmo(MAKE_STRING(weapon->pszAmmo1()), m_rgAmmo[iAmmoIndex]);
+						m_rgAmmo[iAmmoIndex] = 0;
+					}
+					else
+					{
+						// pack half of the ammo
+						pWeaponBox->PackAmmo(MAKE_STRING(weapon->pszAmmo1()), m_rgAmmo[iAmmoIndex] / 2);
+						m_rgAmmo[iAmmoIndex] /= 2;
+					}
 				}
-				else
-				{
-					// pack half of the ammo
-					pWeaponBox->PackAmmo(MAKE_STRING(weapon->pszAmmo1()), m_rgAmmo[iAmmoIndex] / 2);
-					m_rgAmmo[iAmmoIndex] /= 2;
-				}
+
+				// Break if not dropall
+				if( !FStrEq( pszItemName, "dropall" ) )
+					break;
+
+				weapon = weapon->m_pNext;
 			}
 
 			return; // we're done, so stop searching with the FOR loop.

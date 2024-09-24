@@ -586,10 +586,12 @@ void SV_CreateClientCommands()
 			player->GiveNamedItem(STRING(iszItem)); },
 		{.Flags = ClientCommandFlag::Cheat});
 
+	g_ClientCommands.Create("dropall", [](CBasePlayer* player, const auto& args) { player->DropPlayerWeapon( "all" ); });
 	g_ClientCommands.Create("drop", [](CBasePlayer* player, const auto& args)
 		{
 			// player is dropping an item.
 			player->DropPlayerWeapon(args.Argument(1)); });
+
 
 	g_ClientCommands.Create("fov", [](CBasePlayer* player, const auto& args)
 		{
