@@ -269,7 +269,7 @@ void CMonsterMaker::MakeMonster()
 	if (!FStringNull(pev->target))
 	{
 		// delay already overloaded for this entity, so can't call SUB_UseTargets()
-		FireTargets(STRING(pev->target), this, this, USE_TOGGLE, 0);
+		FireTargets(STRING(pev->target), entity, this, USE_TOGGLE, 0);
 	}
 }
 
