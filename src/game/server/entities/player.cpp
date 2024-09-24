@@ -4584,20 +4584,20 @@ void CBasePlayer::DropPlayerWeapon( const char* pszItemName, const char* pszItem
 
 	auto ShouldCreateWeaponBox = []( CBasePlayer* pPlayer, const char* pszItemName ) -> bool
 	{
-		if( FStrEq( pszItemName, "all" ) ) {
+		/*if( FStrEq( pszItemName, "all" ) ) {
 			return pPlayer->HasWeapons();
-		}
+		}*/
 		if( FStrEq( pszItemName, "current" ) ) {
 			return ( pPlayer->m_pActiveWeapon != nullptr );
 		}
 		if( std::string( pszItemName ).find( "weapon_" ) == 0 ) {
 			return pPlayer->HasNamedPlayerWeapon( pszItemName );
 		}
-		if( std::string( pszItemName ).find( "ammo_" ) == 0 ) {
+		/*if( std::string( pszItemName ).find( "ammo_" ) == 0 ) {
 			if( int iCountTest = pPlayer->GetAmmoIndex( pszItemName ); iCountTest != -1 ) {
 				return ( pPlayer->m_rgAmmo[ iCountTest ] > 0 );
 			}
-		}
+		}*/
 		return false;
 	};
 
