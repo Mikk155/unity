@@ -1661,7 +1661,7 @@ void CNihilanthHVR::TeleportTouch(CBaseEntity* pOther)
 		if (m_hTouch != nullptr && pEnemy != nullptr)
 			m_hTouch->Touch(pEnemy);
 	}
-	else if( pOther != nullptr && !pOther->ClassNameIs( "worldspawn" ) && !pOther->IsBSPModel() )
+	else if( pOther != nullptr && !pOther->ClassnameIs( "worldspawn" ) && !pOther->IsBSPModel() )
 	{
 		UTIL_Remove( pOther );
 		return;
