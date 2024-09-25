@@ -73,6 +73,7 @@ public:
 	void EndAttack();
 	void Attack();
 	void PrimaryAttack() override;
+	void SecondaryAttack() override;
 	bool ShouldWeaponIdle() override { return true; }
 	void WeaponIdle() override;
 
