@@ -298,6 +298,21 @@ void DLLEXPORT HUD_CreateEntities()
 	GetClientVoiceMgr()->CreateEntities();
 }
 
+// Fograin92: Dynamic muzzle flash light
+void MuzzleFlashLight(float *origin)
+{
+	dlight_t *muzzleFlash;
+	muzzleFlash = gEngfuncs.pEfxAPI->CL_AllocDlight (0);
+	muzzleFlash->origin.x = origin[0];
+	muzzleFlash->origin.y = origin[1];
+	muzzleFlash->origin.z = origin[2];
+	muzzleFlash->radius = 128;
+	muzzleFlash->color.r = 180;
+	muzzleFlash->color.g = 160;
+	muzzleFlash->color.b = 120;
+	muzzleFlash->die = gEngfuncs.GetClientTime() + 0.1;
+}
+
 /**
  *	@brief The entity's studio model description indicated an event was fired during this frame,
  *	handle the event by it's tag ( e.g., muzzleflash, sound )
@@ -312,18 +327,22 @@ void DLLEXPORT HUD_StudioEvent(const mstudioevent_t* event, const cl_entity_t* e
 	case 5001:
 		if (iMuzzleFlash)
 			gEngfuncs.pEfxAPI->R_MuzzleFlash(entity->attachment[0], atoi(event->options));
+			MuzzleFlashLight((float *)&entity->attachment[0]);
 		break;
 	case 5011:
 		if (iMuzzleFlash)
 			gEngfuncs.pEfxAPI->R_MuzzleFlash(entity->attachment[1], atoi(event->options));
+			MuzzleFlashLight((float *)&entity->attachment[1]);
 		break;
 	case 5021:
 		if (iMuzzleFlash)
 			gEngfuncs.pEfxAPI->R_MuzzleFlash(entity->attachment[2], atoi(event->options));
+			MuzzleFlashLight((float *)&entity->attachment[2]);
 		break;
 	case 5031:
 		if (iMuzzleFlash)
 			gEngfuncs.pEfxAPI->R_MuzzleFlash(entity->attachment[3], atoi(event->options));
+			MuzzleFlashLight((float *)&entity->attachment[3]);
 		break;
 	case 5002:
 		gEngfuncs.pEfxAPI->R_SparkEffect(entity->attachment[0], atoi(event->options), -100, 100);
