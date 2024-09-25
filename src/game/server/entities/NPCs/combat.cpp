@@ -119,9 +119,9 @@ void CGib::SpawnHeadGib(CBaseEntity* victim)
 
 		CBasePlayer* player = UTIL_FindClientInPVS(pGib);
 
-		if (RANDOM_LONG(0, 100) <= 5 && player)
+		if (RANDOM_LONG(0, 100) <= 50 && player)
 		{
-			// 5% chance head will be thrown at player's face.
+			// 50% chance head will be thrown at player's face.
 			pGib->pev->velocity = ((player->pev->origin + player->pev->view_ofs) - pGib->pev->origin).Normalize() * 300;
 			pGib->pev->velocity.z += 100;
 		}
