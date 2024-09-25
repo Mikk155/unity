@@ -1215,16 +1215,19 @@ bool CBaseEntity::FVisible(const Vector& vecOrigin)
 
 void CBaseEntity::TraceAttack(CBaseEntity* attacker, float flDamage, Vector vecDir, TraceResult* ptr, int bitsDamageType)
 {
-	Vector vecOrigin = ptr->vecEndPos - vecDir * 4;
-
 	if (0 != pev->takedamage)
 	{
+		if( flDamage > pev->health + GIB_HEALTH_VALUE )
+			flDamage = pev->health + GIB_HEALTH_VALUE;
+
 		AddMultiDamage(attacker, this, flDamage, bitsDamageType);
 
 		int blood = BloodColor();
 
 		if (blood != DONT_BLEED)
 		{
+			Vector vecOrigin = ptr->vecEndPos - vecDir * 4;
+
 			SpawnBlood(vecOrigin, blood, flDamage); // a little surface blood.
 			TraceBleed(flDamage, vecDir, ptr, bitsDamageType);
 		}
@@ -1235,6 +1238,9 @@ void CBaseMonster::TraceAttack(CBaseEntity* attacker, float flDamage, Vector vec
 {
 	if (0 != pev->takedamage)
 	{
+		if( flDamage > pev->health + GIB_HEALTH_VALUE )
+			flDamage = pev->health + GIB_HEALTH_VALUE;
+
 		m_LastHitGroup = ptr->iHitgroup;
 
 		switch (ptr->iHitgroup)
