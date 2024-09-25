@@ -4590,7 +4590,7 @@ void CBasePlayer::DropPlayerWeapon( const char* pszItemName, const char* pszItem
 		if( FStrEq( pszItemName, "current" ) ) {
 			return ( pPlayer->m_pActiveWeapon != nullptr );
 		}
-		if( std::string( pszItemName ).find( "weapon_" ) == 0 ) {
+		if( std::string_view( pszItemName ).find( "weapon_" ) == 0 ) {
 			return pPlayer->HasNamedPlayerWeapon( pszItemName );
 		}
 		/*if( std::string( pszItemName ).find( "ammo_" ) == 0 ) {

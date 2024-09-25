@@ -43,9 +43,9 @@ END_DATAMAP();
 
 bool CStripWeapons :: KeyValue(KeyValueData* pkvd)
 {
-	if(std::string( pkvd->szKeyName ).find( "weapon_" ) == 0
-	 ||  std::string( pkvd->szKeyName ).find( "item_" ) == 0
-	 ||  std::string( pkvd->szKeyName ).find( "ammo_" ) == 0 )
+	if(std::string_view( pkvd->szKeyName ).find( "weapon_" ) == 0
+	 ||  std::string_view( pkvd->szKeyName ).find( "item_" ) == 0
+	 ||  std::string_view( pkvd->szKeyName ).find( "ammo_" ) == 0 )
 	{
 		char temp[256];
 
@@ -111,12 +111,12 @@ void CStripWeapons :: Use( CBaseEntity* pActivator, CBaseEntity* pCaller, USE_TY
 				player->SetHasSuit( false );
 				FireItsTarget( player, i, condition );
 			}
-			else if( std::string( STRING( m_iKey[i] ) ).find( "weapon_" ) == 0 )
+			else if( std::string_view( STRING( m_iKey[i] ) ).find( "weapon_" ) == 0 )
 			{
 				condition = player->RemovePlayerWeapon( player->HasNamedPlayerWeaponPtr( STRING( m_iKey[i] ) ) );
 				FireItsTarget( player, i, condition );
 			}
-			else if( std::string( STRING( m_iKey[i] ) ).find( "ammo_" ) == 0 )
+			else if( std::string_view( STRING( m_iKey[i] ) ).find( "ammo_" ) == 0 )
 			{
 				condition = ( player->GetAmmoCount( STRING( m_iKey[i] ) ) > 0 );
 				player->AdjustAmmoByIndex( player->GetAmmoIndex( STRING( m_iKey[i] ) ), 0 );

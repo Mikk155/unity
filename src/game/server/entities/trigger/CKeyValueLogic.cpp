@@ -107,17 +107,15 @@ void CKeyValueLogic :: Use( CBaseEntity* pActivator, CBaseEntity* pCaller, USE_T
 
 std::string CKeyValueLogic :: GetValue( CBaseEntity* pActivator, CBaseEntity* pCaller )
 {
-    const char* szValue = STRING( m_sValue );
-
     if( !FStringNull( m_sSourceEntity ) )
     {
         if( auto entity = UTIL_FindEntityByTargetname( nullptr, STRING( m_sSourceEntity ), pActivator, pCaller ); entity != nullptr )
         {
-            return entity->GetKeyValue( STRING( m_sSourceKeyName ), szValue );
+            return entity->GetKeyValue( STRING( m_sSourceKeyName ), STRING( m_sValue ) );
         }
     }
 
-    return std::string( szValue );
+    return std::string( STRING( m_sValue ) );
 }
 
 CBaseEntity* CKeyValueLogic :: GetTarget( CBaseEntity* pActivator, CBaseEntity* pCaller )

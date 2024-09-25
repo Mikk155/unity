@@ -608,7 +608,7 @@ bool CBaseEntity::RequiredKeyValue(KeyValueData* pkvd)
 		m_UseValue = atof( pkvd->szValue );
 		return true;
 	}
-	else if( std::string( pkvd->szKeyName ).find( "appearflag_" ) == 0 )
+	else if( std::string_view( pkvd->szKeyName ).find( "appearflag_" ) == 0 )
 	{
 		if( atoi( pkvd->szValue ) != 0 )
 		{
@@ -640,13 +640,13 @@ bool CBaseEntity::RequiredKeyValue(KeyValueData* pkvd)
 		m_sNewActivator = ALLOC_STRING( pkvd->szValue );
 		return true;
 	}
-	else if( std::string( pkvd->szKeyName ).find( "m_iPlayerSelector" ) == 0 )
+	else if( std::string_view( pkvd->szKeyName ).find( "m_iPlayerSelector" ) == 0 )
 	{
 		if( atoi( pkvd->szValue ) > 0 )
 			SetBits( m_iPlayerSelector, atoi( pkvd->szValue ) );
 		return true;
 	}
-	else if( std::string( pkvd->szKeyName ).find( "m_uselos" ) == 0 )
+	else if( FStrEq( pkvd->szKeyName, "m_uselos" ) )
 	{
 		m_uselos = atoi( pkvd->szValue );
 		return true;

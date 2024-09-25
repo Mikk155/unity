@@ -60,19 +60,19 @@ void CGamePrecache :: PrecacheToArray( string_t mode, const char* item )
 
 bool CGamePrecache :: KeyValue( KeyValueData* pkvd )
 {
-	if( std::string( pkvd->szKeyName ).find( "model" ) == 0 )
+	if( std::string_view( pkvd->szKeyName ).find( "model" ) == 0 )
 	{
         PrecacheToArray( MAKE_STRING( "model" ), pkvd->szValue );
 	}
-	else if( std::string( pkvd->szKeyName ).find( "sound" ) == 0 )
+	else if( std::string_view( pkvd->szKeyName ).find( "sound" ) == 0 )
 	{
         PrecacheToArray( MAKE_STRING( "sound" ), pkvd->szValue );
 	}
-	else if( std::string( pkvd->szKeyName ).find( "generic" ) == 0 )
+	else if( std::string_view( pkvd->szKeyName ).find( "generic" ) == 0 )
 	{
         PrecacheToArray( MAKE_STRING( "generic" ), pkvd->szValue );
 	}
-	else if( std::string( pkvd->szKeyName ).find( "other" ) == 0 )
+	else if( std::string_view( pkvd->szKeyName ).find( "other" ) == 0 )
 	{
         PrecacheToArray( MAKE_STRING( "other" ), pkvd->szValue );
 	}
