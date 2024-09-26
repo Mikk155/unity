@@ -48,6 +48,19 @@
             "description": "worldspawn::MaxRange::description"
         },
 
+        "minhullsize":
+        {
+            "variable": "vector",
+            "value": "-4096 -4096 -4096",
+            "title": "minhullsize"
+        },
+        "maxhullsize":
+        {
+            "variable": "vector",
+            "value": "4096 4096 4096",
+            "title": "maxhullsize"
+        },
+
         "chaptertitle":
         {
             "variable": "string",

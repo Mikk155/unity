@@ -388,6 +388,11 @@ void CWorld::Precache()
 	else
 		CVAR_SET_FLOAT("sv_zmax", 4096);
 
+	if( !m_HasCustomHullMin )
+		m_CustomHullMin = Vector( -4096, -4096, -4096 );
+	if( !m_HasCustomHullMax )
+		m_CustomHullMax = Vector( 4096, 4096, 4096 );
+
 	if (!FStringNull(pev->netname))
 	{
 		Logger->debug("Chapter title: {}", GetNetname());

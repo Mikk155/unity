@@ -882,17 +882,17 @@ bool CBaseEntity::IsLockedByMaster()
 bool CBaseEntity::IsInWorld()
 {
 	// position
-	if (pev->origin.x >= WORLD_BOUNDS_LIMIT)
+	if (pev->origin.x >= CBaseEntity::World->m_CustomHullMax.x)
 		return false;
-	if (pev->origin.y >= WORLD_BOUNDS_LIMIT)
+	if (pev->origin.y >= CBaseEntity::World->m_CustomHullMax.y)
 		return false;
-	if (pev->origin.z >= WORLD_BOUNDS_LIMIT)
+	if (pev->origin.z >= CBaseEntity::World->m_CustomHullMax.z)
 		return false;
-	if (pev->origin.x <= -WORLD_BOUNDS_LIMIT)
+	if (pev->origin.x <= CBaseEntity::World->m_CustomHullMin.x)
 		return false;
-	if (pev->origin.y <= -WORLD_BOUNDS_LIMIT)
+	if (pev->origin.y <= CBaseEntity::World->m_CustomHullMin.y)
 		return false;
-	if (pev->origin.z <= -WORLD_BOUNDS_LIMIT)
+	if (pev->origin.z <= CBaseEntity::World->m_CustomHullMin.z)
 		return false;
 	// speed
 	if (pev->velocity.x >= 2000)

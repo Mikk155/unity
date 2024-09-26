@@ -106,8 +106,6 @@ enum PlayerSelector
 // people gib if their health is <= this at the time of death
 #define GIB_HEALTH_VALUE -30
 
-#define WORLD_BOUNDS_LIMIT 4096
-
 #define bits_CAP_DUCK (1 << 0)		 // crouch
 #define bits_CAP_JUMP (1 << 1)		 // jump/leap
 #define bits_CAP_STRAFE (1 << 2)	 // strafe ( walk/run sideways)
