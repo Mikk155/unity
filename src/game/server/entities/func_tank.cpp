@@ -1160,7 +1160,8 @@ void CFuncTankMortar::Fire(const Vector& barrelEnd, const Vector& forward, CBase
 
 			TankTrace(barrelEnd, forward, gTankSpread[m_spread], tr);
 
-			ExplosionCreate(tr.vecEndPos, pev->angles, ( m_pController != nullptr ? m_pController : this ), pev->impulse, true);
+			auto pInflictor = ( m_pController != nullptr ? static_cast<CBaseEntity*>( m_pController ) : static_cast<CBaseEntity*>( this ) );
+			ExplosionCreate(tr.vecEndPos, pev->angles, pInflictor, pev->impulse, true);
 
 			CFuncTank::Fire(barrelEnd, forward, this);
 		}
