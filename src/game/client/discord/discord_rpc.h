@@ -47,7 +47,7 @@ typedef struct DiscordRichPresence {
     const char* largeImageText; /* max 128 bytes */
     const char* smallImageKey;  /* max 32 bytes */
     const char* smallImageText; /* max 128 bytes */
-    const char *button1_label, *button1_url; /* max 128 bytes */
+    const char *button1_label = "Download", *button1_url = "https://github.com/Mikk155/unity"; /* max 128 bytes */
     const char *button2_label, *button2_url; /* max 128 bytes */
     const char* partyId;        /* max 128 bytes */
     int partySize;

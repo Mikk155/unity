@@ -45,7 +45,7 @@ void CDiscord :: RPCStartUp()
 	memset(&discordPresence, 0, sizeof(discordPresence));
 
 	discordPresence.startTimestamp = startTime;
-	discordPresence.largeImageKey = m_szDefaultLogo;
+	discordPresence.largeImageKey = m_sLogo;
 	Discord_UpdatePresence(&discordPresence);
 }
 
@@ -53,13 +53,24 @@ void CDiscord :: RPCStateUpdate()
 {
 	if( !gEngfuncs.GetEntityByIndex(0) || gEngfuncs.GetEntityByIndex(0) == nullptr )
 	{
-		g_Discord.m_szHeader = "In main menu";
+		m_sHeader = discordPresence.details = "In main menu";
+		discordPresence.details = m_sHeader = "";
+	}
+	else if( m_sHeader && !FStrEq( m_sHeader, discordPresence.details ) )
+	{
+		discordPresence.details = m_sHeader;
 	}
 
-	discordPresence.state = g_Discord.m_szDescription;
-	discordPresence.details = g_Discord.m_szHeader;
-	discordPresence.button1_label = g_Discord.button1_label;
-	discordPresence.button1_url = g_Discord.button1_url;
+	if( m_sLogo && !FStrEq( m_sLogo, discordPresence.largeImageKey ) )
+	{
+		discordPresence.largeImageKey = m_sLogo;
+	}
+
+	if( m_sDescription && !FStrEq( m_sDescription, discordPresence.state ) )
+	{
+		discordPresence.state = m_sDescription;
+	}
+
 	Discord_UpdatePresence(&discordPresence);
 }
 

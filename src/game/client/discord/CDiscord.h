@@ -25,15 +25,14 @@
  */
 class CDiscord final
 {
-public:
-    void RPCStartUp();
-    void RPCStateUpdate();
-    void RPCShutDown();
-    const char* m_szDefaultLogo = "logo";
-    const char* m_szHeader = "Header";
-    const char* m_szDescription = "Just started playing.";
-    const char* button1_label = "Download";
-    const char* button1_url = "https://github.com/Mikk155/unity";
+    public:
+        void RPCStartUp();
+        void RPCStateUpdate();
+        void RPCShutDown();
+
+        const char* m_sLogo = "logo";
+        const char* m_sHeader = "In main menu";
+        const char* m_sDescription = "Just started playing.";
 };
 
 inline CDiscord g_Discord;
