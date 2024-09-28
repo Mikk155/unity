@@ -881,34 +881,12 @@ bool CBaseEntity::IsLockedByMaster()
 
 bool CBaseEntity::IsInWorld()
 {
-	// position
-	if (pev->origin.x >= CBaseEntity::World->m_CustomHullMax.x)
-		return false;
-	if (pev->origin.y >= CBaseEntity::World->m_CustomHullMax.y)
-		return false;
-	if (pev->origin.z >= CBaseEntity::World->m_CustomHullMax.z)
-		return false;
-	if (pev->origin.x <= CBaseEntity::World->m_CustomHullMin.x)
-		return false;
-	if (pev->origin.y <= CBaseEntity::World->m_CustomHullMin.y)
-		return false;
-	if (pev->origin.z <= CBaseEntity::World->m_CustomHullMin.z)
-		return false;
-	// speed
-	if (pev->velocity.x >= 2000)
-		return false;
-	if (pev->velocity.y >= 2000)
-		return false;
-	if (pev->velocity.z >= 2000)
-		return false;
-	if (pev->velocity.x <= -2000)
-		return false;
-	if (pev->velocity.y <= -2000)
-		return false;
-	if (pev->velocity.z <= -2000)
-		return false;
-
-	return true;
+	return
+	!( pev->origin.x >= CBaseEntity::World->m_CustomHullMax.x || pev->origin.y >= CBaseEntity::World->m_CustomHullMax.y
+	|| pev->origin.z >= CBaseEntity::World->m_CustomHullMax.z || pev->origin.x <= CBaseEntity::World->m_CustomHullMin.x
+	|| pev->origin.y <= CBaseEntity::World->m_CustomHullMin.y || pev->origin.z <= CBaseEntity::World->m_CustomHullMin.z
+	|| pev->velocity.x >= 2000  || pev->velocity.y >= 2000  || pev->velocity.z >= 2000
+	|| pev->velocity.x <= -2000 || pev->velocity.y <= -2000 || pev->velocity.z <= -2000 );
 }
 
 bool CBaseEntity::ShouldToggle(USE_TYPE useType, bool currentState)
