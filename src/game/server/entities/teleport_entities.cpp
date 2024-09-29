@@ -122,12 +122,12 @@ void CTriggerTeleport::TeleportTouch(CBaseEntity* pOther)
 	Vector VecVelocity = pOther->pev->velocity;
 
 	UTIL_TeleportToTarget(pOther, target->pev->origin,
-		( FBitSet( pev->spawnflags & SF_TELEPORT_KEEP_ANGLES ) ? pOther->pev->angles : target->pev->angles )
+		( FBitSet( pev->spawnflags, SF_TELEPORT_KEEP_ANGLES ) ? pOther->pev->angles : target->pev->angles )
 	);
 
-	if( FBitSet( pev->spawnflags & SF_TELEPORT_KEEP_VELOCITY ) )
+	if( FBitSet( pev->spawnflags, SF_TELEPORT_KEEP_VELOCITY ) )
 	{
-		pOther->pev->velocity = pOther->pev->basevelocity = VecVelocity;
+		pOther->pev->velocity = VecVelocity;
 	}
 
 	if (!FStringNull(m_FireOnTeleportTarget))
