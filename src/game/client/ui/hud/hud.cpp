@@ -182,6 +182,17 @@ void CHud::VidInit()
 	m_hsprLogo = 0;
 	m_hsprCursor = 0;
 
+	/*
+	if( m_Titles.empty() )
+	{
+		if( auto titles = g_JSON.LoadJSONFile( "cfg/titles.json" ); titles.has_value() )
+		{
+			m_Titles = titles.value();
+			Con_Printf( fmt::format( "{}\n", m_Titles.dump(5) ).c_str() );
+		}
+	}
+	*/
+
 	// we need to load the hud.json, and all sprites within
 	m_Sprites.clear();
 

@@ -438,6 +438,18 @@ bool CHudMessage::Draw(float fTime)
 	return true;
 }
 
+std::string CHudMessage::GetCustomTitle(const char* pName)
+{
+	/* -TODO
+		- Check custom title before m_Titles
+		- Get steam's language to read the proper string, if not exist then fallback "english"
+	*/
+	if( gHUD.m_Titles.contains( pName ) )
+	{
+		return gHUD.m_Titles[ pName ].value( "english", fmt::format( "ERROR CAN NOT FIND LABEL \"{}\" IN MESSAGE \"{}\"\n", "english", pName ) );
+	}
+	return fmt::format( "ERROR CAN NOT FIND MESSAGE \"{}\"\n", pName );
+}
 
 void CHudMessage::MessageAdd(const char* pName, float time)
 {
@@ -453,7 +465,10 @@ void CHudMessage::MessageAdd(const char* pName, float time)
 	if (!tempMessage)
 	{
 		g_pCustomMessage.effect = 2;
-		g_pCustomMessage.r1 = g_pCustomMessage.g1 = g_pCustomMessage.b1 = g_pCustomMessage.a1 = 100;
+		g_pCustomMessage.r1 = 255;
+		g_pCustomMessage.g1 = 0;
+		g_pCustomMessage.b1 = 0;
+		g_pCustomMessage.a1 = 100;
 		g_pCustomMessage.r2 = 240;
 		g_pCustomMessage.g2 = 110;
 		g_pCustomMessage.b2 = 0;
@@ -464,8 +479,8 @@ void CHudMessage::MessageAdd(const char* pName, float time)
 		g_pCustomMessage.fadeout = 1.5;
 		g_pCustomMessage.fxtime = 0.25;
 		g_pCustomMessage.holdtime = 5;
-		g_pCustomMessage.pName = g_pCustomName;
-		strcpy(g_pCustomText, pName);
+		g_pCustomMessage.pName = pName;
+		strcpy(g_pCustomText, ( pName[0] == '#' ? GetCustomTitle(pName + 1).c_str() : pName ) );
 		g_pCustomMessage.pMessage = g_pCustomText;
 
 		tempMessage = &g_pCustomMessage;

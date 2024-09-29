@@ -454,6 +454,8 @@ public:
 	void MessageScanNextChar();
 	void Reset() override;
 
+	std::string GetCustomTitle(const char* pName);
+
 private:
 	cvar_t* m_CustomMessageText{};
 	cvar_t* m_CustomMessageX{};
@@ -748,6 +750,10 @@ public:
 	RGB24 m_HudItemColor = RGB_HUD_COLOR;
 
 	RGB24 m_CrosshairColor = RGB_CROSSHAIR_COLOR;
+
+	json m_Titles;					// Client-side titles
+	json m_TitlesCustom;			// Client-side custom titles
+	std::string m_TitlesCustomPath;	// Client-Side custom titles path
 
 	int m_iFontHeight;
 	int DrawHudNumber(int x, int y, int iFlags, int iNumber, const RGB24& color);
