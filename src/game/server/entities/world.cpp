@@ -439,6 +439,11 @@ void CWorld::Precache()
 	{
 		g_Skill.SetValue( "freeroam"sv, m_freeRoam );
 	}
+
+	if( !FStringNull( m_sCustomTitles ) )
+	{
+		UTIL_PrecacheGenericDirect( fmt::format( "cfg/maps/{}.json", STRING( m_sCustomTitles ) ).c_str() );
+	}
 }
 
 bool CWorld::KeyValue(KeyValueData* pkvd)
@@ -505,6 +510,11 @@ bool CWorld::KeyValue(KeyValueData* pkvd)
 	else if( FStrEq( pkvd->szKeyName, "freeroam" ) )
 	{
 		m_freeRoam = atoi( pkvd->szValue );
+		return true;
+	}
+	else if( FStrEq( pkvd->szKeyName, "custom_titles" ) )
+	{
+		m_sCustomTitles = ALLOC_STRING( pkvd->szValue );
 		return true;
 	}
 

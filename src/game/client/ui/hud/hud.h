@@ -442,6 +442,7 @@ public:
 	bool Draw(float flTime) override;
 	void MsgFunc_HudText(const char* pszName, BufferReader& reader);
 	void MsgFunc_GameTitle(const char* pszName, BufferReader& reader);
+	void MsgFunc_CustomTitles(const char* pszName, BufferReader& reader);
 
 	float FadeBlend(float fadein, float fadeout, float hold, float localTime);
 	int XPosition(float x, int width, int lineWidth);
@@ -454,7 +455,11 @@ public:
 	void MessageScanNextChar();
 	void Reset() override;
 
-	std::string GetCustomTitle(const char* pName);
+	json m_Titles;								// Client-side titles
+	json m_TitlesCustom;						// Client-side custom titles
+	const char*	m_TitlesCustomPath = nullptr;	// Client-Side custom titles path
+	// Client-Side get custom title from titles.json
+	client_textmessage_t* GetCustomTitle(const char* pName, client_textmessage_t* tempMessage = nullptr);
 
 private:
 	cvar_t* m_CustomMessageText{};
@@ -750,10 +755,6 @@ public:
 	RGB24 m_HudItemColor = RGB_HUD_COLOR;
 
 	RGB24 m_CrosshairColor = RGB_CROSSHAIR_COLOR;
-
-	json m_Titles;					// Client-side titles
-	json m_TitlesCustom;			// Client-side custom titles
-	std::string m_TitlesCustomPath;	// Client-Side custom titles path
 
 	int m_iFontHeight;
 	int DrawHudNumber(int x, int y, int iFlags, int iNumber, const RGB24& color);

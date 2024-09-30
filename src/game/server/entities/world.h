@@ -37,6 +37,8 @@ public:
 	void Precache() override;
 	bool KeyValue(KeyValueData* pkvd) override;
 
+	string_t m_sCustomTitles = string_t::Null;
+
 private:
 	int m_freeRoam = -1;
 };

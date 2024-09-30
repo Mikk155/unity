@@ -5203,6 +5203,18 @@ CBasePlayer* FindPlayerByName(const char* name)
 	return nullptr;
 }
 
+void CBasePlayer::SendCustomTitles()
+{
+	auto pWorld = static_cast<CWorld*>( CBaseEntity::World );
+
+	if( pWorld != nullptr && !FStringNull( pWorld->m_sCustomTitles ) )
+	{
+		MESSAGE_BEGIN( MSG_BROADCAST, gmsgCustomTitles, nullptr, this );
+			WRITE_STRING( STRING( pWorld->m_sCustomTitles ) );
+		MESSAGE_END();
+	}
+}
+
 class CDeadHEV : public CBaseMonster
 {
 public:

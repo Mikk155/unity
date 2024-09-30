@@ -378,6 +378,7 @@ void ServerLibrary::PlayerActivating(CBasePlayer* player)
 	}
 
 	SendFogMessage(player);
+	player->SendCustomTitles();
 }
 
 void ServerLibrary::AddGameSystems()

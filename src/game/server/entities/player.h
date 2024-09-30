@@ -647,6 +647,9 @@ public:
 	void SendScoreInfoAll();
 
 	void ToggleCheat(Cheat cheat);
+
+	// Update and send a custom titles path
+	void SendCustomTitles();
 };
 
 inline void CBasePlayer::SetWeaponBit(int id)

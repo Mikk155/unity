@@ -48,6 +48,19 @@ bool CHudMessage::Init()
 
 bool CHudMessage::VidInit()
 {
+	// Clear out, Read once on real time
+	m_TitlesCustom.clear();
+	m_TitlesCustomPath = nullptr;
+
+	// Default titles
+	if( m_Titles.empty() )
+	{
+		if( auto titles = g_JSON.LoadJSONFile( "cfg/titles.json" ); titles.has_value() )
+		{
+			m_Titles = titles.value();
+		}
+	}
+
 	m_HUD_title_halflife.Left = gHUD.GetSpriteIndex("title_half");
 	m_HUD_title_halflife.Right = gHUD.GetSpriteIndex("title_life");
 
@@ -438,17 +451,82 @@ bool CHudMessage::Draw(float fTime)
 	return true;
 }
 
-std::string CHudMessage::GetCustomTitle(const char* pName)
+void CHudMessage::MsgFunc_CustomTitles(const char* pszName, BufferReader& reader)
 {
-	/* -TODO
-		- Check custom title before m_Titles
-		- Get steam's language to read the proper string, if not exist then fallback "english"
-	*/
-	if( gHUD.m_Titles.contains( pName ) )
+	m_TitlesCustomPath = reader.ReadString();
+}
+
+client_textmessage_t* CHudMessage::GetCustomTitle(const char* pName, client_textmessage_t* tempMessage)
+{
+	std::string CustomTitle;
+
+	if( m_TitlesCustomPath != nullptr )
 	{
-		return gHUD.m_Titles[ pName ].value( "english", fmt::format( "ERROR CAN NOT FIND LABEL \"{}\" IN MESSAGE \"{}\"\n", "english", pName ) );
+		auto pPath = fmt::format( "cfg/maps/{}.json", m_TitlesCustomPath ).c_str();
+
+		if( m_TitlesCustom.empty() )
+		{
+			if( !g_pFileSystem->FileExists( pPath ) )
+			{
+				Con_Printf( "Failed to open \"%s\"", pPath );
+				m_TitlesCustom.clear();
+			}
+			else if( auto titles = g_JSON.LoadJSONFile( pPath ); titles.has_value() )
+			{
+				m_TitlesCustom = titles.value();
+			}
+
+			m_TitlesCustomPath = nullptr;
+		}
 	}
-	return fmt::format( "ERROR CAN NOT FIND MESSAGE \"{}\"\n", pName );
+
+	auto m_GetLocalisedMessage = []( json title ) -> std::string
+	{
+		auto clLanguage = "english";
+
+		if( title.contains( clLanguage ) )
+			return title[ clLanguage ];
+		return title.value( "english", "" );
+	};
+
+	auto TitleVars = m_Titles[ pName ];
+
+	if( !m_TitlesCustom.empty() && m_TitlesCustom.contains( pName ) )
+	{
+		CustomTitle = m_GetLocalisedMessage( m_TitlesCustom[ pName ] );
+		TitleVars = m_TitlesCustom[ pName ];
+	}
+
+	if( m_Titles.contains( pName ) && CustomTitle.empty() )
+	{
+		CustomTitle = m_GetLocalisedMessage( m_Titles[ pName ] );
+		TitleVars = m_Titles[ pName ];
+	}
+
+	if( CustomTitle.empty() )
+		CustomTitle = pName;
+
+	g_pCustomMessage.effect = TitleVars.value( "effect", ( tempMessage ? tempMessage->effect : 2 ) );
+	g_pCustomMessage.r1 = TitleVars.value( "r1", ( tempMessage ? tempMessage->r1 : 255 ) );
+	g_pCustomMessage.g1 = TitleVars.value( "g1", ( tempMessage ? tempMessage->g1 : 0 ) );
+	g_pCustomMessage.b1 = TitleVars.value( "b1", ( tempMessage ? tempMessage->b1 : 0 ) );
+	g_pCustomMessage.a1 = TitleVars.value( "a1", ( tempMessage ? tempMessage->a1 : 100 ) );
+	g_pCustomMessage.r2 = TitleVars.value( "r2", ( tempMessage ? tempMessage->r2 : 240 ) );
+	g_pCustomMessage.g2 = TitleVars.value( "g2", ( tempMessage ? tempMessage->g2 : 110 ) );
+	g_pCustomMessage.b2 = TitleVars.value( "b2", ( tempMessage ? tempMessage->b2 : 0 ) );
+	g_pCustomMessage.a2 = TitleVars.value( "a2", ( tempMessage ? tempMessage->a2 : 0 ) );
+	g_pCustomMessage.x = TitleVars.value( "x", ( tempMessage ? tempMessage->x : -1 ) );
+	g_pCustomMessage.y = TitleVars.value( "y", ( tempMessage ? tempMessage->y : 0.7 ) );
+	g_pCustomMessage.fadein = TitleVars.value( "fadein", ( tempMessage ? tempMessage->fadein : 0.01 ) );
+	g_pCustomMessage.fadeout = TitleVars.value( "fadeout", ( tempMessage ? tempMessage->fadeout : 1.5 ) );
+	g_pCustomMessage.fxtime = TitleVars.value( "fxtime", ( tempMessage ? tempMessage->fxtime : 0.25 ) );
+	g_pCustomMessage.holdtime = TitleVars.value( "holdtime", ( tempMessage ? tempMessage->holdtime : 5.0 ) );
+
+	g_pCustomMessage.pName = pName;
+	strcpy(g_pCustomText, CustomTitle.c_str() );
+	g_pCustomMessage.pMessage = g_pCustomText;
+
+	return &g_pCustomMessage;
 }
 
 void CHudMessage::MessageAdd(const char* pName, float time)
@@ -480,11 +558,13 @@ void CHudMessage::MessageAdd(const char* pName, float time)
 		g_pCustomMessage.fxtime = 0.25;
 		g_pCustomMessage.holdtime = 5;
 		g_pCustomMessage.pName = pName;
-		strcpy(g_pCustomText, ( pName[0] == '#' ? GetCustomTitle(pName + 1).c_str() : pName ) );
+		strcpy(g_pCustomText, pName );
 		g_pCustomMessage.pMessage = g_pCustomText;
 
 		tempMessage = &g_pCustomMessage;
 	}
+
+	// client_textmessage_t* tempMessage = TextMessageGet( ( pName[0] == '#' ?pName + 1 : pName ) );
 
 	for (int i = 0; i < maxHUDMessages; i++)
 	{

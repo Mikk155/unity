@@ -55,6 +55,7 @@ cvar_t* cl_yawspeed;
 cvar_t* cl_pitchspeed;
 cvar_t* cl_anglespeedkey;
 cvar_t* cl_vsmoothing;
+cvar_t* cl_language;
 /*
 ===============================================================================
 
@@ -908,6 +909,8 @@ void InitInput()
 	m_yaw = gEngfuncs.pfnRegisterVariable("m_yaw", "0.022", FCVAR_ARCHIVE);
 	m_forward = gEngfuncs.pfnRegisterVariable("m_forward", "1", FCVAR_ARCHIVE);
 	m_side = gEngfuncs.pfnRegisterVariable("m_side", "0.8", FCVAR_ARCHIVE);
+
+	cl_language = gEngfuncs.pfnRegisterVariable("cl_language", "english", FCVAR_ARCHIVE);
 
 	// Initialize third person camera controls.
 	CAM_Init();
