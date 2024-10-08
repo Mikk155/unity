@@ -4884,6 +4884,10 @@
 {
 "english": "Scientist Zombie"
 },
+"monster_zombie::allow_headcrab":
+{
+"english": "Headcrab can jump"
+},
 "monstermaker::classname":
 {
 "english": "Monster Maker"

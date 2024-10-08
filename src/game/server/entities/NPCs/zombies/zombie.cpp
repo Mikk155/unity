@@ -18,11 +18,16 @@
 #include "cbase.h"
 #include "zombie.h"
 
+BEGIN_DATAMAP(CZombie)
+	DEFINE_FIELD(m_iAllowHeadcrab, FIELD_INTEGER),
+	DEFINE_FIELD(m_flDamageTaken, FIELD_FLOAT),
+END_DATAMAP();
+
 LINK_ENTITY_TO_CLASS(monster_zombie, CZombie);
 
 void CZombie::OnCreate()
 {
-	CBaseMonster::OnCreate();
+	BaseClass::OnCreate();
 
 	pev->health = GetSkillFloat("zombie_health"sv);
 	pev->model = MAKE_STRING("models/zombie.mdl");
@@ -59,7 +64,7 @@ bool CZombie::TakeDamage(CBaseEntity* inflictor, CBaseEntity* attacker, float fl
 	// HACK HACK -- until we fix this.
 	if (IsAlive())
 		PainSound();
-	return CBaseMonster::TakeDamage(inflictor, attacker, flDamage, bitsDamageType);
+	return BaseClass::TakeDamage(inflictor, attacker, flDamage, bitsDamageType);
 }
 
 void CZombie::PainSound()
@@ -142,7 +147,7 @@ void CZombie::HandleAnimEvent(MonsterEvent_t* pEvent)
 		break;
 
 	default:
-		CBaseMonster::HandleAnimEvent(pEvent);
+		BaseClass::HandleAnimEvent(pEvent);
 		break;
 	}
 }
@@ -156,7 +161,6 @@ void CZombie::Spawn()
 
 	pev->solid = SOLID_SLIDEBOX;
 	pev->movetype = MOVETYPE_STEP;
-	m_bloodColor = BLOOD_COLOR_GREEN;
 	pev->view_ofs = VEC_VIEW; // position of the eyes relative to monster's origin.
 	m_flFieldOfView = 0.5;	  // indicates the width of this monster's forward view cone ( as a dotproduct result )
 	m_MonsterState = MONSTERSTATE_NONE;
@@ -167,6 +171,8 @@ void CZombie::Spawn()
 
 void CZombie::Precache()
 {
+	UTIL_PrecacheOther( "monster_headcrab" );
+
 	PrecacheModel(STRING(pev->model));
 
 	PRECACHE_SOUND_ARRAY(pAttackHitSounds);
@@ -179,7 +185,7 @@ void CZombie::Precache()
 
 int CZombie::IgnoreConditions()
 {
-	int iIgnore = CBaseMonster::IgnoreConditions();
+	int iIgnore = BaseClass::IgnoreConditions();
 
 	if (m_Activity == ACT_MELEE_ATTACK1)
 	{
@@ -199,4 +205,43 @@ int CZombie::IgnoreConditions()
 	}
 
 	return iIgnore;
+}
+
+void CZombie::TraceAttack(CBaseEntity* pAttacker, float flDamage, Vector vecDir, TraceResult* ptr, int bitsDamageType)
+{
+	if( m_iAllowHeadcrab == 1 && ptr->iHitgroup == 1 ) // check for headcrab shot
+	{
+		m_flDamageTaken += flDamage; // Store received damage
+	}
+
+	m_bloodColor = ( ptr->iHitgroup == 1 ? BLOOD_COLOR_GREEN : BLOOD_COLOR_RED ); // If headshot drop green blood
+
+	BaseClass::TraceAttack(pAttacker, flDamage, vecDir, ptr, bitsDamageType);
+}
+
+void CZombie::Killed(CBaseEntity* pAttacker, int iGib)
+{
+	// Check if the stored received damage is less than a headcrab's HP
+	if( m_iAllowHeadcrab == 1 && m_flDamageTaken < GetSkillFloat("headcrab_health"sv) )
+	{
+		SetBodygroup( 1, 1 );
+
+		CBaseEntity* pEntity = Create( "monster_headcrab", pev->origin + Vector( 0,0,72 ), pev->angles, this );
+
+		pEntity->pev->health = GetSkillFloat("headcrab_health"sv) - m_flDamageTaken;
+	}
+	BaseClass::Killed(pAttacker, iGib);
+}
+
+bool CZombie::KeyValue(KeyValueData* pkvd)
+{
+	if( FStrEq( pkvd->szKeyName, "allow_headcrab" ) )
+	{
+		m_iAllowHeadcrab = atoi( pkvd->szValue );
+	}
+	else
+	{
+		return BaseClass::KeyValue(pkvd);
+	}
+	return true;
 }

@@ -2,6 +2,7 @@
 	"$schema": "../schema.json",
     "Class": "Point",
     "base": [
+        "BaseZombie",
         "Monster",
         "Target",
         "RenderFields",
