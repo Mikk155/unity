@@ -1,48 +1,93 @@
+// I don't really know JavaScript.
+// Feel free to modify, optimize and improve any of this.
 
+// Read a string and skip single-line commentary before parsing as a json object
+function jsonc( obj ) { return JSON.parse( obj.split( '\n' ).filter( line => !line.trim().startsWith( '//' ) ).join( '\n' ) ); }
 
 document.addEventListener( 'DOMContentLoaded', (event) =>
 {
-    fetch('entities.html').then( response => response.text() ).then( content => {
-        document.getElementById( 'entityguide-index-list' ).innerHTML = content;
-
-    } ).catch( error => console.error( 'Couldn\'t load entities from entityguide/entities.html', error ) );
-
-    fetch('changelog.html').then( response => response.text() ).then( content => {
-        document.getElementById( 'changelog-container' ).innerHTML = content;
-
-    } ).catch( error => console.error( 'Couldn\'t load changelog from changelog.html', error ) );
-
-    fetch('credits.html').then( response => response.text() ).then( content => {
-        document.getElementById( 'credits-container' ).innerHTML = content;
-
-    } ).catch( error => console.error( 'Couldn\'t load credits from credits.html', error ) );
+    // Print out a brute text of the credits file in within this window
+    if( document.getElementById( 'credits-container' ) )
+    {
+        fetch('credits.html')
+        .then( response => response.text() )
+        .then( content =>
+        {
+            document.getElementById( 'credits-container' ).innerHTML = content;
+        }
+        ).catch( error => console.error( 'Couldn\'t load credits from credits.html', error ) );
+    }
 
     // Link references for automatically adding href to these words
     let references = {};
-    fetch( 'src/references.json' ).then( response => response.json() ).then( data => {
-        references = data;
-
-    } ).catch( error => console.error( 'Couldn\'t load links from references.json', error ) );
+    fetch( 'src/references.json' )
+    .then( response => response.text() )
+    .then( text =>
+    {
+        references = jsonc( text );
+    }
+    ).catch( error => console.error( 'Couldn\'t load links from references.json', error ) );
 
     // Translations goes in sentences.json
     let translations = {};
-    fetch( 'src/sentences.json' ).then( response => response.json() ).then( data =>
+    fetch( 'src/sentences.json' )
+    .then( response => response.text() )
+    .then(text =>
     {
-        translations = data;
+        translations = jsonc( text );
 
-        // Apply translations on load
-        applyTranslations( '' );
+        if( document.getElementById( 'languageTable' ) )
+        {
+            add_language_buttons();
+        }
 
-    } ).catch( error => console.error( 'Couldn\'t load translations from sentences.json', error ) );
+        apply_translation();
+    }
+    ).catch( error => console.error( 'Couldn\'t load translations from sentences.json', error ) );
 
-    function applyTranslations( language )
+    // Add supported languages to the change language menu
+    function add_language_buttons()
     {
+        const languageTable = document.getElementById( 'languageTable' );
+
+        const languages = translations[ "languages" ];
+
+        languages.forEach( language => {
+            const newRow = document.createElement('tr');
+            const newCell = document.createElement('td');
+
+            const button = document.createElement('button');
+            button.textContent = language;
+
+            button.setAttribute('onclick', `changeLanguage('${language}')`);
+
+            newCell.appendChild(button);
+            newRow.appendChild(newCell);
+
+            languageTable.appendChild(newRow);
+        });
+    }
+
+    function apply_translation( language )
+    {
+        // Get saved language
+        if( language == '' )
+        {
+            language = localStorage.getItem( 'language' ) ? localStorage.getItem( 'language' ) : '';
+        }
+
+        // If first time get operative system's language
         if( !language || language == '' )
         {
-            // Get local language
-            const userLang = navigator.language || navigator.userLanguage;
-            // Check if the language has been already choosen or the local language exists
-            language = localStorage.getItem( 'language' ) ? localStorage.getItem( 'language' ) : translations[ userLang ] ? userLang : 'english';
+            const NavLang = navigator.language || navigator.userLanguage;
+            const userLang = new Intl.DisplayNames( [ 'en' ], { type: 'language' } ).of( NavLang.split('-')[0] ).toLowerCase();
+            language = userLang ? userLang : '';
+        }
+
+        // If not supported use english
+        if( !translations[ "languages" ][ language ] || language == '' )
+        {
+            language = 'english'; 
         }
 
         // Save language for using on different html
@@ -52,11 +97,13 @@ document.addEventListener( 'DOMContentLoaded', (event) =>
         document.querySelectorAll( "[pkvd]" ).forEach( element =>
         {
             const key = element.getAttribute( "pkvd" );
-            const value = translations[ key ][ language ];
+            const value = translations[ key ] && translations[ key ][ language ] ? translations[ key ][ language ] : '';
 
-            // innerHTML seems to add elements. not sure the difference.
-            // element.innerText = value && value != '' ? value : 'Trans#' + key;
-            element.innerHTML = value && value != '' ? value : 'Trans#' + key;
+            // innerHTML seems to add elements. not sure the difference with innerText
+            element.innerHTML = value != '' ? value : 'Trans#' + key;
+
+            if( value == '' )
+                console.error( 'Missing message for label "' + key + '" in language "' + language + '"' );
         } );
 
         // Fill up with links if referenced
@@ -72,21 +119,29 @@ document.addEventListener( 'DOMContentLoaded', (event) =>
     {
         openElement( 'EntityGuideEntity' );
     
-        fetch( 'entityguide/entities/table/' + entity + '.html' ).then( response => response.text() ).then( content => {
+        fetch( 'entityguide/entities/table/' + entity + '.html' )
+        .then( response => response.text() )
+        .then( content =>
+        {
             document.getElementById( 'entityguide-entity-list' ).innerHTML = content;
-            applyTranslations('');
-        } ).catch( error => console.error( 'Couldn\'t load entity from entityguide/entities/table/' + entity + '.html', error ) );
+            apply_translation();
+        }
+        ).catch( error => console.error( 'Couldn\'t load entity from entityguide/entities/table/' + entity + '.html', error ) );
     
-        fetch( 'entityguide/entities/' + entity + '.html' ).then( response => response.text() ).then( content => {
+        fetch( 'entityguide/entities/' + entity + '.html' )
+        .then( response => response.text() )
+        .then( content =>
+        {
             document.getElementById( 'entityguide-extra' ).innerHTML = content;
-            applyTranslations('');
-        } ).catch( error => console.error( 'Couldn\'t load entity from entityguide/entities/' + entity + '.html', error ) );
+            apply_translation();
+        }
+        ).catch( error => console.error( 'Couldn\'t load entity from entityguide/entities/' + entity + '.html', error ) );
     }
 
     // Update language by the language button
     window.changeLanguage = function( language )
     {
-        applyTranslations( language );
+        apply_translation( language );
     };
 
     window.openElement = function( id )

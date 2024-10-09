@@ -1,22 +1,99 @@
-<span style="background-color:rgb(255, 0, 0);font-size: xx-large;">
+<!DOCTYPE html>
+
+<html lang="en">
+
+<head>
+
+	<title>Half-Life: Unity</title>
+
+	<meta charset="UTF-8">
+
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+	<link rel="icon" href="media/images/icons/lp.png" type="image/x-icon">
+
+	<link rel="stylesheet" type="text/css" href="src/stylesheet.css">
+	<link rel="stylesheet" type="text/css" href="src/styles/main_title.css">
+	<link rel="stylesheet" type="text/css" href="src/styles/changelog.css">
+
+	<script src="src/index.js"></script>
+
+</head>
+
+<body>
+
+<!-- title with animation -->
+<a href="index.html">
+	<h1 id="title1">HλLF-LIFE UNITY<span id="blink">HλLF-LIFE UNITY</span></h1>
+</a>
+<!-- title with animation -->
+
+<div class="changelog">
+
+<!--CHANGELOG BELLOW-->
+
+<span style="font-size: xx-large;">
 This changelog only covers what has been changed in this repository.
 <br>
 To get a full changelog of the upstream repository <a style="color:aqua;" href="https://github.com/twhl-community/halflife-unified-sdk" target="_blank">Half-Life: Unified SDK</a> Check their changelog.
 </span>
 <br><br>
 
-<details><summary>7/24</summary><p>
+<h1>¿/?</h1>
 
-
+<br>
+<h3>Added free roaming to monsters</h3>
+<br>
+<h3>new entity trigger_entity_zone for firing its target for each inside/or/outsider entity with the matched classname</h3>
+<br>
+<h3>new entity trigger_entity_condition for firing True/False cases on specific operations on the target entity</h3>
+<br>
+<h3>Implement trigger_condition for firing True/False cases on checking for keyvalues comparisions</h3>
+<br>
+<h3>Implement a better and improved version of Sven coop entities trigger_changevalue, trigger_copyvalue, trigger_setorigin all-in-one</h3>
+<br>
+<h3>skill "player_use_distance" for a distance radious</h3>
+<br>
+<h3>new keyvalue m_uselos (Use Line Of Sight) Prevent players from using buttons behind walls, by default this is active</h3>
+<br>
+<h3>func_pushable can now use custom hullsizes</h3>
+<br>
+<h3>func_breakable now has custom speed and direction for gibs</h3>
+<br>
+<h3>Remove various useless entities from unified sdk as the same result can be achieved with new entities</h3>
+<br>
+<h3>Add a new keyvalue for entities that uses custom hullsizes for setting hullsizes as from the entity origin or absolute world size with map coordinates</h3>
+<br>
+<h3>new entity env_soundmark to do noises that monsters will react to</h3>
+<br>
+<h3>monstermaker now pass the spawned monster as activator</h3>
+<br>
+<h3>worldspawn can now control the world max size (IsInWorld() check)</h3>
+<br>
+<h3>Implemented client-side muzzleflash dynamic lighting when firing weapons</h3>
+<br>
+<h3>Now CZombie and childs will drop an alive monster_headcrab if they didn't receive damage equal to a headcrab health in the head bodygroup. there's also a new keyvalue to prevent this</h2>
+<br>
+<h1>24/7</h1>
+<br>
 <h2>Add bool CBaseEntity::IsMonster()</h2>
+<br>
 <h3>Function that will return true for classes that inherits from CBaseMonster that are not:</h3>
+<br>
 <li>monstermaker</li>
+<br>
 <li>scripted_sentence</li>
+<br>
 <li>env_explosion</li>
+<br>
 <li>cycler</li>
+<br>
 <li>op4mortar</li>
+<br>
 <li>func_guntarget</li>
+<br>
 <li>player</li>
+<br>
 <li>nodes</li>
 <br>
 <br>
@@ -216,4 +293,5 @@ Build up a python script for mass-encoding a FGD to a json-like data <button id=
 <br>
 <br>
 Created a python script for mass-exporting key-value data from a json file to the FGD and the Entity Guide in the website.
-</p></details>
+</div>
+</body>

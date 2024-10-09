@@ -1,0 +1,66 @@
+/* title text */
+#title1
+{
+	font-size: 50px;
+	text-align: center;
+	color: white;
+	padding:20px 0px;
+	animation: move 4.6s infinite linear, blink 4.6s infinite linear, blinkblur 4.6s infinite linear;
+	transform:translateX(0px);
+	letter-spacing: 40px;
+	line-height: 1.4;
+}
+
+#title1 span
+{
+	letter-spacing: 5px;
+}
+
+/* title blurry text */
+#title1 #blink
+{
+	position: absolute;
+	font-size: 10px;
+	filter: blur(1px);
+	transform: scale(7) translateX(0px);
+	top: 65px;
+	animation: movescale 4.6s infinite linear, blink 4.6s infinite linear;
+	left: 400px;
+}
+
+/* blinking animation */
+@keyframes blink
+{
+	0%,
+	100%,
+	11%,
+	13%,
+	31%,
+	33%,
+	54%,
+	56%,
+	66%,
+	68%,
+	77%,
+	79%,
+	93%,
+	95%,
+	100%
+	{ 
+		text-shadow: none;
+	}
+	12%,
+	32%,
+	55%,
+	67%,
+	78%,
+	94%
+	{
+		text-shadow:
+		0px 0px 5px #FFF,
+		0px 0px 5px #FFF,
+		0px 0px 5px #FFF,
+		0px 0px 5px #FFF,
+		0px 0px 5px #FFF;
+	}
+}

@@ -1,0 +1,26 @@
+#changelog th
+{
+	color: var( --color-yellow );
+	padding-bottom:22px;
+	text-align: left;
+}
+
+.changelog{
+	color: var( --color-yellow );
+	padding-bottom:22px;
+	text-align: left;
+}
+
+#changelog
+{
+	position: absolute;
+	bottom: 10%;
+	left: 5%;
+}
+
+#changelog td{
+	font-size: 15px;
+	color: var( --color-background-white );
+	padding-bottom:22px;
+	vertical-align: bottom;
+}

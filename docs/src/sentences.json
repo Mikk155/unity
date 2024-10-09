@@ -1,14 +1,19 @@
 {
+// Supported languages
 "languages":
 [
     "english",
     "spanish"
 ],
+
+// Language-options section
 "Language":
 {
 "english": "Language",
 "spanish": "Idioma"
 },
+
+// Main menu section
 "LanguageSelection":
 {
 "english": "Change language.",
@@ -138,26 +143,6 @@
 {
 "english": "Download",
 "spanish": "Descargar"
-},
-"valve_expansions":
-{
-"english": "Installing expansions from steam"
-},
-"valve_expansions_1":
-{
-"english": "Install the Visual Studio 2022 re-distributable. You can find it in the `unity/redist` directory."
-},
-"valve_expansions_2":
-{
-"english": "Install the .NET 6 SDK which includes the runtime. Make sure to install the latest version as the runtime is updated regularly."
-},
-"valve_expansions_3":
-{
-"english": "Switch Half-Life to the `steam_legacy` branch. The Unified SDK has not been updated to the anniversary version and requires the old version. This is only required during installation; after installation you can switch back to the anniversary version."
-},
-"valve_expansions_4":
-{
-"english": "Run the tool in a command line window:"
 },
 "SinglePlayer":
 {

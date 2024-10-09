@@ -12,10 +12,10 @@
 html{
 	overflow-x:hidden;
 	height: 100%;
-	-webkit-user-select: none; /* Safari */        
-	-moz-user-select: none; /* Firefox */
-	-ms-user-select: none; /* IE10+/Edge */
-	user-select: none; /* Standard */
+/*	-webkit-user-select: none; /* Safari */        
+/*	-moz-user-select: none; /* Firefox */
+/*	-ms-user-select: none; /* IE10+/Edge */
+/*	user-select: none; /* Standard */
 }
 
 body{
@@ -23,33 +23,6 @@ body{
 	background: url("../media/images/banner/background.png");
 	background-size:cover;
 	font-family: Arial;
-}
-
-/* title text */
-#title1{
-	font-size: 50px;
-	text-align: center;
-	color: white;
-	padding:20px 0px;
-	animation: move 4.6s infinite linear, blink 4.6s infinite linear, blinkblur 4.6s infinite linear;
-	transform:translateX(0px);
-	letter-spacing: 40px;
-	line-height: 1.4;
-}
-
-#title1 span{
-	letter-spacing: 10px;
-}
-
-/* title blurry text */
-#title1 #blink{
-	position: absolute;
-	font-size: 10px;
-	filter: blur(1px);
-	transform: scale(7) translateX(0px);
-	top: 65px;
-	animation: movescale 4.6s infinite linear, blink 4.6s infinite linear;
-	left: 400px;
 }
 
 /* menu button */
@@ -285,11 +258,6 @@ button:focus{
 	81%{transform:translateX(0px) scale(7);}
 }
 
-/* blinking animation */
-@keyframes blink{
-	0%,100%,11%,13%,31%,33%,54%,56%,66%,68%,77%,79%,93%,95%,100%{text-shadow: none;}
-	12%,32%,55%,67%,78%,94%{text-shadow: 0px 0px 5px #FFF, 0px 0px 5px #FFF, 0px 0px 5px #FFF, 0px 0px 5px #FFF, 0px 0px 5px #FFF;}
-}
 
 /* blinking blur animation */
 @keyframes blinkblur{
@@ -302,29 +270,6 @@ button:focus{
 	50%{box-shadow: 0px 0px 20px var( --color-yellow );}
 }
 
-.emergent-window
-{
-	display: none;
-	position: fixed;
-	text-align: center;
-	z-index: 1;
-	left: 0;
-	top: 0;
-	width: 100%;
-	height: 100%;
-	overflow: auto;
-}
-
-.emergent-window-content
-{
-	background-color: rgba( 200, 200, 200, 0.3 );
-	margin: 15% auto;
-	padding: 20px;
-	border: 1px solid var( --color-background-white );
-	width: 80%;
-	max-width: 500px;
-	border-radius: 10px;
-}
 
 #mute-button {
 	position: fixed;
