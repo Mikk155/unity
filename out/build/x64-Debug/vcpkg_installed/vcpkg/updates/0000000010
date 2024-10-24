@@ -1,0 +1,8 @@
+Package: eastl
+Version: 3.19.00
+Depends: eabase, vcpkg-cmake, vcpkg-cmake-config
+Architecture: x64-windows
+Multi-Arch: same
+Abi: c84def71fe9ff6a3cdf625d4aab3157f539e9899681915c347eca80a4e94de16
+Description: Electronic Arts Standard Template Library. It is a C++ template library of containers, algorithms, and iterators useful for runtime and tool development across multiple platforms. It is a fairly extensive and robust implementation of such a library and has an emphasis on high performance above all other considerations.
+Status: install ok half-installed

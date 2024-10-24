@@ -1,0 +1,9 @@
+Package: eabase
+Version: 2.09.12
+Port-Version: 3
+Depends: vcpkg-cmake, vcpkg-cmake-config
+Architecture: x64-windows
+Multi-Arch: same
+Abi: aa0f7ea6ed340f8b1330ff8f5722be59b8fea409e16341a7d795520218459bcf
+Description: Electronic Arts Base. EABase is a small set of header files that define platform-independent data types and macros.
+Status: install ok installed

@@ -1,0 +1,7 @@
+Package: libnyquist
+Version: 0.1.0
+Architecture: x64-windows
+Multi-Arch: same
+Abi: fd582f94fa069b3b8b7e3bb95c1d7efc54b054361c5e5f16adbbe513a97fbef7
+Description: Cross platform C++11 library for decoding audio (mp3, wav, ogg, opus, flac, etc)
+Status: install ok half-installed

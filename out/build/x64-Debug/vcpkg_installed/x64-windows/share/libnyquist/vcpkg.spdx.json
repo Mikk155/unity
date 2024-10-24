@@ -1,0 +1,176 @@
+{
+  "$schema": "https://raw.githubusercontent.com/spdx/spdx-spec/v2.2.1/schemas/spdx-schema.json",
+  "spdxVersion": "SPDX-2.2",
+  "dataLicense": "CC0-1.0",
+  "SPDXID": "SPDXRef-DOCUMENT",
+  "documentNamespace": "https://spdx.org/spdxdocs/libnyquist-x64-windows-0.1.0-d27b91b9-0eca-458c-8439-773201f1b9f8",
+  "name": "libnyquist:x64-windows@0.1.0 fd582f94fa069b3b8b7e3bb95c1d7efc54b054361c5e5f16adbbe513a97fbef7",
+  "creationInfo": {
+    "creators": [
+      "Tool: vcpkg-2024-06-10-02590c430e4ed9215d27870138c2e579cc338772"
+    ],
+    "created": "2024-10-09T06:12:24Z"
+  },
+  "relationships": [
+    {
+      "spdxElementId": "SPDXRef-port",
+      "relationshipType": "GENERATES",
+      "relatedSpdxElement": "SPDXRef-binary"
+    },
+    {
+      "spdxElementId": "SPDXRef-port",
+      "relationshipType": "CONTAINS",
+      "relatedSpdxElement": "SPDXRef-file-0"
+    },
+    {
+      "spdxElementId": "SPDXRef-port",
+      "relationshipType": "CONTAINS",
+      "relatedSpdxElement": "SPDXRef-file-1"
+    },
+    {
+      "spdxElementId": "SPDXRef-port",
+      "relationshipType": "CONTAINS",
+      "relatedSpdxElement": "SPDXRef-file-2"
+    },
+    {
+      "spdxElementId": "SPDXRef-port",
+      "relationshipType": "CONTAINS",
+      "relatedSpdxElement": "SPDXRef-file-3"
+    },
+    {
+      "spdxElementId": "SPDXRef-port",
+      "relationshipType": "CONTAINS",
+      "relatedSpdxElement": "SPDXRef-file-4"
+    },
+    {
+      "spdxElementId": "SPDXRef-binary",
+      "relationshipType": "GENERATED_FROM",
+      "relatedSpdxElement": "SPDXRef-port"
+    },
+    {
+      "spdxElementId": "SPDXRef-file-0",
+      "relationshipType": "CONTAINED_BY",
+      "relatedSpdxElement": "SPDXRef-port"
+    },
+    {
+      "spdxElementId": "SPDXRef-file-1",
+      "relationshipType": "CONTAINED_BY",
+      "relatedSpdxElement": "SPDXRef-port"
+    },
+    {
+      "spdxElementId": "SPDXRef-file-2",
+      "relationshipType": "CONTAINED_BY",
+      "relatedSpdxElement": "SPDXRef-port"
+    },
+    {
+      "spdxElementId": "SPDXRef-file-3",
+      "relationshipType": "CONTAINED_BY",
+      "relatedSpdxElement": "SPDXRef-port"
+    },
+    {
+      "spdxElementId": "SPDXRef-file-4",
+      "relationshipType": "CONTAINED_BY",
+      "relatedSpdxElement": "SPDXRef-port"
+    }
+  ],
+  "packages": [
+    {
+      "name": "libnyquist",
+      "SPDXID": "SPDXRef-port",
+      "versionInfo": "0.1.0",
+      "downloadLocation": "NOASSERTION",
+      "homepage": "https://github.com/ddiakopoulos/libnyquist",
+      "licenseConcluded": "NOASSERTION",
+      "licenseDeclared": "NOASSERTION",
+      "copyrightText": "NOASSERTION",
+      "description": "Cross platform C++11 library for decoding audio (mp3, wav, ogg, opus, flac, etc)",
+      "comment": "This is the port (recipe) consumed by vcpkg."
+    },
+    {
+      "name": "libnyquist:x64-windows",
+      "SPDXID": "SPDXRef-binary",
+      "versionInfo": "fd582f94fa069b3b8b7e3bb95c1d7efc54b054361c5e5f16adbbe513a97fbef7",
+      "downloadLocation": "NONE",
+      "licenseConcluded": "NOASSERTION",
+      "licenseDeclared": "NOASSERTION",
+      "copyrightText": "NOASSERTION",
+      "comment": "This is a binary package built by vcpkg."
+    },
+    {
+      "SPDXID": "SPDXRef-resource-1",
+      "name": "ddiakopoulos/libnyquist",
+      "downloadLocation": "git+https://github.com/ddiakopoulos/libnyquist@e95e517748bf9724a08473e78d8c1497bba2e4bd",
+      "licenseConcluded": "NOASSERTION",
+      "licenseDeclared": "NOASSERTION",
+      "copyrightText": "NOASSERTION",
+      "checksums": [
+        {
+          "algorithm": "SHA512",
+          "checksumValue": "e5e6c7ff7b5406a1b351cd4bb487914b25efe68f1d1082edbe44dd20a1fc7907b9c06def5be835e79e5b477fda42fea18b1a6e4439fcb042198011d484c47a40"
+        }
+      ]
+    }
+  ],
+  "files": [
+    {
+      "fileName": "./C:/Users/Estefano/source/repos/halflife-unified-sdk/vcpkg_config/registry/ports/libnyquist/0.1.0_0/install-config.patch",
+      "SPDXID": "SPDXRef-file-0",
+      "checksums": [
+        {
+          "algorithm": "SHA256",
+          "checksumValue": "76440628f8afecaa3f063ce31b452b842bf27c181c6a8b8ab0f2f20017f8ead0"
+        }
+      ],
+      "licenseConcluded": "NOASSERTION",
+      "copyrightText": "NOASSERTION"
+    },
+    {
+      "fileName": "./C:/Users/Estefano/source/repos/halflife-unified-sdk/vcpkg_config/registry/ports/libnyquist/0.1.0_0/libnyquistConfig.cmake.in",
+      "SPDXID": "SPDXRef-file-1",
+      "checksums": [
+        {
+          "algorithm": "SHA256",
+          "checksumValue": "6691fe7fa339e0d2e049bfe19714ffdce0c8e9c6fc8682c72818bdba6560ea51"
+        }
+      ],
+      "licenseConcluded": "NOASSERTION",
+      "copyrightText": "NOASSERTION"
+    },
+    {
+      "fileName": "./C:/Users/Estefano/source/repos/halflife-unified-sdk/vcpkg_config/registry/ports/libnyquist/0.1.0_0/portfile.cmake",
+      "SPDXID": "SPDXRef-file-2",
+      "checksums": [
+        {
+          "algorithm": "SHA256",
+          "checksumValue": "8d2979a737e7a737bba3e3082c4ec2ab08d3fa808152c599d93fc5947dfd6b92"
+        }
+      ],
+      "licenseConcluded": "NOASSERTION",
+      "copyrightText": "NOASSERTION"
+    },
+    {
+      "fileName": "./C:/Users/Estefano/source/repos/halflife-unified-sdk/vcpkg_config/registry/ports/libnyquist/0.1.0_0/usage",
+      "SPDXID": "SPDXRef-file-3",
+      "checksums": [
+        {
+          "algorithm": "SHA256",
+          "checksumValue": "8f4c91583e790462610ab9ef6cc53f2f060c73f1bb65771899a9a6fbf5aa2f3f"
+        }
+      ],
+      "licenseConcluded": "NOASSERTION",
+      "copyrightText": "NOASSERTION"
+    },
+    {
+      "fileName": "./C:/Users/Estefano/source/repos/halflife-unified-sdk/vcpkg_config/registry/ports/libnyquist/0.1.0_0/vcpkg.json",
+      "SPDXID": "SPDXRef-file-4",
+      "checksums": [
+        {
+          "algorithm": "SHA256",
+          "checksumValue": "678602c81ef13864f9c38516d937e53fb17bc60f3452c9ac9b9ec82d7bab9523"
+        }
+      ],
+      "licenseConcluded": "NOASSERTION",
+      "copyrightText": "NOASSERTION"
+    }
+  ]
+}

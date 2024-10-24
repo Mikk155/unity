@@ -1,0 +1,7 @@
+Package: json-schema-validator
+Version: 2.2.0
+Depends: nlohmann-json
+Architecture: x64-windows
+Multi-Arch: same
+Abi: a698a51c5c69a7003f236caf9a47952b7196df13752d83219e3fd20143e50816
+Description: This is a C++ library for validating JSON documents based on a JSON Schema. This validator is based on nlohmann json library.

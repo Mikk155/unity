@@ -1,0 +1,114 @@
+{
+	"configurations" : 
+	[
+		{
+			"directories" : 
+			[
+				{
+					"build" : ".",
+					"childIndexes" : 
+					[
+						1,
+						2
+					],
+					"hasInstallRule" : true,
+					"jsonFile" : "directory-.-Debug-7060d8c466c1a7899566.json",
+					"minimumCMakeVersion" : 
+					{
+						"string" : "3.1"
+					},
+					"projectIndex" : 0,
+					"source" : ".",
+					"targetIndexes" : 
+					[
+						0
+					]
+				},
+				{
+					"build" : "src/game/client",
+					"jsonFile" : "directory-src.game.client-Debug-65261920351572234c40.json",
+					"minimumCMakeVersion" : 
+					{
+						"string" : "3.1"
+					},
+					"parentIndex" : 0,
+					"projectIndex" : 0,
+					"source" : "src/game/client",
+					"targetIndexes" : 
+					[
+						1
+					]
+				},
+				{
+					"build" : "src/game/server",
+					"jsonFile" : "directory-src.game.server-Debug-0fb094c5829ffa9f713d.json",
+					"minimumCMakeVersion" : 
+					{
+						"string" : "3.1"
+					},
+					"parentIndex" : 0,
+					"projectIndex" : 0,
+					"source" : "src/game/server",
+					"targetIndexes" : 
+					[
+						2
+					]
+				}
+			],
+			"name" : "Debug",
+			"projects" : 
+			[
+				{
+					"directoryIndexes" : 
+					[
+						0,
+						1,
+						2
+					],
+					"name" : "HalfLifeMod",
+					"targetIndexes" : 
+					[
+						0,
+						1,
+						2
+					]
+				}
+			],
+			"targets" : 
+			[
+				{
+					"directoryIndex" : 0,
+					"id" : "ProjectInfo::@6890427a1f51a3e7e1df",
+					"jsonFile" : "target-ProjectInfo-Debug-bd03d99daa7bc5a905ff.json",
+					"name" : "ProjectInfo",
+					"projectIndex" : 0
+				},
+				{
+					"directoryIndex" : 1,
+					"id" : "client::@a8b7f271a57fc57ff24b",
+					"jsonFile" : "target-client-Debug-298591062eb942a100ee.json",
+					"name" : "client",
+					"projectIndex" : 0
+				},
+				{
+					"directoryIndex" : 2,
+					"id" : "server::@4c533d8e089d7bee3853",
+					"jsonFile" : "target-server-Debug-9884e23d166a2b36d074.json",
+					"name" : "server",
+					"projectIndex" : 0
+				}
+			]
+		}
+	],
+	"kind" : "codemodel",
+	"paths" : 
+	{
+		"build" : "D:/Repositorio/halflife-unity/out/build/x64-Debug",
+		"source" : "D:/Repositorio/halflife-unity"
+	},
+	"version" : 
+	{
+		"major" : 2,
+		"minor" : 7
+	}
+}

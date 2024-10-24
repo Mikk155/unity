@@ -1,0 +1,3316 @@
+{
+	"artifacts" : 
+	[
+		{
+			"path" : "src/game/client/client.dll"
+		},
+		{
+			"path" : "src/game/client/client.lib"
+		},
+		{
+			"path" : "src/game/client/client.pdb"
+		}
+	],
+	"backtrace" : 2,
+	"backtraceGraph" : 
+	{
+		"commands" : 
+		[
+			"_add_library",
+			"add_library",
+			"install",
+			"target_link_options",
+			"target_link_libraries",
+			"set_common_properties",
+			"set_target_properties",
+			"include",
+			"_find_package",
+			"find_package",
+			"add_dependencies",
+			"target_compile_options",
+			"target_compile_definitions",
+			"target_include_directories",
+			"target_precompile_headers",
+			"target_compile_features",
+			"target_sources",
+			"add_game_shared_sources"
+		],
+		"files" : 
+		[
+			"D:/Aplicaciones/Visual Studio/2022/Community/VC/vcpkg/scripts/buildsystems/vcpkg.cmake",
+			"src/game/client/CMakeLists.txt",
+			"CMakeLists.txt",
+			"out/build/x64-Debug/vcpkg_installed/x64-windows/share/spdlog/spdlogConfigTargets.cmake",
+			"out/build/x64-Debug/vcpkg_installed/x64-windows/share/spdlog/spdlogConfig.cmake",
+			"src/game/shared/game_shared.cmake"
+		],
+		"nodes" : 
+		[
+			{
+				"file" : 1
+			},
+			{
+				"command" : 1,
+				"file" : 1,
+				"line" : 35,
+				"parent" : 0
+			},
+			{
+				"command" : 0,
+				"file" : 0,
+				"line" : 639,
+				"parent" : 1
+			},
+			{
+				"file" : 2
+			},
+			{
+				"command" : 2,
+				"file" : 2,
+				"line" : 220,
+				"parent" : 3
+			},
+			{
+				"command" : 3,
+				"file" : 1,
+				"line" : 83,
+				"parent" : 0
+			},
+			{
+				"command" : 5,
+				"file" : 1,
+				"line" : 39,
+				"parent" : 0
+			},
+			{
+				"command" : 4,
+				"file" : 2,
+				"line" : 92,
+				"parent" : 6
+			},
+			{
+				"command" : 4,
+				"file" : 1,
+				"line" : 70,
+				"parent" : 0
+			},
+			{
+				"command" : 9,
+				"file" : 2,
+				"line" : 62,
+				"parent" : 3
+			},
+			{
+				"command" : 8,
+				"file" : 0,
+				"line" : 859,
+				"parent" : 9
+			},
+			{
+				"file" : 4,
+				"parent" : 10
+			},
+			{
+				"command" : 7,
+				"file" : 4,
+				"line" : 42,
+				"parent" : 11
+			},
+			{
+				"file" : 3,
+				"parent" : 12
+			},
+			{
+				"command" : 6,
+				"file" : 3,
+				"line" : 60,
+				"parent" : 13
+			},
+			{
+				"command" : 10,
+				"file" : 2,
+				"line" : 167,
+				"parent" : 3
+			},
+			{
+				"command" : 11,
+				"file" : 2,
+				"line" : 105,
+				"parent" : 6
+			},
+			{
+				"command" : 11,
+				"file" : 2,
+				"line" : 128,
+				"parent" : 6
+			},
+			{
+				"command" : 12,
+				"file" : 1,
+				"line" : 66,
+				"parent" : 0
+			},
+			{
+				"command" : 12,
+				"file" : 2,
+				"line" : 83,
+				"parent" : 6
+			},
+			{
+				"command" : 13,
+				"file" : 2,
+				"line" : 101,
+				"parent" : 6
+			},
+			{
+				"command" : 13,
+				"file" : 1,
+				"line" : 41,
+				"parent" : 0
+			},
+			{
+				"command" : 14,
+				"file" : 1,
+				"line" : 313,
+				"parent" : 0
+			},
+			{
+				"command" : 15,
+				"file" : 2,
+				"line" : 81,
+				"parent" : 6
+			},
+			{
+				"command" : 16,
+				"file" : 2,
+				"line" : 148,
+				"parent" : 6
+			},
+			{
+				"command" : 16,
+				"file" : 1,
+				"line" : 87,
+				"parent" : 0
+			},
+			{
+				"command" : 17,
+				"file" : 1,
+				"line" : 307,
+				"parent" : 0
+			},
+			{
+				"command" : 16,
+				"file" : 5,
+				"line" : 2,
+				"parent" : 26
+			},
+			{
+				"command" : 16,
+				"file" : 1,
+				"line" : 310,
+				"parent" : 0
+			},
+			{
+				"command" : 16,
+				"file" : 2,
+				"line" : 171,
+				"parent" : 3
+			}
+		]
+	},
+	"compileGroups" : 
+	[
+		{
+			"compileCommandFragments" : 
+			[
+				{
+					"fragment" : "/DWIN32 /D_WINDOWS /EHsc /Zi /Ob0 /Od /RTC1 -std:c++20 -MTd"
+				},
+				{
+					"backtrace" : 16,
+					"fragment" : "/W3"
+				},
+				{
+					"backtrace" : 16,
+					"fragment" : "/MP"
+				},
+				{
+					"backtrace" : 17,
+					"fragment" : "/wd4244"
+				},
+				{
+					"backtrace" : 17,
+					"fragment" : "/wd4305"
+				},
+				{
+					"backtrace" : 17,
+					"fragment" : "/wd4514"
+				},
+				{
+					"backtrace" : 17,
+					"fragment" : "/wd4100"
+				},
+				{
+					"backtrace" : 17,
+					"fragment" : "/wd26495"
+				},
+				{
+					"backtrace" : 17,
+					"fragment" : "/wd26451"
+				},
+				{
+					"backtrace" : 17,
+					"fragment" : "/wd26812"
+				},
+				{
+					"backtrace" : 7,
+					"fragment" : "/wd4251"
+				},
+				{
+					"backtrace" : 7,
+					"fragment" : "/wd4275"
+				},
+				{
+					"fragment" : "/YcD:/Repositorio/halflife-unity/out/build/x64-Debug/src/game/client/CMakeFiles/client.dir/cmake_pch.hxx /FpD:/Repositorio/halflife-unity/out/build/x64-Debug/src/game/client/CMakeFiles/client.dir/./cmake_pch.cxx.pch /FID:/Repositorio/halflife-unity/out/build/x64-Debug/src/game/client/CMakeFiles/client.dir/cmake_pch.hxx"
+				}
+			],
+			"defines" : 
+			[
+				{
+					"backtrace" : 18,
+					"define" : "CLIENT_DLL"
+				},
+				{
+					"backtrace" : 19,
+					"define" : "CLIENT_WEAPONS"
+				},
+				{
+					"backtrace" : 7,
+					"define" : "FMT_SHARED"
+				},
+				{
+					"backtrace" : 18,
+					"define" : "HL_DLL"
+				},
+				{
+					"backtrace" : 7,
+					"define" : "SPDLOG_COMPILED_LIB"
+				},
+				{
+					"backtrace" : 7,
+					"define" : "SPDLOG_FMT_EXTERNAL"
+				},
+				{
+					"backtrace" : 7,
+					"define" : "SPDLOG_SHARED_LIB"
+				},
+				{
+					"backtrace" : 19,
+					"define" : "UNIFIED_SDK_CONFIG=\"Debug\""
+				},
+				{
+					"backtrace" : 19,
+					"define" : "_CRT_SECURE_NO_WARNINGS"
+				},
+				{
+					"backtrace" : 19,
+					"define" : "_DEBUG"
+				},
+				{
+					"define" : "client_EXPORTS"
+				}
+			],
+			"includes" : 
+			[
+				{
+					"backtrace" : 20,
+					"path" : "D:/Repositorio/halflife-unity/out/build/x64-Debug"
+				},
+				{
+					"backtrace" : 21,
+					"path" : "D:/Repositorio/halflife-unity/src/game/client/../server"
+				},
+				{
+					"backtrace" : 21,
+					"path" : "D:/Repositorio/halflife-unity/src/game/client/../server/entities"
+				},
+				{
+					"backtrace" : 21,
+					"path" : "D:/Repositorio/halflife-unity/src/game/client/../server/entities/NPCs"
+				},
+				{
+					"backtrace" : 21,
+					"path" : "D:/Repositorio/halflife-unity/src/game/client/../server/gamerules"
+				},
+				{
+					"backtrace" : 21,
+					"path" : "D:/Repositorio/halflife-unity/src/game/client/../shared/entities"
+				},
+				{
+					"backtrace" : 21,
+					"path" : "D:/Repositorio/halflife-unity/src/game/client/../shared/entities/items/weapons"
+				},
+				{
+					"backtrace" : 21,
+					"path" : "D:/Repositorio/halflife-unity/src/game/client"
+				},
+				{
+					"backtrace" : 21,
+					"path" : "D:/Repositorio/halflife-unity/src/game/client/input"
+				},
+				{
+					"backtrace" : 21,
+					"path" : "D:/Repositorio/halflife-unity/src/game/client/particleman"
+				},
+				{
+					"backtrace" : 21,
+					"path" : "D:/Repositorio/halflife-unity/src/game/client/rendering"
+				},
+				{
+					"backtrace" : 21,
+					"path" : "D:/Repositorio/halflife-unity/src/game/client/ui"
+				},
+				{
+					"backtrace" : 21,
+					"path" : "D:/Repositorio/halflife-unity/src/game/client/ui/hud"
+				},
+				{
+					"backtrace" : 21,
+					"path" : "D:/Repositorio/halflife-unity/src/game/client/ui/vgui"
+				},
+				{
+					"backtrace" : 21,
+					"path" : "D:/Repositorio/halflife-unity/src/game/client/ui/vgui/utils"
+				},
+				{
+					"backtrace" : 21,
+					"path" : "D:/Repositorio/halflife-unity/src/game/client/../../public"
+				},
+				{
+					"backtrace" : 21,
+					"path" : "D:/Repositorio/halflife-unity/src/game/client/../../common"
+				},
+				{
+					"backtrace" : 21,
+					"path" : "D:/Repositorio/halflife-unity/src/game/client/../shared"
+				},
+				{
+					"backtrace" : 21,
+					"path" : "D:/Repositorio/halflife-unity/src/game/client/../shared/player_movement"
+				},
+				{
+					"backtrace" : 21,
+					"path" : "D:/Repositorio/halflife-unity/src/game/client/../shared/saverestore"
+				},
+				{
+					"backtrace" : 21,
+					"path" : "D:/Repositorio/halflife-unity/src/game/client/../shared/utils"
+				},
+				{
+					"backtrace" : 21,
+					"path" : "D:/Repositorio/halflife-unity/src/game/client/../../engine"
+				},
+				{
+					"backtrace" : 21,
+					"isSystem" : true,
+					"path" : "D:/Repositorio/halflife-unity/src/game/client/../../../utils/vgui/include"
+				},
+				{
+					"backtrace" : 7,
+					"isSystem" : true,
+					"path" : "D:/Repositorio/halflife-unity/out/build/x64-Debug/vcpkg_installed/x64-windows/include"
+				},
+				{
+					"backtrace" : 8,
+					"isSystem" : true,
+					"path" : "D:/Repositorio/halflife-unity/src/game/client/../../../external/SDL2/include"
+				},
+				{
+					"backtrace" : 8,
+					"isSystem" : true,
+					"path" : "D:/Repositorio/halflife-unity/out/build/x64-Debug/vcpkg_installed/x64-windows/include/AL"
+				}
+			],
+			"language" : "CXX",
+			"languageStandard" : 
+			{
+				"backtraces" : 
+				[
+					23,
+					7,
+					7,
+					8
+				],
+				"standard" : "20"
+			},
+			"precompileHeaders" : 
+			[
+				{
+					"backtrace" : 22,
+					"header" : "D:/Repositorio/halflife-unity/src/game/client/ui/hud/hud.h"
+				}
+			],
+			"sourceIndexes" : 
+			[
+				0
+			]
+		},
+		{
+			"compileCommandFragments" : 
+			[
+				{
+					"fragment" : "/DWIN32 /D_WINDOWS /EHsc /Zi /Ob0 /Od /RTC1 -std:c++20 -MTd"
+				},
+				{
+					"backtrace" : 16,
+					"fragment" : "/W3"
+				},
+				{
+					"backtrace" : 16,
+					"fragment" : "/MP"
+				},
+				{
+					"backtrace" : 17,
+					"fragment" : "/wd4244"
+				},
+				{
+					"backtrace" : 17,
+					"fragment" : "/wd4305"
+				},
+				{
+					"backtrace" : 17,
+					"fragment" : "/wd4514"
+				},
+				{
+					"backtrace" : 17,
+					"fragment" : "/wd4100"
+				},
+				{
+					"backtrace" : 17,
+					"fragment" : "/wd26495"
+				},
+				{
+					"backtrace" : 17,
+					"fragment" : "/wd26451"
+				},
+				{
+					"backtrace" : 17,
+					"fragment" : "/wd26812"
+				},
+				{
+					"backtrace" : 7,
+					"fragment" : "/wd4251"
+				},
+				{
+					"backtrace" : 7,
+					"fragment" : "/wd4275"
+				},
+				{
+					"fragment" : "/YuD:/Repositorio/halflife-unity/out/build/x64-Debug/src/game/client/CMakeFiles/client.dir/cmake_pch.hxx /FpD:/Repositorio/halflife-unity/out/build/x64-Debug/src/game/client/CMakeFiles/client.dir/./cmake_pch.cxx.pch /FID:/Repositorio/halflife-unity/out/build/x64-Debug/src/game/client/CMakeFiles/client.dir/cmake_pch.hxx"
+				}
+			],
+			"defines" : 
+			[
+				{
+					"backtrace" : 18,
+					"define" : "CLIENT_DLL"
+				},
+				{
+					"backtrace" : 19,
+					"define" : "CLIENT_WEAPONS"
+				},
+				{
+					"backtrace" : 7,
+					"define" : "FMT_SHARED"
+				},
+				{
+					"backtrace" : 18,
+					"define" : "HL_DLL"
+				},
+				{
+					"backtrace" : 7,
+					"define" : "SPDLOG_COMPILED_LIB"
+				},
+				{
+					"backtrace" : 7,
+					"define" : "SPDLOG_FMT_EXTERNAL"
+				},
+				{
+					"backtrace" : 7,
+					"define" : "SPDLOG_SHARED_LIB"
+				},
+				{
+					"backtrace" : 19,
+					"define" : "UNIFIED_SDK_CONFIG=\"Debug\""
+				},
+				{
+					"backtrace" : 19,
+					"define" : "_CRT_SECURE_NO_WARNINGS"
+				},
+				{
+					"backtrace" : 19,
+					"define" : "_DEBUG"
+				},
+				{
+					"define" : "client_EXPORTS"
+				}
+			],
+			"includes" : 
+			[
+				{
+					"backtrace" : 20,
+					"path" : "D:/Repositorio/halflife-unity/out/build/x64-Debug"
+				},
+				{
+					"backtrace" : 21,
+					"path" : "D:/Repositorio/halflife-unity/src/game/client/../server"
+				},
+				{
+					"backtrace" : 21,
+					"path" : "D:/Repositorio/halflife-unity/src/game/client/../server/entities"
+				},
+				{
+					"backtrace" : 21,
+					"path" : "D:/Repositorio/halflife-unity/src/game/client/../server/entities/NPCs"
+				},
+				{
+					"backtrace" : 21,
+					"path" : "D:/Repositorio/halflife-unity/src/game/client/../server/gamerules"
+				},
+				{
+					"backtrace" : 21,
+					"path" : "D:/Repositorio/halflife-unity/src/game/client/../shared/entities"
+				},
+				{
+					"backtrace" : 21,
+					"path" : "D:/Repositorio/halflife-unity/src/game/client/../shared/entities/items/weapons"
+				},
+				{
+					"backtrace" : 21,
+					"path" : "D:/Repositorio/halflife-unity/src/game/client"
+				},
+				{
+					"backtrace" : 21,
+					"path" : "D:/Repositorio/halflife-unity/src/game/client/input"
+				},
+				{
+					"backtrace" : 21,
+					"path" : "D:/Repositorio/halflife-unity/src/game/client/particleman"
+				},
+				{
+					"backtrace" : 21,
+					"path" : "D:/Repositorio/halflife-unity/src/game/client/rendering"
+				},
+				{
+					"backtrace" : 21,
+					"path" : "D:/Repositorio/halflife-unity/src/game/client/ui"
+				},
+				{
+					"backtrace" : 21,
+					"path" : "D:/Repositorio/halflife-unity/src/game/client/ui/hud"
+				},
+				{
+					"backtrace" : 21,
+					"path" : "D:/Repositorio/halflife-unity/src/game/client/ui/vgui"
+				},
+				{
+					"backtrace" : 21,
+					"path" : "D:/Repositorio/halflife-unity/src/game/client/ui/vgui/utils"
+				},
+				{
+					"backtrace" : 21,
+					"path" : "D:/Repositorio/halflife-unity/src/game/client/../../public"
+				},
+				{
+					"backtrace" : 21,
+					"path" : "D:/Repositorio/halflife-unity/src/game/client/../../common"
+				},
+				{
+					"backtrace" : 21,
+					"path" : "D:/Repositorio/halflife-unity/src/game/client/../shared"
+				},
+				{
+					"backtrace" : 21,
+					"path" : "D:/Repositorio/halflife-unity/src/game/client/../shared/player_movement"
+				},
+				{
+					"backtrace" : 21,
+					"path" : "D:/Repositorio/halflife-unity/src/game/client/../shared/saverestore"
+				},
+				{
+					"backtrace" : 21,
+					"path" : "D:/Repositorio/halflife-unity/src/game/client/../shared/utils"
+				},
+				{
+					"backtrace" : 21,
+					"path" : "D:/Repositorio/halflife-unity/src/game/client/../../engine"
+				},
+				{
+					"backtrace" : 21,
+					"isSystem" : true,
+					"path" : "D:/Repositorio/halflife-unity/src/game/client/../../../utils/vgui/include"
+				},
+				{
+					"backtrace" : 7,
+					"isSystem" : true,
+					"path" : "D:/Repositorio/halflife-unity/out/build/x64-Debug/vcpkg_installed/x64-windows/include"
+				},
+				{
+					"backtrace" : 8,
+					"isSystem" : true,
+					"path" : "D:/Repositorio/halflife-unity/src/game/client/../../../external/SDL2/include"
+				},
+				{
+					"backtrace" : 8,
+					"isSystem" : true,
+					"path" : "D:/Repositorio/halflife-unity/out/build/x64-Debug/vcpkg_installed/x64-windows/include/AL"
+				}
+			],
+			"language" : "CXX",
+			"languageStandard" : 
+			{
+				"backtraces" : 
+				[
+					23,
+					7,
+					7,
+					8
+				],
+				"standard" : "20"
+			},
+			"precompileHeaders" : 
+			[
+				{
+					"backtrace" : 22,
+					"header" : "D:/Repositorio/halflife-unity/src/game/client/ui/hud/hud.h"
+				}
+			],
+			"sourceIndexes" : 
+			[
+				1,
+				3,
+				6,
+				8,
+				10,
+				12,
+				14,
+				16,
+				18,
+				19,
+				23,
+				26,
+				28,
+				29,
+				30,
+				31,
+				33,
+				34,
+				35,
+				37,
+				39,
+				41,
+				43,
+				45,
+				49,
+				51,
+				53,
+				55,
+				59,
+				61,
+				66,
+				70,
+				72,
+				75,
+				77,
+				79,
+				81,
+				83,
+				85,
+				86,
+				87,
+				88,
+				90,
+				92,
+				93,
+				94,
+				95,
+				96,
+				97,
+				98,
+				99,
+				101,
+				102,
+				104,
+				105,
+				106,
+				107,
+				108,
+				109,
+				110,
+				111,
+				112,
+				114,
+				116,
+				117,
+				118,
+				120,
+				121,
+				123,
+				125,
+				127,
+				129,
+				131,
+				132,
+				135,
+				137,
+				139,
+				141,
+				143,
+				145,
+				171,
+				201,
+				206,
+				209,
+				211,
+				214,
+				216,
+				219,
+				220,
+				222,
+				223,
+				225,
+				227,
+				229,
+				231,
+				233,
+				235,
+				237,
+				239,
+				241,
+				243,
+				245,
+				247,
+				249,
+				251,
+				253,
+				255,
+				257,
+				259,
+				261,
+				263,
+				265,
+				267,
+				269,
+				271,
+				273,
+				275,
+				277,
+				279,
+				281,
+				283,
+				289,
+				291,
+				293,
+				295,
+				297,
+				298,
+				300,
+				302,
+				304,
+				306,
+				308,
+				310,
+				312,
+				316,
+				318,
+				320,
+				322,
+				324,
+				326,
+				328,
+				330
+			]
+		}
+	],
+	"dependencies" : 
+	[
+		{
+			"backtrace" : 15,
+			"id" : "ProjectInfo::@6890427a1f51a3e7e1df"
+		}
+	],
+	"id" : "client::@a8b7f271a57fc57ff24b",
+	"install" : 
+	{
+		"destinations" : 
+		[
+			{
+				"backtrace" : 4,
+				"path" : "cl_dlls"
+			}
+		],
+		"prefix" : 
+		{
+			"path" : "D:/Repositorio/halflife-unity/out/install/x64-Debug"
+		}
+	},
+	"link" : 
+	{
+		"commandFragments" : 
+		[
+			{
+				"fragment" : "/machine:x64 /debug /INCREMENTAL",
+				"role" : "flags"
+			},
+			{
+				"backtrace" : 5,
+				"fragment" : "/DELAYLOAD:openal-hlu.dll",
+				"role" : "flags"
+			},
+			{
+				"backtrace" : 7,
+				"fragment" : "vcpkg_installed\\x64-windows\\debug\\lib\\angelscriptd.lib",
+				"role" : "libraries"
+			},
+			{
+				"backtrace" : 7,
+				"fragment" : "vcpkg_installed\\x64-windows\\debug\\lib\\spdlogd.lib",
+				"role" : "libraries"
+			},
+			{
+				"backtrace" : 7,
+				"fragment" : "vcpkg_installed\\x64-windows\\debug\\lib\\nlohmann_json_schema_validator.lib",
+				"role" : "libraries"
+			},
+			{
+				"backtrace" : 7,
+				"fragment" : "vcpkg_installed\\x64-windows\\debug\\lib\\EASTL.lib",
+				"role" : "libraries"
+			},
+			{
+				"backtrace" : 8,
+				"fragment" : "D:\\Repositorio\\halflife-unity\\src\\game\\client\\..\\..\\..\\utils\\vgui\\lib\\win32_vc6\\vgui.lib",
+				"role" : "libraries"
+			},
+			{
+				"backtrace" : 8,
+				"fragment" : "delayimp.lib",
+				"role" : "libraries"
+			},
+			{
+				"backtrace" : 8,
+				"fragment" : "wsock32.lib",
+				"role" : "libraries"
+			},
+			{
+				"backtrace" : 8,
+				"fragment" : "D:\\Repositorio\\halflife-unity\\src\\game\\client\\..\\..\\..\\external\\SDL2\\lib\\SDL2.lib",
+				"role" : "libraries"
+			},
+			{
+				"backtrace" : 8,
+				"fragment" : "vcpkg_installed\\x64-windows\\debug\\lib\\openal-hlu.lib",
+				"role" : "libraries"
+			},
+			{
+				"backtrace" : 8,
+				"fragment" : "vcpkg_installed\\x64-windows\\debug\\lib\\libnyquist_d.lib",
+				"role" : "libraries"
+			},
+			{
+				"backtrace" : 14,
+				"fragment" : "vcpkg_installed\\x64-windows\\debug\\lib\\fmtd.lib",
+				"role" : "libraries"
+			},
+			{
+				"fragment" : "kernel32.lib user32.lib gdi32.lib winspool.lib shell32.lib ole32.lib oleaut32.lib uuid.lib comdlg32.lib advapi32.lib",
+				"role" : "libraries"
+			}
+		],
+		"language" : "CXX"
+	},
+	"name" : "client",
+	"nameOnDisk" : "client.dll",
+	"paths" : 
+	{
+		"build" : "src/game/client",
+		"source" : "src/game/client"
+	},
+	"sourceGroups" : 
+	[
+		{
+			"name" : "Source Files",
+			"sourceIndexes" : 
+			[
+				0
+			]
+		},
+		{
+			"name" : "src\\public",
+			"sourceIndexes" : 
+			[
+				1,
+				200,
+				201,
+				202,
+				203
+			]
+		},
+		{
+			"name" : "src\\game",
+			"sourceIndexes" : 
+			[
+				2
+			]
+		},
+		{
+			"name" : "src\\game\\client",
+			"sourceIndexes" : 
+			[
+				3,
+				4,
+				5,
+				6,
+				7,
+				8,
+				9,
+				10,
+				11,
+				12,
+				13,
+				14,
+				15,
+				16,
+				17,
+				18,
+				19,
+				20,
+				21,
+				22,
+				23,
+				24,
+				25,
+				26,
+				27,
+				330
+			]
+		},
+		{
+			"name" : "src\\game\\client\\hl",
+			"sourceIndexes" : 
+			[
+				28,
+				29,
+				30,
+				31
+			]
+		},
+		{
+			"name" : "src\\game\\client\\input",
+			"sourceIndexes" : 
+			[
+				32,
+				33,
+				34,
+				35,
+				36
+			]
+		},
+		{
+			"name" : "src\\game\\client\\networking",
+			"sourceIndexes" : 
+			[
+				37,
+				38
+			]
+		},
+		{
+			"name" : "src\\game\\client\\particleman",
+			"sourceIndexes" : 
+			[
+				39,
+				40,
+				41,
+				42,
+				43,
+				44,
+				45,
+				46,
+				47,
+				48
+			]
+		},
+		{
+			"name" : "src\\game\\client\\prediction",
+			"sourceIndexes" : 
+			[
+				49,
+				50
+			]
+		},
+		{
+			"name" : "src\\game\\client\\rendering",
+			"sourceIndexes" : 
+			[
+				51,
+				52,
+				53,
+				54,
+				55,
+				56
+			]
+		},
+		{
+			"name" : "src\\game\\client\\sound",
+			"sourceIndexes" : 
+			[
+				57,
+				58,
+				59,
+				60,
+				61,
+				62,
+				63,
+				64,
+				65,
+				66,
+				67,
+				68,
+				69,
+				70,
+				71,
+				72,
+				73,
+				74,
+				75,
+				76
+			]
+		},
+		{
+			"name" : "src\\game\\client\\ui",
+			"sourceIndexes" : 
+			[
+				77,
+				78,
+				79,
+				80
+			]
+		},
+		{
+			"name" : "src\\game\\client\\ui\\hud",
+			"sourceIndexes" : 
+			[
+				81,
+				82,
+				83,
+				84,
+				85,
+				86,
+				87,
+				88,
+				89,
+				90,
+				91,
+				92,
+				93,
+				94,
+				95,
+				96,
+				97,
+				98,
+				99,
+				100,
+				101,
+				102,
+				103,
+				104,
+				105,
+				106,
+				107,
+				108,
+				109,
+				110,
+				111
+			]
+		},
+		{
+			"name" : "src\\game\\client\\ui\\vgui",
+			"sourceIndexes" : 
+			[
+				112,
+				113,
+				114,
+				115,
+				116,
+				117,
+				118,
+				119,
+				120,
+				121,
+				122,
+				123,
+				124,
+				125,
+				126,
+				127,
+				128,
+				129,
+				130,
+				131
+			]
+		},
+		{
+			"name" : "src\\game\\client\\ui\\vgui\\utils",
+			"sourceIndexes" : 
+			[
+				132,
+				133,
+				134,
+				135,
+				136,
+				137,
+				138,
+				139,
+				140,
+				141,
+				142,
+				143,
+				144,
+				145,
+				146
+			]
+		},
+		{
+			"name" : "src\\game\\server",
+			"sourceIndexes" : 
+			[
+				147,
+				148,
+				149
+			]
+		},
+		{
+			"name" : "src\\game\\server\\entities",
+			"sourceIndexes" : 
+			[
+				150
+			]
+		},
+		{
+			"name" : "src\\game\\server\\entities\\NPCs",
+			"sourceIndexes" : 
+			[
+				151
+			]
+		},
+		{
+			"name" : "src\\common",
+			"sourceIndexes" : 
+			[
+				152,
+				153,
+				154,
+				155,
+				156,
+				157,
+				158,
+				159,
+				160,
+				161,
+				162,
+				163,
+				164,
+				165,
+				166,
+				167,
+				168,
+				169,
+				170,
+				171,
+				172,
+				173,
+				174,
+				175,
+				176,
+				177,
+				178,
+				179,
+				180,
+				181,
+				182,
+				183,
+				184,
+				185,
+				186,
+				187,
+				188,
+				189
+			]
+		},
+		{
+			"name" : "src\\engine",
+			"sourceIndexes" : 
+			[
+				190,
+				191,
+				192,
+				193,
+				194,
+				195,
+				196,
+				197,
+				198,
+				199
+			]
+		},
+		{
+			"name" : "src\\public\\cl_dll",
+			"sourceIndexes" : 
+			[
+				204
+			]
+		},
+		{
+			"name" : "src\\public\\steam",
+			"sourceIndexes" : 
+			[
+				205
+			]
+		},
+		{
+			"name" : "src\\game\\shared",
+			"sourceIndexes" : 
+			[
+				206,
+				207,
+				208,
+				209,
+				210,
+				211,
+				212,
+				213
+			]
+		},
+		{
+			"name" : "src\\game\\shared\\entities",
+			"sourceIndexes" : 
+			[
+				214,
+				215,
+				216,
+				217,
+				218,
+				219,
+				220,
+				221,
+				222
+			]
+		},
+		{
+			"name" : "src\\game\\shared\\entities\\items",
+			"sourceIndexes" : 
+			[
+				223,
+				224
+			]
+		},
+		{
+			"name" : "src\\game\\shared\\entities\\items\\weapons",
+			"sourceIndexes" : 
+			[
+				225,
+				226,
+				227,
+				228,
+				229,
+				230,
+				231,
+				232,
+				233,
+				234,
+				235,
+				236,
+				237,
+				238,
+				239,
+				240,
+				241,
+				242,
+				243,
+				244,
+				245,
+				246,
+				247,
+				248,
+				249,
+				250,
+				251,
+				252,
+				253,
+				254,
+				255,
+				256,
+				257,
+				258,
+				259,
+				260,
+				261,
+				262,
+				263,
+				264,
+				265,
+				266,
+				267,
+				268,
+				269,
+				270,
+				271,
+				272,
+				273,
+				274,
+				275,
+				276,
+				277,
+				278
+			]
+		},
+		{
+			"name" : "src\\game\\shared\\models",
+			"sourceIndexes" : 
+			[
+				279,
+				280
+			]
+		},
+		{
+			"name" : "src\\game\\shared\\networking",
+			"sourceIndexes" : 
+			[
+				281,
+				282
+			]
+		},
+		{
+			"name" : "src\\game\\shared\\player_movement",
+			"sourceIndexes" : 
+			[
+				283,
+				284,
+				285,
+				286,
+				287,
+				288,
+				289,
+				290
+			]
+		},
+		{
+			"name" : "src\\game\\shared\\saverestore",
+			"sourceIndexes" : 
+			[
+				291,
+				292,
+				293,
+				294,
+				295,
+				296
+			]
+		},
+		{
+			"name" : "src\\game\\shared\\scripting\\AS",
+			"sourceIndexes" : 
+			[
+				297,
+				298,
+				299,
+				300,
+				301
+			]
+		},
+		{
+			"name" : "src\\game\\shared\\sound",
+			"sourceIndexes" : 
+			[
+				302,
+				303,
+				304,
+				305
+			]
+		},
+		{
+			"name" : "src\\game\\shared\\ui\\hud",
+			"sourceIndexes" : 
+			[
+				306,
+				307
+			]
+		},
+		{
+			"name" : "src\\game\\shared\\utils",
+			"sourceIndexes" : 
+			[
+				308,
+				309,
+				310,
+				311,
+				312,
+				313,
+				314,
+				315,
+				316,
+				317,
+				318,
+				319,
+				320,
+				321,
+				322,
+				323,
+				324,
+				325,
+				326,
+				327,
+				328,
+				329
+			]
+		},
+		{
+			"name" : "Header Files",
+			"sourceIndexes" : 
+			[
+				331
+			]
+		},
+		{
+			"name" : "Precompile Header File",
+			"sourceIndexes" : 
+			[
+				332
+			]
+		},
+		{
+			"name" : "",
+			"sourceIndexes" : 
+			[
+				333
+			]
+		}
+	],
+	"sources" : 
+	[
+		{
+			"backtrace" : 0,
+			"compileGroupIndex" : 0,
+			"path" : "out/build/x64-Debug/src/game/client/CMakeFiles/client.dir/cmake_pch.cxx",
+			"sourceGroupIndex" : 0
+		},
+		{
+			"backtrace" : 24,
+			"compileGroupIndex" : 1,
+			"path" : "src/public/eastl_allocator.cpp",
+			"sourceGroupIndex" : 1
+		},
+		{
+			"backtrace" : 24,
+			"path" : "src/game/UnifiedSDK.natvis",
+			"sourceGroupIndex" : 2
+		},
+		{
+			"backtrace" : 25,
+			"compileGroupIndex" : 1,
+			"path" : "src/game/client/cdll_int.cpp",
+			"sourceGroupIndex" : 3
+		},
+		{
+			"backtrace" : 25,
+			"path" : "src/game/client/cl_dll.h",
+			"sourceGroupIndex" : 3
+		},
+		{
+			"backtrace" : 25,
+			"path" : "src/game/client/cl_util.h",
+			"sourceGroupIndex" : 3
+		},
+		{
+			"backtrace" : 25,
+			"compileGroupIndex" : 1,
+			"path" : "src/game/client/client_gibs.cpp",
+			"sourceGroupIndex" : 3
+		},
+		{
+			"backtrace" : 25,
+			"path" : "src/game/client/client_gibs.h",
+			"sourceGroupIndex" : 3
+		},
+		{
+			"backtrace" : 25,
+			"compileGroupIndex" : 1,
+			"path" : "src/game/client/ClientLibrary.cpp",
+			"sourceGroupIndex" : 3
+		},
+		{
+			"backtrace" : 25,
+			"path" : "src/game/client/ClientLibrary.h",
+			"sourceGroupIndex" : 3
+		},
+		{
+			"backtrace" : 25,
+			"compileGroupIndex" : 1,
+			"path" : "src/game/client/com_weapons.cpp",
+			"sourceGroupIndex" : 3
+		},
+		{
+			"backtrace" : 25,
+			"path" : "src/game/client/com_weapons.h",
+			"sourceGroupIndex" : 3
+		},
+		{
+			"backtrace" : 25,
+			"compileGroupIndex" : 1,
+			"path" : "src/game/client/demo.cpp",
+			"sourceGroupIndex" : 3
+		},
+		{
+			"backtrace" : 25,
+			"path" : "src/game/client/demo.h",
+			"sourceGroupIndex" : 3
+		},
+		{
+			"backtrace" : 25,
+			"compileGroupIndex" : 1,
+			"path" : "src/game/client/entity.cpp",
+			"sourceGroupIndex" : 3
+		},
+		{
+			"backtrace" : 25,
+			"path" : "src/game/client/entity.h",
+			"sourceGroupIndex" : 3
+		},
+		{
+			"backtrace" : 25,
+			"compileGroupIndex" : 1,
+			"path" : "src/game/client/events.cpp",
+			"sourceGroupIndex" : 3
+		},
+		{
+			"backtrace" : 25,
+			"path" : "src/game/client/eventscripts.h",
+			"sourceGroupIndex" : 3
+		},
+		{
+			"backtrace" : 25,
+			"compileGroupIndex" : 1,
+			"path" : "src/game/client/ev_common.cpp",
+			"sourceGroupIndex" : 3
+		},
+		{
+			"backtrace" : 25,
+			"compileGroupIndex" : 1,
+			"path" : "src/game/client/ev_hldm.cpp",
+			"sourceGroupIndex" : 3
+		},
+		{
+			"backtrace" : 25,
+			"path" : "src/game/client/ev_hldm.h",
+			"sourceGroupIndex" : 3
+		},
+		{
+			"backtrace" : 25,
+			"path" : "src/game/client/Exports.h",
+			"sourceGroupIndex" : 3
+		},
+		{
+			"backtrace" : 25,
+			"path" : "src/game/client/global_consts.h",
+			"sourceGroupIndex" : 3
+		},
+		{
+			"backtrace" : 25,
+			"compileGroupIndex" : 1,
+			"path" : "src/game/client/interpolation.cpp",
+			"sourceGroupIndex" : 3
+		},
+		{
+			"backtrace" : 25,
+			"path" : "src/game/client/interpolation.h",
+			"sourceGroupIndex" : 3
+		},
+		{
+			"backtrace" : 25,
+			"path" : "src/game/client/player_info.h",
+			"sourceGroupIndex" : 3
+		},
+		{
+			"backtrace" : 25,
+			"compileGroupIndex" : 1,
+			"path" : "src/game/client/view.cpp",
+			"sourceGroupIndex" : 3
+		},
+		{
+			"backtrace" : 25,
+			"path" : "src/game/client/view.h",
+			"sourceGroupIndex" : 3
+		},
+		{
+			"backtrace" : 25,
+			"compileGroupIndex" : 1,
+			"path" : "src/game/client/hl/hl_baseentity.cpp",
+			"sourceGroupIndex" : 4
+		},
+		{
+			"backtrace" : 25,
+			"compileGroupIndex" : 1,
+			"path" : "src/game/client/hl/hl_events.cpp",
+			"sourceGroupIndex" : 4
+		},
+		{
+			"backtrace" : 25,
+			"compileGroupIndex" : 1,
+			"path" : "src/game/client/hl/hl_objects.cpp",
+			"sourceGroupIndex" : 4
+		},
+		{
+			"backtrace" : 25,
+			"compileGroupIndex" : 1,
+			"path" : "src/game/client/hl/hl_weapons.cpp",
+			"sourceGroupIndex" : 4
+		},
+		{
+			"backtrace" : 25,
+			"path" : "src/game/client/input/camera.h",
+			"sourceGroupIndex" : 5
+		},
+		{
+			"backtrace" : 25,
+			"compileGroupIndex" : 1,
+			"path" : "src/game/client/input/input.cpp",
+			"sourceGroupIndex" : 5
+		},
+		{
+			"backtrace" : 25,
+			"compileGroupIndex" : 1,
+			"path" : "src/game/client/input/inputw32.cpp",
+			"sourceGroupIndex" : 5
+		},
+		{
+			"backtrace" : 25,
+			"compileGroupIndex" : 1,
+			"path" : "src/game/client/input/in_camera.cpp",
+			"sourceGroupIndex" : 5
+		},
+		{
+			"backtrace" : 25,
+			"path" : "src/game/client/input/kbutton.h",
+			"sourceGroupIndex" : 5
+		},
+		{
+			"backtrace" : 25,
+			"compileGroupIndex" : 1,
+			"path" : "src/game/client/networking/ClientUserMessages.cpp",
+			"sourceGroupIndex" : 6
+		},
+		{
+			"backtrace" : 25,
+			"path" : "src/game/client/networking/ClientUserMessages.h",
+			"sourceGroupIndex" : 6
+		},
+		{
+			"backtrace" : 25,
+			"compileGroupIndex" : 1,
+			"path" : "src/game/client/particleman/CBaseParticle.cpp",
+			"sourceGroupIndex" : 7
+		},
+		{
+			"backtrace" : 25,
+			"path" : "src/game/client/particleman/CBaseParticle.h",
+			"sourceGroupIndex" : 7
+		},
+		{
+			"backtrace" : 25,
+			"compileGroupIndex" : 1,
+			"path" : "src/game/client/particleman/CFrustum.cpp",
+			"sourceGroupIndex" : 7
+		},
+		{
+			"backtrace" : 25,
+			"path" : "src/game/client/particleman/CFrustum.h",
+			"sourceGroupIndex" : 7
+		},
+		{
+			"backtrace" : 25,
+			"compileGroupIndex" : 1,
+			"path" : "src/game/client/particleman/CMiniMem.cpp",
+			"sourceGroupIndex" : 7
+		},
+		{
+			"backtrace" : 25,
+			"path" : "src/game/client/particleman/CMiniMem.h",
+			"sourceGroupIndex" : 7
+		},
+		{
+			"backtrace" : 25,
+			"compileGroupIndex" : 1,
+			"path" : "src/game/client/particleman/IParticleMan_Active.cpp",
+			"sourceGroupIndex" : 7
+		},
+		{
+			"backtrace" : 25,
+			"path" : "src/game/client/particleman/IParticleMan_Active.h",
+			"sourceGroupIndex" : 7
+		},
+		{
+			"backtrace" : 25,
+			"path" : "src/game/client/particleman/particleman.h",
+			"sourceGroupIndex" : 7
+		},
+		{
+			"backtrace" : 25,
+			"path" : "src/game/client/particleman/particleman_internal.h",
+			"sourceGroupIndex" : 7
+		},
+		{
+			"backtrace" : 25,
+			"compileGroupIndex" : 1,
+			"path" : "src/game/client/prediction/ClientPredictionSystem.cpp",
+			"sourceGroupIndex" : 8
+		},
+		{
+			"backtrace" : 25,
+			"path" : "src/game/client/prediction/ClientPredictionSystem.h",
+			"sourceGroupIndex" : 8
+		},
+		{
+			"backtrace" : 25,
+			"compileGroupIndex" : 1,
+			"path" : "src/game/client/rendering/GameStudioModelRenderer.cpp",
+			"sourceGroupIndex" : 9
+		},
+		{
+			"backtrace" : 25,
+			"path" : "src/game/client/rendering/GameStudioModelRenderer.h",
+			"sourceGroupIndex" : 9
+		},
+		{
+			"backtrace" : 25,
+			"compileGroupIndex" : 1,
+			"path" : "src/game/client/rendering/StudioModelRenderer.cpp",
+			"sourceGroupIndex" : 9
+		},
+		{
+			"backtrace" : 25,
+			"path" : "src/game/client/rendering/StudioModelRenderer.h",
+			"sourceGroupIndex" : 9
+		},
+		{
+			"backtrace" : 25,
+			"compileGroupIndex" : 1,
+			"path" : "src/game/client/rendering/tri.cpp",
+			"sourceGroupIndex" : 9
+		},
+		{
+			"backtrace" : 25,
+			"path" : "src/game/client/rendering/tri.h",
+			"sourceGroupIndex" : 9
+		},
+		{
+			"backtrace" : 25,
+			"path" : "src/game/client/sound/ClientSoundReplacementSystem.h",
+			"sourceGroupIndex" : 10
+		},
+		{
+			"backtrace" : 25,
+			"path" : "src/game/client/sound/DummySoundSystem.h",
+			"sourceGroupIndex" : 10
+		},
+		{
+			"backtrace" : 25,
+			"compileGroupIndex" : 1,
+			"path" : "src/game/client/sound/GameSoundSystem.cpp",
+			"sourceGroupIndex" : 10
+		},
+		{
+			"backtrace" : 25,
+			"path" : "src/game/client/sound/GameSoundSystem.h",
+			"sourceGroupIndex" : 10
+		},
+		{
+			"backtrace" : 25,
+			"compileGroupIndex" : 1,
+			"path" : "src/game/client/sound/HalfLifeSoundEffects.cpp",
+			"sourceGroupIndex" : 10
+		},
+		{
+			"backtrace" : 25,
+			"path" : "src/game/client/sound/HalfLifeSoundEffects.h",
+			"sourceGroupIndex" : 10
+		},
+		{
+			"backtrace" : 25,
+			"path" : "src/game/client/sound/IGameSoundSystem.h",
+			"sourceGroupIndex" : 10
+		},
+		{
+			"backtrace" : 25,
+			"path" : "src/game/client/sound/IMusicSystem.h",
+			"sourceGroupIndex" : 10
+		},
+		{
+			"backtrace" : 25,
+			"path" : "src/game/client/sound/ISoundSystem.h",
+			"sourceGroupIndex" : 10
+		},
+		{
+			"backtrace" : 25,
+			"compileGroupIndex" : 1,
+			"path" : "src/game/client/sound/MusicSystem.cpp",
+			"sourceGroupIndex" : 10
+		},
+		{
+			"backtrace" : 25,
+			"path" : "src/game/client/sound/MusicSystem.h",
+			"sourceGroupIndex" : 10
+		},
+		{
+			"backtrace" : 25,
+			"path" : "src/game/client/sound/OpenALUtils.h",
+			"sourceGroupIndex" : 10
+		},
+		{
+			"backtrace" : 25,
+			"path" : "src/game/client/sound/RiffChunkReader.h",
+			"sourceGroupIndex" : 10
+		},
+		{
+			"backtrace" : 25,
+			"compileGroupIndex" : 1,
+			"path" : "src/game/client/sound/SentencesSystem.cpp",
+			"sourceGroupIndex" : 10
+		},
+		{
+			"backtrace" : 25,
+			"path" : "src/game/client/sound/SentencesSystem.h",
+			"sourceGroupIndex" : 10
+		},
+		{
+			"backtrace" : 25,
+			"compileGroupIndex" : 1,
+			"path" : "src/game/client/sound/SoundCache.cpp",
+			"sourceGroupIndex" : 10
+		},
+		{
+			"backtrace" : 25,
+			"path" : "src/game/client/sound/SoundCache.h",
+			"sourceGroupIndex" : 10
+		},
+		{
+			"backtrace" : 25,
+			"path" : "src/game/client/sound/SoundDefs.h",
+			"sourceGroupIndex" : 10
+		},
+		{
+			"backtrace" : 25,
+			"compileGroupIndex" : 1,
+			"path" : "src/game/client/sound/SoundSystem.cpp",
+			"sourceGroupIndex" : 10
+		},
+		{
+			"backtrace" : 25,
+			"path" : "src/game/client/sound/SoundSystem.h",
+			"sourceGroupIndex" : 10
+		},
+		{
+			"backtrace" : 25,
+			"compileGroupIndex" : 1,
+			"path" : "src/game/client/ui/voice_banmgr.cpp",
+			"sourceGroupIndex" : 11
+		},
+		{
+			"backtrace" : 25,
+			"path" : "src/game/client/ui/voice_banmgr.h",
+			"sourceGroupIndex" : 11
+		},
+		{
+			"backtrace" : 25,
+			"compileGroupIndex" : 1,
+			"path" : "src/game/client/ui/voice_status.cpp",
+			"sourceGroupIndex" : 11
+		},
+		{
+			"backtrace" : 25,
+			"path" : "src/game/client/ui/voice_status.h",
+			"sourceGroupIndex" : 11
+		},
+		{
+			"backtrace" : 25,
+			"compileGroupIndex" : 1,
+			"path" : "src/game/client/ui/hud/ammo.cpp",
+			"sourceGroupIndex" : 12
+		},
+		{
+			"backtrace" : 25,
+			"path" : "src/game/client/ui/hud/ammo.h",
+			"sourceGroupIndex" : 12
+		},
+		{
+			"backtrace" : 25,
+			"compileGroupIndex" : 1,
+			"path" : "src/game/client/ui/hud/ammohistory.cpp",
+			"sourceGroupIndex" : 12
+		},
+		{
+			"backtrace" : 25,
+			"path" : "src/game/client/ui/hud/ammohistory.h",
+			"sourceGroupIndex" : 12
+		},
+		{
+			"backtrace" : 25,
+			"compileGroupIndex" : 1,
+			"path" : "src/game/client/ui/hud/death.cpp",
+			"sourceGroupIndex" : 12
+		},
+		{
+			"backtrace" : 25,
+			"compileGroupIndex" : 1,
+			"path" : "src/game/client/ui/hud/flashlight.cpp",
+			"sourceGroupIndex" : 12
+		},
+		{
+			"backtrace" : 25,
+			"compileGroupIndex" : 1,
+			"path" : "src/game/client/ui/hud/geiger.cpp",
+			"sourceGroupIndex" : 12
+		},
+		{
+			"backtrace" : 25,
+			"compileGroupIndex" : 1,
+			"path" : "src/game/client/ui/hud/health.cpp",
+			"sourceGroupIndex" : 12
+		},
+		{
+			"backtrace" : 25,
+			"path" : "src/game/client/ui/hud/health.h",
+			"sourceGroupIndex" : 12
+		},
+		{
+			"backtrace" : 25,
+			"compileGroupIndex" : 1,
+			"path" : "src/game/client/ui/hud/hud.cpp",
+			"sourceGroupIndex" : 12
+		},
+		{
+			"backtrace" : 25,
+			"path" : "src/game/client/ui/hud/hud.h",
+			"sourceGroupIndex" : 12
+		},
+		{
+			"backtrace" : 25,
+			"compileGroupIndex" : 1,
+			"path" : "src/game/client/ui/hud/hud_debuginfo.cpp",
+			"sourceGroupIndex" : 12
+		},
+		{
+			"backtrace" : 25,
+			"compileGroupIndex" : 1,
+			"path" : "src/game/client/ui/hud/hud_entityinfo.cpp",
+			"sourceGroupIndex" : 12
+		},
+		{
+			"backtrace" : 25,
+			"compileGroupIndex" : 1,
+			"path" : "src/game/client/ui/hud/hud_flagicons.cpp",
+			"sourceGroupIndex" : 12
+		},
+		{
+			"backtrace" : 25,
+			"compileGroupIndex" : 1,
+			"path" : "src/game/client/ui/hud/hud_msg.cpp",
+			"sourceGroupIndex" : 12
+		},
+		{
+			"backtrace" : 25,
+			"compileGroupIndex" : 1,
+			"path" : "src/game/client/ui/hud/hud_playerbrowse.cpp",
+			"sourceGroupIndex" : 12
+		},
+		{
+			"backtrace" : 25,
+			"compileGroupIndex" : 1,
+			"path" : "src/game/client/ui/hud/hud_projectinfo.cpp",
+			"sourceGroupIndex" : 12
+		},
+		{
+			"backtrace" : 25,
+			"compileGroupIndex" : 1,
+			"path" : "src/game/client/ui/hud/hud_redraw.cpp",
+			"sourceGroupIndex" : 12
+		},
+		{
+			"backtrace" : 25,
+			"compileGroupIndex" : 1,
+			"path" : "src/game/client/ui/hud/hud_spectator.cpp",
+			"sourceGroupIndex" : 12
+		},
+		{
+			"backtrace" : 25,
+			"path" : "src/game/client/ui/hud/hud_spectator.h",
+			"sourceGroupIndex" : 12
+		},
+		{
+			"backtrace" : 25,
+			"compileGroupIndex" : 1,
+			"path" : "src/game/client/ui/hud/hud_update.cpp",
+			"sourceGroupIndex" : 12
+		},
+		{
+			"backtrace" : 25,
+			"compileGroupIndex" : 1,
+			"path" : "src/game/client/ui/hud/HudSpriteConfigSystem.cpp",
+			"sourceGroupIndex" : 12
+		},
+		{
+			"backtrace" : 25,
+			"path" : "src/game/client/ui/hud/HudSpriteConfigSystem.h",
+			"sourceGroupIndex" : 12
+		},
+		{
+			"backtrace" : 25,
+			"compileGroupIndex" : 1,
+			"path" : "src/game/client/ui/hud/menu.cpp",
+			"sourceGroupIndex" : 12
+		},
+		{
+			"backtrace" : 25,
+			"compileGroupIndex" : 1,
+			"path" : "src/game/client/ui/hud/message.cpp",
+			"sourceGroupIndex" : 12
+		},
+		{
+			"backtrace" : 25,
+			"compileGroupIndex" : 1,
+			"path" : "src/game/client/ui/hud/saytext.cpp",
+			"sourceGroupIndex" : 12
+		},
+		{
+			"backtrace" : 25,
+			"compileGroupIndex" : 1,
+			"path" : "src/game/client/ui/hud/scoreboard.cpp",
+			"sourceGroupIndex" : 12
+		},
+		{
+			"backtrace" : 25,
+			"compileGroupIndex" : 1,
+			"path" : "src/game/client/ui/hud/statusbar.cpp",
+			"sourceGroupIndex" : 12
+		},
+		{
+			"backtrace" : 25,
+			"compileGroupIndex" : 1,
+			"path" : "src/game/client/ui/hud/status_icons.cpp",
+			"sourceGroupIndex" : 12
+		},
+		{
+			"backtrace" : 25,
+			"compileGroupIndex" : 1,
+			"path" : "src/game/client/ui/hud/text_message.cpp",
+			"sourceGroupIndex" : 12
+		},
+		{
+			"backtrace" : 25,
+			"compileGroupIndex" : 1,
+			"path" : "src/game/client/ui/hud/train.cpp",
+			"sourceGroupIndex" : 12
+		},
+		{
+			"backtrace" : 25,
+			"compileGroupIndex" : 1,
+			"path" : "src/game/client/ui/vgui/CampaignSelectSystem.cpp",
+			"sourceGroupIndex" : 13
+		},
+		{
+			"backtrace" : 25,
+			"path" : "src/game/client/ui/vgui/CampaignSelectSystem.h",
+			"sourceGroupIndex" : 13
+		},
+		{
+			"backtrace" : 25,
+			"compileGroupIndex" : 1,
+			"path" : "src/game/client/ui/vgui/vgui_CampaignSelect.cpp",
+			"sourceGroupIndex" : 13
+		},
+		{
+			"backtrace" : 25,
+			"path" : "src/game/client/ui/vgui/vgui_CampaignSelect.h",
+			"sourceGroupIndex" : 13
+		},
+		{
+			"backtrace" : 25,
+			"compileGroupIndex" : 1,
+			"path" : "src/game/client/ui/vgui/vgui_ClassMenu.cpp",
+			"sourceGroupIndex" : 13
+		},
+		{
+			"backtrace" : 25,
+			"compileGroupIndex" : 1,
+			"path" : "src/game/client/ui/vgui/vgui_CustomObjects.cpp",
+			"sourceGroupIndex" : 13
+		},
+		{
+			"backtrace" : 25,
+			"compileGroupIndex" : 1,
+			"path" : "src/game/client/ui/vgui/vgui_int.cpp",
+			"sourceGroupIndex" : 13
+		},
+		{
+			"backtrace" : 25,
+			"path" : "src/game/client/ui/vgui/vgui_int.h",
+			"sourceGroupIndex" : 13
+		},
+		{
+			"backtrace" : 25,
+			"compileGroupIndex" : 1,
+			"path" : "src/game/client/ui/vgui/vgui_MOTDWindow.cpp",
+			"sourceGroupIndex" : 13
+		},
+		{
+			"backtrace" : 25,
+			"compileGroupIndex" : 1,
+			"path" : "src/game/client/ui/vgui/vgui_SchemeManager.cpp",
+			"sourceGroupIndex" : 13
+		},
+		{
+			"backtrace" : 25,
+			"path" : "src/game/client/ui/vgui/vgui_SchemeManager.h",
+			"sourceGroupIndex" : 13
+		},
+		{
+			"backtrace" : 25,
+			"compileGroupIndex" : 1,
+			"path" : "src/game/client/ui/vgui/vgui_ScorePanel.cpp",
+			"sourceGroupIndex" : 13
+		},
+		{
+			"backtrace" : 25,
+			"path" : "src/game/client/ui/vgui/vgui_ScorePanel.h",
+			"sourceGroupIndex" : 13
+		},
+		{
+			"backtrace" : 25,
+			"compileGroupIndex" : 1,
+			"path" : "src/game/client/ui/vgui/vgui_SpectatorPanel.cpp",
+			"sourceGroupIndex" : 13
+		},
+		{
+			"backtrace" : 25,
+			"path" : "src/game/client/ui/vgui/vgui_SpectatorPanel.h",
+			"sourceGroupIndex" : 13
+		},
+		{
+			"backtrace" : 25,
+			"compileGroupIndex" : 1,
+			"path" : "src/game/client/ui/vgui/vgui_StatsMenuPanel.cpp",
+			"sourceGroupIndex" : 13
+		},
+		{
+			"backtrace" : 25,
+			"path" : "src/game/client/ui/vgui/vgui_StatsMenuPanel.h",
+			"sourceGroupIndex" : 13
+		},
+		{
+			"backtrace" : 25,
+			"compileGroupIndex" : 1,
+			"path" : "src/game/client/ui/vgui/vgui_TeamFortressViewport.cpp",
+			"sourceGroupIndex" : 13
+		},
+		{
+			"backtrace" : 25,
+			"path" : "src/game/client/ui/vgui/vgui_TeamFortressViewport.h",
+			"sourceGroupIndex" : 13
+		},
+		{
+			"backtrace" : 25,
+			"compileGroupIndex" : 1,
+			"path" : "src/game/client/ui/vgui/vgui_teammenu.cpp",
+			"sourceGroupIndex" : 13
+		},
+		{
+			"backtrace" : 25,
+			"compileGroupIndex" : 1,
+			"path" : "src/game/client/ui/vgui/utils/vgui_checkbutton2.cpp",
+			"sourceGroupIndex" : 14
+		},
+		{
+			"backtrace" : 25,
+			"path" : "src/game/client/ui/vgui/utils/vgui_checkbutton2.h",
+			"sourceGroupIndex" : 14
+		},
+		{
+			"backtrace" : 25,
+			"path" : "src/game/client/ui/vgui/utils/vgui_defaultinputsignal.h",
+			"sourceGroupIndex" : 14
+		},
+		{
+			"backtrace" : 25,
+			"compileGroupIndex" : 1,
+			"path" : "src/game/client/ui/vgui/utils/vgui_grid.cpp",
+			"sourceGroupIndex" : 14
+		},
+		{
+			"backtrace" : 25,
+			"path" : "src/game/client/ui/vgui/utils/vgui_grid.h",
+			"sourceGroupIndex" : 14
+		},
+		{
+			"backtrace" : 25,
+			"compileGroupIndex" : 1,
+			"path" : "src/game/client/ui/vgui/utils/vgui_helpers.cpp",
+			"sourceGroupIndex" : 14
+		},
+		{
+			"backtrace" : 25,
+			"path" : "src/game/client/ui/vgui/utils/vgui_helpers.h",
+			"sourceGroupIndex" : 14
+		},
+		{
+			"backtrace" : 25,
+			"compileGroupIndex" : 1,
+			"path" : "src/game/client/ui/vgui/utils/vgui_listbox.cpp",
+			"sourceGroupIndex" : 14
+		},
+		{
+			"backtrace" : 25,
+			"path" : "src/game/client/ui/vgui/utils/vgui_listbox.h",
+			"sourceGroupIndex" : 14
+		},
+		{
+			"backtrace" : 25,
+			"compileGroupIndex" : 1,
+			"path" : "src/game/client/ui/vgui/utils/vgui_loadtga.cpp",
+			"sourceGroupIndex" : 14
+		},
+		{
+			"backtrace" : 25,
+			"path" : "src/game/client/ui/vgui/utils/vgui_loadtga.h",
+			"sourceGroupIndex" : 14
+		},
+		{
+			"backtrace" : 25,
+			"compileGroupIndex" : 1,
+			"path" : "src/game/client/ui/vgui/utils/vgui_scrollbar2.cpp",
+			"sourceGroupIndex" : 14
+		},
+		{
+			"backtrace" : 25,
+			"path" : "src/game/client/ui/vgui/utils/vgui_scrollbar2.h",
+			"sourceGroupIndex" : 14
+		},
+		{
+			"backtrace" : 25,
+			"compileGroupIndex" : 1,
+			"path" : "src/game/client/ui/vgui/utils/vgui_slider2.cpp",
+			"sourceGroupIndex" : 14
+		},
+		{
+			"backtrace" : 25,
+			"path" : "src/game/client/ui/vgui/utils/vgui_slider2.h",
+			"sourceGroupIndex" : 14
+		},
+		{
+			"backtrace" : 25,
+			"path" : "src/game/server/cdll_dll.h",
+			"sourceGroupIndex" : 15
+		},
+		{
+			"backtrace" : 25,
+			"path" : "src/game/server/enginecallback.h",
+			"sourceGroupIndex" : 15
+		},
+		{
+			"backtrace" : 25,
+			"path" : "src/game/server/extdll.h",
+			"sourceGroupIndex" : 15
+		},
+		{
+			"backtrace" : 25,
+			"path" : "src/game/server/entities/cbase.h",
+			"sourceGroupIndex" : 16
+		},
+		{
+			"backtrace" : 25,
+			"path" : "src/game/server/entities/NPCs/basemonster.h",
+			"sourceGroupIndex" : 17
+		},
+		{
+			"backtrace" : 25,
+			"path" : "src/common/beamdef.h",
+			"sourceGroupIndex" : 18
+		},
+		{
+			"backtrace" : 25,
+			"path" : "src/common/cl_entity.h",
+			"sourceGroupIndex" : 18
+		},
+		{
+			"backtrace" : 25,
+			"path" : "src/common/ClassData.h",
+			"sourceGroupIndex" : 18
+		},
+		{
+			"backtrace" : 25,
+			"path" : "src/common/com_model.h",
+			"sourceGroupIndex" : 18
+		},
+		{
+			"backtrace" : 25,
+			"path" : "src/common/common_types.h",
+			"sourceGroupIndex" : 18
+		},
+		{
+			"backtrace" : 25,
+			"path" : "src/common/const.h",
+			"sourceGroupIndex" : 18
+		},
+		{
+			"backtrace" : 25,
+			"path" : "src/common/con_nprint.h",
+			"sourceGroupIndex" : 18
+		},
+		{
+			"backtrace" : 25,
+			"path" : "src/common/cvardef.h",
+			"sourceGroupIndex" : 18
+		},
+		{
+			"backtrace" : 25,
+			"path" : "src/common/demo_api.h",
+			"sourceGroupIndex" : 18
+		},
+		{
+			"backtrace" : 25,
+			"path" : "src/common/director_cmds.h",
+			"sourceGroupIndex" : 18
+		},
+		{
+			"backtrace" : 25,
+			"path" : "src/common/dlight.h",
+			"sourceGroupIndex" : 18
+		},
+		{
+			"backtrace" : 25,
+			"path" : "src/common/entity_state.h",
+			"sourceGroupIndex" : 18
+		},
+		{
+			"backtrace" : 25,
+			"path" : "src/common/entity_types.h",
+			"sourceGroupIndex" : 18
+		},
+		{
+			"backtrace" : 25,
+			"path" : "src/common/event_api.h",
+			"sourceGroupIndex" : 18
+		},
+		{
+			"backtrace" : 25,
+			"path" : "src/common/event_args.h",
+			"sourceGroupIndex" : 18
+		},
+		{
+			"backtrace" : 25,
+			"path" : "src/common/event_flags.h",
+			"sourceGroupIndex" : 18
+		},
+		{
+			"backtrace" : 25,
+			"path" : "src/common/hltv.h",
+			"sourceGroupIndex" : 18
+		},
+		{
+			"backtrace" : 25,
+			"path" : "src/common/in_buttons.h",
+			"sourceGroupIndex" : 18
+		},
+		{
+			"backtrace" : 25,
+			"path" : "src/common/ivoicetweak.h",
+			"sourceGroupIndex" : 18
+		},
+		{
+			"backtrace" : 25,
+			"compileGroupIndex" : 1,
+			"path" : "src/common/mathlib.cpp",
+			"sourceGroupIndex" : 18
+		},
+		{
+			"backtrace" : 25,
+			"path" : "src/common/mathlib.h",
+			"sourceGroupIndex" : 18
+		},
+		{
+			"backtrace" : 25,
+			"path" : "src/common/netadr.h",
+			"sourceGroupIndex" : 18
+		},
+		{
+			"backtrace" : 25,
+			"path" : "src/common/net_api.h",
+			"sourceGroupIndex" : 18
+		},
+		{
+			"backtrace" : 25,
+			"path" : "src/common/parsemsg.h",
+			"sourceGroupIndex" : 18
+		},
+		{
+			"backtrace" : 25,
+			"path" : "src/common/particledef.h",
+			"sourceGroupIndex" : 18
+		},
+		{
+			"backtrace" : 25,
+			"path" : "src/common/Platform.h",
+			"sourceGroupIndex" : 18
+		},
+		{
+			"backtrace" : 25,
+			"path" : "src/common/PlatformHeaders.h",
+			"sourceGroupIndex" : 18
+		},
+		{
+			"backtrace" : 25,
+			"path" : "src/common/pmtrace.h",
+			"sourceGroupIndex" : 18
+		},
+		{
+			"backtrace" : 25,
+			"path" : "src/common/ref_params.h",
+			"sourceGroupIndex" : 18
+		},
+		{
+			"backtrace" : 25,
+			"path" : "src/common/r_efx.h",
+			"sourceGroupIndex" : 18
+		},
+		{
+			"backtrace" : 25,
+			"path" : "src/common/r_studioint.h",
+			"sourceGroupIndex" : 18
+		},
+		{
+			"backtrace" : 25,
+			"path" : "src/common/screenfade.h",
+			"sourceGroupIndex" : 18
+		},
+		{
+			"backtrace" : 25,
+			"path" : "src/common/Sequence.h",
+			"sourceGroupIndex" : 18
+		},
+		{
+			"backtrace" : 25,
+			"path" : "src/common/triangleapi.h",
+			"sourceGroupIndex" : 18
+		},
+		{
+			"backtrace" : 25,
+			"path" : "src/common/usercmd.h",
+			"sourceGroupIndex" : 18
+		},
+		{
+			"backtrace" : 25,
+			"path" : "src/common/weaponinfo.h",
+			"sourceGroupIndex" : 18
+		},
+		{
+			"backtrace" : 25,
+			"path" : "src/common/winsani_in.h",
+			"sourceGroupIndex" : 18
+		},
+		{
+			"backtrace" : 25,
+			"path" : "src/common/winsani_out.h",
+			"sourceGroupIndex" : 18
+		},
+		{
+			"backtrace" : 25,
+			"path" : "src/engine/APIProxy.h",
+			"sourceGroupIndex" : 19
+		},
+		{
+			"backtrace" : 25,
+			"path" : "src/engine/cdll_int.h",
+			"sourceGroupIndex" : 19
+		},
+		{
+			"backtrace" : 25,
+			"path" : "src/engine/custom.h",
+			"sourceGroupIndex" : 19
+		},
+		{
+			"backtrace" : 25,
+			"path" : "src/engine/customentity.h",
+			"sourceGroupIndex" : 19
+		},
+		{
+			"backtrace" : 25,
+			"path" : "src/engine/edict.h",
+			"sourceGroupIndex" : 19
+		},
+		{
+			"backtrace" : 25,
+			"path" : "src/engine/eiface.h",
+			"sourceGroupIndex" : 19
+		},
+		{
+			"backtrace" : 25,
+			"path" : "src/engine/progdefs.h",
+			"sourceGroupIndex" : 19
+		},
+		{
+			"backtrace" : 25,
+			"path" : "src/engine/progs.h",
+			"sourceGroupIndex" : 19
+		},
+		{
+			"backtrace" : 25,
+			"path" : "src/engine/shake.h",
+			"sourceGroupIndex" : 19
+		},
+		{
+			"backtrace" : 25,
+			"path" : "src/engine/studio.h",
+			"sourceGroupIndex" : 19
+		},
+		{
+			"backtrace" : 25,
+			"path" : "src/public/FileSystem.h",
+			"sourceGroupIndex" : 1
+		},
+		{
+			"backtrace" : 25,
+			"compileGroupIndex" : 1,
+			"path" : "src/public/interface.cpp",
+			"sourceGroupIndex" : 1
+		},
+		{
+			"backtrace" : 25,
+			"path" : "src/public/interface.h",
+			"sourceGroupIndex" : 1
+		},
+		{
+			"backtrace" : 25,
+			"path" : "src/public/keydefs.h",
+			"sourceGroupIndex" : 1
+		},
+		{
+			"backtrace" : 25,
+			"path" : "src/public/cl_dll/IGameClientExports.h",
+			"sourceGroupIndex" : 20
+		},
+		{
+			"backtrace" : 25,
+			"path" : "src/public/steam/steamtypes.h",
+			"sourceGroupIndex" : 21
+		},
+		{
+			"backtrace" : 27,
+			"compileGroupIndex" : 1,
+			"path" : "src/game/shared/GameLibrary.cpp",
+			"sourceGroupIndex" : 22
+		},
+		{
+			"backtrace" : 27,
+			"path" : "src/game/shared/GameLibrary.h",
+			"sourceGroupIndex" : 22
+		},
+		{
+			"backtrace" : 27,
+			"path" : "src/game/shared/palette.h",
+			"sourceGroupIndex" : 22
+		},
+		{
+			"backtrace" : 27,
+			"compileGroupIndex" : 1,
+			"path" : "src/game/shared/ProjectInfoSystem.cpp",
+			"sourceGroupIndex" : 22
+		},
+		{
+			"backtrace" : 27,
+			"path" : "src/game/shared/ProjectInfoSystem.h",
+			"sourceGroupIndex" : 22
+		},
+		{
+			"backtrace" : 27,
+			"compileGroupIndex" : 1,
+			"path" : "src/game/shared/skill.cpp",
+			"sourceGroupIndex" : 22
+		},
+		{
+			"backtrace" : 27,
+			"path" : "src/game/shared/skill.h",
+			"sourceGroupIndex" : 22
+		},
+		{
+			"backtrace" : 27,
+			"path" : "src/game/shared/voice_common.h",
+			"sourceGroupIndex" : 22
+		},
+		{
+			"backtrace" : 27,
+			"compileGroupIndex" : 1,
+			"path" : "src/game/shared/entities/ehandle.cpp",
+			"sourceGroupIndex" : 23
+		},
+		{
+			"backtrace" : 27,
+			"path" : "src/game/shared/entities/ehandle.h",
+			"sourceGroupIndex" : 23
+		},
+		{
+			"backtrace" : 27,
+			"compileGroupIndex" : 1,
+			"path" : "src/game/shared/entities/EntityClassificationSystem.cpp",
+			"sourceGroupIndex" : 23
+		},
+		{
+			"backtrace" : 27,
+			"path" : "src/game/shared/entities/EntityClassificationSystem.h",
+			"sourceGroupIndex" : 23
+		},
+		{
+			"backtrace" : 27,
+			"path" : "src/game/shared/entities/EntityDictionary.h",
+			"sourceGroupIndex" : 23
+		},
+		{
+			"backtrace" : 27,
+			"compileGroupIndex" : 1,
+			"path" : "src/game/shared/entities/entity_shared.cpp",
+			"sourceGroupIndex" : 23
+		},
+		{
+			"backtrace" : 27,
+			"compileGroupIndex" : 1,
+			"path" : "src/game/shared/entities/entity_utils.cpp",
+			"sourceGroupIndex" : 23
+		},
+		{
+			"backtrace" : 27,
+			"path" : "src/game/shared/entities/entity_utils.h",
+			"sourceGroupIndex" : 23
+		},
+		{
+			"backtrace" : 27,
+			"compileGroupIndex" : 1,
+			"path" : "src/game/shared/entities/player_shared.cpp",
+			"sourceGroupIndex" : 23
+		},
+		{
+			"backtrace" : 27,
+			"compileGroupIndex" : 1,
+			"path" : "src/game/shared/entities/items/CBaseItem.cpp",
+			"sourceGroupIndex" : 24
+		},
+		{
+			"backtrace" : 27,
+			"path" : "src/game/shared/entities/items/CBaseItem.h",
+			"sourceGroupIndex" : 24
+		},
+		{
+			"backtrace" : 27,
+			"compileGroupIndex" : 1,
+			"path" : "src/game/shared/entities/items/weapons/AmmoTypeSystem.cpp",
+			"sourceGroupIndex" : 25
+		},
+		{
+			"backtrace" : 27,
+			"path" : "src/game/shared/entities/items/weapons/AmmoTypeSystem.h",
+			"sourceGroupIndex" : 25
+		},
+		{
+			"backtrace" : 27,
+			"compileGroupIndex" : 1,
+			"path" : "src/game/shared/entities/items/weapons/CCrossbow.cpp",
+			"sourceGroupIndex" : 25
+		},
+		{
+			"backtrace" : 27,
+			"path" : "src/game/shared/entities/items/weapons/CCrossbow.h",
+			"sourceGroupIndex" : 25
+		},
+		{
+			"backtrace" : 27,
+			"compileGroupIndex" : 1,
+			"path" : "src/game/shared/entities/items/weapons/CCrowbar.cpp",
+			"sourceGroupIndex" : 25
+		},
+		{
+			"backtrace" : 27,
+			"path" : "src/game/shared/entities/items/weapons/CCrowbar.h",
+			"sourceGroupIndex" : 25
+		},
+		{
+			"backtrace" : 27,
+			"compileGroupIndex" : 1,
+			"path" : "src/game/shared/entities/items/weapons/CDisplacer.cpp",
+			"sourceGroupIndex" : 25
+		},
+		{
+			"backtrace" : 27,
+			"path" : "src/game/shared/entities/items/weapons/CDisplacer.h",
+			"sourceGroupIndex" : 25
+		},
+		{
+			"backtrace" : 27,
+			"compileGroupIndex" : 1,
+			"path" : "src/game/shared/entities/items/weapons/CEagle.cpp",
+			"sourceGroupIndex" : 25
+		},
+		{
+			"backtrace" : 27,
+			"path" : "src/game/shared/entities/items/weapons/CEagle.h",
+			"sourceGroupIndex" : 25
+		},
+		{
+			"backtrace" : 27,
+			"compileGroupIndex" : 1,
+			"path" : "src/game/shared/entities/items/weapons/CEgon.cpp",
+			"sourceGroupIndex" : 25
+		},
+		{
+			"backtrace" : 27,
+			"path" : "src/game/shared/entities/items/weapons/CEgon.h",
+			"sourceGroupIndex" : 25
+		},
+		{
+			"backtrace" : 27,
+			"compileGroupIndex" : 1,
+			"path" : "src/game/shared/entities/items/weapons/CGauss.cpp",
+			"sourceGroupIndex" : 25
+		},
+		{
+			"backtrace" : 27,
+			"path" : "src/game/shared/entities/items/weapons/CGauss.h",
+			"sourceGroupIndex" : 25
+		},
+		{
+			"backtrace" : 27,
+			"compileGroupIndex" : 1,
+			"path" : "src/game/shared/entities/items/weapons/CGlock.cpp",
+			"sourceGroupIndex" : 25
+		},
+		{
+			"backtrace" : 27,
+			"path" : "src/game/shared/entities/items/weapons/CGlock.h",
+			"sourceGroupIndex" : 25
+		},
+		{
+			"backtrace" : 27,
+			"compileGroupIndex" : 1,
+			"path" : "src/game/shared/entities/items/weapons/CGrapple.cpp",
+			"sourceGroupIndex" : 25
+		},
+		{
+			"backtrace" : 27,
+			"path" : "src/game/shared/entities/items/weapons/CGrapple.h",
+			"sourceGroupIndex" : 25
+		},
+		{
+			"backtrace" : 27,
+			"compileGroupIndex" : 1,
+			"path" : "src/game/shared/entities/items/weapons/CHandGrenade.cpp",
+			"sourceGroupIndex" : 25
+		},
+		{
+			"backtrace" : 27,
+			"path" : "src/game/shared/entities/items/weapons/CHandGrenade.h",
+			"sourceGroupIndex" : 25
+		},
+		{
+			"backtrace" : 27,
+			"compileGroupIndex" : 1,
+			"path" : "src/game/shared/entities/items/weapons/CHgun.cpp",
+			"sourceGroupIndex" : 25
+		},
+		{
+			"backtrace" : 27,
+			"path" : "src/game/shared/entities/items/weapons/CHgun.h",
+			"sourceGroupIndex" : 25
+		},
+		{
+			"backtrace" : 27,
+			"compileGroupIndex" : 1,
+			"path" : "src/game/shared/entities/items/weapons/CKnife.cpp",
+			"sourceGroupIndex" : 25
+		},
+		{
+			"backtrace" : 27,
+			"path" : "src/game/shared/entities/items/weapons/CKnife.h",
+			"sourceGroupIndex" : 25
+		},
+		{
+			"backtrace" : 27,
+			"compileGroupIndex" : 1,
+			"path" : "src/game/shared/entities/items/weapons/CM249.cpp",
+			"sourceGroupIndex" : 25
+		},
+		{
+			"backtrace" : 27,
+			"path" : "src/game/shared/entities/items/weapons/CM249.h",
+			"sourceGroupIndex" : 25
+		},
+		{
+			"backtrace" : 27,
+			"compileGroupIndex" : 1,
+			"path" : "src/game/shared/entities/items/weapons/CMP5.cpp",
+			"sourceGroupIndex" : 25
+		},
+		{
+			"backtrace" : 27,
+			"path" : "src/game/shared/entities/items/weapons/CMP5.h",
+			"sourceGroupIndex" : 25
+		},
+		{
+			"backtrace" : 27,
+			"compileGroupIndex" : 1,
+			"path" : "src/game/shared/entities/items/weapons/CPenguin.cpp",
+			"sourceGroupIndex" : 25
+		},
+		{
+			"backtrace" : 27,
+			"path" : "src/game/shared/entities/items/weapons/CPenguin.h",
+			"sourceGroupIndex" : 25
+		},
+		{
+			"backtrace" : 27,
+			"compileGroupIndex" : 1,
+			"path" : "src/game/shared/entities/items/weapons/CPipewrench.cpp",
+			"sourceGroupIndex" : 25
+		},
+		{
+			"backtrace" : 27,
+			"path" : "src/game/shared/entities/items/weapons/CPipewrench.h",
+			"sourceGroupIndex" : 25
+		},
+		{
+			"backtrace" : 27,
+			"compileGroupIndex" : 1,
+			"path" : "src/game/shared/entities/items/weapons/CPython.cpp",
+			"sourceGroupIndex" : 25
+		},
+		{
+			"backtrace" : 27,
+			"path" : "src/game/shared/entities/items/weapons/CPython.h",
+			"sourceGroupIndex" : 25
+		},
+		{
+			"backtrace" : 27,
+			"compileGroupIndex" : 1,
+			"path" : "src/game/shared/entities/items/weapons/CRpg.cpp",
+			"sourceGroupIndex" : 25
+		},
+		{
+			"backtrace" : 27,
+			"path" : "src/game/shared/entities/items/weapons/CRpg.h",
+			"sourceGroupIndex" : 25
+		},
+		{
+			"backtrace" : 27,
+			"compileGroupIndex" : 1,
+			"path" : "src/game/shared/entities/items/weapons/CSatchel.cpp",
+			"sourceGroupIndex" : 25
+		},
+		{
+			"backtrace" : 27,
+			"path" : "src/game/shared/entities/items/weapons/CSatchel.h",
+			"sourceGroupIndex" : 25
+		},
+		{
+			"backtrace" : 27,
+			"compileGroupIndex" : 1,
+			"path" : "src/game/shared/entities/items/weapons/CShockRifle.cpp",
+			"sourceGroupIndex" : 25
+		},
+		{
+			"backtrace" : 27,
+			"path" : "src/game/shared/entities/items/weapons/CShockRifle.h",
+			"sourceGroupIndex" : 25
+		},
+		{
+			"backtrace" : 27,
+			"compileGroupIndex" : 1,
+			"path" : "src/game/shared/entities/items/weapons/CShotgun.cpp",
+			"sourceGroupIndex" : 25
+		},
+		{
+			"backtrace" : 27,
+			"path" : "src/game/shared/entities/items/weapons/CShotgun.h",
+			"sourceGroupIndex" : 25
+		},
+		{
+			"backtrace" : 27,
+			"compileGroupIndex" : 1,
+			"path" : "src/game/shared/entities/items/weapons/CSniperRifle.cpp",
+			"sourceGroupIndex" : 25
+		},
+		{
+			"backtrace" : 27,
+			"path" : "src/game/shared/entities/items/weapons/CSniperRifle.h",
+			"sourceGroupIndex" : 25
+		},
+		{
+			"backtrace" : 27,
+			"compileGroupIndex" : 1,
+			"path" : "src/game/shared/entities/items/weapons/CSporeLauncher.cpp",
+			"sourceGroupIndex" : 25
+		},
+		{
+			"backtrace" : 27,
+			"path" : "src/game/shared/entities/items/weapons/CSporeLauncher.h",
+			"sourceGroupIndex" : 25
+		},
+		{
+			"backtrace" : 27,
+			"compileGroupIndex" : 1,
+			"path" : "src/game/shared/entities/items/weapons/CSqueak.cpp",
+			"sourceGroupIndex" : 25
+		},
+		{
+			"backtrace" : 27,
+			"path" : "src/game/shared/entities/items/weapons/CSqueak.h",
+			"sourceGroupIndex" : 25
+		},
+		{
+			"backtrace" : 27,
+			"compileGroupIndex" : 1,
+			"path" : "src/game/shared/entities/items/weapons/CTripmine.cpp",
+			"sourceGroupIndex" : 25
+		},
+		{
+			"backtrace" : 27,
+			"path" : "src/game/shared/entities/items/weapons/CTripmine.h",
+			"sourceGroupIndex" : 25
+		},
+		{
+			"backtrace" : 27,
+			"compileGroupIndex" : 1,
+			"path" : "src/game/shared/entities/items/weapons/weapons_shared.cpp",
+			"sourceGroupIndex" : 25
+		},
+		{
+			"backtrace" : 27,
+			"path" : "src/game/shared/entities/items/weapons/weapons.h",
+			"sourceGroupIndex" : 25
+		},
+		{
+			"backtrace" : 27,
+			"compileGroupIndex" : 1,
+			"path" : "src/game/shared/entities/items/weapons/WeaponDataSystem.cpp",
+			"sourceGroupIndex" : 25
+		},
+		{
+			"backtrace" : 27,
+			"path" : "src/game/shared/entities/items/weapons/WeaponDataSystem.h",
+			"sourceGroupIndex" : 25
+		},
+		{
+			"backtrace" : 27,
+			"compileGroupIndex" : 1,
+			"path" : "src/game/shared/models/BspLoader.cpp",
+			"sourceGroupIndex" : 26
+		},
+		{
+			"backtrace" : 27,
+			"path" : "src/game/shared/models/BspLoader.h",
+			"sourceGroupIndex" : 26
+		},
+		{
+			"backtrace" : 27,
+			"compileGroupIndex" : 1,
+			"path" : "src/game/shared/networking/NetworkDataSystem.cpp",
+			"sourceGroupIndex" : 27
+		},
+		{
+			"backtrace" : 27,
+			"path" : "src/game/shared/networking/NetworkDataSystem.h",
+			"sourceGroupIndex" : 27
+		},
+		{
+			"backtrace" : 27,
+			"compileGroupIndex" : 1,
+			"path" : "src/game/shared/player_movement/pm_debug.cpp",
+			"sourceGroupIndex" : 28
+		},
+		{
+			"backtrace" : 27,
+			"path" : "src/game/shared/player_movement/pm_debug.h",
+			"sourceGroupIndex" : 28
+		},
+		{
+			"backtrace" : 27,
+			"path" : "src/game/shared/player_movement/pm_defs.h",
+			"sourceGroupIndex" : 28
+		},
+		{
+			"backtrace" : 27,
+			"path" : "src/game/shared/player_movement/pm_info.h",
+			"sourceGroupIndex" : 28
+		},
+		{
+			"backtrace" : 27,
+			"path" : "src/game/shared/player_movement/pm_materials.h",
+			"sourceGroupIndex" : 28
+		},
+		{
+			"backtrace" : 27,
+			"path" : "src/game/shared/player_movement/pm_movevars.h",
+			"sourceGroupIndex" : 28
+		},
+		{
+			"backtrace" : 27,
+			"compileGroupIndex" : 1,
+			"path" : "src/game/shared/player_movement/pm_shared.cpp",
+			"sourceGroupIndex" : 28
+		},
+		{
+			"backtrace" : 27,
+			"path" : "src/game/shared/player_movement/pm_shared.h",
+			"sourceGroupIndex" : 28
+		},
+		{
+			"backtrace" : 27,
+			"compileGroupIndex" : 1,
+			"path" : "src/game/shared/saverestore/DataFieldSerializers.cpp",
+			"sourceGroupIndex" : 29
+		},
+		{
+			"backtrace" : 27,
+			"path" : "src/game/shared/saverestore/DataFieldSerializers.h",
+			"sourceGroupIndex" : 29
+		},
+		{
+			"backtrace" : 27,
+			"compileGroupIndex" : 1,
+			"path" : "src/game/shared/saverestore/DataMap.cpp",
+			"sourceGroupIndex" : 29
+		},
+		{
+			"backtrace" : 27,
+			"path" : "src/game/shared/saverestore/DataMap.h",
+			"sourceGroupIndex" : 29
+		},
+		{
+			"backtrace" : 27,
+			"compileGroupIndex" : 1,
+			"path" : "src/game/shared/saverestore/saverestore.cpp",
+			"sourceGroupIndex" : 29
+		},
+		{
+			"backtrace" : 27,
+			"path" : "src/game/shared/saverestore/saverestore.h",
+			"sourceGroupIndex" : 29
+		},
+		{
+			"backtrace" : 27,
+			"compileGroupIndex" : 1,
+			"path" : "src/game/shared/scripting/AS/as_addons.cpp",
+			"sourceGroupIndex" : 30
+		},
+		{
+			"backtrace" : 27,
+			"compileGroupIndex" : 1,
+			"path" : "src/game/shared/scripting/AS/as_utils.cpp",
+			"sourceGroupIndex" : 30
+		},
+		{
+			"backtrace" : 27,
+			"path" : "src/game/shared/scripting/AS/as_utils.h",
+			"sourceGroupIndex" : 30
+		},
+		{
+			"backtrace" : 27,
+			"compileGroupIndex" : 1,
+			"path" : "src/game/shared/scripting/AS/ASManager.cpp",
+			"sourceGroupIndex" : 30
+		},
+		{
+			"backtrace" : 27,
+			"path" : "src/game/shared/scripting/AS/ASManager.h",
+			"sourceGroupIndex" : 30
+		},
+		{
+			"backtrace" : 27,
+			"compileGroupIndex" : 1,
+			"path" : "src/game/shared/sound/MaterialSystem.cpp",
+			"sourceGroupIndex" : 31
+		},
+		{
+			"backtrace" : 27,
+			"path" : "src/game/shared/sound/MaterialSystem.h",
+			"sourceGroupIndex" : 31
+		},
+		{
+			"backtrace" : 27,
+			"compileGroupIndex" : 1,
+			"path" : "src/game/shared/sound/sentence_utils.cpp",
+			"sourceGroupIndex" : 31
+		},
+		{
+			"backtrace" : 27,
+			"path" : "src/game/shared/sound/sentence_utils.h",
+			"sourceGroupIndex" : 31
+		},
+		{
+			"backtrace" : 27,
+			"compileGroupIndex" : 1,
+			"path" : "src/game/shared/ui/hud/HudReplacementSystem.cpp",
+			"sourceGroupIndex" : 32
+		},
+		{
+			"backtrace" : 27,
+			"path" : "src/game/shared/ui/hud/HudReplacementSystem.h",
+			"sourceGroupIndex" : 32
+		},
+		{
+			"backtrace" : 27,
+			"compileGroupIndex" : 1,
+			"path" : "src/game/shared/utils/ConCommandSystem.cpp",
+			"sourceGroupIndex" : 33
+		},
+		{
+			"backtrace" : 27,
+			"path" : "src/game/shared/utils/ConCommandSystem.h",
+			"sourceGroupIndex" : 33
+		},
+		{
+			"backtrace" : 27,
+			"compileGroupIndex" : 1,
+			"path" : "src/game/shared/utils/filesystem_utils.cpp",
+			"sourceGroupIndex" : 33
+		},
+		{
+			"backtrace" : 27,
+			"path" : "src/game/shared/utils/filesystem_utils.h",
+			"sourceGroupIndex" : 33
+		},
+		{
+			"backtrace" : 27,
+			"compileGroupIndex" : 1,
+			"path" : "src/game/shared/utils/GameSystem.cpp",
+			"sourceGroupIndex" : 33
+		},
+		{
+			"backtrace" : 27,
+			"path" : "src/game/shared/utils/GameSystem.h",
+			"sourceGroupIndex" : 33
+		},
+		{
+			"backtrace" : 27,
+			"path" : "src/game/shared/utils/heterogeneous_lookup.h",
+			"sourceGroupIndex" : 33
+		},
+		{
+			"backtrace" : 27,
+			"path" : "src/game/shared/utils/json_fwd.h",
+			"sourceGroupIndex" : 33
+		},
+		{
+			"backtrace" : 27,
+			"compileGroupIndex" : 1,
+			"path" : "src/game/shared/utils/JSONSystem.cpp",
+			"sourceGroupIndex" : 33
+		},
+		{
+			"backtrace" : 27,
+			"path" : "src/game/shared/utils/JSONSystem.h",
+			"sourceGroupIndex" : 33
+		},
+		{
+			"backtrace" : 27,
+			"compileGroupIndex" : 1,
+			"path" : "src/game/shared/utils/LogSystem.cpp",
+			"sourceGroupIndex" : 33
+		},
+		{
+			"backtrace" : 27,
+			"path" : "src/game/shared/utils/LogSystem.h",
+			"sourceGroupIndex" : 33
+		},
+		{
+			"backtrace" : 27,
+			"compileGroupIndex" : 1,
+			"path" : "src/game/shared/utils/PrecacheList.cpp",
+			"sourceGroupIndex" : 33
+		},
+		{
+			"backtrace" : 27,
+			"path" : "src/game/shared/utils/PrecacheList.h",
+			"sourceGroupIndex" : 33
+		},
+		{
+			"backtrace" : 27,
+			"compileGroupIndex" : 1,
+			"path" : "src/game/shared/utils/ReplacementMaps.cpp",
+			"sourceGroupIndex" : 33
+		},
+		{
+			"backtrace" : 27,
+			"path" : "src/game/shared/utils/ReplacementMaps.h",
+			"sourceGroupIndex" : 33
+		},
+		{
+			"backtrace" : 27,
+			"compileGroupIndex" : 1,
+			"path" : "src/game/shared/utils/shared_utils.cpp",
+			"sourceGroupIndex" : 33
+		},
+		{
+			"backtrace" : 27,
+			"path" : "src/game/shared/utils/shared_utils.h",
+			"sourceGroupIndex" : 33
+		},
+		{
+			"backtrace" : 27,
+			"compileGroupIndex" : 1,
+			"path" : "src/game/shared/utils/string_utils.cpp",
+			"sourceGroupIndex" : 33
+		},
+		{
+			"backtrace" : 27,
+			"path" : "src/game/shared/utils/string_utils.h",
+			"sourceGroupIndex" : 33
+		},
+		{
+			"backtrace" : 27,
+			"compileGroupIndex" : 1,
+			"path" : "src/game/shared/utils/StringPool.cpp",
+			"sourceGroupIndex" : 33
+		},
+		{
+			"backtrace" : 27,
+			"path" : "src/game/shared/utils/StringPool.h",
+			"sourceGroupIndex" : 33
+		},
+		{
+			"backtrace" : 28,
+			"compileGroupIndex" : 1,
+			"path" : "src/game/client/DelayLoad.cpp",
+			"sourceGroupIndex" : 3
+		},
+		{
+			"backtrace" : 29,
+			"isGenerated" : true,
+			"path" : "out/build/x64-Debug/ProjectInfo.h",
+			"sourceGroupIndex" : 34
+		},
+		{
+			"backtrace" : 0,
+			"path" : "out/build/x64-Debug/src/game/client/CMakeFiles/client.dir/cmake_pch.hxx",
+			"sourceGroupIndex" : 35
+		},
+		{
+			"backtrace" : 7,
+			"path" : "out/build/x64-Debug/vcpkg_installed/x64-windows/share/nlohmann_json/nlohmann_json.natvis",
+			"sourceGroupIndex" : 36
+		}
+	],
+	"type" : "SHARED_LIBRARY"
+}

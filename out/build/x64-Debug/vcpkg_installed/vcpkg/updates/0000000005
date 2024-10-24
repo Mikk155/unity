@@ -1,0 +1,6 @@
+Package: angelscript
+Feature: addons
+Architecture: x64-windows
+Multi-Arch: same
+Description: Installs all addons for use in compiling scripts addons
+Status: install ok half-installed
