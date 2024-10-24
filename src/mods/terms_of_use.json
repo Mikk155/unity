@@ -1,0 +1,39 @@
+
+{
+    "1. Purpose of the Script":
+    [
+        "This script is designed to facilitate locating a Steam installation of a game and copying certain files for modification,",
+        "In the context of a Half-Life mod.",
+        "This script is provided \"as is\" with no guarantees, either express or implied, regarding its functionality."
+    ],
+
+    "2. User Responsibility":
+    [
+        "The script allows the user to automatically search for the game's Steam installation or manually specify an alternative path,",
+        "Whether this path leads to a legitimate or pirated copy of the game is entirely up to the user.",
+        "The developer neither condones nor takes responsibility for how the user obtains or uses the game files.",
+        "The script's intended use is to modify files for the Half-Life mod \"Unity\", and any other use is at the user's own risk."
+    ],
+
+    "3. Disclaimer of Liability":
+    [
+        "The developer of this script does not distribute or modify the original game files,",
+        "Nor provide access to any copyrighted material owned by third parties.",
+        "The script solely handles files that the user has already obtained, whether through legal or other means.",
+        "The user acknowledges that the developer cannot be held liable for any copyright violations, legal issues,",
+        "Or other consequences arising from the use of this script with unauthorized copies of the game."
+    ],
+
+    "4. Modifications and Distribution":
+    [
+        "This script may be freely used for personal and non-commercial purposes,",
+        "Distribution of modified versions of this script that explicitly promote or facilitate the use of pirated game copies..",
+        "Or the redistribution of original game files is prohibited."
+    ],
+
+    "5. Acceptance of Terms:":
+    [
+        "By using this script, the user agrees to these terms and assumes full responsibility for any improper use of the script.",
+        "The developer reserves the right to update or modify these terms at any time without prior notice."
+    ]
+}
