@@ -1,12 +1,15 @@
 name: CI/CD
 
-on: [push, pull_request]
+on:
+  push:
+    tags:
+      - "*"
 
 env:
   BUILD_TYPE: Release
-  GAME_NAME: Half-Life
-  MOD_NAME: hlu
-  VCPKG_ROOT: ${{github.workspace}}/vcpkg
+  game: Half-Life
+  mod: unity
+  vcpkg_root: ${{github.workspace}}/vcpkg
 
 jobs:
   linux:
@@ -17,40 +20,52 @@ jobs:
         uses: actions/checkout@v4
         with:
           submodules: recursive
-          
+
       - name: Install G++ Multilib & 32 bit OpenGL library
         run: |
           sudo dpkg --add-architecture i386
           sudo add-apt-repository ppa:ubuntu-toolchain-r/test
           sudo apt update
           sudo apt install -y g++-11-multilib libgcc-s1:i386 libstdc++6:i386 libatomic1:i386 libgl1-mesa-dev:i386
-         
+
       - uses: lukka/get-cmake@latest
-      
-      - name: Restore artifacts, setup vcpkg
+
+      - name: setup vcpkg
         uses: lukka/run-vcpkg@v10
         with:
-          vcpkgDirectory: '${{env.VCPKG_ROOT}}'
+          vcpkgDirectory: '${{env.vcpkg_root}}'
           runVcpkgInstall: false
           vcpkgJsonIgnores: "['**/vcpkg/**', '**/vcpkg_config/**', '**/utils/**']"
-         
+
       - name: Configure
         run: >
-          cmake -B ${{github.workspace}}/build -DCMAKE_BUILD_TYPE=${{env.BUILD_TYPE}} -DCMAKE_INSTALL_PREFIX=${{env.GAME_NAME}}/${{env.MOD_NAME}}
+          cmake -B ${{github.workspace}}/build -DCMAKE_BUILD_TYPE=${{env.BUILD_TYPE}} -DCMAKE_INSTALL_PREFIX=${{env.game}}/${{env.mod}}
           -DCMAKE_TOOLCHAIN_FILE=${{github.workspace}}/cmake/LinuxToolchain.cmake
-        
+
       - name: Build
         run: cmake --build ${{github.workspace}}/build --config ${{env.BUILD_TYPE}} -j3
-        
+
       - name: Install
         run: cmake --install ${{github.workspace}}/build --config ${{env.BUILD_TYPE}}
-        
+
+      - name: Zip Binaries
+        run: zip -r Linux-x86 ${{ env.game }}
+
       - name: Upload artifacts
         uses: actions/upload-artifact@v4
         with:
           name: Linux-x86
-          path: ${{env.GAME_NAME}}
-        
+          path: ${{env.game}}
+
+      - name: Upload Release
+        if: startsWith( github.ref_name, 'v' )
+        uses: xresloader/upload-to-github-release@v1.6.0
+        with:
+          file: Linux-x86.zip
+          token: ${{ secrets.TOKEN }}
+          tag_name: ${{ github.ref_name }}
+          draft: false
+
   win32:
     name: Win32
     runs-on: windows-latest
@@ -59,29 +74,72 @@ jobs:
         uses: actions/checkout@v4
         with:
           submodules: recursive
-      
+
       - uses: lukka/get-cmake@latest
-      
-      - name: Restore artifacts, setup vcpkg
+
+      - name: setup vcpkg
         uses: lukka/run-vcpkg@v10
         with:
-          vcpkgDirectory: '${{env.VCPKG_ROOT}}'
+          vcpkgDirectory: '${{env.vcpkg_root}}'
           runVcpkgInstall: false
           vcpkgJsonIgnores: "['**/vcpkg/**', '**/vcpkg_config/**', '**/utils/**']"
-        
+
       - name: Configure
         run: >
-          cmake -B ${{github.workspace}}/build -DCMAKE_BUILD_TYPE=${{env.BUILD_TYPE}} -DCMAKE_INSTALL_PREFIX=${{env.GAME_NAME}}/${{env.MOD_NAME}}
+          cmake -B ${{github.workspace}}/build -DCMAKE_BUILD_TYPE=${{env.BUILD_TYPE}} -DCMAKE_INSTALL_PREFIX=${{env.game}}/${{env.mod}}
           -DCMAKE_TOOLCHAIN_FILE=${{github.workspace}}/cmake/WindowsToolchain.cmake -A Win32
-        
+
       - name: Build
         run: cmake --build ${{github.workspace}}/build --config ${{env.BUILD_TYPE}} -j3
-        
+
       - name: Install
         run: cmake --install ${{github.workspace}}/build --config ${{env.BUILD_TYPE}}
-        
+
+      - name: Zip Binaries
+        run: |
+          powershell Compress-Archive -Path ${{ env.game }} -DestinationPath Win32.zip
+
       - name: Upload artifacts
         uses: actions/upload-artifact@v4
         with:
           name: Win32
-          path: ${{env.GAME_NAME}}
+          path: ${{env.game}}
+
+      - name: Upload Release
+        if: startsWith( github.ref_name, 'v' )
+        uses: xresloader/upload-to-github-release@v1.6.0
+        with:
+          file: Win32.zip
+          token: ${{ secrets.TOKEN }}
+          tag_name: ${{ github.ref_name }}
+          draft: false
+
+  assets:
+    name: Game assets
+    runs-on: windows-latest
+    steps:
+    - name: Checkout
+      uses: actions/checkout@v4
+
+    - name: Rename mod folder
+      run: Rename-Item -Path game -NewName ${{env.mod}}
+
+    - name: Zip mod assets
+      run: Compress-Archive -Path ${{env.mod}} -DestinationPath ${{env.mod}}.zip
+
+    - name: Upload Artifact
+      uses: actions/upload-artifact@v4
+      with:
+        name: game-assets
+        path: ${{env.mod}}.zip
+
+    - name: Upload Release
+      if: startsWith( github.ref_name, 'v' )
+      uses: xresloader/upload-to-github-release@v1.6.0
+      with:
+        file: ${{env.mod}}.zip
+        token: ${{ secrets.TOKEN }}
+        default_release_name: "${{env.game}}: ${{env.mod}}"
+        default_release_body_path: changelog.md
+        tag_name: ${{ github.ref_name }}
+        draft: false
